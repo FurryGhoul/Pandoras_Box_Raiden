@@ -33,6 +33,7 @@ update_status ModuleInput::Update()
 	SDL_PumpEvents();
 
 	keyboard = SDL_GetKeyboardState(NULL);
+	
 	if (keyboard[SDL_SCANCODE_ESCAPE])
 	{
 		return update_status::UPDATE_STOP;

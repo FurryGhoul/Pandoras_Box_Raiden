@@ -8,12 +8,15 @@
 
 
 Application::Application()
-{
+{	
+	
 	modules[0] = window = new ModuleWindow();
 	modules[1] = render = new ModuleRender();
-	modules[2] = input = new ModuleInput();
-	modules[3] = textures = new ModuleTextures();
+	modules[2] = textures = new ModuleTextures();
+	modules[3] = input = new ModuleInput();
 	modules[4] = audio = new ModuleAudio1();
+	modules[5] = map_1 = new ModuleMap1();
+	
 }	
 
 Application::~Application()
