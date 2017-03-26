@@ -41,6 +41,9 @@
     <ClInclude Include="ModuleMap1.h">
       <Filter>Modules</Filter>
     </ClInclude>
+    <ClInclude Include="ModuleMap2.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -68,6 +71,9 @@
       <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="ModuleMap1.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleMap2.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
   </ItemGroup>

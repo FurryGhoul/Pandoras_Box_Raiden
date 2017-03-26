@@ -91,8 +91,7 @@ bool ModuleRender::Blit(SDL_Texture* texture, int x, int y, SDL_Rect* section)
 		SDL_QueryTexture(texture, nullptr, nullptr, &rect.w, &rect.h);
 	}
 	
-	rect.w *= 4;
-	rect.h *= 4;
+
 	
 	if(SDL_RenderCopy(renderer, texture, NULL, &rect) != 0)
 	{
