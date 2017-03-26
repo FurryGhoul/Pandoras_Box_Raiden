@@ -1,0 +1,4 @@
+﻿cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
+  ModuleRender.cpp
+  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Scrolling-with-sound\Scrolling-with-sound-master\SDL3_handout\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Scrolling-with-sound\Scrolling-with-sound-master\SDL3_handout\Debug\SDL3 Handout.pdb (Full PDB)
