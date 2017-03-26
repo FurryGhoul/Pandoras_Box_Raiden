@@ -35,7 +35,10 @@
     <ClInclude Include="ModuleTextures.h">
       <Filter>Modules</Filter>
     </ClInclude>
-    <ClInclude Include="ModuleAudio.h">
+    <ClInclude Include="ModuleAudio_1.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleMap1.h">
       <Filter>Modules</Filter>
     </ClInclude>
   </ItemGroup>
@@ -61,7 +64,10 @@
     <ClCompile Include="Globals.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="ModuleAudio.cpp">
+    <ClCompile Include="ModuleAudio_1.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleMap1.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
   </ItemGroup>

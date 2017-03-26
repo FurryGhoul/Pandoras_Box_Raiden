@@ -10,7 +10,8 @@ class ModuleInput;
 class ModuleTextures;
 class ModuleRender;
 class Module;
-
+class ModuleMap1;
+class ModuleAudio1;
 class Application
 {
 public:
@@ -20,6 +21,8 @@ public:
 	ModuleRender* render;
 	ModuleInput* input;
 	ModuleTextures* textures;
+	ModuleAudio1 * audio;
+	ModuleMap1 * map_1;
 
 public:
 

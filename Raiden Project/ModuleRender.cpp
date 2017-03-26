@@ -31,8 +31,6 @@ bool ModuleRender::Init()
 		LOG("Renderer could not be created! SDL_Error: %s\n", SDL_GetError());
 		ret = false;
 	}
-	tex = App->textures->Load("Tilemaptest.png");
-	
 	// TODO 9: load a texture "test.png" to test is everything works well
 
 	return ret;
@@ -48,11 +46,6 @@ update_status ModuleRender::PreUpdate()
 		LOG("An error has ocurred when clearing the screen %s", SDL_GetError());
 	}
 
-
-	SDL_Rect rect;
-	rect.h = 3266;
-	rect.w = 352;
-	App->render->Blit(tex, xmap, ymap, &rect);
 	// TODO 7: Clear the screen to black before starting every frame
 	
 	// TODO 10: Blit our test texture to check functionality

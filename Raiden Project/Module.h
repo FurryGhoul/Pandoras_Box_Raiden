@@ -10,6 +10,24 @@ public:
 	virtual update_status Update()		{ return update_status::UPDATE_CONTINUE; }
 	virtual update_status PostUpdate() 	{ return update_status::UPDATE_CONTINUE; }
 	virtual bool CleanUp() { return true; }
+	bool IsEnabled() const { return enabled; }
+
+	void Enable()
+	{
+		if (enabled == false)
+		{
+			enabled = true;
+
+		}
+	}
+
+	void Disable()
+	{
+		enabled = false;
+
+	}
+private:
+	bool enabled = true;
 };
 
 #endif // __MODULE_H__
