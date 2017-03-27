@@ -4,7 +4,10 @@
 #include "ModuleRender.h"
 #include "ModuleTextures.h"
 #include "ModuleMap1.h"
+#include "ModuleWelcomeScreen.h"
+
 #include "ModuleInput.h"
+
 ModuleMap2::ModuleMap2() : Module()
 {
 
