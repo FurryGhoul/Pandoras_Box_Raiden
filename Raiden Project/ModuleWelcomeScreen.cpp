@@ -24,8 +24,8 @@ bool ModuleWelcomeScreen::Init()
 	App->map_1->Disable();
 	App->map_2->Disable();
 	App->StageClear1->Disable();
-	App->audio->CleanUp();
-	App->audio_2->CleanUp();
+	App->audio->Close();
+	App->audio_2->Close();
 	ground = { 0, 0 ,224 * 4 ,256 * 4};
 	Welcome = App->textures->Load("WelcomeScreen.png");
 	return true;
