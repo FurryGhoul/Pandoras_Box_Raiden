@@ -50,6 +50,9 @@
     <ClInclude Include="ModuleWelcomeScreen.h">
       <Filter>Modules</Filter>
     </ClInclude>
+    <ClInclude Include="ModuleStageClear1.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -86,6 +89,9 @@
       <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="ModuleWelcomeScreen.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleStageClear1.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
   </ItemGroup>

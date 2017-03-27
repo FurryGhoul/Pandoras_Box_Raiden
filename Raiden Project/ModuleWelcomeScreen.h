@@ -1,5 +1,5 @@
-#ifndef __WELCOMESCREEN__
-#define __WELCOMESCREEN__
+#ifndef __MODULEWELCOMESCREEN__
+#define __MODULEWELCOMESCREEN__
 #include "Globals.h"
 #include "Module.h"
 #include "SDL/include/SDL.h"
@@ -24,4 +24,4 @@ public:
 	int ymap = 0;
 };
 
-#endif //__MODULEMAP1__
+#endif //__MODULEWELCOMSCREEN__
