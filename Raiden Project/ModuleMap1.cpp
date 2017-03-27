@@ -17,6 +17,8 @@ ModuleMap1::~ModuleMap1()
 
 bool ModuleMap1::Init()
 {
+	xmap = -130;
+	ymap = -12100;
 	LOG("Loading background assets");
 	App->map_2->Disable();
 	ground = {xmap,ymap ,352*4 ,3266*4};
@@ -33,6 +35,8 @@ update_status ModuleMap1::Update()
 		App->map_2->Enable();
 		App->audio->CleanUp();
 		App->audio_2->Init();
+		App->map_1->xmap = -130;
+		App->map_1->ymap = -12100;
 	}
 
 	return UPDATE_CONTINUE;

@@ -17,7 +17,6 @@ ModuleMap2::~ModuleMap2()
 bool ModuleMap2::Init()
 {
 	LOG("Loading background assets");
-	
 	ground = { App->map_1->xmap,App->map_1->ymap ,301*5 ,5362*5};
 	Map2 = App->textures->Load("Tilemap2.png");
 	return true;

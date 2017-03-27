@@ -20,8 +20,8 @@ public:
 public:
 	SDL_Rect ground;
 	SDL_Texture *Map1;
-	int xmap = -130;
-	int ymap = -12100;
+	int xmap;
+	int ymap;
 };
 
 #endif //__MODULEMAP1__
