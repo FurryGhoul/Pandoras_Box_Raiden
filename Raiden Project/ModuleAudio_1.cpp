@@ -1,7 +1,7 @@
 #include "Globals.h"
 #include "Application.h"
 #include "ModuleAudio_1.h"
-
+#include "ModuleAudio_2.h"
 ModuleAudio1::ModuleAudio1() : Module()
 {
 
@@ -30,6 +30,7 @@ bool ModuleAudio1::Init()
 	{
 		LOG("An error has ocurred while reproducing the audio %s", SDL_GetError())
 	}
+	App->audio_2->Disable();
 	return true;
 }
 
