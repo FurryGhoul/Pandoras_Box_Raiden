@@ -4,9 +4,10 @@
 #include "ModuleInput.h"
 #include "ModuleTextures.h"
 #include "ModuleAudio_1.h"
-#include"ModuleMap1.h"
+#include "ModuleMap1.h"
 #include "ModuleMap2.h"
 #include "ModuleAudio_2.h"
+#include "ModuleWelcomeScreen.h"
 
 
 Application::Application()
@@ -20,6 +21,7 @@ Application::Application()
 	modules[4] = audio_2 = new ModuleAudio2();
 	modules[5] = map_1 = new ModuleMap1();
 	modules[6] = map_2 = new ModuleMap2();
+	modules[7] = WelcomeScreen = new ModuleWelcomeScreen();
 	
 }	
 

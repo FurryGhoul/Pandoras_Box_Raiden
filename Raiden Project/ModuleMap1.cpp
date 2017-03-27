@@ -3,6 +3,7 @@
 #include "ModuleMap2.h"
 #include "ModuleRender.h"
 #include "ModuleTextures.h"
+#include "ModuleWelcomeScreen.h"
 
 
 ModuleMap1::ModuleMap1() : Module()
