@@ -1,5 +1,6 @@
 #include "Application.h"
 #include "ModuleMap1.h"
+#include "ModuleMap2.h"
 #include "ModuleRender.h"
 #include "ModuleTextures.h"
 

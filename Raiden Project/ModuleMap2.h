@@ -23,5 +23,5 @@ public:
 	
 };
 
-#endif //__MODULEMAP1__
+#endif //__MODULEMAP2__
 

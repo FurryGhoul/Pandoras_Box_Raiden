@@ -1,5 +1,5 @@
-#ifndef __ModuleAudio_H__
-#define __ModuleAudio_H__
+#ifndef __ModuleAudio_H2__
+#define __ModuleAudio_H2__
 
 #include "Module.h"
 #include "Globals.h"

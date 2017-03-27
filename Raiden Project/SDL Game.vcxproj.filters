@@ -47,6 +47,9 @@
     <ClInclude Include="ModuleAudio_2.h">
       <Filter>Modules</Filter>
     </ClInclude>
+    <ClInclude Include="WelcomeScreen.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -80,6 +83,9 @@
       <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="ModuleAudio_2.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="WelcomeScreen.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
   </ItemGroup>

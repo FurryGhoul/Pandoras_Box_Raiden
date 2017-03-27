@@ -13,6 +13,7 @@ class Module;
 class ModuleMap1;
 class ModuleMap2;
 class ModuleAudio1;
+class ModuleAudio2;
 class Application
 
 {
@@ -26,6 +27,7 @@ public:
 	ModuleAudio1 * audio;
 	ModuleMap1 * map_1;
 	ModuleMap2* map_2;
+	ModuleAudio2* audio_2;
 
 public:
 
