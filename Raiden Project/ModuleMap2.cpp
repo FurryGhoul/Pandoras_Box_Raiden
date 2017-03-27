@@ -5,9 +5,10 @@
 #include "ModuleTextures.h"
 #include "ModuleMap1.h"
 #include "ModuleWelcomeScreen.h"
-
+#include"ModuleStageClear1.h"
 #include "ModuleInput.h"
-
+#include "ModuleAudio_1.h"
+#include "ModuleAudio_2.h"
 ModuleMap2::ModuleMap2() : Module()
 {
 
@@ -29,8 +30,11 @@ update_status ModuleMap2::Update()
 {
 
 	App->render->Blit(Map2, App->map_1->xmap, App->map_1->ymap-13600, &ground);
-	if (App->input->keyboard[SDL_SCANCODE_SPACE])
+	if (App->input->keyboard[SDL_SCANCODE_D])
 	{
+		Disable();
+		App->StageClear1->Enable();
+		App->audio_2->Close();
 		
 	}
 	return UPDATE_CONTINUE;

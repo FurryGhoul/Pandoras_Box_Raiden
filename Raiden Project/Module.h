@@ -23,14 +23,14 @@ public:
 		if (enabled == false)
 		{
 			enabled = true;
-			Start();
+	
 		}
 	}
 
 	void Disable()
 	{
 		enabled = false;
-		CleanUp();
+
 	}
 };
 

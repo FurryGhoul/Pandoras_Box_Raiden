@@ -4,8 +4,6 @@
 #include "ModuleRender.h"
 #include "ModuleTextures.h"
 #include "ModuleWelcomeScreen.h"
-
-
 #include "ModuleInput.h"
 #include "ModuleAudio_1.h"
 #include "ModuleAudio_2.h"
@@ -23,7 +21,6 @@ bool ModuleMap1::Init()
 	xmap = -130;
 	ymap = -12100;
 	LOG("Loading background assets");
-	App->map_2->Disable();
 	ground = {xmap,ymap ,352*4 ,3266*4};
     Map1 = App->textures->Load("Tilemap1.png");
 	return true;
@@ -36,10 +33,10 @@ update_status ModuleMap1::Update()
 	{
 		Disable();
 		App->map_2->Enable();
-		App->audio->CleanUp();
+		App->audio->Close();
 		App->audio_2->Init();
-		App->map_1->xmap = -130;
-		App->map_1->ymap = -12100;
+		xmap = -130;
+		ymap = -12100;
 	}
 
 	return UPDATE_CONTINUE;

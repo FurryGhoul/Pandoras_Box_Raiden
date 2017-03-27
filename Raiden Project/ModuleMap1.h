@@ -22,6 +22,7 @@ public:
 	SDL_Texture *Map1;
 	int xmap;
 	int ymap;
+	bool changing = false;
 };
 
 #endif //__MODULEMAP1__

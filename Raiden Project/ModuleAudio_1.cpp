@@ -51,3 +51,9 @@ bool ModuleAudio1::CleanUp()
 	Mix_FreeMusic(music);
 	return true;
 }
+
+bool ModuleAudio1::Close()
+{
+	Mix_CloseAudio();
+	return true;
+}

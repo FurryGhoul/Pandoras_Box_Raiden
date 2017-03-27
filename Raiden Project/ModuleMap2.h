@@ -20,6 +20,7 @@ public:
 public:
 	SDL_Rect ground;
 	SDL_Texture *Map2;
+	bool changing = false;
 	
 };
 

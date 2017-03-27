@@ -50,3 +50,10 @@ bool ModuleAudio2::CleanUp()
 	Mix_FreeMusic(music2);
 	return true;
 }
+
+bool ModuleAudio2::Close()
+{
+	Mix_CloseAudio();
+	return true;
+}
+
