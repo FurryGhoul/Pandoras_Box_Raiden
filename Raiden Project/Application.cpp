@@ -17,11 +17,12 @@ Application::Application()
 	modules[1] = render = new ModuleRender();
 	modules[2] = textures = new ModuleTextures();
 	modules[3] = input = new ModuleInput();
-	//modules[4] = audio = new ModuleAudio1();
 	modules[4] = audio_2 = new ModuleAudio2();
 	modules[5] = map_1 = new ModuleMap1();
 	modules[6] = map_2 = new ModuleMap2();
 	modules[7] = WelcomeScreen = new ModuleWelcomeScreen();
+	modules[8] = audio = new ModuleAudio1();
+
 	
 }	
 
@@ -46,12 +47,15 @@ update_status Application::Update()
 	update_status ret = UPDATE_CONTINUE;
 
 	for(int i = 0; i < NUM_MODULES && ret == UPDATE_CONTINUE; ++i)
+		if (modules[i]->IsEnabled())
 		ret = modules[i]->PreUpdate();
 
 	for(int i = 0; i < NUM_MODULES && ret == UPDATE_CONTINUE; ++i)
+		if (modules[i]->IsEnabled())
 		ret = modules[i]->Update();
 
 	for(int i = 0; i < NUM_MODULES && ret == UPDATE_CONTINUE; ++i)
+		if (modules[i]->IsEnabled())
 		ret = modules[i]->PostUpdate();
 
 	return ret;

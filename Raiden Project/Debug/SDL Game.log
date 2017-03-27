@@ -1,3 +1,18 @@
-﻿  ModuleWelcomeScreen.cpp
+﻿  Application.cpp
+  Generating Code...
+  Compiling...
+  ModuleWindow.cpp
+  ModuleWelcomeScreen.cpp
+  ModuleTextures.cpp
+  ModuleRender.cpp
+  ModuleMap2.cpp
+  ModuleMap1.cpp
+  ModuleInput.cpp
+  ModuleAudio_2.cpp
+  ModuleAudio_1.cpp
+  Main.cpp
+  Generating Code...
+  LINK : C:\Users\genisbs\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe not found or not built by the last incremental link; performing full link
+Globals.obj : warning LNK4020: a type record in 'c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\debug\vc140.pdb' is corrupted; some symbols and types may not be accessible from the debugger
   SDL Game.vcxproj -> C:\Users\genisbs\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
   SDL Game.vcxproj -> C:\Users\genisbs\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
