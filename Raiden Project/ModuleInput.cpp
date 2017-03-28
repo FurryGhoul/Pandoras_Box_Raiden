@@ -42,7 +42,7 @@ update_status ModuleInput::Update()
 	}
 
 	App->map_1->ymap += 6;
-
+		
 	if (keyboard[SDL_SCANCODE_DOWN])
 	{
 		App->map_1->ymap -= 6;

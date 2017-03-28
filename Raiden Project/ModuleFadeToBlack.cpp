@@ -3,6 +3,7 @@
 #include "Application.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleRender.h"
+#include "ModuleMap1.h"
 #include "SDL/include/SDL_render.h"
 #include "SDL/include/SDL_timer.h"
 
@@ -41,6 +42,10 @@ update_status ModuleFadeToBlack::Update()
 			// TODO 2: enable / disable the modules received when FadeToBlacks() gets called
 			module_off1->Disable();
 			module_on1->Enable();
+			// ---
+			
+			App->map_1->xmap = -192;
+			App->map_1->ymap = -9020;
 			// ---
 			total_time += total_time;
 			start_time = SDL_GetTicks();

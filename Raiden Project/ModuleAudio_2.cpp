@@ -24,7 +24,7 @@ bool ModuleAudio2::Init()
 	{
 		LOG("An error has ocurred while opening the audio has ocurred: %s", SDL_GetError())
 	}
-	ModuleAudio2::Load("song_2.ogg");
+	ModuleAudio2::Load("Assets/song_2.ogg");
 
 	if (Mix_PlayMusic(music2, -1) == -1)
 	{

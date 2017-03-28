@@ -21,7 +21,7 @@ bool ModuleStageClear1::Init()
 {
 	LOG("Loading background assets");
 	ground = { 0, 0 ,224 * 3 ,256 * 3 };
-	StageClear1 = App->textures->Load("StageClear1.png");
+	StageClear1 = App->textures->Load("Assets/StageClear1.png");
 	return true;
 }
 

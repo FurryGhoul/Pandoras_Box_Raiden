@@ -28,7 +28,7 @@ bool ModuleWelcomeScreen::Init()
 	App->audio->Close();
 	App->audio_2->Close();
 	ground = { 0, 0 ,224 * 3 ,256 * 3};
-	Welcome = App->textures->Load("WelcomeScreen.png");
+	Welcome = App->textures->Load("Assets/WelcomeScreen.png");
 	
 	return true;
 }
