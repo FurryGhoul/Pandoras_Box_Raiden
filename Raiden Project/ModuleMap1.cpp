@@ -22,7 +22,7 @@ bool ModuleMap1::Init()
 	xmap = -130;
 	ymap = -12100;
 	LOG("Loading background assets");
-	ground = {xmap,ymap ,352*4 ,3266*4};
+	ground = {xmap, ymap ,352*4 ,3266*4};
     Map1 = App->textures->Load("Tilemap1.png");
 	return true;
 }
