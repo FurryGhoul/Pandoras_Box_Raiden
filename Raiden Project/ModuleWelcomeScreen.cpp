@@ -40,7 +40,9 @@ update_status ModuleWelcomeScreen::Update()
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
 	{
 		App->audio->Init();
-		App->fade->FadeToBlack(this, App->map_1, 2.0f);
+		App->fade->FadeToBlack(this, App->map_1, 1.0f);
+		App->map_1->xmap = -10;
+		App->map_1->ymap = -1718;
 	}
 	return UPDATE_CONTINUE;
 }

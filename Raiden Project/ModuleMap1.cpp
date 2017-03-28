@@ -22,11 +22,7 @@ bool ModuleMap1::Init()
 	xmap = -190;
 	ymap = -9020;
 	LOG("Loading background assets");
-<<<<<<< HEAD
 	ground = {xmap,ymap ,352*3 ,3266*3};
-=======
-	ground = {xmap, ymap ,352*4 ,3266*4};
->>>>>>> origin/master
     Map1 = App->textures->Load("Tilemap1.png");
 	return true;
 }
@@ -36,7 +32,7 @@ update_status ModuleMap1::Update()
 	App->render->Blit(Map1, xmap, ymap, &ground);
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
 	{
-		App->fade->FadeToBlack(this, App->map_2, 2.0f);
+		App->fade->FadeToBlack(this, App->map_2, 1.0f);
 		App->audio->Close();
 		App->audio_2->Init();
 		xmap = -10;

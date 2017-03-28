@@ -31,7 +31,7 @@ update_status ModuleStageClear1::Update()
 	App->render->Blit(StageClear1, 0, 0, &ground);
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
 	{
-		App->fade->FadeToBlack(this, App->WelcomeScreen, 2.0f);
+		App->fade->FadeToBlack(this, App->WelcomeScreen, 1.0f);
 	}
 	return UPDATE_CONTINUE;
 }

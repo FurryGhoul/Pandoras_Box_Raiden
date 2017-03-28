@@ -33,7 +33,7 @@ update_status ModuleMap2::Update()
 	App->render->Blit(Map2, App->map_1->xmap, App->map_1->ymap-13600, &ground);
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
 	{
-		App->fade->FadeToBlack(this, App->StageClear1, 2.0f);
+		App->fade->FadeToBlack(this, App->StageClear1, 1.0f);
 		App->audio_2->Close();
 		
 	}
