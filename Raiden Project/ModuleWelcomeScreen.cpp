@@ -26,7 +26,7 @@ bool ModuleWelcomeScreen::Init()
 	App->StageClear1->Disable();
 	App->audio->Close();
 	App->audio_2->Close();
-	ground = { 0, 0 ,224 * 4 ,256 * 4};
+	ground = { 0, 0 ,224 * 3 ,256 * 3};
 	Welcome = App->textures->Load("WelcomeScreen.png");
 	return true;
 }
@@ -34,7 +34,7 @@ bool ModuleWelcomeScreen::Init()
 update_status ModuleWelcomeScreen::Update()
 {
 
-	App->render->Blit(Welcome, 160, 0, &ground);
+	App->render->Blit(Welcome, 0, 0, &ground);
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
 	{
 		Disable();

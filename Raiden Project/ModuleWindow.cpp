@@ -27,8 +27,8 @@ bool ModuleWindow::Init()
 	else
 	{
 		//Create window
-		int width = SCREEN_WIDTH+ 200;
-		int height = SCREEN_HEIGHT+ 200;
+		int width = SCREEN_WIDTH+ 00;
+		int height = SCREEN_HEIGHT+ 00;
 		Uint32 flags = SDL_WINDOW_SHOWN;
 
 		if(WIN_FULLSCREEN == true)
