@@ -55,7 +55,7 @@ update_status ModuleInput::Update()
 			App->map_1->xmap += 6;
 		}
 
-		if (App->map_2->IsEnabled() && App->map_1->xmap <= -5)
+		if (App->map_2->IsEnabled() && App->map_1->xmap <= -3)
 		{
 			App->map_1->xmap += 6;
 		}
@@ -68,7 +68,7 @@ update_status ModuleInput::Update()
 			App->map_1->xmap -= 6;
 		}
 
-		if (App->map_2->IsEnabled() && App->map_1->xmap >= -383)
+		if (App->map_2->IsEnabled() && App->map_1->xmap >= -231)
 		{
 			App->map_1->xmap -= 6;
 		}
