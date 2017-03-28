@@ -41,7 +41,7 @@ update_status ModuleInput::Update()
 		return update_status::UPDATE_STOP;
 	}
 
-	App->map_1->ymap += 6;
+	//App->map_1->ymap += 6;
 
 	if (keyboard[SDL_SCANCODE_DOWN])
 	{

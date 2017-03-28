@@ -41,8 +41,8 @@ update_status ModuleWelcomeScreen::Update()
 	{
 		App->audio->Init();
 		App->fade->FadeToBlack(this, App->map_1, 1.0f);
-		App->map_1->xmap = -10;
-		App->map_1->ymap = -1718;
+		App->map_1->xmap = -192;
+		App->map_1->ymap = -9020;
 	}
 	return UPDATE_CONTINUE;
 }

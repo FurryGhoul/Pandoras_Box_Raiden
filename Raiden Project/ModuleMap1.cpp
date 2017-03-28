@@ -19,8 +19,6 @@ ModuleMap1::~ModuleMap1()
 
 bool ModuleMap1::Init()
 {
-	xmap = -190;
-	ymap = -9020;
 	LOG("Loading background assets");
 	ground = {xmap,ymap ,352*3 ,3266*3};
     Map1 = App->textures->Load("Tilemap1.png");
@@ -35,7 +33,7 @@ update_status ModuleMap1::Update()
 		App->fade->FadeToBlack(this, App->map_2, 1.0f);
 		App->audio->Close();
 		App->audio_2->Init();
-		xmap = -10;
+		xmap = -100;
 		ymap = -1718;
 	}
 
