@@ -9,6 +9,7 @@
 #include "ModuleStageClear1.h"
 #include "ModuleAudio_1.h"
 #include "ModuleAudio_2.h"
+#include "ModuleFadeToBlack.h"
 ModuleWelcomeScreen::ModuleWelcomeScreen() : Module()
 {
 
@@ -28,6 +29,7 @@ bool ModuleWelcomeScreen::Init()
 	App->audio_2->Close();
 	ground = { 0, 0 ,224 * 3 ,256 * 3};
 	Welcome = App->textures->Load("WelcomeScreen.png");
+	
 	return true;
 }
 
@@ -37,10 +39,8 @@ update_status ModuleWelcomeScreen::Update()
 	App->render->Blit(Welcome, 0, 0, &ground);
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
 	{
-		Disable();
-		App->map_1->Enable();
 		App->audio->Init();
-		
+		App->fade->FadeToBlack(this, App->map_1, 2.0f);
 	}
 	return UPDATE_CONTINUE;
 }
