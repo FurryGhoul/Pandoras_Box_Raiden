@@ -41,7 +41,7 @@ update_status ModuleInput::Update()
 		return update_status::UPDATE_STOP;
 	}
 
-	//App->map_1->ymap += 6;
+	App->map_1->ymap += 6;
 
 	if (keyboard[SDL_SCANCODE_DOWN])
 	{
@@ -63,12 +63,12 @@ update_status ModuleInput::Update()
 
 	if (keyboard[SDL_SCANCODE_RIGHT])
 	{
-		if (App->map_1->IsEnabled() && App->map_1->xmap >= -183)
+		if (App->map_1->IsEnabled() && App->map_1->xmap >= -383)
 		{
 			App->map_1->xmap -= 6;
 		}
 
-		if (App->map_2->IsEnabled() && App->map_1->xmap >= -183)
+		if (App->map_2->IsEnabled() && App->map_1->xmap >= -383)
 		{
 			App->map_1->xmap -= 6;
 		}
