@@ -9,6 +9,7 @@
 #include "ModuleInput.h"
 #include "ModuleAudio_1.h"
 #include "ModuleAudio_2.h"
+#include "ModuleFadeToBlack.h"
 ModuleMap2::ModuleMap2() : Module()
 {
 
@@ -30,10 +31,9 @@ update_status ModuleMap2::Update()
 {
 
 	App->render->Blit(Map2, App->map_1->xmap, App->map_1->ymap-13600, &ground);
-	if (App->input->keyboard[SDL_SCANCODE_D])
+	if (App->input->keyboard[SDL_SCANCODE_SPACE])
 	{
-		Disable();
-		App->StageClear1->Enable();
+		App->fade->FadeToBlack(this, App->StageClear1, 2.0f);
 		App->audio_2->Close();
 		
 	}

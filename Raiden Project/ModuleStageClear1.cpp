@@ -7,7 +7,7 @@
 #include "ModuleMap1.h"
 #include "ModuleStageClear1.h"
 #include"ModuleInput.h"
-
+#include "ModuleFadeToBlack.h"
 ModuleStageClear1::ModuleStageClear1() : Module()
 {
 
@@ -31,7 +31,7 @@ update_status ModuleStageClear1::Update()
 	App->render->Blit(StageClear1, 160, 0, &ground);
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
 	{
-
+		App->fade->FadeToBlack(this, App->WelcomeScreen, 2.0f);
 	}
 	return UPDATE_CONTINUE;
 }

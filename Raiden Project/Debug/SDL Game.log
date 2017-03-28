@@ -1,3 +1,18 @@
-﻿  ModuleWelcomeScreen.cpp
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+﻿  Application.cpp
+  Generating Code...
+  Compiling...
+  ModuleWindow.cpp
+  ModuleWelcomeScreen.cpp
+  ModuleTextures.cpp
+  ModuleStageClear1.cpp
+  ModuleRender.cpp
+  ModuleMap2.cpp
+  ModuleMap1.cpp
+  ModuleInput.cpp
+  ModuleFadeToBlack.cpp
+  ModuleAudio_2.cpp
+  ModuleAudio_1.cpp
+  Main.cpp
+  Generating Code...
+  SDL Game.vcxproj -> C:\Users\lucasgm\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\lucasgm\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

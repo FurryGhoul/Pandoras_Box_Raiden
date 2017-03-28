@@ -6,7 +6,7 @@ void log(const char file[], int line, const char* format, ...);
 
 #define EXIT_FAILURE 1
 #define EXIT_SUCCESS 0
-
+#define MIN( a, b ) ( ((a) < (b)) ? (a) : (b) )
 enum update_status
 {
 	UPDATE_CONTINUE = 1,
@@ -18,6 +18,7 @@ enum update_status
 typedef unsigned int uint;
 
 // Configuration -----------
+#define SCREEN_SIZE 2
 #define SCREEN_WIDTH 1024
 #define SCREEN_HEIGHT 768
 #define WIN_FULLSCREEN 0
