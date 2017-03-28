@@ -6,6 +6,7 @@
 #include "SDL/include/SDL_render.h"
 #include "SDL/include/SDL_timer.h"
 
+
 ModuleFadeToBlack::ModuleFadeToBlack()
 {
 	screen = { 0, 0, SCREEN_WIDTH * SCREEN_SIZE, SCREEN_HEIGHT * SCREEN_SIZE };
@@ -15,7 +16,7 @@ ModuleFadeToBlack::~ModuleFadeToBlack()
 {}
 
 // Load assets
-bool ModuleFadeToBlack::Start()
+bool ModuleFadeToBlack::Init()
 {
 	LOG("Preparing Fade Screen");
 	SDL_SetRenderDrawBlendMode(App->render->renderer, SDL_BLENDMODE_BLEND);
@@ -57,7 +58,7 @@ update_status ModuleFadeToBlack::Update()
 	}
 
 	// Finally render the black square with alpha on the screen
-	SDL_SetRenderDrawColor(App->render->renderer, 0, 0, 0, (Uint8)(normalized * 255.0f));
+	SDL_SetRenderDrawColor(App->render->renderer, 0, 0, 0, (Uint8)(normalized* 255.0f));
 	SDL_RenderFillRect(App->render->renderer, &screen);
 
 	return UPDATE_CONTINUE;

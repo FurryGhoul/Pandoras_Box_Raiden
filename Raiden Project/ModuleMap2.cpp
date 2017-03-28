@@ -34,7 +34,6 @@ update_status ModuleMap2::Update()
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
 	{
 		App->fade->FadeToBlack(this, App->StageClear1, 1.0f);
-		App->audio_2->Close();
 		
 	}
 	return UPDATE_CONTINUE;

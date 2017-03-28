@@ -31,8 +31,6 @@ update_status ModuleMap1::Update()
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
 	{
 		App->fade->FadeToBlack(this, App->map_2, 1.0f);
-		App->audio->Close();
-		App->audio_2->Init();
 		xmap = -100;
 		ymap = -1718;
 	}

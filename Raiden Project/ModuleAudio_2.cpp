@@ -1,7 +1,7 @@
 #include "Globals.h"
 #include "Application.h"
 #include "ModuleAudio_2.h"
-
+#include "ModuleMap2.h"
 ModuleAudio2::ModuleAudio2() : Module()
 {
 
@@ -31,6 +31,20 @@ bool ModuleAudio2::Init()
 		LOG("An error has ocurred while reproducing the audio %s", SDL_GetError())
 	}
 	return true;
+}
+update_status ModuleAudio2::Update()
+{
+	if (App->map_2->IsEnabled() && playing == false)
+	{
+ 		Init();
+		playing = true;
+	}
+	if (!(App->map_2->IsEnabled()) && playing == true)
+	{
+		playing = false;
+		Close();
+	}
+	return UPDATE_CONTINUE;
 }
 
 Mix_Music* const ModuleAudio2::Load(const char* path)

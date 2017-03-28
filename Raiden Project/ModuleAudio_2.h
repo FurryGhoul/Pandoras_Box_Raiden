@@ -17,11 +17,12 @@ public:
 
 	bool Init();
 	Mix_Music* const Load(const char* path);
+	update_status Update();
 	bool CleanUp();
 	bool Close();
 public:
 	Mix_Music* music2;
-
+	bool playing = false;
 
 };
 
