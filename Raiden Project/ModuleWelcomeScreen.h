@@ -19,7 +19,7 @@ public:
 
 public:
 	SDL_Rect ground;
-	SDL_Texture *Welcome;
+	SDL_Texture *Welcome = nullptr;
 	int xmap = 0;
 	int ymap = 0;
 };

@@ -48,5 +48,8 @@ update_status ModuleWelcomeScreen::Update()
 
 bool ModuleWelcomeScreen::CleanUp()
 {
+	LOG("Unloading space scene");
+
+	App->textures->Unload(Welcome);
 	return true;
 }
