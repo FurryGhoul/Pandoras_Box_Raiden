@@ -14,8 +14,8 @@ ModulePlayer::ModulePlayer()
 	graphics = NULL;
 	current_animation = NULL;
 
-	position.x = 150;
-	position.y = 150;
+	position.x = 305;
+	position.y = 620;
 
 	// idle animation (just the ship)
 	idle.PushBack({ 3, 2, 22, 28});
