@@ -58,9 +58,9 @@ bool ModulePlayer::CleanUp()
 // Update: draw background
 update_status ModulePlayer::Update()
 {
-	int speed = 2;
+	int speed = 1;
 
-	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
+	if (App->input->keyboard[SDL_SCANCODE_A])
 	{
 		position.x -= speed;
 
@@ -72,7 +72,7 @@ update_status ModulePlayer::Update()
 		}
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT)
+	if (App->input->keyboard[SDL_SCANCODE_D])
 	{
 		position.x += speed;
 
@@ -84,34 +84,31 @@ update_status ModulePlayer::Update()
 		}
 	}
 
-     if (App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_REPEAT)
+     if (App->input->keyboard[SDL_SCANCODE_S])
 	{
 		position.y += speed;
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT)
+	if (App->input->keyboard[SDL_SCANCODE_W])
 	{
 		position.y -= speed;
 	}
 
 	// TODO 3: Shoot lasers when the player hits SPACE
 
-	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_REPEAT
-		&& App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT)
+	if (App->input->keyboard[SDL_SCANCODE_S]
+		&& App->input->keyboard[SDL_SCANCODE_W])
 	{ 
 		current_animation = &idle;
 		ideling = false;
 	}
-	if (App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT
-		&& App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
+	if (App->input->keyboard[SDL_SCANCODE_D]
+		&& App->input->keyboard[SDL_SCANCODE_A])
 	{
 		current_animation = &idle;
 		ideling = false;
 	}
-	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_IDLE
-		&& App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_IDLE 
-		&& App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_IDLE 
-		&& App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_IDLE && ideling == false)
+	if (!(App->input->keyboard[SDL_SCANCODE_S] || App->input->keyboard[SDL_SCANCODE_D] || App->input->keyboard[SDL_SCANCODE_W] || App->input->keyboard[SDL_SCANCODE_A]) && ideling == false)
 	{
 		current_animation = &idle;
 		ideling = true;

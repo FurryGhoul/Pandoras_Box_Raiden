@@ -7,10 +7,7 @@
 #include "ModuleMap2.h"
 
 ModuleInput::ModuleInput() : Module()
-{
-	for (uint i = 0; i < MAX_KEYS; ++i)
-		keyboard[i] = KEY_IDLE;
-}
+{}
 
 // Destructor
 ModuleInput::~ModuleInput()
@@ -37,8 +34,7 @@ update_status ModuleInput::Update()
 {
 	SDL_PumpEvents();
 
-	const Uint8* keys = SDL_GetKeyboardState(NULL);
-
+	keyboard = SDL_GetKeyboardState(NULL);
 	
 	if (keyboard[SDL_SCANCODE_ESCAPE])
 	{
@@ -47,42 +43,12 @@ update_status ModuleInput::Update()
 
 	App->map_1->ymap += 6;
 		
-	for (int i = 0; i < MAX_KEYS; ++i)
-	{
-		if (keys[i] == 1)
-		{
-			if (keyboard[i] == KEY_IDLE)
-				keyboard[i] = KEY_DOWN;
-			else
-				keyboard[i] = KEY_REPEAT;
-		}
-		else
-		{
-			if (keyboard[i] == KEY_REPEAT || keyboard[i] == KEY_DOWN)
-				keyboard[i] = KEY_UP;
-			else
-				keyboard[i] = KEY_IDLE;
-		}
-	}
-	if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_REPEAT)
+	if (keyboard[SDL_SCANCODE_DOWN])
 	{
 		App->map_1->ymap -= 6;
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_STATE::KEY_REPEAT)
-	{
-		if (App->map_1->IsEnabled() && App->map_1->xmap >= -383)
-		{
-			App->map_1->xmap -= 6;
-		}
-
-		if (App->map_2->IsEnabled() && App->map_1->xmap >= -231)
-		{
-			App->map_1->xmap -= 6;
-		}
-	}
-
-	if (App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_STATE::KEY_REPEAT)
+	if (keyboard[SDL_SCANCODE_LEFT])
 	{
 		if (App->map_1->IsEnabled() && App->map_1->xmap <= -5)
 		{
@@ -92,6 +58,19 @@ update_status ModuleInput::Update()
 		if (App->map_2->IsEnabled() && App->map_1->xmap <= -3)
 		{
 			App->map_1->xmap += 6;
+		}
+	}
+
+	if (keyboard[SDL_SCANCODE_RIGHT])
+	{
+		if (App->map_1->IsEnabled() && App->map_1->xmap >= -383)
+		{
+			App->map_1->xmap -= 6;
+		}
+
+		if (App->map_2->IsEnabled() && App->map_1->xmap >= -231)
+		{
+			App->map_1->xmap -= 6;
 		}
 	}
 	// TODO 1: find out how to detect if the ESC key was pressed
