@@ -29,7 +29,6 @@ bool ModuleWelcomeScreen::Init()
 	App->StageClear1->Disable();
 	App->audio->Close();
 	App->audio_2->Close();
-	App->player->Disable();
 	App->particles->Disable();
 	ground = { 0, 0 ,224 * 3 ,256 * 3};
 	Welcome = App->textures->Load("Assets/WelcomeScreen.png");
@@ -46,7 +45,6 @@ update_status ModuleWelcomeScreen::Update()
 		App->fade->FadeToBlack(this, App->map_1, 1.0f);
 		App->map_1->xmap = -192;
 		App->map_1->ymap = -9020;
-		App->player->Enable();
 		App->particles->Enable();
 	}
 	return UPDATE_CONTINUE;

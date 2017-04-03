@@ -36,8 +36,6 @@ update_status ModuleMap2::Update()
 	if (App->input->keyboard[SDL_SCANCODE_F])
 	{
 		App->fade->FadeToBlack(this, App->StageClear1, 1.0f);
-		App->player->Disable();
-		App->particles->Disable();
 		
 	}
 	return UPDATE_CONTINUE;	

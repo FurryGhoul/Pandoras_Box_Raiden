@@ -62,9 +62,21 @@ bool ModulePlayer::CleanUp()
 // Update: draw background
 update_status ModulePlayer::Update()
 {
-	int speed = 3;
+	
+	if ((App->map_1->IsEnabled() || App->map_2->IsEnabled()) && moving == false)
+	{
+		Enable();
+		moving = true;
+	}
 
-	if (App->input->keyboard[SDL_SCANCODE_A])
+	if (!(App->map_1->IsEnabled()) && !(App->map_2->IsEnabled()) && moving == true)
+	{
+		moving = false;
+		Disable();
+	}
+
+	int speed = 3;
+	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
 	{
 		position.x -= speed;
 
@@ -72,11 +84,10 @@ update_status ModulePlayer::Update()
 		{
 			down.Reset();
 			current_animation = &down;
-			ideling = false;
 		}
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_D])
+	if (App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT)
 	{
 		position.x += speed;
 
@@ -84,16 +95,15 @@ update_status ModulePlayer::Update()
 		{
 			up.Reset();
 			current_animation = &up;
-			ideling = false;
 		}
 	}
 
-     if (App->input->keyboard[SDL_SCANCODE_S])
+	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_REPEAT)
 	{
 		position.y += speed;
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_W])
+	 if (App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT)
 	{
 		position.y -= speed;
 
@@ -105,18 +115,19 @@ update_status ModulePlayer::Update()
 		&& App->input->keyboard[SDL_SCANCODE_W])
 	{ 
 		current_animation = &idle;
-		ideling = false;
 	}
 	if (App->input->keyboard[SDL_SCANCODE_D]
 		&& App->input->keyboard[SDL_SCANCODE_A])
 	{
 		current_animation = &idle;
-		ideling = false;
 	}
-	if (!(App->input->keyboard[SDL_SCANCODE_S] || App->input->keyboard[SDL_SCANCODE_D] || App->input->keyboard[SDL_SCANCODE_W] || App->input->keyboard[SDL_SCANCODE_A]) && ideling == false)
+
+	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_IDLE
+		&& App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_IDLE
+		&& App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_IDLE
+		&& App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_IDLE)
 	{
 		current_animation = &idle;
-		ideling = true;
 	}
 
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
