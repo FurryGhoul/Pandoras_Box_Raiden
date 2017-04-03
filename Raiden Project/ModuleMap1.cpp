@@ -28,7 +28,7 @@ bool ModuleMap1::Init()
 update_status ModuleMap1::Update()
 {
 	App->render->Blit(Map1, xmap, ymap, &ground);
-	if (App->input->keyboard[SDL_SCANCODE_SPACE])
+	if (App->input->keyboard[SDL_SCANCODE_F])
 	{
 		App->fade->FadeToBlack(this, App->map_2, 1.0f);		
 	}

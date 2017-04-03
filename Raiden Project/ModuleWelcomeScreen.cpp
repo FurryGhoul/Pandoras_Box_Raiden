@@ -37,7 +37,7 @@ update_status ModuleWelcomeScreen::Update()
 {
 
 	App->render->Blit(Welcome, 0, 0, &ground);
-	if (App->input->keyboard[SDL_SCANCODE_SPACE])
+	if (App->input->keyboard[SDL_SCANCODE_F])
 	{
 		App->fade->FadeToBlack(this, App->map_1, 1.0f);
 		App->map_1->xmap = -192;

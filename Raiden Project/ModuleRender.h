@@ -18,7 +18,7 @@ public:
 	update_status PreUpdate();
 	bool CleanUp();
 
-	bool Blit(SDL_Texture* texture, int x, int y, SDL_Rect* section = nullptr);
+	bool Blit(SDL_Texture* texture, int x, int y, SDL_Rect* section = nullptr, int w = 0, int h = 0);
 
 public:
 	SDL_Renderer* renderer = nullptr;

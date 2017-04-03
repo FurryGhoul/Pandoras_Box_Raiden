@@ -5,6 +5,7 @@
 #include "ModuleRender.h"
 #include "ModulePlayer.h"
 #include "SDL/include/SDL.h"
+#include "ModuleParticles.h"
 
 ModulePlayer::ModulePlayer()
 {
@@ -58,7 +59,7 @@ bool ModulePlayer::CleanUp()
 // Update: draw background
 update_status ModulePlayer::Update()
 {
-	int speed = 1;
+	int speed = 3;
 
 	if (App->input->keyboard[SDL_SCANCODE_A])
 	{
@@ -92,6 +93,7 @@ update_status ModulePlayer::Update()
 	if (App->input->keyboard[SDL_SCANCODE_W])
 	{
 		position.y -= speed;
+
 	}
 
 	// TODO 3: Shoot lasers when the player hits SPACE
@@ -113,9 +115,24 @@ update_status ModulePlayer::Update()
 		current_animation = &idle;
 		ideling = true;
 	}
-	// Draw everything --------------------------------------
 
-	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
+	if (App->input->keyboard[SDL_SCANCODE_SPACE])
+	{ 
+		App->particles->AddParticle(App->particles->laser, position.x + speed + 21, position.y - 18);
+	}
+
+	// Draw everything --------------------------------------
+	if (current_animation == &idle)
+	{
+		player_w = 22 * 3;
+		player_h = 28 * 3;
+	}
+	else
+	{
+		player_w = 17 * 3;
+		player_h = 28 * 3;
+	}
+	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
 
 	return UPDATE_CONTINUE;
 }
