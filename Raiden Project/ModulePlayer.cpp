@@ -11,15 +11,15 @@ ModulePlayer::ModulePlayer()
 	graphics = NULL;
 	current_animation = NULL;
 
-	position.x = 0;
-	position.y = 0;
+	position.x = 150;
+	position.y = 150;
 
 	// idle animation (just the ship)
-	idle.PushBack({ 3, 2, 22, 28 });
+	idle.PushBack({ 3, 2, 22, 28});
 
 	// move upwards
-	up.PushBack({ 53, 2, 19, 28 });
-	up.PushBack({ 97, 2, 32, 28 });
+	up.PushBack({ 53, 2, 19, 28});
+	up.PushBack({ 97, 2, 32, 28});
 	up.loop = false;
 	up.speed = 0.1f;
 
