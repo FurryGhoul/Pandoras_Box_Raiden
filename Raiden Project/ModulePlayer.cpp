@@ -16,16 +16,18 @@ ModulePlayer::ModulePlayer()
 
 	// idle animation (just the ship)
 	idle.PushBack({ 3, 2, 22, 28});
-
+	idle.loop = false;
 	// move upwards
+
 	up.PushBack({ 53, 2, 19, 28});
-	up.PushBack({ 97, 2, 32, 28});
+	up.PushBack({ 97, 2, 17, 28});
 	up.loop = false;
 	up.speed = 0.1f;
 
 	// Move down
+
 	down.PushBack({ 131, 2, 19, 28 });
-	down.PushBack({ 175, 2, 32, 28 });
+	down.PushBack({ 175, 2, 17, 28 });
 	down.loop = false;
 	down.speed = 0.1f;
 }
@@ -66,6 +68,7 @@ update_status ModulePlayer::Update()
 		{
 			down.Reset();
 			current_animation = &down;
+			ideling = false;
 		}
 	}
 
@@ -77,10 +80,11 @@ update_status ModulePlayer::Update()
 		{
 			up.Reset();
 			current_animation = &up;
+			ideling = false;
 		}
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_S])
+     if (App->input->keyboard[SDL_SCANCODE_S])
 	{
 		position.y += speed;
 	}
@@ -96,9 +100,19 @@ update_status ModulePlayer::Update()
 		&& App->input->keyboard[SDL_SCANCODE_W])
 	{ 
 		current_animation = &idle;
+		ideling = false;
 	}
-
-	current_animation = &idle;
+	if (App->input->keyboard[SDL_SCANCODE_D]
+		&& App->input->keyboard[SDL_SCANCODE_A])
+	{
+		current_animation = &idle;
+		ideling = false;
+	}
+	if (!(App->input->keyboard[SDL_SCANCODE_S] || App->input->keyboard[SDL_SCANCODE_D] || App->input->keyboard[SDL_SCANCODE_W] || App->input->keyboard[SDL_SCANCODE_A]) && ideling == false)
+	{
+		current_animation = &idle;
+		ideling = true;
+	}
 	// Draw everything --------------------------------------
 
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
