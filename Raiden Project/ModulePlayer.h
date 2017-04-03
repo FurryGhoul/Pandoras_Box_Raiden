@@ -28,6 +28,8 @@ public:
 	bool ideling = false;
 	int player_w;
 	int player_h;
+	bool moving = false;
+
 };
 
 #endif

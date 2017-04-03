@@ -10,6 +10,8 @@
 #include "ModuleAudio_1.h"
 #include "ModuleAudio_2.h"
 #include "ModuleFadeToBlack.h"
+#include "ModulePlayer.h"
+#include "ModuleParticles.h"
 ModuleMap2::ModuleMap2() : Module()
 {
 
@@ -34,6 +36,8 @@ update_status ModuleMap2::Update()
 	if (App->input->keyboard[SDL_SCANCODE_F])
 	{
 		App->fade->FadeToBlack(this, App->StageClear1, 1.0f);
+		App->player->Disable();
+		App->particles->Disable();
 		
 	}
 	return UPDATE_CONTINUE;	

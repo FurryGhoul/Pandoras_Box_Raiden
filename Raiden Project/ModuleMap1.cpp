@@ -8,6 +8,8 @@
 #include "ModuleAudio_1.h"
 #include "ModuleAudio_2.h"
 #include "ModuleFadeToBlack.h"
+#include "ModulePlayer.h"
+#include "ModuleParticles.h"
 ModuleMap1::ModuleMap1() : Module()
 {
 	
@@ -30,7 +32,7 @@ update_status ModuleMap1::Update()
 	App->render->Blit(Map1, xmap, ymap, &ground);
 	if (App->input->keyboard[SDL_SCANCODE_F])
 	{
-		App->fade->FadeToBlack(this, App->map_2, 1.0f);		
+		App->fade->FadeToBlack(this, App->map_2, 1.0f);
 	}
 
 	return UPDATE_CONTINUE;

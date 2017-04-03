@@ -6,6 +6,8 @@
 #include "ModulePlayer.h"
 #include "SDL/include/SDL.h"
 #include "ModuleParticles.h"
+#include "ModuleMap1.h"
+#include "ModuleMap2.h"
 
 ModulePlayer::ModulePlayer()
 {
@@ -45,6 +47,7 @@ bool ModulePlayer::Init()
 
 	return true;
 }
+
 
 // Unload assets
 bool ModulePlayer::CleanUp()
