@@ -5,6 +5,7 @@
 #include "ModuleRender.h"
 #include "ModulePlayer.h"
 #include "SDL/include/SDL.h"
+#include "ModuleParticles.h"
 
 ModulePlayer::ModulePlayer()
 {
@@ -114,6 +115,12 @@ update_status ModulePlayer::Update()
 		current_animation = &idle;
 		ideling = true;
 	}
+
+	if (App->input->keyboard[SDL_SCANCODE_SPACE])
+	{ 
+		App->particles->AddParticle(App->particles->laser, position.x + speed + 21, position.y - 18);
+	}
+
 	// Draw everything --------------------------------------
 	if (current_animation == &idle)
 	{

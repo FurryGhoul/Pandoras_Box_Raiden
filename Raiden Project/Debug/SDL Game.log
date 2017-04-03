@@ -1,15 +1,28 @@
-﻿Build started 03/04/2017 17:46:52.
+﻿Build started 03/04/2017 23:06:05.
      1>Project "C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\SDL Game.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Application.cpp ModulePlayer.cpp
-         ModulePlayer.cpp
-     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(101): error C2664: 'bool ModuleRender::Blit(SDL_Texture *,int,int,SDL_Rect *)' : cannot convert argument 4 from 'int' to 'SDL_Rect *'
-                 Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
-         Generating Code...
-         Skipping... (no relevant changes detected)
-         Application.cpp
-     1>Done Building Project "C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\SDL Game.vcxproj" (Build target(s)) -- FAILED.
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ModuleParticles.cpp
+         ModuleParticles.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.lib" /MACHINE:X86 Debug\Application.obj
+         Debug\Globals.obj
+         Debug\Main.obj
+         Debug\ModuleAudio_1.obj
+         Debug\ModuleAudio_2.obj
+         Debug\ModuleInput.obj
+         Debug\ModuleParticles.obj
+         Debug\ModulePlayer.obj
+         Debug\ModuleRender.obj
+         Debug\ModuleStageClear1.obj
+         Debug\ModuleTextures.obj
+         Debug\ModuleWindow.obj
+         Debug\ModuleMap1.obj
+         Debug\ModuleMap2.obj
+         Debug\ModuleWelcomeScreen.obj
+         Debug\ModuleFadeToBlack.obj
+         SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+     1>Done Building Project "C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\SDL Game.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.28
+Time Elapsed 00:00:00.43
