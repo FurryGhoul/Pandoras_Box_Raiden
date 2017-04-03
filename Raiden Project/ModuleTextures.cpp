@@ -76,32 +76,26 @@ SDL_Texture* const ModuleTextures::Load(const char* path)
 		LOG("An error has ocurred when createing the texture: %s", SDL_GetError())
 			return NULL;
 	}
-	// TODO 3: Once your have the SDL_surface*, you need to create
-	// a texture from it to return it (check for errors again)
+
 	SDL_FreeSurface(surface);
-	// TODO 4: Before leaving, remember to free the surface and
-	// add the texture to our own array so we can properly free them
-
-	return textures[0];
-}
-
-
-bool ModuleTextures::Unload(SDL_Texture * texture)
-{
-	bool ret = false;
-
-	if (texture != nullptr)
+	/*
+	bool ModuleTextures::Unload(SDL_Texture* textu)
 	{
-		for (int i = 0; i < MAX_TEXTURES; ++i)
+		bool ret = false;
+
+		for (uint i = 0; i < MAX_TEXTURES; ++i)
 		{
-			if (textures[i] == texture)
+			if (texture == textures[i])
 			{
+				SDL_DestroyTexture(textures[i]);
 				textures[i] = nullptr;
 				ret = true;
 				break;
 			}
 		}
-		SDL_DestroyTexture(texture);
+
+		return ret;
 	}
-	return ret;
+	*/
+	return textures[0];
 }

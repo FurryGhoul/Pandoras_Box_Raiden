@@ -10,6 +10,7 @@
 #include "ModuleWelcomeScreen.h"
 #include "ModuleStageClear1.h"
 #include "ModuleFadeToBlack.h"
+#include "ModulePlayer.h"
 
 
 Application::Application()
@@ -25,6 +26,7 @@ Application::Application()
 	modules[8] = WelcomeScreen = new ModuleWelcomeScreen();
 	modules[9] = StageClear1 = new ModuleStageClear1();
 	modules[10] = fade = new ModuleFadeToBlack();
+	modules[11] = player = new ModulePlayer();
 
 	
 }	

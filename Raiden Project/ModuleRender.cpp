@@ -39,7 +39,12 @@ bool ModuleRender::Init()
 // Called every draw update
 update_status ModuleRender::PreUpdate()
 {
-	SDL_RenderClear(renderer);
+	SDL_SetRenderDrawColor(App->render->renderer,0, 0, 0, 255);
+
+	if (SDL_RenderClear(App->render->renderer) == -1)
+	{
+		LOG("An error has ocurred when clearing the screen %s", SDL_GetError());
+	}
 
 	// TODO 7: Clear the screen to black before starting every frame
 	
