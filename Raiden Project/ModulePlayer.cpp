@@ -46,7 +46,7 @@ bool ModulePlayer::Init()
 	LOG("Loading player");
 
 	graphics = App->textures->Load("Assets/Player1.png");
-
+	
 	return true;
 }
 
@@ -65,18 +65,9 @@ bool ModulePlayer::CleanUp()
 update_status ModulePlayer::Update()
 {
 	
-	if ((App->map_1->IsEnabled() || App->map_2->IsEnabled()) && moving == false)
-	{
-		Enable();
-		moving = true;
-	}
 
-	if (!(App->map_1->IsEnabled()) && !(App->map_2->IsEnabled()) && moving == true)
-	{
-		moving = false;
-		Disable();
-	}
 
+		
 	int speed = 3;
 	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
 	{
@@ -147,7 +138,11 @@ update_status ModulePlayer::Update()
 		player_w = 17 * 3;
 		player_h = 28 * 3;
 	}
-	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
 
+
+	if (App->map_1->IsEnabled() || App->map_2->IsEnabled())
+	{ 
+	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
+    }
 	return UPDATE_CONTINUE;
 }

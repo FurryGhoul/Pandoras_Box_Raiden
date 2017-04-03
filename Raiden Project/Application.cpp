@@ -26,8 +26,8 @@ Application::Application()
 	modules[6] = map_2 = new ModuleMap2();
 	modules[8] = WelcomeScreen = new ModuleWelcomeScreen();
 	modules[9] = StageClear1 = new ModuleStageClear1();
-	modules[10] = fade = new ModuleFadeToBlack();
-	modules[11] = player = new ModulePlayer();
+	modules[10] = player = new ModulePlayer();
+	modules[11] = fade = new ModuleFadeToBlack();
 	modules[12] = particles = new ModuleParticles();
 
 	
