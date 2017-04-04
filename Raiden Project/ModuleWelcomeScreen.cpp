@@ -30,6 +30,7 @@ bool ModuleWelcomeScreen::Init()
 	App->audio->Close();
 	App->audio_2->Close();
 	App->particles->Disable();
+	App->player->Disable();
 	ground = { 0, 0 ,224 * 3 ,256 * 3};
 	Welcome = App->textures->Load("Assets/WelcomeScreen.png");
 	
@@ -38,6 +39,11 @@ bool ModuleWelcomeScreen::Init()
 
 update_status ModuleWelcomeScreen::Update()
 {
+	if (App->particles->IsEnabled() && App->player->IsEnabled())
+	{
+		App->particles->Disable();
+		App->player->Disable();
+	}
 
 	App->render->Blit(Welcome, 0, 0, &ground);
 	if (App->input->keyboard[SDL_SCANCODE_F])
@@ -45,7 +51,6 @@ update_status ModuleWelcomeScreen::Update()
 		App->fade->FadeToBlack(this, App->map_1, 1.0f);
 		App->map_1->xmap = -192;
 		App->map_1->ymap = -9020;
-		App->particles->Enable();
 	}
 	return UPDATE_CONTINUE;
 }

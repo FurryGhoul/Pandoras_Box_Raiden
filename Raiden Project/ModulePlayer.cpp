@@ -140,9 +140,8 @@ update_status ModulePlayer::Update()
 	}
 
 
-	if (App->map_1->IsEnabled() || App->map_2->IsEnabled())
-	{ 
+
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
-    }
+   
 	return UPDATE_CONTINUE;
 }
