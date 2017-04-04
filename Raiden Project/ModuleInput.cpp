@@ -5,6 +5,7 @@
 #include "ModuleRender.h"
 #include "ModuleMap1.h"
 #include "ModuleMap2.h"
+#include "ModulePlayer.h"
 
 ModuleInput::ModuleInput() : Module()
 {
@@ -43,6 +44,12 @@ update_status ModuleInput::Update()
 	}
 
 	App->map_1->ymap += 6;
+
+	/*if (App->map_1->IsEnabled() && keyboard[SDL_SCANCODE_D] && App->player->position.x == 600 && App->map_1->xmap <= -5)
+	{
+		App->map_1->xmap += 6;
+	}*/
+
 		
 	const Uint8* keys = SDL_GetKeyboardState(NULL);
 
@@ -69,27 +76,27 @@ update_status ModuleInput::Update()
 		App->map_1->ymap -= 6;
 	}
 
-	if (keyboard[SDL_SCANCODE_LEFT])
+	if (keyboard[SDL_SCANCODE_A])
 	{
-		if (App->map_1->IsEnabled() && App->map_1->xmap <= -5)
+		if (App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->position.x < 50)
 		{
 			App->map_1->xmap += 6;
 		}
 
-		if (App->map_2->IsEnabled() && App->map_1->xmap <= -3)
+		if (App->map_2->IsEnabled() && App->map_1->xmap <= -3 && App->player->position.x < 50)
 		{
 			App->map_1->xmap += 6;
 		}
 	}
 
-	if (keyboard[SDL_SCANCODE_RIGHT])
+	if (keyboard[SDL_SCANCODE_D])
 	{
-		if (App->map_1->IsEnabled() && App->map_1->xmap >= -383)
+		if (App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player->position.x > 550)
 		{
 			App->map_1->xmap -= 6;
 		}
 
-		if (App->map_2->IsEnabled() && App->map_1->xmap >= -231)
+		if (App->map_2->IsEnabled() && App->map_1->xmap >= -231 && App->player->position.x > 550)
 		{
 			App->map_1->xmap -= 6;
 		}
