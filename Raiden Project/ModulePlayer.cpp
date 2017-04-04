@@ -64,14 +64,18 @@ bool ModulePlayer::CleanUp()
 // Update: draw background
 update_status ModulePlayer::Update()
 {
-	
-
-
-		
 	int speed = 3;
 	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
 	{
-		position.x -= speed;
+		if (App->map_1->IsEnabled() && position.x >= 20)
+		{
+			position.x -= speed;
+		}
+
+		if (App->map_2->IsEnabled() && position.x >= 20)
+		{
+			position.x -= speed;
+		}
 
 		if (current_animation != &left)
 		{
@@ -82,7 +86,15 @@ update_status ModulePlayer::Update()
 
 	if (App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT)
 	{
-		position.x += speed;
+		if (App->map_1->IsEnabled() && position.x <= 600)
+		{
+			position.x += speed;
+		}
+
+		if (App->map_2->IsEnabled() && position.x <= 600)
+		{
+			position.x += speed;
+		}
 
 		if (current_animation != &right)
 		{
@@ -122,7 +134,7 @@ update_status ModulePlayer::Update()
 		current_animation = &idle;
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_SPACE])
+	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
 	{ 
 		App->particles->AddParticle(App->particles->laser, position.x + speed + 21, position.y - 18);
 	}
