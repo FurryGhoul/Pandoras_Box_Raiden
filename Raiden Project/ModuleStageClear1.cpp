@@ -6,8 +6,10 @@
 #include "ModuleTextures.h"
 #include "ModuleMap1.h"
 #include "ModuleStageClear1.h"
-#include"ModuleInput.h"
+#include "ModuleInput.h"
 #include "ModuleFadeToBlack.h"
+#include "ModuleParticles.h"
+#include "ModulePlayer.h"
 ModuleStageClear1::ModuleStageClear1() : Module()
 {
 
@@ -27,6 +29,11 @@ bool ModuleStageClear1::Init()
 
 update_status ModuleStageClear1::Update()
 {
+	if (App->particles->IsEnabled() && App->player->IsEnabled())
+	{
+		App->particles->Disable();
+		App->player->Disable();
+	}
 
 	App->render->Blit(StageClear1, 0, 0, &ground);
 	if (App->input->keyboard[SDL_SCANCODE_F])
