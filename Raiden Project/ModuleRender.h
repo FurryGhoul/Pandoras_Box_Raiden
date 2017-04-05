@@ -7,6 +7,10 @@ struct SDL_Renderer;
 struct SDL_Texture;
 struct SDL_Rect;
 
+#include "SDL/include/SDL.h"
+#include "SDL_image/include/SDL_image.h"
+#pragma comment( lib, "SDL_image/libx86/SDL2_image.lib" )
+
 class ModuleRender : public Module
 {
 public:
@@ -19,11 +23,11 @@ public:
 	bool CleanUp();
 
 	bool Blit(SDL_Texture* texture, int x, int y, SDL_Rect* section = nullptr, int w = 0, int h = 0);
-	bool DrawQuad(const SDL_Rect& rect, Uint8 r, Uint8 g, Uint8 b, Uint8 a, bool use_camera);
+	bool DrawQuad(const SDL_Rect& rect, Uint8 r, Uint8 g, Uint8 b, Uint8 a, bool use_camera = true);
 
 public:
 	SDL_Renderer* renderer = nullptr;
-
+	SDL_Rect camera;
 	
 	
 };

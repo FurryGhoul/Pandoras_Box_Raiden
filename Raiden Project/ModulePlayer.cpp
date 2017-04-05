@@ -20,7 +20,8 @@ ModulePlayer::ModulePlayer()
 	// idle animation (just the ship)
 	idle.PushBack({ 3, 2, 22, 28});
 	idle.loop = false;
-	// move upwards
+
+	// move right
 
 	right.PushBack({ 3, 2, 22, 28 });
 	right.PushBack({ 53, 2, 19, 28});
@@ -28,12 +29,12 @@ ModulePlayer::ModulePlayer()
 	right.loop = false;
 	right.speed = 0.1f;
 
-	// Move down
+	// Move left
 
 	left.PushBack({ 3, 2, 22, 28 });
 	left.PushBack({ 131, 2, 19, 28 });
 	left.PushBack({ 175, 2, 17, 28 });
-	left.loop = false;
+	left.loop = true;
 	left.speed = 0.1f;
 }
 

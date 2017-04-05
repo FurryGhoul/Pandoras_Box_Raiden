@@ -6,7 +6,12 @@
 #include "SDL/include/SDL.h"
 
 ModuleRender::ModuleRender() : Module()
-{}
+{
+	camera.x = camera.y = 0;
+	camera.w = SCREEN_WIDTH;
+	camera.h = SCREEN_HEIGHT;
+
+}
 
 // Destructor
 ModuleRender::~ModuleRender()
@@ -80,8 +85,8 @@ bool ModuleRender::Blit(SDL_Texture* texture, int x, int y, SDL_Rect* section, i
 	SDL_Rect rect;
 	rect.x = x;
 	rect.y = y;
-	
-	if(section != nullptr)
+
+	if (section != nullptr)
 	{
 		rect.w = section->w;
 		rect.h = section->h;
@@ -95,6 +100,16 @@ bool ModuleRender::Blit(SDL_Texture* texture, int x, int y, SDL_Rect* section, i
 		rect.w = w;
 		rect.h = h;
 	}
+
+	if (SDL_RenderCopy(renderer, texture, section, &rect) != 0)
+	{
+		LOG("Cannot blit to screen. SDL_RenderCopy error: %s", SDL_GetError());
+		ret = false;
+	}
+
+
+	return ret;
+}
 
 	bool ModuleRender::DrawQuad(const SDL_Rect& rect, Uint8 r, Uint8 g, Uint8 b, Uint8 a, bool use_camera)
 	{
@@ -112,11 +127,11 @@ bool ModuleRender::Blit(SDL_Texture* texture, int x, int y, SDL_Rect* section, i
 			rec.h *= SCREEN_SIZE;
 		}
 
-	if(SDL_RenderCopy(renderer, texture, section, &rect) != 0)
-	{
-		LOG("Cannot blit to screen. SDL_RenderCopy error: %s", SDL_GetError());
-		ret = false;
-	}
+		if (SDL_RenderFillRect(renderer, &rec) != 0)
+		{
+			LOG("Cannot blit to screen. SDL_RenderCopy error: %s", SDL_GetError());
+			ret = false;
+		}
 
-	return ret;
-}
+		return ret;
+	}

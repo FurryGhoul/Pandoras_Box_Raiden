@@ -5,6 +5,9 @@
 
 #include "Module.h"
 
+#include "SDL/include/SDL.h"
+#include "SDL_image/include/SDL_image.h"
+#pragma comment( lib, "SDL_image/libx86/SDL2_image.lib" )
 enum COLLIDER_TYPE
 {
 	COLLIDER_NONE = -1,
