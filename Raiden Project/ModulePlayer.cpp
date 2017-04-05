@@ -21,17 +21,13 @@ ModulePlayer::ModulePlayer()
 	idle.PushBack({ 3, 2, 22, 28});
 	idle.loop = false;
 
-	// move right
-
-	right.PushBack({ 3, 2, 22, 28 });
+	// Move right
 	right.PushBack({ 53, 2, 19, 28});
 	right.PushBack({ 97, 2, 17, 28});
 	right.loop = false;
 	right.speed = 0.1f;
 
 	// Move left
-
-	left.PushBack({ 3, 2, 22, 28 });
 	left.PushBack({ 131, 2, 19, 28 });
 	left.PushBack({ 175, 2, 17, 28 });
 	left.loop = false;
@@ -118,7 +114,7 @@ update_status ModulePlayer::Update()
 
 	}
 
-	// TODO 3: Shoot lasers when the player hits SPACE
+	
 
 	if (App->input->keyboard[SDL_SCANCODE_S]
 		&& App->input->keyboard[SDL_SCANCODE_W])
@@ -138,9 +134,11 @@ update_status ModulePlayer::Update()
 		current_animation = &idle;
 	}
 
+      // TODO 3: Shoot lasers when the player hits SPACE
+
 	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
 	{ 
-		App->particles->AddParticle(App->particles->laser, position.x + speed + 21, position.y - 18);
+		App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT);
 	}
 
 	// Draw everything --------------------------------------

@@ -17,7 +17,7 @@ private:
 	int loops = 0;
 
 public:
-
+	 
 	void PushBack(const SDL_Rect& rect)
 	{
 		frames[last_frame++] = rect;
