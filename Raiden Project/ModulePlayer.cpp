@@ -9,6 +9,9 @@
 #include "ModuleMap1.h"
 #include "ModuleMap2.h"
 #include "ModuleCollision.h"
+#include "ModuleFadeToBlack.h"
+#include "ModuleEnemy.h"
+
 ModulePlayer::ModulePlayer()
 {
 	graphics = NULL;
@@ -62,8 +65,14 @@ bool ModulePlayer::CleanUp()
 // Update: draw background
 update_status ModulePlayer::Update()
 {
+	OnCollision(Player, App->enemy->Enemy);
+
 	int speed = 3;
-	Player->SetPos(position.x, position.y);
+
+	if (Player != nullptr)
+	{
+		Player->SetPos(position.x, position.y);
+	}
 	
 	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
 	{
@@ -158,4 +167,13 @@ update_status ModulePlayer::Update()
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
    
 	return UPDATE_CONTINUE;
+}
+
+void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
+{
+	if (Player != nullptr && Player->CheckCollision(c2->rect))
+	{
+		App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
+		Player = nullptr;
+	}
 }

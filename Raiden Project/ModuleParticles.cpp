@@ -7,6 +7,9 @@
 #include "ModulePlayer.h"
 #include "ModuleAudio_1.h"
 #include "SDL/include/SDL_timer.h"
+#include "ModuleFadeToBlack.h"
+#include "ModuleMap1.h"
+#include "ModuleStageClear1.h"
 
 ModuleParticles::ModuleParticles()
 {
@@ -28,7 +31,7 @@ bool ModuleParticles::Init()
 	laser.anim.PushBack({ 59, 100, 6, 6 });
 	laser.anim.loop = false;
 	laser.anim.speed = 1.0f;
-	laser.life = 5000;
+	laser.life = 2100;
 	laser.speed.y = -5;
 
 
@@ -110,6 +113,7 @@ void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
 		// Always destroy particles that collide
 		if (active[i] != nullptr && active[i]->collider == c1)
 		{
+			App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->StageClear1);
 			delete active[i];
 			active[i] = nullptr;
 			break;

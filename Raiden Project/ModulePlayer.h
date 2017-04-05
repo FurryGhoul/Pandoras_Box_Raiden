@@ -16,6 +16,7 @@ public:
 	bool Init();
 	update_status Update();
 	bool CleanUp();
+	void OnCollision(Collider* c1, Collider* c2);
 
 public:
 
@@ -29,7 +30,7 @@ public:
 	int player_w;
 	int player_h;
 	bool moving = false;
-	Collider* Player;
+	Collider* Player = nullptr;
 };
 
 #endif

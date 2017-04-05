@@ -29,7 +29,7 @@ public:
 	int enemy_w = 23*3-2;
 	int enemy_h = 30*2;
 	bool moving = false;
-	Collider* Enemy;
+	Collider* Enemy = nullptr;
 };
 
 #endif
