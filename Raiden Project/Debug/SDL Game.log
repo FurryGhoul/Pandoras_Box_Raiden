@@ -1,28 +1,53 @@
-﻿Build started 03/04/2017 23:06:05.
+﻿Build started 05/04/2017 17:47:46.
      1>Project "C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\SDL Game.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ModuleParticles.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Application.cpp ModuleCollision.cpp ModuleParticles.cpp ModuleRender.cpp ModuleTextures.cpp
+         ModuleTextures.cpp
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulerender.h(22): error C2061: syntax error : identifier 'Uint8'
+         ModuleRender.cpp
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulerender.h(22): error C2061: syntax error : identifier 'Uint8'
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulerender.cpp(101): error C2601: 'ModuleRender::DrawQuad' : local function definitions are illegal
+                 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulerender.cpp(78): this line contains a '{' which has not yet been matched
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulerender.cpp(101): fatal error C1903: unable to recover from previous error(s); stopping compilation
          ModuleParticles.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.lib" /MACHINE:X86 Debug\Application.obj
-         Debug\Globals.obj
-         Debug\Main.obj
-         Debug\ModuleAudio_1.obj
-         Debug\ModuleAudio_2.obj
-         Debug\ModuleInput.obj
-         Debug\ModuleParticles.obj
-         Debug\ModulePlayer.obj
-         Debug\ModuleRender.obj
-         Debug\ModuleStageClear1.obj
-         Debug\ModuleTextures.obj
-         Debug\ModuleWindow.obj
-         Debug\ModuleMap1.obj
-         Debug\ModuleMap2.obj
-         Debug\ModuleWelcomeScreen.obj
-         Debug\ModuleFadeToBlack.obj
-         SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
-     1>Done Building Project "C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\SDL Game.vcxproj" (Build target(s)).
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulerender.h(22): error C2061: syntax error : identifier 'Uint8'
+         ModuleCollision.cpp
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulecollision.h(22): error C2079: 'Collider::rect' uses undefined struct 'SDL_Rect'
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulecollision.h(31): error C2440: 'initializing' : cannot convert from 'SDL_Rect' to 'int'
+                 Source or target has incomplete type
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulecollision.h(31): error C2439: 'Collider::rect' : member could not be initialized
+                 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulecollision.h(22) : see declaration of 'Collider::rect'
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulecollision.h(35): error C2228: left of '.x' must have class/struct/union
+                 type is 'int'
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulecollision.h(36): error C2228: left of '.y' must have class/struct/union
+                 type is 'int'
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulecollision.cpp(84): error C2664: 'bool Collider::CheckCollision(const SDL_Rect &) const' : cannot convert argument 1 from 'int' to 'const SDL_Rect &'
+                 Reason: cannot convert from 'int' to 'const SDL_Rect'
+                 Source or target has incomplete type
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulecollision.cpp(117): error C2660: 'ModuleRender::DrawQuad' : function does not take 5 arguments
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulecollision.cpp(120): error C2660: 'ModuleRender::DrawQuad' : function does not take 5 arguments
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulecollision.cpp(123): error C2660: 'ModuleRender::DrawQuad' : function does not take 5 arguments
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulecollision.cpp(126): error C2660: 'ModuleRender::DrawQuad' : function does not take 5 arguments
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulecollision.cpp(129): error C2660: 'ModuleRender::DrawQuad' : function does not take 5 arguments
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulecollision.cpp(132): error C2660: 'ModuleRender::DrawQuad' : function does not take 5 arguments
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulecollision.cpp(163): error C2664: 'Collider::Collider(const Collider &)' : cannot convert argument 1 from 'SDL_Rect' to 'SDL_Rect'
+                 Source or target has incomplete type
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulecollision.cpp(190): error C2027: use of undefined type 'SDL_Rect'
+                 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulerender.h(8) : see declaration of 'SDL_Rect'
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulecollision.cpp(190): error C2228: left of '.y' must have class/struct/union
+                 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulerender.h(8) : see declaration of 'SDL_Rect'
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulecollision.cpp(190): error C2228: left of '.h' must have class/struct/union
+                 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulerender.h(8) : see declaration of 'SDL_Rect'
+                 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulerender.h(8) : see declaration of 'SDL_Rect'
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulecollision.cpp(190): error C2228: left of '.x' must have class/struct/union
+                 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulerender.h(8) : see declaration of 'SDL_Rect'
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulecollision.cpp(190): error C2228: left of '.w' must have class/struct/union
+                 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulerender.h(8) : see declaration of 'SDL_Rect'
+         Application.cpp
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulerender.h(22): error C2061: syntax error : identifier 'Uint8'
+         Generating Code...
+     1>Done Building Project "C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\SDL Game.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.43
+Time Elapsed 00:00:00.65

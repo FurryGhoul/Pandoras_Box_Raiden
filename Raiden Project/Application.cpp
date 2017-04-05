@@ -12,6 +12,7 @@
 #include "ModuleFadeToBlack.h"
 #include "ModulePlayer.h"
 #include "ModuleParticles.h"
+#include "ModuleCollision.h"
 
 
 Application::Application()
@@ -27,8 +28,9 @@ Application::Application()
 	modules[8] = WelcomeScreen = new ModuleWelcomeScreen();
 	modules[9] = StageClear1 = new ModuleStageClear1();
 	modules[10] = player = new ModulePlayer();
-	modules[11] = fade = new ModuleFadeToBlack();
-	modules[12] = particles = new ModuleParticles();
+	modules[11] = particles = new ModuleParticles();
+	modules[12] = collision = new ModuleCollision();
+	modules[13] = fade = new ModuleFadeToBlack();
 
 	
 }	
