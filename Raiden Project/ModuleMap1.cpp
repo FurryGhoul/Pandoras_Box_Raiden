@@ -10,6 +10,7 @@
 #include "ModuleFadeToBlack.h"
 #include "ModulePlayer.h"
 #include "ModuleParticles.h"
+#include "ModuleEnemy.h"
 ModuleMap1::ModuleMap1() : Module()
 {
 	
@@ -34,6 +35,7 @@ update_status ModuleMap1::Update()
 	{
 		App->particles->Enable();
 		App->player->Enable();
+		//App->enemy->Enable();
 	}
 	App->render->Blit(Map1, xmap, ymap, &ground);
 	if (App->input->keyboard[SDL_SCANCODE_F])

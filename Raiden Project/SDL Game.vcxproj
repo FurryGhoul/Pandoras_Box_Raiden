@@ -74,6 +74,7 @@
     <ClInclude Include="Globals.h" />
     <ClInclude Include="Animation.h" />
     <ClInclude Include="ModuleCollision.h" />
+    <ClInclude Include="ModuleEnemy.h" />
     <ClInclude Include="ModuleParticles.h" />
     <ClInclude Include="p2Point.h" />
     <ClInclude Include="ModuleFadeToBlack.h" />
@@ -98,6 +99,7 @@
     <ClCompile Include="ModuleAudio_1.cpp" />
     <ClCompile Include="ModuleAudio_2.cpp" />
     <ClCompile Include="ModuleCollision.cpp" />
+    <ClCompile Include="ModuleEnemy.cpp" />
     <ClCompile Include="ModuleInput.cpp" />
     <ClCompile Include="ModuleParticles.cpp" />
     <ClCompile Include="ModulePlayer.cpp" />
