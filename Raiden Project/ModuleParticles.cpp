@@ -91,6 +91,7 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 			p->born = SDL_GetTicks() + delay;
 			p->position.x = x;
 			p->position.y = y;
+			Mix_PlayChannel(-1, App->audio->fx_shoot, 0);
 			if (collider_type != COLLIDER_NONE)
 				p->collider = App->collision->AddCollider({ 59, 100, 18, 18 }, collider_type, this);
 			active[i] = p;

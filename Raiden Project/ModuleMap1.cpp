@@ -31,11 +31,12 @@ bool ModuleMap1::Init()
 update_status ModuleMap1::Update()
 {
 
-	if (!(App->particles->IsEnabled() && App->player->IsEnabled()))
+	if (!(App->particles->IsEnabled() && App->player->IsEnabled() && App->enemy->IsEnabled()&& App->collision->IsEnabled()))
 	{
 		App->particles->Enable();
 		App->player->Enable();
-		//App->enemy->Enable();
+		App->enemy->Enable();
+		App->collision->Enable();
 	}
 	App->render->Blit(Map1, xmap, ymap, &ground);
 	if (App->input->keyboard[SDL_SCANCODE_F])

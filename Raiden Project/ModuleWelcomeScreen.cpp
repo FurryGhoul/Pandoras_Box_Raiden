@@ -45,6 +45,8 @@ update_status ModuleWelcomeScreen::Update()
 	{
 		App->particles->Disable();
 		App->player->Disable();
+		App->enemy->Disable();
+		App->collision->Disable();
 	}
 
 	App->render->Blit(Welcome, 0, 0, &ground);

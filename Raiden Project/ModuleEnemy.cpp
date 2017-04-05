@@ -16,7 +16,7 @@ ModuleEnemy::ModuleEnemy()
 	current_animation = NULL;
 
 	position.x = 305;
-	position.y = 620;
+	position.y = 620-5000;
 
 	// idle animation (just the enemy ship)
 	idle.PushBack({ 179, 1, 23, 30 });
@@ -36,8 +36,8 @@ bool ModuleEnemy::Init()
 	LOG("Loading enemy");
 
 	graphics = App->textures->Load("Assets/Light Shooter.png");
-	//Enemy = App->collision->AddCollider({ 0, 0, 66, 70 }, COLLIDER_ENEMY, this);
-	//Enemy->SetPos(82038, 2323);
+	Enemy = App->collision->AddCollider({ 0, 0, 66, 70 }, COLLIDER_ENEMY, this);
+	Enemy->SetPos(82038, 2323);
 	return true;
 }
 
@@ -54,7 +54,9 @@ bool ModuleEnemy::CleanUp()
 // Update: draw background
 update_status ModuleEnemy::Update()
 {
-	
+	current_animation = &idle;
+	Enemy->SetPos(position.x, position.y);
+	position.y += 6;
 	// Draw everything --------------------------------------
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), enemy_w, enemy_h);
 

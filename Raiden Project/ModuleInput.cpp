@@ -45,10 +45,6 @@ update_status ModuleInput::Update()
 
 	App->map_1->ymap += 6;
 
-	/*if (App->map_1->IsEnabled() && keyboard[SDL_SCANCODE_D] && App->player->position.x == 600 && App->map_1->xmap <= -5)
-	{
-		App->map_1->xmap += 6;
-	}*/
 
 		
 	const Uint8* keys = SDL_GetKeyboardState(NULL);

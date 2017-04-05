@@ -1,8 +1,11 @@
-﻿  ModulePlayer.cpp
-  Generando código
-  18 of 155 functions (11.6%) were compiled, the rest were copied from previous compilation.
-    3 functions were new in current compilation
-    3 functions had inline decision re-evaluated but remain unchanged
-  Generación de código finalizada
-  SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Release\SDL3 Handout.exe
-  SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Release\SDL3 Handout.pdb (Full PDB)
+﻿  ModuleMap1.cpp
+  ModuleMap2.cpp
+  ModuleStageClear1.cpp
+  ModuleWelcomeScreen.cpp
+  Generating code
+  6 of 158 functions ( 3.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    7 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Release\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Release\SDL3 Handout.pdb (Full PDB)
