@@ -29,7 +29,7 @@ public:
 	int player_w;
 	int player_h;
 	bool moving = false;
-
+	Collider* Player;
 };
 
 #endif

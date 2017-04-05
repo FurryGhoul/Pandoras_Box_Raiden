@@ -8,7 +8,7 @@
 #include "ModuleParticles.h"
 #include "ModuleMap1.h"
 #include "ModuleMap2.h"
-
+#include "ModuleCollision.h"
 ModulePlayer::ModulePlayer()
 {
 	graphics = NULL;
@@ -34,7 +34,7 @@ ModulePlayer::ModulePlayer()
 	left.PushBack({ 3, 2, 22, 28 });
 	left.PushBack({ 131, 2, 19, 28 });
 	left.PushBack({ 175, 2, 17, 28 });
-	left.loop = true;
+	left.loop = false;
 	left.speed = 0.1f;
 }
 
@@ -47,7 +47,8 @@ bool ModulePlayer::Init()
 	LOG("Loading player");
 
 	graphics = App->textures->Load("Assets/Player1.png");
-	
+	Player = App->collision->AddCollider({0, 0, 66, 70}, COLLIDER_PLAYER, this);
+	Player->SetPos(82938, 2323);
 	return true;
 }
 
@@ -57,7 +58,7 @@ bool ModulePlayer::CleanUp()
 {
 	LOG("Unloading player");
 
-	//App->textures->Unload(graphics);
+	App->textures->Unload(graphics);
 
 	return true;
 }
@@ -66,6 +67,8 @@ bool ModulePlayer::CleanUp()
 update_status ModulePlayer::Update()
 {
 	int speed = 3;
+	Player->SetPos(position.x, position.y);
+	
 	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
 	{
 		if (App->map_1->IsEnabled() && position.x >= 20)
@@ -152,7 +155,7 @@ update_status ModulePlayer::Update()
 		player_h = 28 * 3;
 	}
 
-
+	
 
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
    

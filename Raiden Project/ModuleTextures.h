@@ -18,7 +18,7 @@ public:
 	bool CleanUp();
 
 	SDL_Texture* const Load(const char* path);
-	//bool Unload(SDL_Texture* textu);
+	bool Unload(SDL_Texture* textu);
 
 public:
 	SDL_Texture* textures[MAX_TEXTURES];
