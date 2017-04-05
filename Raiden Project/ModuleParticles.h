@@ -7,8 +7,11 @@
 #include "p2Point.h"
 
 #define MAX_ACTIVE_PARTICLES 10000
-
+#include "SDL_mixer\include\SDL_mixer.h"
+#pragma comment( lib, "SDL_mixer/libx86/SDL2_mixer.lib" )
 struct SDL_Texture;
+
+
 
 struct Particle
 {
@@ -44,7 +47,7 @@ private:
 	uint last_particle = 0;
 
 public:
-
+	Mix_Chunk* fx_shoot;
 	Particle laser;
 };
 

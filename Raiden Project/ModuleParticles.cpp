@@ -5,13 +5,15 @@
 #include "ModuleRender.h"
 #include "ModuleParticles.h"
 #include "ModulePlayer.h"
-
+#include "ModuleAudio_1.h"
 #include "SDL/include/SDL_timer.h"
 
 ModuleParticles::ModuleParticles()
 {
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 		active[i] = nullptr;
+
+	
 }
 
 ModuleParticles::~ModuleParticles()
@@ -20,11 +22,13 @@ ModuleParticles::~ModuleParticles()
 // Load assets
 bool ModuleParticles::Init()
 {
+	
 	LOG("Loading particles");
 	graphics = App->textures->Load("Assets/Player1.png");
-
+	
 	// laser particle
 	laser.anim.PushBack({ 59, 100, 6, 6 });
+	
 
 	laser.anim.loop = true;
 	laser.anim.speed = 1.0f;
@@ -71,10 +75,12 @@ update_status ModuleParticles::Update()
 		else if (SDL_GetTicks() >= p->born)
 		{
 			App->render->Blit(graphics, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()), 18, 18);
+			
 			if (p->fx_played == false)
 			{
-				p->fx_played = true;
-				// Play particle fx here
+				p->fx_played = true; 
+				
+				
 			}
 		}
 	}
@@ -88,7 +94,7 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, Uint32
 	p->born = SDL_GetTicks() + delay;
 	p->position.x = x;
 	p->position.y = y;
-
+    Mix_PlayChannel(-1, App->audio->fx_shoot, 0);
 	active[last_particle++] = p;
 }
 

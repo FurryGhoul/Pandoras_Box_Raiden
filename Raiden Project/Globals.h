@@ -26,5 +26,5 @@ typedef unsigned int uint;
 #define WIN_BORDERLESS 0
 #define WIN_RESIZABLE 1
 #define REN_VSYNC 1
-
+#define Mix_LoadWAV(file)   Mix_LoadWAV_RW(SDL_RWFromFile(file, "rb"), 1)
 #endif // __GLOBALS_H__

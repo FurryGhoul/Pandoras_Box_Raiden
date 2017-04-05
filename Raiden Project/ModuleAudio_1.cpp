@@ -32,6 +32,7 @@ bool ModuleAudio1::Init()
 		LOG("An error has ocurred while reproducing the audio %s", SDL_GetError())
 	}
 	
+	fx_shoot = Mix_LoadWAV("Assets/red_shot1.wav");
 	return true;
 }
 update_status ModuleAudio1::Update()

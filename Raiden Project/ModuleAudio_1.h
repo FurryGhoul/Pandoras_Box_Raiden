@@ -24,6 +24,7 @@ public:
 public:
 	Mix_Music* music;
 	bool playing = false;
+	Mix_Chunk* fx_shoot;
 };
 
 #endif // __ModuleAudio_H__
