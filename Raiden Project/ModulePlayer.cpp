@@ -138,7 +138,7 @@ update_status ModulePlayer::Update()
 
 	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
 	{ 
-		App->particles->AddParticle(App->particles->laser, position.x + speed + 21, position.y - 18);
+		App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT);
 	}
 
 	// Draw everything --------------------------------------
