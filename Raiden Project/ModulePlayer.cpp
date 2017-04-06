@@ -20,27 +20,51 @@ graphics = NULL;
 	position.x = 305;
 	position.y = 620;
 
-	// idle animation (just the ship)
-	idle.PushBack({ 42, 34, 22, 25});
+	// Idle animation
+	idle.PushBack({ 3, 2, 22, 28});
 	idle.loop = false;
 	idle.speed = 1.0f;
 
-	// move right
+	// Idle animation 2
+	idlep.PushBack({ 28, 2, 22, 29 });
+	idlep.loop = false;
+	idlep.speed = 1.0f;
 
-	right.PushBack({ 3, 34, 19, 25});
+	// Move right
+
+	right.PushBack({ 53, 2, 19, 28 });
 	right.loop = false;
 	right.speed = 1.0f;
-	right1.PushBack({ 25, 34, 14, 25 });
+	right1.PushBack({ 97, 2, 14, 28 });
 	right1.loop = false;
 	right1.speed = 1.0f;
+
+	// Move right 2
+
+	rightp.PushBack({ 75, 2, 19, 29 });
+	rightp.loop = false;
+	rightp.speed = 1.0f;
+	right1p.PushBack({ 114, 2, 14, 29 });
+	right1p.loop = false;
+	right1p.speed = 1.0f;
+
 	// Move left
 
-	left.PushBack({ 67, 34, 19, 25 });
+	left.PushBack({ 131, 2, 19, 28 });
 	left.loop = false;
 	left.speed = 1.0f;
-	left1.PushBack({ 89, 34, 14, 25 });
+	left1.PushBack({ 175, 2, 14, 28 });
 	left1.loop = false;
 	left1.speed = 1.0f;
+
+	// Move left 2
+
+	leftp.PushBack({ 153, 2, 19, 29 });
+	leftp.loop = false;
+	leftp.speed = 1.0f;
+	left1p.PushBack({ 192, 2, 14, 29 });
+	left1p.loop = false;
+	left1p.speed = 1.0f;
 }
 
 ModulePlayer::~ModulePlayer()
@@ -71,153 +95,314 @@ bool ModulePlayer::CleanUp()
 // Update: draw background
 update_status ModulePlayer::Update()
 {
+	if (allowtimep == true)
+	{
+		timep = SDL_GetTicks();
+		allowtimep = false;
+	}
+
+	if (SDL_GetTicks() >= (timep + 200))
+	{
+		if (propeller == true)
+		{
+			propeller = false;
+			allowtimep = true;
+		}
+
+		else if (propeller == false)
+		{
+			propeller = true;
+			allowtimep = true;
+		}
+	}
+
 	OnCollision(Player, App->enemy->Enemy);
 
 	int speed = 3;
 
 	Player->SetPos(position.x, position.y);
 
-	
-	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
+	if (propeller)
 	{
-		if (allowtime == true)
+		if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
 		{
+			if (allowtime == true)
+			{
+				time = SDL_GetTicks();
+				allowtime = false;
+			}
+
+			if (current_animation != &left)
+			{
+				left.Reset();
+				current_animation = &left;
+			}
+
+			if (current_animation != &left1 && SDL_GetTicks() >= (time + 300))
+			{
+				left1.Reset();
+				current_animation = &left1;
+			}
+
+			if (App->map_1->IsEnabled() && position.x >= 20)
+			{
+				position.x -= speed;
+			}
+
+			if (App->map_2->IsEnabled() && position.x >= 20)
+			{
+				position.x -= speed;
+			}
+		}
+
+		if (App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT)
+		{
+			if (allowtime == true)
+			{
+				time = SDL_GetTicks();
+				allowtime = false;
+			}
+
+			if (current_animation != &right)
+			{
+				right.Reset();
+				current_animation = &right;
+			}
+
+			if (current_animation != &right1 && SDL_GetTicks() >= (time + 300))
+			{
+				right1.Reset();
+				current_animation = &right1;
+			}
+
+			if (App->map_1->IsEnabled() && position.x <= 600)
+			{
+				position.x += speed;
+			}
+
+			if (App->map_2->IsEnabled() && position.x <= 600)
+			{
+				position.x += speed;
+			}
+		}
+
+		if (App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_REPEAT)
+		{
+			position.y += speed;
+		}
+
+		if (App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT)
+		{
+			position.y -= speed;
+
+		}
+
+		if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_UP)
+		{
+			allowtime = true;
 			time = SDL_GetTicks();
-			allowtime = false;
+			if (current_animation != &left)
+			{
+				left.Reset();
+				current_animation = &left;
+			}
 		}
 
-		if (current_animation != &left)
+		if (App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_UP)
 		{
-			left.Reset();
-			current_animation = &left;
-		}
-
-		if (current_animation != &left1 && SDL_GetTicks() >= (time + 300))
-		{
-			left1.Reset();
-			current_animation = &left1;
-		}
-
-		if (App->map_1->IsEnabled() && position.x >= 20)
-		{
-			position.x -= speed;
-		}
-
-		if (App->map_2->IsEnabled() && position.x >= 20)
-		{
-			position.x -= speed;
-		}
-	}
-
-	if (App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT)
-	{
-		if (allowtime == true)
-		{
+			allowtime = true;
 			time = SDL_GetTicks();
-			allowtime = false;
+			if (current_animation != &right)
+			{
+				right.Reset();
+				current_animation = &right;
+			}
 		}
 
-		if (current_animation != &right)
-		{
-			right.Reset();
-			current_animation = &right;
-		}
-
-		if (current_animation != &right1 && SDL_GetTicks() >= (time + 300))
-		{
-			right1.Reset();
-			current_animation = &right1;
-		}
-
-		if (App->map_1->IsEnabled() && position.x <= 600)
-		{
-			position.x += speed;
-		}
-
-		if (App->map_2->IsEnabled() && position.x <= 600)
-		{
-			position.x += speed;
-		}
-	}
-
-	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_REPEAT)
-	{
-		position.y += speed;
-	}
-
-	 if (App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT)
-	{
-		position.y -= speed;
-
-	}
-
-	 if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_UP)
-	 {
-		 allowtime = true;
-		 time = SDL_GetTicks();
-		 if (current_animation != &left)
-		 {
-			 left.Reset();
-			 current_animation = &left;
-		 }
-	 }
-
-	 if (App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_UP)
-	 {
-		 allowtime = true;
-		 time = SDL_GetTicks();
-		 if (current_animation != &right)
-		 {
-			 right.Reset();
-			 current_animation = &right;
-		 }
-	 }
-
-	if (App->input->keyboard[SDL_SCANCODE_S]
-		&& App->input->keyboard[SDL_SCANCODE_W])
-	{ 
-		current_animation = &idle;
-	}
-	if (App->input->keyboard[SDL_SCANCODE_D]
-		&& App->input->keyboard[SDL_SCANCODE_A])
-	{
-		current_animation = &idle;
-	}
-
-	if (
-		App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_IDLE
-		&& App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_IDLE)
-	{
-		if (SDL_GetTicks() >= time + 100)
+		if (App->input->keyboard[SDL_SCANCODE_S]
+			&& App->input->keyboard[SDL_SCANCODE_W])
 		{
 			current_animation = &idle;
 		}
+		if (App->input->keyboard[SDL_SCANCODE_D]
+			&& App->input->keyboard[SDL_SCANCODE_A])
+		{
+			current_animation = &idle;
+		}
+
+		if (
+			App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_IDLE
+			&& App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_IDLE)
+		{
+			if (SDL_GetTicks() >= time + 100)
+			{
+				current_animation = &idle;
+			}
+		}
+
+		if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
+		{
+			App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT);
+		}
+
+		// Draw everything --------------------------------------
+		if (current_animation == &idle)
+		{
+			player_w = 22 * 3;
+			player_h = 28 * 3;
+		}
+		else if (current_animation == &left || current_animation == &right)
+		{
+			player_w = 19 * 3;
+			player_h = 28 * 3;
+		}
+		else if (current_animation == &left1 || current_animation == &right1)
+		{
+			player_w = 14 * 3;
+			player_h = 28 * 3;
+		}
 	}
 
-      // TODO 3: Shoot lasers when the player hits SPACE
-
-	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
-	{ 
-		App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT);
-	}
-
-	// Draw everything --------------------------------------22, 25 -- 19, 25 -- 14, 25
-	if (current_animation == &idle)
+	else
 	{
-		player_w = 22 * 3;
-		player_h = 25 * 3;
-	}
-	else if (current_animation == &left || current_animation == &right)
-	{
-		player_w = 19 * 3;
-		player_h = 25 * 3;
-	}
-	else if (current_animation == &left1 || current_animation == &right1)
-	{
-		player_w = 14 * 3;
-		player_h = 25 * 3;
-	}
+		if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
+		{
+			if (allowtime == true)
+			{
+				time = SDL_GetTicks();
+				allowtime = false;
+			}
 
+			if (current_animation != &leftp)
+			{
+				leftp.Reset();
+				current_animation = &leftp;
+			}
+
+			if (current_animation != &left1p && SDL_GetTicks() >= (time + 300))
+			{
+				left1p.Reset();
+				current_animation = &left1p;
+			}
+
+			if (App->map_1->IsEnabled() && position.x >= 20)
+			{
+				position.x -= speed;
+			}
+
+			if (App->map_2->IsEnabled() && position.x >= 20)
+			{
+				position.x -= speed;
+			}
+		}
+
+		if (App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT)
+		{
+			if (allowtime == true)
+			{
+				time = SDL_GetTicks();
+				allowtime = false;
+			}
+
+			if (current_animation != &rightp)
+			{
+				rightp.Reset();
+				current_animation = &rightp;
+			}
+
+			if (current_animation != &right1p && SDL_GetTicks() >= (time + 300))
+			{
+				right1p.Reset();
+				current_animation = &right1p;
+			}
+
+			if (App->map_1->IsEnabled() && position.x <= 600)
+			{
+				position.x += speed;
+			}
+
+			if (App->map_2->IsEnabled() && position.x <= 600)
+			{
+				position.x += speed;
+			}
+		}
+
+		if (App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_REPEAT)
+		{
+			position.y += speed;
+		}
+
+		if (App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT)
+		{
+			position.y -= speed;
+
+		}
+
+		if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_UP)
+		{
+			allowtime = true;
+			time = SDL_GetTicks();
+			if (current_animation != &leftp)
+			{
+				leftp.Reset();
+				current_animation = &leftp;
+			}
+		}
+
+		if (App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_UP)
+		{
+			allowtime = true;
+			time = SDL_GetTicks();
+			if (current_animation != &rightp)
+			{
+				rightp.Reset();
+				current_animation = &rightp;
+			}
+		}
+
+		if (App->input->keyboard[SDL_SCANCODE_S]
+			&& App->input->keyboard[SDL_SCANCODE_W])
+		{
+			current_animation = &idlep;
+		}
+		if (App->input->keyboard[SDL_SCANCODE_D]
+			&& App->input->keyboard[SDL_SCANCODE_A])
+		{
+			current_animation = &idlep;
+		}
+
+		if (
+			App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_IDLE
+			&& App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_IDLE)
+		{
+			if (SDL_GetTicks() >= time + 100)
+			{
+				current_animation = &idlep;
+			}
+		}
+
+		if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
+		{
+			App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT);
+		}
+
+		// Draw everything --------------------------------------
+		if (current_animation == &idlep)
+		{
+			player_w = 22 * 3;
+			player_h = 29 * 3;
+		}
+		else if (current_animation == &leftp || current_animation == &rightp)
+		{
+			player_w = 19 * 3;
+			player_h = 29 * 3;
+		}
+		else if (current_animation == &left1p || current_animation == &right1p)
+		{
+			player_w = 14 * 3;
+			player_h = 29 * 3;
+		}
+	}
 	
 
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
