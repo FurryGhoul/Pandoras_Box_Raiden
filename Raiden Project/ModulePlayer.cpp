@@ -21,24 +21,24 @@ graphics = NULL;
 	position.y = 620;
 
 	// idle animation (just the ship)
-	idle.PushBack({ 3, 2, 22, 28});
+	idle.PushBack({ 42, 34, 22, 25});
 	idle.loop = false;
 	idle.speed = 1.0f;
 
 	// move right
 
-	right.PushBack({ 53, 2, 19, 28});
+	right.PushBack({ 3, 34, 19, 25});
 	right.loop = false;
 	right.speed = 1.0f;
-	right1.PushBack({ 97, 2, 17, 28 });
+	right1.PushBack({ 25, 34, 14, 25 });
 	right1.loop = false;
 	right1.speed = 1.0f;
 	// Move left
 
-	left.PushBack({ 131, 2, 19, 28 });
+	left.PushBack({ 67, 34, 19, 25 });
 	left.loop = false;
 	left.speed = 1.0f;
-	left1.PushBack({ 175, 2, 17, 28 });
+	left1.PushBack({ 89, 34, 14, 25 });
 	left1.loop = false;
 	left1.speed = 1.0f;
 }
@@ -201,16 +201,21 @@ update_status ModulePlayer::Update()
 		App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT);
 	}
 
-	// Draw everything --------------------------------------
+	// Draw everything --------------------------------------22, 25 -- 19, 25 -- 14, 25
 	if (current_animation == &idle)
 	{
 		player_w = 22 * 3;
-		player_h = 28 * 3;
+		player_h = 25 * 3;
 	}
-	else
+	else if (current_animation == &left || current_animation == &right)
 	{
-		player_w = 17 * 3;
-		player_h = 28 * 3;
+		player_w = 19 * 3;
+		player_h = 25 * 3;
+	}
+	else if (current_animation == &left1 || current_animation == &right1)
+	{
+		player_w = 14 * 3;
+		player_h = 25 * 3;
 	}
 
 	
