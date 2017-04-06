@@ -101,7 +101,7 @@ update_status ModulePlayer::Update()
 		allowtimep = false;
 	}
 
-	if (SDL_GetTicks() >= (timep + 200))
+	if (SDL_GetTicks() >= (timep + 10))
 	{
 		if (propeller == true)
 		{
