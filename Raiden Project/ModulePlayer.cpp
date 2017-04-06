@@ -69,10 +69,8 @@ update_status ModulePlayer::Update()
 
 	int speed = 3;
 
-	if (Player != nullptr)
-	{
-		Player->SetPos(position.x, position.y);
-	}
+	Player->SetPos(position.x, position.y);
+
 	
 	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
 	{
@@ -174,6 +172,5 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 	if (Player != nullptr && Player->CheckCollision(c2->rect))
 	{
 		App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
-		Player = nullptr;
 	}
 }
