@@ -25,10 +25,14 @@ public:
 	Animation idle;
 	Animation right;
 	Animation left;
+	Animation right1;
+	Animation left1;
 	iPoint position;
 	bool ideling = false;
+	bool allowtime = true;
 	int player_w;
 	int player_h;
+	Uint32 time;
 	bool moving = false;
 	Collider* Player = nullptr;
 };

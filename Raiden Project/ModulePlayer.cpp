@@ -14,7 +14,7 @@
 
 ModulePlayer::ModulePlayer()
 {
-	graphics = NULL;
+graphics = NULL;
 	current_animation = NULL;
 
 	position.x = 305;
@@ -23,18 +23,24 @@ ModulePlayer::ModulePlayer()
 	// idle animation (just the ship)
 	idle.PushBack({ 3, 2, 22, 28});
 	idle.loop = false;
+	idle.speed = 1.0f;
 
-	// Move right
+	// move right
+
 	right.PushBack({ 53, 2, 19, 28});
-	right.PushBack({ 97, 2, 17, 28});
 	right.loop = false;
-	right.speed = 0.1f;
-
+	right.speed = 1.0f;
+	right1.PushBack({ 97, 2, 17, 28 });
+	right1.loop = false;
+	right1.speed = 1.0f;
 	// Move left
+
 	left.PushBack({ 131, 2, 19, 28 });
-	left.PushBack({ 175, 2, 17, 28 });
 	left.loop = false;
-	left.speed = 0.1f;
+	left.speed = 1.0f;
+	left1.PushBack({ 175, 2, 17, 28 });
+	left1.loop = false;
+	left1.speed = 1.0f;
 }
 
 ModulePlayer::~ModulePlayer()
@@ -74,6 +80,24 @@ update_status ModulePlayer::Update()
 	
 	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
 	{
+		if (allowtime == true)
+		{
+			time = SDL_GetTicks();
+			allowtime = false;
+		}
+
+		if (current_animation != &left)
+		{
+			left.Reset();
+			current_animation = &left;
+		}
+
+		if (current_animation != &left1 && SDL_GetTicks() >= (time + 300))
+		{
+			left1.Reset();
+			current_animation = &left1;
+		}
+
 		if (App->map_1->IsEnabled() && position.x >= 20)
 		{
 			position.x -= speed;
@@ -83,16 +107,28 @@ update_status ModulePlayer::Update()
 		{
 			position.x -= speed;
 		}
-
-		if (current_animation != &left)
-		{
-			left.Reset();
-			current_animation = &left;
-		}
 	}
 
 	if (App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT)
 	{
+		if (allowtime == true)
+		{
+			time = SDL_GetTicks();
+			allowtime = false;
+		}
+
+		if (current_animation != &right)
+		{
+			right.Reset();
+			current_animation = &right;
+		}
+
+		if (current_animation != &right1 && SDL_GetTicks() >= (time + 300))
+		{
+			right1.Reset();
+			current_animation = &right1;
+		}
+
 		if (App->map_1->IsEnabled() && position.x <= 600)
 		{
 			position.x += speed;
@@ -101,12 +137,6 @@ update_status ModulePlayer::Update()
 		if (App->map_2->IsEnabled() && position.x <= 600)
 		{
 			position.x += speed;
-		}
-
-		if (current_animation != &right)
-		{
-			right.Reset();
-			current_animation = &right;
 		}
 	}
 
@@ -121,7 +151,27 @@ update_status ModulePlayer::Update()
 
 	}
 
-	
+	 if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_UP)
+	 {
+		 allowtime = true;
+		 time = SDL_GetTicks();
+		 if (current_animation != &left)
+		 {
+			 left.Reset();
+			 current_animation = &left;
+		 }
+	 }
+
+	 if (App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_UP)
+	 {
+		 allowtime = true;
+		 time = SDL_GetTicks();
+		 if (current_animation != &right)
+		 {
+			 right.Reset();
+			 current_animation = &right;
+		 }
+	 }
 
 	if (App->input->keyboard[SDL_SCANCODE_S]
 		&& App->input->keyboard[SDL_SCANCODE_W])
@@ -138,7 +188,10 @@ update_status ModulePlayer::Update()
 		App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_IDLE
 		&& App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_IDLE)
 	{
-		current_animation = &idle;
+		if (SDL_GetTicks() >= time + 100)
+		{
+			current_animation = &idle;
+		}
 	}
 
       // TODO 3: Shoot lasers when the player hits SPACE
