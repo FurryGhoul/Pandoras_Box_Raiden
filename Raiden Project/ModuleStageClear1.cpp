@@ -10,7 +10,7 @@
 #include "ModuleFadeToBlack.h"
 #include "ModuleParticles.h"
 #include "ModulePlayer.h"
-#include "ModuleEnemy.h"
+
 ModuleStageClear1::ModuleStageClear1() : Module()
 {
 
@@ -30,11 +30,11 @@ bool ModuleStageClear1::Init()
 
 update_status ModuleStageClear1::Update()
 {
-	if (App->particles->IsEnabled() && App->player->IsEnabled() && App->enemy->IsEnabled() && App->collision->IsEnabled())
+	if (App->particles->IsEnabled() && App->player->IsEnabled()&& App->collision->IsEnabled())
 	{
 		App->particles->Disable();
 		App->player->Disable();
-		App->enemy->Disable();
+
 		App->collision->Disable();
 	}
 	App->render->Blit(StageClear1, 0, 0, &ground);

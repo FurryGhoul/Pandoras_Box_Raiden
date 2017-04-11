@@ -12,7 +12,7 @@
 #include "ModuleFadeToBlack.h"
 #include "ModulePlayer.h"
 #include "ModuleParticles.h"
-#include "ModuleEnemy.h"
+
 ModuleWelcomeScreen::ModuleWelcomeScreen() : Module()
 {
 
@@ -32,7 +32,7 @@ bool ModuleWelcomeScreen::Init()
 	App->audio_2->Close();
 	App->particles->Disable();
 	App->player->Disable();
-	App->enemy->Disable();
+
 	ground = { 0, 0 ,224 * 3 ,256 * 3};
 	Welcome = App->textures->Load("Assets/WelcomeScreen.png");
 	
@@ -45,7 +45,7 @@ update_status ModuleWelcomeScreen::Update()
 	{
 		App->particles->Disable();
 		App->player->Disable();
-		App->enemy->Disable();
+	
 		App->collision->Disable();
 	}
 

@@ -1,8 +1,8 @@
-﻿  ModulePlayer.cpp
+﻿  ModuleEnemies.cpp
   Generating code
-  1 of 159 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  15 of 167 functions ( 9.0%) were compiled, the rest were copied from previous compilation.
+    15 functions were new in current compilation
+    44 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  SDL Game.vcxproj -> C:\Users\genisbs\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Release\SDL3 Handout.exe
-  SDL Game.vcxproj -> C:\Users\genisbs\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Release\SDL3 Handout.pdb (Full PDB)
+  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Release\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Release\SDL3 Handout.pdb (Full PDB)

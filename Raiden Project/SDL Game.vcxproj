@@ -71,10 +71,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="ModuleEnemies.h" />
+    <ClInclude Include="Path.h" />
     <ClInclude Include="ModuleCollision.h" />
-    <ClInclude Include="ModuleEnemy.h" />
     <ClInclude Include="ModuleParticles.h" />
     <ClInclude Include="p2Point.h" />
     <ClInclude Include="ModuleFadeToBlack.h" />
@@ -99,7 +101,6 @@
     <ClCompile Include="ModuleAudio_1.cpp" />
     <ClCompile Include="ModuleAudio_2.cpp" />
     <ClCompile Include="ModuleCollision.cpp" />
-    <ClCompile Include="ModuleEnemy.cpp" />
     <ClCompile Include="ModuleInput.cpp" />
     <ClCompile Include="ModuleParticles.cpp" />
     <ClCompile Include="ModulePlayer.cpp" />
@@ -111,6 +112,8 @@
     <ClCompile Include="ModuleMap2.cpp" />
     <ClCompile Include="ModuleWelcomeScreen.cpp" />
     <ClCompile Include="ModuleFadeToBlack.cpp" />
+    <ClCompile Include="ModuleEnemies.cpp" />
+    <ClCompile Include="Enemy.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

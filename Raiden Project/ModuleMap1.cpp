@@ -10,7 +10,7 @@
 #include "ModuleFadeToBlack.h"
 #include "ModulePlayer.h"
 #include "ModuleParticles.h"
-#include "ModuleEnemy.h"
+
 ModuleMap1::ModuleMap1() : Module()
 {
 	
@@ -31,11 +31,11 @@ bool ModuleMap1::Init()
 update_status ModuleMap1::Update()
 {
 
-	if (!(App->particles->IsEnabled() && App->player->IsEnabled() && App->enemy->IsEnabled()&& App->collision->IsEnabled()))
+	if (!(App->particles->IsEnabled() && App->player->IsEnabled() && App->collision->IsEnabled()))
 	{
 		App->particles->Enable();
 		App->player->Enable();
-		App->enemy->Enable();
+
 		App->collision->Enable();
 	}
 	App->render->Blit(Map1, xmap, ymap, &ground);

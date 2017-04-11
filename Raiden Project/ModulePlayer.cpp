@@ -10,7 +10,7 @@
 #include "ModuleMap2.h"
 #include "ModuleCollision.h"
 #include "ModuleFadeToBlack.h"
-#include "ModuleEnemy.h"
+
 
 ModulePlayer::ModulePlayer()
 {
@@ -116,7 +116,7 @@ update_status ModulePlayer::Update()
 		}
 	}
 
-	OnCollision(Player, App->enemy->Enemy);
+
 
 	int speed = 3;
 
