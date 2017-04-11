@@ -10,7 +10,7 @@
 #include "ModuleFadeToBlack.h"
 #include "ModulePlayer.h"
 #include "ModuleParticles.h"
-
+#include "ModuleEnemies.h"
 ModuleMap1::ModuleMap1() : Module()
 {
 	
@@ -25,6 +25,8 @@ bool ModuleMap1::Init()
 	LOG("Loading background assets");
 	ground = {xmap,ymap ,352*3 ,3266*3};
     Map1 = App->textures->Load("Assets/Tilemap1.png");
+
+	
 	return true;
 }
 
@@ -35,7 +37,7 @@ update_status ModuleMap1::Update()
 	{
 		App->particles->Enable();
 		App->player->Enable();
-
+        App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, App->player->position.x+100, App->player->position.y-300);
 		App->collision->Enable();
 	}
 	App->render->Blit(Map1, xmap, ymap, &ground);

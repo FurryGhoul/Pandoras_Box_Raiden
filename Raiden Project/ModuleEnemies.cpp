@@ -5,7 +5,7 @@
 #include "ModuleParticles.h"
 #include "ModuleTextures.h"
 #include "Enemy.h"
-
+#include "Enemy_Light_Shooter.h"
 #define SPAWN_MARGIN 50
 
 ModuleEnemies::ModuleEnemies()
@@ -19,10 +19,10 @@ ModuleEnemies::~ModuleEnemies()
 {
 }
 
-bool ModuleEnemies::Start()
+bool ModuleEnemies::Init()
 {
 	// Create a prototype for each enemy available so we can copy them around
-	sprites = App->textures->Load("rtype/enemies.png");
+	sprites = App->textures->Load("assets/Light Shooter.png");
 
 	return true;
 }
@@ -125,13 +125,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 	{
 		switch (info.type)
 		{
-		case ENEMY_TYPES::REDBIRD:
-			//enemies[i] = new Enemy_RedBird(info.x, info.y);
+		case ENEMY_TYPES::LIGHT_SHOOTER:
+			enemies[i] = new Enemy_Light_Shooter(info.x, info.y);
 			break;
-		case ENEMY_TYPES::BROWNCOKIE:
-			//enemies[i] = new Enemy_BrownCokie(info.x, info.y);
-			break;
-
 		}
 	}
 }

@@ -16,8 +16,7 @@
 enum ENEMY_TYPES
 {
 	NO_TYPE,
-	REDBIRD,
-	BROWNCOKIE,
+    LIGHT_SHOOTER,
 };
 
 class Enemy;
@@ -35,7 +34,7 @@ public:
 	ModuleEnemies();
 	~ModuleEnemies();
 
-	bool Start();
+	bool Init();
 	update_status PreUpdate();
 	update_status Update();
 	update_status PostUpdate();
