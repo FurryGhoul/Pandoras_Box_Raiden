@@ -12,9 +12,10 @@ Enemy_Light_Shooter::Enemy_Light_Shooter(int x, int y) : Enemy(x, y)
 	animation = &fly;
 
 
-	movement.PushBack({ -1.0f, -0.5f }, 100);
-	movement.PushBack({ -1.0f, 0.5f }, 80);
-	movement.PushBack({ -1.0f, 1.0f }, 80);
+	movement.PushBack({ -0.2f, 8.0f }, 50);
+	movement.PushBack({ 0.0f, 0.0f }, 50);
+	movement.PushBack({ -0.2f, -5.0f }, 200);
+
 	collider = App->collision->AddCollider({ 0, 0, 24*3-5, 24*3+20 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
 	original_pos.x = x;
