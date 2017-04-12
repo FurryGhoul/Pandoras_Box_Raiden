@@ -37,7 +37,9 @@ update_status ModuleMap1::Update()
 	{
 		App->particles->Enable();
 		App->player->Enable();
-        App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, App->player->position.x-150, App->player->position.y-620);
+		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, App->player->position.x + 200, App->player->position.y - 620);
+		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, App->player->position.x - 150, App->player->position.y - 620);
+		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, App->player->position.x + 150, App->player->position.y - 620);
 		App->collision->Enable();
 	}
 	App->render->Blit(Map1, xmap, ymap, &ground);
