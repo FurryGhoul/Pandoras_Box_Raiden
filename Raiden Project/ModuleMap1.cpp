@@ -37,12 +37,12 @@ update_status ModuleMap1::Update()
 	{
 		App->particles->Enable();
 		App->player->Enable();
-		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, App->player->position.x + 200, App->player->position.y - 620);
-		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, App->player->position.x - 150, App->player->position.y - 620);
-		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, App->player->position.x + 150, App->player->position.y - 620);
+		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 300, -4000 );
 		App->collision->Enable();
+		App->render->camera.x = App->render->camera.y = 0;
 	}
 	App->render->Blit(Map1, xmap, ymap, &ground);
+	App->render->camera.y -= 6;
 	if (App->input->keyboard[SDL_SCANCODE_F])
 	{
 		App->fade->FadeToBlack(this, App->map_2, 1.0f);
