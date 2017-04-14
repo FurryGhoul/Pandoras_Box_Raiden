@@ -19,7 +19,7 @@ Enemy_Light_Shooter::Enemy_Light_Shooter(int x, int y) : Enemy(x, y)
 	collider = App->collision->AddCollider({ 0, 0, 24*3-5, 24*3+20 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
 	original_pos.x = x;
-	original_pos.y = 0;
+	original_pos.y = -50;
 	w = 24*3;
 	h = 34*3;
 }

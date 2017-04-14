@@ -38,6 +38,10 @@ update_status ModuleMap1::Update()
 		App->particles->Enable();
 		App->player->Enable();
 		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 300, -4000 );
+		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 300, -1000);
+		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 100, -100);
+		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 400, -100);
+		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 300, -500);
 		App->collision->Enable();
 		App->render->camera.x = App->render->camera.y = 0;
 	}
