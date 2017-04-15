@@ -33,7 +33,7 @@ bool ModuleParticles::Init()
 	laser.anim.loop = false;
 	laser.anim.speed = 1.0f;
 	laser.life = 2100;
-	laser.speed.y = -5;
+	laser.speed.y = -10;
 	
 
 
@@ -43,7 +43,7 @@ bool ModuleParticles::Init()
 	enemyshot.anim.loop = false;
 	enemyshot.anim.speed = 1.0f;
 	enemyshot.life = 2100;
-	enemyshot.speed.y = -10;
+	enemyshot.speed.y = 10;
 	
 	return true;
 }
@@ -101,7 +101,7 @@ update_status ModuleParticles::Update()
 	return UPDATE_CONTINUE;
 }
 
-void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type, Uint32 delay)
+void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type, int speed_x, int speed_y, Uint32 delay)
 {
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 	{
@@ -112,6 +112,15 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 			p->position.x = x;
 			p->position.y = y;
 			p->spriteshit = particle.spriteshit;
+			if (speed_x != 0)
+			{
+				p->speed.x = speed_x;
+			}
+			if (speed_y != 0)
+			{
+				p->speed.y = speed_y;
+			}
+
 			Mix_PlayChannel(-1, App->audio->fx_shoot, 0);
 			if (collider_type != COLLIDER_NONE)
 			{ 
@@ -133,7 +142,6 @@ void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
 		// Always destroy particles that collide
 		if (active[i] != nullptr && active[i]->collider == c1)
 		{
-			App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->StageClear1);
 			delete active[i];
 			active[i] = nullptr;
 			break;
