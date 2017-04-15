@@ -1,3 +1,5 @@
-﻿  ModuleCollision.cpp
+﻿  ModuleParticles.cpp
+  ModuleCollision.cpp
+  Generating Code...
   SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
   SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
