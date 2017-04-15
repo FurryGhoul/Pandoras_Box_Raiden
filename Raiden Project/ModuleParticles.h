@@ -22,6 +22,7 @@ struct Particle
 	iPoint speed;
 	Uint32 born = 0;
 	Uint32 life = 0;
+	int spriteshit = 0; //What spriteshit does the shot belong to
 	bool fx_played = false;
 
 	Particle();
@@ -46,11 +47,13 @@ public:
 private:
 
 	SDL_Texture* graphics = nullptr;
+	SDL_Texture* graphics1 = nullptr;
 	Particle* active[MAX_ACTIVE_PARTICLES];
 
 public:
 
 	Particle laser;
+	Particle enemyshot;
 };
 
 #endif // __MODULEPARTICLES_H__

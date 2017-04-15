@@ -10,7 +10,7 @@
 #include "ModuleMap2.h"
 #include "ModuleCollision.h"
 #include "ModuleFadeToBlack.h"
-
+#include "ModuleEnemies.h"
 
 ModulePlayer::ModulePlayer()
 {
@@ -412,8 +412,9 @@ update_status ModulePlayer::Update()
 
 void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 {
-	if (Player != nullptr && Player->CheckCollision(c2->rect))
+	if (Player != nullptr && Player == c1)
 	{
 		App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
+		
 	}
 }

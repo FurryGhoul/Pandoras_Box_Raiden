@@ -38,7 +38,7 @@ public:
 	}
 
 	//Callbacks ---
-	virtual void OnCollision(Collider*, Collider*) {}
+	virtual void OnCollision(Collider*, Collider*) {} //El primer collider es el del módulo, el segundo es con el que ha chocado
 };
 
 #endif // __MODULE_H__

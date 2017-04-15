@@ -44,6 +44,7 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 300, -500);
 		App->collision->Enable();
 		App->render->camera.x = App->render->camera.y = 0;
+		App->enemies->Enable();
 	}
 	App->render->Blit(Map1, xmap, ymap, &ground);
 	App->render->camera.y -= 6;

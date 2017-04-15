@@ -12,6 +12,7 @@
 #include "ModuleFadeToBlack.h"
 #include "ModulePlayer.h"
 #include "ModuleParticles.h"
+#include "ModuleEnemies.h"
 
 ModuleWelcomeScreen::ModuleWelcomeScreen() : Module()
 {
@@ -45,7 +46,7 @@ update_status ModuleWelcomeScreen::Update()
 	{
 		App->particles->Disable();
 		App->player->Disable();
-	
+		App->enemies->Disable();
 		App->collision->Disable();
 	}
 

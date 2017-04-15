@@ -26,15 +26,25 @@ bool ModuleParticles::Init()
 	
 	LOG("Loading particles");
 	graphics = App->textures->Load("Assets/Player1.png");
-	
+	graphics1 = App->textures->Load("Assets/graphics2.png");
 	// laser particle
+	laser.spriteshit = 0;
 	laser.anim.PushBack({ 59, 100, 6, 6 });
 	laser.anim.loop = false;
 	laser.anim.speed = 1.0f;
 	laser.life = 2100;
 	laser.speed.y = -5;
+	
 
 
+	//Enemy normal shot
+	enemyshot.spriteshit = 1;
+	enemyshot.anim.PushBack({ 22, 41, 6, 5});
+	enemyshot.anim.loop = false;
+	enemyshot.anim.speed = 1.0f;
+	enemyshot.life = 2100;
+	enemyshot.speed.y = -10;
+	
 	return true;
 }
 
@@ -73,7 +83,14 @@ update_status ModuleParticles::Update()
 		}
 		else if (SDL_GetTicks() >= p->born)
 		{
+			if (p->spriteshit == 0)
+			{ 
 			App->render->Blit(graphics, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()), 18, 18);
+			}
+			if (p->spriteshit == 1)
+			{
+			App->render->Blit(graphics1, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()), 18, 18);
+			}
 			if (p->fx_played == false)
 			{
 				p->fx_played = true;
@@ -94,9 +111,12 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 			p->born = SDL_GetTicks() + delay;
 			p->position.x = x;
 			p->position.y = y;
+			p->spriteshit = particle.spriteshit;
 			Mix_PlayChannel(-1, App->audio->fx_shoot, 0);
 			if (collider_type != COLLIDER_NONE)
+			{ 
 				p->collider = App->collision->AddCollider({ 59, 100, 18, 18 }, collider_type, this);
+			}
 			active[i] = p;
 			break;
 		}
