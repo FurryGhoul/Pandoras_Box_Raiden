@@ -2,8 +2,14 @@
 class Enemy_Light_Shooter : public Enemy
 {
 private:
-	Animation* current_animation;
-	Animation fly;
+	Animation flys;
+	Animation flyn;
+	Animation flye;
+	Animation flyw;
+	Animation flyse;
+	Animation flyne;
+	Animation flysw;
+	Animation flynw;
 	iPoint original_pos;
 	iPoint distance;
 	Path movement;

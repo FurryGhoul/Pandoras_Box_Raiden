@@ -9,10 +9,13 @@
 
 Enemy_Light_Shooter::Enemy_Light_Shooter(int x, int y) : Enemy(x, y)
 {
-	fly.PushBack({ 179,0,24,34 });
-	fly.speed = 0.2f;
-	fly.loop = false;
-	animation = &fly;
+	flys.PushBack({ 180, 1, 22, 30 });
+	flys.speed = 1.0f;
+	flys.loop = false;
+
+	flyse.PushBack({ 326, 1, 25, 30 });
+	flyse.speed = 1.0f;
+	flyse.loop = false;
 
 
 	movement.PushBack({ -0.2f, 8.0f }, 50);
@@ -30,8 +33,8 @@ Enemy_Light_Shooter::Enemy_Light_Shooter(int x, int y) : Enemy(x, y)
 void Enemy_Light_Shooter::MoveShoot()
 {
 	position = original_pos + movement.GetCurrentPosition();
-	distance.y = App->player->position.y - 24 - position.y - 24 * 3;
-	distance.x = App->player->position.x - position.y + 24 ;
+	distance.y = App->player->position.y - 22 - position.y - 22 * 3;
+	distance.x = App->player->position.x - position.y + 22 ;
 
 	// Animation
 
@@ -81,6 +84,16 @@ void Enemy_Light_Shooter::MoveShoot()
 	else
 	{
 		nw = false;
+	}
+
+	// Applying animation
+	if ((se || sw) && angle < 30)
+	{
+		animation = &flys;
+	}
+	if (se && angle > 30)
+	{
+		animation = &flyse;
 	}
 	
 	// Shooting

@@ -118,7 +118,7 @@ update_status ModulePlayer::Update()
 
 
 
-	int speed = 3;
+	int speed = 10;
 
 	Player->SetPos(position.x, position.y);
 
