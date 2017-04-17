@@ -56,7 +56,7 @@ bool ModulePlayer::Init()
 	LOG("Loading player");
 
 	graphics = App->textures->Load("Assets/Player1.png");
-	Player = App->collision->AddCollider({0, 0, 66, 70}, COLLIDER_PLAYER, this);
+	Player = App->collision->AddCollider({ 0, 0, player_w, player_h }, COLLIDER_PLAYER, this);
 	Player->SetPos(82938, 2323);
 	return true;
 }
@@ -96,11 +96,7 @@ update_status ModulePlayer::Update()
 		}
 	}
 
-
-
 	int speed = 10;
-
-	Player->SetPos(position.x, position.y);
 
 	if (propeller)
 	{
@@ -386,7 +382,30 @@ update_status ModulePlayer::Update()
 	
 
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
-   
+	if (godmode == false)
+	{
+		Player->SetPos(position.x, position.y);
+		Player->SetSize(player_w, player_h);
+	}
+
+
+	// Godmode
+	if (App->input->keyboard[SDL_SCANCODE_G] == KEY_STATE::KEY_DOWN)
+	{
+		if (godmode)
+		{
+			Player = App->collision->AddCollider({ 0, 0, player_w, player_h }, COLLIDER_PLAYER, this);
+
+			godmode = false;
+		}
+		else
+		{
+			Player->SetPos(10000000, 10000000);
+			Player = nullptr;
+			godmode = true;
+		}
+	}
+
 	return UPDATE_CONTINUE;
 }
 

@@ -1,5 +1,12 @@
-﻿  Enemy_Light_Shooter.cpp
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(233): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(251): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+﻿  ModuleWelcomeScreen.cpp
+  ModuleStageClear1.cpp
+  ModuleParticles.cpp
+  ModuleMap2.cpp
+  ModuleMap1.cpp
+  ModuleInput.cpp
+  ModuleCollision.cpp
+  Enemy.cpp
+  Generating Code...
+  LINK : C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe not found or not built by the last incremental link; performing full link
   SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
   SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

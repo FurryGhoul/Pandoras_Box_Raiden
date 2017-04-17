@@ -42,10 +42,12 @@ public:
 	bool propeller = true;
 	int player_w;
 	int player_h;
+	bool moving = false;
+	bool godmode = false;
 	Uint32 time;
 	Uint32 timep; //time for propellers
-	bool moving = false;
 	Collider* Player = nullptr;
+
 };
 
 #endif
