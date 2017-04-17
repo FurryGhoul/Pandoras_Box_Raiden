@@ -49,7 +49,7 @@ void Enemy_Light_Shooter::MoveShoot()
 {
 	position = original_pos + movement.GetCurrentPosition();
 	distance.y = App->player->position.y - 22 - position.y - 22 * 3;
-	distance.x = App->player->position.x - position.y + 22 ;
+	distance.x = App->player->position.x - position.x + 22 ;
 
 	// Animation
 
@@ -227,20 +227,29 @@ void Enemy_Light_Shooter::MoveShoot()
 		h = 30 * 3;
 	}
 
+	distance.x = abs(distance.x);
+	distance.y = abs(distance.y);
 	// Shooting
-	if (distance.y <= 400 && shooting == false)
+	if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && shooting == false )
 	{
-
-		
+	    /*
 		while (sqrtf(distance.x*distance.x + distance.y*distance.y) > 15) //I'm trying to convert the distance at which the player is from the enemy in a vector that represents the speed of the bullet, which shouldn't be bigger that 10
 		{
-			
+
 			distance.x -= distance.x*0.1;
 			distance.y -= distance.y*0.1;
 		}
-		
-	
-		App->particles->AddParticle(App->particles->enemyshot, position.x+10, position.y + 50, COLLIDER_ENEMY_SHOT,distance.x, distance.y); //In theory, the speed should be distance.x and distance.y, but at the moment it doesn't work that way
+         */
+		if (App->player->position.y - 22 < (position.y - 22 * 3))
+		{
+			distance.y *= -1;
+		}
+		if (App->player->position.x < (position.x + 22))
+		{
+			distance.x *= -1;
+		}
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 10, position.y + 50, COLLIDER_ENEMY_SHOT, distance.x * 0.03, distance.y * 0.03); //In theory, the speed should be distance.x and distance.y, but at the moment it doesn't work that way
+
 		shooting = true;
 	}
 }
