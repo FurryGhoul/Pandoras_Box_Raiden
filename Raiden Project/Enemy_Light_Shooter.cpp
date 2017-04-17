@@ -9,14 +9,31 @@
 
 Enemy_Light_Shooter::Enemy_Light_Shooter(int x, int y) : Enemy(x, y)
 {
-	flys.PushBack({ 180, 1, 22, 30 });
-	flys.speed = 1.0f;
-	flys.loop = false;
+	// Anmiation pushback's
 
-	flyse.PushBack({ 326, 1, 25, 30 });
-	flyse.speed = 1.0f;
-	flyse.loop = false;
+	//South to East
+	flys.PushBack({ 1, 1, 22, 30 });
+	flyse1.PushBack({ 25, 1, 25, 30 });
+	flyse2.PushBack({ 53, 1, 27, 25 });
+	flyse3.PushBack({ 81, 1, 31, 23 });
 
+	// East to North
+	flye.PushBack({ 114, 1, 32, 30 });
+	flyne1.PushBack({ 147, 1, 31, 23 });
+	flyne2.PushBack({ 182, 1, 27, 26 });
+	flyne3.PushBack({ 212, 1, 25, 30 });
+
+	//North to West
+	flyn.PushBack({ 241, 1, 22, 30 });
+	flynw1.PushBack({ 266, 1, 25, 30 });
+	flynw2.PushBack({ 294, 1, 27, 25 });
+	flynw3.PushBack({ 322, 1, 31, 23 });
+
+	//West to South
+	flyw.PushBack({ 356, 1, 32, 28 });
+	flysw1.PushBack({ 392, 1, 31, 23 });
+	flysw2.PushBack({ 426, 1, 27, 26 });
+	flysw3.PushBack({ 458, 1, 24, 30 });
 
 	movement.PushBack({ -0.2f, 8.0f }, 50);
 	movement.PushBack({ 0.0f, 0.0f }, 50);
@@ -85,16 +102,53 @@ void Enemy_Light_Shooter::MoveShoot()
 	{
 		nw = false;
 	}
-
+	/*
 	// Applying animation
-	if ((se || sw) && angle < 30)
+
+	// South to East
+	if ((se || sw) && angle < 18)
 	{
 		animation = &flys;
 	}
-	if (se && angle > 30)
+	if (se && angle > 18)
 	{
-		animation = &flyse;
+		animation = &flyse1;
 	}
+	if (se && angle > 36)
+	{
+		animation = &flyse2;
+	}
+	if (se && angle > 54)
+	{
+		animation = &flyse3;
+	}
+	if (se && angle > 72)
+	{
+		animation = &flyse3;
+	}
+
+	// East to North
+	if ((se || nw) && angle < 18)
+	{
+		animation = &flys;
+	}
+	if (se && angle > 18)
+	{
+		animation = &flyse1;
+	}
+	if (se && angle > 36)
+	{
+		animation = &flyse2;
+	}
+	if (se && angle > 54)
+	{
+		animation = &flyse3;
+	}
+	if (se && angle > 72)
+	{
+		animation = &flyse3;
+	}
+	*/
 	
 	// Shooting
 	if (distance.y <= 400 && shooting == false)

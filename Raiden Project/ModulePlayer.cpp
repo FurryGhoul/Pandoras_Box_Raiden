@@ -22,49 +22,29 @@ graphics = NULL;
 
 	// Idle animation
 	idle.PushBack({ 3, 2, 22, 28});
-	idle.loop = false;
-	idle.speed = 1.0f;
 
 	// Idle animation 2
 	idlep.PushBack({ 28, 2, 22, 29 });
-	idlep.loop = false;
-	idlep.speed = 1.0f;
 
 	// Move right
 
 	right.PushBack({ 53, 2, 19, 28 });
-	right.loop = false;
-	right.speed = 1.0f;
 	right1.PushBack({ 97, 2, 14, 28 });
-	right1.loop = false;
-	right1.speed = 1.0f;
 
 	// Move right 2
 
 	rightp.PushBack({ 75, 2, 19, 29 });
-	rightp.loop = false;
-	rightp.speed = 1.0f;
 	right1p.PushBack({ 114, 2, 14, 29 });
-	right1p.loop = false;
-	right1p.speed = 1.0f;
 
 	// Move left
 
 	left.PushBack({ 131, 2, 19, 28 });
-	left.loop = false;
-	left.speed = 1.0f;
 	left1.PushBack({ 175, 2, 14, 28 });
-	left1.loop = false;
-	left1.speed = 1.0f;
 
 	// Move left 2
 
 	leftp.PushBack({ 153, 2, 19, 29 });
-	leftp.loop = false;
-	leftp.speed = 1.0f;
 	left1p.PushBack({ 192, 2, 14, 29 });
-	left1p.loop = false;
-	left1p.speed = 1.0f;
 }
 
 ModulePlayer::~ModulePlayer()
