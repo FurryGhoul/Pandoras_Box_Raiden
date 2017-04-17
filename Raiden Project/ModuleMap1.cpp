@@ -42,6 +42,11 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 100, -100);
 		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 400, -100);
 		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 300, -500);
+		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 100, -500);
+		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 0, -700);
+		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 200, -600);
+		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 150, -2000);
+		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 0, -2000);
 		App->collision->Enable();
 		App->render->camera.x = App->render->camera.y = 0;
 		App->enemies->Enable();

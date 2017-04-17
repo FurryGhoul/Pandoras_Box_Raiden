@@ -101,14 +101,15 @@ void Enemy_Light_Shooter::MoveShoot()
 	{
 
 		
-		while (sqrtf(distance.x*distance.x + distance.y*distance.y) > 10) //I'm trying to convert the distance at which the player is from the enemy in a vector that represents the speed of the bullet, which shouldn't be bigger that 10
+		while (sqrtf(distance.x*distance.x + distance.y*distance.y) > 15) //I'm trying to convert the distance at which the player is from the enemy in a vector that represents the speed of the bullet, which shouldn't be bigger that 10
 		{
-			if (distance.x > 0)
+			
 			distance.x -= distance.x*0.1;
 			distance.y -= distance.y*0.1;
 		}
 		
-		App->particles->AddParticle(App->particles->enemyshot, position.x+10, position.y + 50, COLLIDER_ENEMY_SHOT,0, 0); //In theory, the speed should be distance.x and distance.y, but at the moment it doesn't work that way
+	
+		App->particles->AddParticle(App->particles->enemyshot, position.x+10, position.y + 50, COLLIDER_ENEMY_SHOT,distance.x, distance.y); //In theory, the speed should be distance.x and distance.y, but at the moment it doesn't work that way
 		shooting = true;
 	}
 }
