@@ -43,8 +43,6 @@ Enemy_Light_Shooter::Enemy_Light_Shooter(int x, int y) : Enemy(x, y)
 
 	original_pos.x = x;
 	original_pos.y = -50;
-	w = 24*3;
-	h = 34*3;
 }
 
 void Enemy_Light_Shooter::MoveShoot()
@@ -55,12 +53,14 @@ void Enemy_Light_Shooter::MoveShoot()
 
 	// Animation
 
+	// Setting angle
+	param = (abs(distance.y) / (abs(distance.x) + 0.1));
+	angle = atan(param) * 180 / PI;
+
 	// South-East position
 	if (distance.y > 0 && distance.x > 0)
 	{
 		se = true;
-		param = (abs(distance.x) / (abs(distance.y) + 0.1));
-		angle = atan(param) * 180 / PI;
 	}
 	else
 	{
@@ -71,8 +71,6 @@ void Enemy_Light_Shooter::MoveShoot()
 	if (distance.y > 0 && distance.x < 0)
 	{
 		sw = true;
-		param = (abs(distance.x) / (abs(distance.y) + 0.1));
-		angle = atan(param) * 180 / PI;
 	}
 	else
 	{
@@ -83,8 +81,6 @@ void Enemy_Light_Shooter::MoveShoot()
 	if (distance.y < 0 && distance.x > 0)
 	{
 		ne = true;
-		param = (abs(distance.y) / (abs(distance.x) + 0.1));
-		angle = atan(param) * 180 / PI;
 	}
 	else
 	{
@@ -95,61 +91,142 @@ void Enemy_Light_Shooter::MoveShoot()
 	if (distance.y < 0 && distance.x < 0)
 	{
 		nw = true;
-		param = (abs(distance.y) / (abs(distance.x) + 0.1));
-		angle = atan(param) * 180 / PI;
 	}
 	else
 	{
 		nw = false;
 	}
-	/*
+
 	// Applying animation
 
 	// South to East
-	if ((se || sw) && angle < 18)
+	if (se && angle > 72 && angle < 90)
 	{
 		animation = &flys;
+		w = 22 * 3;
+		h = 30 * 3;
 	}
-	if (se && angle > 18)
+	if (se && angle > 54 && angle < 72)
 	{
 		animation = &flyse1;
+		w = 25 * 3;
+		h = 30 * 3;
 	}
-	if (se && angle > 36)
+	if (se && angle > 36 && angle < 54)
 	{
 		animation = &flyse2;
+		w = 27 * 3;
+		h = 25 * 3;
 	}
-	if (se && angle > 54)
+	if (se && angle > 18 && angle < 36)
 	{
 		animation = &flyse3;
+		w = 31 * 3;
+		h = 23 * 3;
 	}
-	if (se && angle > 72)
+	if (se && angle > 0 && angle < 18)
 	{
-		animation = &flyse3;
+		animation = &flye;
+		w = 32 * 3;
+		h = 30 * 3;
 	}
 
 	// East to North
-	if ((se || nw) && angle < 18)
+	if (ne && angle > 0 && angle < 18)
+	{
+		animation = &flye;
+		w = 32 * 3;
+		h = 30 * 3;
+	}
+	if (ne && angle > 18 && angle < 36)
+	{
+		animation = &flyne1;
+		w = 31 * 3;
+		h = 23 * 3;
+	}
+	if (ne && angle > 36 && angle < 54)
+	{
+		animation = &flyne2;
+		w = 27 * 3;
+		h = 26 * 3;
+	}
+	if (ne && angle > 54 && angle < 72)
+	{
+		animation = &flyne3;
+		w = 25 * 3;
+		h = 30 * 3;
+	}
+	if (ne && angle > 72 && angle < 90)
+	{
+		animation = &flyn;
+		w = 22 * 3;
+		h = 30 * 3;
+	}
+
+	// North to West
+	if (nw && angle > 72 && angle < 90)
+	{
+		animation = &flyn;
+		w = 22 * 3;
+		h = 30 * 3;
+	}
+	if (nw && angle > 54 && angle < 72)
+	{
+		animation = &flynw1;
+		w = 25 * 3;
+		h = 30 * 3;
+	}
+	if (nw && angle > 36 && angle < 54)
+	{
+		animation = &flynw2;
+		w = 27 * 3;
+		h = 25 * 3;
+	}
+	if (nw && angle > 18 && angle < 36)
+	{
+		animation = &flynw3;
+		w = 31 * 3;
+		h = 23 * 3;
+	}
+	if (nw && angle > 0 && angle < 18)
+	{
+		animation = &flyw;
+		w = 32 * 3;
+		h = 28 * 3;
+	}
+
+	// West to South
+	if (sw && angle > 0 && angle < 18)
+	{
+		animation = &flyw;
+		w = 32 * 3;
+		h = 28 * 3;
+	}
+	if (sw && angle > 18 && angle < 36)
+	{
+		animation = &flysw1;
+		w = 31 * 3;
+		h = 23 * 3;
+	}
+	if (sw && angle > 36 && angle < 54)
+	{
+		animation = &flysw2;
+		w = 27 * 3;
+		h = 26 * 3;
+	}
+	if (sw && angle > 54 && angle < 72)
+	{
+		animation = &flysw3;
+		w = 24 * 3;
+		h = 30 * 3;
+	}
+	if (sw && angle > 72 && angle < 90)
 	{
 		animation = &flys;
+		w = 22 * 3;
+		h = 30 * 3;
 	}
-	if (se && angle > 18)
-	{
-		animation = &flyse1;
-	}
-	if (se && angle > 36)
-	{
-		animation = &flyse2;
-	}
-	if (se && angle > 54)
-	{
-		animation = &flyse3;
-	}
-	if (se && angle > 72)
-	{
-		animation = &flyse3;
-	}
-	*/
-	
+
 	// Shooting
 	if (distance.y <= 400 && shooting == false)
 	{

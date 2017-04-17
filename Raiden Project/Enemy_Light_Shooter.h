@@ -24,7 +24,7 @@ private:
 	double param;
 	double angle;
 	bool ne = false;
-	bool se = true;
+	bool se = false;
 	bool nw = false;
 	bool sw = false;
 	bool shooting = false;
