@@ -17,6 +17,7 @@ enum ENEMY_TYPES
 {
 	NO_TYPE,
     LIGHT_SHOOTER,
+	BONUS_SHIP,
 };
 
 class Enemy;

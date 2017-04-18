@@ -72,6 +72,7 @@
   <ItemGroup>
     <ClInclude Include="Application.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Enemy_Bonus_Ship.h" />
     <ClInclude Include="Enemy_Light_Shooter.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="Animation.h" />
@@ -97,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Enemy_Bonus_Ship.cpp" />
     <ClCompile Include="Enemy_Light_Shooter.cpp" />
     <ClCompile Include="Globals.cpp" />
     <ClCompile Include="Main.cpp" />
