@@ -18,6 +18,7 @@ public:
 	iPoint position;
 	int h;
 	int w;
+	int spriteshit;
 
 public:
 	Enemy(int x, int y);

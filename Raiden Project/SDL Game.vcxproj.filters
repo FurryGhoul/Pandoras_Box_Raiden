@@ -86,7 +86,11 @@
     <ClInclude Include="Enemy_Light_Shooter.h">
       <Filter>Modules\Enemies</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Enemy_Bonus_Ship.h">
+=======
+    <ClInclude Include="Tank.h">
+>>>>>>> origin/master
       <Filter>Modules\Enemies</Filter>
     </ClInclude>
   </ItemGroup>
@@ -151,7 +155,11 @@
     <ClCompile Include="Enemy_Light_Shooter.cpp">
       <Filter>Modules\Enemies</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Enemy_Bonus_Ship.cpp">
+=======
+    <ClCompile Include="Tank.cpp">
+>>>>>>> origin/master
       <Filter>Modules\Enemies</Filter>
     </ClCompile>
   </ItemGroup>

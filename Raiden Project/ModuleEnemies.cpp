@@ -24,7 +24,8 @@ bool ModuleEnemies::Init()
 {
 	// Create a prototype for each enemy available so we can copy them around
 	sprites = App->textures->Load("assets/Light Shooter.png");
-
+	sprites2 = App->textures->Load("assets/Tank.png"); // No existe aun
+	sprites3 = App->textures->Load("assets/NavePene.png"); // No existe aun
 	return true;
 }
 
@@ -55,8 +56,21 @@ update_status ModuleEnemies::Update()
 		if (enemies[i] != nullptr) enemies[i]->MoveShoot();
 
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
-		if (enemies[i] != nullptr) enemies[i]->Draw(sprites);
-
+		if (enemies[i] != nullptr) 
+		{ 
+		   if (enemies[i]->spriteshit == 0)
+		   {
+		    enemies[i]->Draw(sprites);
+		   }
+		   if (enemies[i]->spriteshit == 1)
+		   {
+			   enemies[i]->Draw(sprites2);
+		   }
+		   if (enemies[i]->spriteshit == 2)
+		   {
+			   enemies[i]->Draw(sprites2);
+		   }
+        }
 	return UPDATE_CONTINUE;
 }
 
