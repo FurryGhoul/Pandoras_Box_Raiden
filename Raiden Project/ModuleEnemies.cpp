@@ -6,6 +6,7 @@
 #include "ModuleTextures.h"
 #include "Enemy.h"
 #include "Enemy_Light_Shooter.h"
+#include "Enemy_Bonus_Ship.h"
 #define SPAWN_MARGIN 50
 
 ModuleEnemies::ModuleEnemies()
@@ -23,7 +24,8 @@ bool ModuleEnemies::Init()
 {
 	// Create a prototype for each enemy available so we can copy them around
 	sprites = App->textures->Load("assets/Light Shooter.png");
-
+	sprites2 = App->textures->Load("assets/Tank.png"); // No existe aun
+	sprites3 = App->textures->Load("assets/NavePene.png"); // No existe aun
 	return true;
 }
 
@@ -54,8 +56,21 @@ update_status ModuleEnemies::Update()
 		if (enemies[i] != nullptr) enemies[i]->MoveShoot();
 
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
-		if (enemies[i] != nullptr) enemies[i]->Draw(sprites);
-
+		if (enemies[i] != nullptr) 
+		{ 
+		   if (enemies[i]->spriteshit == 0)
+		   {
+		    enemies[i]->Draw(sprites);
+		   }
+		   if (enemies[i]->spriteshit == 1)
+		   {
+			   enemies[i]->Draw(sprites2);
+		   }
+		   if (enemies[i]->spriteshit == 2)
+		   {
+			   enemies[i]->Draw(sprites2);
+		   }
+        }
 	return UPDATE_CONTINUE;
 }
 
@@ -128,6 +143,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		{
 		case ENEMY_TYPES::LIGHT_SHOOTER:
 			enemies[i] = new Enemy_Light_Shooter(info.x, info.y);
+			break;
+		case ENEMY_TYPES::BONUS_SHIP:
+			enemies[i] = new Enemy_Bonus_Ship(info.x, info.y);
 			break;
 		}
 	}
