@@ -39,8 +39,9 @@ Enemy_Light_Shooter::Enemy_Light_Shooter(int x, int y) : Enemy(x, y)
 	movement.PushBack({ 0.0f, 0.0f }, 50);
 	movement.PushBack({ -0.2f, -5.0f }, 600);
 
-	collider = App->collision->AddCollider({ 0, 0, 24*3-5, 24*3+20 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
+	collider = App->collision->AddCollider({ 0, 0, 24*3-5, 24*3+20 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
+	spriteshit = 0;
 	original_pos.x = x;
 	original_pos.y = -50;
 }
