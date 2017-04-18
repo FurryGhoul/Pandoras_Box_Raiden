@@ -4,6 +4,7 @@
 #include "ModuleInput.h"
 #include "ModuleRender.h"
 #include "ModulePlayer.h"
+#include "ModulePlayer2.h"
 #include "SDL/include/SDL.h"
 #include "ModuleParticles.h"
 #include "ModuleMap1.h"
@@ -411,8 +412,17 @@ update_status ModulePlayer::Update()
 
 void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 {
-	if (Player != nullptr && Player == c1)
-	{
-		App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
-	}
+		if (Player != nullptr && Player == c1 && App->player2->deadplayer == true && deadplayer == true)
+		{
+			App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
+			App->player2->deadplayer = false;
+			deadplayer = false;
+		}
+
+		else if (Player != nullptr && Player == c1 && deadplayer == false)
+		{
+			Disable();
+			Player->SetPos(10000000, 10000000);
+			deadplayer = true;
+		}
 }

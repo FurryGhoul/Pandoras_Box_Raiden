@@ -1,6 +1,7 @@
 #include "Enemy_Light_Shooter.h"
 #include "Application.h"
 #include "ModulePlayer.h"
+#include "ModulePlayer2.h"
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
 #include <Math.h>

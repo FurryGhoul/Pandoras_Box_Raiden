@@ -9,8 +9,10 @@
 #include "ModuleAudio_2.h"
 #include "ModuleFadeToBlack.h"
 #include "ModulePlayer.h"
+#include "ModulePlayer2.h"
 #include "ModuleParticles.h"
 #include "ModuleEnemies.h"
+
 ModuleMap1::ModuleMap1() : Module()
 {
 	
@@ -25,7 +27,7 @@ bool ModuleMap1::Init()
 	LOG("Loading background assets");
 	ground = {xmap,ymap ,352*3 ,3266*3};
     Map1 = App->textures->Load("Assets/Tilemap1.png");
-
+	
 	
 	return true;
 }
@@ -36,7 +38,8 @@ update_status ModuleMap1::Update()
 	if (!(App->particles->IsEnabled() && App->player->IsEnabled() && App->collision->IsEnabled()))
 	{
 		App->particles->Enable();
-		App->player->Enable();
+	    App->player->Enable();
+		App->player2->Enable();
 		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 300, -4000 );
 		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 300, -1000);
 		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 100, -100);

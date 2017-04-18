@@ -11,6 +11,7 @@
 #include "ModuleAudio_2.h"
 #include "ModuleFadeToBlack.h"
 #include "ModulePlayer.h"
+#include "ModulePlayer2.h"
 #include "ModuleParticles.h"
 
 ModuleMap2::ModuleMap2() : Module()
@@ -36,6 +37,7 @@ update_status ModuleMap2::Update()
 	{
 		App->particles->Enable();
 		App->player->Enable();
+		App->player2->Enable();
 
 		App->collision->Enable();
 	}

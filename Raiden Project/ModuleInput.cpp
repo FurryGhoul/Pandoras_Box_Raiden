@@ -6,6 +6,7 @@
 #include "ModuleMap1.h"
 #include "ModuleMap2.h"
 #include "ModulePlayer.h"
+#include "ModulePlayer2.h"
 
 ModuleInput::ModuleInput() : Module()
 {
@@ -66,12 +67,12 @@ update_status ModuleInput::Update()
 				keyboard[i] = KEY_IDLE;
 		}
 	}
-
+	/*
 	if (keyboard[SDL_SCANCODE_DOWN])
 	{
 		App->map_1->ymap -= 6;
 	}
-
+	*/
 	if (keyboard[SDL_SCANCODE_A])
 	{
 		if (App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->position.x < 50)

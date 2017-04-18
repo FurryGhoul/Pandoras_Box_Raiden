@@ -14,7 +14,7 @@
 #include "ModuleParticles.h"
 #include "ModuleCollision.h"
 #include "ModuleEnemies.h"
-
+#include "ModulePlayer2.h"
 
 Application::Application()
 {	
@@ -29,10 +29,11 @@ Application::Application()
 	modules[8] = WelcomeScreen = new ModuleWelcomeScreen();
 	modules[9] = StageClear1 = new ModuleStageClear1();
 	modules[10] = player = new ModulePlayer();
-	modules[11] = particles = new ModuleParticles();
-	modules[12] = collision = new ModuleCollision();
-	modules[13] = fade = new ModuleFadeToBlack();
-	modules[14] = enemies = new ModuleEnemies();
+	modules[11] = player2 = new ModulePlayer2();
+	modules[12] = particles = new ModuleParticles();
+	modules[13] = collision = new ModuleCollision();
+	modules[14] = fade = new ModuleFadeToBlack();
+	modules[15] = enemies = new ModuleEnemies();
 
 	
 }	

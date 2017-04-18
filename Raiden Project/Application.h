@@ -3,7 +3,7 @@
 
 #include "Globals.h"
 
-#define NUM_MODULES 15
+#define NUM_MODULES 16
 
 class ModuleWindow;
 class ModuleInput;
@@ -21,6 +21,7 @@ class ModulePlayer;
 class ModuleParticles;
 class ModuleCollision;
 class ModuleEnemies;
+class ModulePlayer2;
 
 class Application
 {
@@ -41,7 +42,8 @@ public:
 	ModulePlayer* player;
 	ModuleParticles* particles;
 	ModuleCollision* collision;
-	ModuleEnemies * enemies;
+	ModuleEnemies* enemies;
+	ModulePlayer2* player2;
 
 
 public:

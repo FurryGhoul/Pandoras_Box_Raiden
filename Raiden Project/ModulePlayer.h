@@ -44,6 +44,7 @@ public:
 	int player_h;
 	bool moving = false;
 	bool godmode = false;
+	bool deadplayer = false;
 	Uint32 time;
 	Uint32 timep; //time for propellers
 	Collider* Player = nullptr;

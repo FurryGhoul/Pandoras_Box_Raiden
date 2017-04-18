@@ -10,6 +10,7 @@
 #include "ModuleFadeToBlack.h"
 #include "ModuleParticles.h"
 #include "ModulePlayer.h"
+#include "ModulePlayer2.h"
 
 ModuleStageClear1::ModuleStageClear1() : Module()
 {
@@ -34,6 +35,7 @@ update_status ModuleStageClear1::Update()
 	{
 		App->particles->Disable();
 		App->player->Disable();
+		App->player2->Disable();
 
 		App->collision->Disable();
 	}

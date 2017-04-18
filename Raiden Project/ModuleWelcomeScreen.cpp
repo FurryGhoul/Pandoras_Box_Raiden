@@ -13,6 +13,7 @@
 #include "ModulePlayer.h"
 #include "ModuleParticles.h"
 #include "ModuleEnemies.h"
+#include "ModulePlayer2.h"
 
 ModuleWelcomeScreen::ModuleWelcomeScreen() : Module()
 {
@@ -33,10 +34,10 @@ bool ModuleWelcomeScreen::Init()
 	App->audio_2->Close();
 	App->particles->Disable();
 	App->player->Disable();
+	App->player2->Disable();
 
 	ground = { 0, 0 ,224 * 3 ,256 * 3};
 	Welcome = App->textures->Load("Assets/WelcomeScreen.png");
-	
 	return true;
 }
 
@@ -46,6 +47,7 @@ update_status ModuleWelcomeScreen::Update()
 	{
 		App->particles->Disable();
 		App->player->Disable();
+		App->player2->Disable();
 		App->enemies->Disable();
 		App->collision->Disable();
 	}

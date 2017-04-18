@@ -5,6 +5,7 @@
 #include "ModuleRender.h"
 #include "ModuleParticles.h"
 #include "ModulePlayer.h"
+#include "ModulePlayer2.h"
 #include "ModuleAudio_1.h"
 #include "SDL/include/SDL_timer.h"
 #include "ModuleFadeToBlack.h"

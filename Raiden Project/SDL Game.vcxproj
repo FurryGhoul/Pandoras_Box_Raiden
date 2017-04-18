@@ -76,6 +76,7 @@
     <ClInclude Include="Globals.h" />
     <ClInclude Include="Animation.h" />
     <ClInclude Include="ModuleEnemies.h" />
+    <ClInclude Include="ModulePlayer2.h" />
     <ClInclude Include="Path.h" />
     <ClInclude Include="ModuleCollision.h" />
     <ClInclude Include="ModuleParticles.h" />
@@ -106,6 +107,7 @@
     <ClCompile Include="ModuleInput.cpp" />
     <ClCompile Include="ModuleParticles.cpp" />
     <ClCompile Include="ModulePlayer.cpp" />
+    <ClCompile Include="ModulePlayer2.cpp" />
     <ClCompile Include="ModuleRender.cpp" />
     <ClCompile Include="ModuleStageClear1.cpp" />
     <ClCompile Include="ModuleTextures.cpp" />
