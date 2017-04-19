@@ -50,6 +50,7 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 200, -600);
 		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 150, -2000);
 		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 0, -2000);
+		App->enemies->AddEnemy(ENEMY_TYPES::BONUS_SHIP, 400, -500);
 		App->collision->Enable();
 		App->render->camera.x = App->render->camera.y = 0;
 		App->enemies->Enable();

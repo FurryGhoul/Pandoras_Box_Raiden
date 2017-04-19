@@ -24,8 +24,8 @@ bool ModuleEnemies::Init()
 {
 	// Create a prototype for each enemy available so we can copy them around
 	sprites = App->textures->Load("assets/Light Shooter.png");
-	sprites2 = App->textures->Load("assets/Tank.png"); // No existe aun
-	sprites3 = App->textures->Load("assets/NavePene.png"); // No existe aun
+	sprites2 = App->textures->Load("assets/Nave Bonus.png"); // No existe aun
+	sprites3 = App->textures->Load("assets/Nave Bonus.png"); // No existe aun
 	return true;
 }
 
