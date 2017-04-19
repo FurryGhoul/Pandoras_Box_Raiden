@@ -1,8 +1,11 @@
 #pragma once
-class Turret
+#include "Enemy.h"
+#include "Tank.h"
+class Turret: public Enemy
 {
 public:
-	Turret();
-	~Turret();
+	Turret(int, int);
+
+	void MoveShoot();
 };
 

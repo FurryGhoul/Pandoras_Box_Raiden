@@ -7,6 +7,8 @@
 #include "Enemy.h"
 #include "Enemy_Light_Shooter.h"
 #include "Enemy_Bonus_Ship.h"
+#include "Tank.h"
+#include "Turret.h"
 #define SPAWN_MARGIN 50
 
 ModuleEnemies::ModuleEnemies()
@@ -68,7 +70,7 @@ update_status ModuleEnemies::Update()
 		   }
 		   if (enemies[i]->spriteshit == 2)
 		   {
-			   enemies[i]->Draw(sprites2);
+			   enemies[i]->Draw(sprites3);
 		   }
         }
 	return UPDATE_CONTINUE;

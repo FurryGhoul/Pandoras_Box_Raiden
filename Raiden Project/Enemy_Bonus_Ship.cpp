@@ -32,7 +32,7 @@ Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y) : Enemy (x, y)
 
 
 	collider = App->collision->AddCollider({ 20, 0, 120, 126 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
-	spriteshit = 2;
+	spriteshit = 1;
 	original_pos.x = x;
 	original_pos.y = - 150;
 }

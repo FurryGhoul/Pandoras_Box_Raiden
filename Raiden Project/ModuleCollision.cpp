@@ -7,10 +7,9 @@ ModuleCollision::ModuleCollision()
 {
 	for (uint i = 0; i < MAX_COLLIDERS; ++i)
 		colliders[i] = nullptr;
-
 	matrix[COLLIDER_WALL][COLLIDER_WALL] = false;
 	matrix[COLLIDER_WALL][COLLIDER_PLAYER] = true;
-	matrix[COLLIDER_WALL][COLLIDER_ENEMY] = true;
+	matrix[COLLIDER_WALL][COLLIDER_ENEMY] = false;
 	matrix[COLLIDER_WALL][COLLIDER_PLAYER_SHOT] = true;
 	matrix[COLLIDER_WALL][COLLIDER_ENEMY_SHOT] = true;
 
@@ -20,7 +19,7 @@ ModuleCollision::ModuleCollision()
 	matrix[COLLIDER_PLAYER][COLLIDER_PLAYER_SHOT] = false;
 	matrix[COLLIDER_PLAYER][COLLIDER_ENEMY_SHOT] = true;
 
-	matrix[COLLIDER_ENEMY][COLLIDER_WALL] = true;
+	matrix[COLLIDER_ENEMY][COLLIDER_WALL] = false;
 	matrix[COLLIDER_ENEMY][COLLIDER_PLAYER] = true;
 	matrix[COLLIDER_ENEMY][COLLIDER_ENEMY] = false;
 	matrix[COLLIDER_ENEMY][COLLIDER_PLAYER_SHOT] = true;
@@ -61,45 +60,43 @@ update_status ModuleCollision::PreUpdate()
 // Called before render is available
 update_status ModuleCollision::Update()
 {
-	Collider* c1;
-	Collider* c2;
+Collider* c1;
+Collider* c2;
 
-	for (uint i = 0; i < MAX_COLLIDERS; ++i)
+for (uint i = 0; i < MAX_COLLIDERS; ++i)
+{
+	// skip empty colliders
+	if (colliders[i] == nullptr)
+		continue;
+
+	c1 = colliders[i];
+
+	// avoid checking collisions already checked
+	for (uint k = i + 1; k < MAX_COLLIDERS; ++k)
 	{
 		// skip empty colliders
-		if (colliders[i] == nullptr)
+		if (colliders[k] == nullptr)
 			continue;
 
-		c1 = colliders[i];
+		c2 = colliders[k];
 
-		// avoid checking collisions already checked
-		for (uint k = i + 1; k < MAX_COLLIDERS; ++k)
+		if (c1->CheckCollision(c2->rect) == true)
 		{
-			// skip empty colliders
-			if (colliders[k] == nullptr)
-				continue;
-
-			c2 = colliders[k];
-
-			if (c1->CheckCollision(c2->rect) == true )
-			{
-				
-				if (matrix[c1->type][c2->type] && c1->callback)
-					c1->callback->OnCollision(c1, c2);
-
- 				if (matrix[c2->type][c1->type] && c2->callback)
-		            c2->callback->OnCollision(c2, c1);
-
-				
-
-				
-		}
+			
+			if (matrix[c1->type][c2->type] && c1->callback)
+				c1->callback->OnCollision(c1, c2);
+			
+			
+			if (matrix[c2->type][c1->type] && c2->callback)
+					c2->callback->OnCollision(c2, c1);
+			
 		}
 	}
+}
 
-	DebugDraw();
+DebugDraw();
 
-	return UPDATE_CONTINUE;
+return UPDATE_CONTINUE;
 }
 
 void ModuleCollision::DebugDraw()
@@ -173,20 +170,6 @@ Collider* ModuleCollision::AddCollider(SDL_Rect rect, COLLIDER_TYPE type, Module
 	return ret;
 }
 
-bool ModuleCollision::EraseCollider(Collider* collider)
-{
-	for (uint i = 0; i < MAX_COLLIDERS; ++i)
-	{
-		if (colliders[i] == collider)
-		{
-			delete colliders[i];
-			colliders[i] = nullptr;
-			return true;
-		}
-	}
-
-	return false;
-}
 
 // -----------------------------------------------------
 

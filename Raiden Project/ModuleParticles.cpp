@@ -61,6 +61,7 @@ bool ModuleParticles::CleanUp()
 		{
 			delete active[i];
 			active[i] = nullptr;
+		
 		}
 	}
 
@@ -141,11 +142,11 @@ void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 	{
 		// Always destroy particles that collide
-		if (active[i] != nullptr && active[i]->collider == c2)
+		if (active[i] != nullptr && active[i]->collider == c1)
 		{
-			delete active[i];
+ 			delete active[i];
 			active[i] = nullptr;
-			break;
+     		break;
 		}
 	}
 }
@@ -164,7 +165,7 @@ fx(p.fx), born(p.born), life(p.life)
 Particle::~Particle()
 {
 	if (collider != nullptr)
-		App->collision->EraseCollider(collider);
+		collider->to_delete = true;
 }
 
 bool Particle::Update()
