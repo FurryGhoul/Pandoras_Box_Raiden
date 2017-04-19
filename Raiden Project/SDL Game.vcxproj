@@ -96,7 +96,9 @@
     <ClInclude Include="ModuleTextures.h" />
     <ClInclude Include="ModuleWindow.h" />
     <ClInclude Include="ModuleWelcomeScreen.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Tank.h" />
+    <ClInclude Include="Turret.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
@@ -122,6 +124,10 @@
     <ClCompile Include="ModuleEnemies.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Tank.cpp" />
+    <ClCompile Include="Turret.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SDL3 Handout.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
