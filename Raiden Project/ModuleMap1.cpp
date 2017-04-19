@@ -35,7 +35,7 @@ bool ModuleMap1::Init()
 update_status ModuleMap1::Update()
 {
 
-	if (!(App->particles->IsEnabled() && App->player->IsEnabled() && App->collision->IsEnabled()))
+	if (setup)
 	{
 		App->particles->Enable();
 	    App->player->Enable();
@@ -54,6 +54,12 @@ update_status ModuleMap1::Update()
 		App->collision->Enable();
 		App->render->camera.x = App->render->camera.y = 0;
 		App->enemies->Enable();
+		App->player->InitialPos();
+		App->player2->InitialPos();
+		App->player->godmode = false;
+		App->player2->godmode = false;
+
+		setup = false;
 	}
 	App->render->Blit(Map1, xmap, ymap, &ground);
 	App->render->camera.y -= 6;

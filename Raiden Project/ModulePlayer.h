@@ -17,6 +17,11 @@ public:
 	update_status Update();
 	bool CleanUp();
 	void OnCollision(Collider* c1, Collider* c2);
+	void InitialPos()
+	{
+		position.x = 205;
+		position.y = 620;
+	}
 
 public:
 
