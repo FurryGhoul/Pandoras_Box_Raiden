@@ -382,7 +382,7 @@ update_status ModulePlayer2::Update()
 
 
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
-	if (godmode == false)
+	if (godmode == false && Player != nullptr)
 	{
 		Player->SetPos(position.x, position.y);
 		Player->SetSize(player_w, player_h);
@@ -398,7 +398,7 @@ update_status ModulePlayer2::Update()
 
 			godmode = false;
 		}
-		else
+		else if (Player != nullptr)
 		{
 			Player->SetPos(10000000, 10000000);
 			Player = nullptr;

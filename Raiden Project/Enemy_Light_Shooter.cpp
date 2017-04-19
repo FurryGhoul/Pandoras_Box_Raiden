@@ -50,9 +50,19 @@ Enemy_Light_Shooter::Enemy_Light_Shooter(int x, int y) : Enemy(x, y)
 void Enemy_Light_Shooter::MoveShoot()
 {
 	position = original_pos + movement.GetCurrentPosition();
-	distance.y = App->player->position.y - 22 - position.y - 22 * 3;
-	distance.x = App->player->position.x - position.x + 22 ;
 
+	if (sqrtf((distance.y = App->player->position.y - 22 - position.y - 22 * 3)*(distance.y = App->player->position.y - 22 - position.y - 22 * 3) + (distance.x = App->player->position.x - position.x + 22)* (distance.x = App->player->position.x - position.x + 22))
+		< sqrtf((distance.y = App->player2->position.y - 22 - position.y - 22 * 3)*(distance.y = App->player2->position.y - 22 - position.y - 22 * 3) + (distance.x = App->player2->position.x - position.x + 22)* (distance.x = App->player2->position.x - position.x + 22)))
+	{
+		distance.y = App->player->position.y - 22 - position.y - 22 * 3;
+		distance.x = App->player->position.x - position.x + 22;
+	}
+
+	else
+	{
+		distance.y = App->player2->position.y - 22 - position.y - 22 * 3;
+		distance.x = App->player2->position.x - position.x + 22;
+	}
 	// Animation
 
 	// Setting angle
