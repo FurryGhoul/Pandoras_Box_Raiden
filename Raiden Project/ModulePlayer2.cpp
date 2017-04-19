@@ -18,8 +18,7 @@ ModulePlayer2::ModulePlayer2()
 	graphics = NULL;
 	current_animation = NULL;
 
-	position.x = 305;
-	position.y = 620;
+	InitialPos();
 
 	// Idle animation
 	idle.PushBack({ 3, 2, 22, 28 });
@@ -412,18 +411,20 @@ update_status ModulePlayer2::Update()
 
 void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 {
-
-		if (Player != nullptr && Player == c1 && App->player2->deadplayer == true && deadplayer == true)
-		{
-			App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
-			App->player->deadplayer = false;
-			deadplayer = false;
-		}
-
-		else if (Player != nullptr && Player == c1 && deadplayer == false)
-		{
-			Disable();
-			Player->SetPos(10000000, 10000000);
-			deadplayer = true;
-		}
+	if (Player != nullptr && Player == c1 && deadplayer == false)
+	{
+		Disable();
+		Player->SetPos(10000000, 10000000);
+		deadplayer = true;
+	}
+	
+	if (Player != nullptr && Player == c1 && App->player->deadplayer && deadplayer)
+	{
+		godmode = true;
+		App->enemies->Disable();
+		App->collision->Disable();
+		App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
+		App->player->deadplayer = false;
+		deadplayer = false;
+	}
 }

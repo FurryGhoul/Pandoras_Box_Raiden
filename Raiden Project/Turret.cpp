@@ -12,3 +12,5 @@ Turret::Turret(int x, int y) : Enemy(x, y)
 	spriteshit = 3;
 }
 
+void Turret::MoveShoot()
+{}

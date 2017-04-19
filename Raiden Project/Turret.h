@@ -5,7 +5,6 @@ class Turret: public Enemy
 {
 public:
 	Turret(int, int);
-
 	void MoveShoot();
 };
 

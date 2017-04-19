@@ -9,12 +9,13 @@
 
 Tank::Tank(int x, int y) : Enemy(x, y)
 {
+	/*
 	spriteshit = 3;
 	idle.PushBack[2, 4, 24, 26];
 	original_pos.x = x;
 	original_pos.y = -50;
 
-	movement.PushBack({ -0.05f, 0 }, 50);
+	movement.PushBack({ -0.05f, 0 }, 50);*/
 }
 
 
