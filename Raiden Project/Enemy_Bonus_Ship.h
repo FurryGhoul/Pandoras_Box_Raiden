@@ -4,8 +4,7 @@ class Enemy_Bonus_Ship : public Enemy
 {
 private:
 	Animation flydown;
-	Animation flyup;
-	Animation idle;
+	Animation flysides;
 	iPoint original_pos;
 	iPoint distance;
 	Path movement;
