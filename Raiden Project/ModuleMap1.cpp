@@ -51,6 +51,7 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 150, -2000);
 		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 0, -2000);
 		App->enemies->AddEnemy(ENEMY_TYPES::BONUS_SHIP, 400, -500);
+		App->enemies->AddEnemy(ENEMY_TYPES::TANK, 400, -500);
 		App->collision->Enable();
 		App->render->camera.x = App->render->camera.y = 0;
 		App->enemies->Enable();
@@ -62,7 +63,8 @@ update_status ModuleMap1::Update()
 		setup = false;
 	}
 	App->render->Blit(Map1, xmap, ymap, &ground);
-	App->render->camera.y -= 6;
+	App->render->camera.y -= 2;
+	App->map_1->ymap += 2;
 	if (App->input->keyboard[SDL_SCANCODE_F])
 	{
 		App->fade->FadeToBlack(this, App->map_2, 1.0f);

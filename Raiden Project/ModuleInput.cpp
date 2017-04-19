@@ -44,7 +44,7 @@ update_status ModuleInput::Update()
 		return update_status::UPDATE_STOP;
 	}
 
-	App->map_1->ymap += 6;
+	
 
 
 		

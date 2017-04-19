@@ -9,7 +9,7 @@
 
 Turret::Turret(int x, int y) : Enemy(x, y)
 {
-	spriteshit = 3;
+	spriteshit = 2;
 }
 
 void Turret::MoveShoot()
