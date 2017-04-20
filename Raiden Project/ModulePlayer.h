@@ -41,6 +41,9 @@ public:
 	Animation right1p;
 	Animation left1p;
 	iPoint position;
+	int font_score = -1;
+	char score_text[10];
+	uint score = 0;
 	bool ideling = false;
 	bool allowtime = true;
 	bool allowtimep = true;
