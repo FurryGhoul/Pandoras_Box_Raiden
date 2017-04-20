@@ -15,6 +15,7 @@
 #include "ModuleCollision.h"
 #include "ModuleEnemies.h"
 #include "ModulePlayer2.h"
+#include "ModulePowerUps.h"
 
 Application::Application()
 {	
@@ -34,6 +35,7 @@ Application::Application()
 	modules[13] = collision = new ModuleCollision();
 	modules[14] = fade = new ModuleFadeToBlack();
 	modules[15] = enemies = new ModuleEnemies();
+	//modules[16] = powerups = new ModulePowerUps();
 
 	
 }	
