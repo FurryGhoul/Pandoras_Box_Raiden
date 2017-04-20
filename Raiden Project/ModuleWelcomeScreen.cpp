@@ -14,6 +14,7 @@
 #include "ModuleParticles.h"
 #include "ModuleEnemies.h"
 #include "ModulePlayer2.h"
+#include "ModulePowerUps.h"
 
 ModuleWelcomeScreen::ModuleWelcomeScreen() : Module()
 {
@@ -50,6 +51,7 @@ update_status ModuleWelcomeScreen::Update()
 		App->player2->Disable();
 		App->enemies->Disable();
 		App->collision->Disable();
+		App->powerups->Disable();
 	}
 
 	App->render->Blit(Welcome, 0, 0, &ground);

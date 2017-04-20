@@ -1,3 +1,7 @@
-﻿  Tank.cpp
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+﻿  ModuleWelcomeScreen.cpp
+  ModulePowerUps.cpp
+  Application.cpp
+  Generando código...
+  LINK : no se encontró C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+  SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

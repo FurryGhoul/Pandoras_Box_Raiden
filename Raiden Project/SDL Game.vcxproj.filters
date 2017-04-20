@@ -24,6 +24,9 @@
     <ClCompile Include="ModuleEnemies.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Tank.cpp" />
+    <ClCompile Include="ModulePowerUps.cpp" />
+    <ClCompile Include="PowerUp.cpp" />
+    <ClCompile Include="RedUp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
@@ -54,6 +57,9 @@
     <ClInclude Include="ModuleWelcomeScreen.h" />
     <ClInclude Include="Tank.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="ModulePowerUps.h" />
+    <ClInclude Include="PowerUp.h" />
+    <ClInclude Include="RedUp.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SDL3 Handout.rc" />

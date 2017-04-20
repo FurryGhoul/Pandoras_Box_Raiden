@@ -78,6 +78,7 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="ModuleEnemies.h" />
     <ClInclude Include="ModulePlayer2.h" />
+    <ClInclude Include="ModulePowerUps.h" />
     <ClInclude Include="Path.h" />
     <ClInclude Include="ModuleCollision.h" />
     <ClInclude Include="ModuleParticles.h" />
@@ -96,6 +97,8 @@
     <ClInclude Include="ModuleTextures.h" />
     <ClInclude Include="ModuleWindow.h" />
     <ClInclude Include="ModuleWelcomeScreen.h" />
+    <ClInclude Include="PowerUp.h" />
+    <ClInclude Include="RedUp.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Tank.h" />
   </ItemGroup>
@@ -112,6 +115,7 @@
     <ClCompile Include="ModuleParticles.cpp" />
     <ClCompile Include="ModulePlayer.cpp" />
     <ClCompile Include="ModulePlayer2.cpp" />
+    <ClCompile Include="ModulePowerUps.cpp" />
     <ClCompile Include="ModuleRender.cpp" />
     <ClCompile Include="ModuleStageClear1.cpp" />
     <ClCompile Include="ModuleTextures.cpp" />
@@ -122,6 +126,8 @@
     <ClCompile Include="ModuleFadeToBlack.cpp" />
     <ClCompile Include="ModuleEnemies.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="PowerUp.cpp" />
+    <ClCompile Include="RedUp.cpp" />
     <ClCompile Include="Tank.cpp" />
   </ItemGroup>
   <ItemGroup>
