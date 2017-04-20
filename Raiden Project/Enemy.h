@@ -12,6 +12,9 @@ class Enemy : public Path
 {
 protected:
 	Animation* animation = nullptr;
+	Animation* animation1 = nullptr;
+	Animation* animation2 = nullptr;
+	Animation* animation3 = nullptr;
 	Collider* collider = nullptr;
 
 public:
@@ -19,6 +22,7 @@ public:
 	int h;
 	int w;
 	int spriteshit;
+	int animations; // How much animations does the enemy have
 
 public:
 	Enemy(int x, int y);

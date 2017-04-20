@@ -62,7 +62,7 @@ update_status ModuleEnemies::Update()
 		{ 
 		   if (enemies[i]->spriteshit == 0)
 		   {
-		    enemies[i]->Draw(sprites);
+		       enemies[i]->Draw(sprites);
 		   }
 		   if (enemies[i]->spriteshit == 1)
 		   {

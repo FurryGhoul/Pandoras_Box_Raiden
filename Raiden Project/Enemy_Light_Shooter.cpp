@@ -43,6 +43,7 @@ Enemy_Light_Shooter::Enemy_Light_Shooter(int x, int y) : Enemy(x, y)
 
 	collider = App->collision->AddCollider({ 0, 0, 24*3-5, 24*3+20 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 	spriteshit = 0;
+	animations = 1;
 	original_pos.x = x;
 	original_pos.y = -50;
 }
@@ -244,14 +245,6 @@ void Enemy_Light_Shooter::MoveShoot()
 	// Shooting
 	if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && shooting == false )
 	{
-	    /*
-		while (sqrtf(distance.x*distance.x + distance.y*distance.y) > 15) //I'm trying to convert the distance at which the player is from the enemy in a vector that represents the speed of the bullet, which shouldn't be bigger that 10
-		{
-
-			distance.x -= distance.x*0.1;
-			distance.y -= distance.y*0.1;
-		}
-         */
 		if (App->player->position.y - 22 < (position.y - 22 * 3))
 		{
 			distance.y *= -1;

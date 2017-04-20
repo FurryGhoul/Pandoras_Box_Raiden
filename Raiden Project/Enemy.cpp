@@ -25,9 +25,35 @@ void Enemy::Draw(SDL_Texture* sprites)
 	if (collider != nullptr)
 		collider->SetPos(position.x, position.y);
 
-	if (animation != nullptr)
-		
+	if (animations >= 1)
+	{ 
+	    if (animation != nullptr)
+		{ 
 		App->render->Blit(sprites, position.x, position.y, &(animation->GetCurrentFrame()),w,h);
+		}
+	}
+	if (animations >= 2)
+	{
+		if (animation != nullptr)
+		{
+			App->render->Blit(sprites, position.x, position.y, &(animation1->GetCurrentFrame()), w, h);
+		}
+	}
+	if (animations >= 3)
+	{
+		if (animation != nullptr)
+		{
+			App->render->Blit(sprites, position.x, position.y, &(animation2->GetCurrentFrame()), w, h);
+		}
+	}
+	if (animations >= 4)
+	{
+		if (animation != nullptr)
+		{
+			App->render->Blit(sprites, position.x, position.y, &(animation3->GetCurrentFrame()), w, h);
+		}
+	}
+
 }
 
 void Enemy::OnCollision(Collider* collider)

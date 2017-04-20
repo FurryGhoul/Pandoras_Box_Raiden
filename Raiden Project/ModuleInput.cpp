@@ -67,12 +67,7 @@ update_status ModuleInput::Update()
 				keyboard[i] = KEY_IDLE;
 		}
 	}
-	/*
-	if (keyboard[SDL_SCANCODE_DOWN])
-	{
-		App->map_1->ymap -= 6;
-	}
-	*/
+
 	if (keyboard[SDL_SCANCODE_A])
 	{
 		if (App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->position.x < 50)
@@ -98,8 +93,7 @@ update_status ModuleInput::Update()
 			App->map_1->xmap -= 6;
 		}
 	}
-	// TODO 1: find out how to detect if the ESC key was pressed
-	// and quit the game
+
 
 	return update_status::UPDATE_CONTINUE;
 }

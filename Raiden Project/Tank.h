@@ -4,7 +4,7 @@
 class Tank: public Enemy
 {
 private:
-	Animation idle;
+	Animation downup;
 	iPoint original_pos;
 	iPoint distance;
 	Path movement;
