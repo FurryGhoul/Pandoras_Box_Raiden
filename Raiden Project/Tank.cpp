@@ -58,7 +58,7 @@ void Tank::MoveShoot()
 	  animation = &leftright;
 
 	  w = 30 * 3;
-	  h = 16 * 3;
+	  h = 20 * 3;
 	 collider->SetSize(w, h);
 	}
 }
