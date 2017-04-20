@@ -1,34 +1,36 @@
-﻿  Tank.cpp
-  ModuleWindow.cpp
-  ModuleTextures.cpp
-  ModuleRender.cpp
-  ModuleInput.cpp
-  ModuleFadeToBlack.cpp
-  ModuleEnemies.cpp
-  ModuleAudio_2.cpp
-  ModuleAudio_1.cpp
-  Main.cpp
-  Application.cpp
-  Generating Code...
-  Compiling...
+﻿  Application.cpp
+  Generando código...
+  Compilando...
+  Tank.cpp
   RedUp.cpp
   PowerUp.cpp
+  ModuleWindow.cpp
   ModuleWelcomeScreen.cpp
+  ModuleTextures.cpp
   ModuleStageClear1.cpp
+  ModuleRender.cpp
   ModulePowerUps.cpp
   ModulePlayer2.cpp
   ModulePlayer.cpp
   ModuleParticles.cpp
   ModuleMap2.cpp
   ModuleMap1.cpp
+  ModuleInput.cpp
+  ModuleFadeToBlack.cpp
+  ModuleEnemies.cpp
   ModuleCollision.cpp
+  ModuleAudio_2.cpp
+  ModuleAudio_1.cpp
+  Generando código...
+  Compilando...
+  Main.cpp
   Enemy_Light_Shooter.cpp
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(246): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(256): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(55): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(56): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(246): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(256): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
   Enemy_Bonus_Ship.cpp
   Enemy.cpp
-  Generating Code...
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+  Generando código...
+  SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
