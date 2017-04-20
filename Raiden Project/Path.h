@@ -58,7 +58,22 @@ public:
 
 		return iPoint((int)accumulated_speed.x, (int)accumulated_speed.y);
 	}
-
+	int GetCurrentStep()
+	{
+		int i = 0;
+		int count = 0;
+		while(i < last_step)
+		{
+			
+			count += steps[i].frames;
+			if (count >= current_frame)
+			{
+				break;
+			}
+			++i;
+		}
+		return i;
+	}
 	void Reset()
 	{
 		current_frame = 0;
