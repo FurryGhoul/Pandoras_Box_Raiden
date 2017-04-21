@@ -29,7 +29,7 @@ public:
 		current_frame += speed;
 		if (current_frame >= last_frame)
 		{
-			current_frame = (loop) ? 0.0f : last_frame - 1;
+			current_frame = (loop) ? 1.0f : last_frame - 1;//frame change speed changed from 0.0f -> 1.0f
 			loops++;
 		}
 

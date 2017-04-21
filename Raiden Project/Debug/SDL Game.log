@@ -1,3 +1,11 @@
+<<<<<<< HEAD
 ﻿  ModuleParticles.cpp
   SDL Game.vcxproj -> C:\Users\genisbs\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
   SDL Game.vcxproj -> C:\Users\genisbs\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+=======
+﻿  Enemy_Bonus_Ship.cpp
+c:\users\ivandv\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\ivandv\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+  SDL Game.vcxproj -> C:\Users\ivandv\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\ivandv\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+>>>>>>> origin/master
