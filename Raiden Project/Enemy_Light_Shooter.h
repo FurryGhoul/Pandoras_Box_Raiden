@@ -19,7 +19,6 @@ private:
 	Animation flysw3;
 	Animation flynw3;
 	iPoint original_pos;
-	iPoint distance;
 	Path movement;
 	double param;
 	double angle;

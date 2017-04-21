@@ -6,8 +6,9 @@ private:
 	Animation flydown;
 	Animation flysides;
 	Animation stop;
+	Animation propeller;
 	iPoint original_pos;
-	iPoint distance;
+	iPoint original_pos1;
 	Path movement;
 	bool side = false;
 public:

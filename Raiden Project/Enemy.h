@@ -19,10 +19,21 @@ protected:
 
 public:
 	iPoint position;
+	iPoint position1;
+	iPoint position2;
+	iPoint position3;
+	iPoint distance;//bonus ship propeller
 	int h;
 	int w;
+	int h1;
+	int w1;
+	int h2;
+	int w2;
+	int h3;
+	int w3;
 	int spriteshit;
 	int animations; // How much animations does the enemy have
+	bool bonusplane = false; // Bollean to detect if the enemy is a bonus plane and adapt the hitbox
 
 public:
 	Enemy(int x, int y);

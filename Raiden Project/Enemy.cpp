@@ -25,6 +25,9 @@ void Enemy::Draw(SDL_Texture* sprites)
 	if (collider != nullptr)
 		collider->SetPos(position.x, position.y);
 
+	if (collider != nullptr && bonusplane == true)
+		collider->SetPos(position.x + 54, position.y + 60);
+
 	if (animations >= 1)
 	{ 
 	    if (animation != nullptr)
@@ -36,21 +39,21 @@ void Enemy::Draw(SDL_Texture* sprites)
 	{
 		if (animation != nullptr)
 		{
-			App->render->Blit(sprites, position.x, position.y, &(animation1->GetCurrentFrame()), w, h);
+			App->render->Blit(sprites, position1.x, position1.y, &(animation1->GetCurrentFrame()), w1, h1);
 		}
 	}
 	if (animations >= 3)
 	{
 		if (animation != nullptr)
 		{
-			App->render->Blit(sprites, position.x, position.y, &(animation2->GetCurrentFrame()), w, h);
+			App->render->Blit(sprites, position2.x, position2.y, &(animation2->GetCurrentFrame()), w2, h2);
 		}
 	}
 	if (animations >= 4)
 	{
 		if (animation != nullptr)
 		{
-			App->render->Blit(sprites, position.x, position.y, &(animation3->GetCurrentFrame()), w, h);
+			App->render->Blit(sprites, position3.x, position3.y, &(animation3->GetCurrentFrame()), w3, h3);
 		}
 	}
 
