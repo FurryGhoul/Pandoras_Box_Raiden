@@ -28,13 +28,20 @@ bool ModuleParticles::Init()
 	LOG("Loading particles");
 	graphics = App->textures->Load("Assets/Player1.png");
 	graphics1 = App->textures->Load("Assets/graphics2.png");
-	// laser particle
+	// player laser particles
 	laser.spriteshit = 0;
 	laser.anim.PushBack({ 59, 100, 6, 6 });
 	laser.anim.loop = false;
 	laser.anim.speed = 1.0f;
 	laser.life = 2100;
 	laser.speed.y = -10;
+
+	laser2.spriteshit = 0;
+	laser2.anim.PushBack({ 59, 100, 6, 6 });
+	laser2.anim.loop = false;
+	laser2.anim.speed = 1.0f;
+	laser2.life = 2100;
+	laser2.speed.y = -10;
 	
 
 
@@ -103,7 +110,7 @@ update_status ModuleParticles::Update()
 	return UPDATE_CONTINUE;
 }
 
-void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type, int speed_x, int speed_y, Uint32 delay)
+void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type, int bullettype, int speed_x, int speed_y, Uint32 delay)
 {
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 	{
@@ -114,6 +121,7 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 			p->position.x = x;
 			p->position.y = y;
 			p->spriteshit = particle.spriteshit;
+			p->bullettype = bullettype;
 			if (speed_x != 0)
 			{
 				p->speed.x = speed_x;
@@ -144,6 +152,16 @@ void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
 		// Always destroy particles that collide
 		if (active[i] != nullptr && active[i]->collider == c1)
 		{
+			if (c2->type == COLLIDER_ENEMY && active[i]->bullettype == 1)
+			{
+				active[i]->AddPointsP1();
+			}
+
+			if (c2->type == COLLIDER_ENEMY && active[i]->bullettype == 2)
+			{
+				active[i]->AddPointsP2();
+			}
+
  			delete active[i];
 			active[i] = nullptr;
      		break;

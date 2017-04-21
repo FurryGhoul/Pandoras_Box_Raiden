@@ -236,8 +236,7 @@ update_status ModulePlayer::Update()
 
 		if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
 		{
-			App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT); 
-			score += 20;
+			App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 1); 
 		}
 
 		// Draw everything --------------------------------------
@@ -384,8 +383,7 @@ update_status ModulePlayer::Update()
 
 		if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
 		{
-			App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT); 
-			score += 20;
+			App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 1); 
 		}
 
 		// Draw everything --------------------------------------
@@ -447,6 +445,8 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 	if (Player != nullptr && Player == c1 && deadplayer == false)
 	{
 		Disable();
+		position.x = 10000000;
+		position.y = 10000000;
 		Player->SetPos(10000000, 10000000);
 		deadplayer = true;
 	}
