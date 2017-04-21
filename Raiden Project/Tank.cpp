@@ -72,9 +72,10 @@ Tank::Tank(int x, int y) : Enemy(x, y)
 	original_pos.x = x;
 	original_pos.y = -50;
 
-
-	movement.PushBack({  0.5f, 3.0f }, 100);
-	movement.PushBack({  0.5f, 2.0f }, 600);
+	//Paths (there should be more than one path and an integer to select what path to use
+	movement.PushBack({  0.0f, 4.0f }, 500);
+	movement.PushBack({ 0.5f, 2.0f }, 240);
+	movement.PushBack({  0.0f, 0.0f }, 6000);
 
 
 	collider = App->collision->AddCollider({ 0, 0, 24 * 3 - 5, 26 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
@@ -83,9 +84,9 @@ Tank::Tank(int x, int y) : Enemy(x, y)
 
 
 void Tank::MoveShoot()
-{
-	// Movement of the tank
-	position1 = position = original_pos + movement.GetCurrentPosition();
+{	
+	// Calculation between tank and player and movement of the tank
+	position = original_pos + movement.GetCurrentPosition();
 
 	if (sqrtf((distance.y = App->player->position.y - 22 - position.y - 22 * 3)*(distance.y = App->player->position.y - 22 - position.y - 22 * 3) + (distance.x = App->player->position.x - position.x + 22)* (distance.x = App->player->position.x - position.x + 22))
 		< sqrtf((distance.y = App->player2->position.y - 22 - position.y - 22 * 3)*(distance.y = App->player2->position.y - 22 - position.y - 22 * 3) + (distance.x = App->player2->position.x - position.x + 22)* (distance.x = App->player2->position.x - position.x + 22)))
@@ -98,18 +99,54 @@ void Tank::MoveShoot()
 	{
 		distance.y = App->player2->position.y - 22 - position.y - 22 * 3;
 		distance.x = App->player2->position.x - position.x + 22;
+	
+
 	}
-	animation = &updiagonalleft;
-	animation1 = &s;
-	w = 34 * 3;
-	h = 25 * 3;
-	collider->SetSize(w, h);
+
+// Animation of the tank	
+	
+	// Down and up
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f)
+	{
+		animation = &downup;
+
+		w = 24 * 3;
+		h = 26 * 3;
+		collider->SetSize(w, h);
+
+	   position1.x = position.x + w / 2;
+	   position1.y = position.y + h / 2 - 5;
+	}
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 4.0f)
+	{
+		animation = &downup;
+
+		w = 24 * 3;
+		h = 26 * 3;
+		collider->SetSize(w, h);
+
+		position1.x = position.x + w / 2;
+		position1.y = position.y + h / 2 - 5;
+	}
+
 	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 3.0f)
 	{ 
-	animation = &updiagonalleft;
-	w = 34 * 3;
-	h = 25 * 3;
+	animation = &downdiagonalleft;
+    w = 30 * 3;
+	h = 29 * 3;
 	collider->SetSize(w, h);
+	position1.x = position.x + w / 2;
+	position1.y = position.y + h / 2;
+	}
+
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == -3.0f)
+	{
+		animation = &updiagonalleft;
+		w = 34 * 3;
+	    h = 25 * 3;
+		collider->SetSize(w, h);
+		position1.x = position.x + w / 2;
+		position1.y = position.y + h / 2;
 	}
 	
 	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f)
@@ -119,6 +156,8 @@ void Tank::MoveShoot()
 	  w = 30 * 3;
 	  h = 20 * 3;
 	 collider->SetSize(w, h);
+	 position1.x = position.x + w / 2 + 10;
+	 position1.y = position.y + h / 2;
 	}
 
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f)
@@ -128,17 +167,34 @@ void Tank::MoveShoot()
 		w = 30 * 3;
 		h = 20 * 3;
 		collider->SetSize(w, h);
+		position1.x = position.x + w / 2 + 10;
+		position1.y = position.y + h / 2;
 	}
+
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 3.0f)
 	{
-		animation = &updiagonalright;
-
+		animation = &downdiagonalright;
 		w = 30 * 3;
 		h = 28 * 3;
 		collider->SetSize(w, h);
+		position1.x = position.x + w / 2;
+		position1.y = position.y + h / 2;
+	}
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.5f && movement.steps[movement.GetCurrentStep()].speed.y == -3.0f)
+	{
+		animation = &updiagonalright;
+		w = 34 * 3;
+		h = 25 * 3;
+		collider->SetSize(w, h);
+		position1.x = position.x + w / 2;
+		position1.y = position.y + h / 2;
 	}
 
-	//Movement of the turret
+
+
+
+
+	//Animation of the turret
 	param = (abs(distance.y) / (abs(distance.x) + 0.1));
 	angle = atan(param) * 180 / PI;
 
@@ -185,132 +241,182 @@ void Tank::MoveShoot()
 	// Applying animation
 
 	// South to East
-	if (se && angle > 72 && angle < 90)
+	if (se && angle >= 72 && angle <= 90) // Good
 	{
 		animation1 = &s;
-		w1 = 22 * 3;
-		h1 = 30 * 3;
+		w1 = 17 * 3;
+		h1 = 24 * 3;
+		position1.y -= 20;
+		position1.x -= (w1 / 2)+10;
+
 	}
-	if (se && angle > 54 && angle < 72)
+	if (se && angle >= 54 && angle <= 72) //Good
 	{
 		animation1 = &se1;
-		w1 = 25 * 3;
-		h1 = 30 * 3;
+		w1 = 16 * 3;
+		h1 = 23 * 3;
+		position1.y -= 20;
+		position1.x -= w1 / 2;
 	}
-	if (se && angle > 36 && angle < 54)
+	if (se && angle >= 36 && angle <= 54) // Good
 	{
 		animation1 = &se2;
-		w1 = 27 * 3;
-		h1 = 25 * 3;
+		w1 = 21 * 3;
+		h1 = 20 * 3;
+		position1.y -= 20;
+		position1.x -= w1 / 2 - 10;
 	}
-	if (se && angle > 18 && angle < 36)
+	
+	if (se && angle >= 18 && angle <= 36) //Good
 	{
 		animation1 = &se3;
-		w1 = 31 * 3;
-		h1 = 23 * 3;
+		w1 = 26 * 3;
+		h1 = 18 * 3;
+		position1.y -= 20;
+		position1.x -= w1 / 3 ;
 	}
-	if (se && angle > 0 && angle < 18)
+	
+	if (se && angle >= 0 && angle <= 18) // Good
 	{
 		animation1 = &e;
-		w1 = 32 * 3;
-		h1 = 30 * 3;
+		w1 = 27 * 3;
+		h1 = 13 * 3;
+		position1.y -= h1 / 2;
+		position1.x -= 20;
 	}
 
 	// East to North
-	if (ne && angle > 0 && angle < 18)
+	if (ne && angle >= 0 && angle <= 18) //Good
 	{
 		animation1 = &e;
-		w1 = 32 * 3;
-		h1 = 30 * 3;
+		w1 = 27 * 3;
+		h1 = 13 * 3;
+		position1.y -= h1/2;
+		position1.x -= 20;
 	}
-	if (ne && angle > 18 && angle < 36)
+	if (ne && angle >= 18 && angle <= 36) // Good
 	{
 		animation1 = &ne1;
-		w1 = 31 * 3;
-		h1 = 23 * 3;
+		w1 = 25 * 3;
+		h1 = 18 * 3;
+		position1.y -= (h1 / 2)+10;
+		position1.x -= 20;
 	}
-	if (ne && angle > 36 && angle < 54)
+	if (ne && angle >= 36 && angle <= 54) //Good
 	{
 		animation1 = &ne2;
-		w1 = 27 * 3;
-		h1 = 26 * 3;
+		w1 = 20 * 3;
+		h1 = 21 * 3;
+		position1.y -=( h1 / 2) + 15;
+		position1.x -= 20;
 	}
-	if (ne && angle > 54 && angle < 72)
+	if (ne && angle >= 54 && angle <= 72) //Good
 	{
 		animation1 = &ne3;
-		w1 = 25 * 3;
-		h1 = 30 * 3;
+		w1 = 15 * 3;
+		h1 = 24 * 3;
+		position1.y -= h1 / 2 + 20;
+		position1.x -= 20;
 	}
-	if (ne && angle > 72 && angle < 90)
+	if (ne && angle >= 72 && angle <= 90) //Good
 	{
 		animation1 = &n;
-		w1 = 22 * 3;
-		h1 = 30 * 3;
+		w1 = 15 * 3;
+		h1 = 26 * 3;
+		position1.y -= h1-20;
+		position1.x -= w1 / 2;
 	}
 
 	// North to West
-	if (nw && angle > 72 && angle < 90)
+	if (nw && angle >= 72 && angle <= 90) //Good
 	{
 		animation1 = &n;
-		w1 = 22 * 3;
-		h1 = 30 * 3;
+		w1 = 15 * 3;
+		h1 = 26 * 3;
+		position1.y -= h1 - 20;
+		position1.x -= w1 / 2;
 	}
-	if (nw && angle > 54 && angle < 72)
+	if (nw && angle >= 54 && angle <= 72) // Good
 	{
 		animation1 = &nw1;
-		w1 = 25 * 3;
-		h1 = 30 * 3;
+		w1 = 16 * 3;
+		h1 = 24 * 3;
+		position1.y -= h1 - 20;
+		position1.x -= w1 / 2 +10;
 	}
-	if (nw && angle > 36 && angle < 54)
+	if (nw && angle >= 36 && angle <= 54) //Good
 	{
 		animation1 = &nw2;
-		w1 = 27 * 3;
-		h1 = 25 * 3;
+		w1 = 21 * 3;
+		h1 = 20 * 3;
+		position1.y -= h1 - 15;
+		position1.x -= w1 / 2 +10;
 	}
-	if (nw && angle > 18 && angle < 36)
+	if (nw && angle >= 18 && angle <= 36) //Good
 	{
 		animation1 = &nw3;
-		w1 = 31 * 3;
-		h1 = 23 * 3;
+		w1 = 25 * 3;
+		h1 = 17 * 3;
+		position1.y -= h1 - 20;
+		position1.x -= w1 / 2 + 10;
 	}
-	if (nw && angle > 0 && angle < 18)
+	if (nw && angle >= 0 && angle <= 18) // Good
 	{
 		animation1 = &w11;
-		w1 = 32 * 3;
-		h1 = 28 * 3;
+		w1 = 27 * 3;
+		h1 = 14 * 3;
+		position1.y -= 25;
+		position1.x -= w -15;
 	}
 
 	// West to South
-	if (sw && angle > 0 && angle < 18)
+	if (sw && angle >= 0 && angle <= 18) //Good
 	{
 		animation1 = &w11;
-		w1 = 32 * 3;
-		h1 = 28 * 3;
+		w1 = 27 * 3;
+		h1 = 14 * 3;
+		position1.y -= 25;
+		position1.x -= w - 15;
 	}
-	if (sw && angle > 18 && angle < 36)
+	if (sw && angle >= 18 && angle <= 36) // Good
 	{
 		animation1 = &sw1;
-		w1 = 31 * 3;
-		h1 = 23 * 3;
+		w1 = 24 * 3;
+		h1 = 16 * 3;
+		position1.y -= 20;
+		position1.x -= w - 20;
 	}
-	if (sw && angle > 36 && angle < 54)
+	if (sw && angle >= 36 && angle <= 54) //Good
 	{
 		animation1 = &sw2;
-		w1 = 27 * 3;
-		h1 = 26 * 3;
+		w1 = 21 * 3;
+		h1 = 20 * 3;
+		position1.y -= 20;
+		position1.x -= w -25;
 	}
-	if (sw && angle > 54 && angle < 72)
+	
+	if (sw && angle >= 54 && angle <= 72) //Good
 	{
 		animation1 = &sw3;
-		w1 = 24 * 3;
-		h1 = 30 * 3;
+		w1 = 14 * 3;
+		h1 = 23 * 3;
+		position1.y -= 25;
+		position1.x -= w- 35;
 	}
-	if (sw && angle > 72 && angle < 90)
+	if (sw && angle > 72 && angle < 90) //Good
 	{
 		animation1 = &s;
-		w1 = 22 * 3;
-		h1 = 30 * 3;
+		w1 = 17 * 3;
+		h1 = 24 * 3;
+		position1.y -= 20;
+		position1.x -= (w1 / 2) + 10;
 	}
+
+
+
+
+
+
 	distance.x = abs(distance.x);
 	distance.y = abs(distance.y);
 	// Shooting
@@ -324,7 +430,7 @@ void Tank::MoveShoot()
 		{
 			distance.x *= -1;
 		}
-		App->particles->AddParticle(App->particles->enemyshot, position.x + 10, position.y + 50, COLLIDER_ENEMY_SHOT, 0, distance.x * 0.03, distance.y * 0.03); //In theory, the speed should be distance.x and distance.y, but at the moment it doesn't work that way
+		App->particles->AddParticle(App->particles->enemyshot, position.x+ w/2, position.y +h/2, COLLIDER_ENEMY_SHOT, 0, distance.x * 0.03, distance.y * 0.03); //In theory, the speed should be distance.x and distance.y, but at the moment it doesn't work that way
 
 		shooting = true;
 	}

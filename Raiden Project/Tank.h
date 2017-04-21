@@ -38,6 +38,7 @@ private:
 	bool nw = false;
 	bool sw = false;
 	bool shooting = false;
+
 	
 	
 	
