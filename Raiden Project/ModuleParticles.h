@@ -6,6 +6,8 @@
 #include "Globals.h"
 #include "p2Point.h"
 #include "ModuleCollision.h"
+#include "ModulePlayer.h"
+#include "ModulePlayer2.h"
 
 #define MAX_ACTIVE_PARTICLES 10000
 
@@ -20,6 +22,7 @@ struct Particle
 	uint fx = 0;
 	iPoint position;
 	iPoint speed;
+	Uint32 bullettype = 0;
 	Uint32 born = 0;
 	Uint32 life = 0;
 	int spriteshit = 0; //What spriteshit does the shot belong to
@@ -29,6 +32,16 @@ struct Particle
 	Particle(const Particle& p);
 	~Particle();
 	bool Update();
+
+	void AddPointsP1()
+	{
+		App->player->score += 20;
+	}
+
+	void AddPointsP2()
+	{
+		App->player2->score += 20;
+	}
 };
 
 class ModuleParticles : public Module
@@ -42,7 +55,7 @@ public:
 	bool CleanUp();
 	void OnCollision(Collider* c1, Collider* c2);
 
-	void AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type = COLLIDER_NONE, int speed_x = 0, int speed_y = 0, Uint32 delay = 0);
+	void AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type = COLLIDER_NONE, int bullettype = 0, int speed_x = 0, int speed_y = 0, Uint32 delay = 0);
 
 private:
 
@@ -53,6 +66,7 @@ private:
 public:
 
 	Particle laser;
+	Particle laser2;
 	Particle enemyshot;
 };
 
