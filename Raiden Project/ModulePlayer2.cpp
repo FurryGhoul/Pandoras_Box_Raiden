@@ -12,6 +12,9 @@
 #include "ModuleFadeToBlack.h"
 #include "ModuleEnemies.h"
 #include "ModulePlayer.h"
+#include "ModuleFonts.h"
+
+#include <stdio.h>
 
 ModulePlayer2::ModulePlayer2()
 {
@@ -58,6 +61,19 @@ bool ModulePlayer2::Init()
 	graphics = App->textures->Load("Assets/Player2.png");
 	Player = App->collision->AddCollider({ 0, 0, player_w, player_h }, COLLIDER_PLAYER, this);
 	Player->SetPos(82938, 2323);
+	score = 0;
+	font_score = App->fonts->Load("Assets/Font.png", "> ?@ABCDEFGHIJKLMNOPQRSTUVWXYZ!¡?_^#$%&'()x+.-,;tpsczpc/0123456789:", 3);
+
+	/*
+	@ = "copyright symbol"
+	¡ = smaller "!"
+	^ = """ (quotation marks)
+	x = smaller "X"
+	t = "TM"
+	ps = "pts"
+	cz = "cts"
+	pc = "pcs"
+	*/
 	return true;
 }
 
@@ -219,6 +235,7 @@ update_status ModulePlayer2::Update()
 		if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN)
 		{
 			App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT);
+			score += 20;
 		}
 
 		// Draw everything --------------------------------------
@@ -237,6 +254,12 @@ update_status ModulePlayer2::Update()
 			player_w = 14 * 3;
 			player_h = 28 * 3;
 		}
+		// Draw UI (score) --------------------------------------
+		sprintf_s(score_text, 10, "%7d", score);
+
+		// TODO 3: Blit the text of the score in at the bottom of the screen
+
+		App->fonts->BlitText(position.x, position.y, 1, score_text);
 	}
 
 	else
@@ -360,6 +383,7 @@ update_status ModulePlayer2::Update()
 		if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN)
 		{
 			App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT);
+			score += 20;
 		}
 
 		// Draw everything --------------------------------------
@@ -378,6 +402,12 @@ update_status ModulePlayer2::Update()
 			player_w = 14 * 3;
 			player_h = 29 * 3;
 		}
+		// Draw UI (score) --------------------------------------
+		sprintf_s(score_text, 10, "%7d", score);
+
+		// TODO 3: Blit the text of the score in at the bottom of the screen
+
+		App->fonts->BlitText(position.x, position.y, 1, score_text);
 	}
 
 
