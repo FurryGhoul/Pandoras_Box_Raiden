@@ -13,7 +13,7 @@ private:
 	Animation downdiagonalright;
 	Animation updiagonalright;
 	iPoint original_pos;
-	iPoint distance;
+	
 	Path movement;
 public:
 	Tank(int, int);
