@@ -21,8 +21,7 @@ Tank::Tank(int x, int y) : Enemy(x, y)
 	downdiagonalright.PushBack({222, 3, 30, 28});
 	updiagonalright.PushBack({ 189,5, 31, 26 });
 
-	w = 24 * 3;
-	h = 26 * 3;
+	
 
 
 	original_pos.x = x;
@@ -33,7 +32,8 @@ Tank::Tank(int x, int y) : Enemy(x, y)
 	movement.PushBack({ -0.5f, 2.0f }, 600);
 
 
-	collider = App->collision->AddCollider({ 0, 0, 24 * 3 - 5, 26 * 3 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
+	collider = App->collision->AddCollider({ 0, 0, 24 * 3 - 5, 26 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
+	animation = &updiagonalleft;
 }
 
 
