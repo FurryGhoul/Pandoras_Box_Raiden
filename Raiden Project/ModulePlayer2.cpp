@@ -473,6 +473,7 @@ void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 		App->collision->Disable();
 		App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
 		App->player->deadplayer = false;
+		App->enemies->EraseEnemies();
 		deadplayer = false;
 	}
 }
