@@ -10,6 +10,7 @@
 
 Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y) : Enemy (x, y)
 {
+	hp = 17;
 	flydown.PushBack({ 6, 23, 59, 54 });
 
 	stop.PushBack({ 67, 23, 59, 54 });

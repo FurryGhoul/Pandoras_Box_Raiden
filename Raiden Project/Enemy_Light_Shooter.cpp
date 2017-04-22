@@ -10,6 +10,8 @@
 
 Enemy_Light_Shooter::Enemy_Light_Shooter(int x, int y) : Enemy(x, y)
 {
+	hp = 1;
+
 	// Anmiation pushback's
 
 	//South to East

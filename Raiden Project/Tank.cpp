@@ -9,7 +9,8 @@
 
 Tank::Tank(int x, int y) : Enemy(x, y)
 {
-	
+	hp = 1;
+
 	spriteshit = 2;
 	animations = 2;
 	// Tank animations
