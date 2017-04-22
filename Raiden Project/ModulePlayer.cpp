@@ -167,6 +167,7 @@ update_status ModulePlayer::Update()
 			if ((App->map_1->IsEnabled() || App->map_2->IsEnabled()) && position.x <= 594)
 			{
 				position.x += speed;
+				
 			}
 		}
 
@@ -177,6 +178,7 @@ update_status ModulePlayer::Update()
 			if ((App->map_1->IsEnabled() || App->map_2->IsEnabled()) && position.y >= 683)
 			{
 				position.y -= speed;
+				
 			}
 		}
 
