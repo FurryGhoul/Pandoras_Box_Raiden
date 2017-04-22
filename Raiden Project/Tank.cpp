@@ -9,7 +9,9 @@
 
 Tank::Tank(int x, int y) : Enemy(x, y)
 {
-	
+	hp = 1;
+	points = 130;
+
 	spriteshit = 2;
 	animations = 2;
 	// Tank animations
@@ -101,6 +103,7 @@ void Tank::MoveShoot()
 {	
 	// Calculation between tank and player and movement of the tank
 	position = original_pos + movement.GetCurrentPosition();
+	position.x += left_right_mod;
 
 	if (sqrtf((distance.y = App->player->position.y - 22 - position.y - 22 * 3)*(distance.y = App->player->position.y - 22 - position.y - 22 * 3) + (distance.x = App->player->position.x - position.x + 22)* (distance.x = App->player->position.x - position.x + 22))
 		< sqrtf((distance.y = App->player2->position.y - 22 - position.y - 22 * 3)*(distance.y = App->player2->position.y - 22 - position.y - 22 * 3) + (distance.x = App->player2->position.x - position.x + 22)* (distance.x = App->player2->position.x - position.x + 22)))

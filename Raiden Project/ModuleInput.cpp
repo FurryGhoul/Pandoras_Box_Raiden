@@ -7,6 +7,7 @@
 #include "ModuleMap2.h"
 #include "ModulePlayer.h"
 #include "ModulePlayer2.h"
+#include "ModuleEnemies.h"
 
 ModuleInput::ModuleInput() : Module()
 {
@@ -73,11 +74,13 @@ update_status ModuleInput::Update()
 		if (App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->position.x < 50)
 		{
 			App->map_1->xmap += 6;
+			App->enemies->MoveEnemiesRight(true);
 		}
 
 		if (App->map_2->IsEnabled() && App->map_1->xmap <= -3 && App->player->position.x < 50)
 		{
 			App->map_1->xmap += 6;
+			App->enemies->MoveEnemiesRight(true);
 		}
 	}
 
@@ -86,11 +89,13 @@ update_status ModuleInput::Update()
 		if (App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player->position.x > 550)
 		{
 			App->map_1->xmap -= 6;
+			App->enemies->MoveEnemiesRight(false);
 		}
 
 		if (App->map_2->IsEnabled() && App->map_1->xmap >= -231 && App->player->position.x > 550)
 		{
 			App->map_1->xmap -= 6;
+			App->enemies->MoveEnemiesRight(false);
 		}
 	}
 

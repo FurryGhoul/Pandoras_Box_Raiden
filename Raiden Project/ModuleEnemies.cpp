@@ -161,10 +161,15 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 	{
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1)
 		{
-			enemies[i]->OnCollision(c2);
-			delete enemies[i];
-			enemies[i] = nullptr;
-			break;
+			enemies[i]->hp--;
+			if (enemies[i]->hp == 0)
+			{
+				App->player->score += enemies[i]->points;
+				enemies[i]->OnCollision(c2);
+				delete enemies[i];
+				enemies[i] = nullptr;
+				break;
+			}
 		}
 	}
 }
@@ -185,6 +190,31 @@ void ModuleEnemies::EraseEnemies()
 		{
 			delete enemies[i];
 			enemies[i] = nullptr;
+		}
+	}
+}
+
+void ModuleEnemies::MoveEnemiesRight(bool right)
+{
+	if (right == true)
+	{
+		for (uint i = 0; i < MAX_ENEMIES; ++i)
+		{
+			if (enemies[i] != nullptr)
+			{
+				enemies[i]->left_right_mod += 6;
+			}
+		}
+	}
+
+	if (right == false)
+	{
+		for (uint i = 0; i < MAX_ENEMIES; ++i)
+		{
+			if (enemies[i] != nullptr)
+			{
+				enemies[i]->left_right_mod-= 6;
+			}
 		}
 	}
 }

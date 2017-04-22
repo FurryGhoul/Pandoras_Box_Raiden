@@ -10,6 +10,7 @@
 #include "SDL/include/SDL_timer.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleMap1.h"
+#include "ModuleMap2.h"
 #include "ModuleStageClear1.h"
 
 ModuleParticles::ModuleParticles()
@@ -105,7 +106,7 @@ update_status ModuleParticles::Update()
 				p->fx_played = true;
 			}
 			// Always destroy out of screen particles
-			if (active[i]->position.y <= -1)
+			if (active[i]->position.y <= -1 || !App->map_1->IsEnabled() && !App->map_2->IsEnabled())
 			{
 				delete active[i];
 				active[i] = nullptr;
