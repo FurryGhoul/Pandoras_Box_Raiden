@@ -13,27 +13,27 @@ Tank::Tank(int x, int y) : Enemy(x, y)
 	spriteshit = 2;
 	animations = 2;
 	// Tank animations
-	downup.PushBack({ 2, 4, 24, 26 });
+	downup.PushBack({ 2, 4, 24, 26 }); // done
 
-	leftright.PushBack({ 30,5, 30, 16 });
-
-
-	neutraldiagonalleft.PushBack({ 61,1,31,30 });
+	leftright.PushBack({ 30,5, 30, 16 }); // done
 
 
-	downdiagonalleft.PushBack({ 126,2, 30, 29 });
+	neutraldiagonalleft.PushBack({ 61,1,31,30 }); // done
 
 
-	updiagonalleft.PushBack({ 157, 4, 31, 25 });
+	downdiagonalleft.PushBack({ 126,2, 30, 29 }); // done
 
 
-	neutraldiagonalright.PushBack({ 94, 2, 30, 28});
+	updiagonalleft.PushBack({ 157, 4, 31, 25 }); // Not in usage
 
 
-	downdiagonalright.PushBack({222, 3, 30, 28});
+	neutraldiagonalright.PushBack({ 94, 2, 30, 28}); //in proces
 
 
-	updiagonalright.PushBack({ 189,5, 31, 26 });
+	downdiagonalright.PushBack({222, 3, 30, 28}); // done
+
+
+	updiagonalright.PushBack({ 189,5, 31, 26 }); // Not in usage
 
 	//Turret animations
 	s.PushBack({ 2,49,17,24 });
@@ -73,8 +73,22 @@ Tank::Tank(int x, int y) : Enemy(x, y)
 	original_pos.y = -50;
 
 	//Paths (there should be more than one path and an integer to select what path to use
-	movement.PushBack({  0.0f, 4.0f }, 500);
-	movement.PushBack({ 0.5f, 2.0f }, 240);
+	/*Instructions for pathing the enemies:  
+	0.0, 4.0 = down
+	0.0, 0.0 = up
+	-0.5, 2.0 = left
+	-0.5, 2.0 = right
+	-0.5, 3.0 = down diagonal left
+	-0.5, -1.0 = up diagonal right
+	-0.5, -1.0 = up diagonal left
+	0.5, 3.0 =  down diagonal right
+	1.0,-1.0 = Neutral diagonal up right
+	-1.0, 3.0 =Neutral diagonal down left
+	-1.0, 1.0 = Neutral diagonal up left
+	1.0, 3.0 = Neutral diagonal down right
+	*/
+	movement.PushBack({  0.0f, 4.0f }, 100);
+	movement.PushBack({  -1.0f, 1.0f }, 100);
 	movement.PushBack({  0.0f, 0.0f }, 6000);
 
 
@@ -129,27 +143,8 @@ void Tank::MoveShoot()
 		position1.y = position.y + h / 2 - 5;
 	}
 
-	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 3.0f)
-	{ 
-	animation = &downdiagonalleft;
-    w = 30 * 3;
-	h = 29 * 3;
-	collider->SetSize(w, h);
-	position1.x = position.x + w / 2;
-	position1.y = position.y + h / 2;
-	}
-
-	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == -3.0f)
-	{
-		animation = &updiagonalleft;
-		w = 34 * 3;
-	    h = 25 * 3;
-		collider->SetSize(w, h);
-		position1.x = position.x + w / 2;
-		position1.y = position.y + h / 2;
-	}
-	
-	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f)
+	// Left and right
+     if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f)
 	{ 
 	  animation = &leftright;
 
@@ -159,6 +154,7 @@ void Tank::MoveShoot()
 	 position1.x = position.x + w / 2 + 10;
 	 position1.y = position.y + h / 2;
 	}
+
 
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f)
 	{
@@ -171,6 +167,40 @@ void Tank::MoveShoot()
 		position1.y = position.y + h / 2;
 	}
 
+	// Down diagonal left and up diagonal right
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 3.0f)
+	{ 
+	animation = &downdiagonalleft;
+    w = 30 * 3;
+	h = 29 * 3;
+	collider->SetSize(w, h);
+	position1.x = position.x + w / 2;
+	position1.y = position.y + h / 2;
+	}
+
+
+   if (movement.steps[movement.GetCurrentStep()].speed.x == 0.5f && movement.steps[movement.GetCurrentStep()].speed.y == -1.0f)
+	{
+		animation = &downdiagonalleft;
+		w = 30 * 3;
+		h = 29 * 3;
+		collider->SetSize(w, h);
+		position1.x = position.x + w / 2;
+		position1.y = position.y + h / 2;
+	}
+
+   //Down diagonal right and up diagonal left
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == -1.0f)
+	{
+		animation = &downdiagonalright;
+		w = 30 * 3;
+		h = 28 * 3;
+		collider->SetSize(w, h);
+		position1.x = position.x + w / 2;
+		position1.y = position.y + h / 2;
+	}
+	
+	
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 3.0f)
 	{
 		animation = &downdiagonalright;
@@ -180,17 +210,49 @@ void Tank::MoveShoot()
 		position1.x = position.x + w / 2;
 		position1.y = position.y + h / 2;
 	}
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.5f && movement.steps[movement.GetCurrentStep()].speed.y == -3.0f)
+
+	// Neutral diagonal up right and neutral diagonal down left
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 1.0f && movement.steps[movement.GetCurrentStep()].speed.y == -1.0f)
 	{
-		animation = &updiagonalright;
-		w = 34 * 3;
-		h = 25 * 3;
+		animation = &neutraldiagonalleft;
+		w = 31 * 3;
+		h = 30 * 3;
+		collider->SetSize(w, h);
+		position1.x = position.x + w / 2;
+		position1.y = position.y + h / 2;
+	}
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 3.0f)
+	{
+		animation = &neutraldiagonalleft;
+		w = 31 * 3;
+		h = 30 * 3;
 		collider->SetSize(w, h);
 		position1.x = position.x + w / 2;
 		position1.y = position.y + h / 2;
 	}
 
 
+
+	// Neutral diagonal down left and neutral diagonal up right
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f)
+	{
+		animation = &neutraldiagonalright;
+		w = 30 * 3;
+		h = 28 * 3;
+		collider->SetSize(w, h);
+		position1.x = position.x + w / 2;
+		position1.y = position.y + h / 2;
+	}
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 3.0f)
+	{
+		animation = &neutraldiagonalright;
+		w = 30 * 3;
+		h = 28 * 3;
+		collider->SetSize(w, h);
+		position1.x = position.x + w / 2;
+		position1.y = position.y + h / 2;
+	}
+	
 
 
 
@@ -366,7 +428,7 @@ void Tank::MoveShoot()
 		w1 = 27 * 3;
 		h1 = 14 * 3;
 		position1.y -= 25;
-		position1.x -= w -15;
+		position1.x -= (w/2) + 10;
 	}
 
 	// West to South
@@ -376,7 +438,7 @@ void Tank::MoveShoot()
 		w1 = 27 * 3;
 		h1 = 14 * 3;
 		position1.y -= 25;
-		position1.x -= w - 15;
+		position1.x -= (w/2) + 10;
 	}
 	if (sw && angle >= 18 && angle <= 36) // Good
 	{
@@ -384,7 +446,7 @@ void Tank::MoveShoot()
 		w1 = 24 * 3;
 		h1 = 16 * 3;
 		position1.y -= 20;
-		position1.x -= w - 20;
+		position1.x -= (w/2) + 5;
 	}
 	if (sw && angle >= 36 && angle <= 54) //Good
 	{
@@ -392,7 +454,7 @@ void Tank::MoveShoot()
 		w1 = 21 * 3;
 		h1 = 20 * 3;
 		position1.y -= 20;
-		position1.x -= w -25;
+		position1.x -= (w/2);
 	}
 	
 	if (sw && angle >= 54 && angle <= 72) //Good
@@ -401,9 +463,9 @@ void Tank::MoveShoot()
 		w1 = 14 * 3;
 		h1 = 23 * 3;
 		position1.y -= 25;
-		position1.x -= w- 35;
+		position1.x -= (w/2)- 15;
 	}
-	if (sw && angle > 72 && angle < 90) //Good
+	if (sw && angle >= 72 && angle <= 90) //Good
 	{
 		animation1 = &s;
 		w1 = 17 * 3;
@@ -411,9 +473,6 @@ void Tank::MoveShoot()
 		position1.y -= 20;
 		position1.x -= (w1 / 2) + 10;
 	}
-
-
-
 
 
 
@@ -430,7 +489,7 @@ void Tank::MoveShoot()
 		{
 			distance.x *= -1;
 		}
-		App->particles->AddParticle(App->particles->enemyshot, position.x+ w/2, position.y +h/2, COLLIDER_ENEMY_SHOT, 0, distance.x * 0.03, distance.y * 0.03); //In theory, the speed should be distance.x and distance.y, but at the moment it doesn't work that way
+		App->particles->AddParticle(App->particles->enemyshot, position.x+ w/2, position.y +h/2, COLLIDER_ENEMY_SHOT, 0, distance.x * 0.03, distance.y * 0.03); 
 
 		shooting = true;
 	}

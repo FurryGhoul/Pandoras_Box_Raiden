@@ -1,9 +1,9 @@
 ﻿  Tank.cpp
 c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
 c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\tank.cpp(91): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\tank.cpp(92): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\tank.cpp(423): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\tank.cpp(433): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\tank.cpp(105): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\tank.cpp(106): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\tank.cpp(482): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\tank.cpp(492): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
   SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
