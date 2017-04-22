@@ -152,12 +152,12 @@ void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
 		// Always destroy particles that collide
 		if (active[i] != nullptr && active[i]->collider == c1)
 		{
-			if (c2->type == COLLIDER_ENEMY && active[i]->bullettype == 1)
+			if ((c2->type == COLLIDER_ENEMY || c2->type == COLLIDER_TANK) && active[i]->bullettype == 1)
 			{
 				active[i]->AddPointsP1();
 			}
 
-			if (c2->type == COLLIDER_ENEMY && active[i]->bullettype == 2)
+			if ((c2->type == COLLIDER_ENEMY || c2->type == COLLIDER_TANK) && active[i]->bullettype == 2)
 			{
 				active[i]->AddPointsP2();
 			}
