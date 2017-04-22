@@ -26,7 +26,7 @@ bool ModulePowerUps::Init()
 	return true;
 }
 
-update_status ModulePowerUps::PreUpdate() //Wrong?
+update_status ModulePowerUps::PreUpdate() 
 {
 	for (uint i = 0; i < MAX_POWERUPS; ++i)
 	{
@@ -54,7 +54,7 @@ update_status ModulePowerUps::Update()
 	return UPDATE_CONTINUE;
 }
 
-update_status ModulePowerUps::PostUpdate() //Wrong?
+update_status ModulePowerUps::PostUpdate() 
 {
 	for (uint i = 0; i < MAX_POWERUPS; ++i)
 	{
