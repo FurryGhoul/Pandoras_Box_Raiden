@@ -11,6 +11,7 @@
 Enemy_Light_Shooter::Enemy_Light_Shooter(int x, int y) : Enemy(x, y)
 {
 	hp = 1;
+	points = 130;
 
 	// Anmiation pushback's
 

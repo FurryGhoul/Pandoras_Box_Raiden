@@ -1,22 +1,30 @@
-﻿Build started 22/04/2017 23:34:35.
+﻿Build started 22/04/2017 23:43:02.
      1>Project "C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\SDL Game.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Enemy_Bonus_Ship.cpp Enemy_Light_Shooter.cpp Tank.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Enemy.cpp Enemy_Bonus_Ship.cpp Enemy_Light_Shooter.cpp ModuleEnemies.cpp Tank.cpp
          Tank.cpp
      1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<' : signed/unsigned mismatch
      1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=' : signed/unsigned mismatch
-     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(107): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
      1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(108): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(484): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(494): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(109): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(485): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(495): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+         ModuleEnemies.cpp
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=' : signed/unsigned mismatch
          Enemy_Light_Shooter.cpp
      1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<' : signed/unsigned mismatch
      1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=' : signed/unsigned mismatch
-     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(58): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
      1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(59): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(249): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(259): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(60): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(250): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(260): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
          Enemy_Bonus_Ship.cpp
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=' : signed/unsigned mismatch
+         Generating Code...
+         Compiling...
+         Enemy.cpp
      1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<' : signed/unsigned mismatch
      1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=' : signed/unsigned mismatch
          Generating Code...
@@ -54,4 +62,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.78
+Time Elapsed 00:00:01.19
