@@ -37,8 +37,8 @@ private:
 	bool se = false;
 	bool nw = false;
 	bool sw = false;
-	bool shooting = false;
-
+	int shooting = 0;
+	int time_controll = 0;
 	
 	
 	

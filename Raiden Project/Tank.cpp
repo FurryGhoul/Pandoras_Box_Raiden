@@ -9,7 +9,7 @@
 
 Tank::Tank(int x, int y) : Enemy(x, y)
 {
-	hp = 1;
+	hp = 3;
 	points = 130;
 
 	spriteshit = 2;
@@ -482,9 +482,14 @@ void Tank::MoveShoot()
 	distance.x = abs(distance.x);
 	distance.y = abs(distance.y);
 	// Shooting
-	if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && shooting == false)
+	time_controll++;
+	if (time_controll % 100 == 0)
+
+{ 
+	if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500)
 	{
-		if (App->player->position.y - 22 < (position.y - 22 * 3))
+
+        if (App->player->position.y - 22 < (position.y - 22 * 3))
 		{
 			distance.y *= -1;
 		}
@@ -492,8 +497,7 @@ void Tank::MoveShoot()
 		{
 			distance.x *= -1;
 		}
-		App->particles->AddParticle(App->particles->enemyshot, position.x+ w/2, position.y +h/2, COLLIDER_ENEMY_SHOT, 0, distance.x * 0.03, distance.y * 0.03); 
-
-		shooting = true;
+		App->particles->AddParticle(App->particles->enemyshot, position.x+ w/2, position.y +h/2, COLLIDER_ENEMY_SHOT, 0, distance.x * 0.03, distance.y*0.03); 
 	}
+}
 }

@@ -73,6 +73,11 @@ update_status ModuleMap1::Update()
 	{
 		App->fade->FadeToBlack(this, App->map_2, 1.0f);
 	}
+	if (App->render->camera.y == -4500)
+	{
+		App->fade->FadeToBlack(this, App->WelcomeScreen, 1.0f);
+		App->enemies->EraseEnemies();
+	}
 
 	return UPDATE_CONTINUE;
 }
