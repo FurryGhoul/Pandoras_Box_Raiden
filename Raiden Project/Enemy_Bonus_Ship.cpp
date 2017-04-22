@@ -69,17 +69,11 @@ void Enemy_Bonus_Ship::MoveShoot()
 {
 	position = original_pos + movement.GetCurrentPosition();
 	position1 = original_pos1 + movement.GetCurrentPosition();
-<<<<<<< HEAD
-	//position2 = original_pos2 + movement.GetCurrentPosition();
-	
-	
-
-=======
 	position2 = original_pos2 + movement.GetCurrentPosition();
 	position.x += left_right_mod;
 	position1.x += left_right_mod;
 	position2.x += left_right_mod;
->>>>>>> origin/master
+
 	w = 59 * 3;
 	h = 54 * 3;
 	w1 = 32 * 3;
