@@ -21,7 +21,7 @@ ModulePowerUps::~ModulePowerUps()
 
 bool ModulePowerUps::Init()
 {
-	sprites = App->textures->Load("assets/Powerups and Bonuses.png");
+	sprites = App->textures->Load("Assets/Powerups and Bonuses.png");
 
 	return true;
 }

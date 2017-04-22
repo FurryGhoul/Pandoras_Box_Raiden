@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 22/04/2017 21:58:54.
      1>Project "C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\SDL Game.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -38,3 +39,7 @@
 Build succeeded.
 
 Time Elapsed 00:00:00.47
+=======
+﻿  SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+>>>>>>> origin/master
