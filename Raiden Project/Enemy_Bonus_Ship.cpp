@@ -36,20 +36,20 @@ Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y) : Enemy (x, y)
 	charge.speed = 2.0f;
 	charge.loop = true;
 
-	movement.PushBack({ 0.0f, 1.5f }, 300);
+	movement.PushBack({ 0.0f, 1.0f }, 500);
 	movement.PushBack({ 0.0f, 0.0f }, 200);
-	movement.PushBack({ -0.5f, 0.0f }, 300);
-	movement.PushBack({ 0.5f, 0.0f }, 600);
-	movement.PushBack({ -0.5f, 0.0f }, 600);
-	movement.PushBack({ 0.5f, 0.0f }, 600);
-	movement.PushBack({ -0.5f, 0.0f }, 600);
-	movement.PushBack({ 0.5f, 0.0f }, 600);
-	movement.PushBack({ -0.5f, 0.0f }, 600);
-	movement.PushBack({ 0.5f, 0.0f }, 600);
-	movement.PushBack({ -0.5f, 0.0f }, 600);
-	movement.PushBack({ 0.5f, 0.0f }, 600);
-	movement.PushBack({ -0.5f, 0.0f }, 600);
-	movement.PushBack({ 0.5f, 0.0f }, 600);
+	movement.PushBack({ -0.4f, 0.0f }, 300);
+	movement.PushBack({ 0.4f, 0.0f }, 700);
+	movement.PushBack({ -0.4f, 0.0f }, 700);
+	movement.PushBack({ 0.4f, 0.0f }, 700);
+	movement.PushBack({ -0.4f, 0.0f }, 700);
+	movement.PushBack({ 0.4f, 0.0f }, 700);
+	movement.PushBack({ -0.4f, 0.0f }, 700);
+	movement.PushBack({ 0.4f, 0.0f }, 700);
+	movement.PushBack({ -0.4f, 0.0f }, 700);
+	movement.PushBack({ 0.4f, 0.0f }, 700);
+	movement.PushBack({ -0.4f, 0.0f }, 700);
+	movement.PushBack({ 0.4f, 0.0f }, 700);
 
 
 	bonusplane = true;// Bollean to detect if the enemy is a bonus plane and adapt the hitbox
@@ -59,8 +59,8 @@ Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y) : Enemy (x, y)
 	animations = 2;
 	original_pos.x = x;
 	original_pos.y = - 200;
-	original_pos1.x = + 457;
-	original_pos1.y = - 238;
+	original_pos1.x = original_pos.x + 47;
+	original_pos1.y = original_pos.y - 38;
 	/*original_pos2.x = x + 4;
 	original_pos2.y = -200;*/
 }
@@ -80,6 +80,9 @@ void Enemy_Bonus_Ship::MoveShoot()
 	h1 = 14 * 3;
 	/*w2 = 59 * 3;
 	h2 = 54 * 3;*/
+
+	++shoot_time;
+
 	if (position.x < 410 || position.x > 410)
 	{
 		animation = &flysides;
@@ -100,15 +103,22 @@ void Enemy_Bonus_Ship::MoveShoot()
 		animation = &flydown;
 	}
 	
-	if (shooting == false && movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f)
-	{
 	
-		App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 60, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y + 4);
-		App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 60, COLLIDER_ENEMY_SHOT, 0, distance.x - 1, distance.y + 4);
-		App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 60, COLLIDER_ENEMY_SHOT, 0, distance.x + 1, distance.y + 4);
+	if (shooting == false && (movement.steps[movement.GetCurrentStep()].speed.x == -0.4f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f ||
+		movement.steps[movement.GetCurrentStep()].speed.x == 0.4f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f))
+	{
+		if (shoot_time % 300 == 0)
+		{
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 60, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y + 4);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 60, COLLIDER_ENEMY_SHOT, 0, distance.x - 1, distance.y + 4);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 60, COLLIDER_ENEMY_SHOT, 0, distance.x + 1, distance.y + 4);
 
-		shooting = true;
+			shooting = true;
+		}
+		shooting = false;
 	}
+		
+	
 }
 
 
