@@ -69,7 +69,6 @@ bool ModuleParticles::CleanUp()
 		{
 			delete active[i];
 			active[i] = nullptr;
-		
 		}
 	}
 
@@ -142,7 +141,7 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 			Mix_PlayChannel(-1, App->audio->fx_shoot, 0);
 			if (collider_type != COLLIDER_NONE)
 			{ 
-				p->collider = App->collision->AddCollider({ 59, 100, 18, 18 }, collider_type, this);
+				p->collider = App->collision->AddCollider({ 59, 100, 18, 18 }, collider_type, this, bullettype);
 			}
 			active[i] = p;
 			break;

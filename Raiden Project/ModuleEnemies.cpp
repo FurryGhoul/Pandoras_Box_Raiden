@@ -164,7 +164,16 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			enemies[i]->hp--;
 			if (enemies[i]->hp == 0)
 			{
-				App->player->score += enemies[i]->points;
+				if (c2->bullettype == 1)
+				{
+					App->player->score += enemies[i]->points;
+				}
+
+				if (c2->bullettype == 2)
+				{
+					App->player2->score += enemies[i]->points;
+				}
+
 				enemies[i]->OnCollision(c2);
 				delete enemies[i];
 				enemies[i] = nullptr;
