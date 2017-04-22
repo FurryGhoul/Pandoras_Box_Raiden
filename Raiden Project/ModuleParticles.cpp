@@ -104,6 +104,13 @@ update_status ModuleParticles::Update()
 			{
 				p->fx_played = true;
 			}
+			// Always destroy out of screen particles
+			if (active[i]->position.y <= -1)
+			{
+				delete active[i];
+				active[i] = nullptr;
+				break;
+			}
 		}
 	}
 
