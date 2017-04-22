@@ -12,6 +12,7 @@
 #include "ModulePlayer2.h"
 #include "ModuleParticles.h"
 #include "ModuleEnemies.h"
+#include "ModulePowerUps.h"
 
 ModuleMap1::ModuleMap1() : Module()
 {
@@ -52,9 +53,12 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 0, -2000);
 		App->enemies->AddEnemy(ENEMY_TYPES::BONUS_SHIP, 410, -500);
 		App->enemies->AddEnemy(ENEMY_TYPES::TANK, 200, -500);
+		App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, 200, -550);
+
 		App->collision->Enable();
 		App->render->camera.x = App->render->camera.y = 0;
 		App->enemies->Enable();
+		App->powerups->Enable();
 		App->player->InitialPos();
 		App->player2->InitialPos();
 		App->player->godmode = false;

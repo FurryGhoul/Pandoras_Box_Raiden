@@ -17,6 +17,9 @@ RedUp::RedUp(int x, int y) : PowerUp(x, y)
 
 	collider = App->collision->AddCollider({ 0, 0, 16 * 3 - 5, 14 * 3 }, COLLIDER_TYPE::COLLIDER_POWER_UP, (Module*)App->powerups);
 
+	w = 16 * 3;
+	h = 14 * 3;
+
 	original_pos.x = x;
-	original_pos.y = -50;
+	original_pos.y = 100;
 }
