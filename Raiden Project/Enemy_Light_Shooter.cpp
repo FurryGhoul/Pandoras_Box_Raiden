@@ -40,7 +40,7 @@ Enemy_Light_Shooter::Enemy_Light_Shooter(int x, int y) : Enemy(x, y)
 	flysw3.PushBack({ 458, 1, 24, 30 });
 
 	movement.PushBack({ -0.2f, 8.0f }, 50);
-	movement.PushBack({ 0.0f, 0.0f }, 50);
+	movement.PushBack({ 0.0f, 0.0f }, 100);
 	movement.PushBack({ -0.2f, -5.0f }, 600);
 
 
@@ -55,6 +55,8 @@ void Enemy_Light_Shooter::MoveShoot()
 {
 	position = original_pos + movement.GetCurrentPosition();
 	position.x += left_right_mod;
+
+	++shoot_time;
 
 	if (sqrtf((distance.y = App->player->position.y - 22 - position.y - 22 * 3)*(distance.y = App->player->position.y - 22 - position.y - 22 * 3) + (distance.x = App->player->position.x - position.x + 22)* (distance.x = App->player->position.x - position.x + 22))
 		< sqrtf((distance.y = App->player2->position.y - 22 - position.y - 22 * 3)*(distance.y = App->player2->position.y - 22 - position.y - 22 * 3) + (distance.x = App->player2->position.x - position.x + 22)* (distance.x = App->player2->position.x - position.x + 22)))
@@ -249,16 +251,20 @@ void Enemy_Light_Shooter::MoveShoot()
 	// Shooting
 	if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && shooting == false )
 	{
-		if (App->player->position.y - 22 < (position.y - 22 * 3))
+		if (shoot_time % 80 == 0)
 		{
-			distance.y *= -1;
-		}
-		if (App->player->position.x < (position.x + 22))
-		{
-			distance.x *= -1;
-		}
-		App->particles->AddParticle(App->particles->enemyshot, position.x + 10, position.y + 50, COLLIDER_ENEMY_SHOT,0, distance.x * 0.03, distance.y * 0.03); //In theory, the speed should be distance.x and distance.y, but at the moment it doesn't work that way
+			if (App->player->position.y - 22 < (position.y - 22 * 3))
+			{
+				distance.y *= -1;
+			}
+			if (App->player->position.x < (position.x + 22))
+			{
+				distance.x *= -1;
+			}
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 10, position.y + 50, COLLIDER_ENEMY_SHOT, 0, distance.x * 0.04, distance.y * 0.04); //In theory, the speed should be distance.x and distance.y, but at the moment it doesn't work that way
 
-		shooting = true;
+			shooting = true;
+		}
+		shooting = false;
 	}
 }

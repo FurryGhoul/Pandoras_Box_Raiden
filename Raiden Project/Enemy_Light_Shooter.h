@@ -27,6 +27,7 @@ private:
 	bool nw = false;
 	bool sw = false;
 	bool shooting = false;
+	int shoot_time = 0;
 
 public:
 

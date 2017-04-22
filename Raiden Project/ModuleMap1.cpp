@@ -52,6 +52,10 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 150, -2000);
 		App->enemies->AddEnemy(ENEMY_TYPES::LIGHT_SHOOTER, 0, -2000);
 		App->enemies->AddEnemy(ENEMY_TYPES::BONUS_SHIP, 410, -500);
+		App->enemies->AddEnemy(ENEMY_TYPES::BONUS_SHIP, 210, -1700);
+		App->enemies->AddEnemy(ENEMY_TYPES::BONUS_SHIP, 410, -2200);
+		App->enemies->AddEnemy(ENEMY_TYPES::BONUS_SHIP, 300, -3200);
+		App->enemies->AddEnemy(ENEMY_TYPES::BONUS_SHIP, 350, -3900);
 		App->enemies->AddEnemy(ENEMY_TYPES::TANK, 200, -500);
 		App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, 200, -550);
 

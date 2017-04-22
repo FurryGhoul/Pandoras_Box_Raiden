@@ -1,2 +1,9 @@
-﻿  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+﻿  Enemy_Light_Shooter.cpp
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(61): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(62): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(252): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(264): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  SDL Game.vcxproj -> C:\Users\Ivan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\Ivan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
