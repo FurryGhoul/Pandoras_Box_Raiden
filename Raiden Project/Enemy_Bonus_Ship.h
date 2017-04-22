@@ -14,6 +14,7 @@ private:
 	iPoint original_pos2;
 	Path movement;
 	bool side = false;
+	bool shooting = false;
 public:
 	Enemy_Bonus_Ship(int x, int y);
 	void MoveShoot();
