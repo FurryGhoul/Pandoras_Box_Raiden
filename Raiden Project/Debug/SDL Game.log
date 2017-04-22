@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 23/04/2017 0:07:42.
      1>Project "C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\SDL Game.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -40,3 +41,6 @@
 Build succeeded.
 
 Time Elapsed 00:00:00.49
+=======
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Platform.targets(57,5): error MSB8020: The build tools for v120 (Platform Toolset = 'v120') cannot be found. To build using the v120 build tools, please install v120 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Retarget solution".
+>>>>>>> origin/master

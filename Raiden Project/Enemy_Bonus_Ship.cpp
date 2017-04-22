@@ -37,60 +37,84 @@ Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y) : Enemy (x, y)
 	charge.loop = true;
 
 	movement.PushBack({ 0.0f, 1.5f }, 300);
-	movement.PushBack({ 0.0f, 0.0f }, 100);
+	movement.PushBack({ 0.0f, 0.0f }, 200);
 	movement.PushBack({ -0.5f, 0.0f }, 300);
 	movement.PushBack({ 0.5f, 0.0f }, 600);
 	movement.PushBack({ -0.5f, 0.0f }, 600);
 	movement.PushBack({ 0.5f, 0.0f }, 600);
+	movement.PushBack({ -0.5f, 0.0f }, 600);
+	movement.PushBack({ 0.5f, 0.0f }, 600);
+	movement.PushBack({ -0.5f, 0.0f }, 600);
+	movement.PushBack({ 0.5f, 0.0f }, 600);
+	movement.PushBack({ -0.5f, 0.0f }, 600);
+	movement.PushBack({ 0.5f, 0.0f }, 600);
+	movement.PushBack({ -0.5f, 0.0f }, 600);
+	movement.PushBack({ 0.5f, 0.0f }, 600);
+
 
 	bonusplane = true;// Bollean to detect if the enemy is a bonus plane and adapt the hitbox
 
 	collider = App->collision->AddCollider({ 0, 0, 60, 60 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 	spriteshit = 1;
-	animations = 3;
+	animations = 2;
 	original_pos.x = x;
 	original_pos.y = - 200;
 	original_pos1.x = + 457;
 	original_pos1.y = - 238;
-	original_pos2.x = x + 4;
-	original_pos2.y = -200;
+	/*original_pos2.x = x + 4;
+	original_pos2.y = -200;*/
 }
 
 void Enemy_Bonus_Ship::MoveShoot()
 {
 	position = original_pos + movement.GetCurrentPosition();
 	position1 = original_pos1 + movement.GetCurrentPosition();
+<<<<<<< HEAD
+	//position2 = original_pos2 + movement.GetCurrentPosition();
+	
+	
+
+=======
 	position2 = original_pos2 + movement.GetCurrentPosition();
 	position.x += left_right_mod;
 	position1.x += left_right_mod;
 	position2.x += left_right_mod;
+>>>>>>> origin/master
 	w = 59 * 3;
 	h = 54 * 3;
 	w1 = 32 * 3;
 	h1 = 14 * 3;
-	w2 = 59 * 3;
-	h2 = 54 * 3;
+	/*w2 = 59 * 3;
+	h2 = 54 * 3;*/
 	if (position.x < 410 || position.x > 410)
 	{
 		animation = &flysides;
 		animation1 = &none;
-		animation2 = &charge;
+		//animation2 = &charge;
 		side = true;
 	}
 	if (position.y > 234 && side == false)
 	{
 		animation = &stop;
 		animation1 = &none;
-		animation2 = &none;
+		//animation2 = &none;
 	}
 	if (position.y <= 234)
 	{
-		animation2 = &none;
+		//animation2 = &none;
 		animation1 = &propeller;
 		animation = &flydown;
 	}
 	
+	if (shooting == false && movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f)
+	{
 	
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 60, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y + 4);
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 60, COLLIDER_ENEMY_SHOT, 0, distance.x - 1, distance.y + 4);
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 60, COLLIDER_ENEMY_SHOT, 0, distance.x + 1, distance.y + 4);
+
+		shooting = true;
+	}
 }
 
 

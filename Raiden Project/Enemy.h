@@ -22,9 +22,15 @@ public:
 	iPoint position1;
 	iPoint position2;
 	iPoint position3;
+<<<<<<< HEAD
+	iPoint distance;
+	iPoint distance1;
+	iPoint distance2;
+=======
 	iPoint distance;//bonus ship propeller
 	uint hp;
 	uint points;
+>>>>>>> origin/master
 	int h;
 	int w;
 	int h1;
