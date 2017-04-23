@@ -114,7 +114,7 @@ bool ModuleEnemies::CleanUp()
 	return true;
 }
 
-bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y)
+bool ModuleEnemies::AddEnemy(int path, ENEMY_TYPES type, int x, int y)
 {
 	bool ret = false;
 
@@ -125,6 +125,7 @@ bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y)
 			queue[i].type = type;
 			queue[i].x = x;
 			queue[i].y = y;
+			queue[i]._path = path;//assignes a path to the enemy
 			ret = true;
 			break;
 		}
@@ -132,6 +133,7 @@ bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y)
 
 	return ret;
 }
+
 
 void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 {
@@ -144,13 +146,13 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		switch (info.type)
 		{
 		case ENEMY_TYPES::LIGHT_SHOOTER:
-			enemies[i] = new Enemy_Light_Shooter(info.x, info.y);
+			enemies[i] = new Enemy_Light_Shooter(info.x, info.y, info._path);
 			break;
 		case ENEMY_TYPES::BONUS_SHIP:
-			enemies[i] = new Enemy_Bonus_Ship(info.x, info.y);
+			enemies[i] = new Enemy_Bonus_Ship(info.x, info.y, info._path);
 			break;
 		case ENEMY_TYPES::TANK:
-			enemies[i] = new Tank(info.x, info.y);
+			enemies[i] = new Tank(info.x, info.y, info._path);
 		}
 	}
 }

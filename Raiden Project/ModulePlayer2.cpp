@@ -59,7 +59,7 @@ bool ModulePlayer2::Init()
 	LOG("Loading player");
 
 	graphics = App->textures->Load("Assets/Player2.png");
-	Player = App->collision->AddCollider({ 0, 0, player_w, player_h }, COLLIDER_PLAYER, this);
+	Player = App->collision->AddCollider({ 0, 0, player_w, player_h }, COLLIDER_PLAYER, this, 4); // Bullettype 4 differentiate the player colliders
 	Player->SetPos(82938, 2323);
 	score = 0;
 	font_score = App->fonts->Load("Assets/Font.png", "> ?@ABCDEFGHIJKLMNOPQRSTUVWXYZ!¡?_^#$%&'()x+.-,;tpsczpc/0123456789:", 3);
@@ -243,7 +243,15 @@ update_status ModulePlayer2::Update()
 
 		if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN)
 		{
-			App->particles->AddParticle(App->particles->laser2, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 2);
+			if (powerup_level == 0)
+			{
+				App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 2);
+			}
+			if (powerup_level == 1)
+			{
+				App->particles->AddParticle(App->particles->laser, position.x + speed, position.y, COLLIDER_PLAYER_SHOT, 2);
+				App->particles->AddParticle(App->particles->laser, position.x + speed + 40, position.y, COLLIDER_PLAYER_SHOT, 2);
+			}
 		}
 
 		// Draw everything --------------------------------------
@@ -399,7 +407,15 @@ update_status ModulePlayer2::Update()
 
 		if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN)
 		{
-			App->particles->AddParticle(App->particles->laser2, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 2);
+			if (powerup_level == 0)
+			{
+				App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 2);
+			}
+			if (powerup_level == 1)
+			{
+				App->particles->AddParticle(App->particles->laser, position.x + speed, position.y, COLLIDER_PLAYER_SHOT, 2);
+				App->particles->AddParticle(App->particles->laser, position.x + speed + 40, position.y, COLLIDER_PLAYER_SHOT, 2);
+			}
 		}
 
 		// Draw everything --------------------------------------
@@ -440,7 +456,7 @@ update_status ModulePlayer2::Update()
 	{
 		if (godmode)
 		{
-			Player = App->collision->AddCollider({ 0, 0, player_w, player_h }, COLLIDER_PLAYER, this);
+			Player = App->collision->AddCollider({ 0, 0, player_w, player_h }, COLLIDER_PLAYER, this, 4);
 
 			godmode = false;
 		}
@@ -457,7 +473,7 @@ update_status ModulePlayer2::Update()
 
 void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 {
-	if (Player != nullptr && Player == c1 && deadplayer == false)
+	if (Player != nullptr && Player == c1 && deadplayer == false && c2->type != COLLIDER_POWER_UP)
 	{
 		lastscore = score;
 
@@ -468,6 +484,7 @@ void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 
 		score = 0;
 
+		powerup_level = 0;
 		Disable();
 		position.x = 10000000;
 		position.y = 10000000;
@@ -476,7 +493,7 @@ void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 		allowhiscore = true;
 	}
 	
-	if (Player != nullptr && Player == c1 && App->player->deadplayer && deadplayer)
+	if (Player != nullptr && Player == c1 && App->player->deadplayer && deadplayer && c2->type != COLLIDER_POWER_UP)
 	{
 		godmode = true;
 		App->enemies->Disable();

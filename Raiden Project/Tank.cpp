@@ -5,9 +5,10 @@
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
 #include <Math.h>
+#include "ModuleEnemies.h"
 #define PI 3.14159265
 
-Tank::Tank(int x, int y) : Enemy(x, y)
+Tank::Tank(int x, int y, int path) : Enemy(x, y)
 {
 	hp = 3;
 	points = 130;
@@ -89,10 +90,20 @@ Tank::Tank(int x, int y) : Enemy(x, y)
 	-1.0, 1.0 = Neutral diagonal up left
 	1.0, 3.0 = Neutral diagonal down right
 	*/
-	movement.PushBack({  0.0f, 4.0f }, 100);
-	movement.PushBack({  -1.0f, 1.0f }, 100);
-	movement.PushBack({  0.0f, 0.0f }, 6000);
+	if (path == 0)
+	{
+		movement.PushBack({ 0.0f, 4.0f }, 100);
+		movement.PushBack({ -1.0f, 1.0f }, 100);
+		movement.PushBack({ 0.0f, 0.0f }, 6000);
+	}
 
+	if (path == 1)
+	{
+		movement.PushBack({ 0.0f, 4.0f }, 50);
+		movement.PushBack({ 0.5f, 3.0f }, 50);
+		movement.PushBack({ -0.5, 2.0f }, 50);
+		movement.PushBack({ 0.0f, 0.0f }, 6000);
+	}
 
 	collider = App->collision->AddCollider({ 0, 0, 24 * 3 - 5, 26 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
 	animation = &updiagonalleft;
@@ -102,7 +113,9 @@ Tank::Tank(int x, int y) : Enemy(x, y)
 void Tank::MoveShoot()
 {	
 	// Calculation between tank and player and movement of the tank
+	
 	position = original_pos + movement.GetCurrentPosition();
+	
 	position.x += left_right_mod;
 
 	if (sqrtf((distance.y = App->player->position.y - 22 - position.y - 22 * 3)*(distance.y = App->player->position.y - 22 - position.y - 22 * 3) + (distance.x = App->player->position.x - position.x + 22)* (distance.x = App->player->position.x - position.x + 22))
@@ -260,7 +273,7 @@ void Tank::MoveShoot()
 
 
 	//Animation of the turret
-	param = (abs(distance.y) / (abs(distance.x) + 0.1));
+	param = (fabs(distance.y) / (fabs(distance.x) + 0.1));
 	angle = atan(param) * 180 / PI;
 
 	// South-East position
@@ -479,8 +492,8 @@ void Tank::MoveShoot()
 
 
 
-	distance.x = abs(distance.x);
-	distance.y = abs(distance.y);
+	distance.x = fabs(distance.x);
+	distance.y = fabs(distance.y);
 	// Shooting
 	time_controll++;
 	if (time_controll % 100 == 0)

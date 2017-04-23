@@ -48,7 +48,7 @@ private:
 	
 	Path movement;
 public:
-	Tank(int, int);
+	Tank(int, int, int path);
 
 	void MoveShoot();
 };

@@ -5,10 +5,11 @@
 #include "ModuleParticles.h"
 #include "Enemy.h"
 #include <Math.h>
+#include "ModuleEnemies.h"
 
 
 
-Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y) : Enemy (x, y)
+Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y, int path) : Enemy (x, y)
 {
 	hp = 17;
 	points = 480;
@@ -67,9 +68,11 @@ Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y) : Enemy (x, y)
 
 void Enemy_Bonus_Ship::MoveShoot()
 {
+	
 	position = original_pos + movement.GetCurrentPosition();
 	position1 = original_pos1 + movement.GetCurrentPosition();
 	position2 = original_pos2 + movement.GetCurrentPosition();
+	
 	position.x += left_right_mod;
 	position1.x += left_right_mod;
 	position2.x += left_right_mod;

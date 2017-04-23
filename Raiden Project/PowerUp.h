@@ -28,6 +28,7 @@ public:
 
 	virtual void Draw(SDL_Texture* sprites);
 	virtual void OnCollision(Collider* collider);
+	virtual void Move(){}
 };
 
 #endif // __POWERUP_H__

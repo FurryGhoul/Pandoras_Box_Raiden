@@ -5,10 +5,11 @@
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
 #include <Math.h>
+#include "ModuleEnemies.h"
 
 #define PI 3.14159265
 
-Enemy_Light_Shooter::Enemy_Light_Shooter(int x, int y) : Enemy(x, y)
+Enemy_Light_Shooter::Enemy_Light_Shooter(int x, int y, int path) : Enemy(x, y)
 {
 	hp = 1;
 	points = 130;
@@ -39,10 +40,19 @@ Enemy_Light_Shooter::Enemy_Light_Shooter(int x, int y) : Enemy(x, y)
 	flysw2.PushBack({ 426, 1, 27, 26 });
 	flysw3.PushBack({ 458, 1, 24, 30 });
 
-	movement.PushBack({ -0.2f, 8.0f }, 50);
-	movement.PushBack({ 0.0f, 0.0f }, 100);
-	movement.PushBack({ -0.2f, -5.0f }, 600);
-
+	if (path == 0)
+	{
+		movement.PushBack({ -0.2f, 8.0f }, 50);
+		movement.PushBack({ 0.0f, 0.0f }, 100);
+		movement.PushBack({ -0.2f, -5.0f }, 600);
+	}
+	
+	if (path == 1)
+	{
+		movement.PushBack({ -0.2f, 8.0f }, 40);
+		movement.PushBack({ 0.0f, 0.0f }, 100);
+		movement.PushBack({ -0.2f, -5.0f }, 600);
+	}
 
 	collider = App->collision->AddCollider({ 0, 0, 24*3-5, 24*3+20 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 	spriteshit = 0;
@@ -53,7 +63,12 @@ Enemy_Light_Shooter::Enemy_Light_Shooter(int x, int y) : Enemy(x, y)
 
 void Enemy_Light_Shooter::MoveShoot()
 {
+	
 	position = original_pos + movement.GetCurrentPosition();
+	
+	
+	//position = original_pos + movement1.GetCurrentPosition();
+	
 	position.x += left_right_mod;
 
 	++shoot_time;
@@ -73,7 +88,7 @@ void Enemy_Light_Shooter::MoveShoot()
 	// Animation
 
 	// Setting angle
-	param = (abs(distance.y) / (abs(distance.x) + 0.1));
+	param = (fabs(distance.y) / (fabs(distance.x) + 0.1));
 	angle = atan(param) * 180 / PI;
 
 	// South-East position
@@ -246,8 +261,8 @@ void Enemy_Light_Shooter::MoveShoot()
 		h = 30 * 3;
 	}
 
-	distance.x = abs(distance.x);
-	distance.y = abs(distance.y);
+	distance.x = fabs(distance.x);
+	distance.y = fabs(distance.y);
 
 	// Shooting
 	distance.x = distance.x * (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));

@@ -20,6 +20,7 @@ private:
 	Animation flynw3;
 	iPoint original_pos;
 	Path movement;
+	Path movement1;
 	double param;
 	double angle;
 	bool ne = false;
@@ -31,7 +32,7 @@ private:
 
 public:
 
-	Enemy_Light_Shooter(int x, int y);
+	Enemy_Light_Shooter(int x, int y, int path);
 	void MoveShoot();
 
 };
