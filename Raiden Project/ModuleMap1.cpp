@@ -44,7 +44,6 @@ update_status ModuleMap1::Update()
 		App->particles->Enable();
 	    App->player->Enable();
 		App->player2->Enable();
-		App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, 200, -100);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 300, -4000 );
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 300, -1000);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 100, -100);

@@ -9,6 +9,7 @@
 #include "Enemy_Bonus_Ship.h"
 #include "Tank.h"
 #include "Turret.h"
+#include "ModulePowerUps.h"
 #define SPAWN_MARGIN 50
 
 ModuleEnemies::ModuleEnemies()
@@ -177,6 +178,12 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				}
 
 				enemies[i]->OnCollision(c2);
+
+				if (enemies[i]->bonusplane)
+				{
+					App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, enemies[i]->position.x, enemies[i]->position.y);
+				}
+
 				delete enemies[i];
 				enemies[i] = nullptr;
 				break;
