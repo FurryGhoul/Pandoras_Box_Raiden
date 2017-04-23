@@ -18,7 +18,7 @@
 
 ModulePlayer::ModulePlayer()
 {
-graphics = NULL;
+	graphics = NULL;
 	current_animation = NULL;
 
 	InitialPos();
@@ -93,6 +93,15 @@ bool ModulePlayer::CleanUp()
 // Update: draw background
 update_status ModulePlayer::Update()
 {
+	if (allowhiscore == true)
+	{
+		sprintf_s(highscore_text, 10, "HI-SCORE");
+		sprintf_s(highscore, 10, "%7d", hiscore);
+		allowhiscore = false;
+	}
+	App->fonts->BlitText(20, 20, 0, highscore_text);
+	App->fonts->BlitText(20, 55, 0, highscore);
+
 	if (allowtimep == true)
 	{
 		timep = SDL_GetTicks();
@@ -258,7 +267,6 @@ update_status ModulePlayer::Update()
 		}
 		// Draw UI (score) --------------------------------------
 		sprintf_s(score_text, 10, "%7d", score);
-
 		// TODO 3: Blit the text of the score in at the bottom of the screen
 
 		App->fonts->BlitText(position.x, position.y, 0, score_text);
@@ -444,11 +452,14 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 
 	if (Player != nullptr && Player == c1 && deadplayer == false)
 	{
+		hiscore = score;
+		score = 0;
 		Disable();
 		position.x = 10000000;
 		position.y = 10000000;
 		Player->SetPos(10000000, 10000000);
 		deadplayer = true;
+		allowhiscore = true;
 	}
 
 	if (Player != nullptr && Player == c1 && App->player2->deadplayer && deadplayer)

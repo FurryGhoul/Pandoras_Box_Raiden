@@ -43,6 +43,9 @@ public:
 	iPoint position;
 	int font_score = -1;
 	char score_text[10];
+	char highscore_text[10];
+	char highscore[10];
+	int hiscore;
 	uint score = 0;
 	bool ideling = false;
 	bool allowtime = true;
@@ -53,6 +56,7 @@ public:
 	bool moving = false;
 	bool godmode = false;
 	bool deadplayer = false;
+	bool allowhiscore = true;
 	Uint32 time;
 	Uint32 timep; //time for propellers
 	Collider* Player = nullptr;
