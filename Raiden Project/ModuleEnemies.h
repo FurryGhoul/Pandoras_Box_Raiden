@@ -21,6 +21,8 @@ struct EnemyInfo
 {
 	ENEMY_TYPES type = ENEMY_TYPES::NO_TYPE;
 	int x, y;
+	int _path;// integer to define which path the enemy follows
+	
 };
 
 class ModuleEnemies : public Module
@@ -37,8 +39,9 @@ public:
 	bool CleanUp();
 	void EraseEnemies();
 	void OnCollision(Collider* c1, Collider* c2);
-	bool AddEnemy(ENEMY_TYPES type, int x, int y);
+	bool AddEnemy(int path, ENEMY_TYPES type, int x, int y);
 	void MoveEnemiesRight(bool); // The bool is used to know if the enemies should be moved to the right (true) or to the left (false)
+	int GetPath() const;
 
 private:
 

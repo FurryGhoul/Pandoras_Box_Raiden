@@ -1,17 +1,3 @@
-﻿  ModuleEnemies.cpp
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
-  Enemy_Light_Shooter.cpp
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(61): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(62): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(252): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(264): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-  Enemy_Bonus_Ship.cpp
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
-  Generating Code...
-  LINK : C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe not found or not built by the last incremental link; performing full link
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+﻿  ModuleMap1.cpp
+  SDL Game.vcxproj -> C:\Users\Ivan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\Ivan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
