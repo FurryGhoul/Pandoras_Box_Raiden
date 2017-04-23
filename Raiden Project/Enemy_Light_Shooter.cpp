@@ -88,7 +88,7 @@ void Enemy_Light_Shooter::MoveShoot()
 	// Animation
 
 	// Setting angle
-	param = (abs(distance.y) / (abs(distance.x) + 0.1));
+	param = (fabs(distance.y) / (fabs(distance.x) + 0.1));
 	angle = atan(param) * 180 / PI;
 
 	// South-East position
@@ -261,8 +261,8 @@ void Enemy_Light_Shooter::MoveShoot()
 		h = 30 * 3;
 	}
 
-	distance.x = abs(distance.x);
-	distance.y = abs(distance.y);
+	distance.x = fabs(distance.x);
+	distance.y = fabs(distance.y);
 
 	// Shooting
 	distance.x = distance.x * (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));

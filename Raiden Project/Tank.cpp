@@ -273,7 +273,7 @@ void Tank::MoveShoot()
 
 
 	//Animation of the turret
-	param = (abs(distance.y) / (abs(distance.x) + 0.1));
+	param = (fabs(distance.y) / (fabs(distance.x) + 0.1));
 	angle = atan(param) * 180 / PI;
 
 	// South-East position
@@ -492,8 +492,8 @@ void Tank::MoveShoot()
 
 
 
-	distance.x = abs(distance.x);
-	distance.y = abs(distance.y);
+	distance.x = fabs(distance.x);
+	distance.y = fabs(distance.y);
 	// Shooting
 	time_controll++;
 	if (time_controll % 100 == 0)

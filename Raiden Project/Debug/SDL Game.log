@@ -1,1 +1,14 @@
-﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Platform.targets(57,5): error MSB8020: The build tools for v120 (Platform Toolset = 'v120') cannot be found. To build using the v120 build tools, please install v120 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Retarget solution".
+﻿  Tank.cpp
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(121): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(122): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(124): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(125): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(130): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(131): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(495): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(496): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(516): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  SDL Game.vcxproj -> C:\Users\Ivan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\Ivan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

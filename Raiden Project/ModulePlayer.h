@@ -43,13 +43,17 @@ public:
 	iPoint position;
 	int font_score = -1;
 	char score_text[10];
+	char highscore_text[10];
+	char highscore[10];
 	uint score = 0;
+	uint hiscore = 0;
 	bool ideling = false;
 	bool allowtime = true;
 	bool allowtimep = true;
 	bool propeller = true;
 	int player_w;
 	int player_h;
+	bool allowhiscore = true;
 	bool moving = false;
 	bool godmode = false;
 	bool deadplayer = false;
