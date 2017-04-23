@@ -118,7 +118,9 @@ update_status ModuleInput::Update()
 			App->map_1->xmap -= 6;
 			App->enemies->MoveEnemiesRight(false);
 			if (!(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player->position.x > 550))
+			{ 
 			App->player->position.x -= 6;
+			}
 		}
 	}
 
