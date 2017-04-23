@@ -1,3 +1,17 @@
-﻿  ModuleMap1.cpp
+﻿  Tank.cpp
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(121): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(122): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(124): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(125): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(130): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(131): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(495): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(496): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(516): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  ModuleMap1.cpp
+  Generating Code...
+  LINK : C:\Users\Ivan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe not found or not built by the last incremental link; performing full link
   SDL Game.vcxproj -> C:\Users\Ivan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
   SDL Game.vcxproj -> C:\Users\Ivan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

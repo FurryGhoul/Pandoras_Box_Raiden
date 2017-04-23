@@ -37,7 +37,8 @@ Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y, int path) : Enemy (x, y)
 	charge.speed = 2.0f;
 	charge.loop = true;
 
-	movement.PushBack({ 0.0f, 1.0f }, 500);
+	movement.PushBack({ 0.0f, 1.0f }, 300);
+	movingsidetoside = true;
 	movement.PushBack({ 0.0f, 0.0f }, 200);
 	movement.PushBack({ -0.4f, 0.0f }, 300);
 	movement.PushBack({ 0.4f, 0.0f }, 700);
@@ -107,14 +108,13 @@ void Enemy_Bonus_Ship::MoveShoot()
 	}
 	
 	
-	if (shooting == false && (movement.steps[movement.GetCurrentStep()].speed.x == -0.4f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f ||
-		movement.steps[movement.GetCurrentStep()].speed.x == 0.4f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f))
+	if (shooting == false && movingsidetoside)
 	{
-		if (shoot_time % 300 == 0)
+		if (shoot_time % 100 == 0)
 		{
-			App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 60, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y + 4);
-			App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 60, COLLIDER_ENEMY_SHOT, 0, distance.x - 1, distance.y + 4);
-			App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 60, COLLIDER_ENEMY_SHOT, 0, distance.x + 1, distance.y + 4);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 60, COLLIDER_ENEMY_SHOT, 0, distance.x * 2, (distance.y + 4) * 2);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 60, COLLIDER_ENEMY_SHOT, 0, (distance.x - 1) * 2, 2 * (distance.y + 4));
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 60, COLLIDER_ENEMY_SHOT, 0, (distance.x + 1) * 2, (distance.y + 4) * 2);
 
 			shooting = true;
 		}
