@@ -7,6 +7,8 @@
 #include "ModuleTextures.h"
 #include "PowerUp.h"
 #include "RedUp.h"
+#include "ModulePlayer.h"
+#include "ModulePlayer2.h"
 #define SPAWN_MARGIN 50
 
 ModulePowerUps::ModulePowerUps()
@@ -47,6 +49,10 @@ update_status ModulePowerUps::PreUpdate()
 
 update_status ModulePowerUps::Update()
 {
+	for (uint i = 0; i < MAX_POWERUPS; ++i)
+
+		if (powerups[i] != nullptr) powerups[i]->Move();
+
 
 	for (uint i = 0; i < MAX_POWERUPS; ++i)
 		if (powerups[i] != nullptr) powerups[i]->Draw(sprites);
@@ -133,6 +139,14 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 	{
 		if (powerups[i] != nullptr && powerups[i]->GetCollider() == c1)
 		{
+			if (c2->bullettype == 3)
+			{ 
+			App->player->powerup_level++;
+			}
+			if (c2->bullettype == 4)
+			{ 
+			App->player2->powerup_level++;
+			}
 			powerups[i]->OnCollision(c2);
 			delete powerups[i];
 			powerups[i] = nullptr;

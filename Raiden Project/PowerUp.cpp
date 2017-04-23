@@ -4,6 +4,7 @@
 #include "ModuleParticles.h"
 #include "ModuleRender.h"
 
+
 PowerUp::PowerUp(int x, int y) : position(x, y)
 {}
 
@@ -30,6 +31,5 @@ void PowerUp::Draw(SDL_Texture* sprites)
 
 void PowerUp::OnCollision(Collider* collider)
 {
-
-	//App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+	  
 }

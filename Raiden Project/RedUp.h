@@ -20,5 +20,6 @@ private:
 
 public:
 	RedUp(int x, int y);
+	void Move();
 };
 
