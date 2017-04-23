@@ -484,18 +484,18 @@ void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 		}
 
 		score = 0;
-
-		powerup_level = 0;
 		Disable();
 		position.x = 10000000;
 		position.y = 10000000;
 		Player->SetPos(10000000, 10000000);
 		deadplayer = true;
 		allowhiscore = true;
+		powerup_level = 0;
 	}
 	
 	if (Player != nullptr && Player == c1 && App->player->deadplayer && deadplayer && c2->type != COLLIDER_POWER_UP)
 	{
+		allowhiscore = true;
 		godmode = true;
 		App->enemies->Disable();
 		App->powerups->Disable();
@@ -503,6 +503,18 @@ void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 		App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
 		App->player->deadplayer = false;
 		App->enemies->EraseEnemies();
+		App->powerups->ErasePowerUps();
 		deadplayer = false;
+		powerup_level = 0;
+
+		lastscore = score;
+
+		if (score >= hiscore)
+		{
+			hiscore = score;
+		}
+
+		score = 0;
+		
 	}
 }

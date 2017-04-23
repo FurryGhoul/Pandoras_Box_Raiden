@@ -154,3 +154,14 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 		}
 	}
 }
+void ModulePowerUps::ErasePowerUps()
+{
+	for (uint i = 0; i < MAX_POWERUPS; ++i)
+	{
+		if (powerups[i] != nullptr)
+		{
+			delete powerups[i];
+			powerups[i] = nullptr;
+		}
+	}
+}
