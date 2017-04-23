@@ -254,7 +254,7 @@ update_status ModulePlayer2::Update()
 			{
 				App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 2);
 			}
-			if (powerup_level >= 1)
+			if (powerup_level == 1)
 			{
 				App->particles->AddParticle(App->particles->laser, position.x + speed, position.y, COLLIDER_PLAYER_SHOT, 2);
 				App->particles->AddParticle(App->particles->laser, position.x + speed + 40, position.y, COLLIDER_PLAYER_SHOT, 2);
@@ -418,7 +418,7 @@ update_status ModulePlayer2::Update()
 			{
 				App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 2);
 			}
-			if (powerup_level >= 1)
+			if (powerup_level == 1)
 			{
 				App->particles->AddParticle(App->particles->laser, position.x + speed, position.y, COLLIDER_PLAYER_SHOT, 2);
 				App->particles->AddParticle(App->particles->laser, position.x + speed + 40, position.y, COLLIDER_PLAYER_SHOT, 2);

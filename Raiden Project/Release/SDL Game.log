@@ -1,8 +1,72 @@
-﻿  Enemy_Light_Shooter.cpp
-  Generating code
-  3 of 187 functions ( 1.6%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
+﻿  Application.cpp
+  Enemy_Bonus_Ship.cpp
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\Path.h(65): warning C4018: '<': no coinciden signed/unsigned
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\Path.h(69): warning C4018: '>=': no coinciden signed/unsigned
+Enemy_Bonus_Ship.cpp(115): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+Enemy_Bonus_Ship.cpp(116): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+Enemy_Bonus_Ship.cpp(117): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  Enemy_Light_Shooter.cpp
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\Path.h(65): warning C4018: '<': no coinciden signed/unsigned
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\Path.h(69): warning C4018: '>=': no coinciden signed/unsigned
+Enemy_Light_Shooter.cpp(76): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+Enemy_Light_Shooter.cpp(77): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+Enemy_Light_Shooter.cpp(79): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+Enemy_Light_Shooter.cpp(80): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+Enemy_Light_Shooter.cpp(85): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+Enemy_Light_Shooter.cpp(86): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+Enemy_Light_Shooter.cpp(264): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+Enemy_Light_Shooter.cpp(265): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+Enemy_Light_Shooter.cpp(282): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  Globals.cpp
+  Main.cpp
+  ModuleAudio_1.cpp
+  ModuleAudio_2.cpp
+  ModuleCollision.cpp
+  ModuleFonts.cpp
+  ModuleInput.cpp
+  ModuleParticles.cpp
+  ModulePlayer.cpp
+  ModulePlayer2.cpp
+  ModulePowerUps.cpp
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\Path.h(65): warning C4018: '<': no coinciden signed/unsigned
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\Path.h(69): warning C4018: '>=': no coinciden signed/unsigned
+  ModuleRender.cpp
+  ModuleStageClear1.cpp
+  ModuleTextures.cpp
+  ModuleWindow.cpp
+  ModuleMap1.cpp
+  ModuleMap2.cpp
+  Compilando...
+  ModuleWelcomeScreen.cpp
+  ModuleFadeToBlack.cpp
+  ModuleEnemies.cpp
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\Path.h(65): warning C4018: '<': no coinciden signed/unsigned
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\Path.h(69): warning C4018: '>=': no coinciden signed/unsigned
+  Enemy.cpp
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\Path.h(65): warning C4018: '<': no coinciden signed/unsigned
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\Path.h(69): warning C4018: '>=': no coinciden signed/unsigned
+  PowerUp.cpp
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\Path.h(65): warning C4018: '<': no coinciden signed/unsigned
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\Path.h(69): warning C4018: '>=': no coinciden signed/unsigned
+  RedUp.cpp
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\Path.h(65): warning C4018: '<': no coinciden signed/unsigned
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\Path.h(69): warning C4018: '>=': no coinciden signed/unsigned
+  Tank.cpp
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\Path.h(65): warning C4018: '<': no coinciden signed/unsigned
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\Path.h(69): warning C4018: '>=': no coinciden signed/unsigned
+Tank.cpp(121): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+Tank.cpp(122): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+Tank.cpp(124): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+Tank.cpp(125): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+Tank.cpp(130): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+Tank.cpp(131): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+Tank.cpp(495): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+Tank.cpp(496): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+Tank.cpp(516): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  Generando código
+  247 of 248 functions (99.6%) were compiled, the rest were copied from previous compilation.
+    67 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Release\SDL3 Handout.exe
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Release\SDL3 Handout.pdb (Full PDB)
+  Generación de código finalizada
+  SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Release\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Release\SDL3 Handout.pdb (Full PDB)

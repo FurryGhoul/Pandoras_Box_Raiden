@@ -10,6 +10,7 @@
 #include "ModulePlayer.h"
 #include "ModulePlayer2.h"
 #define SPAWN_MARGIN 50
+#define MAX_POWERUP_LVL 1
 
 ModulePowerUps::ModulePowerUps()
 {
@@ -140,12 +141,28 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 		if (powerups[i] != nullptr && powerups[i]->GetCollider() == c1)
 		{
 			if (c2->bullettype == 3)
-			{ 
-			App->player->powerup_level++;
+			{
+				if (App->player->powerup_level < MAX_POWERUP_LVL)
+				{
+					App->player->powerup_level++;
+				}
+
+				else if (App->player->powerup_level >= MAX_POWERUP_LVL)
+				{					
+					App->player->score += 100;
+				}
 			}
 			if (c2->bullettype == 4)
 			{ 
-			App->player2->powerup_level++;
+				if (App->player2->powerup_level < MAX_POWERUP_LVL)
+				{
+					App->player2->powerup_level++;
+				}
+
+				else if (App->player2->powerup_level >= MAX_POWERUP_LVL)
+				{					
+					App->player2->score += 100;
+				}
 			}
 			powerups[i]->OnCollision(c2);
 			delete powerups[i];
