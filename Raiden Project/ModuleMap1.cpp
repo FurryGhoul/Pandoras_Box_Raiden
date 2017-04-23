@@ -65,7 +65,6 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 210, -1700);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 410, -2200);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 300, -3200);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 350, -3900);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 200, -500);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 150, -800);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 90, -860);
@@ -96,6 +95,8 @@ update_status ModuleMap1::Update()
 		App->powerups->ErasePowerUps();
 		App->player->powerup_level = 0;
 		App->player2->powerup_level = 0;
+		App->player->godmode = true;
+		App->player2->godmode = true;
 
 		App->player->lastscore = App->player->score;
 		if (App->player->score >= App->player->hiscore)

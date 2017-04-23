@@ -429,7 +429,7 @@ update_status ModulePlayer::Update()
 	
 
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
-	if (godmode == false && Player != nullptr)
+	if (Player != nullptr)
 	{
 		Player->SetPos(position.x, position.y);
 		Player->SetSize(player_w, player_h);
@@ -448,7 +448,7 @@ update_status ModulePlayer::Update()
 		else if (Player != nullptr)
 		{
 			Player->SetPos(10000000, 10000000);
-			Player = nullptr;
+			Player = App->collision->AddCollider({ 0, 0, player_w, player_h }, COLLIDER_GOD, this, 3);
 			godmode = true;
 		}
 	}
