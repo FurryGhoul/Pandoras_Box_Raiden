@@ -69,7 +69,6 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 200, -500);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 150, -800);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 90, -860);
-		App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, 200, -550);
 
 		App->collision->Enable();
 		App->render->camera.x = App->render->camera.y = 0;
@@ -99,29 +98,29 @@ update_status ModuleMap1::Update()
 
 	if (App->player2->allowhiscore == true)
 	{
-		sprintf_s(App->player2->highscore_text, 10, "HI-SCORE");
-		sprintf_s(App->player2->highscore, 10, "%7d", App->player2->hiscore);
-	//	sprintf_s(App->player2->lastscore_text, 10, "LAST SCORE");
-		//sprintf_s(App->player2->lastscoret, 10, "%7d", App->player2->lastscore);
+		sprintf_s(App->player2->highscore_text, 20, "HI-SCORE");
+		sprintf_s(App->player2->highscoret, 20, "%7d", App->player2->hiscore);
+		sprintf_s(App->player2->lastscore_text, 20, "LAST SCORE");
+		sprintf_s(App->player2->lastscoret, 20, "%7d", App->player2->lastscore);
 		App->player2->allowhiscore = false;
 	}
 	App->fonts->BlitText(450, 20, 1, App->player2->highscore_text);
-	App->fonts->BlitText(450, 55, 1, App->player2->highscore);
-	//App->fonts->BlitText(450, 85, 1, App->player2->lastscore_text);
-	//App->fonts->BlitText(450, 115, 1, App->player2->lastscoret);
+	App->fonts->BlitText(450, 55, 1, App->player2->highscoret);
+	App->fonts->BlitText(420, 90, 1, App->player2->lastscore_text);
+	App->fonts->BlitText(420, 125, 1, App->player2->lastscoret);
 
 	if (App->player->allowhiscore == true)
 	{
-		sprintf_s(App->player->highscore_text, 10, "HI-SCORE");
-		sprintf_s(App->player->highscore, 10, "%7d", App->player->hiscore);
-		//sprintf_s(App->player->lastscoret, 10, "LAST SCORE");
-	//	sprintf_s(App->player->lastscoret, 10, "%7d", App->player->lastscore);
+		sprintf_s(App->player->highscore_text, 20, "HI-SCORE");
+		sprintf_s(App->player->highscoret, 20, "%7d", App->player->hiscore);
+		sprintf_s(App->player->lastscore_text, 20, "LAST SCORE");
+		sprintf_s(App->player->lastscoret, 20, "%7d", App->player->lastscore);
 		App->player->allowhiscore = false;
 	}
 	App->fonts->BlitText(20, 20, 0, App->player->highscore_text);
-	App->fonts->BlitText(20, 55, 0, App->player->highscore);
-	//App->fonts->BlitText(20, 85, 0, App->player->lastscore_text);
-	//App->fonts->BlitText(20, 115, 0, App->player->lastscoret);
+	App->fonts->BlitText(20, 55, 0, App->player->highscoret);
+	App->fonts->BlitText(20, 90, 0, App->player->lastscore_text);
+	App->fonts->BlitText(20, 125, 0, App->player->lastscoret);
 
 	return UPDATE_CONTINUE;
 }

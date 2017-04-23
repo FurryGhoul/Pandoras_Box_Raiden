@@ -13,6 +13,7 @@
 #include "ModuleFadeToBlack.h"
 #include "ModuleEnemies.h"
 #include "ModuleFonts.h"
+#include "ModulePowerUps.h"
 
 #include <stdio.h>
 
@@ -462,7 +463,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 	{
 		lastscore = score;
 
-		if (score > lastscore)
+		if (score >= hiscore)
 		{
 			hiscore = score;
 		}
@@ -481,6 +482,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 	{
 		godmode = true;
 		App->enemies->Disable();
+		App->powerups->Disable();
 		App->collision->Disable();
 		App->player2->deadplayer = false;
 		deadplayer = false;
