@@ -85,9 +85,10 @@ update_status ModuleMap1::Update()
 	App->map_1->ymap += 2;
 	if (App->input->keyboard[SDL_SCANCODE_F])
 	{
-		App->fade->FadeToBlack(this, App->map_2, 1.0f);
+		//App->fade->FadeToBlack(this, App->map_2, 1.0f);
+		App->render->camera.y = -5500;
 	}
-	if (App->render->camera.y == -5500)
+	if (App->render->camera.y <= -5500)
 	{
 		App->fade->FadeToBlack(this, App->WelcomeScreen, 1.0f);
 		App->enemies->EraseEnemies();
@@ -102,7 +103,6 @@ update_status ModuleMap1::Update()
 		{
 			App->player->hiscore = App->player->score;
 		}
-		App->player->score = 0;
 		App->player->allowhiscore = true;
 
 		App->player2->lastscore = App->player2->score;
@@ -110,7 +110,6 @@ update_status ModuleMap1::Update()
 		{
 			App->player2->hiscore = App->player2->score;
 		}
-		App->player2->score = 0;
 		App->player2->allowhiscore = true;
 	}
 

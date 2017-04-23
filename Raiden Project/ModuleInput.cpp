@@ -72,11 +72,14 @@ update_status ModuleInput::Update()
 	//Player one side scroll
 	if (keyboard[SDL_SCANCODE_A])
 	{
-		if ((App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->position.x) < 50 && !(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player2->position.x > 550))
+		if ((App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->position.x < 50 )&& !(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player2->position.x > 550))
 		{
 			App->map_1->xmap += 6;
 			App->enemies->MoveEnemiesRight(true);
+			if (!(App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player2->position.x < 50))
+			{ 
 			App->player2->position.x += 6;
+			}
 		}
 	}
 
@@ -86,7 +89,10 @@ update_status ModuleInput::Update()
 		{
 			App->map_1->xmap -= 6;
 			App->enemies->MoveEnemiesRight(false);
+			if (!(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player2->position.x > 550))
+			{ 
 			App->player2->position.x -= 6;
+			}
 		}
 
 	}
@@ -98,7 +104,10 @@ update_status ModuleInput::Update()
 		{
 			App->map_1->xmap += 6;
 			App->enemies->MoveEnemiesRight(true);
+			if((!App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->position.x))
+			{ 
 			App->player->position.x += 6;
+			}
 		}
 	}
 
@@ -108,6 +117,7 @@ update_status ModuleInput::Update()
 		{
 			App->map_1->xmap -= 6;
 			App->enemies->MoveEnemiesRight(false);
+			if (!(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player->position.x > 550))
 			App->player->position.x -= 6;
 		}
 	}

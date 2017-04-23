@@ -61,6 +61,7 @@ bool ModulePlayer::Init()
 
 	graphics = App->textures->Load("Assets/Player1.png");
 	Player = App->collision->AddCollider({ 0, 0, player_w, player_h }, COLLIDER_PLAYER, this, 3); // Bullettype 3 differentiate the player colliders
+	Playergod = App->collision->AddCollider({ 0, 0, player_w, player_h }, COLLIDER_GOD, this, 3);
 	Player->SetPos(82938, 2323);
 	score = 0;
 	font_score = App->fonts->Load("Assets/Font.png", "> ?@ABCDEFGHIJKLMNOPQRSTUVWXYZ!¡?_^#$%&'()x+.-,;tpsczpc/0123456789:", 3);
@@ -94,6 +95,11 @@ bool ModulePlayer::CleanUp()
 // Update: draw background
 update_status ModulePlayer::Update()
 {
+	if (godmode == false)
+	{
+		Playergod->SetPos(10000000, 10000000);
+	}
+
 	if (allowtimep == true)
 	{
 		timep = SDL_GetTicks();
@@ -429,26 +435,28 @@ update_status ModulePlayer::Update()
 	
 
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
-	if (Player != nullptr)
+	if (Player != nullptr && godmode == false)
 	{
 		Player->SetPos(position.x, position.y);
 		Player->SetSize(player_w, player_h);
 	}
-
+	else if (Playergod != nullptr && godmode == true)
+	{
+		Playergod->SetPos(position.x, position.y);
+		Playergod->SetSize(player_w, player_h);
+	}
 
 	// Godmode
 	if (App->input->keyboard[SDL_SCANCODE_G] == KEY_STATE::KEY_DOWN)
 	{
 		if (godmode)
 		{
-			Player = App->collision->AddCollider({ 0, 0, player_w, player_h }, COLLIDER_PLAYER, this, 3);
-
+			Playergod->SetPos(10000000, 10000000);
 			godmode = false;
 		}
 		else if (Player != nullptr)
 		{
 			Player->SetPos(10000000, 10000000);
-			Player = App->collision->AddCollider({ 0, 0, player_w, player_h }, COLLIDER_GOD, this, 3);
 			godmode = true;
 		}
 	}
