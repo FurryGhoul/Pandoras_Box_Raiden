@@ -63,6 +63,7 @@ public:
 	Uint32 time;
 	Uint32 timep; //time for propellers
 	Collider* Player = nullptr;
+	Collider* Playergod = nullptr;
 	int powerup_level = 0;
 
 };
