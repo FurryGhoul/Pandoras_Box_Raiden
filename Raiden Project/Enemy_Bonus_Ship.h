@@ -17,7 +17,7 @@ private:
 	bool shooting = false;
 	int shoot_time = 0;
 public:
-	Enemy_Bonus_Ship(int x, int y);
+	Enemy_Bonus_Ship(int x, int y, int path);
 	void MoveShoot();
 };
 
