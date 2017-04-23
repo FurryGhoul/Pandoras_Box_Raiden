@@ -260,7 +260,7 @@ void Tank::MoveShoot()
 
 
 	//Animation of the turret
-	param = (abs(distance.y) / (abs(distance.x) + 0.1));
+	param = (fabs(distance.y) / (fabs(distance.x) + 0.1));
 	angle = atan(param) * 180 / PI;
 
 	// South-East position
@@ -479,16 +479,19 @@ void Tank::MoveShoot()
 
 
 
-	distance.x = abs(distance.x);
-	distance.y = abs(distance.y);
+	distance.x = fabs(distance.x);
+	distance.y = fabs(distance.y);
 	// Shooting
 	time_controll++;
 	if (time_controll % 100 == 0)
 
 { 
+
+	distance.x = distance.x * (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+	distance.y = distance.y * (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+
 	if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500)
 	{
-
         if (App->player->position.y - 22 < (position.y - 22 * 3))
 		{
 			distance.y *= -1;
@@ -497,7 +500,7 @@ void Tank::MoveShoot()
 		{
 			distance.x *= -1;
 		}
-		App->particles->AddParticle(App->particles->enemyshot, position.x+ w/2, position.y +h/2, COLLIDER_ENEMY_SHOT, 0, distance.x * 0.03, distance.y*0.03); 
+		App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2, position.y + h / 2, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
 	}
 }
 }

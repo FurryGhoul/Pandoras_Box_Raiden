@@ -73,7 +73,7 @@ void Enemy_Light_Shooter::MoveShoot()
 	// Animation
 
 	// Setting angle
-	param = (abs(distance.y) / (abs(distance.x) + 0.1));
+	param = (fabs(distance.y) / (fabs(distance.x) + 0.1));
 	angle = atan(param) * 180 / PI;
 
 	// South-East position
@@ -246,9 +246,12 @@ void Enemy_Light_Shooter::MoveShoot()
 		h = 30 * 3;
 	}
 
-	distance.x = abs(distance.x);
-	distance.y = abs(distance.y);
+	distance.x = fabs(distance.x);
+	distance.y = fabs(distance.y);
+
 	// Shooting
+	distance.x = distance.x * (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+	distance.y = distance.y * (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
 	if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && shooting == false )
 	{
 		if (shoot_time % 80 == 0)
@@ -261,7 +264,7 @@ void Enemy_Light_Shooter::MoveShoot()
 			{
 				distance.x *= -1;
 			}
-			App->particles->AddParticle(App->particles->enemyshot, position.x + 10, position.y + 50, COLLIDER_ENEMY_SHOT, 0, distance.x * 0.04, distance.y * 0.04); //In theory, the speed should be distance.x and distance.y, but at the moment it doesn't work that way
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 10, position.y + 50, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y); //In theory, the speed should be distance.x and distance.y, but at the moment it doesn't work that way
 
 			shooting = true;
 		}
