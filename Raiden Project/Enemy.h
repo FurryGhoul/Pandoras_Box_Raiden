@@ -22,7 +22,7 @@ public:
 	iPoint position1;
 	iPoint position2;
 	iPoint position3;
-	iPoint distance;
+	fPoint distance;
 	iPoint distance1;
 	iPoint distance2;
 	uint hp;
