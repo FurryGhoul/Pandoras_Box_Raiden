@@ -56,7 +56,6 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 150, -2000);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 0, -2000);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 330, -100);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 330, -100);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 350, -1000);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 500, -1000);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 420, -500);

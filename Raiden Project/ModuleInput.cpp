@@ -69,39 +69,52 @@ update_status ModuleInput::Update()
 		}
 	}
 
+	//Player one side scroll
 	if (keyboard[SDL_SCANCODE_A])
 	{
-		if (App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->position.x < 50)
+		if ((App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->position.x) < 50 && !(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player2->position.x > 550))
 		{
 			App->map_1->xmap += 6;
 			App->enemies->MoveEnemiesRight(true);
-		}
-
-		if (App->map_2->IsEnabled() && App->map_1->xmap <= -3 && App->player->position.x < 50)
-		{
-			App->map_1->xmap += 6;
-			App->enemies->MoveEnemiesRight(true);
+			App->player2->position.x += 6;
 		}
 	}
 
 	if (keyboard[SDL_SCANCODE_D])
 	{
-		if (App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player->position.x > 550)
+		if ((App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player->position.x > 550) && !(App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player2->position.x < 50))
 		{
 			App->map_1->xmap -= 6;
 			App->enemies->MoveEnemiesRight(false);
+			App->player2->position.x -= 6;
 		}
 
-		if (App->map_2->IsEnabled() && App->map_1->xmap >= -231 && App->player->position.x > 550)
+	}
+
+	//Player two side scroll
+	if (keyboard[SDL_SCANCODE_LEFT])
+	{
+		if ((App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player2->position.x < 50) && !(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player->position.x > 550))
 		{
-			App->map_1->xmap -= 6;
-			App->enemies->MoveEnemiesRight(false);
+			App->map_1->xmap += 6;
+			App->enemies->MoveEnemiesRight(true);
+			App->player->position.x += 6;
 		}
 	}
 
+	if (keyboard[SDL_SCANCODE_RIGHT])
+	{
+		if ((App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player2->position.x > 550) && !(App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->position.x < 50))
+		{
+			App->map_1->xmap -= 6;
+			App->enemies->MoveEnemiesRight(false);
+			App->player->position.x -= 6;
+		}
+	}
 
 	return update_status::UPDATE_CONTINUE;
 }
+
 
 // Called before quitting
 bool ModuleInput::CleanUp()
