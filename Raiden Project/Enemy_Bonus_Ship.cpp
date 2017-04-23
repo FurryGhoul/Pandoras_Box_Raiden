@@ -62,7 +62,7 @@ Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y, int path) : Enemy (x, y)
 	original_pos.x = x;
 	original_pos.y = - 200;
 	original_pos1.x = original_pos.x + 47;
-	original_pos1.y = original_pos.y - 38;
+	original_pos1.y = original_pos.y - 36;
 	/*original_pos2.x = x + 4;
 	original_pos2.y = -200;*/
 }
