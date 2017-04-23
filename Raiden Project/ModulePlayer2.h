@@ -44,9 +44,12 @@ public:
 	int font_score = -1;
 	char score_text[10];
 	char highscore_text[10];
+	char lastscore_text[10];
+	char lastscoret[10];
 	char highscore[10];
-	int hiscore;
+	uint hiscore = 0;
 	uint score = 0;
+	uint lastscore = 0;
 	bool ideling = false;
 	bool allowtime = true;
 	bool allowtimep = true;

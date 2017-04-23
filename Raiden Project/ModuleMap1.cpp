@@ -13,6 +13,9 @@
 #include "ModuleParticles.h"
 #include "ModuleEnemies.h"
 #include "ModulePowerUps.h"
+#include "ModuleFonts.h"
+
+#include <stdio.h>
 
 ModuleMap1::ModuleMap1() : Module()
 {
@@ -70,6 +73,7 @@ update_status ModuleMap1::Update()
 
 		setup = false;
 	}
+
 	App->render->Blit(Map1, xmap, ymap, &ground);
 	App->render->camera.y -= 2;
 	App->map_1->ymap += 2;
@@ -82,6 +86,33 @@ update_status ModuleMap1::Update()
 		App->fade->FadeToBlack(this, App->WelcomeScreen, 1.0f);
 		App->enemies->EraseEnemies();
 	}
+
+
+	if (App->player2->allowhiscore == true)
+	{
+		sprintf_s(App->player2->highscore_text, 10, "HI-SCORE");
+		sprintf_s(App->player2->highscore, 10, "%7d", App->player2->hiscore);
+	//	sprintf_s(App->player2->lastscore_text, 10, "LAST SCORE");
+		//sprintf_s(App->player2->lastscoret, 10, "%7d", App->player2->lastscore);
+		App->player2->allowhiscore = false;
+	}
+	App->fonts->BlitText(450, 20, 1, App->player2->highscore_text);
+	App->fonts->BlitText(450, 55, 1, App->player2->highscore);
+	//App->fonts->BlitText(450, 85, 1, App->player2->lastscore_text);
+	//App->fonts->BlitText(450, 115, 1, App->player2->lastscoret);
+
+	if (App->player->allowhiscore == true)
+	{
+		sprintf_s(App->player->highscore_text, 10, "HI-SCORE");
+		sprintf_s(App->player->highscore, 10, "%7d", App->player->hiscore);
+		//sprintf_s(App->player->lastscoret, 10, "LAST SCORE");
+	//	sprintf_s(App->player->lastscoret, 10, "%7d", App->player->lastscore);
+		App->player->allowhiscore = false;
+	}
+	App->fonts->BlitText(20, 20, 0, App->player->highscore_text);
+	App->fonts->BlitText(20, 55, 0, App->player->highscore);
+	//App->fonts->BlitText(20, 85, 0, App->player->lastscore_text);
+	//App->fonts->BlitText(20, 115, 0, App->player->lastscoret);
 
 	return UPDATE_CONTINUE;
 }

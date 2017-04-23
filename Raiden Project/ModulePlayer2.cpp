@@ -91,16 +91,6 @@ bool ModulePlayer2::CleanUp()
 // Update: draw background
 update_status ModulePlayer2::Update()
 {
-	if (allowhiscore == true)
-	{
-		sprintf_s(highscore_text, 10, "HI-SCORE");
-		sprintf_s(highscore, 10, "%7d", hiscore);
-		allowhiscore = false;
-	}
-
-	App->fonts->BlitText(450, 20, 1, highscore_text);
-	App->fonts->BlitText(450, 55, 1, highscore);
-
 	if (allowtimep == true)
 	{
 		timep = SDL_GetTicks();
@@ -469,8 +459,16 @@ void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 {
 	if (Player != nullptr && Player == c1 && deadplayer == false)
 	{
+		lastscore = score;
+
+		if (score > lastscore)
+		{
+			hiscore = score;
+		}
+
+		score = 0;
+
 		Disable();
-		hiscore = score;
 		position.x = 10000000;
 		position.y = 10000000;
 		Player->SetPos(10000000, 10000000);
