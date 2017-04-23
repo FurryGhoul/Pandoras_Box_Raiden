@@ -1,24 +1,13 @@
-﻿Build started 23/04/2017 15:52:54.
+﻿Build started 23/04/2017 16:11:50.
      1>Project "C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\SDL Game.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Enemy.cpp Enemy_Bonus_Ship.cpp Enemy_Light_Shooter.cpp ModuleEnemies.cpp ModuleMap1.cpp ModuleMap2.cpp ModuleParticles.cpp ModulePlayer.cpp ModulePlayer2.cpp ModulePowerUps.cpp ModuleStageClear1.cpp ModuleWelcomeScreen.cpp PowerUp.cpp RedUp.cpp Tank.cpp
-         ModuleMap1.cpp
-         Generating Code...
-         Skipping... (no relevant changes detected)
-         Tank.cpp
-         RedUp.cpp
-         PowerUp.cpp
-         ModuleWelcomeScreen.cpp
-         ModuleStageClear1.cpp
-         ModulePowerUps.cpp
-         ModulePlayer2.cpp
-         ModulePlayer.cpp
-         ModuleParticles.cpp
-         ModuleMap2.cpp
-         ModuleEnemies.cpp
-         Enemy_Light_Shooter.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Enemy_Bonus_Ship.cpp
          Enemy_Bonus_Ship.cpp
-         Enemy.cpp
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=' : signed/unsigned mismatch
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(115): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(116): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(117): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.lib" /MACHINE:X86 "Debug\SDL3 Handout.res"
          Debug\Application.obj
@@ -53,4 +42,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.80
+Time Elapsed 00:00:00.48

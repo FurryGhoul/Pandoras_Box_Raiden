@@ -14,6 +14,7 @@ private:
 	iPoint original_pos2;
 	Path movement;
 	bool side = false;
+	bool movingsidetoside = false;
 	bool shooting = false;
 	int shoot_time = 0;
 public:
