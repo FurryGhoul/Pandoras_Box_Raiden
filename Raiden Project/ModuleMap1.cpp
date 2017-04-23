@@ -93,7 +93,25 @@ update_status ModuleMap1::Update()
 	{
 		App->fade->FadeToBlack(this, App->WelcomeScreen, 1.0f);
 		App->enemies->EraseEnemies();
+		App->powerups->ErasePowerUps();
+		App->player->powerup_level = 0;
+		App->player2->powerup_level = 0;
 
+		App->player->lastscore = App->player->score;
+		if (App->player->score >= App->player->hiscore)
+		{
+			App->player->hiscore = App->player->score;
+		}
+		App->player->score = 0;
+		App->player->allowhiscore = true;
+
+		App->player2->lastscore = App->player2->score;
+		if (App->player2->score >= App->player2->hiscore)
+		{
+			App->player2->hiscore = App->player2->score;
+		}
+		App->player2->score = 0;
+		App->player2->allowhiscore = true;
 	}
 
 

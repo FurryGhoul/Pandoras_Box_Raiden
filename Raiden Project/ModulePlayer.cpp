@@ -491,15 +491,5 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		App->enemies->EraseEnemies();
 		powerup_level = 0;
 		App->powerups->ErasePowerUps();
-
-		lastscore = score;
-
-		if (score >= hiscore)
-		{
-			hiscore = score;
-		}
-
-		score = 0;
-		
 	}
 }

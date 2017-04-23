@@ -495,7 +495,6 @@ void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 	
 	if (Player != nullptr && Player == c1 && App->player->deadplayer && deadplayer && c2->type != COLLIDER_POWER_UP)
 	{
-		allowhiscore = true;
 		godmode = true;
 		App->enemies->Disable();
 		App->powerups->Disable();
@@ -506,15 +505,5 @@ void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 		App->powerups->ErasePowerUps();
 		deadplayer = false;
 		powerup_level = 0;
-
-		lastscore = score;
-
-		if (score >= hiscore)
-		{
-			hiscore = score;
-		}
-
-		score = 0;
-		
 	}
 }
