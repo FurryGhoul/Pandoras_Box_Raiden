@@ -1,11 +1,8 @@
-﻿Build started 23/04/2017 15:46:16.
+﻿Build started 23/04/2017 15:52:54.
      1>Project "C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\SDL Game.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Application.cpp Enemy.cpp Enemy_Bonus_Ship.cpp Enemy_Light_Shooter.cpp ModuleCollision.cpp ModuleEnemies.cpp ModuleMap1.cpp ModuleMap2.cpp ModuleParticles.cpp ModulePlayer.cpp ModulePlayer2.cpp ModulePowerUps.cpp ModuleStageClear1.cpp ModuleWelcomeScreen.cpp PowerUp.cpp RedUp.cpp Tank.cpp
-         Application.cpp
-         Generating Code...
-         Compiling...
-         ModuleCollision.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Enemy.cpp Enemy_Bonus_Ship.cpp Enemy_Light_Shooter.cpp ModuleEnemies.cpp ModuleMap1.cpp ModuleMap2.cpp ModuleParticles.cpp ModulePlayer.cpp ModulePlayer2.cpp ModulePowerUps.cpp ModuleStageClear1.cpp ModuleWelcomeScreen.cpp PowerUp.cpp RedUp.cpp Tank.cpp
+         ModuleMap1.cpp
          Generating Code...
          Skipping... (no relevant changes detected)
          Tank.cpp
@@ -18,7 +15,6 @@
          ModulePlayer.cpp
          ModuleParticles.cpp
          ModuleMap2.cpp
-         ModuleMap1.cpp
          ModuleEnemies.cpp
          Enemy_Light_Shooter.cpp
          Enemy_Bonus_Ship.cpp
@@ -57,4 +53,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.71
+Time Elapsed 00:00:00.80

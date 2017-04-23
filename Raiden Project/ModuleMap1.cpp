@@ -90,6 +90,8 @@ update_status ModuleMap1::Update()
 	}
 	if (App->render->camera.y <= -5500)
 	{
+		App->player->Disable();
+		App->player2->Disable();
 		App->fade->FadeToBlack(this, App->WelcomeScreen, 1.0f);
 		App->enemies->EraseEnemies();
 		App->powerups->ErasePowerUps();
