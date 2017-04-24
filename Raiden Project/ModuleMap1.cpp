@@ -68,6 +68,7 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 300, -1500);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 170, -900);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 90, -960);
+		//App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, 0, 0);
 
 		App->collision->Enable();
 		App->render->camera.x = App->render->camera.y = 0;

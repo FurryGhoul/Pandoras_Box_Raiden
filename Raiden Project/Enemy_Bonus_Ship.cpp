@@ -113,8 +113,8 @@ void Enemy_Bonus_Ship::MoveShoot()
 		if (shoot_time % 200 == 0)
 		{
 			App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 60, COLLIDER_ENEMY_SHOT, 0, distance.x * 2, (distance.y + 4) * 2);
-			App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 60, COLLIDER_ENEMY_SHOT, 0, (distance.x - 1) * 2, 2 * (distance.y + 4));
-			App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 60, COLLIDER_ENEMY_SHOT, 0, (distance.x + 1) * 2, (distance.y + 4) * 2);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 60, COLLIDER_ENEMY_SHOT, 0, (distance.x - 1) * 2, 2 * (distance.y + 4), 0, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 60, COLLIDER_ENEMY_SHOT, 0, (distance.x + 1) * 2, (distance.y + 4) * 2, 0, true);
 
 			shooting = true;
 		}

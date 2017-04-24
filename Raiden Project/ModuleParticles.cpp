@@ -117,7 +117,7 @@ update_status ModuleParticles::Update()
 	return UPDATE_CONTINUE;
 }
 
-void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type, int bullettype, int speed_x, int speed_y, Uint32 delay)
+void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type, int bullettype, int speed_x, int speed_y, Uint32 delay, bool multipleshot)
 {
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 	{
@@ -138,7 +138,11 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 				p->speed.y = speed_y;
 			}
 
-			Mix_PlayChannel(-1, App->audio->fx_shoot, 0);
+			if (!multipleshot)
+			{
+				Mix_PlayChannel(-1, App->audio->fx_shoot, 0);
+			}
+
 			if (collider_type != COLLIDER_NONE)
 			{ 
 				p->collider = App->collision->AddCollider({ 59, 100, 18, 18 }, collider_type, this, bullettype);
