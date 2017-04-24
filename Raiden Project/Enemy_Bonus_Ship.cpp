@@ -94,13 +94,13 @@ void Enemy_Bonus_Ship::MoveShoot()
 		//animation2 = &charge;
 		side = true;
 	}
-	if (position.y > 234 && side == false)
+	if (position.y > 70 && side == false)
 	{
 		animation = &stop;
 		animation1 = &none;
 		//animation2 = &none;
 	}
-	if (position.y <= 234)
+	if (position.y <= 70)
 	{
 		//animation2 = &none;
 		animation1 = &propeller;
