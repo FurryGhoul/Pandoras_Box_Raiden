@@ -40,7 +40,7 @@ update_status ModuleStageClear1::Update()
 		App->collision->Disable();
 	}
 	App->render->Blit(StageClear1, 0, 0, &ground);
-	if (App->input->keyboard[SDL_SCANCODE_F])
+	if (App->input->keyboard[SDL_SCANCODE_SPACE])
 	{
 		App->fade->FadeToBlack(this, App->WelcomeScreen, 1.0f);
 	}

@@ -83,7 +83,7 @@ update_status ModuleMap1::Update()
 	App->render->Blit(Map1, xmap, ymap, &ground);
 	App->render->camera.y -= 2;
 	App->map_1->ymap += 2;
-	if (App->input->keyboard[SDL_SCANCODE_F])
+	if (App->input->keyboard[SDL_SCANCODE_BACKSPACE])
 	{
 		//App->fade->FadeToBlack(this, App->map_2, 1.0f);
 		App->render->camera.y = -5500;
@@ -118,14 +118,14 @@ update_status ModuleMap1::Update()
 
 	if (App->player2->allowhiscore == true)
 	{
-		sprintf_s(App->player2->highscore_text, 20, "HI-SCORE");
-		sprintf_s(App->player2->highscoret, 20, "%7d", App->player2->hiscore);
+		sprintf_s(App->player2->highscore_text, 20, "  HI-SCORE");
+		sprintf_s(App->player2->highscoret, 20, "   %7d", App->player2->hiscore);
 		sprintf_s(App->player2->lastscore_text, 20, "LAST SCORE");
-		sprintf_s(App->player2->lastscoret, 20, "%7d", App->player2->lastscore);
+		sprintf_s(App->player2->lastscoret, 20, "   %7d", App->player2->lastscore);
 		App->player2->allowhiscore = false;
 	}
-	App->fonts->BlitText(450, 20, 1, App->player2->highscore_text);
-	App->fonts->BlitText(450, 55, 1, App->player2->highscoret);
+	App->fonts->BlitText(420, 20, 1, App->player2->highscore_text);
+	App->fonts->BlitText(420, 55, 1, App->player2->highscoret);
 	App->fonts->BlitText(420, 90, 1, App->player2->lastscore_text);
 	App->fonts->BlitText(420, 125, 1, App->player2->lastscoret);
 

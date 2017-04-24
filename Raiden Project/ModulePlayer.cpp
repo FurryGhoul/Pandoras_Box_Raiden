@@ -273,10 +273,13 @@ update_status ModulePlayer::Update()
 			player_h = 28 * 3;
 		}
 		// Draw UI (score) --------------------------------------
-		sprintf_s(score_text, 10, "%7d", score);
+		sprintf_s(score_text, 20, "SCORE", score);
+		sprintf_s(scoret, 20, "%7d", score);
+
 		// TODO 3: Blit the text of the score in at the bottom of the screen
 
-		App->fonts->BlitText(position.x, position.y, 0, score_text);
+		App->fonts->BlitText(20, 160, 0, score_text);
+		App->fonts->BlitText(20, 195, 0, scoret);
 	}
 
 	else
@@ -426,11 +429,13 @@ update_status ModulePlayer::Update()
 			player_h = 29 * 3;
 		}
 		// Draw UI (score) --------------------------------------
-		sprintf_s(score_text, 10, "%7d", score);
+		sprintf_s(score_text, 20, "SCORE", score);
+		sprintf_s(scoret, 20, "%7d", score);
 
 		// TODO 3: Blit the text of the score in at the bottom of the screen
 
-		App->fonts->BlitText(position.x, position.y, 0, score_text);
+		App->fonts->BlitText(20, 160, 0, score_text);
+		App->fonts->BlitText(20, 195, 0, scoret);
 	}
 	
 

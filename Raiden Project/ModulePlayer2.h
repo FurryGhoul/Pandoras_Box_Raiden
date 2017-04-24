@@ -43,6 +43,7 @@ public:
 	iPoint position;
 	int font_score = -1;
 	char score_text[20];
+	char scoret[20];
 	char highscore_text[20];
 	char lastscore_text[20];
 	char lastscoret[20];

@@ -55,7 +55,7 @@ update_status ModuleWelcomeScreen::Update()
 	}
 
 	App->render->Blit(Welcome, 0, 0, &ground);
-	if (App->input->keyboard[SDL_SCANCODE_F])
+	if (App->input->keyboard[SDL_SCANCODE_SPACE])
 	{
 		App->player->score = 0;
 		App->player2->score = 0;
