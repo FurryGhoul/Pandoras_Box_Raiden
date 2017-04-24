@@ -265,8 +265,8 @@ void Enemy_Light_Shooter::MoveShoot()
 	distance.y = fabs(distance.y);
 
 	// Shooting
-	distance.x = distance.x * (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
-	distance.y = distance.y * (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+	distance.x *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+	distance.y *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
 	if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && shooting == false )
 	{
 		if (shoot_time % 80 == 0)

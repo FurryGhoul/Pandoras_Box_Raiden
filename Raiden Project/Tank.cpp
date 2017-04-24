@@ -500,8 +500,8 @@ void Tank::MoveShoot()
 
 { 
 
-	distance.x = distance.x * (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
-	distance.y = distance.y * (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+	distance.x *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+	distance.y *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
 
 	if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500)
 	{

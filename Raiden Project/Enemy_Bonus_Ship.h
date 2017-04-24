@@ -13,6 +13,8 @@ private:
 	iPoint original_pos1;
 	iPoint original_pos2;
 	Path movement;
+	double param;
+	double angle;
 	bool side = false;
 	bool movingsidetoside = false;
 	bool shooting = false;
