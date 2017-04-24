@@ -1,7 +1,3 @@
-﻿  ModuleWelcomeScreen.cpp
-  ModuleStageClear1.cpp
-  ModuleMap2.cpp
-  ModuleMap1.cpp
-  Generating Code...
+﻿  ModuleMap1.cpp
   SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
   SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

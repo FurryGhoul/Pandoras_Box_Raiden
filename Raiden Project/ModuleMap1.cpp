@@ -14,6 +14,7 @@
 #include "ModuleEnemies.h"
 #include "ModulePowerUps.h"
 #include "ModuleFonts.h"
+#include "ModuleStageClear1.h"
 
 #include <stdio.h>
 
@@ -85,14 +86,14 @@ update_status ModuleMap1::Update()
 	App->map_1->ymap += 2;
 	if (App->input->keyboard[SDL_SCANCODE_BACKSPACE])
 	{
-		//App->fade->FadeToBlack(this, App->map_2, 1.0f);
 		App->render->camera.y = -5500;
+		//App->fade->FadeToBlack(this, App->map_2, 1.0f);
 	}
 	if (App->render->camera.y <= -5500)
 	{
 		App->player->Disable();
 		App->player2->Disable();
-		App->fade->FadeToBlack(this, App->WelcomeScreen, 1.0f);
+		App->fade->FadeToBlack(this, App->StageClear1, 1.0f);
 		App->enemies->EraseEnemies();
 		App->powerups->ErasePowerUps();
 		App->player->powerup_level = 0;
