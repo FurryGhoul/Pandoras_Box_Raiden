@@ -22,6 +22,11 @@ public:
 		position.x = 205;
 		position.y = 620;
 	}
+	void MidPos()
+	{
+		position.x = 300;
+		position.y = 620;
+	}
 
 public:
 

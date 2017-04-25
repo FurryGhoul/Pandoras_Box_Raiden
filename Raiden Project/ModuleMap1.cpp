@@ -44,7 +44,10 @@ update_status ModuleMap1::Update()
 	{
 		App->particles->Enable();
 	    App->player->Enable();
+		if (!App->player2->deadplayer)
+		{ 
 		App->player2->Enable();
+		}
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 300, -4000 );
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 300, -1000);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 100, -100);
@@ -79,7 +82,14 @@ update_status ModuleMap1::Update()
 		App->render->camera.x = App->render->camera.y = 0;
 		App->enemies->Enable();
 		App->powerups->Enable();
+		if (!App->player2->deadplayer)
+		{ 
 		App->player->InitialPos();
+		}
+		else
+		{
+			App->player->MidPos();
+		}
 		App->player2->InitialPos();
 		App->player->godmode = false;
 		App->player2->godmode = false;
@@ -105,8 +115,10 @@ update_status ModuleMap1::Update()
 		App->player->powerup_level = 0;
 		App->player2->powerup_level = 0;
 
-
-
+		App->player->Playergod->SetPos(10000, 10000);
+		App->player2->Playergod->SetPos(10000, 10000);
+		App->player->Player->SetPos(10000, 10000);
+		App->player2->Player->SetPos(10000, 10000);
 		App->player2->deadplayer = false;
 		App->player->deadplayer = false;
 

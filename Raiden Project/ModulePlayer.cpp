@@ -484,7 +484,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 
 	if (Player != nullptr && Player == c1 && App->player2->deadplayer && deadplayer && c2->type != COLLIDER_POWER_UP)
 	{
-		godmode = true;
+		
 		App->enemies->Disable();
 		App->powerups->Disable();
 		App->collision->Disable();
