@@ -36,7 +36,8 @@ bool ModuleParticles::Init()
 	laser.anim.speed = 1.0f;
 	laser.life = 2100;
 	laser.speed.y = -10;
-
+	laser.size.x = 18;
+	laser.size.y = 18;
 	//Enemy normal shot
 	enemyshot.spriteshit = 1;
 	enemyshot.anim.PushBack({ 22, 41, 6, 5});
@@ -44,7 +45,22 @@ bool ModuleParticles::Init()
 	enemyshot.anim.speed = 1.0f;
 	enemyshot.life = 2100;
 	enemyshot.speed.y = 10;
+	enemyshot.size.x = 18;
+	enemyshot.size.y = 18;
 	
+	//Explosion
+	explosion.spriteshit = 1;
+	explosion.anim.PushBack({ 26,339, 10, 8 });
+	explosion.anim.PushBack({ 41,337, 14, 12 });
+	explosion.anim.PushBack({ 88,334, 20, 18});
+	explosion.anim.PushBack({ 122,333, 22, 19 });
+	explosion.anim.PushBack({ 165,333, 24, 22 });
+	explosion.anim.PushBack({ 214,332, 26, 24 });
+	explosion.anim.loop = false;
+	explosion.anim.speed = 0.3f;
+	explosion.size.x = 18 * 3;
+	explosion.size.y = 18 * 3;
+
 	return true;
 }
 
@@ -85,11 +101,11 @@ update_status ModuleParticles::Update()
 		{
 			if (p->spriteshit == 0)
 			{ 
-			App->render->Blit(graphics, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()), 18, 18);
+			App->render->Blit(graphics, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()), p->size.x, p->size.y);
 			}
 			if (p->spriteshit == 1)
 			{
-			App->render->Blit(graphics1, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()), 18, 18);
+			App->render->Blit(graphics1, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()), p->size.x, p->size.y);
 			}
 			if (p->fx_played == false)
 			{
@@ -128,7 +144,7 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 			{
 				p->speed.y = speed_y;
 			}
-
+			p->size = particle.size;
 			if (!multipleshot)
 			{
 				Mix_PlayChannel(-1, App->audio->fx_shoot, 0);

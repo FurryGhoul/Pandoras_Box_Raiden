@@ -13,7 +13,7 @@ Enemy_Light_Shooter::Enemy_Light_Shooter(int x, int y, int path) : Enemy(x, y)
 {
 	hp = 1;
 	points = 130;
-
+	lightshooter = true;
 	// Anmiation pushback's
 
 	//South to East

@@ -22,6 +22,7 @@ struct Particle
 	uint fx = 0;
 	iPoint position;
 	iPoint speed;
+	iPoint size;
 	Uint32 bullettype = 0;
 	Uint32 born = 0;
 	Uint32 life = 0;
@@ -67,6 +68,7 @@ public:
 
 	Particle laser;
 	Particle enemyshot;
+	Particle explosion;
 };
 
 #endif // __MODULEPARTICLES_H__
