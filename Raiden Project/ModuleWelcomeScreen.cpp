@@ -55,7 +55,20 @@ update_status ModuleWelcomeScreen::Update()
 	}
 
 	App->render->Blit(Welcome, 0, 0, &ground);
-	if (App->input->keyboard[SDL_SCANCODE_SPACE])
+
+	if (App->input->keyboard[SDL_SCANCODE_1])
+	{
+		App->player->score = 0;
+		App->player2->score = 0;
+		App->player2->deadplayer = true;
+		App->player2->godmode = false;
+		App->map_1->setup = true;
+		App->fade->FadeToBlack(this, App->map_1, 1.0f);
+		App->map_1->xmap = -192;
+		App->map_1->ymap = -9020;
+	}
+
+	if (App->input->keyboard[SDL_SCANCODE_2])
 	{
 		App->player->score = 0;
 		App->player2->score = 0;

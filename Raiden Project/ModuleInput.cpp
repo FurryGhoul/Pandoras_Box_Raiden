@@ -68,7 +68,8 @@ update_status ModuleInput::Update()
 				keyboard[i] = KEY_IDLE;
 		}
 	}
-
+	if (!App->player->deadplayer)
+	{ 
 	//Player one side scroll
 	if (keyboard[SDL_SCANCODE_A])
 	{
@@ -96,7 +97,10 @@ update_status ModuleInput::Update()
 		}
 
 	}
+}
 
+	if (!App->player2->deadplayer)
+{ 
 	//Player two side scroll
 	if (keyboard[SDL_SCANCODE_LEFT])
 	{
@@ -123,7 +127,7 @@ update_status ModuleInput::Update()
 			}
 		}
 	}
-
+}
 	return update_status::UPDATE_CONTINUE;
 }
 
