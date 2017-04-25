@@ -36,12 +36,12 @@ struct Particle
 
 	void AddPointsP1()
 	{
-		App->player->score += 20;
+		App->player->score += 60;
 	}
 
 	void AddPointsP2()
 	{
-		App->player2->score += 20;
+		App->player2->score += 60;
 	}
 };
 

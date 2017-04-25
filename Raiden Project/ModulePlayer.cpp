@@ -421,11 +421,17 @@ update_status ModulePlayer::Update()
 		if (powerup_level == 0)
 		{
 			App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 1);
+			score -= 40;
+			if (score < 0)
+				score = 0;
 		}
 		if (powerup_level == 1)
 		{
  			App->particles->AddParticle(App->particles->laser, position.x + speed, position.y, COLLIDER_PLAYER_SHOT, 1);
 			App->particles->AddParticle(App->particles->laser, position.x + speed + 25, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true);
+			score -= 40;
+			if (score < 0)
+				score = 0;
 		}
 
 	}
@@ -467,12 +473,15 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 
 	if (Player != nullptr && Player == c1 && deadplayer == false && c2->type != COLLIDER_POWER_UP)
 	{
+		if (c2->bullettype == 5)
+			score += 480;
+
 		lastscore = score;
 		if (score >= hiscore)
 		{
 			hiscore = score;
 		}
-		score = 0;
+
 		Disable();
 		position.x = 10000000;
 		position.y = 10000000;
@@ -484,7 +493,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 
 	if (Player != nullptr && Player == c1 && App->player2->deadplayer && deadplayer && c2->type != COLLIDER_POWER_UP)
 	{
-		godmode = true;
+		
 		App->enemies->Disable();
 		App->powerups->Disable();
 		App->collision->Disable();

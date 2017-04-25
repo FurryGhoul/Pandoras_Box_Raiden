@@ -165,22 +165,30 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1)
 		{
 			enemies[i]->hp--;
-			if (enemies[i]->hp == 0)
+
+			if (c2->bullettype == 3 || c2->bullettype == 4)
+			{
+				enemies[i]->hp = 0;
+			}
+
+			if (enemies[i]->hp <= 0)
 			{
 				if (c2->bullettype == 1)
 				{
 					App->player->score += enemies[i]->points;
 				}
 
-				if (c2->bullettype == 2)
+				else if (c2->bullettype == 2)
 				{
 					App->player2->score += enemies[i]->points;
 				}
+
 				if (enemies[i]->lightshooter)
 				{ 
 				App->particles->AddParticle(App->particles->explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
                 }
-				if (enemies[i]->bonusplane)
+
+				else if (enemies[i]->bonusplane)
 				{
 					App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, enemies[i]->position.x, enemies[i]->position.y);
 				}
