@@ -99,8 +99,11 @@ update_status ModuleMap1::Update()
 		App->powerups->ErasePowerUps();
 		App->player->powerup_level = 0;
 		App->player2->powerup_level = 0;
-		App->player->godmode = true;
-		App->player2->godmode = true;
+
+
+
+		App->player2->deadplayer = false;
+		App->player->deadplayer = false;
 
 		App->player->lastscore = App->player->score;
 		if (App->player->score >= App->player->hiscore)

@@ -99,6 +99,10 @@ update_status ModulePlayer::Update()
 	{
 		Playergod->SetPos(10000000, 10000000);
 	}
+	if (godmode == true)
+	{
+		Player->SetPos(10000000, 10000000);
+	}
 
 	if (allowtimep == true)
 	{
@@ -449,6 +453,7 @@ update_status ModulePlayer::Update()
 	{
 		Playergod->SetPos(position.x, position.y);
 		Playergod->SetSize(player_w, player_h);
+
 	}
 
 	// Godmode
