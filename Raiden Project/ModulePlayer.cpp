@@ -473,12 +473,15 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 
 	if (Player != nullptr && Player == c1 && deadplayer == false && c2->type != COLLIDER_POWER_UP)
 	{
+		if (c2->bullettype == 5)
+			score += 480;
+
 		lastscore = score;
 		if (score >= hiscore)
 		{
 			hiscore = score;
 		}
-		score = 0;
+
 		Disable();
 		position.x = 10000000;
 		position.y = 10000000;

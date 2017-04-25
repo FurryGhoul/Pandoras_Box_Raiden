@@ -491,7 +491,6 @@ void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 			hiscore = score;
 		}
 
-		score = 0;
 		Disable();
 		position.x = 10000000;
 		position.y = 10000000;
