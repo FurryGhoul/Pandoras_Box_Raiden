@@ -31,7 +31,6 @@ Application::Application()
 	modules[8] = map_1 = new ModuleMap1();
 	modules[9] = WelcomeScreen = new ModuleWelcomeScreen();
 	modules[10] = StageClear1 = new ModuleStageClear1();
-	
 	modules[11] = particles = new ModuleParticles();
 	modules[12] = collision = new ModuleCollision();
 	modules[13] = fade = new ModuleFadeToBlack();

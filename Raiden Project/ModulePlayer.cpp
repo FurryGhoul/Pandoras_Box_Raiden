@@ -246,20 +246,6 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
-		{
-			if (powerup_level == 0)
-			{ 
-			   App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 1); 
-			}
- 			if (powerup_level == 1)
-			{
-				App->particles->AddParticle(App->particles->laser, position.x + speed, position.y, COLLIDER_PLAYER_SHOT, 1);
-				App->particles->AddParticle(App->particles->laser, position.x + speed + 25, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true);
-			}
-
-		}
-
 		// Draw everything --------------------------------------
 		if (current_animation == &idle)
 		{
@@ -403,19 +389,6 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
-		{
-			if (powerup_level == 0)
-			{
-				App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 1);
-			}
-			if (powerup_level == 1)
-			{
-				App->particles->AddParticle(App->particles->laser, position.x + speed, position.y, COLLIDER_PLAYER_SHOT, 1);
-				App->particles->AddParticle(App->particles->laser, position.x + speed + 25, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true);
-			}
-		}
-
 		// Draw everything --------------------------------------
 		if (current_animation == &idlep)
 		{
@@ -442,6 +415,21 @@ update_status ModulePlayer::Update()
 		App->fonts->BlitText(20, 195, 0, scoret);
 	}
 	
+
+	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
+	{
+		if (powerup_level == 0)
+		{
+			App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 1);
+		}
+		if (powerup_level == 1)
+		{
+ 			App->particles->AddParticle(App->particles->laser, position.x + speed, position.y, COLLIDER_PLAYER_SHOT, 1);
+			App->particles->AddParticle(App->particles->laser, position.x + speed + 25, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true);
+		}
+
+	}
+
 
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
 	if (Player != nullptr && godmode == false)
