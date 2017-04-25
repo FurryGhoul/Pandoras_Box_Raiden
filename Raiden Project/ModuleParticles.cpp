@@ -37,15 +37,6 @@ bool ModuleParticles::Init()
 	laser.life = 2100;
 	laser.speed.y = -10;
 
-	laser2.spriteshit = 0;
-	laser2.anim.PushBack({ 59, 100, 6, 6 });
-	laser2.anim.loop = false;
-	laser2.anim.speed = 1.0f;
-	laser2.life = 2100;
-	laser2.speed.y = -10;
-	
-
-
 	//Enemy normal shot
 	enemyshot.spriteshit = 1;
 	enemyshot.anim.PushBack({ 22, 41, 6, 5});
