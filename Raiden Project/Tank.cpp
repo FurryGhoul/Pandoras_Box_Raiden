@@ -105,13 +105,6 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ 0.0f, 0.0f }, 6000);
 	}
 
-	if (path == 2)
-	{
-		movement.PushBack({ 0.0f, 4.0f }, 100);
-		movement.PushBack({ 0.5f, -1.0f }, 200);
-		movement.PushBack({ 0.0f, 0.0f }, 6000);
-	}
-
 	collider = App->collision->AddCollider({ 0, 0, 24 * 3 - 5, 26 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
 	animation = &updiagonalleft;
 }
