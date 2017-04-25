@@ -430,16 +430,23 @@ update_status ModulePlayer2::Update()
 		App->fonts->BlitText(420, 160, 1, score_text);
 		App->fonts->BlitText(420, 195, 1, scoret);
 	}
-	if (App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN)
+
+	if (App->input->keyboard[SDL_SCANCODE_KP_0] == KEY_STATE::KEY_DOWN)
 	{
 		if (powerup_level == 0)
 		{
 			App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 2);
+			score -= 40;
+			if (score < 0)
+				score = 0;
 		}
-		if (powerup_level == 1)
+		else if (powerup_level == 1)
 		{
 			App->particles->AddParticle(App->particles->laser, position.x + speed, position.y, COLLIDER_PLAYER_SHOT, 2);
 			App->particles->AddParticle(App->particles->laser, position.x + speed + 25, position.y, COLLIDER_PLAYER_SHOT, 2, 0, 0, 0, true);
+			score -= 40;
+			if (score < 0)
+				score = 0;
 		}
 	}
 

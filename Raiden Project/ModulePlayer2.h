@@ -50,7 +50,7 @@ public:
 	char highscoret[20];
 	uint hiscore = 0;
 	uint lastscore = 0;
-	uint score = 0;
+	int score = 0;
 	bool ideling = false;
 	bool allowtime = true;
 	bool allowtimep = true;

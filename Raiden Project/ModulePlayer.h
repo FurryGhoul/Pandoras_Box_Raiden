@@ -48,7 +48,7 @@ public:
 	char lastscore_text[20];
 	char lastscoret[20];
 	char highscoret[20];
-	uint score = 0;
+	int score = 0;
 	uint hiscore = 0;
 	uint lastscore;
 	bool ideling = false;
