@@ -80,7 +80,7 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	0.0, 4.0 = down
 	0.0, 0.0 = up
 	-0.5, 2.0 = left
-	-0.5, 2.0 = right
+	0.5, 2.0 = right
 	-0.5, 3.0 = down diagonal left
 	-0.5, -1.0 = up diagonal right
 	-0.5, -1.0 = up diagonal left
@@ -94,15 +94,22 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	{
 		movement.PushBack({ 0.0f, 4.0f }, 100);
 		movement.PushBack({ -1.0f, 1.0f }, 100);
-		movement.PushBack({ 0.0f, 0.0f }, 6000);
+		movement.PushBack({ 1.0f, 3.0f }, 100);
 	}
 
 	if (path == 1)
 	{
 		movement.PushBack({ 0.0f, 4.0f }, 30);
 		movement.PushBack({ 0.5f, 3.0f }, 30);
-		movement.PushBack({ 0.5, 2.0f }, 70);
-		movement.PushBack({ 0.0f, 0.0f }, 6000);
+		movement.PushBack({ 0.5f, 2.0f }, 70);
+		movement.PushBack({ -1.0f, 3.0f }, 100);
+	}
+
+	if (path == 2)
+	{
+		movement.PushBack({ 0.0f, 4.0f }, 100);
+		movement.PushBack({ -0.5f, -1.0f }, 100);
+ 		movement.PushBack({ 0.0f, 4.0f }, 100);
 	}
 
 	collider = App->collision->AddCollider({ 0, 0, 24 * 3 - 5, 26 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);

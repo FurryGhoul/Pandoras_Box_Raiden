@@ -54,32 +54,32 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 410, -560);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 100, -600);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 180, -600);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 250, -660);
+		//App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 250, -660);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 320, -720);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 410, -800);
+		//App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 410, -800);
 
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 50, -900);
+		//App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 50, -900);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 200, -900);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 420, -920);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 350, -920);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 350, -970);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 500, -970);
+		//App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 500, -970);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 150, -1050);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 0, -1050);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 330, -1050);
+		//App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 330, -1050);
 
 		App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 50, -1200);
 		App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 0, -1350);
 
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 500, -1500);
+		//App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 500, -1500);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 160, -1500);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 400, -1550);
+		//App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 400, -1550);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 330, -1550);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 520, -1700);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 550, -1700);
-		App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 160, -1750);
+		//App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 160, -1750);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 480, -1800);
-		App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 90, -1850);
+		//App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 90, -1850);
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 500, -2000);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 160, -2000);
@@ -117,8 +117,8 @@ update_status ModuleMap1::Update()
 	}
 
 	App->render->Blit(Map1, xmap, ymap, &ground);
-	App->render->camera.y -= 1;//both speed where reduced to 1
-	App->map_1->ymap += 1;
+	App->render->camera.y -= 2;//both speed where reduced to 1
+	App->map_1->ymap += 2;
 	if (App->input->keyboard[SDL_SCANCODE_BACKSPACE])
 	{
 		App->render->camera.y = -5500;

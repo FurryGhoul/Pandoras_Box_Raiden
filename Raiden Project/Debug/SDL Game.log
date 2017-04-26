@@ -1,18 +1,5 @@
 ﻿  ModuleMap1.cpp
-c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(145): warning C4018: '>=': signed/unsigned mismatch
-c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(152): warning C4018: '>=': signed/unsigned mismatch
-  Enemy_Bonus_Ship.cpp
-c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
-c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(74): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(75): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(77): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(78): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(83): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(84): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(132): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(133): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(134): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Generating Code...
-  SDL Game.vcxproj -> C:\Users\Ivan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
-  SDL Game.vcxproj -> C:\Users\Ivan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+c:\users\ivandv\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(145): warning C4018: '>=': signed/unsigned mismatch
+c:\users\ivandv\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(152): warning C4018: '>=': signed/unsigned mismatch
+  SDL Game.vcxproj -> C:\Users\ivandv\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\ivandv\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
