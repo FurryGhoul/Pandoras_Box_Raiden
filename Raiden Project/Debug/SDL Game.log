@@ -1,14 +1,39 @@
-﻿  Enemy_Bonus_Ship.cpp
-c:\users\ivandv\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\ivandv\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
-c:\users\ivandv\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(68): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\ivandv\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(69): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\ivandv\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(71): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\ivandv\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(72): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\ivandv\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(77): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\ivandv\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(78): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\ivandv\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(126): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\ivandv\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(127): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\ivandv\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(128): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  SDL Game.vcxproj -> C:\Users\ivandv\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
-  SDL Game.vcxproj -> C:\Users\ivandv\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+﻿  Tank.cpp
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\tank.cpp(128): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\tank.cpp(129): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\tank.cpp(131): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\tank.cpp(132): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\tank.cpp(137): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\tank.cpp(138): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\tank.cpp(502): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\tank.cpp(503): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\tank.cpp(523): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Enemy_Light_Shooter.cpp
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(76): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(77): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(79): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(80): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(85): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(86): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(264): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(265): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(282): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Enemy_Bonus_Ship.cpp
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(68): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(69): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(71): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(72): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(77): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(78): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(126): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(127): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(128): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  SDL Game.vcxproj -> C:\Users\lucasgm\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\lucasgm\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

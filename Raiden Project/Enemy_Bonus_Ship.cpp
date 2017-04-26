@@ -121,7 +121,7 @@ void Enemy_Bonus_Ship::MoveShoot()
 		distance.x *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
 		distance.y *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
 
-		if (shoot_time % 200 == 0)
+		if (shoot_time % 200 == 0 && position.y <= 760)
 		{
 			App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 60, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
 			App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 60, COLLIDER_ENEMY_SHOT, 0, distance.x - 4, distance.y, 0, true);

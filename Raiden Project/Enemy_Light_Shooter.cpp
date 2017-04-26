@@ -269,7 +269,7 @@ void Enemy_Light_Shooter::MoveShoot()
 	distance.y *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
 	if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && shooting == false )
 	{
-		if (shoot_time % 80 == 0)
+		if (shoot_time % 80 == 0 && position.y <= 760)
 		{
 			if (App->player->position.y - 22 < (position.y - 22 * 3))
 			{
