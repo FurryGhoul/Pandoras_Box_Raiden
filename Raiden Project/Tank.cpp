@@ -510,7 +510,7 @@ void Tank::MoveShoot()
 	distance.x *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
 	distance.y *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
 
-	if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500)
+	if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && position.y <= 760)
 	{
         if (App->player->position.y - 22 < (position.y - 22 * 3))
 		{
