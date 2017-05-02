@@ -32,12 +32,13 @@ Application::Application()
 	modules[9] = WelcomeScreen = new ModuleWelcomeScreen();
 	modules[10] = StageClear1 = new ModuleStageClear1();
 	modules[11] = particles = new ModuleParticles();
-	modules[12] = fade = new ModuleFadeToBlack();
-	modules[13] = enemies = new ModuleEnemies();
-	modules[14] = powerups = new ModulePowerUps();
-	modules[15] = player = new ModulePlayer();
-	modules[16] = player2 = new ModulePlayer2();
-	modules[17] = collision = new ModuleCollision();
+	modules[12] = collision = new ModuleCollision();
+	modules[13] = fade = new ModuleFadeToBlack();
+	modules[14] = enemies = new ModuleEnemies();
+	modules[15] = powerups = new ModulePowerUps();
+	modules[16] = player = new ModulePlayer();
+	modules[17] = player2 = new ModulePlayer2();
+
 	
 }	
 
