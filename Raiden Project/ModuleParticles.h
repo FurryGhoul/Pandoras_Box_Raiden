@@ -69,6 +69,7 @@ public:
 	Particle laser;
 	Particle enemyshot;
 	Particle explosion;
+	Particle hitspark;
 };
 
 #endif // __MODULEPARTICLES_H__

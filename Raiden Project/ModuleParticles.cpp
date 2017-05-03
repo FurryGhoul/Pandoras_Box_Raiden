@@ -50,16 +50,19 @@ bool ModuleParticles::Init()
 	
 	//Explosion
 	explosion.spriteshit = 1;
-	explosion.anim.PushBack({ 26,339, 10, 8 });
-	explosion.anim.PushBack({ 41,337, 14, 12 });
-	explosion.anim.PushBack({ 88,334, 20, 18});
-	explosion.anim.PushBack({ 122,333, 22, 19 });
-	explosion.anim.PushBack({ 165,333, 24, 22 });
-	explosion.anim.PushBack({ 214,332, 26, 24 });
+	explosion.anim.PushBack({ 26, 339, 10, 8 });
+	explosion.anim.PushBack({ 41, 337, 14, 12 });
+	explosion.anim.PushBack({ 88, 334, 20, 18});
+	explosion.anim.PushBack({ 122, 333, 22, 19 });
+	explosion.anim.PushBack({ 165, 333, 24, 22 });
+	explosion.anim.PushBack({ 214, 332, 26, 24 });
 	explosion.anim.loop = false;
 	explosion.anim.speed = 0.3f;
 	explosion.size.x = 18 * 3;
 	explosion.size.y = 18 * 3;
+
+	//Hit spark
+	hitspark.anim.PushBack({ 563, 1312, 15, 17 });
 
 	return true;
 }
