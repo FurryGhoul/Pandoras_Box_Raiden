@@ -165,6 +165,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1)
 		{
 			enemies[i]->hp--;
+			App->particles->AddParticle(App->particles->hitspark, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
 
 			if (c2->bullettype == 3 || c2->bullettype == 4)
 			{

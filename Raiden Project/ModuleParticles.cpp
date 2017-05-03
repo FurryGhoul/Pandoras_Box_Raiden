@@ -38,6 +38,7 @@ bool ModuleParticles::Init()
 	laser.speed.y = -10;
 	laser.size.x = 18;
 	laser.size.y = 18;
+
 	//Enemy normal shot
 	enemyshot.spriteshit = 1;
 	enemyshot.anim.PushBack({ 22, 41, 6, 5});
@@ -62,8 +63,15 @@ bool ModuleParticles::Init()
 	explosion.size.y = 18 * 3;
 
 	//Hit spark
-	hitspark.anim.PushBack({ 563, 1312, 15, 17 });
-
+	hitspark.spriteshit = 1;
+	hitspark.anim.PushBack({ 547, 1308, 15, 19 });
+	hitspark.anim.PushBack({ 563, 1308, 15, 19 });
+	hitspark.anim.PushBack({ 580, 1308, 15, 19 });
+	hitspark.anim.PushBack({ 596, 1308, 16, 20 });
+	hitspark.anim.loop = false;
+	hitspark.anim.speed = 0.5f;
+	hitspark.size.x = 18 * 3;
+	hitspark.size.y = 18 * 3;
 	return true;
 }
 
