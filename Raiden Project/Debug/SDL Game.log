@@ -1,14 +1,9 @@
-﻿  Enemy_Light_Shooter.cpp
-c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
-c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(76): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(77): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(79): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(80): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(85): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(86): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(264): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(265): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(282): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  SDL Game.vcxproj -> C:\Users\lucasgm\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
-  SDL Game.vcxproj -> C:\Users\lucasgm\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+﻿  ModulePowerUps.cpp
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': no coinciden signed/unsigned
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': no coinciden signed/unsigned
+  ModuleEnemies.cpp
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': no coinciden signed/unsigned
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': no coinciden signed/unsigned
+  Generando código...
+  SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

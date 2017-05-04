@@ -194,6 +194,13 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 					App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, enemies[i]->position.x, enemies[i]->position.y);
 				}
 
+				/*
+				else if (enemies[i]->medalplane)
+				{
+					App->powerups->AddPowerUp(POWERUP_TYPES::MEDAL, enemies[i]->position.x, enemies[i]->position.y);
+				}
+				*/
+
 				delete enemies[i];
 				enemies[i] = nullptr;
 				break;

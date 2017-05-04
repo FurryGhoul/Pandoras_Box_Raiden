@@ -28,6 +28,7 @@
     <ClCompile Include="PowerUp.cpp" />
     <ClCompile Include="RedUp.cpp" />
     <ClCompile Include="ModuleFonts.cpp" />
+    <ClCompile Include="Medals.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
@@ -62,6 +63,7 @@
     <ClInclude Include="PowerUp.h" />
     <ClInclude Include="RedUp.h" />
     <ClInclude Include="ModuleFonts.h" />
+    <ClInclude Include="Medals.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SDL3 Handout.rc" />

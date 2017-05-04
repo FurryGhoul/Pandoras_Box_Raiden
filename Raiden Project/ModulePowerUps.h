@@ -12,6 +12,7 @@ enum class POWERUP_TYPES
 {
 	NO_TYPE,
 	REDUP,
+	MEDAL,
 };
 
 class PowerUp;

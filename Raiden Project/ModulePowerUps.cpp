@@ -7,6 +7,7 @@
 #include "ModuleTextures.h"
 #include "PowerUp.h"
 #include "RedUp.h"
+#include "Medals.h"
 #include "ModulePlayer.h"
 #include "ModulePlayer2.h"
 #define SPAWN_MARGIN 50
@@ -130,6 +131,9 @@ void ModulePowerUps::SpawnPowerUp(const PowerUpInfo& info)
 		case POWERUP_TYPES::REDUP:
 			powerups[i] = new RedUp(info.x, info.y);
 			break;
+		case POWERUP_TYPES::MEDAL:
+			powerups[i] = new Medals(info.x, info.y);
+			break;
 		}
 	}
 }
@@ -142,6 +146,7 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 		{
 			if (c2->bullettype == 3)
 			{
+				
 				if (App->player->powerup_level < MAX_POWERUP_LVL)
 				{
 					App->player->powerup_level++;
