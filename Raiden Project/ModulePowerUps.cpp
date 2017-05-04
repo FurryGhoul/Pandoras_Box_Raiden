@@ -11,7 +11,7 @@
 #include "ModulePlayer.h"
 #include "ModulePlayer2.h"
 #define SPAWN_MARGIN 50
-#define MAX_POWERUP_LVL 1
+#define MAX_POWERUP_LVL 2
 
 ModulePowerUps::ModulePowerUps()
 {

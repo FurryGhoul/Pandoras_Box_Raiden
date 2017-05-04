@@ -433,6 +433,15 @@ update_status ModulePlayer::Update()
 			if (score < 0)
 				score = 0;
 		}
+		if (powerup_level == 2)
+		{
+			App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 1);
+			App->particles->AddParticle(App->particles->laser, position.x + speed + 40, position.y, COLLIDER_PLAYER_SHOT, 1, 3, 0, 0, true);
+			App->particles->AddParticle(App->particles->laser, position.x + speed +10, position.y, COLLIDER_PLAYER_SHOT, 1, -3, 0, 0, true);
+			score -= 40;
+			if (score < 0)
+				score = 0;
+		}
 
 	}
 

@@ -35,7 +35,7 @@ bool ModuleParticles::Init()
 	laser.anim.loop = false;
 	laser.anim.speed = 1.0f;
 	laser.life = 2100;
-	laser.speed.y = -10;
+	laser.speed.y = -15;
 	laser.size.x = 18;
 	laser.size.y = 18;
 
