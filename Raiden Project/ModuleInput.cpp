@@ -8,7 +8,7 @@
 #include "ModulePlayer.h"
 #include "ModulePlayer2.h"
 #include "ModuleEnemies.h"
-
+#include "ModuleParticles.h"
 ModuleInput::ModuleInput() : Module()
 {
 	for (uint i = 0; i < MAX_KEYS; ++i)
@@ -77,6 +77,7 @@ update_status ModuleInput::Update()
 		{
 			App->map_1->xmap += 6;
 			App->enemies->MoveEnemiesRight(true);
+			App->particles->MoveParticlesRight(true);
 			if (!(App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player2->position.x < 50))
 			{ 
 			App->player2->position.x += 6;
@@ -90,6 +91,7 @@ update_status ModuleInput::Update()
 		{
 			App->map_1->xmap -= 6;
 			App->enemies->MoveEnemiesRight(false);
+			App->particles->MoveParticlesRight(false);
 			if (!(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player2->position.x > 550))
 			{ 
 			App->player2->position.x -= 6;
@@ -108,6 +110,7 @@ update_status ModuleInput::Update()
 		{
 			App->map_1->xmap += 6;
 			App->enemies->MoveEnemiesRight(true);
+			App->particles->MoveParticlesRight(true);
 			if((!App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->position.x))
 			{ 
 			App->player->position.x += 6;
@@ -121,6 +124,7 @@ update_status ModuleInput::Update()
 		{
 			App->map_1->xmap -= 6;
 			App->enemies->MoveEnemiesRight(false);
+			App->particles->MoveParticlesRight(false);
 			if (!(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player->position.x > 550))
 			{ 
 			App->player->position.x -= 6;

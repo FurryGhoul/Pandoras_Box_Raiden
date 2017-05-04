@@ -197,7 +197,30 @@ void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
 		}
 	}
 }
+void ModuleParticles::MoveParticlesRight(bool right)
+{
+	if (right == true)
+	{
+		for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
+		{
+			if (active[i] != nullptr)
+			{
+				active[i]->position.x += 6;
+			}
+		}
+	}
 
+	if (right == false)
+	{
+		for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
+		{
+			if (active[i] != nullptr)
+			{
+				active[i]->position.x -= 6;
+			}
+		}
+	}
+}
 Particle::Particle()
 {
 	position.SetToZero();
