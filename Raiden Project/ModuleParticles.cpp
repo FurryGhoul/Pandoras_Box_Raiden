@@ -29,15 +29,24 @@ bool ModuleParticles::Init()
 	LOG("Loading particles");
 	graphics = App->textures->Load("Assets/Player1.png");
 	graphics1 = App->textures->Load("Assets/graphics2.png");
-	// player laser particles
-	laser.spriteshit = 0;
-	laser.anim.PushBack({ 59, 100, 6, 6 });
-	laser.anim.loop = false;
-	laser.anim.speed = 1.0f;
-	laser.life = 2100;
-	laser.speed.y = -15;
-	laser.size.x = 18;
-	laser.size.y = 18;
+	// player double shot particles
+	double_shot.spriteshit = 0;
+	double_shot.anim.PushBack({ 59, 100, 6, 6 });
+	double_shot.anim.loop = true;
+	double_shot.anim.speed = 1.0f;
+	double_shot.life = 2100;
+	double_shot.speed.y = -15;
+	double_shot.size.x = 18;
+	double_shot.size.y = 18;
+	// player triple shot particles
+	triple_shot.spriteshit = 0;
+	triple_shot.anim.PushBack({ 74, 100, 10, 6 });
+	triple_shot.anim.loop = true;
+	triple_shot.anim.speed = 1.0f;
+	triple_shot.life = 2100;
+	triple_shot.speed.y = -15;
+	triple_shot.size.x = 30;
+	triple_shot.size.y = 18;
 
 	//Enemy normal shot
 	enemyshot.spriteshit = 1;

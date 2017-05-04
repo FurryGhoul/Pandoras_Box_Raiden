@@ -66,7 +66,8 @@ private:
 
 public:
 
-	Particle laser;
+	Particle double_shot;
+	Particle triple_shot;
 	Particle enemyshot;
 	Particle explosion;
 	Particle hitspark;

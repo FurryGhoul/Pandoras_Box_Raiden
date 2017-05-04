@@ -420,24 +420,33 @@ update_status ModulePlayer::Update()
 	{
 		if (powerup_level == 0)
 		{
-			App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 1);
+			App->particles->AddParticle(App->particles->double_shot, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 1);
 			score -= 40;
 			if (score < 0)
 				score = 0;
 		}
 		if (powerup_level == 1)
 		{
- 			App->particles->AddParticle(App->particles->laser, position.x + speed, position.y, COLLIDER_PLAYER_SHOT, 1);
-			App->particles->AddParticle(App->particles->laser, position.x + speed + 25, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true);
+ 			App->particles->AddParticle(App->particles->double_shot, position.x + speed, position.y, COLLIDER_PLAYER_SHOT, 1);
+			App->particles->AddParticle(App->particles->double_shot, position.x + speed + 25, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true);
 			score -= 40;
 			if (score < 0)
 				score = 0;
 		}
 		if (powerup_level == 2)
 		{
-			App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 1);
-			App->particles->AddParticle(App->particles->laser, position.x + speed + 40, position.y, COLLIDER_PLAYER_SHOT, 1, 3, 0, 0, true);
-			App->particles->AddParticle(App->particles->laser, position.x + speed +10, position.y, COLLIDER_PLAYER_SHOT, 1, -3, 0, 0, true);
+			App->particles->AddParticle(App->particles->double_shot, position.x + speed + 15, position.y, COLLIDER_PLAYER_SHOT, 1);
+			App->particles->AddParticle(App->particles->double_shot, position.x + speed + 35, position.y, COLLIDER_PLAYER_SHOT, 1, 3, 0, 0, true);
+			App->particles->AddParticle(App->particles->double_shot, position.x + speed +5, position.y, COLLIDER_PLAYER_SHOT, 1, -3, 0, 0, true);
+			score -= 40;
+			if (score < 0)
+				score = 0;
+		}
+		if (powerup_level == 3)
+		{
+			App->particles->AddParticle(App->particles->triple_shot, position.x + speed + 15, position.y, COLLIDER_PLAYER_SHOT, 1);
+			App->particles->AddParticle(App->particles->triple_shot, position.x + speed + 35, position.y, COLLIDER_PLAYER_SHOT, 1, 3, 0, 0, true);
+			App->particles->AddParticle(App->particles->triple_shot, position.x + speed + 5, position.y, COLLIDER_PLAYER_SHOT, 1, -3, 0, 0, true);
 			score -= 40;
 			if (score < 0)
 				score = 0;
