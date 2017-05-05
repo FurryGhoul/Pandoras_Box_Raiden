@@ -9,12 +9,19 @@ Medals::Medals(int x, int y) : PowerUp(x, y)
 	//Red PowerUp animation sprite
 	idle1.PushBack({ 118, 1, 10, 16 });
 
-	collider = App->collision->AddCollider({ 0, 0, 10 * 3 - 5, 16 * 3 }, COLLIDER_TYPE::COLLIDER_POWER_UP, (Module*)App->powerups);
+	movement.PushBack({ 0.0f, 2.0f }, 100);
 
-	w = 16 * 3;
-	h = 14 * 3;
+	collider = App->collision->AddCollider({ 3, 0, 11 * 3 - 5, 16 * 3 }, COLLIDER_TYPE::COLLIDER_POWER_UP, (Module*)App->powerups, 12);
+
+	w = 10 * 3;
+	h = 16 * 3;
 
 	position.x = original_pos.x = x;
 	position.y = original_pos.y = 100;
 	animation = &idle1;
+}
+
+void Medals::Move()
+{
+	position = original_pos + movement.GetCurrentPosition();
 }

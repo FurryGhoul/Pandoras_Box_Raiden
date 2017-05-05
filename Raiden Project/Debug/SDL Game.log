@@ -1,3 +1,8 @@
-﻿  ModuleParticles.cpp
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+﻿  ModulePlayer2.cpp
+c:\users\albertmc12\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(270): warning C4474: 'sprintf_s' : too many arguments passed for format string
+  c:\users\albertmc12\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(270): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+c:\users\albertmc12\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(425): warning C4474: 'sprintf_s' : too many arguments passed for format string
+  c:\users\albertmc12\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(425): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+c:\users\albertmc12\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(498): warning C4018: '>=': signed/unsigned mismatch
+  SDL Game.vcxproj -> C:\Users\albertmc12\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\albertmc12\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

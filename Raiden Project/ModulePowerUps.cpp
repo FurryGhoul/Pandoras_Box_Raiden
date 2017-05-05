@@ -144,28 +144,43 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 	{
 		if (powerups[i] != nullptr && powerups[i]->GetCollider() == c1)
 		{
-			if (c2->bullettype == 3)
+			if (c2->bullettype == 3) //Collider player 1
 			{
-				
-				if (App->player->powerup_level < MAX_POWERUP_LVL)
+				if (c1->bullettype == 10) //Collider RedUp
 				{
-					App->player->powerup_level++;
+					if (App->player->powerup_level < MAX_POWERUP_LVL)
+					{
+						App->player->powerup_level++;
+					}
+
+					else if (App->player->powerup_level >= MAX_POWERUP_LVL)
+					{
+						App->player->score += 100;
+					}
 				}
 
-				else if (App->player->powerup_level >= MAX_POWERUP_LVL)
-				{					
+				if (c1->bullettype == 12) //Collider Medal
+				{
 					App->player->score += 100;
 				}
 			}
-			if (c2->bullettype == 4)
-			{ 
-				if (App->player2->powerup_level < MAX_POWERUP_LVL)
+			if (c2->bullettype == 4) //Collider player 2
+			{
+				if (c1->bullettype == 10) //Collider RedUp
 				{
-					App->player2->powerup_level++;
+					if (App->player2->powerup_level < MAX_POWERUP_LVL)
+					{
+						App->player2->powerup_level++;
+					}
+
+					else if (App->player2->powerup_level >= MAX_POWERUP_LVL)
+					{
+						App->player2->score += 100;
+					}
 				}
 
-				else if (App->player2->powerup_level >= MAX_POWERUP_LVL)
-				{					
+				if (c1->bullettype == 12) //Collider Medal
+				{
 					App->player2->score += 100;
 				}
 			}

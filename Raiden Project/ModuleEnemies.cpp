@@ -192,6 +192,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				else if (enemies[i]->bonusplane)
 				{
 					App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, enemies[i]->position.x, enemies[i]->position.y);
+					App->powerups->AddPowerUp(POWERUP_TYPES::MEDAL, enemies[i]->position.x, enemies[i]->position.y);
 				}
 
 				/*

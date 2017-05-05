@@ -16,7 +16,7 @@ RedUp::RedUp(int x, int y) : PowerUp(x, y)
 	movement.PushBack({ 0.0f, -2.0f }, 100);
 	movement.PushBack({ -4.0f,0.0f }, 100);
 
-	collider = App->collision->AddCollider({ 0, 0, 16 * 3 - 5, 14 * 3 }, COLLIDER_TYPE::COLLIDER_POWER_UP, (Module*)App->powerups);
+	collider = App->collision->AddCollider({ 0, 0, 16 * 3 - 5, 14 * 3 }, COLLIDER_TYPE::COLLIDER_POWER_UP, (Module*)App->powerups, 10);
 
 	w = 16 * 3;
 	h = 14 * 3;
