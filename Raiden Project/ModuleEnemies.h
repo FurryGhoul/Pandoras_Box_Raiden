@@ -13,6 +13,7 @@ enum ENEMY_TYPES
     LIGHT_SHOOTER,
 	BONUS_SHIP,
 	TANK,
+	MEDIUM_SHOOTER,
 };
 
 class Enemy;
@@ -54,6 +55,7 @@ private:
 	SDL_Texture* sprites;
 	SDL_Texture* sprites2;
 	SDL_Texture* sprites3;
+	SDL_Texture* sprites4;
 	
 	
 };

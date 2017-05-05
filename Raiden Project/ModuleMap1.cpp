@@ -97,6 +97,7 @@ update_status ModuleMap1::Update()
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 200, -200);
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 200, -100);
 		//App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 200, -100);
+		//App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 480, -1800);
 
 		App->collision->Enable();
 		App->render->camera.x = App->render->camera.y = 0;
