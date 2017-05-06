@@ -78,7 +78,7 @@ bool ModuleParticles::Init()
 	hitspark.anim.PushBack({ 580, 1308, 15, 19 });
 	hitspark.anim.PushBack({ 596, 1308, 16, 20 });
 	hitspark.anim.loop = false;
-	hitspark.anim.speed = 0.5f;
+	hitspark.anim.speed = 0.8f;
 	hitspark.size.x = 18 * 3;
 	hitspark.size.y = 18 * 3;
 	return true;
