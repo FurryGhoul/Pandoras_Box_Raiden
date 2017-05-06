@@ -28,14 +28,16 @@ struct Collider
 	SDL_Rect rect;
 	bool to_delete = false;
 	int bullettype = 0;
+	int damage = 0;
 	COLLIDER_TYPE type;
 	Module* callback = nullptr;
 
-	Collider(SDL_Rect rectangle, COLLIDER_TYPE type, Module* callback = nullptr, int bullettype = 0) :
+	Collider(SDL_Rect rectangle, COLLIDER_TYPE type, Module* callback = nullptr, int bullettype = 0, int damage = 0) :
 		rect(rectangle),
 		type(type),
 		callback(callback),
-		bullettype(bullettype)
+		bullettype(bullettype),
+		damage(damage)
 	{}
 
 	void SetPos(int x, int y)
@@ -65,7 +67,7 @@ public:
 	//update_status PostUpdate();
 	bool CleanUp();
 
-	Collider* AddCollider(SDL_Rect rect, COLLIDER_TYPE type, Module* callback = nullptr, int bullettype = 0);
+	Collider* AddCollider(SDL_Rect rect, COLLIDER_TYPE type, Module* callback = nullptr, int bullettype = 0, int damage = 0);
 	
 	void DebugDraw();
 

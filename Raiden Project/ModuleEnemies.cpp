@@ -174,7 +174,13 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 	{
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1)
 		{
-			enemies[i]->hp--;
+			
+         	enemies[i]->hp -= c2->damage;
+
+
+			if (enemies[i]->hp < 0)
+			enemies[i]->hp = 0;
+
 			App->particles->AddParticle(App->particles->hitspark, c1->rect.x, c1->rect.y, COLLIDER_NONE);
 
 			if (c2->bullettype == 3 || c2->bullettype == 4)

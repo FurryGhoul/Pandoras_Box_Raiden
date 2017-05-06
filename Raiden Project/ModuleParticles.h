@@ -56,7 +56,7 @@ public:
 	bool CleanUp();
 	void OnCollision(Collider* c1, Collider* c2);
 	void MoveParticlesRight(bool);
-	void AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type = COLLIDER_NONE, int bullettype = 0, int speed_x = 0, int speed_y = 0, Uint32 delay = 0, bool multipleshot = false);
+	void AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type = COLLIDER_NONE, int bullettype = 0, int speed_x = 0, int speed_y = 0, Uint32 delay = 0, bool multipleshot = false, int damage = 0);
 
 private:
 
@@ -68,6 +68,7 @@ public:
 
 	Particle double_shot;
 	Particle triple_shot;
+	Particle quad_shot;
 	Particle enemyshot;
 	Particle explosion;
 	Particle hitspark;

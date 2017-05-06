@@ -25,7 +25,7 @@ public:
 	fPoint distance;
 	iPoint distance1;
 	iPoint distance2;
-	uint hp;
+	int hp;
 	uint points;
 	int h;
 	int w;

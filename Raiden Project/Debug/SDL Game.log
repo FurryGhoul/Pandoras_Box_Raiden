@@ -1,4 +1,9 @@
-﻿  Tank.cpp
+﻿  Enemy.cpp
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+  Generating Code...
+  Compiling...
+  Tank.cpp
 c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
 c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
 c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\tank.cpp(128): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
@@ -10,56 +15,9 @@ c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\tank.cpp(138
 c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\tank.cpp(502): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\tank.cpp(503): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\tank.cpp(523): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  RedUp.cpp
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
-  PowerUp.cpp
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
-  Enemy.cpp
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
   ModuleEnemies.cpp
 c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
 c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
-  ModuleFadeToBlack.cpp
-  ModuleWelcomeScreen.cpp
-  ModuleMap2.cpp
-  ModuleMap1.cpp
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(149): warning C4018: '>=': signed/unsigned mismatch
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(156): warning C4018: '>=': signed/unsigned mismatch
-  ModuleWindow.cpp
-  ModuleTextures.cpp
-  ModuleStageClear1.cpp
-  ModuleRender.cpp
-  ModulePowerUps.cpp
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
-  ModulePlayer2.cpp
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(270): warning C4474: 'sprintf_s' : too many arguments passed for format string
-  c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(270): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(425): warning C4474: 'sprintf_s' : too many arguments passed for format string
-  c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(425): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(519): warning C4018: '>=': signed/unsigned mismatch
-  ModulePlayer.cpp
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(266): warning C4474: 'sprintf_s' : too many arguments passed for format string
-  c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(266): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(409): warning C4474: 'sprintf_s' : too many arguments passed for format string
-  c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(409): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(510): warning C4018: '>=': signed/unsigned mismatch
-  ModuleParticles.cpp
-  ModuleInput.cpp
-  ModuleFonts.cpp
-  ModuleCollision.cpp
-  Generating Code...
-  Compiling...
-  ModuleAudio_2.cpp
-  ModuleAudio_1.cpp
-  Medals.cpp
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
-  Main.cpp
-  Globals.cpp
   Enemy_Medium_Shooter.cpp
 c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
 c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
@@ -96,7 +54,6 @@ c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_
 c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(126): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(127): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(128): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Application.cpp
   Generating Code...
   SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
   SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

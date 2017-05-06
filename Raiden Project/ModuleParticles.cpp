@@ -48,6 +48,16 @@ bool ModuleParticles::Init()
 	triple_shot.size.x = 30;
 	triple_shot.size.y = 18;
 
+	// player quadriple shot particles
+	quad_shot.spriteshit = 0;
+	quad_shot.anim.PushBack({ 89, 100, 14, 6 });
+	quad_shot.anim.loop = true;
+	quad_shot.anim.speed = 1.0f;
+	quad_shot.life = 2100;
+	quad_shot.speed.y = -15;
+	quad_shot.size.x = 42;
+	quad_shot.size.y = 18;
+
 	//Enemy normal shot
 	enemyshot.spriteshit = 1;
 	enemyshot.anim.PushBack({ 22, 41, 6, 5});
@@ -144,7 +154,7 @@ update_status ModuleParticles::Update()
 	return UPDATE_CONTINUE;
 }
 
-void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type, int bullettype, int speed_x, int speed_y, Uint32 delay, bool multipleshot)
+void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type, int bullettype, int speed_x, int speed_y, Uint32 delay, bool multipleshot, int damage)
 {
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 	{
@@ -172,7 +182,7 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 
 			if (collider_type != COLLIDER_NONE)
 			{ 
-				p->collider = App->collision->AddCollider({ 59, 100, 18, 18 }, collider_type, this, bullettype);
+				p->collider = App->collision->AddCollider({ 59, 100, 18, 18 }, collider_type, this, bullettype, damage);
 			}
 			active[i] = p;
 			break;
