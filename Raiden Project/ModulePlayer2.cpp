@@ -466,6 +466,7 @@ update_status ModulePlayer2::Update()
 			if (score < 0)
 				score = 0;
 		}
+		
 	}
 
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);

@@ -14,11 +14,12 @@ private:
 
 	iPoint original_pos;
 	iPoint distance;
-	//Path movement;
+	Path movement;
 	//double param;
 	//double angle;
 
 public:
 	Medals(int x, int y);
+	void Move();
 };
 

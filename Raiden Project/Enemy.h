@@ -38,7 +38,7 @@ public:
 	int spriteshit;
 	int animations; // How much animations does the enemy have
 	bool bonusplane = false; // Bollean to detect if the enemy is a bonus plane and adapt the hitbox
-	bool medalplane = false; //Boolean to detect if the enemy rewards a medal when killed
+	bool medalbox = false; //Boolean to detect if the enemy rewards a medal when killed
 	bool lightshooter = false;
 	int left_right_mod = 0; // Integer to modify the position of the enemy
 public:

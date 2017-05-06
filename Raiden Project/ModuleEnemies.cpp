@@ -6,6 +6,7 @@
 #include "ModuleTextures.h"
 #include "Enemy.h"
 #include "Enemy_Light_Shooter.h"
+#include "Enemy_Medium_Shooter.h"
 #include "Enemy_Bonus_Ship.h"
 #include "Tank.h"
 #include "Turret.h"
@@ -27,8 +28,9 @@ bool ModuleEnemies::Init()
 {
 	// Create a prototype for each enemy available so we can copy them around
 	sprites = App->textures->Load("assets/Light Shooter.png");
-	sprites2 = App->textures->Load("assets/Bonus Ship.png"); 
-	sprites3 = App->textures->Load("assets/Tank.png"); 
+	sprites2 = App->textures->Load("assets/Bonus Ship.png");
+	sprites3 = App->textures->Load("assets/Tank.png");
+	sprites4 = App->textures->Load("assets/Medium Shooter");
 	return true;
 }
 
@@ -72,6 +74,10 @@ update_status ModuleEnemies::Update()
 		   if (enemies[i]->spriteshit == 2)
 		   {
 			   enemies[i]->Draw(sprites3);
+		   }
+		   if (enemies[i]->spriteshit == 3) //Medium Shooter
+		   {
+			   enemies[i]->Draw(sprites4);
 		   }
         }
 	return UPDATE_CONTINUE;
@@ -154,6 +160,10 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::TANK:
 			enemies[i] = new Tank(info.x, info.y, info._path);
+			break;
+		case ENEMY_TYPES::MEDIUM_SHOOTER:
+			enemies[i] = new Enemy_Medium_Shooter(info.x, info.y, info._path);
+			break;
 		}
 	}
 }
@@ -192,10 +202,11 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				else if (enemies[i]->bonusplane)
 				{
 					App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, enemies[i]->position.x, enemies[i]->position.y);
+					App->powerups->AddPowerUp(POWERUP_TYPES::MEDAL, enemies[i]->position.x, enemies[i]->position.y);
 				}
 
 				/*
-				else if (enemies[i]->medalplane)
+				else if (enemies[i]->medalbox)
 				{
 					App->powerups->AddPowerUp(POWERUP_TYPES::MEDAL, enemies[i]->position.x, enemies[i]->position.y);
 				}
