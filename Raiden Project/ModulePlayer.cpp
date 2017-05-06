@@ -451,6 +451,18 @@ update_status ModulePlayer::Update()
 			if (score < 0)
 				score = 0;
 		}
+		if (powerup_level == 4)
+		{
+			App->particles->AddParticle(App->particles->double_shot, position.x + speed + 15, position.y, COLLIDER_PLAYER_SHOT, 1);
+			App->particles->AddParticle(App->particles->double_shot, position.x + speed + 25, position.y, COLLIDER_PLAYER_SHOT, 1, 3, 0, 0, true);
+			App->particles->AddParticle(App->particles->double_shot, position.x + speed + 35, position.y, COLLIDER_PLAYER_SHOT, 1, 5, 0, 0, true);
+			App->particles->AddParticle(App->particles->double_shot, position.x + speed + 5, position.y, COLLIDER_PLAYER_SHOT, 1, -3, 0, 0, true);
+			App->particles->AddParticle(App->particles->double_shot, position.x + speed -15, position.y, COLLIDER_PLAYER_SHOT, 1, -5, 0, 0, true);
+		
+			score -= 40;
+			if (score < 0)
+				score = 0;
+		}
 
 	}
 
