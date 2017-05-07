@@ -18,7 +18,9 @@ private:
 	bool side = false;
 	bool movingsidetoside = false;
 	bool shooting = false;
+	bool _charge = false;
 	int shoot_time = 0;
+	int charge_time = 0;
 public:
 	Enemy_Bonus_Ship(int x, int y, int path);
 	void MoveShoot();
