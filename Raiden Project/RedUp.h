@@ -9,8 +9,6 @@ class RedUp : public PowerUp
 {
 private:
 	Animation idle1;
-	Animation idle2;
-	Animation idle3;
 
 	iPoint original_pos;
 	iPoint distance;

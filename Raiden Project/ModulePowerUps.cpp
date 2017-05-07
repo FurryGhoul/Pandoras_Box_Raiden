@@ -7,6 +7,7 @@
 #include "ModuleTextures.h"
 #include "PowerUp.h"
 #include "RedUp.h"
+#include "BlueUp.h"
 #include "Medals.h"
 #include "ModulePlayer.h"
 #include "ModulePlayer2.h"
@@ -134,6 +135,9 @@ void ModulePowerUps::SpawnPowerUp(const PowerUpInfo& info)
 		case POWERUP_TYPES::MEDAL:
 			powerups[i] = new Medals(info.x, info.y);
 			break;
+		case POWERUP_TYPES::BLUEUP:
+			powerups[i] = new BlueUp(info.x, info.y);
+			break;
 		}
 	}
 }
@@ -148,6 +152,7 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 			{
 				if (c1->bullettype == 10) //Collider RedUp
 				{
+					App->player->red = true;
 					if (App->player->powerup_level < MAX_POWERUP_LVL)
 					{
 						App->player->powerup_level++;
@@ -158,7 +163,19 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 						App->player->score += 100;
 					}
 				}
+				if (c1->bullettype == 15) // Collider BlueUp
+				{
+					App->player->red = false;
+					if (App->player->powerup_level < MAX_POWERUP_LVL)
+					{
+						App->player->powerup_level++;
+					}
 
+					else if (App->player->powerup_level >= MAX_POWERUP_LVL)
+					{
+						App->player->score += 100;
+					}
+				}
 				if (c1->bullettype == 12) //Collider Medal
 				{
 					App->player->score += 100;
@@ -166,8 +183,23 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 			}
 			if (c2->bullettype == 4) //Collider player 2
 			{
+				App->player2->red = true;
 				if (c1->bullettype == 10) //Collider RedUp
 				{
+					if (App->player2->powerup_level < MAX_POWERUP_LVL)
+					{
+						App->player2->powerup_level++;
+					}
+
+					else if (App->player2->powerup_level >= MAX_POWERUP_LVL)
+					{
+						App->player2->score += 100;
+					}
+				}
+
+				if (c1->bullettype == 15) // Collider BlueUp
+				{
+					App->player2->red = false;
 					if (App->player2->powerup_level < MAX_POWERUP_LVL)
 					{
 						App->player2->powerup_level++;
