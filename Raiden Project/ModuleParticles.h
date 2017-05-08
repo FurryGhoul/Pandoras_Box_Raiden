@@ -27,7 +27,7 @@ struct Particle
 	Uint32 bullettype = 0;
 	Uint32 born = 0;
 	Uint32 life = 0;
-	int spritesheet = 0; //What spriteshit does the shot belong to
+	int spritesheet = 0; //What spritesheet does the shot belong to
 	bool fx_played = false;
 
 	Particle();
@@ -74,6 +74,7 @@ public:
 	Particle explosion;
 	Particle hitspark;
 	Particle bomb;
+	Particle bombexplosion;
 };
 
 #endif // __MODULEPARTICLES_H__

@@ -106,6 +106,7 @@ bool ModuleParticles::Init()
 
 	//Bomb particles
 	bomb.spritesheet = 1;
+
 	bomb.anim.PushBack({ 365, 1252, 8, 16 });
 	bomb.anim.PushBack({ 374, 1252, 8, 16 });
 	bomb.anim.PushBack({ 365, 1252, 8, 16 });
@@ -130,11 +131,34 @@ bool ModuleParticles::Init()
 	bomb.anim.PushBack({ 419, 1252, 8, 16 });
 	bomb.anim.PushBack({ 428, 1252, 8, 16 });
 
-	bomb.speed.y = -3;
+	bomb.speed.y = -4;
 	bomb.anim.loop = false;
 	bomb.anim.speed = 0.5f;
 	bomb.size.x = 8 * 3;
 	bomb.size.y = 15 * 3;
+	bomb.life = 600;
+
+	//Bomb explosion particles
+	bombexplosion.spritesheet = 1;
+
+	bombexplosion.anim.PushBack({ 39, 848, 168, 154 });
+	bombexplosion.anim.PushBack({ 137, 832, 168, 154 });
+	//bombexplosion.anim.PushBack({ this sprite is wrong in the spritesheet, need to fix });
+	bombexplosion.anim.PushBack({ 450, 827, 168, 154 });
+	bombexplosion.anim.PushBack({ 17, 1003, 168, 154 });
+	bombexplosion.anim.PushBack({ 213, 1002, 168, 154 });
+	bombexplosion.anim.PushBack({ 26, 1208, 168, 154 });
+	bombexplosion.anim.PushBack({ 109, 1123, 168, 154 });
+	bombexplosion.anim.PushBack({ 220, 1173, 168, 154 });
+
+	bombexplosion.anim.PushBack({ 36, 633, 168, 154 });
+	bombexplosion.anim.PushBack({ 248, 634, 168, 154 });
+	bombexplosion.anim.PushBack({ 445, 635, 168, 154 });
+
+	bombexplosion.anim.loop = false;
+	bombexplosion.anim.speed = 0.1f;
+	bombexplosion.size.x = 168 * 3;
+	bombexplosion.size.y = 154 * 3;
 
 	return true;
 }
@@ -169,6 +193,11 @@ update_status ModuleParticles::Update()
 
 		if (p->Update() == false)
 		{
+			if (p->bullettype == 10)
+			{
+				AddParticle(bombexplosion, p->position.x, p->position.y);
+			}
+
 			delete p;
 			active[i] = nullptr;
 		}
@@ -331,7 +360,10 @@ bool Particle::Update()
 	if (life > 0)
 	{
 		if ((SDL_GetTicks() - born) > life)
+		{
 			ret = false;
+		}
+
 	}
 	else
 		if (anim.Finished())
