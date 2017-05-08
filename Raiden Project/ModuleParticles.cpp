@@ -103,39 +103,40 @@ bool ModuleParticles::Init()
 	hitspark.anim.speed = 0.8f;
 	hitspark.size.x = 18 * 3;
 	hitspark.size.y = 18 * 3;
-	return true;
 
 	//Bomb particles
 	bomb.spritesheet = 1;
-	bomb.anim.PushBack({ 365, 1252, 8, 15 });
+	bomb.anim.PushBack({ 365, 1252, 8, 16 });
 	bomb.anim.PushBack({ 374, 1252, 8, 16 });
-	bomb.anim.PushBack({ 365, 1252, 8, 15 });
+	bomb.anim.PushBack({ 365, 1252, 8, 16 });
 	bomb.anim.PushBack({ 374, 1252, 8, 16 });
-	bomb.anim.PushBack({ 365, 1252, 8, 15 });
+	bomb.anim.PushBack({ 365, 1252, 8, 16 });
 	bomb.anim.PushBack({ 374, 1252, 8, 16 });
-	bomb.anim.PushBack({ 365, 1252, 8, 15 });
+	bomb.anim.PushBack({ 365, 1252, 8, 16 });
 	bomb.anim.PushBack({ 374, 1252, 8, 16 });
 
-	bomb.anim.PushBack({ 383, 1252, 8, 12 });
-	bomb.anim.PushBack({ 392, 1252, 8, 13 });
-	bomb.anim.PushBack({ 383, 1252, 8, 12 });
-	bomb.anim.PushBack({ 392, 1252, 8, 13 });
+	bomb.anim.PushBack({ 383, 1252, 8, 16 });
+	bomb.anim.PushBack({ 392, 1252, 8, 16 });
+	bomb.anim.PushBack({ 383, 1252, 8, 16 });
+	bomb.anim.PushBack({ 392, 1252, 8, 16 });
 
-	bomb.anim.PushBack({ 401, 1252, 8, 8 });
-	bomb.anim.PushBack({ 410, 1252, 8, 9 });
-	bomb.anim.PushBack({ 401, 1252, 8, 8 });
-	bomb.anim.PushBack({ 410, 1252, 8, 9 });
+	bomb.anim.PushBack({ 401, 1252, 8, 16 });
+	bomb.anim.PushBack({ 410, 1252, 8, 16 });
+	bomb.anim.PushBack({ 401, 1252, 8, 16 });
+	bomb.anim.PushBack({ 410, 1252, 8, 16 });
 
-	bomb.anim.PushBack({ 419, 1252, 8, 6 });
-	bomb.anim.PushBack({ 428, 1252, 8, 6 });
-	bomb.anim.PushBack({ 419, 1252, 8, 6 });
-	bomb.anim.PushBack({ 428, 1252, 8, 6 });
+	bomb.anim.PushBack({ 419, 1252, 8, 16 });
+	bomb.anim.PushBack({ 428, 1252, 8, 16 });
+	bomb.anim.PushBack({ 419, 1252, 8, 16 });
+	bomb.anim.PushBack({ 428, 1252, 8, 16 });
 
-	bomb.speed.y = -5;
+	bomb.speed.y = -3;
 	bomb.anim.loop = false;
-	bomb.anim.speed = 0.8f;
+	bomb.anim.speed = 0.5f;
 	bomb.size.x = 8 * 3;
 	bomb.size.y = 15 * 3;
+
+	return true;
 }
 
 // Unload assets
