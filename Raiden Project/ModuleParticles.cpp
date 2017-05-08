@@ -140,7 +140,16 @@ update_status ModuleParticles::Update()
 		{
 			if (p->spriteshit == 0)
 			{ 
+			if ((p->collider->bullettype == 1 && (p->position.y > App->player->position.y)) || (p->collider->bullettype == 2 && (p->position.y > App->player2->position.y))) // If player shots are behind player, they don't appear
+			{
+				p->active = false;
+			}
+			else
+			{ 
+			p->active = true;
 			App->render->Blit(graphics, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()), p->size.x, p->size.y);
+			}
+
 			}
 			if (p->spriteshit == 1)
 			{
@@ -163,7 +172,9 @@ update_status ModuleParticles::Update()
 	return UPDATE_CONTINUE;
 }
 
-void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type, int bullettype, int speed_x, int speed_y, Uint32 delay, bool multipleshot, int damage)
+
+
+void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type, int bullettype, int speed_x, int speed_y, Uint32 delay, bool multipleshot, int damage, bool pactive)
 {
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 	{
@@ -175,6 +186,7 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 			p->position.y = y;
 			p->spriteshit = particle.spriteshit;
 			p->bullettype = bullettype;
+			p->active = pactive;
 			if (speed_x != 0)
 			{
 				p->speed.x = speed_x;
@@ -268,6 +280,7 @@ Particle::~Particle()
 
 bool Particle::Update()
 {
+
 	bool ret = true;
 
 	if (life > 0)
@@ -279,11 +292,16 @@ bool Particle::Update()
 		if (anim.Finished())
 			ret = false;
 
-	position.x += speed.x;
-	position.y += speed.y;
-
+	if (active)
+	{ 
 	if (collider != nullptr)
 		collider->SetPos(position.x, position.y);
-
+	}
+	else
+	{
+		collider->SetPos(10000, 1000);
+	}
+    position.x += speed.x;
+	position.y += speed.y;
 	return ret;
 }

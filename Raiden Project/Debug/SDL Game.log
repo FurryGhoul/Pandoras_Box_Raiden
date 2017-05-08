@@ -1,15 +1,5 @@
-﻿  ModulePlayer2.cpp
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(270): warning C4474: 'sprintf_s' : too many arguments passed for format string
-  c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(270): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(425): warning C4474: 'sprintf_s' : too many arguments passed for format string
-  c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(425): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(581): warning C4018: '>=': signed/unsigned mismatch
-  ModulePlayer.cpp
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(266): warning C4474: 'sprintf_s' : too many arguments passed for format string
-  c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(266): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(409): warning C4474: 'sprintf_s' : too many arguments passed for format string
-  c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(409): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(572): warning C4018: '>=': signed/unsigned mismatch
-  Generating Code...
+﻿  ModuleMap1.cpp
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(150): warning C4018: '>=': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(157): warning C4018: '>=': signed/unsigned mismatch
   SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
   SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

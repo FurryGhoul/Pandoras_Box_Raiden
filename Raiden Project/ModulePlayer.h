@@ -13,6 +13,9 @@ public:
 	ModulePlayer();
 	~ModulePlayer();
 
+
+	bool multiple_laser;
+	int howmuch_lasers;
 	bool Init();
 	update_status Update();
 	bool CleanUp();
