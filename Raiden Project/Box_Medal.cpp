@@ -20,7 +20,7 @@ Box_Medal::Box_Medal(int x, int y, int path) : Enemy(x, y)
 
 	collider = App->collision->AddCollider({ 0, 0, 27 * 3 - 5, 24 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
 
-	spriteshit = 4;
+	spritesheet = 4;
 	animations = 1;
 
 	original_pos.x = x;

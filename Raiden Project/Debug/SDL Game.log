@@ -1,5 +1,25 @@
-﻿  ModuleMap1.cpp
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(150): warning C4018: '>=': signed/unsigned mismatch
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(157): warning C4018: '>=': signed/unsigned mismatch
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+﻿  ModuleParticles.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Tank.cpp
+  RedUp.cpp
+  PowerUp.cpp
+  ModuleWelcomeScreen.cpp
+  ModuleStageClear1.cpp
+  ModulePowerUps.cpp
+  ModulePlayer2.cpp
+  ModulePlayer.cpp
+  ModuleMap2.cpp
+  ModuleMap1.cpp
+  ModuleInput.cpp
+  ModuleEnemies.cpp
+  Medals.cpp
+  Enemy_Medium_Shooter.cpp
+  Enemy_Light_Shooter.cpp
+  Enemy_Bonus_Ship.cpp
+  Enemy.cpp
+  Box_Medal.cpp
+  BlueUp.cpp
+  Application.cpp
+  SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

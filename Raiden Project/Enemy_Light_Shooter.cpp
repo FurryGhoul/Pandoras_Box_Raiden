@@ -55,7 +55,7 @@ Enemy_Light_Shooter::Enemy_Light_Shooter(int x, int y, int path) : Enemy(x, y)
 	}
 
 	collider = App->collision->AddCollider({ 0, 0, 24*3-5, 24*3+20 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
-	spriteshit = 0;
+	spritesheet = 0;
 	animations = 1;
 	original_pos.x = x;
 	original_pos.y = -50;

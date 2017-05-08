@@ -29,8 +29,9 @@ bool ModuleParticles::Init()
 	LOG("Loading particles");
 	graphics = App->textures->Load("Assets/Player1.png");
 	graphics1 = App->textures->Load("Assets/graphics2.png");
+
 	// player double shot particles
-	double_shot.spriteshit = 0;
+	double_shot.spritesheet = 0;
 	double_shot.anim.PushBack({ 59, 100, 6, 6 });
 	double_shot.anim.loop = false;
 	double_shot.anim.speed = 0.1f;
@@ -38,8 +39,9 @@ bool ModuleParticles::Init()
 	double_shot.speed.y = -15;
 	double_shot.size.x = 18;
 	double_shot.size.y = 18;
+
 	// player triple shot particles
-	triple_shot.spriteshit = 0;
+	triple_shot.spritesheet = 0;
 	triple_shot.anim.PushBack({ 74, 100, 10, 6 });
 	triple_shot.anim.loop = true;
 	triple_shot.anim.speed = 0.1f;
@@ -49,7 +51,7 @@ bool ModuleParticles::Init()
 	triple_shot.size.y = 18;
 
 	// player quadriple shot particles
-	quad_shot.spriteshit = 0;
+	quad_shot.spritesheet = 0;
 	quad_shot.anim.PushBack({ 89, 100, 14, 6 });
 	quad_shot.anim.loop = true;
 	quad_shot.anim.speed = 0.1f;
@@ -57,8 +59,9 @@ bool ModuleParticles::Init()
 	quad_shot.speed.y = -15;
 	quad_shot.size.x = 42;
 	quad_shot.size.y = 18;
+
 	// Player laser particles
-	laser.spriteshit = 0;
+	laser.spritesheet = 0;
 	laser.anim.PushBack({ 51, 89, 1, 16 });
 	laser.anim.loop = true;
 	laser.anim.speed = 0.1f;
@@ -68,7 +71,7 @@ bool ModuleParticles::Init()
 	laser.size.y = 48;
 
 	//Enemy normal shot
-	enemyshot.spriteshit = 1;
+	enemyshot.spritesheet = 1;
 	enemyshot.anim.PushBack({ 22, 41, 6, 5});
 	enemyshot.anim.loop = false;
 	enemyshot.anim.speed = 1.0f;
@@ -78,7 +81,7 @@ bool ModuleParticles::Init()
 	enemyshot.size.y = 18;
 	
 	//Explosion
-	explosion.spriteshit = 1;
+	explosion.spritesheet = 1;
 	explosion.anim.PushBack({ 26, 339, 10, 8 });
 	explosion.anim.PushBack({ 41, 337, 14, 12 });
 	explosion.anim.PushBack({ 88, 334, 20, 18});
@@ -91,7 +94,7 @@ bool ModuleParticles::Init()
 	explosion.size.y = 18 * 3;
 
 	//Hit spark
-	hitspark.spriteshit = 1;
+	hitspark.spritesheet = 1;
 	hitspark.anim.PushBack({ 547, 1308, 15, 19 });
 	hitspark.anim.PushBack({ 563, 1308, 15, 19 });
 	hitspark.anim.PushBack({ 580, 1308, 15, 19 });
@@ -101,6 +104,9 @@ bool ModuleParticles::Init()
 	hitspark.size.x = 18 * 3;
 	hitspark.size.y = 18 * 3;
 	return true;
+
+	//Bomb particles
+	bomb.spritesheet = 1;
 }
 
 // Unload assets
@@ -138,7 +144,7 @@ update_status ModuleParticles::Update()
 		}
 		else if (SDL_GetTicks() >= p->born)
 		{
-			if (p->spriteshit == 0)
+			if (p->spritesheet == 0)
 			{ 
 			if ((p->collider->bullettype == 1 && (p->position.y > App->player->position.y)) || (p->collider->bullettype == 2 && (p->position.y > App->player2->position.y))) // If player shots are behind player, they don't appear
 			{
@@ -151,7 +157,7 @@ update_status ModuleParticles::Update()
 			}
 
 			}
-			if (p->spriteshit == 1)
+			if (p->spritesheet == 1)
 			{
 			App->render->Blit(graphics1, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()), p->size.x, p->size.y);
 			}
@@ -184,7 +190,7 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 			p->born = SDL_GetTicks() + delay;
 			p->position.x = x;
 			p->position.y = y;
-			p->spriteshit = particle.spriteshit;
+			p->spritesheet = particle.spritesheet;
 			p->bullettype = bullettype;
 			p->active = pactive;
 			if (speed_x != 0)

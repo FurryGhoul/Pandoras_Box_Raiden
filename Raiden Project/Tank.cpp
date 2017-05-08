@@ -13,7 +13,7 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	hp = 3;
 	points = 130;
 
-	spriteshit = 2;
+	spritesheet = 2;
 	animations = 2;
 	// Tank animations
 	downup.PushBack({ 2, 4, 24, 26 }); // done

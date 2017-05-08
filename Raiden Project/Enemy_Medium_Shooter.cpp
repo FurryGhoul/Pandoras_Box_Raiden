@@ -34,7 +34,7 @@ Enemy_Medium_Shooter::Enemy_Medium_Shooter(int x, int y, int path) : Enemy(x, y)
 
 	mediumshooter = true;
 	collider = App->collision->AddCollider({ 0, 0, 73 * 3 - 110, 54 * 3 - 110 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
-	spriteshit = 3;
+	spritesheet = 3;
 	animations = 1;
 	original_pos.x = x;
 	original_pos.y = -50;

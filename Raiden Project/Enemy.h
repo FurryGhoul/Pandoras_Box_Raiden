@@ -35,7 +35,7 @@ public:
 	int w2;
 	int h3;
 	int w3;
-	int spriteshit;
+	int spritesheet;
 	int animations; // How much animations does the enemy have
 	bool bonusplane = false; // Bollean to detect if the enemy is a bonus plane and adapt the hitbox and drop a powerup
 	bool medalbox = false; //Boolean to detect if the enemy rewards a medal when killed

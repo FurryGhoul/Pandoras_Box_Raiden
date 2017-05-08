@@ -65,23 +65,23 @@ update_status ModuleEnemies::Update()
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
 		if (enemies[i] != nullptr) 
 		{ 
-		   if (enemies[i]->spriteshit == 0)
+		   if (enemies[i]->spritesheet == 0)
 		   {
 		       enemies[i]->Draw(sprites);
 		   }
-		   if (enemies[i]->spriteshit == 1)
+		   if (enemies[i]->spritesheet == 1)
 		   {
 			   enemies[i]->Draw(sprites2);
 		   }
-		   if (enemies[i]->spriteshit == 2)
+		   if (enemies[i]->spritesheet == 2)
 		   {
 			   enemies[i]->Draw(sprites3);
 		   }
-		   if (enemies[i]->spriteshit == 3) //Medium Shooter
+		   if (enemies[i]->spritesheet == 3) //Medium Shooter
 		   {
 			   enemies[i]->Draw(sprites4);
 		   }
-		   if (enemies[i]->spriteshit == 4) //Box_Medal
+		   if (enemies[i]->spritesheet == 4) //Box_Medal
 		   {
 			   enemies[i]->Draw(sprites5);
 		   }
