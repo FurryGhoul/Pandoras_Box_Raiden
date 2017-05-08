@@ -149,11 +149,20 @@ update_status ModuleParticles::Update()
 			if ((p->collider->bullettype == 1 && (p->position.y > App->player->position.y)) || (p->collider->bullettype == 2 && (p->position.y  > App->player2->position.y))) // If player shots are behind player, they don't appear
 			{
 				p->active = false;
+				if (p->collider->bullettype == 1)
+				{
+					p->position.x = App->player->position.x + 30;
+				}
+				if (p->collider->bullettype == 2)
+				{
+					p->position.x = App->player2->position.x + 30;
+				}
 			}
+
 			else
 			{ 
-			p->active = true;
-			App->render->Blit(graphics, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()), p->size.x, p->size.y);
+			  p->active = true;
+			  App->render->Blit(graphics, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()), p->size.x, p->size.y);
 			}
 
 			}
