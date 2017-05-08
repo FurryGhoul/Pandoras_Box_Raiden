@@ -1,11 +1,110 @@
-<<<<<<< HEAD
-﻿  ModuleMap1.cpp
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(153): warning C4018: '>=': signed/unsigned mismatch
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(160): warning C4018: '>=': signed/unsigned mismatch
-  SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
-  SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
-=======
-﻿  ModuleParticles.cpp
+﻿  Tank.cpp
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\tank.cpp(128): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\tank.cpp(129): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\tank.cpp(131): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\tank.cpp(132): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\tank.cpp(137): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\tank.cpp(138): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\tank.cpp(502): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\tank.cpp(503): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\tank.cpp(523): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  RedUp.cpp
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\redup.cpp(13): warning C4305: '=': truncation from 'double' to 'float'
+  PowerUp.cpp
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+  Enemy.cpp
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+  ModuleEnemies.cpp
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+  ModuleFadeToBlack.cpp
+  ModuleWelcomeScreen.cpp
+  ModuleMap2.cpp
+  ModuleMap1.cpp
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(150): warning C4018: '>=': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(157): warning C4018: '>=': signed/unsigned mismatch
+  ModuleWindow.cpp
+  ModuleTextures.cpp
+  ModuleStageClear1.cpp
+  ModuleRender.cpp
+  ModulePowerUps.cpp
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+  ModulePlayer2.cpp
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(270): warning C4474: 'sprintf_s' : too many arguments passed for format string
+  c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(270): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(425): warning C4474: 'sprintf_s' : too many arguments passed for format string
+  c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(425): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(547): warning C4018: '>=': signed/unsigned mismatch
+  ModulePlayer.cpp
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(266): warning C4474: 'sprintf_s' : too many arguments passed for format string
+  c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(266): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(409): warning C4474: 'sprintf_s' : too many arguments passed for format string
+  c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(409): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(572): warning C4018: '>=': signed/unsigned mismatch
+  ModuleParticles.cpp
+  ModuleInput.cpp
+  ModuleFonts.cpp
+  ModuleCollision.cpp
+  Generating Code...
+  Compiling...
+  ModuleAudio_2.cpp
+  ModuleAudio_1.cpp
+  Medals.cpp
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+  Main.cpp
+  Globals.cpp
+  Enemy_Medium_Shooter.cpp
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(59): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(64): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(65): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(73): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(74): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(91): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Enemy_Light_Shooter.cpp
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(76): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(77): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(79): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(80): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(85): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(86): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(264): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(265): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(282): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Enemy_Bonus_Ship.cpp
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(69): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(70): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(72): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(73): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(78): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(79): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(133): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(134): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(135): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  BlueUp.cpp
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\blueup.cpp(13): warning C4305: '=': truncation from 'double' to 'float'
+  Box_Medal.cpp
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+  Application.cpp
+  Generating Code...
   SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
   SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
->>>>>>> origin/master
