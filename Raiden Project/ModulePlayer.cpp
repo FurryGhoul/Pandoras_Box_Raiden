@@ -415,6 +415,10 @@ update_status ModulePlayer::Update()
 		App->fonts->BlitText(20, 195, 0, scoret);
 	}
 	
+	if (App->input->keyboard[SDL_SCANCODE_B] == KEY_STATE::KEY_DOWN)
+	{
+		App->particles->AddParticle(App->particles->bomb, position.x + speed + 20, position.y);
+	}
 
 	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
 	{
