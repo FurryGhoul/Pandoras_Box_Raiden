@@ -589,6 +589,7 @@ void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 		Player->SetPos(10000000, 10000000);
 		deadplayer = true;
 		allowhiscore = true;
+		red = true;
 		powerup_level = 0;
 	}
 	
@@ -603,6 +604,7 @@ void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 		App->enemies->EraseEnemies();
 		App->powerups->ErasePowerUps();
 		deadplayer = false;
+		red = true;
 		powerup_level = 0;
 	}
 }
