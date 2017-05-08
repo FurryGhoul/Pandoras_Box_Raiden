@@ -191,7 +191,7 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 
 			if (collider_type != COLLIDER_NONE)
 			{ 
-				p->collider = App->collision->AddCollider({ 59, 100, 18, 18 }, collider_type, this, bullettype, damage);
+				p->collider = App->collision->AddCollider({ 59, 100, p->size.x, p->size.y}, collider_type, this, bullettype, damage);
 			}
 			active[i] = p;
 			break;
