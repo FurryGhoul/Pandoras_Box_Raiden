@@ -1,7 +1,7 @@
 #ifndef __ModuleCollision_H__
 #define __ModuleCollision_H__
 
-#define MAX_COLLIDERS 50
+#define MAX_COLLIDERS 10000
 
 #include "Module.h"
 
@@ -42,7 +42,7 @@ struct Collider
 
 	void SetPos(int x, int y)
 	{
-		rect.x = x;
+ 		rect.x = x;
 		rect.y = y;
 	}
 

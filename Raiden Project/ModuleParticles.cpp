@@ -140,7 +140,7 @@ update_status ModuleParticles::Update()
 		{
 			if (p->spriteshit == 0)
 			{ 
-			if ((p->collider->bullettype == 1 && (p->position.y > App->player->position.y)) || (p->collider->bullettype == 2 && (p->position.y > App->player2->position.y))) // If player shots are behind player, they don't appear
+			if ((p->collider->bullettype == 1 && (p->position.y > App->player->position.y)) || (p->collider->bullettype == 2 && (p->position.y  > App->player2->position.y))) // If player shots are behind player, they don't appear
 			{
 				p->active = false;
 			}
