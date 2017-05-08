@@ -11,6 +11,7 @@
 #include "Tank.h"
 #include "Turret.h"
 #include "ModulePowerUps.h"
+#include "Box_Medal.h"
 #define SPAWN_MARGIN 50
 
 ModuleEnemies::ModuleEnemies()
@@ -30,7 +31,8 @@ bool ModuleEnemies::Init()
 	sprites = App->textures->Load("assets/Light Shooter.png");
 	sprites2 = App->textures->Load("assets/Bonus Ship.png");
 	sprites3 = App->textures->Load("assets/Tank.png");
-	sprites4 = App->textures->Load("assets/Medium Shooter");
+	sprites4 = App->textures->Load("assets/Medium Shooter.png");
+	sprites5 = App->textures->Load("assets/Boxes.png");
 	return true;
 }
 
@@ -78,6 +80,10 @@ update_status ModuleEnemies::Update()
 		   if (enemies[i]->spriteshit == 3) //Medium Shooter
 		   {
 			   enemies[i]->Draw(sprites4);
+		   }
+		   if (enemies[i]->spriteshit == 4) //Box_Medal
+		   {
+			   enemies[i]->Draw(sprites5);
 		   }
         }
 	return UPDATE_CONTINUE;
@@ -164,6 +170,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		case ENEMY_TYPES::MEDIUM_SHOOTER:
 			enemies[i] = new Enemy_Medium_Shooter(info.x, info.y, info._path);
 			break;
+		case ENEMY_TYPES::BOX_MEDAL:
+			enemies[i] = new Box_Medal(info.x, info.y, info._path);
+			break;
 		}
 	}
 }
@@ -208,15 +217,14 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				else if (enemies[i]->bonusplane)
 				{
 					App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, enemies[i]->position.x, enemies[i]->position.y);
-					App->powerups->AddPowerUp(POWERUP_TYPES::MEDAL, enemies[i]->position.x, enemies[i]->position.y);
 				}
 
-				/*
+				
 				else if (enemies[i]->medalbox)
 				{
 					App->powerups->AddPowerUp(POWERUP_TYPES::MEDAL, enemies[i]->position.x, enemies[i]->position.y);
 				}
-				*/
+				
 
 				delete enemies[i];
 				enemies[i] = nullptr;

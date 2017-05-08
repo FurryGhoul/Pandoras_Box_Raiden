@@ -30,6 +30,7 @@
     <ClCompile Include="ModuleFonts.cpp" />
     <ClCompile Include="Medals.cpp" />
     <ClCompile Include="Enemy_Medium_Shooter.cpp" />
+    <ClCompile Include="Box_Medal.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
@@ -66,6 +67,7 @@
     <ClInclude Include="ModuleFonts.h" />
     <ClInclude Include="Medals.h" />
     <ClInclude Include="Enemy_Medium_Shooter.h" />
+    <ClInclude Include="Box_Medal.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SDL3 Handout.rc" />

@@ -13,36 +13,27 @@ Enemy_Medium_Shooter::Enemy_Medium_Shooter(int x, int y, int path) : Enemy(x, y)
 {
 	hp = 17;
 	points = 480;
-	lightshooter = false;
+	
 	// Anmiation pushback's
 
-	//Standing animation
-	flys.PushBack({ 8, 47, 73, 54 });
-	flyse1.PushBack({ 86, 47, 73, 53 });
-	flyse2.PushBack({ 164, 47, 73, 54 });
-	flyse3.PushBack({ 242, 47, 73, 53 });
+	// Idle animation
+	/*flyi.PushBack({ 8, 47, 73, 54 });
+	flyi1.PushBack({ 86, 47, 73, 53 });
+	flyi2.PushBack({ 164, 47, 73, 54 });
+	flyi3.PushBack({ 242, 47, 73, 53 });*/
 
 	// Shooting animation
-	flye.PushBack({ 8, 109, 73, 54 });
-	flyne1.PushBack({ 86, 109, 73, 52 });
-	flyne2.PushBack({ 164, 109, 73, 54 });
-	flyne3.PushBack({ 242, 109, 73, 52 });
+	flys.PushBack({ 8, 109, 73, 54 });
+	flys1.PushBack({ 86, 109, 73, 52 });
+	flys2.PushBack({ 164, 109, 73, 54 });
+	flys3.PushBack({ 242, 109, 73, 52 });
 
-	if (path == 0)
-	{
-		movement.PushBack({ -0.2f, 8.0f }, 50);
-		movement.PushBack({ 0.0f, 0.0f }, 100);
-		movement.PushBack({ -0.2f, -5.0f }, 600);
-	}
+	movement.PushBack({ -0.2f, 8.0f }, 50);
+	movement.PushBack({ 0.0f, 0.0f }, 100);
+	movement.PushBack({ -0.2f, -5.0f }, 600);
 
-	if (path == 1)
-	{
-		movement.PushBack({ -0.2f, 8.0f }, 40);
-		movement.PushBack({ 0.0f, 0.0f }, 100);
-		movement.PushBack({ -0.2f, -5.0f }, 600);
-	}
-
-	collider = App->collision->AddCollider({ 0, 0, 35 * 3 - 5, 30 * 3 + 20 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
+	mediumshooter = true;
+	collider = App->collision->AddCollider({ 0, 0, 73 * 3 - 110, 54 * 3 - 110 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 	spriteshit = 3;
 	animations = 1;
 	original_pos.x = x;
@@ -75,179 +66,9 @@ void Enemy_Medium_Shooter::MoveShoot()
 	}
 	// Animation
 
-	// Setting angle
-	param = (fabs(distance.y) / (fabs(distance.x) + 0.1));
-	angle = atan(param) * 180 / PI;
-
-	// South-East position
-	if (distance.y > 0 && distance.x > 0)
-	{
-		se = true;
-	}
-	else
-	{
-		se = false;
-	}
-
-	// South-West position
-	if (distance.y > 0 && distance.x < 0)
-	{
-		sw = true;
-	}
-	else
-	{
-		sw = false;
-	}
-
-	// North-East position
-	if (distance.y < 0 && distance.x > 0)
-	{
-		ne = true;
-	}
-	else
-	{
-		ne = false;
-	}
-
-	// North-West position
-	if (distance.y < 0 && distance.x < 0)
-	{
-		nw = true;
-	}
-	else
-	{
-		nw = false;
-	}
-
-	// Applying animation
-
-	// South to East
-	if (se && angle > 72 && angle < 90)
-	{
-		animation = &flys;
-		w = 22 * 3;
-		h = 30 * 3;
-	}
-	if (se && angle > 54 && angle < 72)
-	{
-		animation = &flyse1;
-		w = 25 * 3;
-		h = 30 * 3;
-	}
-	if (se && angle > 36 && angle < 54)
-	{
-		animation = &flyse2;
-		w = 27 * 3;
-		h = 25 * 3;
-	}
-	if (se && angle > 18 && angle < 36)
-	{
-		animation = &flyse3;
-		w = 31 * 3;
-		h = 23 * 3;
-	}
-	if (se && angle > 0 && angle < 18)
-	{
-		animation = &flye;
-		w = 32 * 3;
-		h = 30 * 3;
-	}
-
-	// East to North
-	if (ne && angle > 0 && angle < 18)
-	{
-		animation = &flye;
-		w = 32 * 3;
-		h = 30 * 3;
-	}
-	if (ne && angle > 18 && angle < 36)
-	{
-		animation = &flyne1;
-		w = 31 * 3;
-		h = 23 * 3;
-	}
-	if (ne && angle > 36 && angle < 54)
-	{
-		animation = &flyne2;
-		w = 27 * 3;
-		h = 26 * 3;
-	}
-	if (ne && angle > 54 && angle < 72)
-	{
-		animation = &flyne3;
-		w = 25 * 3;
-		h = 30 * 3;
-	}
-	if (ne && angle > 72 && angle < 90)
-	{
-		animation = &flyn;
-		w = 22 * 3;
-		h = 30 * 3;
-	}
-
-	// North to West
-	if (nw && angle > 72 && angle < 90)
-	{
-		animation = &flyn;
-		w = 22 * 3;
-		h = 30 * 3;
-	}
-	if (nw && angle > 54 && angle < 72)
-	{
-		animation = &flynw1;
-		w = 25 * 3;
-		h = 30 * 3;
-	}
-	if (nw && angle > 36 && angle < 54)
-	{
-		animation = &flynw2;
-		w = 27 * 3;
-		h = 25 * 3;
-	}
-	if (nw && angle > 18 && angle < 36)
-	{
-		animation = &flynw3;
-		w = 31 * 3;
-		h = 23 * 3;
-	}
-	if (nw && angle > 0 && angle < 18)
-	{
-		animation = &flyw;
-		w = 32 * 3;
-		h = 28 * 3;
-	}
-
-	// West to South
-	if (sw && angle > 0 && angle < 18)
-	{
-		animation = &flyw;
-		w = 32 * 3;
-		h = 28 * 3;
-	}
-	if (sw && angle > 18 && angle < 36)
-	{
-		animation = &flysw1;
-		w = 31 * 3;
-		h = 23 * 3;
-	}
-	if (sw && angle > 36 && angle < 54)
-	{
-		animation = &flysw2;
-		w = 27 * 3;
-		h = 26 * 3;
-	}
-	if (sw && angle > 54 && angle < 72)
-	{
-		animation = &flysw3;
-		w = 24 * 3;
-		h = 30 * 3;
-	}
-	if (sw && angle > 72 && angle < 90)
-	{
-		animation = &flys;
-		w = 22 * 3;
-		h = 30 * 3;
-	}
+	animation = &flys;
+	w = 73 * 3;
+	h = 53 * 3;
 
 	distance.x = fabs(distance.x);
 	distance.y = fabs(distance.y);

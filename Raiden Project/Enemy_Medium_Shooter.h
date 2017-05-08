@@ -3,22 +3,15 @@
 class Enemy_Medium_Shooter : public Enemy
 {
 private:
+	Animation flyi;
+	Animation flyi1;
+	Animation flyi2;
+	Animation flyi3;
 	Animation flys;
-	Animation flyn;
-	Animation flye;
-	Animation flyw;
-	Animation flyse1;
-	Animation flyne1;
-	Animation flysw1;
-	Animation flynw1;
-	Animation flyse2;
-	Animation flyne2;
-	Animation flysw2;
-	Animation flynw2;
-	Animation flyse3;
-	Animation flyne3;
-	Animation flysw3;
-	Animation flynw3;
+	Animation flys1;
+	Animation flys2;
+	Animation flys3;
+	
 	iPoint original_pos;
 	Path movement;
 	Path movement1;
