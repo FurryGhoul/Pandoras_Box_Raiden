@@ -65,7 +65,7 @@ private:
 	Particle* active[MAX_ACTIVE_PARTICLES];
 
 public:
-
+	Particle laser;
 	Particle double_shot;
 	Particle triple_shot;
 	Particle quad_shot;

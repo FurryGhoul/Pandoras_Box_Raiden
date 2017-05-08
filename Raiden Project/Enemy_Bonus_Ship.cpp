@@ -18,7 +18,7 @@ Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y, int path) : Enemy (x, y)
 
 	stop.PushBack({ 67, 23, 59, 54 });
 	stop.PushBack({ 262, 23, 59, 54 });
-	stop.speed = 2.0f;
+	stop.speed = 1.0f;
 	stop.loop = false;
 
 	flysides.PushBack({ 131, 23, 59, 54 });
@@ -36,8 +36,9 @@ Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y, int path) : Enemy (x, y)
 	charge.PushBack({ 326, 23, 59, 54 });
 	charge.PushBack({ 392, 23, 59, 54 });
 	charge.PushBack({ 457, 23, 59, 54 });
-	charge.speed = 2.0f;
-	charge.loop = true;
+	charge.PushBack({ 262, 23, 59, 54 }); 
+	charge.speed = 0.1f;
+	charge.loop = false;
 
 	movement.PushBack({ 0.0f, 1.0f }, 300);
 	movingsidetoside = true;
@@ -54,13 +55,13 @@ Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y, int path) : Enemy (x, y)
 
 	collider = App->collision->AddCollider({ 0, 0, 60, 60 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 	spriteshit = 1;
-	animations = 2;
+	animations = 3;
 	original_pos.x = x;
 	original_pos.y = - 200;
 	original_pos1.x = original_pos.x + 47;
 	original_pos1.y = original_pos.y - 36;
-	/*original_pos2.x = x + 4;
-	original_pos2.y = -200;*/
+	original_pos2.x = x + 4;
+	original_pos2.y = -200;
 }
 
 void Enemy_Bonus_Ship::MoveShoot()
@@ -90,27 +91,33 @@ void Enemy_Bonus_Ship::MoveShoot()
 	h = 54 * 3;
 	w1 = 32 * 3;
 	h1 = 14 * 3;
-	/*w2 = 59 * 3;
-	h2 = 54 * 3;*/
+	w2 = 59 * 3;
+	h2 = 54 * 3;
 
 	++shoot_time;
+	++charge_time;
 
 	if (position.x < 410 || position.x > 410)
 	{
 		animation = &flysides;
 		animation1 = &none;
-		//animation2 = &charge;
+		if (charge_time % 190 == 0) 
+		{
+			animation2 = &charge;
+			charge.Reset();
+			charge_time = 0;
+		}
 		side = true;
 	}
 	if (position.y > 70 && side == false)
 	{
 		animation = &stop;
 		animation1 = &none;
-		//animation2 = &none;
+		animation2 = &none;
 	}
 	if (position.y <= 70)
 	{
-		//animation2 = &none;
+		animation2 = &none;
 		animation1 = &propeller;
 		animation = &flydown;
 	}

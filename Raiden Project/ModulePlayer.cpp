@@ -418,6 +418,9 @@ update_status ModulePlayer::Update()
 
 	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
 	{
+
+	if (red == true)
+	{ 
 		if (powerup_level == 0)
 		{
 			App->particles->AddParticle(App->particles->double_shot, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1);
@@ -487,6 +490,41 @@ update_status ModulePlayer::Update()
 			if (score < 0)
 				score = 0;
 		}
+	}
+	if (red == false)
+	{
+		if (powerup_level == 1)
+		{
+			App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1);
+			score -= 40;
+			if (score < 0)
+				score = 0;
+		}
+		if (powerup_level == 2)
+		{
+			
+		}
+		if (powerup_level == 3)
+		{
+			
+		}
+		if (powerup_level == 4)
+		{
+		
+		}
+		if (powerup_level == 5)
+		{
+			
+		}
+		if (powerup_level == 6)
+		{
+			
+		}
+		if (powerup_level == 7)
+		{
+			
+		}
+	}
 
 	}
 

@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 ﻿  ModuleMap1.cpp
 c:\users\almac\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(153): warning C4018: '>=': signed/unsigned mismatch
 c:\users\almac\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(160): warning C4018: '>=': signed/unsigned mismatch
   SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
   SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+=======
+﻿  ModuleParticles.cpp
+  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+>>>>>>> origin/master

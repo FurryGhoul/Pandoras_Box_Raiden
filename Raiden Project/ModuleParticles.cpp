@@ -32,8 +32,8 @@ bool ModuleParticles::Init()
 	// player double shot particles
 	double_shot.spriteshit = 0;
 	double_shot.anim.PushBack({ 59, 100, 6, 6 });
-	double_shot.anim.loop = true;
-	double_shot.anim.speed = 1.0f;
+	double_shot.anim.loop = false;
+	double_shot.anim.speed = 0.1f;
 	double_shot.life = 2100;
 	double_shot.speed.y = -15;
 	double_shot.size.x = 18;
@@ -42,7 +42,7 @@ bool ModuleParticles::Init()
 	triple_shot.spriteshit = 0;
 	triple_shot.anim.PushBack({ 74, 100, 10, 6 });
 	triple_shot.anim.loop = true;
-	triple_shot.anim.speed = 1.0f;
+	triple_shot.anim.speed = 0.1f;
 	triple_shot.life = 2100;
 	triple_shot.speed.y = -15;
 	triple_shot.size.x = 30;
@@ -52,11 +52,20 @@ bool ModuleParticles::Init()
 	quad_shot.spriteshit = 0;
 	quad_shot.anim.PushBack({ 89, 100, 14, 6 });
 	quad_shot.anim.loop = true;
-	quad_shot.anim.speed = 1.0f;
+	quad_shot.anim.speed = 0.1f;
 	quad_shot.life = 2100;
 	quad_shot.speed.y = -15;
 	quad_shot.size.x = 42;
 	quad_shot.size.y = 18;
+	// Player laser particles
+	laser.spriteshit = 0;
+	laser.anim.PushBack({ 51, 89, 1, 16 });
+	laser.anim.loop = true;
+	laser.anim.speed = 0.1f;
+	laser.life = 2100;
+	laser.speed.y = -15;
+	laser.size.x = 6;
+	laser.size.y = 48;
 
 	//Enemy normal shot
 	enemyshot.spriteshit = 1;

@@ -1,14 +1,10 @@
 #pragma once
 #include "PowerUp.h"
-#include "Application.h"
-#include "ModulePlayer.h"
-#include "ModuleCollision.h"
-#include "ModuleParticles.h"
-
-class RedUp : public PowerUp
+class BlueUp : public PowerUp
 {
 private:
 	Animation idle1;
+
 
 	iPoint original_pos;
 	iPoint distance;
@@ -17,7 +13,9 @@ private:
 	double angle;
 
 public:
-	RedUp(int x, int y);
+	BlueUp(int x, int y);
 	void Move();
 };
+
+
 

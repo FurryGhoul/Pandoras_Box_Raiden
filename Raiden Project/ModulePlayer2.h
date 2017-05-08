@@ -51,21 +51,25 @@ public:
 	uint hiscore = 0;
 	uint lastscore = 0;
 	int score = 0;
+	// Animation
 	bool ideling = false;
 	bool allowtime = true;
 	bool allowtimep = true;
-	bool propeller = true;
-	int player_w;
-	int player_h;
 	bool moving = false;
-	bool godmode = false;
-	bool deadplayer = false;
-	bool allowhiscore = true;
+	bool propeller = true;
 	Uint32 time;
 	Uint32 timep; //time for propellers
+
+	int player_w;
+	int player_h;
+	bool godmode = false; // To know if the godmode is on or not
+	bool deadplayer = false; // To know if player is dead or not
+	bool allowhiscore = true;
+
 	Collider* Player = nullptr;
 	Collider* Playergod = nullptr;
-	int powerup_level = 0;
+	int powerup_level = 0; // To know which level is the powerup at
+	bool red = true; //To know if the powerup is blue or red
 
 };
 
