@@ -96,6 +96,7 @@ private:
 
 public:
 	Particle laser;
+	Particle laser2;
 	Particle double_shot;
 	Particle triple_shot;
 	Particle quad_shot;
