@@ -517,6 +517,18 @@ void ModuleParticles::MoveParticlesRight(bool right)
 		}
 	}
 }
+void ModuleParticles::EraseParticles()
+{
+	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
+	{
+		if (active[i] != nullptr)
+		{
+			delete active[i];
+			active[i] = nullptr;
+		}
+	}
+
+}
 Particle::Particle()
 {
 	position.SetToZero();
@@ -567,3 +579,4 @@ bool Particle::Update()
 	position.y += speed.y;
 	return ret;
 }
+

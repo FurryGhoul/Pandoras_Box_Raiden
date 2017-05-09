@@ -36,7 +36,6 @@ update_status ModuleStageClear1::Update()
 		App->particles->Disable();
 		App->player->Disable();
 		App->player2->Disable();
-
 		App->collision->Disable();
 	}
 	App->render->Blit(StageClear1, 0, 0, &ground);

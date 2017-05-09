@@ -642,11 +642,14 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		App->enemies->Disable();
 		App->powerups->Disable();
 		App->collision->Disable();
+		App->particles->Disable();
 		App->player2->deadplayer = false;
 		deadplayer = false;
-		App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
 		App->enemies->EraseEnemies();
 		App->powerups->ErasePowerUps();
+		App->particles->EraseParticles();
+
+		App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
 		powerup_level = 0;
 		red = true;
 	}
