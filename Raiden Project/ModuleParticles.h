@@ -8,6 +8,8 @@
 #include "ModuleCollision.h"
 #include "ModulePlayer.h"
 #include "ModulePlayer2.h"
+#include <time.h>
+#include <stdlib.h>
 
 #define MAX_ACTIVE_PARTICLES 10000
 
@@ -21,6 +23,7 @@ struct Particle
 	Animation anim;
 	uint fx = 0;
 	iPoint position;
+	iPoint initialpos;
 	iPoint speed;
 	iPoint size;
 	bool active = true; // if active is true, particles have collider, if it is false they don't
@@ -43,6 +46,32 @@ struct Particle
 	void AddPointsP2()
 	{
 		App->player2->score += 60;
+	}
+
+	void displace() //Displaces the particle
+	{
+		if (position.x == initialpos.x)
+		{
+			position.x += rand() % 2 + 5;
+			position.y += rand() % 2 + 5;
+		}
+
+		else if (position.x >= initialpos.x)
+		{
+			position.x -= rand() % 5 + 5;
+			position.y -= rand() % 5 + 5;
+		}
+
+		else if (position.x <= initialpos.x)
+		{
+			position.x += rand() % 5 + 5;
+			position.y += rand() % 5 + 5;
+		}
+
+		if (collider != nullptr)
+		{
+			collider->SetPos(position.x, position.y);
+		}
 	}
 };
 
@@ -75,6 +104,7 @@ public:
 	Particle hitspark;
 	Particle bomb;
 	Particle bombexplosion;
+	Particle bombexplosion2;
 };
 
 #endif // __MODULEPARTICLES_H__

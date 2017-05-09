@@ -12,6 +12,8 @@
 #include "ModuleMap1.h"
 #include "ModuleMap2.h"
 #include "ModuleStageClear1.h"
+#include <stdlib.h>
+#include <time.h>
 
 ModuleParticles::ModuleParticles()
 {
@@ -26,6 +28,8 @@ ModuleParticles::~ModuleParticles()
 bool ModuleParticles::Init()
 {
 	
+	srand(time(NULL));
+
 	LOG("Loading particles");
 	graphics = App->textures->Load("Assets/Player1.png");
 	graphics1 = App->textures->Load("Assets/graphics2.png");
@@ -95,41 +99,41 @@ bool ModuleParticles::Init()
 
 	//Hit spark
 	hitspark.spritesheet = 1;
-	hitspark.anim.PushBack({ 547, 1308, 15, 19 });
-	hitspark.anim.PushBack({ 563, 1308, 15, 19 });
-	hitspark.anim.PushBack({ 580, 1308, 15, 19 });
-	hitspark.anim.PushBack({ 596, 1308, 16, 20 });
+	hitspark.anim.PushBack({ 408, 41, 12, 12 });
+	hitspark.anim.PushBack({ 424, 41, 12, 12 });
+	hitspark.anim.PushBack({ 441, 37, 12, 12 });
+	hitspark.anim.PushBack({ 457, 35, 12, 12 });
 	hitspark.anim.loop = false;
 	hitspark.anim.speed = 0.8f;
-	hitspark.size.x = 18 * 3;
-	hitspark.size.y = 18 * 3;
+	hitspark.size.x = 12 * 3;
+	hitspark.size.y = 12 * 3;
 
 	//Bomb particles
 	bomb.spritesheet = 1;
 
-	bomb.anim.PushBack({ 365, 1252, 8, 16 });
-	bomb.anim.PushBack({ 374, 1252, 8, 16 });
-	bomb.anim.PushBack({ 365, 1252, 8, 16 });
-	bomb.anim.PushBack({ 374, 1252, 8, 16 });
-	bomb.anim.PushBack({ 365, 1252, 8, 16 });
-	bomb.anim.PushBack({ 374, 1252, 8, 16 });
-	bomb.anim.PushBack({ 365, 1252, 8, 16 });
-	bomb.anim.PushBack({ 374, 1252, 8, 16 });
+	bomb.anim.PushBack({ 395, 136, 8, 16 });
+	bomb.anim.PushBack({ 404, 136, 8, 16 });
+	bomb.anim.PushBack({ 395, 136, 8, 16 });
+	bomb.anim.PushBack({ 404, 136, 8, 16 });
+	bomb.anim.PushBack({ 395, 136, 8, 16 });
+	bomb.anim.PushBack({ 404, 136, 8, 16 });
+	bomb.anim.PushBack({ 395, 136, 8, 16 });
+	bomb.anim.PushBack({ 404, 136, 8, 16 });
 
-	bomb.anim.PushBack({ 383, 1252, 8, 16 });
-	bomb.anim.PushBack({ 392, 1252, 8, 16 });
-	bomb.anim.PushBack({ 383, 1252, 8, 16 });
-	bomb.anim.PushBack({ 392, 1252, 8, 16 });
+	bomb.anim.PushBack({ 413, 136, 8, 16 });
+	bomb.anim.PushBack({ 422, 136, 8, 16 });
+	bomb.anim.PushBack({ 413, 136, 8, 16 });
+	bomb.anim.PushBack({ 422, 136, 8, 16 });
 
-	bomb.anim.PushBack({ 401, 1252, 8, 16 });
-	bomb.anim.PushBack({ 410, 1252, 8, 16 });
-	bomb.anim.PushBack({ 401, 1252, 8, 16 });
-	bomb.anim.PushBack({ 410, 1252, 8, 16 });
+	bomb.anim.PushBack({ 431, 136, 8, 16 });
+	bomb.anim.PushBack({ 440, 136, 8, 16 });
+	bomb.anim.PushBack({ 431, 136, 8, 16 });
+	bomb.anim.PushBack({ 440, 136, 8, 16 });
 
-	bomb.anim.PushBack({ 419, 1252, 8, 16 });
-	bomb.anim.PushBack({ 428, 1252, 8, 16 });
-	bomb.anim.PushBack({ 419, 1252, 8, 16 });
-	bomb.anim.PushBack({ 428, 1252, 8, 16 });
+	bomb.anim.PushBack({ 449, 136, 8, 16 });
+	bomb.anim.PushBack({ 458, 136, 8, 16 });
+	bomb.anim.PushBack({ 449, 136, 8, 16 });
+	bomb.anim.PushBack({ 458, 136, 8, 16 });
 
 	bomb.speed.y = -4;
 	bomb.anim.loop = false;
@@ -141,24 +145,134 @@ bool ModuleParticles::Init()
 	//Bomb explosion particles
 	bombexplosion.spritesheet = 1;
 
-	bombexplosion.anim.PushBack({ 39, 848, 168, 154 });
-	bombexplosion.anim.PushBack({ 137, 832, 168, 154 });
-	//bombexplosion.anim.PushBack({ this sprite is wrong in the spritesheet, need to fix });
-	bombexplosion.anim.PushBack({ 450, 827, 168, 154 });
-	bombexplosion.anim.PushBack({ 17, 1003, 168, 154 });
-	bombexplosion.anim.PushBack({ 213, 1002, 168, 154 });
-	bombexplosion.anim.PushBack({ 26, 1208, 168, 154 });
-	bombexplosion.anim.PushBack({ 109, 1123, 168, 154 });
-	bombexplosion.anim.PushBack({ 220, 1173, 168, 154 });
+	bombexplosion.anim.PushBack({ 2, 624, 168, 154 });
+	bombexplosion.anim.PushBack({ 2, 624, 168, 154 });
 
-	bombexplosion.anim.PushBack({ 36, 633, 168, 154 });
-	bombexplosion.anim.PushBack({ 248, 634, 168, 154 });
-	bombexplosion.anim.PushBack({ 445, 635, 168, 154 });
+	bombexplosion.anim.PushBack({ 173, 624, 168, 154 });
+	bombexplosion.anim.PushBack({ 173, 624, 168, 154 });
+
+	bombexplosion.anim.PushBack({ 344, 624, 168, 154 });
+	bombexplosion.anim.PushBack({ 344, 624, 168, 154 });
+
+	bombexplosion.anim.PushBack({ 515, 624, 168, 154 });
+	bombexplosion.anim.PushBack({ 515, 624, 168, 154 });
+
+	bombexplosion.anim.PushBack({ 2, 781, 168, 154 });
+	bombexplosion.anim.PushBack({ 2, 781, 168, 154 });
+
+	bombexplosion.anim.PushBack({ 173, 781, 168, 154 });
+	bombexplosion.anim.PushBack({ 173, 781, 168, 154 });
+
+	bombexplosion.anim.PushBack({ 344, 781, 168, 154 });
+	bombexplosion.anim.PushBack({ 344, 781, 168, 154 });
+
+	bombexplosion.anim.PushBack({ 515, 781, 168, 154 });
+	bombexplosion.anim.PushBack({ 515, 781, 168, 154 });
+
+	bombexplosion.anim.PushBack({ 2, 938, 168, 154 });
+	bombexplosion.anim.PushBack({ 2, 938, 168, 154 });
 
 	bombexplosion.anim.loop = false;
-	bombexplosion.anim.speed = 0.1f;
+	bombexplosion.anim.speed = 0.5f;
 	bombexplosion.size.x = 168 * 3;
 	bombexplosion.size.y = 154 * 3;
+
+	//Bomb explosion 2 particles
+	bombexplosion2.spritesheet = 1;
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 173, 938, 168, 154 });
+
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 344, 938, 168, 154 });
+
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+
+	bombexplosion2.anim.loop = false;
+	bombexplosion2.anim.speed = 0.4f;
+	bombexplosion2.size.x = 168 * 3;
+	bombexplosion2.size.y = 154 * 3;
 
 	return true;
 }
@@ -193,9 +307,14 @@ update_status ModuleParticles::Update()
 
 		if (p->Update() == false)
 		{
-			if (p->bullettype == 10)
+			if (p->bullettype == 47)
 			{
-				AddParticle(bombexplosion, p->position.x, p->position.y);
+				AddParticle(bombexplosion, p->position.x - ((168 * 3) / 2), p->position.y - ((154 * 3) / 2), COLLIDER_NONE, 37);
+			}
+
+			else if (p->bullettype == 37)
+			{
+				AddParticle(bombexplosion2, p->position.x, p->position.y, COLLIDER_NONE, 27);
 			}
 
 			delete p;
@@ -258,6 +377,8 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 			p->born = SDL_GetTicks() + delay;
 			p->position.x = x;
 			p->position.y = y;
+			p->initialpos.x = x;
+			p->initialpos.y = y;
 			p->spritesheet = particle.spritesheet;
 			p->bullettype = bullettype;
 			p->active = pactive;
@@ -270,7 +391,7 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 				p->speed.y = speed_y;
 			}
 			p->size = particle.size;
-			if (!multipleshot)
+			if (!multipleshot && bullettype != 47 && bullettype != 37 && bullettype != 27)
 			{
 				Mix_PlayChannel(-1, App->audio->fx_shoot, 0);
 			}
@@ -279,6 +400,7 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 			{ 
 				p->collider = App->collision->AddCollider({ 59, 100, p->size.x, p->size.y}, collider_type, this, bullettype, damage);
 			}
+
 			active[i] = p;
 			break;
 		}
@@ -373,6 +495,9 @@ bool Particle::Update()
 	{ 
 	if (collider != nullptr)
 		collider->SetPos(position.x, position.y);
+
+	if (bullettype == 37 || bullettype == 27)
+		displace();
 	}
 	else
 	{
