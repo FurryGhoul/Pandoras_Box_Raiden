@@ -75,14 +75,14 @@ bool ModuleParticles::Init()
 	laser.size.y = 48;
 
 	// Player laser 2 particles
-	laser2.spritesheet = 1;
-	laser2.anim.PushBack({ 9, 106, 5, 8 });
+	laser2.spritesheet = 0;
+	laser2.anim.PushBack({ 235, 92, 4, 13 });
 	laser2.anim.loop = false;
 	laser2.anim.speed = 0.1f;
 	laser2.life = 2100;
 	laser2.speed.y = -15;
-	laser2.size.x = 15;
-	laser2.size.y = 24;
+	laser2.size.x = 12;
+	laser2.size.y = 39;
 	
 	//Enemy normal shot
 	enemyshot.spritesheet = 1;
@@ -343,11 +343,21 @@ update_status ModuleParticles::Update()
 				p->active = false;
 				if (p->collider->bullettype == 1)
 				{
+					if (App->player->powerup_level < 3) // just 1 and 2 level particles should come out from the middle of the player
 					p->position.x = App->player->position.x + 30;
+					else
+					{
+						p->position.x = App->player->position.x + p->position_respect_player;
+					}
 				}
 				if (p->collider->bullettype == 2)
 				{
-					p->position.x = App->player2->position.x + 30;
+					if (App->player2->powerup_level < 3) // just 1 and 2 level particles should come out from the middle of the player 2
+						p->position.x = App->player2->position.x + 30;
+					else
+					{
+						p->position.x = App->player2->position.x + p->position_respect_player;
+					}
 				}
 			}
 
@@ -362,7 +372,7 @@ update_status ModuleParticles::Update()
 				App->render->Blit(graphics, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()), p->size.x, p->size.y);
 			}
 
-			}
+		}
 
 		if (p->spritesheet == 1)
 		{
@@ -373,11 +383,17 @@ update_status ModuleParticles::Update()
 					p->active = false;
 					if (p->collider->bullettype == 1)
 					{
-						p->position.x = App->player->position.x + 30;
+						if (App->player->powerup_level < 3) // just 1 and 2 level particles should come out from the middle of the player
+							p->position.x = App->player->position.x + 30;
+						else// provisional (while powerups are added has to change)
+							p->position.x = App->player->position.x + p->position_respect_player;
 					}
 					if (p->collider->bullettype == 2)
 					{
-						p->position.x = App->player2->position.x + 30;
+						if (App->player2->powerup_level < 3) // just 1 and 2 level particles should come out from the middle of the player 2
+							p->position.x = App->player2->position.x + 30;
+						else // provisional (while powerups are added has to change)
+							p->position.x = App->player2->position.x + p->position_respect_player;
 					}
 				}
 
@@ -411,7 +427,7 @@ update_status ModuleParticles::Update()
 
 
 
-void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type, int bullettype, int speed_x, int speed_y, Uint32 delay, bool multipleshot, int damage, bool pactive)
+void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type, int bullettype, int speed_x, int speed_y, Uint32 delay, bool multipleshot, int damage, bool pactive, int position_respect_player)
 {
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 	{
@@ -426,6 +442,7 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 			p->spritesheet = particle.spritesheet;
 			p->bullettype = bullettype;
 			p->active = pactive;
+			p->position_respect_player = position_respect_player;
 			if (speed_x != 0)
 			{
 				p->speed.x = speed_x;
