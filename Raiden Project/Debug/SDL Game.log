@@ -1,9 +1,4 @@
-﻿  ModuleEnemies.cpp
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
-  Generating Code...
-  Compiling...
-  Tank.cpp
+﻿  Tank.cpp
 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(128): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
@@ -15,6 +10,36 @@ c:\users\joan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(138):
 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(502): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(503): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(523): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  RedUp.cpp
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\redup.cpp(13): warning C4305: '=': truncation from 'double' to 'float'
+  ModuleWelcomeScreen.cpp
+  ModulePowerUps.cpp
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+  ModulePlayer2.cpp
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(270): warning C4474: 'sprintf_s' : too many arguments passed for format string
+  c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(270): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(425): warning C4474: 'sprintf_s' : too many arguments passed for format string
+  c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(425): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(607): warning C4018: '>=': signed/unsigned mismatch
+  ModulePlayer.cpp
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(266): warning C4474: 'sprintf_s' : too many arguments passed for format string
+  c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(266): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(409): warning C4474: 'sprintf_s' : too many arguments passed for format string
+  c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(409): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(624): warning C4018: '>=': signed/unsigned mismatch
+  ModuleMap1.cpp
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(153): warning C4018: '>=': signed/unsigned mismatch
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(160): warning C4018: '>=': signed/unsigned mismatch
+  ModuleInput.cpp
+  ModuleEnemies.cpp
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+  Medals.cpp
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
   Enemy_Medium_Shooter.cpp
 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
@@ -57,6 +82,12 @@ c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(69): wa
   Box_Medal.cpp
 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+  BlueUp.cpp
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\blueup.cpp(13): warning C4305: '=': truncation from 'double' to 'float'
+  Application.cpp
   Generating Code...
+  LINK : C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe not found or not built by the last incremental link; performing full link
   SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
   SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
