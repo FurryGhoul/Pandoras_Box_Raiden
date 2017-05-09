@@ -9,7 +9,8 @@ private:
 	Animation propeller;
 	Animation none;
 	Animation charge;
-	Animation hit;
+	Animation hitsides;
+	Animation hitdown;
 	iPoint original_pos;
 	iPoint original_pos1;
 	iPoint original_pos2;
