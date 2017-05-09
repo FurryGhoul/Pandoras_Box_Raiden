@@ -24,4 +24,5 @@ Medals::Medals(int x, int y) : PowerUp(x, y)
 void Medals::Move()
 {
 	position = original_pos + movement.GetCurrentPosition();
+	position.x += left_right_mod;
 }

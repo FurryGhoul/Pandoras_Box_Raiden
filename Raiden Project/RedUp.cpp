@@ -32,4 +32,5 @@ RedUp::RedUp(int x, int y) : PowerUp(x, y)
 void RedUp::Move()
 {
 	position = original_pos + movement.GetCurrentPosition();
+	position.x += left_right_mod;
 }
