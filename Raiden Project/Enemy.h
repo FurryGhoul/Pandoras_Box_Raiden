@@ -29,6 +29,7 @@ public:
 	int hp;
 	Uint32 bombhittime; //time between allowed bomb hits
 	bool allowbombtime = true; //allows timer
+	int hitbybomb = 0;
 	uint points;
 	int h;
 	int w;

@@ -191,9 +191,15 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 					enemies[i]->allowbombtime = false;
 				}
 
-				if (SDL_GetTicks() - enemies[i]->bombhittime == 250 || SDL_GetTicks() - enemies[i]->bombhittime == 500 || SDL_GetTicks() - enemies[i]->bombhittime == 750 || SDL_GetTicks() - enemies[i]->bombhittime == 1000)
+				time = SDL_GetTicks();
+
+				if ((time - enemies[i]->bombhittime < 50 && enemies[i]->hitbybomb == 0) || 
+				(time - enemies[i]->bombhittime > 200 && time - enemies[i]->bombhittime < 250 && enemies[i]->hitbybomb == 1) ||
+					(time - enemies[i]->bombhittime > 450 && time - enemies[i]->bombhittime < 500 && enemies[i]->hitbybomb == 2) ||
+					(time - enemies[i]->bombhittime > 700 && time - enemies[i]->bombhittime < 750 && enemies[i]->hitbybomb == 3))
 				{
 					enemies[i]->hp -= c2->damage;
+					enemies[i]->hitbybomb++;
 				}
 
 			}
