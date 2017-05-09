@@ -39,6 +39,7 @@ public:
 	void OnCollision(Collider* c1, Collider* c2);
 	void ErasePowerUps();
 	bool AddPowerUp(POWERUP_TYPES type, int x, int y);
+	void MovePowerUpsRight(bool); // The bool is used to know if the powerups should be moved to the right (true) or to the left (false)
 
 private:
 

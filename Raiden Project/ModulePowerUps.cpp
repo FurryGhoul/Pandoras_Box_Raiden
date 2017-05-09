@@ -234,3 +234,28 @@ void ModulePowerUps::ErasePowerUps()
 		}
 	}
 }
+
+void ModulePowerUps::MovePowerUpsRight(bool right)
+{
+	if (right == true)
+	{
+		for (uint i = 0; i < MAX_POWERUPS; ++i)
+		{
+			if (powerups[i] != nullptr)
+			{
+				powerups[i]->left_right_mod += 6;
+			}
+		}
+	}
+
+	if (right == false)
+	{
+		for (uint i = 0; i < MAX_POWERUPS; ++i)
+		{
+			if (powerups[i] != nullptr)
+			{
+				powerups[i]->left_right_mod -= 6;
+			}
+		}
+	}
+}

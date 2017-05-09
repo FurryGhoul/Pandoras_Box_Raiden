@@ -31,4 +31,5 @@ BlueUp::BlueUp(int x, int y) : PowerUp(x, y)
 void BlueUp::Move()
 {
 	position = original_pos + movement.GetCurrentPosition();
+	position.x += left_right_mod;
 }
