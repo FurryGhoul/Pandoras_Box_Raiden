@@ -243,6 +243,17 @@ Collider* ModuleCollision::AddCollider(SDL_Rect rect, COLLIDER_TYPE type, Module
 	return ret;
 }
 
+void ModuleCollision::Erase_Non_Player_Colliders()
+{
+	for (uint i = 0; i < MAX_COLLIDERS; ++i)
+	{
+		if (colliders[i] != nullptr && colliders[i]->type != COLLIDER_GOD && colliders[i]->type != COLLIDER_PLAYER)
+		{
+			delete colliders[i];
+			colliders[i] = nullptr;
+		}
+	}
+}
 
 // -----------------------------------------------------
 

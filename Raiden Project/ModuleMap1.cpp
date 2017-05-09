@@ -138,9 +138,11 @@ update_status ModuleMap1::Update()
 		App->fade->FadeToBlack(this, App->StageClear1, 1.0f);
 		App->enemies->EraseEnemies();
 		App->powerups->ErasePowerUps();
+		App->particles->EraseParticles();
+		App->collision->Erase_Non_Player_Colliders();
 		App->player->powerup_level = 0;
 		App->player2->powerup_level = 0;
-
+		App->particles->Disable();		
 		App->player->Playergod->SetPos(10000, 10000);
 		App->player2->Playergod->SetPos(10000, 10000);
 		App->player->Player->SetPos(10000, 10000);

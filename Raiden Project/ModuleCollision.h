@@ -67,6 +67,7 @@ public:
 	update_status Update();
 	//update_status PostUpdate();
 	bool CleanUp();
+	void Erase_Non_Player_Colliders();
 
 	Collider* AddCollider(SDL_Rect rect, COLLIDER_TYPE type, Module* callback = nullptr, int bullettype = 0, int damage = 0);
 	

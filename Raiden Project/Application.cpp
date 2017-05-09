@@ -20,6 +20,7 @@
 
 Application::Application()
 {	
+
 	modules[0] = window = new ModuleWindow();
 	modules[1] = render = new ModuleRender();
 	modules[2] = textures = new ModuleTextures();

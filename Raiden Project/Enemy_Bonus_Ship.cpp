@@ -49,8 +49,15 @@ Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y, int path) : Enemy (x, y)
 	movement.PushBack({ 0.4f, 0.0f }, 700);
 	movement.PushBack({ 0.0f, 3.0f }, 600);
 	
-	hit.PushBack({ 262, 221, 59, 54 });
-	hit.loop = false;
+	hitsides.PushBack({ 262, 221, 59, 54 });
+	hitsides.PushBack({ 262, 221, 59, 54 });
+	hitsides.loop = false;
+	hitsides.speed = 0.5f;
+
+	hitdown.PushBack({ 6, 221, 59, 54 });
+	hitdown.PushBack({ 6, 221, 59, 54 });
+	hitdown.loop = false;
+	hitdown.speed = 0.5f;
 
 	bonusplane = true;// Bollean to detect if the enemy is a bonus plane and adapt the hitbox
 
@@ -108,12 +115,18 @@ void Enemy_Bonus_Ship::MoveShoot()
 	{
 		animation = &flysides;
 		animation1 = &none;
-		
+		animation2 = &none;
 		if (charge_time % 190 == 0) 
 		{
 			animation2 = &charge;
 			charge.Reset();
 			charge_time = 0;
+		}
+		if (ishit == true)
+		{
+			animation2 = &hitsides;
+			hitsides.Reset();
+			ishit = false;
 		}
 		side = true;
 	
@@ -123,22 +136,32 @@ void Enemy_Bonus_Ship::MoveShoot()
 		animation = &stop;
 		animation1 = &none;
 		animation2 = &none;
-	
+		if (ishit == true)
+		{
+			animation2 = &hitsides;
+			hitsides.Reset();
+			ishit = false;
+		}
 	}
 	if (position.y <= 70)
 	{
 		animation = &flydown;
 		animation1 = &propeller;
 		animation2 = &none;
-		
+		if (ishit == true)
+		{
+			animation2 = &hitdown;
+			hitdown.Reset();
+			ishit = false;
+		}
 	}
 	
-	if ( ishit == true)
+	/*if ( ishit == true)
 	{
-		animation = &hit;
-		hit.Reset();
+		animation2 = &hitsides;
+		hitsides.Reset();
 		ishit = false;
-	}
+	}*/
 
 	if (shooting == false && movingsidetoside)
 	{

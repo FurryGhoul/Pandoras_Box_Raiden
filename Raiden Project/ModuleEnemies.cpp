@@ -254,7 +254,6 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				break;
 			}
 		}
-		//bonusshiphit = false;
 	}
 }
 

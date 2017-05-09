@@ -44,15 +44,7 @@ bool ModuleWelcomeScreen::Init()
 
 update_status ModuleWelcomeScreen::Update()
 {
-	if (App->particles->IsEnabled() && App->player->IsEnabled())
-	{
-		App->particles->Disable();
-		App->player->Disable();
-		App->player2->Disable();
-		App->enemies->Disable();
-		App->collision->Disable();
-		App->powerups->Disable();
-	}
+	
 
 	App->render->Blit(Welcome, 0, 0, &ground);
 
@@ -66,6 +58,7 @@ update_status ModuleWelcomeScreen::Update()
 		App->fade->FadeToBlack(this, App->map_1, 1.0f);
 		App->map_1->xmap = -192;
 		App->map_1->ymap = -9020;
+		App->collision->Erase_Non_Player_Colliders();
 	}
 
 	if (App->input->keyboard[SDL_SCANCODE_2])
@@ -76,6 +69,7 @@ update_status ModuleWelcomeScreen::Update()
 		App->fade->FadeToBlack(this, App->map_1, 1.0f);
 		App->map_1->xmap = -192;
 		App->map_1->ymap = -9020;
+		App->collision->Erase_Non_Player_Colliders();
 	}
 	return UPDATE_CONTINUE;
 }
