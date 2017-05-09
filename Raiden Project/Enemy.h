@@ -22,6 +22,7 @@ public:
 	iPoint position1;
 	iPoint position2;
 	iPoint position3;
+	bool ishit;
 	fPoint distance;
 	iPoint distance1;
 	iPoint distance2;

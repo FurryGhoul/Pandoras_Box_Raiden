@@ -44,7 +44,7 @@ public:
 	bool AddEnemy(int path, ENEMY_TYPES type, int x, int y);
 	void MoveEnemiesRight(bool); // The bool is used to know if the enemies should be moved to the right (true) or to the left (false)
 	int GetPath() const;
-	bool bonusshiphit = false; //bool used to know if a bonus ship is hit 
+	
 
 private:
 

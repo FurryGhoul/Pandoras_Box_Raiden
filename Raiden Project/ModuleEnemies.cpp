@@ -187,7 +187,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
          	enemies[i]->hp -= c2->damage;
 			if (enemies[i]->bonusplane)
 			{
-				bonusshiphit = true;
+				enemies[i]->ishit = true;
 			}
 			
 

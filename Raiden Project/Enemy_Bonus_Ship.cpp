@@ -56,7 +56,7 @@ Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y, int path) : Enemy (x, y)
 
 	collider = App->collision->AddCollider({ 0, 0, 60, 60 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 	spritesheet = 1;
-	animations = 4;
+	animations = 3;
 	original_pos.x = x;
 	original_pos.y = - 200;
 	original_pos1.x = original_pos.x + 47;
@@ -116,29 +116,30 @@ void Enemy_Bonus_Ship::MoveShoot()
 			charge_time = 0;
 		}
 		side = true;
-		if (App->enemies->bonusshiphit == true)
-		{
-			animation3 = &hit;
-			hit.Reset();
-			App->enemies->bonusshiphit = false;
-		}
+	
 	}
 	if (position.y > 70 && side == false)
 	{
 		animation = &stop;
 		animation1 = &none;
 		animation2 = &none;
-		animation3 = &none;
+	
 	}
 	if (position.y <= 70)
 	{
 		animation = &flydown;
 		animation1 = &propeller;
 		animation2 = &none;
-		animation3 = &none;
+		
 	}
 	
-	
+	if ( ishit == true)
+	{
+		animation = &hit;
+		hit.Reset();
+		ishit = false;
+	}
+
 	if (shooting == false && movingsidetoside)
 	{
 		distance.x *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
