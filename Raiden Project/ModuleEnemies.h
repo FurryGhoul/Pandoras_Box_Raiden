@@ -34,7 +34,7 @@ public:
 	ModuleEnemies();
 	~ModuleEnemies();
 
-	Uint32 time;
+	Uint32 time = 0;
 	bool Init();
 	update_status PreUpdate();
 	update_status Update();
