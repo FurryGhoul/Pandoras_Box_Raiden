@@ -19,6 +19,7 @@ public:
 	iPoint position;
 	int h;
 	int w;
+	int left_right_mod = 0;
 
 public:
 	PowerUp(int x, int y);

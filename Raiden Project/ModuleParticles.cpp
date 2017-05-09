@@ -329,7 +329,7 @@ update_status ModuleParticles::Update()
 
 			else if (p->bullettype == 37)
 			{
-				AddParticle(bombexplosion2, p->position.x, p->position.y, COLLIDER_NONE, 27);
+				AddParticle(bombexplosion2, p->position.x, p->position.y, COLLIDER_BOMB, 27, 0, 0, 0, false, 6);
 			}
 
 			delete p;
