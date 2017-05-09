@@ -70,7 +70,7 @@ bool ModuleParticles::Init()
 	laser.anim.loop = false;
 	laser.anim.speed = 0.1f;
 	laser.life = 2100;
-	laser.speed.y = -15;
+	laser.speed.y = -20;
 	laser.size.x = 6;
 	laser.size.y = 48;
 
@@ -80,7 +80,7 @@ bool ModuleParticles::Init()
 	laser2.anim.loop = false;
 	laser2.anim.speed = 0.1f;
 	laser2.life = 2100;
-	laser2.speed.y = -15;
+	laser2.speed.y = -20;
 	laser2.size.x = 12;
 	laser2.size.y = 39;
 	

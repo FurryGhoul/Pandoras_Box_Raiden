@@ -1,14 +1,4 @@
-﻿  Enemy_Bonus_Ship.cpp
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(72): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(73): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(75): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(76): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(81): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(82): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(150): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(151): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(152): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+﻿  ModuleParticles.cpp
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleparticles.cpp(31): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
   SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
