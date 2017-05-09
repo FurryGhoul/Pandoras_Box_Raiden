@@ -27,6 +27,8 @@ public:
 	iPoint distance1;
 	iPoint distance2;
 	int hp;
+	Uint32 bombhittime; //time between allowed bomb hits
+	bool allowbombtime = true; //allows timer
 	uint points;
 	int h;
 	int w;

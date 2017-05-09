@@ -1,4 +1,4 @@
 ﻿  ModuleParticles.cpp
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleparticles.cpp(31): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleparticles.cpp(31): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
