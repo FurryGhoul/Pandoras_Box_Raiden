@@ -103,7 +103,7 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 200, -2000);
 
 		App->collision->Enable();
-		App->render->camera.x = App->render->camera.y = 0;
+		App->render->camera.y = 0;
 		App->enemies->Enable();
 		App->powerups->Enable();
 		if (!App->player2->deadplayer)
@@ -145,7 +145,8 @@ update_status ModuleMap1::Update()
 		App->player2->Player->SetPos(10000, 10000);
 		App->player2->deadplayer = false;
 		App->player->deadplayer = false;
-
+		App->player->red = true;
+		App->player2->red = true;
 		App->player->lastscore = App->player->score;
 		if (App->player->score >= App->player->hiscore)
 		{

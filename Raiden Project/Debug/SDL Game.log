@@ -1,3 +1,12 @@
-﻿  ModuleParticles.cpp
-  SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
-  SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+﻿  ModulePlayer.cpp
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(266): warning C4474: 'sprintf_s' : too many arguments passed for format string
+  c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(266): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(409): warning C4474: 'sprintf_s' : too many arguments passed for format string
+  c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(409): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(587): warning C4018: '>=': signed/unsigned mismatch
+  ModuleMap1.cpp
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(151): warning C4018: '>=': signed/unsigned mismatch
+c:\users\lucasgm\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(158): warning C4018: '>=': signed/unsigned mismatch
+  Generating Code...
+  SDL Game.vcxproj -> C:\Users\lucasgm\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\lucasgm\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

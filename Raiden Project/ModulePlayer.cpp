@@ -609,8 +609,8 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		deadplayer = false;
 		App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
 		App->enemies->EraseEnemies();
-		powerup_level = 0;
 		App->powerups->ErasePowerUps();
+		powerup_level = 0;
 		red = true;
 	}
 }
