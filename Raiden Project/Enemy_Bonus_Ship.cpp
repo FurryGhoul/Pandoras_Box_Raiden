@@ -49,19 +49,22 @@ Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y, int path) : Enemy (x, y)
 	movement.PushBack({ 0.4f, 0.0f }, 700);
 	movement.PushBack({ 0.0f, 3.0f }, 600);
 	
-
+	hit.PushBack({ 262, 221, 59, 54 });
+	hit.loop = false;
 
 	bonusplane = true;// Bollean to detect if the enemy is a bonus plane and adapt the hitbox
 
 	collider = App->collision->AddCollider({ 0, 0, 60, 60 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 	spritesheet = 1;
-	animations = 3;
+	animations = 4;
 	original_pos.x = x;
 	original_pos.y = - 200;
 	original_pos1.x = original_pos.x + 47;
 	original_pos1.y = original_pos.y - 36;
 	original_pos2.x = x + 4;
 	original_pos2.y = -200;
+	original_pos3.x = x + 4;
+	original_pos3.y = -200;
 }
 
 void Enemy_Bonus_Ship::MoveShoot()
@@ -82,10 +85,12 @@ void Enemy_Bonus_Ship::MoveShoot()
 	position = original_pos + movement.GetCurrentPosition();
 	position1 = original_pos1 + movement.GetCurrentPosition();
 	position2 = original_pos2 + movement.GetCurrentPosition();
+	position3 = original_pos3 + movement.GetCurrentPosition();
 	
 	position.x += left_right_mod;
 	position1.x += left_right_mod;
 	position2.x += left_right_mod;
+	position3.x += left_right_mod;
 
 	w = 59 * 3;
 	h = 54 * 3;
@@ -93,6 +98,8 @@ void Enemy_Bonus_Ship::MoveShoot()
 	h1 = 14 * 3;
 	w2 = 59 * 3;
 	h2 = 54 * 3;
+	w3 = 59 * 3;
+	h3 = 54 * 3;
 
 	++shoot_time;
 	++charge_time;
@@ -101,6 +108,7 @@ void Enemy_Bonus_Ship::MoveShoot()
 	{
 		animation = &flysides;
 		animation1 = &none;
+		
 		if (charge_time % 190 == 0) 
 		{
 			animation2 = &charge;
@@ -108,18 +116,26 @@ void Enemy_Bonus_Ship::MoveShoot()
 			charge_time = 0;
 		}
 		side = true;
+		if (App->enemies->bonusshiphit == true)
+		{
+			animation3 = &hit;
+			hit.Reset();
+			App->enemies->bonusshiphit = false;
+		}
 	}
 	if (position.y > 70 && side == false)
 	{
 		animation = &stop;
 		animation1 = &none;
 		animation2 = &none;
+		animation3 = &none;
 	}
 	if (position.y <= 70)
 	{
-		animation2 = &none;
-		animation1 = &propeller;
 		animation = &flydown;
+		animation1 = &propeller;
+		animation2 = &none;
+		animation3 = &none;
 	}
 	
 	

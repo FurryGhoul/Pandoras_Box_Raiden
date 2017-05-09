@@ -9,9 +9,11 @@ private:
 	Animation propeller;
 	Animation none;
 	Animation charge;
+	Animation hit;
 	iPoint original_pos;
 	iPoint original_pos1;
 	iPoint original_pos2;
+	iPoint original_pos3;
 	Path movement;
 	double param;
 	double angle;
