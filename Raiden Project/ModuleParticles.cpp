@@ -175,7 +175,7 @@ bool ModuleParticles::Init()
 	bombexplosion.anim.PushBack({ 2, 938, 168, 154 });
 
 	bombexplosion.anim.loop = false;
-	bombexplosion.anim.speed = 0.6f;
+	bombexplosion.anim.speed = 0.8f;
 	bombexplosion.size.x = 168 * 3;
 	bombexplosion.size.y = 154 * 3;
 
@@ -270,6 +270,9 @@ bool ModuleParticles::Init()
 	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
 	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
 	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
+
+	bombexplosion2.anim.PushBack({ 2, 1095, 168, 154 });
+	bombexplosion2.anim.PushBack({ 173, 1095, 168, 154 });
 
 	bombexplosion2.anim.loop = false;
 	bombexplosion2.anim.speed = 0.4f;
