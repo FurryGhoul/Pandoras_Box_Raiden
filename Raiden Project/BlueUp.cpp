@@ -23,7 +23,7 @@ BlueUp::BlueUp(int x, int y) : PowerUp(x, y)
 	h = 13 * 3;
 
 	position.x = original_pos.x = x;
-	position.y = original_pos.y = 100;
+	position.y = original_pos.y = y;
 	animation = &idle1;
 }
 
@@ -31,4 +31,5 @@ BlueUp::BlueUp(int x, int y) : PowerUp(x, y)
 void BlueUp::Move()
 {
 	position = original_pos + movement.GetCurrentPosition();
+	position.x += left_right_mod;
 }

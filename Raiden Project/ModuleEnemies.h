@@ -34,6 +34,7 @@ public:
 	ModuleEnemies();
 	~ModuleEnemies();
 
+	Uint32 time;
 	bool Init();
 	update_status PreUpdate();
 	update_status Update();
@@ -43,7 +44,7 @@ public:
 	void OnCollision(Collider* c1, Collider* c2);
 	bool AddEnemy(int path, ENEMY_TYPES type, int x, int y);
 	void MoveEnemiesRight(bool); // The bool is used to know if the enemies should be moved to the right (true) or to the left (false)
-	int GetPath() const;
+
 	
 
 private:

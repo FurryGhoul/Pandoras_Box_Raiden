@@ -31,6 +31,7 @@ Box_Medal::Box_Medal(int x, int y, int path) : Enemy(x, y)
 void Box_Medal::MoveShoot()
 {
 	position = original_pos + movement.GetCurrentPosition();
+	position.x += left_right_mod;
 
 	w = 27 * 3;
 	h = 25 * 3;
