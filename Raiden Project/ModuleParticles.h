@@ -11,7 +11,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-#define MAX_ACTIVE_PARTICLES 10000
+#define MAX_ACTIVE_PARTICLES 1000
 
 struct SDL_Texture;
 struct Collider;
