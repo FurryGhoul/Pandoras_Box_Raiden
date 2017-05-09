@@ -77,8 +77,10 @@ bool ModuleParticles::Init()
 	//Enemy normal shot
 	enemyshot.spritesheet = 1;
 	enemyshot.anim.PushBack({ 22, 41, 6, 5});
-	enemyshot.anim.loop = false;
-	enemyshot.anim.speed = 1.0f;
+	enemyshot.anim.PushBack({ 39, 41, 6, 5 });
+	enemyshot.anim.PushBack({ 56, 41, 6, 5 });
+	enemyshot.anim.loop = true;
+	enemyshot.anim.speed = 0.3f;
 	enemyshot.life = 2100;
 	enemyshot.speed.y = 10;
 	enemyshot.size.x = 18;
