@@ -11,7 +11,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-#define MAX_ACTIVE_PARTICLES 10000
+#define MAX_ACTIVE_PARTICLES 1000
 
 struct SDL_Texture;
 struct Collider;
@@ -32,6 +32,7 @@ struct Particle
 	Uint32 life = 0;
 	int spritesheet = 0; //What spritesheet does the shot belong to
 	bool fx_played = false;
+	int position_respect_player;
 
 	Particle();
 	Particle(const Particle& p);
@@ -86,7 +87,7 @@ public:
 	bool CleanUp();
 	void OnCollision(Collider* c1, Collider* c2);
 	void MoveParticlesRight(bool);
-	void AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type = COLLIDER_NONE, int bullettype = 0, int speed_x = 0, int speed_y = 0, Uint32 delay = 0, bool multipleshot = false, int damage = 0, bool pactive = true);
+	void AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type = COLLIDER_NONE, int bullettype = 0, int speed_x = 0, int speed_y = 0, Uint32 delay = 0, bool multipleshot = false, int damage = 0, bool pactive = true, int position_respect_player = 0);
 
 private:
 
@@ -96,6 +97,7 @@ private:
 
 public:
 	Particle laser;
+	Particle laser2;
 	Particle double_shot;
 	Particle triple_shot;
 	Particle quad_shot;

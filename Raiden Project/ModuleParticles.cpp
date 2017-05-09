@@ -47,7 +47,7 @@ bool ModuleParticles::Init()
 	// player triple shot particles
 	triple_shot.spritesheet = 0;
 	triple_shot.anim.PushBack({ 74, 100, 10, 6 });
-	triple_shot.anim.loop = true;
+	triple_shot.anim.loop = false;
 	triple_shot.anim.speed = 0.1f;
 	triple_shot.life = 2100;
 	triple_shot.speed.y = -15;
@@ -57,7 +57,7 @@ bool ModuleParticles::Init()
 	// player quadriple shot particles
 	quad_shot.spritesheet = 0;
 	quad_shot.anim.PushBack({ 89, 100, 14, 6 });
-	quad_shot.anim.loop = true;
+	quad_shot.anim.loop = false;
 	quad_shot.anim.speed = 0.1f;
 	quad_shot.life = 2100;
 	quad_shot.speed.y = -15;
@@ -67,13 +67,23 @@ bool ModuleParticles::Init()
 	// Player laser particles
 	laser.spritesheet = 0;
 	laser.anim.PushBack({ 51, 89, 1, 16 });
-	laser.anim.loop = true;
+	laser.anim.loop = false;
 	laser.anim.speed = 0.1f;
 	laser.life = 2100;
 	laser.speed.y = -15;
 	laser.size.x = 6;
 	laser.size.y = 48;
 
+	// Player laser 2 particles
+	laser2.spritesheet = 0;
+	laser2.anim.PushBack({ 235, 92, 4, 13 });
+	laser2.anim.loop = false;
+	laser2.anim.speed = 0.1f;
+	laser2.life = 2100;
+	laser2.speed.y = -15;
+	laser2.size.x = 12;
+	laser2.size.y = 39;
+	
 	//Enemy normal shot
 	enemyshot.spritesheet = 1;
 	enemyshot.anim.PushBack({ 22, 41, 6, 5});
@@ -175,7 +185,7 @@ bool ModuleParticles::Init()
 	bombexplosion.anim.PushBack({ 2, 938, 168, 154 });
 
 	bombexplosion.anim.loop = false;
-	bombexplosion.anim.speed = 0.6f;
+	bombexplosion.anim.speed = 0.8f;
 	bombexplosion.size.x = 168 * 3;
 	bombexplosion.size.y = 154 * 3;
 
@@ -271,6 +281,9 @@ bool ModuleParticles::Init()
 	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
 	bombexplosion2.anim.PushBack({ 515, 938, 168, 154 });
 
+	bombexplosion2.anim.PushBack({ 2, 1095, 168, 154 });
+	bombexplosion2.anim.PushBack({ 173, 1095, 168, 154 });
+
 	bombexplosion2.anim.loop = false;
 	bombexplosion2.anim.speed = 0.4f;
 	bombexplosion2.size.x = 168 * 3;
@@ -326,30 +339,74 @@ update_status ModuleParticles::Update()
 		{
 			if (p->spritesheet == 0)
 			{ 
+			if (p->collider != nullptr)
+			{ 
 			if ((p->collider->bullettype == 1 && (p->position.y > App->player->position.y)) || (p->collider->bullettype == 2 && (p->position.y  > App->player2->position.y))) // If player shots are behind player, they don't appear
 			{
 				p->active = false;
 				if (p->collider->bullettype == 1)
 				{
+					if (App->player->powerup_level < 3) // just 1 and 2 level particles should come out from the middle of the player
 					p->position.x = App->player->position.x + 30;
+					else
+						p->position.x = App->player->position.x + p->position_respect_player;
 				}
 				if (p->collider->bullettype == 2)
 				{
-					p->position.x = App->player2->position.x + 30;
+					if (App->player2->powerup_level < 3) // just 1 and 2 level particles should come out from the middle of the player 2
+						p->position.x = App->player2->position.x + 30;
+					else
+						p->position.x = App->player2->position.x + p->position_respect_player;
 				}
 			}
 
-			else
-			{ 
+			  else
+			  { 
 			  p->active = true;
 			  App->render->Blit(graphics, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()), p->size.x, p->size.y);
+			  }
+			}
+			else
+			{
+				App->render->Blit(graphics, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()), p->size.x, p->size.y);
 			}
 
-			}
-			if (p->spritesheet == 1)
+		}
+
+		if (p->spritesheet == 1)
+		{
+				if (p->collider != nullptr)
+				{ 
+ 				if ((p->collider->bullettype == 1 && (p->position.y > App->player->position.y)) || (p->collider->bullettype == 2 && (p->position.y  > App->player2->position.y))) // If player shots are behind player, they don't appear
+				{
+					p->active = false;
+					if (p->collider->bullettype == 1)
+					{
+						if (App->player->powerup_level < 3) // just 1 and 2 level particles should come out from the middle of the player
+							p->position.x = App->player->position.x + 30;
+						else// provisional (while powerups are added has to change)
+							p->position.x = App->player->position.x + p->position_respect_player;
+					}
+					if (p->collider->bullettype == 2)
+					{
+						if (App->player2->powerup_level < 3) // just 1 and 2 level particles should come out from the middle of the player 2
+							p->position.x = App->player2->position.x + 30;
+						else // provisional (while powerups are added has to change)
+							p->position.x = App->player2->position.x + p->position_respect_player;
+					}
+				}
+
+				else
+				  {
+					p->active = true;
+					App->render->Blit(graphics1, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()), p->size.x, p->size.y);
+				   }
+				}
+			else
 			{
-			App->render->Blit(graphics1, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()), p->size.x, p->size.y);
+					App->render->Blit(graphics1, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()), p->size.x, p->size.y);
 			}
+		}
 			if (p->fx_played == false)
 			{
 				p->fx_played = true;
@@ -369,7 +426,7 @@ update_status ModuleParticles::Update()
 
 
 
-void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type, int bullettype, int speed_x, int speed_y, Uint32 delay, bool multipleshot, int damage, bool pactive)
+void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type, int bullettype, int speed_x, int speed_y, Uint32 delay, bool multipleshot, int damage, bool pactive, int position_respect_player)
 {
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 	{
@@ -384,6 +441,7 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 			p->spritesheet = particle.spritesheet;
 			p->bullettype = bullettype;
 			p->active = pactive;
+			p->position_respect_player = position_respect_player;
 			if (speed_x != 0)
 			{
 				p->speed.x = speed_x;
