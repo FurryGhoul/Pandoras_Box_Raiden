@@ -211,7 +211,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 
 				if (enemies[i]->lightshooter)
 				{ 
-				App->particles->AddParticle(App->particles->explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+				  App->particles->AddParticle(App->particles->explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
                 }
 
 				else if (enemies[i]->bonusplane)

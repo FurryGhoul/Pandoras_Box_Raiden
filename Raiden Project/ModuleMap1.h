@@ -22,7 +22,7 @@ public:
 	SDL_Texture *Map1;
 	int xmap;
 	int ymap;
-	bool setup = false;
+	bool setup = true;
 	bool changing = false;
 };
 
