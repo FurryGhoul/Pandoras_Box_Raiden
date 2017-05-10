@@ -31,7 +31,7 @@ bool ModuleEnemies::Init()
 	// Create a prototype for each enemy available so we can copy them around
 	sprites = App->textures->Load("assets/Light Shooter.png");
 	sprites2 = App->textures->Load("assets/Bonus Ship.png");
-	sprites3 = App->textures->Load("assets/Tank.png");
+	sprites3 = App->textures->Load("assets/Tank1.png");
 	sprites4 = App->textures->Load("assets/Medium Shooter.png");
 	sprites5 = App->textures->Load("assets/Boxes.png");
 	return true;
