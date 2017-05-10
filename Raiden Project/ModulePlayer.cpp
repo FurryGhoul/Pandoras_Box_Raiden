@@ -21,6 +21,7 @@ ModulePlayer::ModulePlayer()
 {
 	graphics = NULL;
 	current_animation = NULL;
+	bomb_ammo = NULL;
 
 	InitialPos();
 
@@ -49,6 +50,14 @@ ModulePlayer::ModulePlayer()
 
 	leftp.PushBack({ 153, 2, 19, 29 });
 	left1p.PushBack({ 192, 2, 14, 29 });
+
+	//Bomb ammo
+	bomb1.PushBack({ 236, 132, 16, 14});
+	bomb2.PushBack({ 236, 132, 32, 14 });
+	bomb3.PushBack({ 236, 132, 48, 14 });
+	bomb4.PushBack({ 236, 132, 64, 14 });
+	bomb5.PushBack({ 236, 132, 80, 14 });
+	bomb6.PushBack({ 236, 132, 96, 14 });
 }
 
 ModulePlayer::~ModulePlayer()
@@ -60,6 +69,7 @@ bool ModulePlayer::Init()
 	LOG("Loading player");
 
 	graphics = App->textures->Load("Assets/Player1.png");
+	graphics2 = App->textures->Load("Assets/graphics2.png");
 	Player = App->collision->AddCollider({ 0, 0, player_w, player_h }, COLLIDER_PLAYER, this, 3); // Bullettype 3 differentiate the player colliders
 	Playergod = App->collision->AddCollider({ 0, 0, player_w, player_h }, COLLIDER_GOD, this, 3);
 	Player->SetPos(82938, 2323);
@@ -87,6 +97,7 @@ bool ModulePlayer::CleanUp()
 	LOG("Unloading player");
 
 	App->textures->Unload(graphics);
+	App->textures->Unload(graphics2);
 	App->fonts->UnLoad(font_score);
 
 	return true;
@@ -587,12 +598,48 @@ update_status ModulePlayer::Update()
 		}
 
 	}
-
-
-
-
+	
+	if (bombs == 1)
+	{
+		bomb_ammo = &bomb1;
+		bombammo_w = 16 * 3;
+	}
+	else if (bombs == 2)
+	{
+		bomb_ammo = &bomb2;
+		bombammo_w = 32 * 3;
+	}
+	else if (bombs == 3)
+	{
+		bomb_ammo = &bomb3;
+		bombammo_w = 48 * 3;
+	}
+	else if (bombs == 4)
+	{
+		bomb_ammo = &bomb4;
+		bombammo_w = 64 * 3;
+	}
+	else if (bombs == 5)
+	{
+		bomb_ammo = &bomb5;
+		bombammo_w = 80 * 3;
+	}
+	else if (bombs == 6)
+	{
+		bomb_ammo = &bomb6;
+		bombammo_w = 96 * 3;
+	}
+	else if (bombs == 0)
+	{
+		bomb_ammo = nullptr;
+	}
 
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
+	if (bomb_ammo != nullptr)
+	{
+		App->render->Blit(graphics2, 5, 720, &(bomb_ammo->GetCurrentFrame()), bombammo_w, 14 * 3);
+	}
+
 	if (Player != nullptr && godmode == false)
 	{
 		Player->SetPos(position.x, position.y);
