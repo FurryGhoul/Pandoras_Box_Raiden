@@ -93,9 +93,14 @@ private:
 public:
 	Particle laser;
 	Particle laser2;
+	Particle final_laser;
 	Particle double_shot;
 	Particle triple_shot;
 	Particle quad_shot;
+	Particle quad_shot_right1;
+	Particle quad_shot_right2;
+	Particle quad_shot_left1;
+	Particle quad_shot_left2;
 	Particle enemyshot;
 	Particle explosion;
 	Particle hitspark;
