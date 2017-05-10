@@ -63,6 +63,43 @@ bool ModuleParticles::Init()
 	quad_shot.speed.y = -15;
 	quad_shot.size.x = 42;
 	quad_shot.size.y = 18;
+	// player quadriple shot particles right 1
+	quad_shot_right1.spritesheet = 0;
+	quad_shot_right1.anim.PushBack({ 107, 98, 16, 8 });
+	quad_shot_right1.anim.loop = false;
+	quad_shot_right1.anim.speed = 0.1f;
+	quad_shot_right1.life = 2100;
+	quad_shot_right1.speed.y = -15;
+	quad_shot_right1.size.x = 48;
+	quad_shot_right1.size.y = 24;
+	// player quadriple shot particles right 2
+	quad_shot_right2.spritesheet = 0;
+	quad_shot_right2.anim.PushBack({ 175, 98, 16, 9 });
+	quad_shot_right2.anim.loop = false;
+	quad_shot_right2.anim.speed = 0.1f;
+	quad_shot_right2.life = 2100;
+	quad_shot_right2.speed.y = -15;
+	quad_shot_right2.size.x = 48;
+	quad_shot_right2.size.y = 27;
+	// player quadriple shot particles left 1
+	quad_shot_left1.spritesheet = 0;
+	quad_shot_left1.anim.PushBack({ 129, 98, 16, 8});
+	quad_shot_left1.anim.loop = false;
+	quad_shot_left1.anim.speed = 0.1f;
+	quad_shot_left1.life = 2100;
+	quad_shot_left1.speed.y = -15;
+	quad_shot_left1.size.x = 48;
+	quad_shot_left1.size.y = 24;
+	// player quadriple shot particles left 2
+	quad_shot_left2.spritesheet = 0;
+	quad_shot_left2.anim.PushBack({ 155, 97, 16, 9 });
+	quad_shot_left2.anim.loop = false;
+	quad_shot_left2.anim.speed = 0.1f;
+	quad_shot_left2.life = 2100;
+	quad_shot_left2.speed.y = -15;
+	quad_shot_left2.size.x = 48;
+	quad_shot_left2.size.y = 27;
+
 
 	// Player laser particles
 	laser.spritesheet = 0;
@@ -83,7 +120,17 @@ bool ModuleParticles::Init()
 	laser2.speed.y = -20;
 	laser2.size.x = 12;
 	laser2.size.y = 39;
-	
+
+	//Player final laser particle
+	final_laser.spritesheet = 0;
+	final_laser.anim.PushBack({ 26, 90, 18, 16 });
+	final_laser.anim.loop = false;
+	final_laser.anim.speed = 0.1f;
+	final_laser.life = 2100;
+	final_laser.speed.y = -20;
+	final_laser.size.x = 54;
+	final_laser.size.y = 48;
+
 	//Enemy normal shot
 	enemyshot.spritesheet = 1;
 	enemyshot.anim.PushBack({ 22, 41, 6, 5});
