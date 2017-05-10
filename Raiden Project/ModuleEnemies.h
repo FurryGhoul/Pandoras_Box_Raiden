@@ -15,6 +15,7 @@ enum ENEMY_TYPES
 	TANK,
 	MEDIUM_SHOOTER,
 	BOX_MEDAL,
+	BOX_POWERUP,
 };
 
 class Enemy;

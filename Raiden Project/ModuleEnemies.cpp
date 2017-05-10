@@ -12,6 +12,7 @@
 #include "Turret.h"
 #include "ModulePowerUps.h"
 #include "Box_Medal.h"
+#include "Box_PowerUp.h"
 #define SPAWN_MARGIN 100
 
 ModuleEnemies::ModuleEnemies()
@@ -81,7 +82,7 @@ update_status ModuleEnemies::Update()
 		   {
 			   enemies[i]->Draw(sprites4);
 		   }
-		   if (enemies[i]->spritesheet == 4) //Box_Medal
+		   if (enemies[i]->spritesheet == 4) //Box_Medal & Box_PowerUp
 		   {
 			   enemies[i]->Draw(sprites5);
 		   }
@@ -173,6 +174,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		case ENEMY_TYPES::BOX_MEDAL:
 			enemies[i] = new Box_Medal(info.x, info.y, info._path);
 			break;
+		case ENEMY_TYPES::BOX_POWERUP:
+			enemies[i] = new Box_PowerUp(info.x, info.y, info._path);
+			break;
 		}
 	}
 }
@@ -247,7 +251,11 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				{
 					App->powerups->AddPowerUp(POWERUP_TYPES::MEDAL, enemies[i]->position.x, enemies[i]->position.y);
 				}
-				
+
+				else if (enemies[i]->powerupbox)
+				{
+					App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, enemies[i]->position.x, enemies[i]->position.y);
+				}				
 
 				delete enemies[i];
 				enemies[i] = nullptr;

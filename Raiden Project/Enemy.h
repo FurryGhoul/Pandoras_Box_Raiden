@@ -44,6 +44,7 @@ public:
 	int animations; // How much animations does the enemy have
 	bool bonusplane = false; // Bollean to detect if the enemy is a bonus plane and adapt the hitbox and drop a powerup
 	bool medalbox = false; //Boolean to detect if the enemy rewards a medal when killed
+	bool powerupbox = false;
 	bool lightshooter = false;
 	bool mediumshooter = false; // Bollean to detect if the enemy is a medium plane and adapt the hitbox
 	int left_right_mod = 0; // Integer to modify the position of the enemy
