@@ -419,7 +419,7 @@ update_status ModuleParticles::Update()
 		
 		}	
 		// Always destroy out of screen particles
-  		if (p->position.y < -100 )
+  		if (p->position.y < -400 && p->position.y >1000 )
 		{
 			delete active[i];
 			active[i] = nullptr;
@@ -427,7 +427,7 @@ update_status ModuleParticles::Update()
 		}
 	}
 
-	LOG("%i", nu_part);
+	//LOG("%i", nu_part);
 	return UPDATE_CONTINUE;
 }
 

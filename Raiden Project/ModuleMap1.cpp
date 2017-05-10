@@ -101,7 +101,6 @@ update_status ModuleMap1::Update()
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 200, -200);
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 200, -100);
 		//App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 200, -100);
-
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 200, -2000);
 
 		App->collision->Enable();

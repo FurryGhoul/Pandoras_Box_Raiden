@@ -44,14 +44,14 @@ Enemy_Light_Shooter::Enemy_Light_Shooter(int x, int y, int path) : Enemy(x, y)
 	{
 		movement.PushBack({ -0.2f, 8.0f }, 50);
 		movement.PushBack({ 0.0f, 0.0f }, 100);
-		movement.PushBack({ -0.2f, -5.0f }, 600);
+		movement.PushBack({ -0.2f, -5.0f }, 200);
 	}
 	
 	if (path == 1)
 	{
 		movement.PushBack({ -0.2f, 8.0f }, 40);
 		movement.PushBack({ 0.0f, 0.0f }, 100);
-		movement.PushBack({ -0.2f, -5.0f }, 600);
+		movement.PushBack({ -0.2f, -5.0f }, 200);
 	}
 
 	collider = App->collision->AddCollider({ 0, 0, 24*3-5, 24*3+20 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
