@@ -443,8 +443,6 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 			p->born = SDL_GetTicks() + delay;
 			p->position.x = x;
 			p->position.y = y;
-			p->initialpos.x = x;
-			p->initialpos.y = y;
 			p->spritesheet = particle.spritesheet;
 			p->bullettype = bullettype;
 			p->active = pactive;

@@ -22,7 +22,6 @@ struct Particle
 	Animation anim;
 	uint fx = 0;
 	iPoint position;
-	iPoint initialpos;
 	iPoint speed;
 	iPoint size;
 	bool active = true; // if active is true, particles have collider, if it is false they don't
@@ -32,6 +31,7 @@ struct Particle
 	int spritesheet = 0; //What spritesheet does the shot belong to
 	bool fx_played = false;
 	int position_respect_player;
+	int displacements = 0;
 
 	Particle();
 	Particle(const Particle& p);
@@ -50,28 +50,24 @@ struct Particle
 
 	void displace() //Displaces the particle
 	{
-		if (position.x == initialpos.x)
-		{
-			position.x += rand() % 2 + 5;
-			position.y += rand() % 2 + 5;
-		}
-
-		else if (position.x >= initialpos.x)
-		{
-			position.x -= rand() % 5 + 5;
-			position.y -= rand() % 5 + 5;
-		}
-
-		else if (position.x <= initialpos.x)
+		if (displacements % 2 == 0)
 		{
 			position.x += rand() % 5 + 5;
 			position.y += rand() % 5 + 5;
+		}
+
+		else
+		{
+			position.x -= rand() % 5 + 5;
+			position.y -= rand() % 5 + 5;
 		}
 
 		if (collider != nullptr)
 		{
 			collider->SetPos(position.x, position.y);
 		}
+		
+		displacements++;
 	}
 };
 
