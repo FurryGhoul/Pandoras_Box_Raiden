@@ -20,6 +20,8 @@ public:
 	int h;
 	int w;
 	int left_right_mod = 0;
+	bool bluep = false;
+	bool redp = false;
 
 public:
 	PowerUp(int x, int y);

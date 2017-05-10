@@ -12,6 +12,8 @@ BlueUp::BlueUp(int x, int y) : PowerUp(x, y)
 	idle1.PushBack({ 96, 2, 16, 13 });
 	idle1.speed = 0.1;
 
+	bluep = true;
+
 	movement.PushBack({ 0.0f, 4.0f }, 100);
 	movement.PushBack({ 4.0f, 0.0f }, 100);
 	movement.PushBack({ 0.0f, -2.0f }, 100);

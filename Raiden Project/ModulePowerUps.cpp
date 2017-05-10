@@ -31,7 +31,7 @@ bool ModulePowerUps::Init()
 	return true;
 }
 
-update_status ModulePowerUps::PreUpdate() 
+update_status ModulePowerUps::PreUpdate()
 {
 	for (uint i = 0; i < MAX_POWERUPS; ++i)
 	{
@@ -52,6 +52,7 @@ update_status ModulePowerUps::PreUpdate()
 
 update_status ModulePowerUps::Update()
 {
+
 	for (uint i = 0; i < MAX_POWERUPS; ++i)
 
 		if (powerups[i] != nullptr) powerups[i]->Move();
@@ -60,10 +61,17 @@ update_status ModulePowerUps::Update()
 	for (uint i = 0; i < MAX_POWERUPS; ++i)
 		if (powerups[i] != nullptr) powerups[i]->Draw(sprites);
 
+
+	time_swich++;
+	if (time_swich % 300 == 0)
+	{
+		Switch();
+	}
+
 	return UPDATE_CONTINUE;
 }
 
-update_status ModulePowerUps::PostUpdate() 
+update_status ModulePowerUps::PostUpdate()
 {
 	for (uint i = 0; i < MAX_POWERUPS; ++i)
 	{
@@ -255,6 +263,43 @@ void ModulePowerUps::MovePowerUpsRight(bool right)
 			if (powerups[i] != nullptr)
 			{
 				powerups[i]->left_right_mod -= 6;
+			}
+		}
+	}
+}
+
+void ModulePowerUps::Switch()
+{
+	PowerUpInfo info;
+	for (uint i = 0; i < MAX_POWERUPS; ++i)
+	{
+		if (powerups[i] != nullptr)
+		{
+			info.x = powerups[i]->position.x;
+			info.y = powerups[i]->position.y;
+			if (powerups[i]->bluep == true)
+			{
+				info.type = POWERUP_TYPES::REDUP;
+			}
+			if (powerups[i]->redp == true)
+			{
+				info.type = POWERUP_TYPES::BLUEUP;
+			}
+
+			delete powerups[i];
+			powerups[i] = nullptr;
+
+			switch (info.type)
+			{
+			case POWERUP_TYPES::REDUP:
+				powerups[i] = new RedUp(info.x, info.y);
+				break;
+			case POWERUP_TYPES::MEDAL:
+				powerups[i] = new Medals(info.x, info.y);
+				break;
+			case POWERUP_TYPES::BLUEUP:
+				powerups[i] = new BlueUp(info.x, info.y);
+				break;
 			}
 		}
 	}

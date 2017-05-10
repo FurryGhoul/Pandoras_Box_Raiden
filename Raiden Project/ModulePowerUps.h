@@ -40,6 +40,8 @@ public:
 	void ErasePowerUps();
 	bool AddPowerUp(POWERUP_TYPES type, int x, int y);
 	void MovePowerUpsRight(bool); // The bool is used to know if the powerups should be moved to the right (true) or to the left (false)
+	void Switch(); // changes blue powerups to red and red powerups to blue
+	int time_swich; // to controll the frequence of changing of the powerups
 
 private:
 
