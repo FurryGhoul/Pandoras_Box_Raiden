@@ -210,6 +210,10 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			{
 				enemies[i]->ishit = true;
 			}
+			if (enemies[i]->tank)
+			{
+				enemies[i]->ishit = true;
+			}
 			
 
 			if (enemies[i]->hp < 0)

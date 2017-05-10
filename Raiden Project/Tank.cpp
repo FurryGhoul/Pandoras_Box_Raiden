@@ -40,7 +40,7 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 
 	//Turret animations
 	s.PushBack({ 2,49,17,24 });
-
+	
 	se1.PushBack({ 446,46,16,23 });
 
 	se2.PushBack({ 206,48, 21,20 });
@@ -112,6 +112,7 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
  		movement.PushBack({ 0.0f, 4.0f }, 100);
 	}
 
+	tank = true;
 	collider = App->collision->AddCollider({ 0, 0, 24 * 3 - 5, 26 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
 	animation = &updiagonalleft;
 }
