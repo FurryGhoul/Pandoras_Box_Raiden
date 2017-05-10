@@ -12,7 +12,7 @@
 #include "Turret.h"
 #include "ModulePowerUps.h"
 #include "Box_Medal.h"
-#define SPAWN_MARGIN 50
+#define SPAWN_MARGIN 100
 
 ModuleEnemies::ModuleEnemies()
 {
@@ -96,7 +96,7 @@ update_status ModuleEnemies::PostUpdate()
 	{
 		if (enemies[i] != nullptr)
 		{
-			if (enemies[i]->position.y * SCREEN_SIZE < 0 - SPAWN_MARGIN - 100)
+			if (enemies[i]->position.y * SCREEN_SIZE < 0 - SPAWN_MARGIN-300 )
 			{
 				LOG("DeSpawning enemy at %d", enemies[i]->position.y * SCREEN_SIZE);
 				delete enemies[i];
