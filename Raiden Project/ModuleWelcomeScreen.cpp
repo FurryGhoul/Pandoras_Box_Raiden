@@ -54,6 +54,7 @@ update_status ModuleWelcomeScreen::Update()
 		App->player2->score = 0;
 		App->player2->deadplayer = true;
 		App->player2->godmode = false;
+		App->player->bombs = 3;
 		App->map_1->setup = true;
 		App->fade->FadeToBlack(this, App->map_1, 1.0f);
 		App->map_1->xmap = -192;

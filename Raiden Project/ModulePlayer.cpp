@@ -95,6 +95,15 @@ bool ModulePlayer::CleanUp()
 // Update: draw background
 update_status ModulePlayer::Update()
 {
+	if (bombs < 0)
+	{
+		bombs = 0;
+	}
+	else if (bombs > 6)
+	{
+		bombs = 6;
+	}
+
 	if (godmode == false)
 	{
 		Playergod->SetPos(10000000, 10000000);
@@ -178,7 +187,7 @@ update_status ModulePlayer::Update()
 			if ((App->map_1->IsEnabled() || App->map_2->IsEnabled()) && position.x <= 594)
 			{
 				position.x += speed;
-				
+
 			}
 		}
 
@@ -189,14 +198,14 @@ update_status ModulePlayer::Update()
 			if ((App->map_1->IsEnabled() || App->map_2->IsEnabled()) && position.y >= 683)
 			{
 				position.y -= speed;
-				
+
 			}
 		}
 
 		if (App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT)
 		{
 			position.y -= speed;
-			
+
 			if ((App->map_1->IsEnabled() || App->map_2->IsEnabled()) && position.y <= -1)
 			{
 				position.y += speed;
@@ -339,10 +348,10 @@ update_status ModulePlayer::Update()
 		if (App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT)
 		{
 			position.y -= speed;
-			
+
 			if ((App->map_1->IsEnabled() || App->map_2->IsEnabled()) && position.y <= -1)
 			{
-			position.y += speed;
+				position.y += speed;
 			}
 		}
 
@@ -414,172 +423,174 @@ update_status ModulePlayer::Update()
 		App->fonts->BlitText(20, 160, 0, score_text);
 		App->fonts->BlitText(20, 195, 0, scoret);
 	}
-	
-	if (App->input->keyboard[SDL_SCANCODE_B] == KEY_STATE::KEY_DOWN)
+
+	if (App->input->keyboard[SDL_SCANCODE_B] == KEY_STATE::KEY_DOWN && bombs >= 1 && SDL_GetTicks() - bombtime >= 2100)
 	{
 		App->particles->AddParticle(App->particles->bomb, position.x + speed + 20, position.y, COLLIDER_NONE, 47);
+		bombs--;
+		bombtime = SDL_GetTicks();
 	}
 
 	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
 	{
 
-	if (red == true)
-	{ 
-		if (powerup_level == 0)
+		if (red == true)
 		{
-			App->particles->AddParticle(App->particles->double_shot, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1);
-			score -= 40;
-			if (score < 0)
-				score = 0;
-		}
-		if (powerup_level == 1)
-		{
- 			App->particles->AddParticle(App->particles->double_shot, position.x + speed, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1);
-			App->particles->AddParticle(App->particles->double_shot, position.x + speed + 25, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1);
-			score -= 40;
-			if (score < 0)
-				score = 0;
-		}
-		if (powerup_level == 2)
-		{
-			App->particles->AddParticle(App->particles->double_shot, position.x + speed + 15, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1);
-			App->particles->AddParticle(App->particles->double_shot, position.x + speed + 35, position.y, COLLIDER_PLAYER_SHOT, 1, 3, 0, 0, true, 1);
-			App->particles->AddParticle(App->particles->double_shot, position.x + speed +5, position.y, COLLIDER_PLAYER_SHOT, 1, -3, 0, 0, true, 1);
-			score -= 40;
-			if (score < 0)
-				score = 0;
-		}
-		if (powerup_level == 3)
-		{
-			App->particles->AddParticle(App->particles->triple_shot, position.x + speed + 15, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 2);
-			App->particles->AddParticle(App->particles->triple_shot, position.x + speed + 35, position.y, COLLIDER_PLAYER_SHOT, 1, 3, 0, 0, true, 2);
-			App->particles->AddParticle(App->particles->triple_shot, position.x + speed + 5, position.y, COLLIDER_PLAYER_SHOT, 1, -3, 0, 0, true, 2);
-			score -= 40;
-			if (score < 0)
-				score = 0;
-		}
-		if (powerup_level == 4)
-		{
-			App->particles->AddParticle(App->particles->double_shot, position.x + speed + 15, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1);
-			App->particles->AddParticle(App->particles->double_shot, position.x + speed + 25, position.y, COLLIDER_PLAYER_SHOT, 1, 3, 0, 0, true,1);
-			App->particles->AddParticle(App->particles->double_shot, position.x + speed + 35, position.y, COLLIDER_PLAYER_SHOT, 1, 5, 0, 0, true,1);
-			App->particles->AddParticle(App->particles->double_shot, position.x + speed + 5, position.y, COLLIDER_PLAYER_SHOT, 1, -3, 0, 0, true,1);
-			App->particles->AddParticle(App->particles->double_shot, position.x + speed -15, position.y, COLLIDER_PLAYER_SHOT, 1, -5, 0, 0, true,1);
-		
-			score -= 40;
-			if (score < 0)
-				score = 0;
-		}
-		if (powerup_level == 5)
-		{
-			App->particles->AddParticle(App->particles->triple_shot, position.x + speed + 15, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 2);
-			App->particles->AddParticle(App->particles->triple_shot, position.x + speed + 25, position.y, COLLIDER_PLAYER_SHOT, 1, 3, 0, 0, true, 2);
-			App->particles->AddParticle(App->particles->triple_shot, position.x + speed + 35, position.y, COLLIDER_PLAYER_SHOT, 1, 5, 0, 0, true, 2);
-			App->particles->AddParticle(App->particles->triple_shot, position.x + speed + 5, position.y, COLLIDER_PLAYER_SHOT, 1, -3, 0, 0, true, 2);
-			App->particles->AddParticle(App->particles->triple_shot, position.x + speed - 15, position.y, COLLIDER_PLAYER_SHOT, 1, -5, 0, 0, true,2);
+			if (powerup_level == 0)
+			{
+				App->particles->AddParticle(App->particles->double_shot, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1);
+				score -= 40;
+				if (score < 0)
+					score = 0;
+			}
+			if (powerup_level == 1)
+			{
+				App->particles->AddParticle(App->particles->double_shot, position.x + speed, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1);
+				App->particles->AddParticle(App->particles->double_shot, position.x + speed + 25, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1);
+				score -= 40;
+				if (score < 0)
+					score = 0;
+			}
+			if (powerup_level == 2)
+			{
+				App->particles->AddParticle(App->particles->double_shot, position.x + speed + 15, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1);
+				App->particles->AddParticle(App->particles->double_shot, position.x + speed + 35, position.y, COLLIDER_PLAYER_SHOT, 1, 3, 0, 0, true, 1);
+				App->particles->AddParticle(App->particles->double_shot, position.x + speed + 5, position.y, COLLIDER_PLAYER_SHOT, 1, -3, 0, 0, true, 1);
+				score -= 40;
+				if (score < 0)
+					score = 0;
+			}
+			if (powerup_level == 3)
+			{
+				App->particles->AddParticle(App->particles->triple_shot, position.x + speed + 15, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 2);
+				App->particles->AddParticle(App->particles->triple_shot, position.x + speed + 35, position.y, COLLIDER_PLAYER_SHOT, 1, 3, 0, 0, true, 2);
+				App->particles->AddParticle(App->particles->triple_shot, position.x + speed + 5, position.y, COLLIDER_PLAYER_SHOT, 1, -3, 0, 0, true, 2);
+				score -= 40;
+				if (score < 0)
+					score = 0;
+			}
+			if (powerup_level == 4)
+			{
+				App->particles->AddParticle(App->particles->double_shot, position.x + speed + 15, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1);
+				App->particles->AddParticle(App->particles->double_shot, position.x + speed + 25, position.y, COLLIDER_PLAYER_SHOT, 1, 3, 0, 0, true, 1);
+				App->particles->AddParticle(App->particles->double_shot, position.x + speed + 35, position.y, COLLIDER_PLAYER_SHOT, 1, 5, 0, 0, true, 1);
+				App->particles->AddParticle(App->particles->double_shot, position.x + speed + 5, position.y, COLLIDER_PLAYER_SHOT, 1, -3, 0, 0, true, 1);
+				App->particles->AddParticle(App->particles->double_shot, position.x + speed - 15, position.y, COLLIDER_PLAYER_SHOT, 1, -5, 0, 0, true, 1);
 
-			score -= 40;
-			if (score < 0)
-				score = 0;
-		}
-		if (powerup_level == 6)
-		{
-			App->particles->AddParticle(App->particles->quad_shot, position.x + speed + 15, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 3);
-			App->particles->AddParticle(App->particles->quad_shot, position.x + speed + 25, position.y, COLLIDER_PLAYER_SHOT, 1, 3, 0, 0, true, 3);
-			App->particles->AddParticle(App->particles->quad_shot, position.x + speed + 35, position.y, COLLIDER_PLAYER_SHOT, 1, 5, 0, 0, true, 3);
-			App->particles->AddParticle(App->particles->quad_shot, position.x + speed + 5, position.y, COLLIDER_PLAYER_SHOT, 1, -3, 0, 0, true, 3);
-			App->particles->AddParticle(App->particles->quad_shot, position.x + speed - 15, position.y, COLLIDER_PLAYER_SHOT, 1, -5, 0, 0, true, 3);
+				score -= 40;
+				if (score < 0)
+					score = 0;
+			}
+			if (powerup_level == 5)
+			{
+				App->particles->AddParticle(App->particles->triple_shot, position.x + speed + 15, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 2);
+				App->particles->AddParticle(App->particles->triple_shot, position.x + speed + 25, position.y, COLLIDER_PLAYER_SHOT, 1, 3, 0, 0, true, 2);
+				App->particles->AddParticle(App->particles->triple_shot, position.x + speed + 35, position.y, COLLIDER_PLAYER_SHOT, 1, 5, 0, 0, true, 2);
+				App->particles->AddParticle(App->particles->triple_shot, position.x + speed + 5, position.y, COLLIDER_PLAYER_SHOT, 1, -3, 0, 0, true, 2);
+				App->particles->AddParticle(App->particles->triple_shot, position.x + speed - 15, position.y, COLLIDER_PLAYER_SHOT, 1, -5, 0, 0, true, 2);
 
-			score -= 40;
-			if (score < 0)
-				score = 0;
+				score -= 40;
+				if (score < 0)
+					score = 0;
+			}
+			if (powerup_level == 6)
+			{
+				App->particles->AddParticle(App->particles->quad_shot, position.x + speed + 15, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 3);
+				App->particles->AddParticle(App->particles->quad_shot, position.x + speed + 25, position.y, COLLIDER_PLAYER_SHOT, 1, 3, 0, 0, true, 3);
+				App->particles->AddParticle(App->particles->quad_shot, position.x + speed + 35, position.y, COLLIDER_PLAYER_SHOT, 1, 5, 0, 0, true, 3);
+				App->particles->AddParticle(App->particles->quad_shot, position.x + speed + 5, position.y, COLLIDER_PLAYER_SHOT, 1, -3, 0, 0, true, 3);
+				App->particles->AddParticle(App->particles->quad_shot, position.x + speed - 15, position.y, COLLIDER_PLAYER_SHOT, 1, -5, 0, 0, true, 3);
+
+				score -= 40;
+				if (score < 0)
+					score = 0;
+			}
 		}
+		if (red == false)
+		{
+			if (powerup_level == 1)
+			{
+				App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1);
+				App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y + 48, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false);
+				score -= 40;
+				if (score < 0)
+					score = 0;
+			}
+			if (powerup_level == 2)
+			{
+				App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1);
+				App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y + 48, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false);
+				App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y + 48 * 2, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false);
+				App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y + 48 * 3, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false);
+				App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y + 48 * 4, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false);
+				score -= 40;
+				if (score < 0)
+					score = 0;
+			}
+			if (powerup_level == 3)
+			{
+				// row 1
+				App->particles->AddParticle(App->particles->laser2, position.x + speed + 3, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1);
+				App->particles->AddParticle(App->particles->laser2, position.x + speed + 35, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1);
+				//row 2
+				App->particles->AddParticle(App->particles->laser2, position.x + speed, position.y + 48, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 12);
+				App->particles->AddParticle(App->particles->laser2, position.x + speed + 4, position.y + 48, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 45);
+				//row 3
+				App->particles->AddParticle(App->particles->laser2, position.x + speed, position.y + 48 * 2, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 12);
+				App->particles->AddParticle(App->particles->laser2, position.x + speed + 40, position.y + 48 * 2, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 45);
+				//row 4
+				App->particles->AddParticle(App->particles->laser2, position.x + speed, position.y + 48 * 3, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 12);
+				App->particles->AddParticle(App->particles->laser2, position.x + speed + 40, position.y + 48 * 3, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 45);
+				//row 5
+				App->particles->AddParticle(App->particles->laser2, position.x + speed, position.y + 48 * 4, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 12);
+				App->particles->AddParticle(App->particles->laser2, position.x + speed + 40, position.y + 48 * 4, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 45);
+
+				score -= 40;
+				if (score < 0)
+					score = 0;
+			}
+			if (powerup_level == 4)
+			{
+				// row 1
+				App->particles->AddParticle(App->particles->laser2, position.x + speed - 5, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1);
+				App->particles->AddParticle(App->particles->laser2, position.x + speed + 19, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1);
+				App->particles->AddParticle(App->particles->laser2, position.x + speed + 42, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1);
+				//row 2
+				App->particles->AddParticle(App->particles->laser2, position.x + speed - 5, position.y + 48, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1, false, 5);
+				App->particles->AddParticle(App->particles->laser2, position.x + speed + 15, position.y + 48, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1, false, 29);
+				App->particles->AddParticle(App->particles->laser2, position.x + speed + 42, position.y + 48, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 52);
+				//row 3
+				App->particles->AddParticle(App->particles->laser2, position.x + speed, position.y + 48 * 2, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1, false, 12);
+				App->particles->AddParticle(App->particles->laser2, position.x + speed + 40, position.y + 48 * 2, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 45);
+				//row 4
+				App->particles->AddParticle(App->particles->laser2, position.x + speed, position.y + 48 * 3, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1, false, 12);
+				App->particles->AddParticle(App->particles->laser2, position.x + speed + 40, position.y + 48 * 3, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 45);
+				//row 5
+				App->particles->AddParticle(App->particles->laser2, position.x + speed, position.y + 48 * 4, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1, false, 12);
+				App->particles->AddParticle(App->particles->laser2, position.x + speed + 40, position.y + 48 * 4, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 45);
+				//row 6
+				App->particles->AddParticle(App->particles->laser2, position.x + speed, position.y + 48 * 5, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1, false, 12);
+				App->particles->AddParticle(App->particles->laser2, position.x + speed + 40, position.y + 48 * 5, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 45);
+			}
+			if (powerup_level == 5)
+			{
+
+			}
+			if (powerup_level == 6)
+			{
+
+			}
+			if (powerup_level == 7)
+			{
+
+			}
+		}
+
 	}
-	if (red == false)
-	{
-		if (powerup_level == 1)
-		{
-			App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1);
-			App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y +48, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false);
-			score -= 40;
-			if (score < 0)
-				score = 0;
-		}
-		if (powerup_level == 2)
-		{
-			App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1);
-			App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y + 48, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false);
-			App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y + 48 * 2, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false);
-			App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y + 48 * 3, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false);
-			App->particles->AddParticle(App->particles->laser, position.x + speed + 20, position.y + 48 * 4, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false);
-			score -= 40;
-			if (score < 0)
-				score = 0;
-		}
-		if (powerup_level == 3)
-		{
-			// row 1
-			App->particles->AddParticle(App->particles->laser2, position.x + speed+ 3, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1);
-			App->particles->AddParticle(App->particles->laser2, position.x + speed  + 35, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1);
-			//row 2
-			App->particles->AddParticle(App->particles->laser2, position.x + speed, position.y + 48, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 12);
-			App->particles->AddParticle(App->particles->laser2, position.x + speed + 4, position.y + 48, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 45);
-			//row 3
-			App->particles->AddParticle(App->particles->laser2, position.x + speed, position.y +48 * 2, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 12);
-			App->particles->AddParticle(App->particles->laser2, position.x + speed + 40, position.y + 48 * 2, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 45);
-			//row 4
-			App->particles->AddParticle(App->particles->laser2, position.x + speed, position.y + 48 * 3, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 12);
-			App->particles->AddParticle(App->particles->laser2, position.x + speed + 40, position.y + 48 * 3, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 45);
-			//row 5
-			App->particles->AddParticle(App->particles->laser2, position.x + speed, position.y + 48 * 4, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 12);
-			App->particles->AddParticle(App->particles->laser2, position.x + speed + 40, position.y + 48 * 4, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 45);
 
-			score -= 40;
-			if (score < 0)
-				score = 0;
-		}
-		if (powerup_level == 4)
-		{
-			// row 1
-			App->particles->AddParticle(App->particles->laser2, position.x + speed - 5, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1);
-			App->particles->AddParticle(App->particles->laser2, position.x + speed + 19, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1);
-			App->particles->AddParticle(App->particles->laser2, position.x + speed + 42, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1);
-			//row 2
-			App->particles->AddParticle(App->particles->laser2, position.x + speed - 5, position.y + 48, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1, false, 5);
-			App->particles->AddParticle(App->particles->laser2, position.x + speed + 15, position.y+ 48, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1, false, 29);
-			App->particles->AddParticle(App->particles->laser2, position.x + speed + 42, position.y + 48, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 52);
-			//row 3
-			App->particles->AddParticle(App->particles->laser2, position.x + speed, position.y + 48 * 2, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1, false, 12 );
-			App->particles->AddParticle(App->particles->laser2, position.x + speed + 40, position.y + 48 * 2, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 45);
-			//row 4
-			App->particles->AddParticle(App->particles->laser2, position.x + speed, position.y + 48 * 3, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1, false,12 );
-			App->particles->AddParticle(App->particles->laser2, position.x + speed + 40, position.y + 48 * 3, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 45);
-			//row 5
-			App->particles->AddParticle(App->particles->laser2, position.x + speed, position.y + 48 * 4, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1, false, 12);
-			App->particles->AddParticle(App->particles->laser2, position.x + speed + 40, position.y + 48 * 4, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 45);
-			//row 6
-			App->particles->AddParticle(App->particles->laser2, position.x + speed, position.y + 48 * 5, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1, false, 12);
-			App->particles->AddParticle(App->particles->laser2, position.x + speed + 40, position.y + 48 * 5, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 45);
-		}
-		if (powerup_level == 5)
-		{
-			
-		}
-		if (powerup_level == 6)
-		{
-			
-		}
-		if (powerup_level == 7)
-		{
-			
-		}
-	}
 
-	}
 
-			
-		
-	
+
 
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
 	if (Player != nullptr && godmode == false)

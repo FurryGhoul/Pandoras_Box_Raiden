@@ -49,6 +49,8 @@ public:
 	Animation right1p;
 	Animation left1p;
 	iPoint position;
+	int bombs;
+	Uint32 bombtime;
 	int font_score = -1;
 	char score_text[20];
 	char scoret[20];
