@@ -313,12 +313,17 @@ bool ModuleParticles::CleanUp()
 // Update: draw background
 update_status ModuleParticles::Update()
 {
+	int nu_part = 0;
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 	{
 		Particle* p = active[i];
 
 		if (p == nullptr)
 			continue;
+		else
+		{
+			nu_part++;
+		}
 
 		if (p->Update() == false)
 		{
@@ -411,16 +416,18 @@ update_status ModuleParticles::Update()
 			{
 				p->fx_played = true;
 			}
-			// Always destroy out of screen particles
-			if ((active[i]->collider != nullptr && (active[i]->position.y <= -1 && active[i]->collider->bullettype != 27 && active[i]->collider->bullettype != 37 && active[i]->collider->bullettype != 47)) || !App->map_1->IsEnabled() && !App->map_2->IsEnabled())
-			{
-				delete active[i];
-				active[i] = nullptr;
-				break;
-			}
+		
+		}	
+		// Always destroy out of screen particles
+  		if (p->position.y < -100 )
+		{
+			delete active[i];
+			active[i] = nullptr;
+			
 		}
 	}
 
+	LOG("%i", nu_part);
 	return UPDATE_CONTINUE;
 }
 
