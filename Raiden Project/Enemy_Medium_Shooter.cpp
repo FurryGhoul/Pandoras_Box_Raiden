@@ -16,43 +16,50 @@ Enemy_Medium_Shooter::Enemy_Medium_Shooter(int x, int y, int path) : Enemy(x, y)
 	
 	// Anmiation pushback's
 
-	// Idle animation
-	/*flyi.PushBack({ 8, 47, 73, 54 });
-	flyi1.PushBack({ 86, 47, 73, 53 });
-	flyi2.PushBack({ 164, 47, 73, 54 });
-	flyi3.PushBack({ 242, 47, 73, 53 });*/
+	// Idle
+	flyi.PushBack({ 329, 47, 73, 54 });
+	flyi.PushBack({ 407, 47, 73, 54 });
+	flyi.speed = 0.2f;
 
 	// Shooting animation
 	flys.PushBack({ 8, 109, 73, 54 });
-	flys1.PushBack({ 86, 109, 73, 52 });
-	flys2.PushBack({ 164, 109, 73, 54 });
-	flys3.PushBack({ 242, 109, 73, 52 });
+	flys.PushBack({ 86, 109, 73, 54 });
+	flys.PushBack({ 164, 109, 73, 54 });
+	flys.PushBack({ 242, 109, 73, 54 });
+	flys.speed = 0.2f;
 
-	movement.PushBack({ -0.2f, 8.0f }, 50);
-	movement.PushBack({ 0.0f, 0.0f }, 100);
-	movement.PushBack({ -0.2f, -5.0f }, 600);
+	// Charge downwards
+	flycd.PushBack({ 8, 47, 73, 54 });
+	flycd.PushBack({ 86, 47, 73, 54 });
+	flycd.speed = 0.2f;
+
+	// Charge upwards
+	flycu.PushBack({ 163, 47, 73, 54 });
+	flycu.PushBack({ 244, 46, 73, 54 });
+	flycu.speed = 0.2;
+	
+
+	movement.PushBack({ -0.02f, 3.0f }, 100);
+	movement.PushBack({ 0.0f, 3.0f }, 100);
+	//movement.PushBack({ -0.2f, -5.0f }, 600);
 
 	mediumshooter = true;
 	collider = App->collision->AddCollider({ 0, 0, 73 * 3 - 110, 54 * 3 - 110 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 	spritesheet = 3;
 	animations = 1;
 	original_pos.x = x;
-	original_pos.y = -50;
+	original_pos.y = -200;
 }
 
 void Enemy_Medium_Shooter::MoveShoot()
 {
 
 	position = original_pos + movement.GetCurrentPosition();
-
-
-	//position = original_pos + movement1.GetCurrentPosition();
-
 	position.x += left_right_mod;
 
 	++shoot_time;
 
-	if (sqrtf((distance.y = App->player->position.y - 22 - position.y - 22 * 3)*(distance.y = App->player->position.y - 22 - position.y - 22 * 3) + (distance.x = App->player->position.x - position.x + 22)* (distance.x = App->player->position.x - position.x + 22))
+	/*if (sqrtf((distance.y = App->player->position.y - 22 - position.y - 22 * 3)*(distance.y = App->player->position.y - 22 - position.y - 22 * 3) + (distance.x = App->player->position.x - position.x + 22)* (distance.x = App->player->position.x - position.x + 22))
 		< sqrtf((distance.y = App->player2->position.y - 22 - position.y - 22 * 3)*(distance.y = App->player2->position.y - 22 - position.y - 22 * 3) + (distance.x = App->player2->position.x - position.x + 22)* (distance.x = App->player2->position.x - position.x + 22)))
 	{
 		distance.y = App->player->position.y - 22 - position.y - 22 * 3;
@@ -63,12 +70,12 @@ void Enemy_Medium_Shooter::MoveShoot()
 	{
 		distance.y = App->player2->position.y - 22 - position.y - 22 * 3;
 		distance.x = App->player2->position.x - position.x + 22;
-	}
+	}*/
 	// Animation
 
 	animation = &flys;
 	w = 73 * 3;
-	h = 53 * 3;
+	h = 54 * 3;
 
 	distance.x = fabs(distance.x);
 	distance.y = fabs(distance.y);
