@@ -412,7 +412,7 @@ update_status ModuleParticles::Update()
 				p->fx_played = true;
 			}
 			// Always destroy out of screen particles
-			if (active[i]->position.y <= -1 || !App->map_1->IsEnabled() && !App->map_2->IsEnabled())
+			if ((active[i]->collider != nullptr && (active[i]->position.y <= -1 && active[i]->collider->bullettype != 27 && active[i]->collider->bullettype != 37 && active[i]->collider->bullettype != 47)) || !App->map_1->IsEnabled() && !App->map_2->IsEnabled())
 			{
 				delete active[i];
 				active[i] = nullptr;
