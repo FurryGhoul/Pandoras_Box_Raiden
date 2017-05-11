@@ -14,6 +14,8 @@
 #include "Box_Medal.h"
 #include "Box_PowerUp.h"
 #include "ModuleMap1.h"
+#include "Enemy_Kamikaze.h"
+
 #define SPAWN_MARGIN 100
 
 ModuleEnemies::ModuleEnemies()
@@ -35,6 +37,7 @@ bool ModuleEnemies::Init()
 	sprites3 = App->textures->Load("assets/Tank1.png");
 	sprites4 = App->textures->Load("assets/Medium Shooter.png");
 	sprites5 = App->textures->Load("assets/Boxes.png");
+	sprites6 = App->textures->Load("assets/Kamikaze.png");
 	return true;
 }
 
@@ -87,6 +90,10 @@ update_status ModuleEnemies::Update()
 		   {
 			   enemies[i]->Draw(sprites5);
 		   }
+		   if (enemies[i]->spritesheet == 5) //Box_Medal & Box_PowerUp
+		   {
+			   enemies[i]->Draw(sprites6);
+		   }
         }
 	return UPDATE_CONTINUE;
 }
@@ -98,7 +105,7 @@ update_status ModuleEnemies::PostUpdate()
 	{
 		if (enemies[i] != nullptr)
 		{
-			if (enemies[i]->position.y * SCREEN_SIZE < 0 - SPAWN_MARGIN-300 )
+			if (enemies[i]->position.y * SCREEN_SIZE < -100 || enemies[i]->position.y * SCREEN_SIZE > 1000)
 			{
 				LOG("DeSpawning enemy at %d", enemies[i]->position.y * SCREEN_SIZE);
 				delete enemies[i];
@@ -162,6 +169,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		{
 		case ENEMY_TYPES::LIGHT_SHOOTER:
 			enemies[i] = new Enemy_Light_Shooter(App->map_1->xmap + info.x, info.y, info._path);
+			break;
+		case ENEMY_TYPES::KAMIKAZE:
+			enemies[i] = new Enemy_Kamikaze(info.x, info.y, info._path);
 			break;
 		case ENEMY_TYPES::BONUS_SHIP:
 			enemies[i] = new Enemy_Bonus_Ship(info.x, info.y, info._path);
