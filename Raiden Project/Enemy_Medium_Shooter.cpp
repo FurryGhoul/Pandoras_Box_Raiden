@@ -39,9 +39,12 @@ Enemy_Medium_Shooter::Enemy_Medium_Shooter(int x, int y, int path) : Enemy(x, y)
 	flycu.speed = 0.2;
 	
 
-	movement.PushBack({ -0.02f, 3.0f }, 100);
 	movement.PushBack({ 0.0f, 3.0f }, 100);
-	//movement.PushBack({ -0.2f, -5.0f }, 600);
+	movement.PushBack({ 0.0f, 2.0f }, 100);
+	movement.PushBack({ 0.0f, 3.0f }, 70);
+	movement.PushBack({ 0.0f, 4.0f }, 200);
+	movement.PushBack({ 0.0f, -4.0f }, 500);
+	movement.loop = false;
 
 	mediumshooter = true;
 	collider = App->collision->AddCollider({ 0, 0, 73 * 3 - 110, 54 * 3 - 110 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
@@ -73,12 +76,31 @@ void Enemy_Medium_Shooter::MoveShoot()
 	}*/
 	// Animation
 
-	animation = &flys;
+	animation = &flyi;
 	w = 73 * 3;
 	h = 54 * 3;
 
 	distance.x = fabs(distance.x);
 	distance.y = fabs(distance.y);
+	shooting = false;
+
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 3.0f)
+	{
+		animation = &flyi;				
+	}
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f)
+	{
+		animation = &flys;
+		shooting = true;
+	}
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 4.0f)
+	{
+		animation = &flycd;
+	}
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == -4.0f)
+	{
+		animation = &flycu;
+	}
 
 	// Shooting
 	distance.x *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
