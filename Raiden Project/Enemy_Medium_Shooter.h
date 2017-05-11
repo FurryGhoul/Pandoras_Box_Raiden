@@ -19,9 +19,11 @@ private:
 	bool sw = false;
 	bool shooting = false;
 	int shoot_time = 0;
+	int shots = 0;
 
 public:
 	Enemy_Medium_Shooter(int x, int y, int path);
 	void MoveShoot();
+	void Shoot(iPoint position, fPoint distance, int shoot_time);
 };
 

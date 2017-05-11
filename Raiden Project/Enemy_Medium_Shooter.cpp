@@ -62,7 +62,7 @@ void Enemy_Medium_Shooter::MoveShoot()
 
 	++shoot_time;
 
-	/*if (sqrtf((distance.y = App->player->position.y - 22 - position.y - 22 * 3)*(distance.y = App->player->position.y - 22 - position.y - 22 * 3) + (distance.x = App->player->position.x - position.x + 22)* (distance.x = App->player->position.x - position.x + 22))
+	if (sqrtf((distance.y = App->player->position.y - 22 - position.y - 22 * 3)*(distance.y = App->player->position.y - 22 - position.y - 22 * 3) + (distance.x = App->player->position.x - position.x + 22)* (distance.x = App->player->position.x - position.x + 22))
 		< sqrtf((distance.y = App->player2->position.y - 22 - position.y - 22 * 3)*(distance.y = App->player2->position.y - 22 - position.y - 22 * 3) + (distance.x = App->player2->position.x - position.x + 22)* (distance.x = App->player2->position.x - position.x + 22)))
 	{
 		distance.y = App->player->position.y - 22 - position.y - 22 * 3;
@@ -73,7 +73,7 @@ void Enemy_Medium_Shooter::MoveShoot()
 	{
 		distance.y = App->player2->position.y - 22 - position.y - 22 * 3;
 		distance.x = App->player2->position.x - position.x + 22;
-	}*/
+	}
 	// Animation
 
 	animation = &flyi;
@@ -81,8 +81,7 @@ void Enemy_Medium_Shooter::MoveShoot()
 	h = 54 * 3;
 
 	distance.x = fabs(distance.x);
-	distance.y = fabs(distance.y);
-	shooting = false;
+	distance.y = fabs(distance.y);	
 
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 3.0f)
 	{
@@ -91,7 +90,7 @@ void Enemy_Medium_Shooter::MoveShoot()
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f)
 	{
 		animation = &flys;
-		shooting = true;
+		//shooting = true;
 	}
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 4.0f)
 	{
@@ -105,9 +104,9 @@ void Enemy_Medium_Shooter::MoveShoot()
 	// Shooting
 	distance.x *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
 	distance.y *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
-	if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && shooting == false)
+	/*if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && shooting == false)
 	{
-		if (shoot_time % 80 == 0 && position.y <= 760)
+		if (shoot_time % 50 == 0 && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f)
 		{
 			if (App->player->position.y - 22 < (position.y - 22 * 3))
 			{
@@ -117,10 +116,44 @@ void Enemy_Medium_Shooter::MoveShoot()
 			{
 				distance.x *= -1;
 			}
-			App->particles->AddParticle(App->particles->enemyshot, position.x + 10, position.y + 50, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y); //In theory, the speed should be distance.x and distance.y, but at the moment it doesn't work that way
+			Shoot(position, distance, shoot_time);
 
 			shooting = true;
 		}
 		shooting = false;
+	}*/
+
+	if (shoot_time % 50 == 0 && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f && shooting == false)
+	{
+		shooting = true;
 	}
+
+	if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && shooting == true)
+	{
+		
+		if (App->player->position.y - 22 < (position.y - 22 * 3))
+		{
+			distance.y *= -1;
+		}
+		if (App->player->position.x < (position.x + 22))
+		{
+			distance.x *= -1;
+		}
+		if (shoot_time % 5 == 0)
+		{
+			Shoot(position, distance, shoot_time);
+			shots++;
+		}		
+	}
+	if (shots >= 5)
+	{
+		shooting = false;
+		shots = 0;
+	}
+}
+
+void Enemy_Medium_Shooter::Shoot(iPoint position, fPoint distance, int shoot_time)
+{
+	App->particles->AddParticle(App->particles->enemyshot, position.x + 60, position.y + 30, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+	App->particles->AddParticle(App->particles->enemyshot, position.x + 150, position.y + 30, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
 }

@@ -2,8 +2,15 @@
 c:\users\albertmc12\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
 c:\users\albertmc12\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
 c:\users\albertmc12\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(39): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\albertmc12\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(65): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\albertmc12\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(66): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\albertmc12\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(68): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\albertmc12\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(69): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\albertmc12\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(74): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\albertmc12\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(75): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 c:\users\albertmc12\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(83): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 c:\users\albertmc12\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(84): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\albertmc12\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(120): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\albertmc12\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(157): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\albertmc12\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(158): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   SDL Game.vcxproj -> C:\Users\albertmc12\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
   SDL Game.vcxproj -> C:\Users\albertmc12\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
