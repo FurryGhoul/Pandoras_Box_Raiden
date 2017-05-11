@@ -30,8 +30,8 @@ ModuleMap1::~ModuleMap1()
 bool ModuleMap1::Init()
 {
 	LOG("Loading background assets");
-	ground = {xmap,ymap ,352*3 ,3266*3};
-    Map1 = App->textures->Load("Assets/Tilemap1.png");
+	ground = { 0, 0, 352 * 3, 5362 * 3 };
+    Map1 = App->textures->Load("Assets/Tilemap2.png");
 	
 	
 	return true;
@@ -131,14 +131,17 @@ update_status ModuleMap1::Update()
 	}
 
 	App->render->Blit(Map1, xmap, ymap, &ground);
-	App->render->camera.y -= 2;//both speed where reduced to 1
-	App->map_1->ymap += 2;
+    if (!(ymap >= 0))
+	{ 
+	ymap += 1;
+	App->render->camera.y -= 1;
+	}
 	if (App->input->keyboard[SDL_SCANCODE_BACKSPACE])
 	{
-		App->render->camera.y = -5500;
-		//App->fade->FadeToBlack(this, App->map_2, 1.0f);
+		ymap = 0;
+
 	}
-	if (App->render->camera.y <= -5500)
+	if ( ymap >= 0)
 	{
 		App->player->Disable();
 		App->player2->Disable();

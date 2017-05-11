@@ -38,7 +38,7 @@ update_status ModuleStageClear1::Update()
 		App->player2->Disable();
 		App->collision->Disable();
 	}
-	App->render->Blit(StageClear1, 0, 0, &ground);
+	App->render->Blit(StageClear1, 0, 0, &ground, 224 * 3, 256 * 3+ 62);
 	if (App->input->keyboard[SDL_SCANCODE_SPACE])
 	{
 		App->fade->FadeToBlack(this, App->WelcomeScreen, 1.0f);

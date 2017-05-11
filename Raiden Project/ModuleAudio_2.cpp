@@ -1,7 +1,7 @@
 #include "Globals.h"
 #include "Application.h"
 #include "ModuleAudio_2.h"
-#include "ModuleMap2.h"
+#include "ModuleMap1.h"
 ModuleAudio2::ModuleAudio2() : Module()
 {
 
@@ -30,16 +30,18 @@ bool ModuleAudio2::Init()
 	{
 		LOG("An error has ocurred while reproducing the audio %s", SDL_GetError())
 	}
+
+	fx_shoot = Mix_LoadWAV("Assets/red_shot1.wav");
 	return true;
 }
 update_status ModuleAudio2::Update()
 {
-	if (App->map_2->IsEnabled() && playing == false)
+	if (App->map_1->IsEnabled() && playing == false)
 	{
  		Init();
 		playing = true;
 	}
-	if (!(App->map_2->IsEnabled()) && playing == true)
+	if (!(App->map_1->IsEnabled()) && playing == true)
 	{
 		playing = false;
 		Close();

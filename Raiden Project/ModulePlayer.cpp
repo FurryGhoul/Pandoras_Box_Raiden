@@ -169,7 +169,7 @@ update_status ModulePlayer::Update()
 				current_animation = &left1;
 			}
 
-			if ((App->map_1->IsEnabled() || App->map_2->IsEnabled()) && position.x >= 10)
+			if (App->map_1->IsEnabled()  && position.x >= 10)
 			{
 				position.x -= speed;
 			}
@@ -195,7 +195,7 @@ update_status ModulePlayer::Update()
 				current_animation = &right1;
 			}
 
-			if ((App->map_1->IsEnabled() || App->map_2->IsEnabled()) && position.x <= 594)
+			if (App->map_1->IsEnabled() && position.x <= 594)
 			{
 				position.x += speed;
 
@@ -206,7 +206,7 @@ update_status ModulePlayer::Update()
 		{
 			position.y += speed;
 
-			if ((App->map_1->IsEnabled() || App->map_2->IsEnabled()) && position.y >= 683)
+			if (App->map_1->IsEnabled() && position.y >= 745)
 			{
 				position.y -= speed;
 
@@ -217,7 +217,7 @@ update_status ModulePlayer::Update()
 		{
 			position.y -= speed;
 
-			if ((App->map_1->IsEnabled() || App->map_2->IsEnabled()) && position.y <= -1)
+			if (App->map_1->IsEnabled() && position.y <= -1)
 			{
 				position.y += speed;
 			}
@@ -314,7 +314,7 @@ update_status ModulePlayer::Update()
 				current_animation = &left1p;
 			}
 
-			if ((App->map_1->IsEnabled() || App->map_2->IsEnabled()) && position.x >= 10)
+			if (App->map_1->IsEnabled() && position.x >= 10)
 			{
 				position.x -= speed;
 			}
@@ -340,7 +340,7 @@ update_status ModulePlayer::Update()
 				current_animation = &right1p;
 			}
 
-			if ((App->map_1->IsEnabled() || App->map_2->IsEnabled()) && position.x <= 594)
+			if (App->map_1->IsEnabled() && position.x <= 594)
 			{
 				position.x += speed;
 			}
@@ -350,7 +350,7 @@ update_status ModulePlayer::Update()
 		{
 			position.y += speed;
 
-			if ((App->map_1->IsEnabled() || App->map_2->IsEnabled()) && position.y >= 683)
+			if (App->map_1->IsEnabled() && position.y >= 683)
 			{
 				position.y -= speed;
 			}
@@ -360,7 +360,7 @@ update_status ModulePlayer::Update()
 		{
 			position.y -= speed;
 
-			if ((App->map_1->IsEnabled() || App->map_2->IsEnabled()) && position.y <= -1)
+			if (App->map_1->IsEnabled() && position.y <= -1)
 			{
 				position.y += speed;
 			}
@@ -744,7 +744,7 @@ update_status ModulePlayer::Update()
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
 	if (bomb_ammo != nullptr)
 	{
-		App->render->Blit(graphics2, 5, 720, &(bomb_ammo->GetCurrentFrame()), bombammo_w, 14 * 3);
+		App->render->Blit(graphics2, 5, 782, &(bomb_ammo->GetCurrentFrame()), bombammo_w, 14 * 3);
 	}
 
 	if (Player != nullptr && godmode == false)

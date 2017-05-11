@@ -101,7 +101,7 @@ bool ModuleRender::Blit(SDL_Texture* texture, int x, int y, SDL_Rect* section, i
 		rect.h = h;
 	}
 
-	SDL_RenderSetLogicalSize(renderer, 672, 768);
+	SDL_RenderSetLogicalSize(renderer, 672, 830);
 
 	if (SDL_RenderCopy(renderer, texture, section, &rect) != 0)
 	{

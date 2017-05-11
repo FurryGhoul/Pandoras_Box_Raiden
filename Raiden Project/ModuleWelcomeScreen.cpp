@@ -29,9 +29,8 @@ bool ModuleWelcomeScreen::Init()
 {
 	LOG("Loading background assets");
 	App->map_1->Disable();
-	App->map_2->Disable();
+
 	App->StageClear1->Disable();
-	App->audio->Close();
 	App->audio_2->Close();
 	App->particles->Disable();
 	App->player->Disable();
@@ -44,9 +43,8 @@ bool ModuleWelcomeScreen::Init()
 
 update_status ModuleWelcomeScreen::Update()
 {
-	
 
-	App->render->Blit(Welcome, 0, 0, &ground);
+	App->render->Blit(Welcome, 0, 0, &ground, 224 * 3, 256*3 + 62 );
 
 	if (App->input->keyboard[SDL_SCANCODE_1])
 	{
@@ -57,8 +55,6 @@ update_status ModuleWelcomeScreen::Update()
 		App->player->bombs = 3;
 		App->map_1->setup = true;
 		App->fade->FadeToBlack(this, App->map_1, 1.0f);
-		App->map_1->xmap = -192;
-		App->map_1->ymap = -9020;
 		App->collision->Erase_Non_Player_Colliders();
 	}
 
@@ -68,8 +64,6 @@ update_status ModuleWelcomeScreen::Update()
 		App->player2->score = 0;
 		App->map_1->setup = true;
 		App->fade->FadeToBlack(this, App->map_1, 1.0f);
-		App->map_1->xmap = -192;
-		App->map_1->ymap = -9020;
 		App->collision->Erase_Non_Player_Colliders();
 	}
 	return UPDATE_CONTINUE;

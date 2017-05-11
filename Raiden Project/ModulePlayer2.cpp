@@ -147,11 +147,6 @@ update_status ModulePlayer2::Update()
 			{
 				position.x -= speed;
 			}
-
-			if (App->map_2->IsEnabled() && position.x >= 10)
-			{
-				position.x -= speed;
-			}
 		}
 
 		if (App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_STATE::KEY_REPEAT)
@@ -179,17 +174,13 @@ update_status ModulePlayer2::Update()
 				position.x += speed;
 			}
 
-			if (App->map_2->IsEnabled() && position.x <= 594)
-			{
-				position.x += speed;
-			}
 		}
 
 		if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_REPEAT)
 		{
 			position.y += speed;
 
-			if ((App->map_1->IsEnabled() || App->map_2->IsEnabled()) && position.y >= 683)
+			if (App->map_1->IsEnabled() && position.y >= 683)
 			{
 				position.y -= speed;
 			}
@@ -199,7 +190,7 @@ update_status ModulePlayer2::Update()
 		{
 			position.y -= speed;
 
-			if ((App->map_1->IsEnabled() || App->map_2->IsEnabled()) && position.y <= -1)
+			if (App->map_1->IsEnabled() && position.y <= -1)
 			{
 				position.y += speed;
 			}
@@ -303,10 +294,6 @@ update_status ModulePlayer2::Update()
 				position.x -= speed;
 			}
 
-			if (App->map_2->IsEnabled() && position.x >= 10)
-			{
-				position.x -= speed;
-			}
 		}
 
 		if (App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_STATE::KEY_REPEAT)
@@ -333,18 +320,13 @@ update_status ModulePlayer2::Update()
 			{
 				position.x += speed;
 			}
-
-			if (App->map_2->IsEnabled() && position.x <= 594)
-			{
-				position.x += speed;
-			}
 		}
 
 		if (App->input->keyboard[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_REPEAT)
 		{
 			position.y += speed;
 
-			if ((App->map_1->IsEnabled() || App->map_2->IsEnabled()) && position.y >= 683)
+			if (App->map_1->IsEnabled() && position.y >= 683)
 			{
 				position.y -= speed;
 			}
@@ -354,7 +336,7 @@ update_status ModulePlayer2::Update()
 		{
 			position.y -= speed;
 
-			if ((App->map_1->IsEnabled() || App->map_2->IsEnabled()) && position.y <= -1)
+			if (App->map_1->IsEnabled()&& position.y <= -1)
 			{
 				position.y += speed;
 			}

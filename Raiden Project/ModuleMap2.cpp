@@ -1,4 +1,4 @@
-#include "Globals.h"
+/*#include "Globals.h"
 #include "Application.h"
 #include "ModuleMap2.h"
 #include "ModuleRender.h"
@@ -41,6 +41,7 @@ update_status ModuleMap2::Update()
 
 		App->collision->Enable();
 	}
+	App->map_1->ymap += 2;
 	App->render->Blit(Map2, App->map_1->xmap, App->map_1->ymap-13457+7158, &ground);
 	if (App->input->keyboard[SDL_SCANCODE_BACKSPACE])
 	{
@@ -54,4 +55,4 @@ update_status ModuleMap2::Update()
 bool ModuleMap2::CleanUp()
 {
 	return true;
-}
+}*/

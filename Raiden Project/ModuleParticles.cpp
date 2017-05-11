@@ -6,7 +6,7 @@
 #include "ModuleParticles.h"
 #include "ModulePlayer.h"
 #include "ModulePlayer2.h"
-#include "ModuleAudio_1.h"
+#include "ModuleAudio_2.h"
 #include "SDL/include/SDL_timer.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleMap1.h"
@@ -505,7 +505,7 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 			p->size = particle.size;
 			if (!multipleshot && bullettype != 47 && bullettype != 37 && bullettype != 27)
 			{
-				Mix_PlayChannel(-1, App->audio->fx_shoot, 0);
+				Mix_PlayChannel(-1, App->audio_2->fx_shoot, 0);
 			}
 
 			if (collider_type != COLLIDER_NONE)

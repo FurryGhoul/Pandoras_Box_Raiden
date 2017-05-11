@@ -1,4 +1,4 @@
-#ifndef __MODULEMAP2__
+/*#ifndef __MODULEMAP2__
 #define __MODULEMAP2__
 #include "Globals.h"
 #include "Module.h"
@@ -25,4 +25,4 @@ public:
 };
 
 #endif //__MODULEMAP2__
-
+*/

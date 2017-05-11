@@ -1,8 +1,8 @@
-#include "Globals.h"
+/*#include "Globals.h"
 #include "Application.h"
 #include "ModuleAudio_1.h"
 #include "ModuleAudio_2.h"
-#include "ModuleMap1.h"
+#include "ModuleMap2.h"
 ModuleAudio1::ModuleAudio1() : Module()
 {
 
@@ -37,12 +37,12 @@ bool ModuleAudio1::Init()
 }
 update_status ModuleAudio1::Update()
 {
-	if (App->map_1->IsEnabled() && playing == false)
+	if (App->map_2->IsEnabled() && playing == false)
 	{
  		Init();
 		playing = true;
 	}
-	if (!(App->map_1->IsEnabled()) && playing == true)
+	if (!(App->map_2->IsEnabled()) && playing == true)
 	{
 		playing = false;
 		Close();
@@ -71,4 +71,4 @@ bool ModuleAudio1::Close()
 {
 	Mix_CloseAudio();
 	return true;
-}
+}*/

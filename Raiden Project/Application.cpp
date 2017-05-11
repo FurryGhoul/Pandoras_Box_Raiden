@@ -27,18 +27,16 @@ Application::Application()
 	modules[3] = fonts = new ModuleFonts();
 	modules[4] = input = new ModuleInput();
 	modules[5] = audio_2 = new ModuleAudio2();
-	modules[6] = audio = new ModuleAudio1();
-	modules[7] = map_2 = new ModuleMap2();
-	modules[8] = map_1 = new ModuleMap1();
-	modules[9] = WelcomeScreen = new ModuleWelcomeScreen();
-	modules[10] = StageClear1 = new ModuleStageClear1();
-	modules[11] = fade = new ModuleFadeToBlack();
-	modules[12] = enemies = new ModuleEnemies();
-	modules[13] = powerups = new ModulePowerUps();
-	modules[14] = particles = new ModuleParticles();
-	modules[15] = player = new ModulePlayer();
-	modules[16] = player2 = new ModulePlayer2();
-	modules[17] = collision = new ModuleCollision();
+	modules[6] = map_1 = new ModuleMap1();
+	modules[7] = WelcomeScreen = new ModuleWelcomeScreen();
+	modules[8] = StageClear1 = new ModuleStageClear1();
+	modules[9] = fade = new ModuleFadeToBlack();
+	modules[10] = enemies = new ModuleEnemies();
+	modules[11] = powerups = new ModulePowerUps();
+	modules[12] = particles = new ModuleParticles();
+	modules[13] = player = new ModulePlayer();
+	modules[14] = player2 = new ModulePlayer2();
+	modules[15] = collision = new ModuleCollision();
 	
 }	
 

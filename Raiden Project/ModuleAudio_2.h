@@ -23,6 +23,7 @@ public:
 public:
 	Mix_Music* music2;
 	bool playing = false;
+	Mix_Chunk* fx_shoot;
 
 };
 
