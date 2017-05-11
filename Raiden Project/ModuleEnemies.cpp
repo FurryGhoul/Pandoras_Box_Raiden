@@ -35,6 +35,7 @@ bool ModuleEnemies::Init()
 	sprites3 = App->textures->Load("assets/Tank1.png");
 	sprites4 = App->textures->Load("assets/Medium Shooter.png");
 	sprites5 = App->textures->Load("assets/Boxes.png");
+	sprites6 = App->textures->Load("assets/Kamikaze.png");
 	return true;
 }
 
@@ -86,6 +87,10 @@ update_status ModuleEnemies::Update()
 		   if (enemies[i]->spritesheet == 4) //Box_Medal & Box_PowerUp
 		   {
 			   enemies[i]->Draw(sprites5);
+		   }
+		   if (enemies[i]->spritesheet == 5) //Box_Medal & Box_PowerUp
+		   {
+			   enemies[i]->Draw(sprites6);
 		   }
         }
 	return UPDATE_CONTINUE;

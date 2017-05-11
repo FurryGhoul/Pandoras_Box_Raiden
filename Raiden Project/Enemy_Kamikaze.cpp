@@ -32,7 +32,7 @@ Enemy_Kamikaze::Enemy_Kamikaze(int x, int y, int path) : Enemy(x, y)
 
 	if (path == 0)
 	{
-		movement.PushBack({ 0.0f, 5.0f }, 400);
+		movement.PushBack({ 0.0f, 6.0f }, 200);
 	}
 
 	//Coming from right
@@ -52,7 +52,10 @@ Enemy_Kamikaze::Enemy_Kamikaze(int x, int y, int path) : Enemy(x, y)
 
 void Enemy_Kamikaze::MoveShoot()
 {
-	position = original_pos + movement.GetCurrentPosition();
+	if (getvector)
+	{
+		position = original_pos + movement.GetCurrentPosition();
+	}
 
 	if (allowtime)
 	{
@@ -75,8 +78,6 @@ void Enemy_Kamikaze::MoveShoot()
 		distance.x = App->player2->position.x - position.x + 22;
 	}
 
-	position.y += 50;
-
 	if (SDL_GetTicks() - time > 500)
 	{
 		if (getvector)
@@ -89,7 +90,7 @@ void Enemy_Kamikaze::MoveShoot()
 		}
 
 
-		position.x += vector.x * 3;
-		position.y += vector.y * 3;
+		position.x += vector.x;
+		position.y += vector.y;
 	}
 }

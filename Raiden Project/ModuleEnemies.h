@@ -62,6 +62,7 @@ private:
 	SDL_Texture* sprites3;
 	SDL_Texture* sprites4;
 	SDL_Texture* sprites5;
+	SDL_Texture* sprites6;
 	
 	
 };
