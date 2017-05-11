@@ -65,27 +65,25 @@ void Enemy_Kamikaze::MoveShoot()
 
 
 	//Detecting distance
-	if (sqrtf((distance.y = App->player->position.y - 22 - position.y - 22 * 3)*(distance.y = App->player->position.y - 22 - position.y - 22 * 3) + (distance.x = App->player->position.x - position.x + 22)* (distance.x = App->player->position.x - position.x + 22))
-		< sqrtf((distance.y = App->player2->position.y - 22 - position.y - 22 * 3)*(distance.y = App->player2->position.y - 22 - position.y - 22 * 3) + (distance.x = App->player2->position.x - position.x + 22)* (distance.x = App->player2->position.x - position.x + 22)))
-	{
-		distance.y = App->player->position.y - 22 - position.y - 22 * 3;
-		distance.x = App->player->position.x - position.x + 22;
-	}
+//	if (sqrtf((distance.y = App->player->position.y - position.y)*(distance.y = App->player->position.y - position.y) + (distance.x = App->player->position.x - position.x)* (distance.x = App->player->position.x - position.x))
+//		< sqrtf((distance.y = App->player2->position.y - 22 - position.y - 22 * 3)*(distance.y = App->player2->position.y - 22 - position.y - 22 * 3) + (distance.x = App->player2->position.x - position.x + 22)* (distance.x = App->player2->position.x - position.x + 22)))
+//	{
+		distance.y = App->player->position.y - position.y;
+		distance.x = App->player->position.x - position.x;
+//	}
 
-	else
-	{
-		distance.y = App->player2->position.y - 22 - position.y - 22 * 3;
-		distance.x = App->player2->position.x - position.x + 22;
-	}
+//	else
+//	{
+//		distance.y = App->player2->position.y - position.y;
+//		distance.x = App->player2->position.x - position.x;
+//	}
 
 	if (SDL_GetTicks() - time > 500)
 	{
 		if (getvector)
 		{
-			vector.x = distance.x;
-			vector.y = distance.y;
-			vector.x *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
-			vector.y *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+			vector.x = distance.x * (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+			vector.y = distance.y * (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
 			getvector = false;
 		}
 
