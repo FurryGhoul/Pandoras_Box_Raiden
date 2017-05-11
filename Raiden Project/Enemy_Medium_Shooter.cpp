@@ -68,7 +68,6 @@ void Enemy_Medium_Shooter::MoveShoot()
 		distance.y = App->player->position.y - 22 - position.y - 22 * 3;
 		distance.x = App->player->position.x - position.x + 22;
 	}
-
 	else
 	{
 		distance.y = App->player2->position.y - 22 - position.y - 22 * 3;
@@ -104,25 +103,7 @@ void Enemy_Medium_Shooter::MoveShoot()
 	// Shooting
 	distance.x *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
 	distance.y *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
-	/*if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && shooting == false)
-	{
-		if (shoot_time % 50 == 0 && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f)
-		{
-			if (App->player->position.y - 22 < (position.y - 22 * 3))
-			{
-				distance.y *= -1;
-			}
-			if (App->player->position.x < (position.x + 22))
-			{
-				distance.x *= -1;
-			}
-			Shoot(position, distance, shoot_time);
-
-			shooting = true;
-		}
-		shooting = false;
-	}*/
-
+	
 	if (shoot_time % 50 == 0 && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f && shooting == false)
 	{
 		shooting = true;
@@ -130,30 +111,27 @@ void Enemy_Medium_Shooter::MoveShoot()
 
 	if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && shooting == true)
 	{
-		
-		if (App->player->position.y - 22 < (position.y - 22 * 3))
+
+		if (App->player->position.y < (position.y))
 		{
 			distance.y *= -1;
 		}
-		if (App->player->position.x < (position.x + 22))
+		if (App->player->position.x < (position.x))
 		{
 			distance.x *= -1;
 		}
 		if (shoot_time % 5 == 0)
 		{
-			Shoot(position, distance, shoot_time);
-			shots++;
-		}		
-	}
-	if (shots >= 5)
-	{
-		shooting = false;
-		shots = 0;
-	}
-}
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 60, position.y + 30, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 150, position.y + 30, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
 
-void Enemy_Medium_Shooter::Shoot(iPoint position, fPoint distance, int shoot_time)
-{
-	App->particles->AddParticle(App->particles->enemyshot, position.x + 60, position.y + 30, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
-	App->particles->AddParticle(App->particles->enemyshot, position.x + 150, position.y + 30, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			shots++;
+		}
+
+		if (shots >= 5)
+		{
+			shooting = false;
+			shots = 0;
+		}
+	}
 }
