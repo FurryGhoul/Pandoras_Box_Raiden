@@ -212,15 +212,18 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			}
 			if (enemies[i]->tank)
 			{
-				enemies[i]->ishit = true;
+ 				enemies[i]->ishit = true;
+				enemies[i]->ishit2 = true;
 			}
 			
 
 			if (enemies[i]->hp < 0)
 			enemies[i]->hp = 0;
 
-			App->particles->AddParticle(App->particles->hitspark, c2->rect.x, c2->rect.y, COLLIDER_NONE);
-			
+			if (c2->bullettype == 1 || c2->bullettype == 2)
+			{
+				App->particles->AddParticle(App->particles->hitspark, c2->rect.x, c2->rect.y, COLLIDER_NONE);
+			}
 
 
 			if (c2->bullettype == 3 || c2->bullettype == 4)
