@@ -1,16 +1,18 @@
-﻿  Enemy_Medium_Shooter.cpp
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(39): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(65): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(66): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(68): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(69): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(73): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(74): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(82): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(83): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(125): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(126): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
-  SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+﻿  Tank.cpp
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(147): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(148): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(150): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(151): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(156): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(157): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(567): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(568): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\tank.cpp(588): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  ModuleEnemies.cpp
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+  Generating Code...
+  SDL Game.vcxproj -> C:\Users\Ivan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\Ivan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

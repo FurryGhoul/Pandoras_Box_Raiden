@@ -14,6 +14,14 @@ private:
 	Animation downdiagonalright;
 	Animation updiagonalright;
 
+	Animation hitdownup;
+	Animation hitleftright;
+	Animation hitneutraldiagonalleft;
+	Animation hitdowndiagonalleft;
+	Animation hitupdiagonalleft;
+	Animation hitneutraldiagonalright;
+	Animation hitdowndiagonalright;
+	Animation hitupdiagonalright;
 	//Turret animations
 	Animation s;
 	Animation n;
@@ -31,6 +39,7 @@ private:
 	Animation ne3;
 	Animation sw3;
 	Animation nw3;
+
 	Animation hits;
 	Animation hitn;
 	Animation hite;
