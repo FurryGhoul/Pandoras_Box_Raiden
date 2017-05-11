@@ -95,7 +95,7 @@ update_status ModuleMap1::Update()
 		// Testing spawns
 		//App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, 200, -100);
 		
-		App->powerups->AddPowerUp(POWERUP_TYPES::BLUEUP, 200, -100);
+		/*App->powerups->AddPowerUp(POWERUP_TYPES::BLUEUP, 200, -100);
 		App->powerups->AddPowerUp(POWERUP_TYPES::BLUEUP, 200, -120);
 		App->powerups->AddPowerUp(POWERUP_TYPES::BLUEUP, 400, -140);
 		App->powerups->AddPowerUp(POWERUP_TYPES::BLUEUP, 400, -160);
@@ -103,10 +103,16 @@ update_status ModuleMap1::Update()
 		App->powerups->AddPowerUp(POWERUP_TYPES::BLUEUP, 400, -200);
 		App->powerups->AddPowerUp(POWERUP_TYPES::BLUEUP, 400, -220);
 		App->powerups->AddPowerUp(POWERUP_TYPES::BLUEUP, 400, -240);
-		App->powerups->AddPowerUp(POWERUP_TYPES::BLUEUP, 400, -260);
+		App->powerups->AddPowerUp(POWERUP_TYPES::BLUEUP, 400, -260);*/
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 200, -200);
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 200, -100);
 		//App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 200, -100);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -100);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 300, -200);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 400, -500);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -350);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -230);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -320);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 200, -400);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 200, -2000);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 400, -2000);

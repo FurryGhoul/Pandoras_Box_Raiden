@@ -1,3 +1,15 @@
-﻿  LINK : C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe not found or not built by the last incremental link; performing full link
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+﻿  Enemy_Kamikaze.cpp
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_kamikaze.cpp(65): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_kamikaze.cpp(66): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_kamikaze.cpp(68): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_kamikaze.cpp(69): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_kamikaze.cpp(74): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_kamikaze.cpp(75): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_kamikaze.cpp(84): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_kamikaze.cpp(85): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_kamikaze.cpp(86): warning C4244: '*=': conversion from 'float' to 'int', possible loss of data
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_kamikaze.cpp(87): warning C4244: '*=': conversion from 'float' to 'int', possible loss of data
+  SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

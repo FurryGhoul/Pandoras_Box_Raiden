@@ -13,6 +13,7 @@
 #include "ModulePowerUps.h"
 #include "Box_Medal.h"
 #include "Box_PowerUp.h"
+#include "Enemy_Kamikaze.h"
 #define SPAWN_MARGIN 100
 
 ModuleEnemies::ModuleEnemies()
@@ -161,6 +162,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		{
 		case ENEMY_TYPES::LIGHT_SHOOTER:
 			enemies[i] = new Enemy_Light_Shooter(info.x, info.y, info._path);
+			break;
+		case ENEMY_TYPES::KAMIKAZE:
+			enemies[i] = new Enemy_Kamikaze(info.x, info.y, info._path);
 			break;
 		case ENEMY_TYPES::BONUS_SHIP:
 			enemies[i] = new Enemy_Bonus_Ship(info.x, info.y, info._path);
