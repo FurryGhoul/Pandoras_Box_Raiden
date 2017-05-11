@@ -189,6 +189,8 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 					App->player->score += 100;
 				}
 			}
+
+
 			if (c2->bullettype == 4) //Collider player 2
 			{
 				App->player2->red = true;
