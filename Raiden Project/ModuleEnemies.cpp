@@ -15,6 +15,7 @@
 #include "Box_PowerUp.h"
 #include "ModuleMap1.h"
 #include "Enemy_Kamikaze.h"
+#include "Enemy_Ship_Tank.h"
 
 #define SPAWN_MARGIN 100
 
@@ -78,7 +79,7 @@ update_status ModuleEnemies::Update()
 		   {
 			   enemies[i]->Draw(sprites2);
 		   }
-		   if (enemies[i]->spritesheet == 2)
+		   if (enemies[i]->spritesheet == 2) //Tank & Ship Tank
 		   {
 			   enemies[i]->Draw(sprites3);
 		   }
@@ -178,6 +179,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::TANK:
 			enemies[i] = new Tank(info.x, info.y, info._path);
+			break;
+		case ENEMY_TYPES::SHIP_TANK:
+			enemies[i] = new Enemy_Ship_Tank(info.x, info.y, info._path);
 			break;
 		case ENEMY_TYPES::MEDIUM_SHOOTER:
 			enemies[i] = new Enemy_Medium_Shooter(info.x, info.y, info._path);
