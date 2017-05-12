@@ -442,7 +442,7 @@ update_status ModulePlayer::Update()
 		bombtime = SDL_GetTicks();
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN || SDL_GameControllerGetButton(App->input->controller, SDL_CONTROLLER_BUTTON_X) == 1)
+	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN || App->input->gamepad[2] == KEY_STATE::KEY_DOWN)
 	{
 
 		if (red == true)
