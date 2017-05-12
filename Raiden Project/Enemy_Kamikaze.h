@@ -14,6 +14,7 @@ private:
 	Uint32 time;
 	bool allowtime = true;
 	bool getvector = true;
+	bool colliderrezise = false;
 
 public:
 

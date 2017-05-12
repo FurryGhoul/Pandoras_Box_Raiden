@@ -32,7 +32,7 @@ Enemy_Kamikaze::Enemy_Kamikaze(int x, int y, int path) : Enemy(x, y)
 
 	if (path == 0)
 	{
-		movement.PushBack({ 0.0f, 6.0f }, 200);
+		movement.PushBack({ 0.0f, 4.0f }, 200);
 	}
 
 	//Coming from right
@@ -52,6 +52,11 @@ Enemy_Kamikaze::Enemy_Kamikaze(int x, int y, int path) : Enemy(x, y)
 
 void Enemy_Kamikaze::MoveShoot()
 {
+	if (!colliderrezise)
+	{
+		collider->SetSize(w, h);
+		colliderrezise = true;
+	}
 	if (getvector)
 	{
 		position = original_pos + movement.GetCurrentPosition();
@@ -82,8 +87,8 @@ void Enemy_Kamikaze::MoveShoot()
 	{
 		if (getvector)
 		{
-			vector.x = distance.x * (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
-			vector.y = distance.y * (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+			vector.x = distance.x * (13 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+			vector.y = distance.y * (13 / sqrtf(distance.x*distance.x + distance.y*distance.y));
 			getvector = false;
 		}
 
