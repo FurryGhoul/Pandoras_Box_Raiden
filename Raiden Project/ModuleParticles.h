@@ -107,6 +107,7 @@ public:
 	Particle bomb;
 	Particle bombexplosion;
 	Particle bombexplosion2;
+	Particle tank_explosion;
 };
 
 #endif // __MODULEPARTICLES_H__

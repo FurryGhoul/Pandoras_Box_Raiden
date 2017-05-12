@@ -30,10 +30,10 @@ Application::Application()
 	modules[6] = map_1 = new ModuleMap1();
 	modules[7] = WelcomeScreen = new ModuleWelcomeScreen();
 	modules[8] = StageClear1 = new ModuleStageClear1();
-	modules[9] = fade = new ModuleFadeToBlack();
-	modules[10] = enemies = new ModuleEnemies();
-	modules[11] = powerups = new ModulePowerUps();
-	modules[12] = particles = new ModuleParticles();
+	modules[9] = fade = new ModuleFadeToBlack();	
+	modules[10] = powerups = new ModulePowerUps();
+	modules[11] = particles = new ModuleParticles();
+	modules[12] = enemies = new ModuleEnemies();
 	modules[13] = player = new ModulePlayer();
 	modules[14] = player2 = new ModulePlayer2();
 	modules[15] = collision = new ModuleCollision();

@@ -95,12 +95,13 @@ bool ModuleRender::Blit(SDL_Texture* texture, int x, int y, SDL_Rect* section, i
 	{
 		SDL_QueryTexture(texture, NULL, NULL, &rect.w, &rect.h);
 	}
+
 	if (w != 0 && h != 0)
 	{
 		rect.w = w;
 		rect.h = h;
 	}
-
+    
 	SDL_RenderSetLogicalSize(renderer, 672, 830);
 
 	if (SDL_RenderCopy(renderer, texture, section, &rect) != 0)

@@ -143,7 +143,7 @@ bool ModuleParticles::Init()
 	enemyshot.size.x = 18;
 	enemyshot.size.y = 18;
 	
-	//Explosion
+	//Explosion (has to be redone)
 	explosion.spritesheet = 1;
 	explosion.anim.PushBack({ 26, 339, 10, 8 });
 	explosion.anim.PushBack({ 41, 337, 14, 12 });
@@ -335,6 +335,29 @@ bool ModuleParticles::Init()
 	bombexplosion2.anim.speed = 0.4f;
 	bombexplosion2.size.x = 168 * 3;
 	bombexplosion2.size.y = 154 * 3;
+
+	//Tank explosion
+	tank_explosion.spritesheet = 1;
+	tank_explosion.anim.PushBack({ 4,2, 29, 27 });
+	tank_explosion.anim.PushBack({ 35,2, 28, 26});
+	tank_explosion.anim.PushBack({ 65,2, 28, 27});
+	tank_explosion.anim.PushBack({ 92,1, 31, 28 });
+	tank_explosion.anim.PushBack({ 125,1, 31, 28 });
+	tank_explosion.anim.PushBack({ 160,1, 31, 28 });
+	tank_explosion.anim.PushBack({ 199,2, 31, 28 });
+	tank_explosion.anim.PushBack({ 234,2, 31, 28 });
+	tank_explosion.anim.PushBack({ 269,2, 31, 28 });
+	tank_explosion.anim.PushBack({ 304,4, 31, 28 });
+	tank_explosion.anim.PushBack({ 339,4, 31, 28 });
+
+	tank_explosion.speed.y = 1;
+	tank_explosion.anim.loop = false;
+	tank_explosion.anim.speed = 0.3f;
+	tank_explosion.life = 100000;
+	tank_explosion.size.x = 31 * 3;
+	tank_explosion.size.y = 28 * 3;
+
+
 
 	return true;
 }
