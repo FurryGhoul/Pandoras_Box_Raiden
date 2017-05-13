@@ -36,7 +36,7 @@ public:
 	const int JOYSTICK_DEAD_ZONE = 8000;
 	KEY_STATE keyboard[MAX_KEYS];
 	KEY_STATE gamepad[MAX_BUTTONS];
-	KEY_STATE joystickpos[4];
+	KEY_STATE joystickpos[5];
 	SDL_GameController* controller = NULL;
 	SDL_Joystick* joystick = NULL;
 	Sint16 idk;

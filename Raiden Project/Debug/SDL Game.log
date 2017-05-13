@@ -1,8 +1,23 @@
-﻿  ModulePlayer.cpp
+﻿  ModuleInput.cpp
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleinput.cpp(34): warning C4804: '<': unsafe use of type 'bool' in operation
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleinput.cpp(127): warning C4101: 'e': unreferenced local variable
+  Generating Code...
+  Compiling...
+  ModulePlayer.cpp
 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(286): warning C4474: 'sprintf_s' : too many arguments passed for format string
   c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(286): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(429): warning C4474: 'sprintf_s' : too many arguments passed for format string
   c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(429): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(810): warning C4018: '>=': signed/unsigned mismatch
+  Application.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  ModuleWelcomeScreen.cpp
+  ModuleStageClear1.cpp
+  ModulePowerUps.cpp
+  ModulePlayer2.cpp
+  ModuleMap1.cpp
+  ModuleEnemies.cpp
+  ModuleCollision.cpp
   SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
   SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

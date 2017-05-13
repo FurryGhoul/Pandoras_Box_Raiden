@@ -151,37 +151,39 @@ update_status ModuleInput::Update()
 		yDir = -1;
 	}
 
-	int joystickpositions[4];
+	int joystickpositions[5];
 
 	if (yDir == -1)
 	{
-		joystickpositions[0] = 1;
+		joystickpositions[1] = 1;
 	}
 	else if (yDir == 1)
 	{
-		joystickpositions[1] = 1;
+		joystickpositions[2] = 1;
 	}
 	else if (yDir == 0)
 	{
-		joystickpositions[0] = 0;
+		joystickpositions[0] = 1;
 		joystickpositions[1] = 0;
+		joystickpositions[2] = 0;
 	}
 
 	if (xDir == 1)
 	{
-		joystickpositions[3] = 1;
+		joystickpositions[4] = 1;
 	}
 	else if (xDir == -1)
 	{
-		joystickpositions[2] = 1;
+		joystickpositions[3] = 1;
 	}
 	else if (xDir == 0)
 	{
+		joystickpositions[0] = 1;
+		joystickpositions[4] = 0;
 		joystickpositions[3] = 0;
-		joystickpositions[2] = 0;
 	}
 
-	for (int i = 0; i < 4; ++i)
+	for (int i = 0; i < 5; ++i)
 	{
 		if (joystickpositions[i] == 1)
 		{
@@ -207,7 +209,7 @@ update_status ModuleInput::Update()
 	if (!App->player->deadplayer)
 	{ 
 	//Player one side scroll
-	if (joystickpos[2])
+	if (joystickpos[3])
 	{
 		if ((App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->position.x < 50 )&& !(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player2->position.x > 550 && App->player2->deadplayer == false))
 		{
@@ -222,7 +224,7 @@ update_status ModuleInput::Update()
 		}
 	}
 
-	if (joystickpos[3])
+	if (joystickpos[4])
 	{
 		if ((App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player->position.x > 550) && !(App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player2->position.x < 50 && App->player2->deadplayer == false))
 		{
