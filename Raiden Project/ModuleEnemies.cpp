@@ -79,7 +79,7 @@ update_status ModuleEnemies::Update()
 		   {
 			   enemies[i]->Draw(sprites2);
 		   }
-		   if (enemies[i]->spritesheet == 2) //Tank & Ship Tank
+		   if (enemies[i]->spritesheet == 2) //Tank & Ship_Tank
 		   {
 			   enemies[i]->Draw(sprites3);
 		   }

@@ -70,7 +70,7 @@ update_status ModuleMap1::Update()
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 200, -320);
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 200, -320);
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 200, -320);
-
+		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 200, -100);
 
 
 

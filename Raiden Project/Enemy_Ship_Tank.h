@@ -5,7 +5,7 @@
 class Enemy_Ship_Tank : public Enemy
 {
 private:
-	//Tank animations
+	//Ship_Tank animations
 	Animation up;
 	Animation down;
 	Animation left;
@@ -67,6 +67,7 @@ private:
 	bool sw = false;
 	int shooting = 0;
 	int time_controll = 0;
+	int water = 0;
 
 
 	iPoint original_pos;

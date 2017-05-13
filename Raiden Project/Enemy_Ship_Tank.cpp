@@ -17,19 +17,19 @@ Enemy_Ship_Tank::Enemy_Ship_Tank(int x, int y, int path) : Enemy(x, y)
 	animations = 3;
 
 	// Tank animations	
-	up.PushBack({ 20, 99, 23, 30 });
-	down.PushBack({ 71, 100, 23, 30 });
-	left.PushBack({ 117, 104, 32, 21 });
-	right.PushBack({ 162, 104, 32, 21 });
+	up.PushBack({ 10, 359, 23, 30 });
+	down.PushBack({ 61, 360, 23, 30 });
+	left.PushBack({ 107, 364, 32, 21 });
+	right.PushBack({ 152, 364, 32, 21 });
 
 	// Water animation
-	waterup1.PushBack({ 38, 141, 33, 29 });
-	waterup2.PushBack({ 85, 141, 33, 29 });
-	waterup3.PushBack({ 138, 142, 33, 29 });
+	waterdown1.PushBack({ 208, 404, 33, 29 });
+	waterdown2.PushBack({ 255, 404, 33, 29 });
+	waterdown3.PushBack({ 309, 404, 33, 29 });
 
-	waterdown1.PushBack({ 38, 181, 33, 29 });
-	waterdown2.PushBack({ 85, 181, 33, 29 });
-	waterdown3.PushBack({ 138, 181, 33, 29 });
+	waterup1.PushBack({ 208, 364, 33, 29 });
+	waterup2.PushBack({ 255, 364, 33, 29 });
+	waterup3.PushBack({ 309, 364, 33, 29 }); // Horizontal movement and water effects are not needed in level 2
 
 	//Turret animations
 	s.PushBack({ 3, 44, 38, 34 });
@@ -82,7 +82,7 @@ Enemy_Ship_Tank::Enemy_Ship_Tank(int x, int y, int path) : Enemy(x, y)
 
 
 	// Movement
-	movement.PushBack({ 0.0f, 3.0f }, 100);
+	movement.PushBack({ 0.0f, 2.0f }, 100);
 	//movement.PushBack({ 0.0f, 0.0f }, 100);
 
 	original_pos.x = x;
@@ -110,23 +110,238 @@ void Enemy_Ship_Tank::MoveShoot()
 		distance.x = App->player2->position.x - position.x + 22;
 	}
 
+
 	// Animation of the tank	
 	w = 23 * 3;
 	h = 30 * 3;
+	w2 = 33 * 3;
+	h2 = 29 * 3;
+
 	collider->SetSize(w, h);
 
 	// Down
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 3.0f)
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f)
 	{
 		animation = &down;
 
-		//position1.x = position.x + w / 2;
-		//position1.y = position.y + h / 2 - 5;
+		if (water == 0)
+		{
+			animation2 = &waterdown1;
+			water++;
+		}
+		else if (water == 1)
+		{
+			animation2 = &waterdown2;
+			water++;
+		}
+		else if (water == 3)
+		{
+			animation2 = &waterdown3;
+			water = 0;
+		}
+
+		position1.x = position.x + w / 2;
+		position1.y = position.y + h / 2 - 5;
+
+		position2.x = position.x - 16;
+		position2.y = position.y - 7;
 	}
 
 	// Up
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == -3.0f)
 	{
 		animation = &up;
+
+		if (water == 0)
+		{
+			animation2 = &waterdown1;
+			water++;
+		}
+		else if (water == 1)
+		{
+			animation2 = &waterdown2;
+			water++;
+		}
+		else if (water == 3)
+		{
+			animation2 = &waterdown3;
+			water = 0;
+		}
+
+		position1.x = position.x + w / 2;
+		position1.y = position.y + h / 2 - 5;
+	}
+
+
+
+
+	//Animation of the turret
+	param = (fabs(distance.y) / (fabs(distance.x) + 0.1));
+	angle = atan(param) * 180 / PI;
+
+	// South-East position
+	if (distance.y > 0 && distance.x > 0)
+	{
+		se = true;
+	}
+	else
+	{
+		se = false;
+	}
+
+	// South-West position
+	if (distance.y > 0 && distance.x < 0)
+	{
+		sw = true;
+	}
+	else
+	{
+		sw = false;
+	}
+
+	// North-East position
+	if (distance.y < 0 && distance.x > 0)
+	{
+		ne = true;
+	}
+	else
+	{
+		ne = false;
+	}
+
+	// North-West position
+	if (distance.y < 0 && distance.x < 0)
+	{
+		nw = true;
+	}
+	else
+	{
+		nw = false;
+	}
+
+
+
+	// Applying animation
+
+	w1 = 38 * 3;
+	h1 = 34 * 3;
+	position1.x -= 19 * 3;
+	position1.y -= 17 * 3;
+
+	// South to East
+	if (se && angle >= 72 && angle <= 90) // Good
+	{
+		animation1 = &s;		
+	}
+	if (se && angle >= 54 && angle <= 72) //Good
+	{
+		animation1 = &se1;		
+	}
+	if (se && angle >= 36 && angle <= 54) // Good
+	{
+		animation1 = &se2;		
+	}
+
+	if (se && angle >= 18 && angle <= 36) //Good
+	{
+		animation1 = &se3;		
+	}
+
+	if (se && angle >= 0 && angle <= 18) // Good
+	{
+		animation1 = &e;		
+	}
+
+	// East to North
+	if (ne && angle >= 0 && angle <= 18) //Good
+	{
+		animation1 = &e;		
+	}
+	if (ne && angle >= 18 && angle <= 36) // Good
+	{
+		animation1 = &ne1;		
+	}
+	if (ne && angle >= 36 && angle <= 54) //Good
+	{
+		animation1 = &ne2;		
+	}
+	if (ne && angle >= 54 && angle <= 72) //Good
+	{
+		animation1 = &ne3;		
+	}
+	if (ne && angle >= 72 && angle <= 90) //Good
+	{
+		animation1 = &n;		
+	}
+
+	// North to West
+	if (nw && angle >= 72 && angle <= 90) //Good
+	{
+		animation1 = &n;		
+	}
+	if (nw && angle >= 54 && angle <= 72) // Good
+	{
+		animation1 = &nw1;		
+	}
+	if (nw && angle >= 36 && angle <= 54) //Good
+	{
+		animation1 = &nw2;		
+	}
+	if (nw && angle >= 18 && angle <= 36) //Good
+	{
+		animation1 = &nw3;		
+	}
+	if (nw && angle >= 0 && angle <= 18) // Good
+	{
+		animation1 = &w11;		
+	}
+
+	// West to South
+	if (sw && angle >= 0 && angle <= 18) //Good
+	{
+		animation1 = &w11;		
+	}
+	if (sw && angle >= 18 && angle <= 36) // Good
+	{
+		animation1 = &sw1;		
+	}
+	if (sw && angle >= 36 && angle <= 54) //Good
+	{
+		animation1 = &sw2;		
+	}
+
+	if (sw && angle >= 54 && angle <= 72) //Good
+	{
+		animation1 = &sw3;		
+	}
+	if (sw && angle >= 72 && angle <= 90) //Good
+	{
+		animation1 = &s;		
+	}
+
+	distance.x = fabs(distance.x);
+	distance.y = fabs(distance.y);
+
+
+	// Shooting
+	time_controll++;
+
+	if (time_controll % 100 == 0)
+	{
+		distance.x *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+		distance.y *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+
+		if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && position.y <= 760)
+		{
+			if (App->player->position.y - 22 < (position.y - 22 * 3))
+			{
+				distance.y *= -1;
+			}
+			if (App->player->position.x < (position.x + 22))
+			{
+				distance.x *= -1;
+			}
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2, position.y + h / 2, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+		}
 	}
 }
