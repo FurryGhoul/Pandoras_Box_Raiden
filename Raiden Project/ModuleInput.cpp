@@ -134,7 +134,7 @@ update_status ModuleInput::Update()
 	if (!App->player->deadplayer)
 	{ 
 	//Player one side scroll
-	if (keyboard[SDL_SCANCODE_A])
+	if (gamepad[13])
 	{
 		if ((App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->position.x < 50 )&& !(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player2->position.x > 550 && App->player2->deadplayer == false))
 		{
@@ -149,7 +149,7 @@ update_status ModuleInput::Update()
 		}
 	}
 
-	if (keyboard[SDL_SCANCODE_D])
+	if (gamepad[14])
 	{
 		if ((App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player->position.x > 550) && !(App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player2->position.x < 50 && App->player2->deadplayer == false))
 		{
