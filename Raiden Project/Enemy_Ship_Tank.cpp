@@ -11,7 +11,7 @@
 Enemy_Ship_Tank::Enemy_Ship_Tank(int x, int y, int path) : Enemy(x, y)
 {
 	hp = 3;
-	points = 130;
+	points = 230;
 
 	spritesheet = 2;
 	animations = 3;
@@ -123,28 +123,49 @@ void Enemy_Ship_Tank::MoveShoot()
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f)
 	{
 		animation = &down;
-
+		
 		if (water == 0)
 		{
 			animation2 = &waterdown1;
-			water++;
+			position2.x = position.x - 16;
+			position2.y = position.y - 7;
+
+			if (waterrepeat == 10)
+			{
+				water++;
+				waterrepeat = 0;
+			}
+			waterrepeat++;
 		}
 		else if (water == 1)
 		{
 			animation2 = &waterdown2;
-			water++;
+			position2.x = position.x - 16;
+			position2.y = position.y - 7;
+
+			if (waterrepeat == 10)
+			{
+				water++;
+				waterrepeat = 0;
+			}
+			waterrepeat++;
 		}
-		else if (water == 3)
+		else if (water == 2)
 		{
 			animation2 = &waterdown3;
-			water = 0;
+			position2.x = position.x - 12;
+			position2.y = position.y - 7;
+
+			if (waterrepeat == 10)
+			{
+				water = 0;
+				waterrepeat = 0;
+			}
+			waterrepeat++;
 		}
 
 		position1.x = position.x + w / 2;
 		position1.y = position.y + h / 2 - 5;
-
-		position2.x = position.x - 16;
-		position2.y = position.y - 7;
 	}
 
 	// Up
@@ -162,11 +183,12 @@ void Enemy_Ship_Tank::MoveShoot()
 			animation2 = &waterdown2;
 			water++;
 		}
-		else if (water == 3)
+		else if (water == 2)
 		{
 			animation2 = &waterdown3;
 			water = 0;
 		}
+
 
 		position1.x = position.x + w / 2;
 		position1.y = position.y + h / 2 - 5;

@@ -68,6 +68,7 @@ private:
 	int shooting = 0;
 	int time_controll = 0;
 	int water = 0;
+	int waterrepeat = 0;
 
 
 	iPoint original_pos;

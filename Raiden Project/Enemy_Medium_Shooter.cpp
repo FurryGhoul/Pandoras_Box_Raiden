@@ -12,7 +12,7 @@
 Enemy_Medium_Shooter::Enemy_Medium_Shooter(int x, int y, int path) : Enemy(x, y)
 {
 	hp = 17;
-	points = 480;
+	points = 980;
 	
 	// Anmiation pushback's
 

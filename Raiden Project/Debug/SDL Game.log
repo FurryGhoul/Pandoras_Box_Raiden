@@ -7,8 +7,8 @@ c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_ship_ta
 c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_ship_tank.cpp(105): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_ship_tank.cpp(109): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_ship_tank.cpp(110): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_ship_tank.cpp(322): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_ship_tank.cpp(323): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_ship_tank.cpp(344): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_ship_tank.cpp(344): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_ship_tank.cpp(345): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_ship_tank.cpp(366): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
   SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
