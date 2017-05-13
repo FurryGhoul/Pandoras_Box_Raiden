@@ -213,7 +213,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->joystickpos[0] == KEY_STATE::KEY_REPEAT)
+		if (App->input->gamepad[7] == KEY_STATE::KEY_REPEAT)
 		{
 			position.y -= speed;
 
@@ -246,7 +246,7 @@ update_status ModulePlayer::Update()
 		}
 
 		if (App->input->joystickpos[1]
-			&& App->input->joystickpos[0])
+			&& App->input->gamepad[7])
 		{
 			current_animation = &idle;
 		}
@@ -356,7 +356,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->joystickpos[0] == KEY_STATE::KEY_REPEAT)
+		if (App->input->gamepad[7] == KEY_STATE::KEY_REPEAT)
 		{
 			position.y -= speed;
 
@@ -389,7 +389,7 @@ update_status ModulePlayer::Update()
 		}
 
 		if (App->input->joystickpos[1]
-			&& App->input->joystickpos[0])
+			&& App->input->gamepad[7])
 		{
 			current_animation = &idlep;
 		}
