@@ -46,6 +46,7 @@ bool ModuleInput::Init()
 	{
 		//Load controller
 		controller = SDL_GameControllerOpen(0);
+		joystick = SDL_JoystickOpen(0);
 		if (controller == NULL )
 		{
 			LOG("Warning: Unable to open game controller! SDL Error: %s\n", SDL_GetError());
@@ -102,7 +103,7 @@ update_status ModuleInput::Update()
 		}
 	}
 
-	for (int i = 0; i < MAX_BUTTONS; ++i)
+	for (int i = 0; i < MAX_BUTTONS + 1; ++i)
 	{
 		if (buttons[i] == 1)
 		{
@@ -120,21 +121,93 @@ update_status ModuleInput::Update()
 		}
 	}
 
+	//Joystick
+
+	//Event handler
+	SDL_Event e;
+
+	//Normalized direction
+	int xDir = 0;
+	int yDir = 0;
+
+	idk = SDL_JoystickGetAxis(joystick, 0);
+	idk = SDL_JoystickGetAxis(joystick, 1);
+
+	if (SDL_JoystickGetAxis(joystick, 0) > JOYSTICK_DEAD_ZONE)
+	{
+		xDir = 1;
+	}
+	else if (SDL_JoystickGetAxis(joystick, 0) < -JOYSTICK_DEAD_ZONE)
+	{
+		xDir = -1;
+	}
+
+	if (SDL_JoystickGetAxis(joystick, 1) > JOYSTICK_DEAD_ZONE)
+	{
+		yDir = 1;
+	}
+	else if (SDL_JoystickGetAxis(joystick, 1) < -JOYSTICK_DEAD_ZONE)
+	{
+		yDir = -1;
+	}
+
+	int joystickpositions[4];
+
+	if (yDir == -1)
+	{
+		joystickpositions[0] = 1;
+	}
+	else if (yDir == 1)
+	{
+		joystickpositions[1] = 1;
+	}
+	else if (yDir == 0)
+	{
+		joystickpositions[0] = 0;
+		joystickpositions[1] = 0;
+	}
+
+	if (xDir == 1)
+	{
+		joystickpositions[3] = 1;
+	}
+	else if (xDir == -1)
+	{
+		joystickpositions[2] = 1;
+	}
+	else if (xDir == 0)
+	{
+		joystickpositions[3] = 0;
+		joystickpositions[2] = 0;
+	}
+
+	for (int i = 0; i < 4; ++i)
+	{
+		if (joystickpositions[i] == 1)
+		{
+			if (joystickpos[i] == KEY_IDLE)
+				joystickpos[i] = KEY_DOWN;
+			else
+				joystickpos[i] = KEY_REPEAT;
+		}
+		else
+		{
+			if (joystickpos[i] == KEY_REPEAT || keyboard[i] == KEY_DOWN)
+				joystickpos[i] = KEY_UP;
+			else
+				joystickpos[i] = KEY_IDLE;
+		}
+	}
+
 	if (keyboard[SDL_SCANCODE_ESCAPE])
 	{
 		return update_status::UPDATE_STOP;
 	}
 
-	/*if (buttons[2] == KEY_STATE::KEY_DOWN)
-	{
-		LOG("\nX key pressed %d times.\n", idk);
-		idk++;
-	}*/
-
 	if (!App->player->deadplayer)
 	{ 
 	//Player one side scroll
-	if (gamepad[13])
+	if (joystickpos[2])
 	{
 		if ((App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->position.x < 50 )&& !(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player2->position.x > 550 && App->player2->deadplayer == false))
 		{
@@ -149,7 +222,7 @@ update_status ModuleInput::Update()
 		}
 	}
 
-	if (gamepad[14])
+	if (joystickpos[3])
 	{
 		if ((App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player->position.x > 550) && !(App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player2->position.x < 50 && App->player2->deadplayer == false))
 		{
@@ -209,7 +282,10 @@ bool ModuleInput::CleanUp()
 	LOG("Quitting SDL input event subsystem");
 	SDL_GameControllerClose(controller);
 	controller = NULL;
+	SDL_JoystickClose(joystick);
+	joystick = NULL;
 	SDL_QuitSubSystem(SDL_INIT_EVENTS);
 	SDL_QuitSubSystem(SDL_INIT_GAMECONTROLLER);
+	SDL_QuitSubSystem(SDL_INIT_JOYSTICK);
 	return true;
 }

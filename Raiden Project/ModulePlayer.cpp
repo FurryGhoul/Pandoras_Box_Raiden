@@ -149,7 +149,7 @@ update_status ModulePlayer::Update()
 
 	if (propeller)
 	{
-		if (App->input->gamepad[13] == KEY_STATE::KEY_REPEAT)
+		if (App->input->joystickpos[2] == KEY_STATE::KEY_REPEAT)
 		{
 			if (allowtime == true)
 			{
@@ -175,7 +175,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->gamepad[14] == KEY_STATE::KEY_REPEAT)
+		if (App->input->joystickpos[3] == KEY_STATE::KEY_REPEAT)
 		{
 			if (allowtime == true)
 			{
@@ -202,7 +202,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->gamepad[12] == KEY_STATE::KEY_REPEAT)
+		if (App->input->joystickpos[1] == KEY_STATE::KEY_REPEAT)
 		{
 			position.y += speed;
 
@@ -213,7 +213,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->gamepad[11] == KEY_STATE::KEY_REPEAT)
+		if (App->input->joystickpos[0] == KEY_STATE::KEY_REPEAT)
 		{
 			position.y -= speed;
 
@@ -223,7 +223,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->gamepad[13] == KEY_STATE::KEY_UP)
+		if (App->input->joystickpos[2] == KEY_STATE::KEY_UP)
 		{
 			allowtime = true;
 			time = SDL_GetTicks();
@@ -234,7 +234,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->gamepad[14] == KEY_STATE::KEY_UP)
+		if (App->input->joystickpos[3] == KEY_STATE::KEY_UP)
 		{
 			allowtime = true;
 			time = SDL_GetTicks();
@@ -245,20 +245,20 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->gamepad[12]
-			&& App->input->gamepad[11])
+		if (App->input->joystickpos[1]
+			&& App->input->joystickpos[0])
 		{
 			current_animation = &idle;
 		}
-		if (App->input->gamepad[14]
-			&& App->input->gamepad[13])
+		if (App->input->joystickpos[3]
+			&& App->input->joystickpos[2])
 		{
 			current_animation = &idle;
 		}
 
 		if (
-			App->input->gamepad[13] == KEY_STATE::KEY_IDLE
-			&& App->input->gamepad[14] == KEY_STATE::KEY_IDLE)
+			App->input->joystickpos[2] == KEY_STATE::KEY_IDLE
+			&& App->input->joystickpos[3] == KEY_STATE::KEY_IDLE)
 		{
 			if (SDL_GetTicks() >= time + 100)
 			{
@@ -294,7 +294,7 @@ update_status ModulePlayer::Update()
 
 	else
 	{
-		if (App->input->gamepad[13] == KEY_STATE::KEY_REPEAT)
+		if (App->input->joystickpos[2] == KEY_STATE::KEY_REPEAT)
 		{
 			if (allowtime == true)
 			{
@@ -320,7 +320,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->gamepad[14] == KEY_STATE::KEY_REPEAT)
+		if (App->input->joystickpos[3] == KEY_STATE::KEY_REPEAT)
 		{
 			if (allowtime == true)
 			{
@@ -346,7 +346,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->gamepad[12] == KEY_STATE::KEY_REPEAT)
+		if (App->input->joystickpos[1] == KEY_STATE::KEY_REPEAT)
 		{
 			position.y += speed;
 
@@ -356,7 +356,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->gamepad[11] == KEY_STATE::KEY_REPEAT)
+		if (App->input->joystickpos[0] == KEY_STATE::KEY_REPEAT)
 		{
 			position.y -= speed;
 
@@ -366,7 +366,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->gamepad[13] == KEY_STATE::KEY_UP)
+		if (App->input->joystickpos[2] == KEY_STATE::KEY_UP)
 		{
 			allowtime = true;
 			time = SDL_GetTicks();
@@ -377,7 +377,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->gamepad[14] == KEY_STATE::KEY_UP)
+		if (App->input->joystickpos[3] == KEY_STATE::KEY_UP)
 		{
 			allowtime = true;
 			time = SDL_GetTicks();
@@ -388,20 +388,20 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->gamepad[12]
-			&& App->input->gamepad[11])
+		if (App->input->joystickpos[1]
+			&& App->input->joystickpos[0])
 		{
 			current_animation = &idlep;
 		}
-		if (App->input->gamepad[14]
-			&& App->input->gamepad[13])
+		if (App->input->joystickpos[3]
+			&& App->input->joystickpos[2])
 		{
 			current_animation = &idlep;
 		}
 
 		if (
-			App->input->gamepad[13] == KEY_STATE::KEY_IDLE
-			&& App->input->gamepad[14] == KEY_STATE::KEY_IDLE)
+			App->input->joystickpos[2] == KEY_STATE::KEY_IDLE
+			&& App->input->joystickpos[3] == KEY_STATE::KEY_IDLE)
 		{
 			if (SDL_GetTicks() >= time + 100)
 			{
