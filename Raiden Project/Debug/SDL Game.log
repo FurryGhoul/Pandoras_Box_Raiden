@@ -1,8 +1,9 @@
-﻿  ModuleMap1.cpp
+﻿  ModuleInput.cpp
 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulemap1.h(27): warning C4305: 'initializing': truncation from 'double' to 'float'
 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleparticles.h(67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(101): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(132): warning C4018: '>=': signed/unsigned mismatch
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(139): warning C4018: '>=': signed/unsigned mismatch
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleinput.cpp(34): warning C4804: '<': unsafe use of type 'bool' in operation
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleinput.cpp(232): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleinput.cpp(247): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleinput.cpp(137): warning C4101: 'e': unreferenced local variable
   SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
   SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

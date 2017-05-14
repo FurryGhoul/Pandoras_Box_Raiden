@@ -62,7 +62,6 @@ update_status ModuleInput::Update()
 			controller = SDL_GameControllerOpen(0);
 			joystick = SDL_JoystickOpen(0);
 			gpad_on = true;
-			gpad = true;
 			if (controller == NULL)
 			{
 				//LOG("Warning: Unable to open game controller! SDL Error: %s\n", SDL_GetError());
