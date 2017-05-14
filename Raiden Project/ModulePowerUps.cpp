@@ -253,7 +253,7 @@ void ModulePowerUps::MovePowerUpsRight(bool right)
 		{
 			if (powerups[i] != nullptr)
 			{
-				powerups[i]->left_right_mod += 6;
+				powerups[i]->left_right_mod += 4;
 			}
 		}
 	}
@@ -264,7 +264,7 @@ void ModulePowerUps::MovePowerUpsRight(bool right)
 		{
 			if (powerups[i] != nullptr)
 			{
-				powerups[i]->left_right_mod -= 6;
+				powerups[i]->left_right_mod -= 4;
 			}
 		}
 	}

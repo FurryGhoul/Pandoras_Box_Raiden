@@ -318,7 +318,7 @@ void ModuleEnemies::MoveEnemiesRight(bool right)
 		{
 			if (enemies[i] != nullptr)
 			{
-				enemies[i]->left_right_mod += 6;
+				enemies[i]->left_right_mod += 4;
 			}
 		}
 	}
@@ -329,7 +329,7 @@ void ModuleEnemies::MoveEnemiesRight(bool right)
 		{
 			if (enemies[i] != nullptr)
 			{
-				enemies[i]->left_right_mod-= 6;
+				enemies[i]->left_right_mod-= 4;
 			}
 		}
 	}
