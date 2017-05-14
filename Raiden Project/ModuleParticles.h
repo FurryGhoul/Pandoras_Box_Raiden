@@ -21,7 +21,7 @@ struct Particle
 	Collider* collider = nullptr;
 	Animation anim;
 	uint fx = 0;
-	iPoint position;
+	fPoint position;
 	iPoint speed;
 	iPoint size;
 	bool active = true; // if active is true, particles have collider, if it is false they don't

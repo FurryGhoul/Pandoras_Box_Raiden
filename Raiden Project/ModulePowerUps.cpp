@@ -11,6 +11,8 @@
 #include "Medals.h"
 #include "ModulePlayer.h"
 #include "ModulePlayer2.h"
+#include "ModuleMap1.h"
+
 #define SPAWN_MARGIN 50
 #define MAX_POWERUP_LVL 8
 
@@ -253,7 +255,7 @@ void ModulePowerUps::MovePowerUpsRight(bool right)
 		{
 			if (powerups[i] != nullptr)
 			{
-				powerups[i]->left_right_mod += 4;
+				powerups[i]->left_right_mod += App->map_1->xscrollspeed;
 			}
 		}
 	}
@@ -264,7 +266,7 @@ void ModulePowerUps::MovePowerUpsRight(bool right)
 		{
 			if (powerups[i] != nullptr)
 			{
-				powerups[i]->left_right_mod -= 4;
+				powerups[i]->left_right_mod -= App->map_1->xscrollspeed;
 			}
 		}
 	}

@@ -20,10 +20,12 @@ public:
 public:
 	SDL_Rect ground;
 	SDL_Texture *Map1;
-	int xmap;
-	int ymap;
+	float xmap;
+	float ymap;
 	bool setup = true;
 	bool changing = false;
+	float xscrollspeed = 2.4;
+	float yscrollspeed;
 };
 
 #endif //__MODULEMAP1__

@@ -18,15 +18,15 @@ protected:
 	Collider* collider = nullptr;
 
 public:
-	iPoint position;
-	iPoint position1;
-	iPoint position2;
-	iPoint position3;
+	fPoint position;
+	fPoint position1;
+	fPoint position2;
+	fPoint position3;
 	bool ishit;
 	bool ishit2;
 	fPoint distance;
-	iPoint distance1;
-	iPoint distance2;
+	fPoint distance1;
+	fPoint distance2;
 	int hp;
 	Uint32 bombhittime; //time between allowed bomb hits
 	bool allowbombtime = true; //allows timer
@@ -49,7 +49,7 @@ public:
 	bool powerupbox = false;
 	bool lightshooter = false;
 	bool mediumshooter = false; // Bollean to detect if the enemy is a medium plane and adapt the hitbox
-	int left_right_mod = 0; // Integer to modify the position of the enemy
+	float left_right_mod = 0; // Integer to modify the position of the enemy
 	bool tank = false; //Boolean to detect if the enemy is  a tank
 	bool megatank = false; //Boolena to detect if the enemy is a megatank
 

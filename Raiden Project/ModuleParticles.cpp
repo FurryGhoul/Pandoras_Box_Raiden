@@ -576,7 +576,7 @@ void ModuleParticles::MoveParticlesRight(bool right)
 		{
 			if (active[i] != nullptr)
 			{
-				active[i]->position.x += 4;
+				active[i]->position.x += App->map_1->xscrollspeed;
 			}
 		}
 	}
@@ -587,7 +587,7 @@ void ModuleParticles::MoveParticlesRight(bool right)
 		{
 			if (active[i] != nullptr)
 			{
-				active[i]->position.x -= 4;
+				active[i]->position.x -= App->map_1->xscrollspeed;
 			}
 		}
 	}

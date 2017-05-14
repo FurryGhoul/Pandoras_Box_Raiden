@@ -6,8 +6,8 @@ class Box_PowerUp : public Enemy
 private:
 	Animation idle;
 
-	iPoint original_pos;
-	iPoint distance;
+	fPoint original_pos;
+	fPoint distance;
 	Path movement;
 
 public:

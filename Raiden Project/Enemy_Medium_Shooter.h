@@ -8,7 +8,7 @@ private:
 	Animation flycu;
 	Animation flycd;
 			
-	iPoint original_pos;
+	fPoint original_pos;
 	Path movement;
 	Path movement1;
 	double param;

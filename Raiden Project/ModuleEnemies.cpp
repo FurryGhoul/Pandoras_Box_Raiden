@@ -327,7 +327,7 @@ void ModuleEnemies::MoveEnemiesRight(bool right)
 		{
 			if (enemies[i] != nullptr)
 			{
-				enemies[i]->left_right_mod += 4;
+				enemies[i]->left_right_mod += App->map_1->xscrollspeed;
 			}
 		}
 	}
@@ -338,7 +338,7 @@ void ModuleEnemies::MoveEnemiesRight(bool right)
 		{
 			if (enemies[i] != nullptr)
 			{
-				enemies[i]->left_right_mod-= 4;
+				enemies[i]->left_right_mod-= App->map_1->xscrollspeed;
 			}
 		}
 	}

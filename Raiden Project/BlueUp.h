@@ -6,8 +6,8 @@ private:
 	Animation idle1;
 
 
-	iPoint original_pos;
-	iPoint distance;
+	fPoint original_pos;
+	fPoint distance;
 	Path movement;
 	double param;
 	double angle;

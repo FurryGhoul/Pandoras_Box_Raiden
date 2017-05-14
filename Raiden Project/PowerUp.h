@@ -16,10 +16,10 @@ protected:
 	Collider* collider = nullptr;
 
 public:
-	iPoint position;
+	fPoint position;
 	int h;
 	int w;
-	int left_right_mod = 0;
+	float left_right_mod = 0;
 	bool bluep = false;
 	bool redp = false;
 

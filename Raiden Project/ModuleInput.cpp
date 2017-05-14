@@ -137,13 +137,13 @@ update_status ModuleInput::Update()
 		{
 			if ((App->map_1->IsEnabled() && App->map_1->xmap <= -5) && !(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player2->deadplayer == false))
 			{
-				App->map_1->xmap += 4;
+				App->map_1->xmap += App->map_1->xscrollspeed;
 				App->enemies->MoveEnemiesRight(true);
 				App->particles->MoveParticlesRight(true);
 				App->powerups->MovePowerUpsRight(true);
 				if (!(App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player2->position.x < 50))
 				{
-					App->player2->position.x += 4;
+					App->player2->position.x += App->map_1->xscrollspeed;
 				}
 			}
 		}
@@ -152,13 +152,13 @@ update_status ModuleInput::Update()
 		{
 			if ((App->map_1->IsEnabled() && App->map_1->xmap >= -383) && !(App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player2->deadplayer == false))
 			{
-				App->map_1->xmap -= 4;
+				App->map_1->xmap -= App->map_1->xscrollspeed;
 				App->enemies->MoveEnemiesRight(false);
 				App->particles->MoveParticlesRight(false);
 				App->powerups->MovePowerUpsRight(false);
 				if (!(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player2->position.x > 550))
 				{
-					App->player2->position.x -= 4;
+					App->player2->position.x -= App->map_1->xscrollspeed;
 				}
 			}
 
@@ -172,13 +172,13 @@ update_status ModuleInput::Update()
 		{
 			if ((App->map_1->IsEnabled() && App->map_1->xmap <= -5) && !(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player->deadplayer == false))
 			{
-				App->map_1->xmap += 4;
+				App->map_1->xmap += App->map_1->xscrollspeed;
 				App->enemies->MoveEnemiesRight(true);
 				App->particles->MoveParticlesRight(true);
 				App->powerups->MovePowerUpsRight(true);
 				if ((!App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->position.x))
 				{
-					App->player->position.x += 4;
+					App->player->position.x += App->map_1->xscrollspeed;
 				}
 			}
 		}
@@ -187,13 +187,13 @@ update_status ModuleInput::Update()
 		{
 			if ((App->map_1->IsEnabled() && App->map_1->xmap >= -383) && !(App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->deadplayer == false))
 			{
-				App->map_1->xmap -= 4;
+				App->map_1->xmap -= App->map_1->xscrollspeed;
 				App->enemies->MoveEnemiesRight(false);
 				App->particles->MoveParticlesRight(false);
 				App->powerups->MovePowerUpsRight(false);
 				if (!(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player->position.x > 550))
 				{
-					App->player->position.x -= 4;
+					App->player->position.x -= App->map_1->xscrollspeed;
 				}
 			}
 		}

@@ -69,7 +69,7 @@ private:
 	
 
 
-	iPoint original_pos;
+	fPoint original_pos;
 	
 	Path movement;
 public:

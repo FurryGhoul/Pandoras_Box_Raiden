@@ -6,8 +6,8 @@ class Enemy_Kamikaze : public Enemy
 private:
 	Animation turn;
 	Animation turn1;
-	iPoint original_pos;
-	iPoint vector;
+	fPoint original_pos;
+	fPoint vector;
 	Path movement;
 	double param;
 	double angle;

@@ -11,10 +11,10 @@ private:
 	Animation charge;
 	Animation hitsides;
 	Animation hitdown;
-	iPoint original_pos;
-	iPoint original_pos1;
-	iPoint original_pos2;
-	iPoint original_pos3;
+	fPoint original_pos;
+	fPoint original_pos1;
+	fPoint original_pos2;
+	fPoint original_pos3;
 	Path movement;
 	double param;
 	double angle;

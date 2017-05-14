@@ -56,7 +56,7 @@ public:
 	Animation bomb4;
 	Animation bomb5;
 	Animation bomb6;
-	iPoint position;
+	fPoint position;
 	int bombs;
 	Uint32 bombtime;
 	int bombammo_w;

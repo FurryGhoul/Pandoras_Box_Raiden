@@ -71,7 +71,7 @@ private:
 	int waterrepeat = 0;
 
 
-	iPoint original_pos;
+	fPoint original_pos;
 
 	Path movement;
 public:

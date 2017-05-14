@@ -18,7 +18,7 @@ private:
 	Animation flyne3;
 	Animation flysw3;
 	Animation flynw3;
-	iPoint original_pos;
+	fPoint original_pos;
 	Path movement;
 	Path movement1;
 	double param;

@@ -145,7 +145,7 @@ update_status ModulePlayer::Update()
 		}
 	}
 
-	int speed = 5;
+	float speed = 3.6;
 
 	if (propeller)
 	{
