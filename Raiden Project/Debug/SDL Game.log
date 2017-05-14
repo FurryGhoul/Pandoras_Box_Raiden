@@ -1,5 +1,23 @@
-﻿  ModuleStageClear1.cpp
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulemap1.h(27): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleparticles.h(67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
-  SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+﻿  ModuleMap1.cpp
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\modulemap1.h(27): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleparticles.h(67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(99): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(131): warning C4018: '>=': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(138): warning C4018: '>=': signed/unsigned mismatch
+  ModuleEnemies.cpp
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleparticles.h(67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(59): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\modulemap1.h(27): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleenemies.cpp(178): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleenemies.cpp(272): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleenemies.cpp(276): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleenemies.cpp(280): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleenemies.cpp(281): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleenemies.cpp(285): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleenemies.cpp(290): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleenemies.cpp(295): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

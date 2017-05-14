@@ -357,8 +357,23 @@ bool ModuleParticles::Init()
 	tank_explosion.size.x = 31 * 3;
 	tank_explosion.size.y = 28 * 3;
 
+	//Player explosion
 
+	bonusmedium_explosion.spritesheet = 1;
+	bonusmedium_explosion.anim.PushBack({ 130,462,76,66});
+	bonusmedium_explosion.anim.PushBack({ 193,462,76,66 });
+	bonusmedium_explosion.anim.PushBack({ 267,462,76,66 });
+	bonusmedium_explosion.anim.PushBack({ 346,462,76,66 });
+	bonusmedium_explosion.anim.PushBack({ 439,468,76,66 });
+	bonusmedium_explosion.anim.PushBack({ 525,468,76,66 });
+	bonusmedium_explosion.anim.PushBack({ 614,462,76,66 });
+	bonusmedium_explosion.anim.PushBack({ 16,533,76,66 });
+	bonusmedium_explosion.anim.PushBack({ 108,533,76,66 });
 
+	bonusmedium_explosion.anim.loop = false;
+	bonusmedium_explosion.anim.speed = 0.2f;
+	bonusmedium_explosion.size.x = 80 * 3;
+	bonusmedium_explosion.size.y = 71 * 3;
 	return true;
 }
 

@@ -206,7 +206,7 @@ update_status ModulePlayer::Update()
 		{
 			position.y += speed;
 
-			if (App->map_1->IsEnabled() && position.y >= 745)
+			if (App->map_1->IsEnabled() && position.y >= 740)
 			{
 				position.y -= speed;
 
@@ -349,7 +349,7 @@ update_status ModulePlayer::Update()
 		{
 			position.y += speed;
 
-			if (App->map_1->IsEnabled() && position.y >= 683)
+			if (App->map_1->IsEnabled() && position.y >= 740)
 			{
 				position.y -= speed;
 			}
@@ -764,7 +764,7 @@ update_status ModulePlayer::Update()
 	}
 
 	// Godmode
-	if ((App->input->keyboard[SDL_SCANCODE_G] == KEY_STATE::KEY_DOWN && !App->input->gpad) || (App->input->gamepad[4] == KEY_STATE::KEY_DOWN && App->input->gpad))
+	if ((App->input->keyboard[SDL_SCANCODE_G] == KEY_STATE::KEY_DOWN ) || (App->input->gamepad[4] == KEY_STATE::KEY_DOWN && App->input->gpad))
 	{
 		if (godmode)
 		{
@@ -838,7 +838,6 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		App->enemies->EraseEnemies();
 		App->powerups->ErasePowerUps();
 		App->particles->EraseParticles();
-
 		App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
 		powerup_level = 0;
 		red = true;

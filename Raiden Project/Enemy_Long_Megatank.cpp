@@ -45,6 +45,7 @@ void Enemy_Long_Megatank::MoveShoot()
 
 	position = original_pos + movement.GetCurrentPosition();
 
+	position.x += left_right_mod;
 	animation = &shellstart;
 }
 
