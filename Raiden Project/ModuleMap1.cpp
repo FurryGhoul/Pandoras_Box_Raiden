@@ -68,6 +68,15 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 200, -700);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 200, -650);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::MEDIUM_SHOOTER, 200, -500);
+
+		//App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 200, -320);
+		//App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 200, -340);
+		//App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 200, -400);
+		//App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 200, -500);
+		//App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -600);
+		//App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -700);
+		//App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -650);
+		//App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 200, -500);
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 200, -320);
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 200, -320);
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 200, -320);
