@@ -46,7 +46,7 @@ update_status ModuleWelcomeScreen::Update()
 
 	App->render->Blit(Welcome, 0, 0, &ground, 224 * 3, 256*3 + 62 );
 
-	if ((App->input->keyboard[SDL_SCANCODE_1] && !App->input->gpad) || (App->input->gamepad[6] && App->input->gpad))
+	if (App->input->keyboard[SDL_SCANCODE_1])
 	{
 		App->player->score = 0;
 		App->player2->score = 0;
@@ -56,12 +56,28 @@ update_status ModuleWelcomeScreen::Update()
 		App->map_1->setup = true;
 		App->fade->FadeToBlack(this, App->map_1, 1.0f);
 		App->collision->Erase_Non_Player_Colliders();
+		App->input->gpad = false;
+	}
+
+	if (App->input->gamepad[6])
+	{
+		App->player->score = 0;
+		App->player2->score = 0;
+		App->player2->deadplayer = true;
+		App->player2->godmode = false;
+		App->player->bombs = 3;
+		App->map_1->setup = true;
+		App->fade->FadeToBlack(this, App->map_1, 1.0f);
+		App->collision->Erase_Non_Player_Colliders();
+		App->input->gpad = true;
 	}
 
 	if (App->input->keyboard[SDL_SCANCODE_2])
 	{
 		App->player->score = 0;
 		App->player2->score = 0;
+		App->player->bombs = 3;
+		App->player2->bombs = 3;
 		App->map_1->setup = true;
 		App->fade->FadeToBlack(this, App->map_1, 1.0f);
 		App->collision->Erase_Non_Player_Colliders();

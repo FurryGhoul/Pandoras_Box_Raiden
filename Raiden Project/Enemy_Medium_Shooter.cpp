@@ -42,8 +42,8 @@ Enemy_Medium_Shooter::Enemy_Medium_Shooter(int x, int y, int path) : Enemy(x, y)
 	movement.PushBack({ 0.0f, 3.0f }, 100);
 	movement.PushBack({ 0.0f, 2.0f }, 100);
 	movement.PushBack({ 0.0f, 3.0f }, 70);
-	movement.PushBack({ 0.0f, 4.0f }, 200);
-	movement.PushBack({ 0.0f, -4.0f }, 500);
+	movement.PushBack({ 0.0f, 4.0f }, 120);
+	movement.PushBack({ 0.0f, -5.0f }, 500);
 	movement.loop = false;
 
 	mediumshooter = true;
@@ -95,7 +95,7 @@ void Enemy_Medium_Shooter::MoveShoot()
 	{
 		animation = &flycd;
 	}
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == -4.0f)
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == -5.0f)
 	{
 		animation = &flycu;
 	}

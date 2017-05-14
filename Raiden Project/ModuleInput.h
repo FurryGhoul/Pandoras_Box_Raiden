@@ -37,10 +37,16 @@ public:
 	KEY_STATE keyboard[MAX_KEYS];
 	KEY_STATE gamepad[MAX_BUTTONS];
 	KEY_STATE joystickpos[5];
+	KEY_STATE gamepad2[MAX_BUTTONS];
+	KEY_STATE joystickpos2[5];
 	SDL_GameController* controller = NULL;
 	SDL_Joystick* joystick = NULL;
+	SDL_GameController* controller2 = NULL;
+	SDL_Joystick* joystick2 = NULL;
+	bool gpad_on = false;
 	bool gpad = false;
-	Sint16 idk;
+	bool gpad2_on = false;
+	bool gpad2 = false;
 };
 
 #endif // __ModuleInput_H__

@@ -45,9 +45,14 @@ update_status ModuleInput::Update()
 {
 	//Always Check for controllers
 	if (SDL_NumJoysticks() == 0)
+	{
 		gpad = false;
+		gpad_on = false;
+		gpad2 = false;
+		gpad2_on = false;
+	}
 
-	if (!gpad)
+	if (!gpad_on)
 	{
 		if (SDL_NumJoysticks() < 1)
 		{
@@ -58,8 +63,13 @@ update_status ModuleInput::Update()
 			//Load controller
 			controller = SDL_GameControllerOpen(0);
 			joystick = SDL_JoystickOpen(0);
-			gpad = true;
-			if (controller == NULL)
+			gpad_on = true;
+
+			controller2 = SDL_GameControllerOpen(1);
+			joystick2 = SDL_JoystickOpen(1);
+			gpad2_on = true;
+
+			if (controller == NULL || controller2 == NULL)
 			{
 				//LOG("Warning: Unable to open game controller! SDL Error: %s\n", SDL_GetError());
 			}
@@ -71,6 +81,8 @@ update_status ModuleInput::Update()
 	}
 
 	SDL_PumpEvents();
+
+	//Controller 1 buttons
 
 	Uint8 buttons[MAX_BUTTONS];
 
@@ -89,6 +101,26 @@ update_status ModuleInput::Update()
 	buttons[12] = SDL_GameControllerGetButton(controller, SDL_CONTROLLER_BUTTON_DPAD_DOWN);
 	buttons[13] = SDL_GameControllerGetButton(controller, SDL_CONTROLLER_BUTTON_DPAD_LEFT);
 	buttons[14] = SDL_GameControllerGetButton(controller, SDL_CONTROLLER_BUTTON_DPAD_RIGHT);
+
+	//Controller 2 buttons
+
+	Uint8 buttons2[MAX_BUTTONS];
+
+	buttons2[0] = SDL_GameControllerGetButton(controller2, SDL_CONTROLLER_BUTTON_A);
+	buttons2[1] = SDL_GameControllerGetButton(controller2, SDL_CONTROLLER_BUTTON_B);
+	buttons2[2] = SDL_GameControllerGetButton(controller2, SDL_CONTROLLER_BUTTON_X);
+	buttons2[3] = SDL_GameControllerGetButton(controller2, SDL_CONTROLLER_BUTTON_Y);
+	buttons2[4] = SDL_GameControllerGetButton(controller2, SDL_CONTROLLER_BUTTON_BACK);
+	buttons2[5] = SDL_GameControllerGetButton(controller2, SDL_CONTROLLER_BUTTON_GUIDE);
+	buttons2[6] = SDL_GameControllerGetButton(controller2, SDL_CONTROLLER_BUTTON_START);
+	buttons2[7] = SDL_GameControllerGetButton(controller2, SDL_CONTROLLER_BUTTON_LEFTSTICK);
+	buttons2[8] = SDL_GameControllerGetButton(controller2, SDL_CONTROLLER_BUTTON_RIGHTSTICK);
+	buttons2[9] = SDL_GameControllerGetButton(controller2, SDL_CONTROLLER_BUTTON_LEFTSHOULDER);
+	buttons2[10] = SDL_GameControllerGetButton(controller2, SDL_CONTROLLER_BUTTON_RIGHTSHOULDER);
+	buttons2[11] = SDL_GameControllerGetButton(controller2, SDL_CONTROLLER_BUTTON_DPAD_UP);
+	buttons2[12] = SDL_GameControllerGetButton(controller2, SDL_CONTROLLER_BUTTON_DPAD_DOWN);
+	buttons2[13] = SDL_GameControllerGetButton(controller2, SDL_CONTROLLER_BUTTON_DPAD_LEFT);
+	buttons2[14] = SDL_GameControllerGetButton(controller2, SDL_CONTROLLER_BUTTON_DPAD_RIGHT);
 
 	const Uint8* keys = SDL_GetKeyboardState(NULL);
 
@@ -110,6 +142,8 @@ update_status ModuleInput::Update()
 		}
 	}
 
+	//Gamepad 1 key state
+
 	for (int i = 0; i < MAX_BUTTONS + 1; ++i)
 	{
 		if (buttons[i] == 1)
@@ -128,67 +162,53 @@ update_status ModuleInput::Update()
 		}
 	}
 
-	//Joystick
+	//Gamepad 2 key state
 
-	//Event handler
-	SDL_Event e;
+	for (int i = 0; i < MAX_BUTTONS + 1; ++i)
+	{
+		if (buttons2[i] == 1)
+		{
+			if (gamepad2[i] == KEY_IDLE)
+				gamepad2[i] = KEY_DOWN;
+			else
+				gamepad2[i] = KEY_REPEAT;
+		}
+		else
+		{
+			if (gamepad2[i] == KEY_REPEAT || keyboard[i] == KEY_DOWN)
+				gamepad2[i] = KEY_UP;
+			else
+				gamepad2[i] = KEY_IDLE;
+		}
+	}
+
+	//Joystick 1
+
+	int joystickpositions[5];
 
 	//Normalized direction
 	int xDir = 0;
 	int yDir = 0;
 
-	idk = SDL_JoystickGetAxis(joystick, 0);
-	idk = SDL_JoystickGetAxis(joystick, 1);
-
 	if (SDL_JoystickGetAxis(joystick, 0) > JOYSTICK_DEAD_ZONE)
 	{
-		xDir = 1;
+		joystickpositions[4] = 1;
 	}
 	else if (SDL_JoystickGetAxis(joystick, 0) < -JOYSTICK_DEAD_ZONE)
 	{
-		xDir = -1;
+		joystickpositions[3] = 1;
 	}
 
 	if (SDL_JoystickGetAxis(joystick, 1) > JOYSTICK_DEAD_ZONE)
 	{
-		yDir = 1;
+		joystickpositions[2] = 1;
 	}
 	else if (SDL_JoystickGetAxis(joystick, 1) < -JOYSTICK_DEAD_ZONE)
 	{
-		yDir = -1;
-	}
-
-	int joystickpositions[5];
-
-	if (yDir == -1)
-	{
 		joystickpositions[1] = 1;
 	}
-	else if (yDir == 1)
-	{
-		joystickpositions[2] = 1;
-	}
-	else if (yDir == 0)
-	{
+	if (yDir == 0 || xDir == 0)
 		joystickpositions[0] = 1;
-		joystickpositions[1] = 0;
-		joystickpositions[2] = 0;
-	}
-
-	if (xDir == 1)
-	{
-		joystickpositions[4] = 1;
-	}
-	else if (xDir == -1)
-	{
-		joystickpositions[3] = 1;
-	}
-	else if (xDir == 0)
-	{
-		joystickpositions[0] = 1;
-		joystickpositions[4] = 0;
-		joystickpositions[3] = 0;
-	}
 
 	for (int i = 0; i < 5; ++i)
 	{
@@ -205,6 +225,52 @@ update_status ModuleInput::Update()
 				joystickpos[i] = KEY_UP;
 			else
 				joystickpos[i] = KEY_IDLE;
+		}
+	}
+
+	//Joystick 2
+
+	int joystickpositions2[5];
+
+	//Normalized direction
+	int xDir2 = 0;
+	int yDir2 = 0;
+
+	if (SDL_JoystickGetAxis(joystick2, 0) > JOYSTICK_DEAD_ZONE)
+	{
+		joystickpositions2[4] = 1;
+	}
+	else if (SDL_JoystickGetAxis(joystick2, 0) < -JOYSTICK_DEAD_ZONE)
+	{
+		joystickpositions2[3] = 1;
+	}
+
+	if (SDL_JoystickGetAxis(joystick2, 1) > JOYSTICK_DEAD_ZONE)
+	{
+		joystickpositions2[2] = 1;
+	}
+	else if (SDL_JoystickGetAxis(joystick2, 1) < -JOYSTICK_DEAD_ZONE)
+	{
+		joystickpositions2[1] = 1;
+	}
+	if (yDir2 == 0 || xDir2 == 0)
+		joystickpositions2[0] = 1;
+
+	for (int i = 0; i < 5; ++i)
+	{
+		if (joystickpositions2[i] == 1)
+		{
+			if (joystickpos2[i] == KEY_IDLE)
+				joystickpos2[i] = KEY_DOWN;
+			else
+				joystickpos2[i] = KEY_REPEAT;
+		}
+		else
+		{
+			if (joystickpos2[i] == KEY_REPEAT || keyboard[i] == KEY_DOWN)
+				joystickpos2[i] = KEY_UP;
+			else
+				joystickpos2[i] = KEY_IDLE;
 		}
 	}
 
@@ -251,7 +317,7 @@ update_status ModuleInput::Update()
 	if (!App->player2->deadplayer)
 	{
 		//Player two side scroll
-		if (keyboard[SDL_SCANCODE_LEFT])
+		if ((keyboard[SDL_SCANCODE_LEFT] && !gpad2) || (joystickpos2[3] && gpad2))
 		{
 			if ((App->map_1->IsEnabled() && App->map_1->xmap <= -5) && !(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player->deadplayer == false))
 			{
@@ -266,7 +332,7 @@ update_status ModuleInput::Update()
 			}
 		}
 
-		if (keyboard[SDL_SCANCODE_RIGHT])
+		if ((keyboard[SDL_SCANCODE_RIGHT] && !gpad2) || joystickpos2[4] && gpad2)
 		{
 			if ((App->map_1->IsEnabled() && App->map_1->xmap >= -383) && !(App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->deadplayer == false))
 			{
@@ -281,6 +347,27 @@ update_status ModuleInput::Update()
 			}
 		}
 	}
+
+	if (App->input->gamepad[6])
+	{
+		gpad = true;
+	}
+		
+	if (App->input->keyboard[SDL_SCANCODE_1])
+	{
+		gpad = false;
+	}
+
+	if (App->input->gamepad2[6])
+	{
+		gpad2 = true;
+	}
+
+	if (App->input->keyboard[SDL_SCANCODE_2])
+	{
+		gpad2 = false;
+	}
+
 	return update_status::UPDATE_CONTINUE;
 }
 
@@ -293,6 +380,10 @@ bool ModuleInput::CleanUp()
 	controller = NULL;
 	SDL_JoystickClose(joystick);
 	joystick = NULL;
+	SDL_GameControllerClose(controller2);
+	controller2 = NULL;
+	SDL_JoystickClose(joystick2);
+	joystick2 = NULL;
 	SDL_QuitSubSystem(SDL_INIT_EVENTS);
 	SDL_QuitSubSystem(SDL_INIT_GAMECONTROLLER);
 	SDL_QuitSubSystem(SDL_INIT_JOYSTICK);

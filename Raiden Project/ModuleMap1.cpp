@@ -31,8 +31,9 @@ bool ModuleMap1::Init()
 {
 	LOG("Loading background assets");
 	ground = { 0, 0, 352 * 3, 5362 * 3 };
-    Map1 = App->textures->Load("Assets/Tilemap2.png");
-	
+	road = { 0, 0, 352 * 3, 5362 * 3 };
+	Map1 = App->textures->Load("Assets/Tilemap2.png");
+    Road = App->textures->Load("Assets/Roads.png");
 	
 	return true;
 }
@@ -67,7 +68,16 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 200, -600);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 200, -700);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 200, -650);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::MEDIUM_SHOOTER, 200, -500);
 
+		//App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 200, -320);
+		//App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 200, -340);
+		//App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 200, -400);
+		//App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 200, -500);
+		//App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -600);
+		//App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -700);
+		//App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -650);
+		//App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 200, -500);
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 200, -320);
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 200, -320);
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 200, -320);
@@ -75,6 +85,7 @@ update_status ModuleMap1::Update()
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LONG_MEGATANK, 500, -100);
 
+		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP, 200, -100);
 
 
 		App->collision->Enable();
@@ -97,17 +108,25 @@ update_status ModuleMap1::Update()
 	}
 
 	App->render->Blit(Map1, xmap, ymap, &ground);
+	App->render->Blit(Road, xmap, yroad, &road);
+
     if (!(ymap >= 0))
 	{ 
-	ymap += 1;
+	ymap += yscrollspeed;
+	yroad += (yscrollspeed * 1.5);
 	App->render->camera.y -= 1;
 	}
-	if ((App->input->keyboard[SDL_SCANCODE_BACKSPACE] && !App->input->gpad) || (App->input->gamepad[6] && App->input->gpad))
-	{
-		ymap = 0;
 
+	if ((App->input->keyboard[SDL_SCANCODE_BACKSPACE] && !App->input->gpad) || (App->input->gamepad[12] && App->input->gpad))
+	{
+		won = true;
+
+		//faster scrolling (comment "won = true;" first)
+		//ymap += yscrollspeed * 50;
+		//yroad += ((yscrollspeed * 1.5) * 50);
 	}
-	if ( ymap >= 0)
+
+	if ( ymap >= 0 || won)
 	{
 		App->player->Disable();
 		App->player2->Disable();

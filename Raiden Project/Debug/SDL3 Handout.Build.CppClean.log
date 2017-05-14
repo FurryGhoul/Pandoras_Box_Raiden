@@ -1,54 +1,3 @@
-<<<<<<< HEAD
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\vc140.pdb
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\vc140.idb
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\medals.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\moduleaudio_2.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\modulecollision.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\moduleenemies.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\modulefadetoblack.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\modulefonts.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\moduleinput.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\modulemap1.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\moduleparticles.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\moduleplayer.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\moduleplayer2.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\modulepowerups.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\modulerender.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\modulestageclear1.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\moduletextures.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\modulewelcomescreen.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\modulewindow.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\powerup.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\redup.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\tank.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\application.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\blueup.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\box_medal.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\box_powerup.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\enemy.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\enemy_bonus_ship.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\enemy_kamikaze.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\enemy_light_shooter.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\enemy_medium_shooter.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\enemy_ship_tank.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\globals.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\main.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\sdl3 handout.ilk
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\sdl3 handout.exe
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\sdl3 handout.pdb
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\sdl3 handout.res
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\moduleaudio_1.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\modulemap2.obj
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\sdl3 handout.tlog\cl.command.1.tlog
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\sdl3 handout.tlog\cl.read.1.tlog
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\sdl3 handout.tlog\cl.write.1.tlog
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\sdl3 handout.tlog\link.command.1.tlog
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\sdl3 handout.tlog\link.read.1.tlog
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\sdl3 handout.tlog\link.write.1.tlog
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\sdl3 handout.tlog\rc.command.1.tlog
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\sdl3 handout.tlog\rc.read.1.tlog
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\debug\sdl3 handout.tlog\rc.write.1.tlog
-=======
 c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\vc140.pdb
 c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\vc140.idb
 c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\modulecollision.obj
@@ -66,6 +15,7 @@ c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\modulema
 c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\modulemap2.obj
 c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\modulewelcomescreen.obj
 c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\modulefadetoblack.obj
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\moduleenemies.obj
 c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\enemy.obj
 c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\powerup.obj
 c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\redup.obj
@@ -85,7 +35,6 @@ c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\main.obj
 c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\medals.obj
 c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\moduleaudio_1.obj
 c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\moduleaudio_2.obj
-c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\moduleenemies.obj
 c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\sdl3 handout.ilk
 c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\sdl3 handout.exe
 c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\sdl3 handout.pdb
@@ -99,4 +48,3 @@ c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\sdl3 han
 c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\sdl3 handout.tlog\rc.command.1.tlog
 c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\sdl3 handout.tlog\rc.read.1.tlog
 c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\debug\sdl3 handout.tlog\rc.write.1.tlog
->>>>>>> origin/master

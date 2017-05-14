@@ -206,7 +206,7 @@ update_status ModulePlayer::Update()
 		{
 			position.y += speed;
 
-			if (App->map_1->IsEnabled() && position.y >= 745)
+			if (App->map_1->IsEnabled() && position.y >= 740)
 			{
 				position.y -= speed;
 
@@ -349,7 +349,7 @@ update_status ModulePlayer::Update()
 		{
 			position.y += speed;
 
-			if (App->map_1->IsEnabled() && position.y >= 683)
+			if (App->map_1->IsEnabled() && position.y >= 740)
 			{
 				position.y -= speed;
 			}
@@ -390,12 +390,12 @@ update_status ModulePlayer::Update()
 		if (((App->input->keyboard[SDL_SCANCODE_S] && !App->input->gpad) || (App->input->joystickpos[2] && App->input->gpad))
 			&& ((App->input->keyboard[SDL_SCANCODE_W] && !App->input->gpad) || (App->input->joystickpos[1] && App->input->gpad)))
 		{
-			current_animation = &idle;
+			current_animation = &idlep;
 		}
 		if (((App->input->keyboard[SDL_SCANCODE_D] && !App->input->gpad) || (App->input->joystickpos[4] && App->input->gpad))
 			&& ((App->input->keyboard[SDL_SCANCODE_A] && !App->input->gpad) || (App->input->joystickpos[3] && App->input->gpad)))
 		{
-			current_animation = &idle;
+			current_animation = &idlep;
 		}
 
 		if (((App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_IDLE && !App->input->gpad) || (App->input->joystickpos[3] == KEY_STATE::KEY_IDLE && App->input->gpad))
@@ -403,7 +403,7 @@ update_status ModulePlayer::Update()
 		{
 			if (SDL_GetTicks() >= time + 100)
 			{
-				current_animation = &idle;
+				current_animation = &idlep;
 			}
 		}
 
@@ -745,11 +745,12 @@ update_status ModulePlayer::Update()
 		bomb_ammo = nullptr;
 	}
 
-	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
 	if (bomb_ammo != nullptr)
 	{
 		App->render->Blit(graphics2, 5, 782, &(bomb_ammo->GetCurrentFrame()), bombammo_w, 14 * 3);
 	}
+
+	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
 
 	if (Player != nullptr && godmode == false)
 	{
@@ -764,7 +765,7 @@ update_status ModulePlayer::Update()
 	}
 
 	// Godmode
-	if ((App->input->keyboard[SDL_SCANCODE_G] == KEY_STATE::KEY_DOWN && !App->input->gpad) || (App->input->gamepad[4] == KEY_STATE::KEY_DOWN && App->input->gpad))
+	if ((App->input->keyboard[SDL_SCANCODE_G] == KEY_STATE::KEY_DOWN ) || (App->input->gamepad[4] == KEY_STATE::KEY_DOWN && App->input->gpad))
 	{
 		if (godmode)
 		{
@@ -838,7 +839,6 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		App->enemies->EraseEnemies();
 		App->powerups->ErasePowerUps();
 		App->particles->EraseParticles();
-
 		App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
 		powerup_level = 0;
 		red = true;

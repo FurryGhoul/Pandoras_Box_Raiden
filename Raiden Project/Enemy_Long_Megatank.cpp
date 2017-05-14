@@ -113,6 +113,7 @@ void Enemy_Long_Megatank::MoveShoot()
 
 	position = original_pos + movement.GetCurrentPosition();
 
+
 	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f)
 	{
 		animation = &shellstart;
@@ -122,6 +123,7 @@ void Enemy_Long_Megatank::MoveShoot()
 	{
 		animation = &transformation;
 	}
+
 }
 
 
