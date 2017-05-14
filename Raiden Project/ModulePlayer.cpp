@@ -149,7 +149,7 @@ update_status ModulePlayer::Update()
 
 	if (propeller)
 	{
-		if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
+		if ((App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT && !App->input->gpad) || (App->input->joystickpos[3] == KEY_STATE::KEY_REPEAT && App->input->gpad))
 		{
 			if (allowtime == true)
 			{
@@ -175,7 +175,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT)
+		if ((App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT && !App->input->gpad) || (App->input->joystickpos[4] == KEY_STATE::KEY_REPEAT && App->input->gpad))
 		{
 			if (allowtime == true)
 			{
@@ -202,7 +202,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_REPEAT)
+		if ((App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_REPEAT && !App->input->gpad) || (App->input->joystickpos[2] == KEY_STATE::KEY_REPEAT && App->input->gpad))
 		{
 			position.y += speed;
 
@@ -213,7 +213,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT)
+		if ((App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT && !App->input->gpad) || (App->input->joystickpos[1] == KEY_STATE::KEY_REPEAT && App->input->gpad))
 		{
 			position.y -= speed;
 
@@ -223,7 +223,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_UP)
+		if ((App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_UP && !App->input->gpad) || (App->input->joystickpos[3] == KEY_STATE::KEY_UP && App->input->gpad))
 		{
 			allowtime = true;
 			time = SDL_GetTicks();
@@ -234,7 +234,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_UP)
+		if ((App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_UP && !App->input->gpad) || (App->input->joystickpos[4] == KEY_STATE::KEY_UP && App->input->gpad))
 		{
 			allowtime = true;
 			time = SDL_GetTicks();
@@ -245,20 +245,19 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->keyboard[SDL_SCANCODE_S]
-			&& App->input->keyboard[SDL_SCANCODE_W])
+		if (((App->input->keyboard[SDL_SCANCODE_S] && !App->input->gpad) || (App->input->joystickpos[2] && App->input->gpad))
+			&& ((App->input->keyboard[SDL_SCANCODE_W] && !App->input->gpad) || (App->input->joystickpos[1] && App->input->gpad)))
 		{
 			current_animation = &idle;
 		}
-		if (App->input->keyboard[SDL_SCANCODE_D]
-			&& App->input->keyboard[SDL_SCANCODE_A])
+		if (((App->input->keyboard[SDL_SCANCODE_D] && !App->input->gpad) || (App->input->joystickpos[4] && App->input->gpad))
+			&& ((App->input->keyboard[SDL_SCANCODE_A] && !App->input->gpad) || (App->input->joystickpos[3] && App->input->gpad)))
 		{
 			current_animation = &idle;
 		}
 
-		if (
-			App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_IDLE
-			&& App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_IDLE)
+		if (((App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_IDLE && !App->input->gpad) || (App->input->joystickpos[3] == KEY_STATE::KEY_IDLE && App->input->gpad))
+			&& ((App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_IDLE && !App->input->gpad) || (App->input->joystickpos[4] == KEY_STATE::KEY_IDLE && App->input->gpad)))
 		{
 			if (SDL_GetTicks() >= time + 100)
 			{
@@ -294,7 +293,7 @@ update_status ModulePlayer::Update()
 
 	else
 	{
-		if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
+		if ((App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT && !App->input->gpad) || (App->input->joystickpos[3] == KEY_STATE::KEY_REPEAT && App->input->gpad))
 		{
 			if (allowtime == true)
 			{
@@ -320,7 +319,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT)
+		if ((App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT && !App->input->gpad) || (App->input->joystickpos[4] == KEY_STATE::KEY_REPEAT && App->input->gpad))
 		{
 			if (allowtime == true)
 			{
@@ -346,7 +345,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_REPEAT)
+		if ((App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_REPEAT && !App->input->gpad) || (App->input->joystickpos[2] == KEY_STATE::KEY_REPEAT && App->input->gpad))
 		{
 			position.y += speed;
 
@@ -356,7 +355,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT)
+		if ((App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT && !App->input->gpad) || (App->input->joystickpos[1] == KEY_STATE::KEY_REPEAT && App->input->gpad))
 		{
 			position.y -= speed;
 
@@ -366,7 +365,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_UP)
+		if ((App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_UP && !App->input->gpad) || (App->input->joystickpos[3] == KEY_STATE::KEY_UP && App->input->gpad))
 		{
 			allowtime = true;
 			time = SDL_GetTicks();
@@ -377,7 +376,7 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_UP)
+		if ((App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_UP && !App->input->gpad) || (App->input->joystickpos[4] == KEY_STATE::KEY_UP && App->input->gpad))
 		{
 			allowtime = true;
 			time = SDL_GetTicks();
@@ -388,24 +387,23 @@ update_status ModulePlayer::Update()
 			}
 		}
 
-		if (App->input->keyboard[SDL_SCANCODE_S]
-			&& App->input->keyboard[SDL_SCANCODE_W])
+		if (((App->input->keyboard[SDL_SCANCODE_S] && !App->input->gpad) || (App->input->joystickpos[2] && App->input->gpad))
+			&& ((App->input->keyboard[SDL_SCANCODE_W] && !App->input->gpad) || (App->input->joystickpos[1] && App->input->gpad)))
 		{
-			current_animation = &idlep;
+			current_animation = &idle;
 		}
-		if (App->input->keyboard[SDL_SCANCODE_D]
-			&& App->input->keyboard[SDL_SCANCODE_A])
+		if (((App->input->keyboard[SDL_SCANCODE_D] && !App->input->gpad) || (App->input->joystickpos[4] && App->input->gpad))
+			&& ((App->input->keyboard[SDL_SCANCODE_A] && !App->input->gpad) || (App->input->joystickpos[3] && App->input->gpad)))
 		{
-			current_animation = &idlep;
+			current_animation = &idle;
 		}
 
-		if (
-			App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_IDLE
-			&& App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_IDLE)
+		if (((App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_IDLE && !App->input->gpad) || (App->input->joystickpos[3] == KEY_STATE::KEY_IDLE && App->input->gpad))
+			&& ((App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_IDLE && !App->input->gpad) || (App->input->joystickpos[4] == KEY_STATE::KEY_IDLE && App->input->gpad)))
 		{
 			if (SDL_GetTicks() >= time + 100)
 			{
-				current_animation = &idlep;
+				current_animation = &idle;
 			}
 		}
 
@@ -435,14 +433,20 @@ update_status ModulePlayer::Update()
 		App->fonts->BlitText(20, 195, 0, scoret);
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_B] == KEY_STATE::KEY_DOWN && bombs >= 1 && SDL_GetTicks() - bombtime >= 2100)
+	if ((App->input->keyboard[SDL_SCANCODE_B] == KEY_STATE::KEY_DOWN && bombs >= 1 && SDL_GetTicks() - bombtime >= 2100) && !App->input->gpad)
+	{
+		App->particles->AddParticle(App->particles->bomb, position.x + speed + 20, position.y, COLLIDER_NONE, 47);
+		bombs--;
+		bombtime = SDL_GetTicks();
+	}
+	else if ((App->input->gamepad[0] == KEY_STATE::KEY_DOWN && bombs >= 1 && SDL_GetTicks() - bombtime >= 2100) && App->input->gpad)
 	{
 		App->particles->AddParticle(App->particles->bomb, position.x + speed + 20, position.y, COLLIDER_NONE, 47);
 		bombs--;
 		bombtime = SDL_GetTicks();
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN || App->input->gamepad[2] == KEY_STATE::KEY_DOWN)
+	if ((App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN && !App->input->gpad) || (App->input->gamepad[2] == KEY_STATE::KEY_DOWN && App->input->gpad))
 	{
 
 		if (red == true)
