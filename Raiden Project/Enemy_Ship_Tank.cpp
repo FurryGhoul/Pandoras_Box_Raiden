@@ -111,7 +111,7 @@ void Enemy_Ship_Tank::MoveShoot()
 	}
 
 
-	// Animation of the tank	
+	// Animation of the tank and water	
 	w = 23 * 3;
 	h = 30 * 3;
 	w2 = 33 * 3;

@@ -17,6 +17,7 @@
 #include "Enemy_Kamikaze.h"
 #include "Enemy_Ship_Tank.h"
 #include "Enemy_Long_Megatank.h"
+#include "Enemy_Ship.h"
 
 #define SPAWN_MARGIN 100
 
@@ -41,6 +42,7 @@ bool ModuleEnemies::Init()
 	sprites5 = App->textures->Load("assets/Boxes.png");
 	sprites6 = App->textures->Load("assets/Kamikaze.png");
 	sprites7 = App->textures->Load("assets/LongMegatank.png");
+	sprites8 = App->textures->Load("assets/Ship.png");
 	return true;
 }
 
@@ -100,6 +102,10 @@ update_status ModuleEnemies::Update()
 		   if (enemies[i]->spritesheet == 6) //Long Megatank
 		   {
 			   enemies[i]->Draw(sprites7);
+		   }
+		   if (enemies[i]->spritesheet == 7) //Ship
+		   {
+			   enemies[i]->Draw(sprites8);
 		   }
         }
 	return UPDATE_CONTINUE;
@@ -188,6 +194,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::SHIP_TANK:
 			enemies[i] = new Enemy_Ship_Tank(info.x, info.y, info._path);
+			break;
+		case ENEMY_TYPES::SHIP:
+			enemies[i] = new Enemy_Ship(info.x, info.y, info._path);
 			break;
 		case ENEMY_TYPES::MEDIUM_SHOOTER:
 			enemies[i] = new Enemy_Medium_Shooter(info.x, info.y, info._path);

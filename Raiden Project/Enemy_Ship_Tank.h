@@ -43,6 +43,7 @@ private:
 	Animation sw3;
 	Animation nw3;
 
+	//Turret hit animations
 	Animation hits;
 	Animation hitn;
 	Animation hite;
