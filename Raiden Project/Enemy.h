@@ -51,6 +51,7 @@ public:
 	bool mediumshooter = false; // Bollean to detect if the enemy is a medium plane and adapt the hitbox
 	int left_right_mod = 0; // Integer to modify the position of the enemy
 	bool tank = false; //Boolean to detect if the enemy is  a tank
+	bool megatank = false; //Boolena to detect if the enemy is a megatank
 
 public:
 	Enemy(int x, int y);
