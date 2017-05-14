@@ -113,8 +113,8 @@ update_status ModuleMap1::Update()
 
     if (!(ymap >= 0))
 	{ 
-	ymap += 1;
-	yroad += 1.5;
+	ymap += yscrollspeed;
+	yroad += (yscrollspeed * 1.5);
 	App->render->camera.y -= 1;
 	}
 
@@ -123,8 +123,8 @@ update_status ModuleMap1::Update()
 		won = true;
 
 		//faster scrolling (comment "won = true;" first)
-		//ymap += 50;
-		//yroad += 75;
+		//ymap += yscrollspeed * 50;
+		//yroad += ((yscrollspeed * 1.5) * 50);
 	}
 
 	if ( ymap >= 0 || won)

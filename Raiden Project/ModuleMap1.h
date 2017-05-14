@@ -28,7 +28,7 @@ public:
 	bool setup = true;
 	bool changing = false;
 	float xscrollspeed = 2.4;
-	float yscrollspeed;
+	float yscrollspeed = 1;
 	bool won = false;
 };
 

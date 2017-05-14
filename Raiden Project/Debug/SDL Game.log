@@ -1,4 +1,9 @@
-﻿  ModuleFadeToBlack.cpp
+﻿  ModuleMap1.cpp
 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulemap1.h(30): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleparticles.h(67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(117): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(127): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(151): warning C4018: '>=': signed/unsigned mismatch
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(158): warning C4018: '>=': signed/unsigned mismatch
   SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
   SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
