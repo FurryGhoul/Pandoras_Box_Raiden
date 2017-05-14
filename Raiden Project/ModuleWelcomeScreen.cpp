@@ -76,6 +76,8 @@ update_status ModuleWelcomeScreen::Update()
 	{
 		App->player->score = 0;
 		App->player2->score = 0;
+		App->player->bombs = 3;
+		App->player2->bombs = 3;
 		App->map_1->setup = true;
 		App->fade->FadeToBlack(this, App->map_1, 1.0f);
 		App->collision->Erase_Non_Player_Colliders();

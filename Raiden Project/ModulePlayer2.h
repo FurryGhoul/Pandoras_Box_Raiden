@@ -27,6 +27,8 @@ public:
 
 	SDL_Texture* graphics = nullptr;
 	Animation* current_animation = nullptr;
+	SDL_Texture* graphics2 = nullptr;
+	Animation* bomb_ammo = nullptr;
 
 	//animations with the small propeller.
 	Animation idle;
@@ -40,6 +42,12 @@ public:
 	Animation leftp;
 	Animation right1p;
 	Animation left1p;
+	Animation bomb1;
+	Animation bomb2;
+	Animation bomb3;
+	Animation bomb4;
+	Animation bomb5;
+	Animation bomb6;
 	iPoint position;
 	int font_score = -1;
 	char score_text[20];
@@ -51,14 +59,18 @@ public:
 	uint hiscore = 0;
 	uint lastscore = 0;
 	int score = 0;
+	int bombs;
+	Uint32 bombtime;
 	// Animation
 	bool ideling = false;
 	bool allowtime = true;
 	bool allowtimep = true;
 	bool moving = false;
 	bool propeller = true;
+	int bombammo_w;
 	Uint32 time;
 	Uint32 timep; //time for propellers
+
 
 	int player_w;
 	int player_h;
