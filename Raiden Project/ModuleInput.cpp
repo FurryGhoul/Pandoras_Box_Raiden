@@ -37,33 +37,39 @@ bool ModuleInput::Init()
 		ret = false;
 	}
 
-	//Check for controllers
-	if (SDL_NumJoysticks() < 1)
-	{
-		LOG("Warning: No controllers connected!\n");
-	}
-	else
-	{
-		//Load controller
-		controller = SDL_GameControllerOpen(0);
-		joystick = SDL_JoystickOpen(0);
-		gpad = true;
-		if (controller == NULL)
-		{
-			LOG("Warning: Unable to open game controller! SDL Error: %s\n", SDL_GetError());
-		}
-		else
-		{
-			LOG("%d controllers found.\n", SDL_NumJoysticks())
-		}
-	}
-
 	return ret;
 }
 
 // Called every draw update
 update_status ModuleInput::Update()
 {
+	//Always Check for controllers
+	if (SDL_NumJoysticks() == 0)
+		gpad = false;
+
+	if (!gpad)
+	{
+		if (SDL_NumJoysticks() < 1)
+		{
+			//LOG("Warning: No controllers connected!\n");
+		}
+		else
+		{
+			//Load controller
+			controller = SDL_GameControllerOpen(0);
+			joystick = SDL_JoystickOpen(0);
+			gpad = true;
+			if (controller == NULL)
+			{
+				//LOG("Warning: Unable to open game controller! SDL Error: %s\n", SDL_GetError());
+			}
+			else
+			{
+				//LOG("%d controllers found.\n", SDL_NumJoysticks())
+			}
+		}
+	}
+
 	SDL_PumpEvents();
 
 	Uint8 buttons[MAX_BUTTONS];
