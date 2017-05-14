@@ -46,7 +46,7 @@ update_status ModuleWelcomeScreen::Update()
 
 	App->render->Blit(Welcome, 0, 0, &ground, 224 * 3, 256*3 + 62 );
 
-	if (App->input->keyboard[SDL_SCANCODE_1])
+	if ((App->input->keyboard[SDL_SCANCODE_1] && !App->input->gpad) || (App->input->gamepad[6] && App->input->gpad))
 	{
 		App->player->score = 0;
 		App->player2->score = 0;

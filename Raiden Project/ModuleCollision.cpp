@@ -162,7 +162,7 @@ return UPDATE_CONTINUE;
 
 void ModuleCollision::DebugDraw()
 {
-	if (App->input->keyboard[SDL_SCANCODE_F1] == KEY_DOWN)
+	if ((App->input->keyboard[SDL_SCANCODE_F1] == KEY_DOWN && !App->input->gpad) || (App->input->gamepad[7] == KEY_DOWN && App->input->gpad))
 		debug = !debug;
 
 	if (debug == false)
