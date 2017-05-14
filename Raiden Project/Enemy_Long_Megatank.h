@@ -1,4 +1,4 @@
-#pragma once
+
 #include "Enemy.h"
 class Enemy_Long_Megatank : public Enemy
 {

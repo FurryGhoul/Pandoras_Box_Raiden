@@ -26,11 +26,11 @@ Enemy_Long_Megatank::Enemy_Long_Megatank(int x, int y, int path) : Enemy(x, y)
 	shellstart.PushBack({ 336, 65, 81, 53 });
 	shellstart.PushBack({ 8, 65, 81, 53 });
 	shellstart.loop = true;
-	shellstart.speed = 0.5f;
+	shellstart.speed = 0.1f;
 
 	megatank = true;
 	
-	movement.PushBack({-1.0f, 0.0},500);
+	movement.PushBack({-0.3f, 1.0},500);
 	collider = App->collision->AddCollider({ 0, 0, 24 * 3 - 5, 26 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
 	
 	original_pos.x = x;

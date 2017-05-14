@@ -40,7 +40,7 @@ bool ModuleEnemies::Init()
 	sprites4 = App->textures->Load("assets/Medium Shooter.png");
 	sprites5 = App->textures->Load("assets/Boxes.png");
 	sprites6 = App->textures->Load("assets/Kamikaze.png");
-	sprites7 = App->textures->Load("Assests/Long Megatank.png");
+	sprites7 = App->textures->Load("assets/LongMegatank.png");
 	return true;
 }
 
@@ -327,7 +327,7 @@ void ModuleEnemies::MoveEnemiesRight(bool right)
 		{
 			if (enemies[i] != nullptr)
 			{
-				enemies[i]->left_right_mod += 6;
+				enemies[i]->left_right_mod += 4;
 			}
 		}
 	}
@@ -338,7 +338,7 @@ void ModuleEnemies::MoveEnemiesRight(bool right)
 		{
 			if (enemies[i] != nullptr)
 			{
-				enemies[i]->left_right_mod-= 6;
+				enemies[i]->left_right_mod-= 4;
 			}
 		}
 	}

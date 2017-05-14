@@ -11,7 +11,6 @@
 #include "ModuleParticles.h"
 #include "ModulePowerUps.h"
 
-
 ModuleInput::ModuleInput() : Module()
 {
 	for (uint i = 0; i < MAX_KEYS; ++i)
@@ -31,7 +30,7 @@ bool ModuleInput::Init()
 	bool ret = true;
 	SDL_Init(0);
 
-	if((SDL_InitSubSystem(SDL_INIT_EVENTS) || SDL_InitSubSystem(SDL_INIT_JOYSTICK) || SDL_InitSubSystem(SDL_INIT_GAMECONTROLLER)) < 0)
+	if ((SDL_InitSubSystem(SDL_INIT_EVENTS) || SDL_InitSubSystem(SDL_INIT_JOYSTICK) || SDL_InitSubSystem(SDL_INIT_GAMECONTROLLER)) < 0)
 	{
 		LOG("SDL_EVENTS could not initialize! SDL_Error: %s\n", SDL_GetError());
 		ret = false;
@@ -46,7 +45,7 @@ bool ModuleInput::Init()
 	{
 		//Load controller
 		controller = SDL_GameControllerOpen(0);
-		if (controller == NULL )
+		if (controller == NULL)
 		{
 			LOG("Warning: Unable to open game controller! SDL Error: %s\n", SDL_GetError());
 		}
@@ -127,78 +126,78 @@ update_status ModuleInput::Update()
 
 	/*if (buttons[2] == KEY_STATE::KEY_DOWN)
 	{
-		LOG("\nX key pressed %d times.\n", idk);
-		idk++;
+	LOG("\nX key pressed %d times.\n", idk);
+	idk++;
 	}*/
 
 	if (!App->player->deadplayer)
-	{ 
-	//Player one side scroll
-	if (keyboard[SDL_SCANCODE_A])
 	{
-		if ((App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->position.x < 50 )&& !(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player2->position.x > 550 && App->player2->deadplayer == false))
+		//Player one side scroll
+		if (keyboard[SDL_SCANCODE_A])
 		{
-			App->map_1->xmap += 6;
-			App->enemies->MoveEnemiesRight(true);
-			App->particles->MoveParticlesRight(true);
-			App->powerups->MovePowerUpsRight(true);
-			if (!(App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player2->position.x < 50))
-			{ 
-			App->player2->position.x += 6;
-			}
-		}
-	}
-
-	if (keyboard[SDL_SCANCODE_D])
-	{
-		if ((App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player->position.x > 550) && !(App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player2->position.x < 50 && App->player2->deadplayer == false))
-		{
-			App->map_1->xmap -= 6;
-			App->enemies->MoveEnemiesRight(false);
-			App->particles->MoveParticlesRight(false);
-			App->powerups->MovePowerUpsRight(false);
-			if (!(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player2->position.x > 550))
-			{ 
-			App->player2->position.x -= 6;
+			if ((App->map_1->IsEnabled() && App->map_1->xmap <= -5) && !(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player2->deadplayer == false))
+			{
+				App->map_1->xmap += 4;
+				App->enemies->MoveEnemiesRight(true);
+				App->particles->MoveParticlesRight(true);
+				App->powerups->MovePowerUpsRight(true);
+				if (!(App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player2->position.x < 50))
+				{
+					App->player2->position.x += 4;
+				}
 			}
 		}
 
+		if (keyboard[SDL_SCANCODE_D])
+		{
+			if ((App->map_1->IsEnabled() && App->map_1->xmap >= -383) && !(App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player2->deadplayer == false))
+			{
+				App->map_1->xmap -= 4;
+				App->enemies->MoveEnemiesRight(false);
+				App->particles->MoveParticlesRight(false);
+				App->powerups->MovePowerUpsRight(false);
+				if (!(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player2->position.x > 550))
+				{
+					App->player2->position.x -= 4;
+				}
+			}
+
+		}
 	}
-}
 
 	if (!App->player2->deadplayer)
-{ 
-	//Player two side scroll
-	if (keyboard[SDL_SCANCODE_LEFT])
 	{
-		if ((App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player2->position.x < 50) && !(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player->position.x > 550 && App->player->deadplayer == false))
+		//Player two side scroll
+		if (keyboard[SDL_SCANCODE_LEFT])
 		{
-			App->map_1->xmap += 6;
-			App->enemies->MoveEnemiesRight(true);
-			App->particles->MoveParticlesRight(true);
-			App->powerups->MovePowerUpsRight(true);
-			if((!App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->position.x))
-			{ 
-			App->player->position.x += 6;
+			if ((App->map_1->IsEnabled() && App->map_1->xmap <= -5) && !(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player->deadplayer == false))
+			{
+				App->map_1->xmap += 4;
+				App->enemies->MoveEnemiesRight(true);
+				App->particles->MoveParticlesRight(true);
+				App->powerups->MovePowerUpsRight(true);
+				if ((!App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->position.x))
+				{
+					App->player->position.x += 4;
+				}
 			}
 		}
-	}
 
-	if (keyboard[SDL_SCANCODE_RIGHT])
-	{
-		if ((App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player2->position.x > 550) && !(App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->position.x < 50 && App->player->deadplayer == false))
+		if (keyboard[SDL_SCANCODE_RIGHT])
 		{
-			App->map_1->xmap -= 6;
-			App->enemies->MoveEnemiesRight(false);
-			App->particles->MoveParticlesRight(false);
-			App->powerups->MovePowerUpsRight(false);
-			if (!(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player->position.x > 550))
-			{ 
-			App->player->position.x -= 6;
+			if ((App->map_1->IsEnabled() && App->map_1->xmap >= -383) && !(App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->deadplayer == false))
+			{
+				App->map_1->xmap -= 4;
+				App->enemies->MoveEnemiesRight(false);
+				App->particles->MoveParticlesRight(false);
+				App->powerups->MovePowerUpsRight(false);
+				if (!(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player->position.x > 550))
+				{
+					App->player->position.x -= 4;
+				}
 			}
 		}
 	}
-}
 	return update_status::UPDATE_CONTINUE;
 }
 
