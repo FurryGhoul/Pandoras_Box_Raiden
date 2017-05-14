@@ -745,11 +745,12 @@ update_status ModulePlayer::Update()
 		bomb_ammo = nullptr;
 	}
 
-	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
 	if (bomb_ammo != nullptr)
 	{
 		App->render->Blit(graphics2, 5, 782, &(bomb_ammo->GetCurrentFrame()), bombammo_w, 14 * 3);
 	}
+
+	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
 
 	if (Player != nullptr && godmode == false)
 	{
