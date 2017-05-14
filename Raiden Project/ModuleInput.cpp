@@ -45,9 +45,12 @@ update_status ModuleInput::Update()
 {
 	//Always Check for controllers
 	if (SDL_NumJoysticks() == 0)
+	{
 		gpad = false;
+		gpad_on = false;
+	}
 
-	if (!gpad)
+	if (!gpad_on)
 	{
 		if (SDL_NumJoysticks() < 1)
 		{
@@ -58,6 +61,7 @@ update_status ModuleInput::Update()
 			//Load controller
 			controller = SDL_GameControllerOpen(0);
 			joystick = SDL_JoystickOpen(0);
+			gpad_on = true;
 			gpad = true;
 			if (controller == NULL)
 			{
@@ -281,6 +285,17 @@ update_status ModuleInput::Update()
 			}
 		}
 	}
+
+	if (App->input->gamepad[6])
+	{
+		gpad = true;
+	}
+		
+	if (App->input->keyboard[SDL_SCANCODE_1])
+	{
+		gpad = false;
+	}
+
 	return update_status::UPDATE_CONTINUE;
 }
 

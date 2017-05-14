@@ -39,6 +39,7 @@ public:
 	KEY_STATE joystickpos[5];
 	SDL_GameController* controller = NULL;
 	SDL_Joystick* joystick = NULL;
+	bool gpad_on = false;
 	bool gpad = false;
 	Sint16 idk;
 };

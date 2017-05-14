@@ -104,10 +104,9 @@ update_status ModuleMap1::Update()
 	ymap += 1;
 	App->render->camera.y -= 1;
 	}
-	if ((App->input->keyboard[SDL_SCANCODE_BACKSPACE] && !App->input->gpad) || (App->input->gamepad[6] && App->input->gpad))
+	if ((App->input->keyboard[SDL_SCANCODE_BACKSPACE] && !App->input->gpad) || (App->input->gamepad[12] && App->input->gpad))
 	{
 		ymap = 0;
-
 	}
 	if ( ymap >= 0)
 	{
