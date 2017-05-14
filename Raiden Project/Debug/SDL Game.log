@@ -1,25 +1,4 @@
-﻿  ModulePlayer2.cpp
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleparticles.h(67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulemap1.h(27): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(148): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(174): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(200): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(207): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(211): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(218): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(222): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(318): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(344): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(350): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(354): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(360): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(364): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(438): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(444): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(285): warning C4474: 'sprintf_s' : too many arguments passed for format string
-  c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(285): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(427): warning C4474: 'sprintf_s' : too many arguments passed for format string
-  c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(427): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(815): warning C4018: '>=': signed/unsigned mismatch
+﻿  ModuleFadeToBlack.cpp
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulemap1.h(30): warning C4305: 'initializing': truncation from 'double' to 'float'
   SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
   SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

@@ -45,7 +45,8 @@ update_status ModuleFadeToBlack::Update()
 			// ---
 			
 			App->map_1->xmap = -192;
-			App->map_1->ymap = -15260;
+			App->map_1->ymap = -15000;
+			App->map_1->yroad = (App->map_1->ymap - 2300);
 			// ---
 			total_time += total_time;
 			start_time = SDL_GetTicks();

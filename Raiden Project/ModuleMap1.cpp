@@ -31,8 +31,9 @@ bool ModuleMap1::Init()
 {
 	LOG("Loading background assets");
 	ground = { 0, 0, 352 * 3, 5362 * 3 };
-    Map1 = App->textures->Load("Assets/Tilemap2.png");
-	
+	road = { 0, 0, 352 * 3, 5362 * 3 };
+	Map1 = App->textures->Load("Assets/Tilemap2.png");
+    Road = App->textures->Load("Assets/Roads.png");
 	
 	return true;
 }
@@ -108,16 +109,25 @@ update_status ModuleMap1::Update()
 	}
 
 	App->render->Blit(Map1, xmap, ymap, &ground);
+	App->render->Blit(Road, xmap, yroad, &road);
+
     if (!(ymap >= 0))
 	{ 
 	ymap += 1;
+	yroad += 1.5;
 	App->render->camera.y -= 1;
 	}
+
 	if ((App->input->keyboard[SDL_SCANCODE_BACKSPACE] && !App->input->gpad) || (App->input->gamepad[12] && App->input->gpad))
 	{
-		ymap = 0;
+		won = true;
+
+		//faster scrolling (comment "won = true;" first)
+		//ymap += 50;
+		//yroad += 75;
 	}
-	if ( ymap >= 0)
+
+	if ( ymap >= 0 || won)
 	{
 		App->player->Disable();
 		App->player2->Disable();

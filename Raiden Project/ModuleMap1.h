@@ -19,13 +19,17 @@ public:
 
 public:
 	SDL_Rect ground;
-	SDL_Texture *Map1;
+	SDL_Rect road;
+	SDL_Texture* Map1;
+	SDL_Texture* Road;
 	float xmap;
 	float ymap;
+	float yroad;
 	bool setup = true;
 	bool changing = false;
 	float xscrollspeed = 2.4;
 	float yscrollspeed;
+	bool won = false;
 };
 
 #endif //__MODULEMAP1__
