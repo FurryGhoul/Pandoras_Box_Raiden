@@ -95,29 +95,29 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 
 	//Paths (there should be more than one path and an integer to select what path to use
 	/*Instructions for pathing the enemies:  
-	0.0, 4.0 = down
+	0.0, 2.0 = down
 	0.0, 0.0 = up
-	-0.5, 2.0 = left
-	0.5, 2.0 = right
-	-0.5, 3.0 = down diagonal left
-	-0.5, -1.0 = up diagonal right
-	-0.5, -1.0 = up diagonal left
-	0.5, 3.0 =  down diagonal right
-	1.0,-1.0 = Neutral diagonal up right
-	-1.0, 3.0 =Neutral diagonal down left
-	-1.0, 1.0 = Neutral diagonal up left
-	1.0, 3.0 = Neutral diagonal down right
+	-0.5, 1.0 = left
+	0.5, 1.0 = right
+	-0.5, 1.5 = down diagonal left
+	0.5, 0.0 = up diagonal right 
+	-0.5, 0.0 = up diagonal left    
+	0.5, 2.0 =  down diagonal right  
+	1.0, 0.0 = Neutral diagonal up right
+	-1.0, 2.0 =Neutral diagonal down left    
+	-1.0, 0.0 = Neutral diagonal up left  
+	1.0, 2.0 = Neutral diagonal down right 
 	*/
 	if (path == 0)
 	{
-		movement.PushBack({ 0.0f, 4.0f }, 100);
-		movement.PushBack({ -1.0f, 1.0f }, 100);
-		movement.PushBack({ 1.0f, 3.0f }, 100);
+		movement.PushBack({ 0.0f, 2.0f }, 300);
+		movement.PushBack({ 1.0f,  2.0f }, 1000);
+		movement.PushBack({ 0.5f, 1.0f }, 100);
 	}
 
 	if (path == 1)
 	{
-		movement.PushBack({ 0.0f, 4.0f }, 30);
+		movement.PushBack({ 0.0f, 2.0f }, 30);
 		movement.PushBack({ 0.5f, 3.0f }, 30);
 		movement.PushBack({ 0.5f, 2.0f }, 70);
 		movement.PushBack({ -1.0f, 3.0f }, 100);
@@ -166,7 +166,7 @@ void Tank::MoveShoot()
 	collider->SetSize(w, h);
 
 	// Down and up
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f)
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) //Up
 	{
 		animation = &downup;
 		if (ishit == true)
@@ -177,7 +177,7 @@ void Tank::MoveShoot()
 	    position1.x = position.x + w / 2;
 	    position1.y = position.y + h / 2 - 5;
 	}
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 4.0f)
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f)// Down
 	{
 		animation = &downup;
 		if (ishit == true)
@@ -188,9 +188,8 @@ void Tank::MoveShoot()
 		position1.x = position.x + w / 2;
 		position1.y = position.y + h / 2 - 5;
 	}
-
 	// Left and right
-     if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f)
+     if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f) //Left
 	{ 
 	  animation = &leftright;
 	  if (ishit == true)
@@ -203,7 +202,7 @@ void Tank::MoveShoot()
 	}
 
 
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f)
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f) //Right
 	{
 		animation = &leftright;
 		if (ishit == true)
@@ -216,7 +215,7 @@ void Tank::MoveShoot()
 	}
 
 	// Down diagonal left and up diagonal right
-	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 3.0f)
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 1.5f) // Down diagonal left
 	{ 
 	animation = &downdiagonalleft;
 	if (ishit == true)
@@ -229,7 +228,7 @@ void Tank::MoveShoot()
 	}
 
 
-   if (movement.steps[movement.GetCurrentStep()].speed.x == 0.5f && movement.steps[movement.GetCurrentStep()].speed.y == -1.0f)
+   if (movement.steps[movement.GetCurrentStep()].speed.x == 0.5f && movement.steps[movement.GetCurrentStep()].speed.y ==  0.0f) //Up diagonal right
 	{
 		animation = &downdiagonalleft;
 		if (ishit == true)
@@ -242,7 +241,7 @@ void Tank::MoveShoot()
 	}
 
    //Down diagonal right and up diagonal left
-	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == -1.0f)
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) //up diagonal left
 	{
 		animation = &downdiagonalright;
 		if (ishit == true)
@@ -255,7 +254,7 @@ void Tank::MoveShoot()
 	}
 	
 	
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 3.0f)
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f) //Down diagonal right
 	{
 		animation = &downdiagonalright;
 		if (ishit == true)
@@ -268,7 +267,7 @@ void Tank::MoveShoot()
 	}
 
 	// Neutral diagonal up right and neutral diagonal down left
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 1.0f && movement.steps[movement.GetCurrentStep()].speed.y == -1.0f)
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) //neutral diagonal up right
 	{
 		animation = &neutraldiagonalleft;
 		if (ishit == true)
@@ -279,7 +278,7 @@ void Tank::MoveShoot()
 		position1.x = position.x + w / 2;
 		position1.y = position.y + h / 2;
 	}
-	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 3.0f)
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f) //neutral diagonal down left
 	{
 		animation = &neutraldiagonalleft;
 		if (ishit == true)
@@ -294,7 +293,7 @@ void Tank::MoveShoot()
 
 
 	// Neutral diagonal down left and neutral diagonal up right
-	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f)
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) // Neutral diagonal down left
 	{
 		animation = &neutraldiagonalright;
 		if (ishit == true)
@@ -305,7 +304,7 @@ void Tank::MoveShoot()
 		position1.x = position.x + w / 2;
 		position1.y = position.y + h / 2;
 	}
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 3.0f)
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f) //neutral diagonal up right
 	{
 		animation = &neutraldiagonalright;
 		if (ishit == true)

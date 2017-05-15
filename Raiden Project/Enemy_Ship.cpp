@@ -25,18 +25,18 @@ Enemy_Ship::Enemy_Ship(int x, int y, int path) : Enemy(x, y)
 	nodoor.PushBack({ 110, 5, 17, 10 });
 
 	// Water
-	water1.PushBack({ 85, 31, 18, 15 });
-	water2.PushBack({ 109, 32, 20, 16 });
-	water3.PushBack({ 131, 32, 16, 16 });
-
+	waterdown1.PushBack({ 85, 31, 18, 15 });
+	waterdown2.PushBack({ 109, 32, 20, 16 });
+	waterdown3.PushBack({ 131, 32, 16, 16 });
+	
 	// Movement
-	movement.PushBack({ 0.0f, 3.0f }, 100);
+	movement.PushBack({ 0.0f, 3.0f }, 500);
 	movement.loop = false;
 
-	collider = App->collision->AddCollider({ 0, 0, 73 * 3 - 110, 54 * 3 - 110 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
+	collider = App->collision->AddCollider({ 0, 0, 30 * 3 , 48 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
 
 	spritesheet = 7;
-	animations = 2;
+	animations = 3;
 	original_pos.x = x;
 	original_pos.y = -200;	
 }
@@ -60,18 +60,62 @@ void Enemy_Ship::MoveShoot()
 		distance.x = App->player2->position.x - position.x + 22;
 	}
 
-	// Animation
+	// Animation of the ship and water
 	animation = &down;
 	w = 30 * 3;
 	h = 48 * 3;
-	
+	w2 = 20 * 3;
+	h2 = 16 * 3;	
 
 	distance.x = fabs(distance.x);
 	distance.y = fabs(distance.y);
-
+	
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 3.0f)
 	{
 		animation = &down;
+
+		if (water == 0)
+		{
+			animation2 = &waterdown1;
+			position2.x = position.x + 12;
+			position2.y = position.y - 45;
+
+			if (waterrepeat == 10)
+			{
+				water++;
+				waterrepeat = 0;
+			}
+			else
+				waterrepeat++;
+		}
+		else if (water == 1)
+		{
+			animation2 = &waterdown2;
+			position2.x = position.x + 12;
+			position2.y = position.y - 36;
+
+			if (waterrepeat == 10)
+			{
+				water++;
+				waterrepeat = 0;
+			}
+			else
+				waterrepeat++;
+		}
+		else if (water == 2)
+		{
+			animation2 = &waterdown3;
+			position2.x = position.x + 11;
+			position2.y = position.y - 39;
+
+			if (waterrepeat == 10)
+			{
+				water = 0;
+				waterrepeat = 0;
+			}
+			else
+				waterrepeat++;
+		}
 	}
 
 	// Shooting animation
@@ -93,8 +137,6 @@ void Enemy_Ship::MoveShoot()
 		{
 			animation1 = &open;
 			
-
-
 			shotphase++;
 		}
 		else if (shotphase > 14)
@@ -109,10 +151,39 @@ void Enemy_Ship::MoveShoot()
 				shooting = false;
 			}
 		}
+		if (shotphase == 15) //Only in this phase the ship shoots
+		{
+			shoot = true;
+		}
 	}
 
-	if (shoot_time % 100 == 0)
+	if (shoot_time % 150 == 0 && sqrtf(distance.x*distance.x + distance.y*distance.y))
 	{
 		shooting = true;
+	}
+
+
+	distance.x = fabs(distance.x);
+	distance.y = fabs(distance.y);
+
+	// Shooting
+	distance.x *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+	distance.y *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+	if (shoot == true) //(sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && shooting == false)
+	{
+		if (true == true) //(shoot_time % 80 == 0 && position.y <= 760)
+		{
+			if (App->player->position.y - 22 < (position.y - 22 * 3))
+			{
+				distance.y *= -1;
+			}
+			if (App->player->position.x < (position.x + 22))
+			{
+				distance.x *= -1;
+			}
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 20, position.y + 80, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y); //In theory, the speed should be distance.x and distance.y, but at the moment it doesn't work that way
+
+			shoot = false;
+		}		
 	}
 }

@@ -28,6 +28,7 @@ public:
 	fPoint distance1;
 	fPoint distance2;
 	int hp;
+	bool getvector = true; //For kamikazes
 	Uint32 bombhittime; //time between allowed bomb hits
 	bool allowbombtime = true; //allows timer
 	bool bombimmunity = false;

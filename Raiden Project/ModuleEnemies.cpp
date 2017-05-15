@@ -338,11 +338,11 @@ void ModuleEnemies::MoveEnemiesRight(bool right)
 	{
 		for (uint i = 0; i < MAX_ENEMIES; ++i)
 		{
-			if (enemies[i] != nullptr && !enemies[i]->kamikaze)
+			if (enemies[i] != nullptr && enemies[i]->getvector)
 			{
 				enemies[i]->left_right_mod += App->map_1->xscrollspeed;
 			}
-			else if (enemies[i] != nullptr && enemies[i]->kamikaze)
+			else if (enemies[i] != nullptr && !enemies[i]->getvector)
 			{
 				enemies[i]->position.x += App->map_1->xscrollspeed;
 			}
@@ -353,11 +353,11 @@ void ModuleEnemies::MoveEnemiesRight(bool right)
 	{
 		for (uint i = 0; i < MAX_ENEMIES; ++i)
 		{
-			if (enemies[i] != nullptr && !enemies[i]->kamikaze)
+			if (enemies[i] != nullptr && enemies[i]->getvector)
 			{
 				enemies[i]->left_right_mod-= App->map_1->xscrollspeed;
 			}
-			else if (enemies[i] != nullptr && enemies[i]->kamikaze)
+			else if (enemies[i] != nullptr && !enemies[i]->getvector)
 			{
 				enemies[i]->position.x -= App->map_1->xscrollspeed;
 			}
