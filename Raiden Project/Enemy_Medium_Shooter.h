@@ -3,10 +3,22 @@
 class Enemy_Medium_Shooter : public Enemy
 {
 private:
+	// Normal animation
 	Animation flyi;
 	Animation flys;
 	Animation flycu;
 	Animation flycd;
+
+	// Hit animation
+	Animation hitflyi;
+	Animation hitflys;
+	Animation hitflycu;
+	Animation hitflycd;
+
+	Animation hitflyi1;
+	Animation hitflys1;
+	Animation hitflycu1;
+	Animation hitflycd1;
 			
 	fPoint original_pos;
 	Path movement;

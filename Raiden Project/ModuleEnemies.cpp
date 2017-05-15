@@ -243,6 +243,10 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			{
 				enemies[i]->ishit = true;
 			}
+			if (enemies[i]->mediumshooter)
+			{
+				enemies[i]->ishit = true;
+			}
 			if (enemies[i]->ship)
 			{
 				enemies[i]->ishit = true;

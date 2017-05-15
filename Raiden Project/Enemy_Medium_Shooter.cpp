@@ -37,7 +37,20 @@ Enemy_Medium_Shooter::Enemy_Medium_Shooter(int x, int y, int path) : Enemy(x, y)
 	flycu.PushBack({ 163, 47, 73, 54 });
 	flycu.PushBack({ 244, 46, 73, 54 });
 	flycu.speed = 0.2;
-	
+
+	// Hit animations
+	hitflyi.PushBack({ 8, 414, 73, 54 });
+	hitflyi1.PushBack({ 8, 258, 73, 54 });
+
+	hitflys.PushBack({ 8, 414, 73, 54 });
+	hitflys1.PushBack({ 8, 258, 73, 54 });
+
+	hitflycd.PushBack({ 8, 346, 73, 54 });
+	hitflycd1.PushBack({ 8, 189, 73, 54 });
+
+	hitflycu.PushBack({ 164, 346, 73, 54 });
+	hitflycu1.PushBack({ 162, 190, 73, 54 });
+
 
 	movement.PushBack({ 0.0f, 3.0f }, 100);
 	movement.PushBack({ 0.0f, 2.0f }, 100);
@@ -84,20 +97,59 @@ void Enemy_Medium_Shooter::MoveShoot()
 
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 3.0f)
 	{
-		animation = &flyi;				
+		animation = &flyi;
+
+		if (ishit == true)
+		{
+			if (hp > 9)
+				animation = &hitflyi;
+			else
+				animation = &hitflyi1;
+			
+			ishit = false;
+		}
 	}
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f)
 	{
 		animation = &flys;
-		//shooting = true;
+		
+		if (ishit == true)
+		{
+			if (hp > 9)
+				animation = &hitflys;
+			else
+				animation = &hitflys1;
+
+			ishit = false;
+		}
 	}
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 4.0f)
 	{
 		animation = &flycd;
+
+		if (ishit == true)
+		{
+			if (hp > 9)
+				animation = &hitflycd;
+			else
+				animation = &hitflycd1;
+
+			ishit = false;
+		}
 	}
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == -5.0f)
 	{
 		animation = &flycu;
+
+		if (ishit == true)
+		{
+			if (hp > 9)
+				animation = &hitflycu;
+			else
+				animation = &hitflycu1;
+
+			ishit = false;
+		}
 	}
 
 	// Shooting
