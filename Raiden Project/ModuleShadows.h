@@ -47,6 +47,7 @@ public:
 	void EraseShadows();
 
 private:
+
 	SDL_Texture* graphics = nullptr;
 	Shadow* active[MAX_ACTIVE_SHADOWS];
 

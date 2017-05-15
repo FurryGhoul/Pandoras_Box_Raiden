@@ -69,6 +69,7 @@ public:
 	char highscoret[20];
 	uint hiscore = 0;
 	uint lastscore = 0;
+	int shadowregulator = 0;
 	int score = 0;
 	// Animation
 	bool ideling = false;

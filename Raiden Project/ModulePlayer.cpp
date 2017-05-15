@@ -753,7 +753,12 @@ update_status ModulePlayer::Update()
 
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
 
-	App->shadows->AddShadow(App->shadows->Player, position.x, position.y, 38 * 3, 26 * 3);
+	if (shadowregulator % 2 == 0)
+	{
+		App->shadows->AddShadow(App->shadows->Player, position.x, position.y, 38 * 3, 26 * 3);
+	}
+
+	shadowregulator++;
 
 	if (Player != nullptr && godmode == false)
 	{
