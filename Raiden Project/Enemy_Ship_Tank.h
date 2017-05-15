@@ -26,6 +26,7 @@ private:
 	Animation waterright3;
 
 	//Turret animations
+	Animation noturret;
 	Animation s;
 	Animation n;
 	Animation e;
@@ -66,6 +67,7 @@ private:
 	bool se = false;
 	bool nw = false;
 	bool sw = false;
+	bool turretalive = true;
 	int shooting = 0;
 	int time_controll = 0;
 	int water = 0;
