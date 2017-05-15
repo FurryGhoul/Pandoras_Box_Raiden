@@ -110,9 +110,7 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	*/
 	if (path == 0)
 	{
-		movement.PushBack({ 0.0f, 2.0f }, 300);
-		movement.PushBack({ 1.0f,  2.0f }, 1000);
-		movement.PushBack({ 0.5f, 1.0f }, 100);
+		movement.PushBack({ 0.5f, 1.0f }, 300);
 	}
 
 	if (path == 1)

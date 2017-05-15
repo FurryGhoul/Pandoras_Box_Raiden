@@ -50,7 +50,7 @@ update_status ModuleMap1::Update()
 		App->player2->Enable();
 		}
 		
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 352*3 , -320);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -320);
 
 		App->collision->Enable();
 		App->render->camera.y = 0;
