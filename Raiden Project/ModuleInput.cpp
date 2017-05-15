@@ -284,33 +284,37 @@ update_status ModuleInput::Update()
 		//Player one side scroll
 		if ((keyboard[SDL_SCANCODE_A] && !gpad) || (joystickpos[3] && gpad))
 		{
-			if ((App->map_1->IsEnabled() && App->map_1->xmap <= -5) && !(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player2->deadplayer == false))
+			if (App->player2->deadplayer)
+			{
+				App->player2->position.x = App->player->position.x;
+				App->player2->position.y = App->player->position.y;
+			}
+
+			if ((App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player2->position.x <= 595))
 			{
 				App->map_1->xmap += App->map_1->xscrollspeed;
 				App->enemies->MoveEnemiesRight(true);
 				App->particles->MoveParticlesRight(true);
 				App->powerups->MovePowerUpsRight(true);
-				if (!(App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player2->position.x < 50))
-				{
-					App->player2->position.x += App->map_1->xscrollspeed;
-				}
+
 			}
 		}
 
 		if ((keyboard[SDL_SCANCODE_D] && !gpad) || joystickpos[4] && gpad)
 		{
-			if ((App->map_1->IsEnabled() && App->map_1->xmap >= -383) && !(App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player2->deadplayer == false))
+			if (App->player2->deadplayer)
+			{
+				App->player2->position.x = App->player->position.x;
+				App->player2->position.y = App->player->position.y;
+			}
+
+			if ((App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player2->position.x >= 10))
 			{
 				App->map_1->xmap -= App->map_1->xscrollspeed;
 				App->enemies->MoveEnemiesRight(false);
 				App->particles->MoveParticlesRight(false);
 				App->powerups->MovePowerUpsRight(false);
-				if (!(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player2->position.x > 550))
-				{
-					App->player2->position.x -= App->map_1->xscrollspeed;
-				}
 			}
-
 		}
 	}
 
@@ -319,31 +323,35 @@ update_status ModuleInput::Update()
 		//Player two side scroll
 		if ((keyboard[SDL_SCANCODE_LEFT] && !gpad2) || (joystickpos2[3] && gpad2))
 		{
-			if ((App->map_1->IsEnabled() && App->map_1->xmap <= -5) && !(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player->deadplayer == false))
+			if (App->player->deadplayer)
+			{
+				App->player->position.x = App->player2->position.x;
+				App->player->position.y = App->player2->position.y;
+			}
+
+			if ((App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->position.x <= 595))
 			{
 				App->map_1->xmap += App->map_1->xscrollspeed;
 				App->enemies->MoveEnemiesRight(true);
 				App->particles->MoveParticlesRight(true);
 				App->powerups->MovePowerUpsRight(true);
-				if ((!App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->position.x))
-				{
-					App->player->position.x += App->map_1->xscrollspeed;
-				}
 			}
 		}
 
 		if ((keyboard[SDL_SCANCODE_RIGHT] && !gpad2) || joystickpos2[4] && gpad2)
 		{
-			if ((App->map_1->IsEnabled() && App->map_1->xmap >= -383) && !(App->map_1->IsEnabled() && App->map_1->xmap <= -5 && App->player->deadplayer == false))
+			if (App->player->deadplayer)
+			{
+				App->player->position.x = App->player2->position.x;
+				App->player->position.y = App->player2->position.y;
+			}
+
+			if ((App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player->position.x >= 10))
 			{
 				App->map_1->xmap -= App->map_1->xscrollspeed;
 				App->enemies->MoveEnemiesRight(false);
 				App->particles->MoveParticlesRight(false);
 				App->powerups->MovePowerUpsRight(false);
-				if (!(App->map_1->IsEnabled() && App->map_1->xmap >= -383 && App->player->position.x > 550))
-				{
-					App->player->position.x -= App->map_1->xscrollspeed;
-				}
 			}
 		}
 	}
