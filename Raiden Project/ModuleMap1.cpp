@@ -76,9 +76,20 @@ update_status ModuleMap1::Update()
 
     if (!(ymap >= 0))
 	{ 
-	ymap += yscrollspeed;
-	yroad += (yscrollspeed * 1.5);
-	App->render->camera.y -= 1;
+		ymap += yscrollspeed;
+		yroad += (yscrollspeed * 1.5);
+		App->render->camera.y -= 1;
+
+		if (yroad >= -4500)
+		{
+			road1 = true;
+		}
+
+		if (road1 && !roadmoved)
+		{
+			yroad -= 3000;
+			roadmoved = true;
+		}
 	}
 
 	if ((App->input->keyboard[SDL_SCANCODE_BACKSPACE] && !App->input->gpad) || (App->input->gamepad[12] && App->input->gpad))
