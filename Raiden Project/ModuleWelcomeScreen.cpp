@@ -15,6 +15,7 @@
 #include "ModuleEnemies.h"
 #include "ModulePlayer2.h"
 #include "ModulePowerUps.h"
+#include "ModuleShadows.h"
 
 ModuleWelcomeScreen::ModuleWelcomeScreen() : Module()
 {
@@ -33,6 +34,7 @@ bool ModuleWelcomeScreen::Init()
 	App->StageClear1->Disable();
 	App->audio_2->Close();
 	App->particles->Disable();
+	App->shadows->Disable();
 	App->player->Disable();
 	App->player2->Disable();
 

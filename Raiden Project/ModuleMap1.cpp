@@ -14,6 +14,7 @@
 #include "ModuleEnemies.h"
 #include "ModulePowerUps.h"
 #include "ModuleFonts.h"
+#include "ModuleShadows.h"
 #include "ModuleStageClear1.h"
 
 #include <stdio.h>
@@ -44,6 +45,7 @@ update_status ModuleMap1::Update()
 	if (setup)
 	{
 		App->particles->Enable();
+		App->shadows->Enable();
 	    App->player->Enable();
 		if (!App->player2->deadplayer)
 		{ 
@@ -100,10 +102,12 @@ update_status ModuleMap1::Update()
 		App->enemies->EraseEnemies();
 		App->powerups->ErasePowerUps();
 		App->particles->EraseParticles();
+		App->shadows->EraseShadows();
 		App->collision->Erase_Non_Player_Colliders();
 		App->player->powerup_level = 0;
 		App->player2->powerup_level = 0;
 		App->particles->Disable();		
+		App->shadows->Disable();
 		App->player->Playergod->SetPos(10000, 10000);
 		App->player2->Playergod->SetPos(10000, 10000);
 		App->player->Player->SetPos(10000, 10000);
