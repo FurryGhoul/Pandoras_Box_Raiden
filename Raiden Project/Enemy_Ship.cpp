@@ -36,7 +36,7 @@ Enemy_Ship::Enemy_Ship(int x, int y, int path) : Enemy(x, y)
 	waterdown3.PushBack({ 131, 32, 16, 16 });
 	
 	// Movement
-	movement.PushBack({ 0.0f, 2.0f }, 500);
+	movement.PushBack({ 0.0f, 2.0f }, 700);
 	movement.loop = false;
 
 	collider = App->collision->AddCollider({ 0, 0, 30 * 3 , 48 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);

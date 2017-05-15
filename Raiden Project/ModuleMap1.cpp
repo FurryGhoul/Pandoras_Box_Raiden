@@ -51,11 +51,13 @@ update_status ModuleMap1::Update()
 		{ 
 		App->player2->Enable();
 		}
+
 		
-		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -320);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP, 200, -320);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 100, -320);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP, 300, -320);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 700, -320);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 400, -320);
+
 
 		App->collision->Enable();
 		App->render->camera.y = 0;
@@ -81,18 +83,29 @@ update_status ModuleMap1::Update()
 
     if (!(ymap >= 0))
 	{ 
-	ymap += yscrollspeed;
-	yroad += (yscrollspeed * 1.5);
-	App->render->camera.y -= 1;
+		ymap += yscrollspeed;
+		yroad += (yscrollspeed * 1.5);
+		App->render->camera.y -= 1;
+
+		if (yroad >= -4500)
+		{
+			road1 = true;
+		}
+
+		if (road1 && !roadmoved)
+		{
+			yroad -= 3000;
+			roadmoved = true;
+		}
 	}
 
 	if ((App->input->keyboard[SDL_SCANCODE_BACKSPACE] && !App->input->gpad) || (App->input->gamepad[12] && App->input->gpad))
 	{
-		won = true;
+		//won = true;
 
 		//faster scrolling (comment "won = true;" first)
-		//ymap += yscrollspeed * 50;
-		//yroad += ((yscrollspeed * 1.5) * 50);
+		ymap += yscrollspeed * 50;
+		yroad += ((yscrollspeed * 1.5) * 50);
 	}
 
 	if ( ymap >= 0 || won)

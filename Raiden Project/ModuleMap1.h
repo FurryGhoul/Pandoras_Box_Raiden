@@ -29,6 +29,8 @@ public:
 	bool changing = false;
 	float xscrollspeed = 2.4;
 	float yscrollspeed = 1;
+	bool road1 = false;
+	bool roadmoved = false;
 	bool won = false;
 };
 
