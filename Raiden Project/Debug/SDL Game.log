@@ -1,4 +1,20 @@
 ﻿  ModuleShadows.cpp
 c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulemap1.h(30): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Enemy_Ship.cpp
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(59): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleparticles.h(67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_ship.cpp(46): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_ship.cpp(76): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_ship.cpp(77): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_ship.cpp(182): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_ship.cpp(183): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_ship.cpp(198): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Enemy_Ship_Tank.cpp
+  Enemy_Long_Megatank.cpp
+  LINK : C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe not found or not built by the last incremental link; performing full link
   SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
   SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

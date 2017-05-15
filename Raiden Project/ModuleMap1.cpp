@@ -54,6 +54,7 @@ update_status ModuleMap1::Update()
 		
 		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -320);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP, 200, -320);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 300, -320);
 
 		App->collision->Enable();
 		App->render->camera.y = 0;

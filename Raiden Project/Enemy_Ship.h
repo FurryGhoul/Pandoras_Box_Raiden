@@ -5,6 +5,8 @@ class Enemy_Ship : public Enemy
 public:
 	// Ship
 	Animation down;
+	Animation hitdown;
+	Animation hitdown1;
 
 	// Door
 	Animation semiopen;
