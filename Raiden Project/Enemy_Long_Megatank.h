@@ -11,6 +11,9 @@ private:
 	fPoint original_pos;
 
 	Path movement;
+
+	int shoot_time = 0;
+	bool shooting = false;
 public:
 	Enemy_Long_Megatank(int x, int y, int path);
 

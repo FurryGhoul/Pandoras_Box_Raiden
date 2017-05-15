@@ -109,6 +109,7 @@ public:
 	Particle bombexplosion2;
 	Particle tank_explosion;
 	Particle bonusmedium_explosion;
+	Particle longmegatank_laser;
 };
 
 #endif // __MODULEPARTICLES_H__
