@@ -20,8 +20,11 @@ class PowerUp;
 
 struct PowerUpInfo
 {
+	double centerx;
+	double centery;
 	POWERUP_TYPES type = POWERUP_TYPES::NO_TYPE;
 	int x, y;
+	double angle;
 };
 
 class ModulePowerUps : public Module

@@ -281,6 +281,9 @@ void ModulePowerUps::Switch()
 		{
 			info.x = powerups[i]->position.x;
 			info.y = powerups[i]->position.y;
+			info.centerx = powerups[i]->center.x;
+			info.centery = powerups[i]->center.y;
+			info.angle = powerups[i]->angle;
 			if (powerups[i]->bluep == true)
 			{
 				info.type = POWERUP_TYPES::REDUP;
@@ -289,20 +292,20 @@ void ModulePowerUps::Switch()
 			{
 				info.type = POWERUP_TYPES::BLUEUP;
 			}
-
+			
 			delete powerups[i];
 			powerups[i] = nullptr;
 
 			switch (info.type)
 			{
 			case POWERUP_TYPES::REDUP:
-				powerups[i] = new RedUp(info.x, info.y);
+				powerups[i] = new RedUp(info.x, info.y, info.centerx, info.centery, info.angle, false);
 				break;
 			case POWERUP_TYPES::MEDAL:
 				powerups[i] = new Medals(info.x, info.y);
 				break;
 			case POWERUP_TYPES::BLUEUP:
-				powerups[i] = new BlueUp(info.x, info.y);
+				powerups[i] = new BlueUp(info.x, info.y, info.centerx, info.centery, info.angle, false);
 				break;
 			}
 		}

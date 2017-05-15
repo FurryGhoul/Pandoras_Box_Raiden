@@ -3,8 +3,9 @@
 #include "ModulePlayer.h"
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
+#define PI 3.14159265
 
-BlueUp::BlueUp(int x, int y) : PowerUp(x, y)
+BlueUp::BlueUp(int x, int y, double pcenterx, double pcentery, double pangle, bool first) : PowerUp(x, y, pcentery, pcenterx, pangle)
 {
 	//Red PowerUp animation sprite
 	idle1.PushBack({ 59, 2, 16, 13 });
@@ -24,14 +25,37 @@ BlueUp::BlueUp(int x, int y) : PowerUp(x, y)
 	w = 15 * 3;
 	h = 13 * 3;
 
+	
+	radius = 150;
 	position.x = original_pos.x = x;
 	position.y = original_pos.y = y;
 	animation = &idle1;
+	if (first)
+	{
+		center.y = position.y + radius;
+		center.x = position.x;
+		angle = PI / 2;
+	}
+	else
+	{ 
+	center.y = pcentery;
+	center.x = pcenterx;
+	angle = pangle;
+	}
 }
 
 
 void BlueUp::Move()
 {
-	position = original_pos + movement.GetCurrentPosition();
-	position.x += left_right_mod;
+	pos_mod.x = sin(angle)* radius;
+	pos_mod.y = cos(angle) * radius;
+
+
+	angle += 0.01;
+
+
+	position.x = center.x + pos_mod.x;
+	position.y = center.y + pos_mod.y;
+
+	//position.x += left_right_mod;
 }

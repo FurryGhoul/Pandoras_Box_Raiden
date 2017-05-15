@@ -5,7 +5,7 @@
 #include "ModuleRender.h"
 
 
-PowerUp::PowerUp(int x, int y) : position(x, y)
+PowerUp::PowerUp(int x, int y, double pcenterx, double pcentery, double pangle ) : position(x, y), center(pcenterx,pcentery), angle(pangle)
 {}
 
 
