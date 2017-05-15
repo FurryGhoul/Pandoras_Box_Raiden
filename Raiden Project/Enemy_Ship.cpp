@@ -157,7 +157,7 @@ void Enemy_Ship::MoveShoot()
 		}
 	}
 
-	if (shoot_time % 150 == 0 && sqrtf(distance.x*distance.x + distance.y*distance.y))
+	if (shoot_time % 120 == 0 && sqrtf(distance.x*distance.x + distance.y*distance.y) < 500)
 	{
 		shooting = true;
 	}
@@ -171,19 +171,16 @@ void Enemy_Ship::MoveShoot()
 	distance.y *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
 	if (shoot == true) //(sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && shooting == false)
 	{
-		if (true == true) //(shoot_time % 80 == 0 && position.y <= 760)
+		if (App->player->position.y - 22 < (position.y - 22 * 3))
 		{
-			if (App->player->position.y - 22 < (position.y - 22 * 3))
-			{
-				distance.y *= -1;
-			}
-			if (App->player->position.x < (position.x + 22))
-			{
-				distance.x *= -1;
-			}
-			App->particles->AddParticle(App->particles->enemyshot, position.x + 20, position.y + 80, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y); //In theory, the speed should be distance.x and distance.y, but at the moment it doesn't work that way
+			distance.y *= -1;
+		}
+		if (App->player->position.x < (position.x + 22))
+		{
+			distance.x *= -1;
+		}
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 20, position.y + 80, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y); //In theory, the speed should be distance.x and distance.y, but at the moment it doesn't work that way
 
-			shoot = false;
-		}		
+		shoot = false;
 	}
 }
