@@ -22,9 +22,11 @@ public:
 	float left_right_mod = 0;
 	bool bluep = false;
 	bool redp = false;
+	fPoint center;
+	double angle;
 
 public:
-	PowerUp(int x, int y);
+	PowerUp(int x, int y, double pcenterx = 0, double pcentery = 0, double pangle = 0);
 	virtual ~PowerUp();
 
 	const Collider* GetCollider() const;
