@@ -1,16 +1,4 @@
-﻿  Enemy_Ship.cpp
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(59): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\moduleparticles.h(67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_ship.cpp(40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_ship.cpp(70): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_ship.cpp(71): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_ship.cpp(166): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_ship.cpp(167): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\joan\documents\github\pandoras_box_raiden\raiden project\enemy_ship.cpp(182): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  LINK : C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe not found or not built by the last incremental link; performing full link
-ModuleAudio_1.obj : warning LNK4205: 'C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\vc140.pdb' is missing current debugging information for referencing module; linking object as if no debug info
-Globals.obj : warning LNK4205: 'C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\vc140.pdb' is missing current debugging information for referencing module; linking object as if no debug info
+﻿  ModuleShadows.cpp
+c:\users\joan\documents\github\pandoras_box_raiden\raiden project\modulemap1.h(30): warning C4305: 'initializing': truncation from 'double' to 'float'
   SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
   SDL Game.vcxproj -> C:\Users\Joan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

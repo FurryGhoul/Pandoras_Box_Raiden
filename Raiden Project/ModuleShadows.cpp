@@ -25,6 +25,14 @@ ModuleShadows::~ModuleShadows()
 bool ModuleShadows::Init()
 {
 	LOG("Loading shadows");
+	graphics = App->textures->Load("Assets/Player1.png");
+
+	//Player's shadow
+	Player.anim.PushBack({ 32, 65, 12, 11 });
+	Player.anim.loop = true;
+	Player.anim.speed = 1.0f;
+	Player.size.x = 12 * 3;
+	Player.size.y = 11 * 3;
 
 	return true;
 }
@@ -64,12 +72,7 @@ update_status ModuleShadows::Update()
 			continue;
 		}
 
-		if (regulator % 2 == 1)
-		{
 			App->render->Blit(graphics, p->position.x, p->position.y, &(p->anim.GetCurrentFrame()), p->size.x, p->size.y);
-		}
-
-		regulator++;
 	}
 
 	return UPDATE_CONTINUE;
@@ -83,11 +86,9 @@ void ModuleShadows::AddShadow(const Shadow& shadow, float x, float y, float dist
 		if (active[i] == nullptr)
 		{
 			Shadow* p = new Shadow(shadow);
-			p->born = 0;
-			p->position.x = x;
-			p->position.y = y;
-			p->distance.x = distancex;
-			p->distance.y = distancey;
+			p->born = SDL_GetTicks();
+			p->position.x = (x + distancex);
+			p->position.y = (y + distancey);
 			p->size = shadow.size;
 
 			active[i] = p;
@@ -142,7 +143,7 @@ Shadow::Shadow()
 }
 
 Shadow::Shadow(const Shadow& p) :
-	anim(p.anim), position(p.position), born(p.born)
+	anim(p.anim), position(p.position), born(p.born), life(p.life)
 {}
 
 Shadow::~Shadow()
@@ -153,8 +154,16 @@ bool Shadow::Update()
 
 	bool ret = true;
 
-	if (anim.Finished())
-		ret = false;
+	if (life > 0)
+	{
+		if ((SDL_GetTicks() - born) > life)
+		{
+			ret = false;
+		}
+
+	}
+	else if (anim.Finished())
+			ret = false;
 
 	return ret;
 }

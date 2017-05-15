@@ -20,6 +20,7 @@ struct Shadow
 	fPoint distance;
 	iPoint size;
 	Uint32 born = 0;
+	Uint32 life = 0;
 
 	Shadow();
 	Shadow(const Shadow& p);
@@ -44,14 +45,13 @@ public:
 	void MoveShadowsRight(bool);
 	void AddShadow(const Shadow& shadow, float x, float y, float distancex, float distancey);
 	void EraseShadows();
-private:
 
-	int regulator = 0;
+private:
 	SDL_Texture* graphics = nullptr;
 	Shadow* active[MAX_ACTIVE_SHADOWS];
 
 public:
-
+	Shadow Player;
 };
 
 #endif // __MODULESHADOWS_H__
