@@ -16,7 +16,7 @@ Box_PowerUp::Box_PowerUp(int x, int y, int path) : Enemy(x, y)
 
 	idle.PushBack({ 31, 1, 27, 25 });
 
-	movement.PushBack({ 0.0f, 2.0f }, 100);
+	movement.PushBack({ 0.0f, 1.0f }, 100);
 
 	collider = App->collision->AddCollider({ 0, 0, 27 * 3 - 5, 24 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
 

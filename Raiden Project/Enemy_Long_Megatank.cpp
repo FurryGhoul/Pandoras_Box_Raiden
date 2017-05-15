@@ -133,11 +133,11 @@ void Enemy_Long_Megatank::MoveShoot()
 	h = 53 * 3;
 	collider->SetSize(w, h);
 
-	position = original_pos + movement.GetCurrentPosition();	
-	
+	position = original_pos + movement.GetCurrentPosition();
+
 	position.x += left_right_mod;
 
-	++shoot_time;
+
 
 	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f)
 	{
@@ -149,7 +149,7 @@ void Enemy_Long_Megatank::MoveShoot()
 		animation = &transformation;
 	}
 
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == -1.0f 
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == -1.0f
 		|| movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 4.0f)
 	{
 		animation = &finalform;
@@ -163,40 +163,45 @@ void Enemy_Long_Megatank::MoveShoot()
 
 	if (shooting == true)
 	{
-		if (shoot_time % 200 == 0)
+		++shoot_time;
+		if (shoot_time % 140 == 0)
 		{
 			App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 30 * 3, position.y + 11 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
 		}
-		if (shoot_time % 203 == 0)
+		if (shoot_time % 145 == 0)
 		{
 			App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 38 * 3, position.y + 11 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
 		}
-		if (shoot_time % 206 == 0)
+		if (shoot_time % 150 == 0)
 		{
 			App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 44 * 3, position.y + 16 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
 		}
-		if (shoot_time % 209 == 0)
+		if (shoot_time % 155 == 0)
 		{
 			App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 44 * 3, position.y + 23 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
 		}
-		if (shoot_time % 212 == 0)
+		if (shoot_time % 160 == 0)
 		{
 			App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 38 * 3, position.y + 29 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
 		}
-		if (shoot_time % 215 == 0)
+		if (shoot_time % 165 == 0)
 		{
 			App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 30 * 3, position.y + 29 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
 		}
-		if (shoot_time % 220 == 0)
+		if (shoot_time % 170 == 0)
 		{
 			App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 24 * 3, position.y + 23 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
 		}
-		if (shoot_time % 225 == 0)
+		if (shoot_time % 175 == 0)
 		{
 			App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 24 * 3, position.y + 16 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
 		}
+		if (shoot_time == 200)
+		{
+			shoot_time = 100;
+			++shoot_time;
+		}
 		shooting = false;
+
 	}
 }
-
-
