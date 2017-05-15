@@ -13,12 +13,18 @@ Enemy_Ship::Enemy_Ship(int x, int y, int path) : Enemy(x, y)
 {
 	hp = 13;
 	points = 200;
+	ship = true;
 
 	// Anmiation pushback's
 
 	// Down
 	down.PushBack({ 4, 1, 30, 48 });
 
+	// Animation hitspark
+
+	hitdown.PushBack({ 4, 53, 30, 48 });
+	hitdown1.PushBack({ 40, 53, 30, 48 });
+	
 	// Door
 	semiopen.PushBack({ 40, 5, 17, 33 });
 	open.PushBack({ 62, 5, 17, 33 });
@@ -30,7 +36,7 @@ Enemy_Ship::Enemy_Ship(int x, int y, int path) : Enemy(x, y)
 	waterdown3.PushBack({ 131, 32, 16, 16 });
 	
 	// Movement
-	movement.PushBack({ 0.0f, 3.0f }, 500);
+	movement.PushBack({ 0.0f, 2.0f }, 500);
 	movement.loop = false;
 
 	collider = App->collision->AddCollider({ 0, 0, 30 * 3 , 48 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
@@ -70,9 +76,19 @@ void Enemy_Ship::MoveShoot()
 	distance.x = fabs(distance.x);
 	distance.y = fabs(distance.y);
 	
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 3.0f)
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f)
 	{
 		animation = &down;
+
+		if (ishit == true)
+		{
+			if (hp < 7)
+				animation = &hitdown;
+			else
+				animation = &hitdown1;
+			
+			ishit = false;
+		}
 
 		if (water == 0)
 		{
@@ -157,7 +173,7 @@ void Enemy_Ship::MoveShoot()
 		}
 	}
 
-	if (shoot_time % 120 == 0 && sqrtf(distance.x*distance.x + distance.y*distance.y) < 500)
+	if (shoot_time % 120 == 0 && sqrtf(distance.x*distance.x + distance.y*distance.y) < 760)
 	{
 		shooting = true;
 	}
@@ -169,7 +185,7 @@ void Enemy_Ship::MoveShoot()
 	// Shooting
 	distance.x *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
 	distance.y *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
-	if (shoot == true) //(sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && shooting == false)
+	if (shoot == true)
 	{
 		if (App->player->position.y - 22 < (position.y - 22 * 3))
 		{
@@ -179,7 +195,7 @@ void Enemy_Ship::MoveShoot()
 		{
 			distance.x *= -1;
 		}
-		App->particles->AddParticle(App->particles->enemyshot, position.x + 20, position.y + 80, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y); //In theory, the speed should be distance.x and distance.y, but at the moment it doesn't work that way
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 20, position.y + 80, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
 
 		shoot = false;
 	}
