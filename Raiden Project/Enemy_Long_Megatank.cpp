@@ -90,13 +90,37 @@ Enemy_Long_Megatank::Enemy_Long_Megatank(int x, int y, int path) : Enemy(x, y)
 	finalform.PushBack({ 336, 471, 81, 53 });
 	finalform.PushBack({ 336, 471, 81, 53 });
 
-	
+	stop.PushBack({ 336, 471, 81, 53 });
 
 
 	megatank = true;
 	
 	movement.PushBack({-1.0f, 1.0f}, 250);
-	movement.PushBack({ 0.0f, 0.0f}, 800);
+	movement.PushBack({ 0.0f, 0.01f}, 70);
+	movement.PushBack({ 0.0f, -1.0f}, 50);
+	movement.PushBack({ 0.0f, 1.0f }, 75);
+	movement.PushBack({ 0.0f, -1.0f }, 50);
+	movement.PushBack({ 0.0f, 1.0f }, 75);
+	movement.PushBack({ 0.0f, -1.0f }, 50);
+	movement.PushBack({ 0.0f, 1.0f }, 75);
+	movement.PushBack({ 0.0f, -1.0f }, 50);
+	movement.PushBack({ 0.0f, 1.0f }, 75);
+	movement.PushBack({ 0.0f, -1.0f }, 50);
+	movement.PushBack({ 0.0f, 1.0f }, 75);
+	movement.PushBack({ 0.0f, -1.0f }, 50);
+	movement.PushBack({ 0.0f, 1.0f }, 75);
+	movement.PushBack({ 0.0f, -1.0f }, 50);
+	movement.PushBack({ 0.0f, 1.0f }, 75);
+	movement.PushBack({ 0.0f, -1.0f }, 50);
+	movement.PushBack({ 0.0f, 1.0f }, 75);
+	movement.PushBack({ 0.0f, -1.0f }, 50);
+	movement.PushBack({ 0.0f, 1.0f }, 75);
+	movement.PushBack({ 0.0f, -1.0f }, 50);
+	movement.PushBack({ 0.0f, 1.0f }, 75);
+	movement.PushBack({ 0.0f, -1.0f }, 400);
+	movement.PushBack({ 0.0f, 1.0f }, 100);
+	movement.PushBack({ 0.0f, 4.0f }, 1000);
+	
 	collider = App->collision->AddCollider({ 0, 0, 24 * 3 - 5, 26 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
 	
 	original_pos.x = x;
@@ -121,11 +145,21 @@ void Enemy_Long_Megatank::MoveShoot()
 		animation = &shellstart;
 	}
 
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f)
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.01f)
 	{
 		animation = &transformation;
 	}
 
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == -1.0f 
+		|| movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 4.0f)
+	{
+		animation = &finalform;
+	}
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f)
+	{
+		animation = &stop;
+	}
+	
 }
 
 

@@ -6,6 +6,7 @@ private:
 	Animation shellstart;
 	Animation transformation;
 	Animation finalform;
+	Animation stop;
 
 	fPoint original_pos;
 

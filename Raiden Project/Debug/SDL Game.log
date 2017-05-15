@@ -1,5 +1,13 @@
-﻿  ModuleWelcomeScreen.cpp
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\modulemap1.h(30): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleparticles.h(67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+﻿  Enemy_Long_Megatank.cpp
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\path.h(59): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\moduleparticles.h(67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\enemy_long_megatank.cpp(126): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\ivan\documents\github\pandoras_box_raiden\raiden project\enemy_long_megatank.cpp(127): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Enemy_Ship_Tank.cpp
+  Enemy_Ship.cpp
+  SDL Game.vcxproj -> C:\Users\Ivan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\Ivan\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
