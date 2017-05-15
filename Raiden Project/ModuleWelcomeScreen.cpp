@@ -60,6 +60,8 @@ update_status ModuleWelcomeScreen::Update()
 		App->collision->Erase_Non_Player_Colliders();
 		App->input->gpad = false;
 		App->map_1->won = false;
+		App->map_1->road1 = true;
+		App->map_1->roadmoved = true;
 	}
 
 	if (App->input->gamepad[6])
