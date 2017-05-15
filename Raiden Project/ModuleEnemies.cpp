@@ -184,31 +184,31 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			enemies[i] = new Enemy_Light_Shooter(App->map_1->xmap + info.x, info.y, info._path);
 			break;
 		case ENEMY_TYPES::KAMIKAZE:
-			enemies[i] = new Enemy_Kamikaze(info.x, info.y, info._path);
+			enemies[i] = new Enemy_Kamikaze(App->map_1->xmap + info.x, info.y, info._path);
 			break;
 		case ENEMY_TYPES::BONUS_SHIP:
-			enemies[i] = new Enemy_Bonus_Ship(info.x, info.y, info._path);
+			enemies[i] = new Enemy_Bonus_Ship(App->map_1->xmap + info.x, info.y, info._path);
 			break;
 		case ENEMY_TYPES::TANK:
-			enemies[i] = new Tank(info.x, info.y, info._path);
+			enemies[i] = new Tank(App->map_1->xmap + info.x, info.y, info._path);
 			break;
 		case ENEMY_TYPES::SHIP_TANK:
-			enemies[i] = new Enemy_Ship_Tank(info.x, info.y, info._path);
+			enemies[i] = new Enemy_Ship_Tank(App->map_1->xmap + info.x, info.y, info._path);
 			break;
 		case ENEMY_TYPES::SHIP:
-			enemies[i] = new Enemy_Ship(info.x, info.y, info._path);
+			enemies[i] = new Enemy_Ship(App->map_1->xmap + info.x, info.y, info._path);
 			break;
 		case ENEMY_TYPES::MEDIUM_SHOOTER:
-			enemies[i] = new Enemy_Medium_Shooter(info.x, info.y, info._path);
+			enemies[i] = new Enemy_Medium_Shooter(App->map_1->xmap + info.x, info.y, info._path);
 			break;
 		case ENEMY_TYPES::LONG_MEGATANK:
-			enemies[i] = new Enemy_Long_Megatank(info.x, info.y, info._path);
+			enemies[i] = new Enemy_Long_Megatank(App->map_1->xmap + info.x, info.y, info._path);
 			break;
 		case ENEMY_TYPES::BOX_MEDAL:
-			enemies[i] = new Box_Medal(info.x, info.y, info._path);
+			enemies[i] = new Box_Medal(App->map_1->xmap + info.x, info.y, info._path);
 			break;
 		case ENEMY_TYPES::BOX_POWERUP:
-			enemies[i] = new Box_PowerUp(info.x, info.y, info._path);
+			enemies[i] = new Box_PowerUp(App->map_1->xmap + info.x, info.y, info._path);
 			break;
 		}
 	}
