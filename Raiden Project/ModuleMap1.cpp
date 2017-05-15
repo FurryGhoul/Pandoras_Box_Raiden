@@ -85,7 +85,7 @@ update_status ModuleMap1::Update()
 
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::LONG_MEGATANK, 500, -100);
 
-		//App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP, 200, -100);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP, 200, -100);
 
 
 		App->collision->Enable();

@@ -12,9 +12,9 @@ public:
 	Animation nodoor;
 
 	// Water waves
-	Animation water1;
-	Animation water2;
-	Animation water3;
+	Animation waterdown1;
+	Animation waterdown2;
+	Animation waterdown3;
 	
 	fPoint original_pos;
 	Path movement;
@@ -26,8 +26,9 @@ public:
 	bool nw = false;
 	bool sw = false;
 	bool shooting = false;
+	bool shoot = false; // Makes the ship shoot
 	int shoot_time = 0;
-	int shotphase = 0;
+	int shotphase = 0; // Phase of the shooting animation
 	int water = 0;
 	int waterrepeat = 0;
 
