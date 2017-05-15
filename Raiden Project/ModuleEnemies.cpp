@@ -243,6 +243,14 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			{
 				enemies[i]->ishit = true;
 			}
+			if (enemies[i]->mediumshooter)
+			{
+				enemies[i]->ishit = true;
+			}
+			if (enemies[i]->ship)
+			{
+				enemies[i]->ishit = true;
+			}
 			if (enemies[i]->tank)
 			{
  				enemies[i]->ishit = true;
@@ -281,6 +289,10 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				  App->particles->AddParticle(App->particles->explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
                 }
 				else if (enemies[i]->tank)
+				{
+					App->particles->AddParticle(App->particles->tank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+				}
+				else if (enemies[i]->shiptank)
 				{
 					App->particles->AddParticle(App->particles->tank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
 				}

@@ -12,6 +12,7 @@ Enemy_Ship_Tank::Enemy_Ship_Tank(int x, int y, int path) : Enemy(x, y)
 {
 	hp = 3;
 	points = 230;
+	shiptank = true;
 
 	spritesheet = 2;
 	animations = 3;
@@ -32,6 +33,8 @@ Enemy_Ship_Tank::Enemy_Ship_Tank(int x, int y, int path) : Enemy(x, y)
 	waterup3.PushBack({ 309, 364, 33, 29 }); // Horizontal movement and water effects are not needed in level 2
 
 	//Turret animations
+	noturret.PushBack({ 1, 1, 1, 1 });
+
 	s.PushBack({ 3, 44, 38, 34 });
 	hits.PushBack({ 4, 135, 38, 34 });
 
@@ -194,176 +197,182 @@ void Enemy_Ship_Tank::MoveShoot()
 		position1.y = position.y + h / 2 - 5;
 	}
 
-
-
-
-	//Animation of the turret
-	param = (fabs(distance.y) / (fabs(distance.x) + 0.1));
-	angle = atan(param) * 180 / PI;
-
-	// South-East position
-	if (distance.y > 0 && distance.x > 0)
+	if (hp < 2)
 	{
-		se = true;
-	}
-	else
-	{
-		se = false;
+		turretalive = false;
+		animation1 = &noturret;
 	}
 
-	// South-West position
-	if (distance.y > 0 && distance.x < 0)
+	if (turretalive == true)
 	{
-		sw = true;
-	}
-	else
-	{
-		sw = false;
-	}
+		//Animation of the turret
+		param = (fabs(distance.y) / (fabs(distance.x) + 0.1));
+		angle = atan(param) * 180 / PI;
 
-	// North-East position
-	if (distance.y < 0 && distance.x > 0)
-	{
-		ne = true;
-	}
-	else
-	{
-		ne = false;
-	}
-
-	// North-West position
-	if (distance.y < 0 && distance.x < 0)
-	{
-		nw = true;
-	}
-	else
-	{
-		nw = false;
-	}
-
-
-
-	// Applying animation
-
-	w1 = 38 * 3;
-	h1 = 34 * 3;
-	position1.x -= 19 * 3;
-	position1.y -= 17 * 3;
-
-	// South to East
-	if (se && angle >= 72 && angle <= 90) // Good
-	{
-		animation1 = &s;		
-	}
-	if (se && angle >= 54 && angle <= 72) //Good
-	{
-		animation1 = &se1;		
-	}
-	if (se && angle >= 36 && angle <= 54) // Good
-	{
-		animation1 = &se2;		
-	}
-
-	if (se && angle >= 18 && angle <= 36) //Good
-	{
-		animation1 = &se3;		
-	}
-
-	if (se && angle >= 0 && angle <= 18) // Good
-	{
-		animation1 = &e;		
-	}
-
-	// East to North
-	if (ne && angle >= 0 && angle <= 18) //Good
-	{
-		animation1 = &e;		
-	}
-	if (ne && angle >= 18 && angle <= 36) // Good
-	{
-		animation1 = &ne1;		
-	}
-	if (ne && angle >= 36 && angle <= 54) //Good
-	{
-		animation1 = &ne2;		
-	}
-	if (ne && angle >= 54 && angle <= 72) //Good
-	{
-		animation1 = &ne3;		
-	}
-	if (ne && angle >= 72 && angle <= 90) //Good
-	{
-		animation1 = &n;		
-	}
-
-	// North to West
-	if (nw && angle >= 72 && angle <= 90) //Good
-	{
-		animation1 = &n;		
-	}
-	if (nw && angle >= 54 && angle <= 72) // Good
-	{
-		animation1 = &nw1;		
-	}
-	if (nw && angle >= 36 && angle <= 54) //Good
-	{
-		animation1 = &nw2;		
-	}
-	if (nw && angle >= 18 && angle <= 36) //Good
-	{
-		animation1 = &nw3;		
-	}
-	if (nw && angle >= 0 && angle <= 18) // Good
-	{
-		animation1 = &w11;		
-	}
-
-	// West to South
-	if (sw && angle >= 0 && angle <= 18) //Good
-	{
-		animation1 = &w11;		
-	}
-	if (sw && angle >= 18 && angle <= 36) // Good
-	{
-		animation1 = &sw1;		
-	}
-	if (sw && angle >= 36 && angle <= 54) //Good
-	{
-		animation1 = &sw2;		
-	}
-
-	if (sw && angle >= 54 && angle <= 72) //Good
-	{
-		animation1 = &sw3;		
-	}
-	if (sw && angle >= 72 && angle <= 90) //Good
-	{
-		animation1 = &s;		
-	}
-
-	distance.x = fabs(distance.x);
-	distance.y = fabs(distance.y);
-
-
-	// Shooting
-	time_controll++;
-
-	if (time_controll % 100 == 0)
-	{
-		distance.x *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
-		distance.y *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
-
-		if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && position.y <= 760)
+		// South-East position
+		if (distance.y > 0 && distance.x > 0)
 		{
-			if (App->player->position.y - 22 < (position.y - 22 * 3))
+			se = true;
+		}
+		else
+		{
+			se = false;
+		}
+
+		// South-West position
+		if (distance.y > 0 && distance.x < 0)
+		{
+			sw = true;
+		}
+		else
+		{
+			sw = false;
+		}
+
+		// North-East position
+		if (distance.y < 0 && distance.x > 0)
+		{
+			ne = true;
+		}
+		else
+		{
+			ne = false;
+		}
+
+		// North-West position
+		if (distance.y < 0 && distance.x < 0)
+		{
+			nw = true;
+		}
+		else
+		{
+			nw = false;
+		}
+
+
+
+		// Applying animation
+
+		w1 = 38 * 3;
+		h1 = 34 * 3;
+		position1.x -= 19 * 3;
+		position1.y -= 17 * 3;
+
+		// South to East
+		if (se && angle >= 72 && angle <= 90) // Good
+		{
+			animation1 = &s;
+		}
+		if (se && angle >= 54 && angle <= 72) //Good
+		{
+			animation1 = &se1;
+		}
+		if (se && angle >= 36 && angle <= 54) // Good
+		{
+			animation1 = &se2;
+		}
+
+		if (se && angle >= 18 && angle <= 36) //Good
+		{
+			animation1 = &se3;
+		}
+
+		if (se && angle >= 0 && angle <= 18) // Good
+		{
+			animation1 = &e;
+		}
+
+		// East to North
+		if (ne && angle >= 0 && angle <= 18) //Good
+		{
+			animation1 = &e;
+		}
+		if (ne && angle >= 18 && angle <= 36) // Good
+		{
+			animation1 = &ne1;
+		}
+		if (ne && angle >= 36 && angle <= 54) //Good
+		{
+			animation1 = &ne2;
+		}
+		if (ne && angle >= 54 && angle <= 72) //Good
+		{
+			animation1 = &ne3;
+		}
+		if (ne && angle >= 72 && angle <= 90) //Good
+		{
+			animation1 = &n;
+		}
+
+		// North to West
+		if (nw && angle >= 72 && angle <= 90) //Good
+		{
+			animation1 = &n;
+		}
+		if (nw && angle >= 54 && angle <= 72) // Good
+		{
+			animation1 = &nw1;
+		}
+		if (nw && angle >= 36 && angle <= 54) //Good
+		{
+			animation1 = &nw2;
+		}
+		if (nw && angle >= 18 && angle <= 36) //Good
+		{
+			animation1 = &nw3;
+		}
+		if (nw && angle >= 0 && angle <= 18) // Good
+		{
+			animation1 = &w11;
+		}
+
+		// West to South
+		if (sw && angle >= 0 && angle <= 18) //Good
+		{
+			animation1 = &w11;
+		}
+		if (sw && angle >= 18 && angle <= 36) // Good
+		{
+			animation1 = &sw1;
+		}
+		if (sw && angle >= 36 && angle <= 54) //Good
+		{
+			animation1 = &sw2;
+		}
+
+		if (sw && angle >= 54 && angle <= 72) //Good
+		{
+			animation1 = &sw3;
+		}
+		if (sw && angle >= 72 && angle <= 90) //Good
+		{
+			animation1 = &s;
+		}
+
+		distance.x = fabs(distance.x);
+		distance.y = fabs(distance.y);
+
+
+		// Shooting
+		time_controll++;
+
+		if (time_controll % 100 == 0)
+		{
+			distance.x *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+			distance.y *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+
+			if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && position.y <= 760)
 			{
-				distance.y *= -1;
+				if (App->player->position.y - 22 < (position.y - 22 * 3))
+				{
+					distance.y *= -1;
+				}
+				if (App->player->position.x < (position.x + 22))
+				{
+					distance.x *= -1;
+				}
+				App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2, position.y + h / 2, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
 			}
-			if (App->player->position.x < (position.x + 22))
-			{
-				distance.x *= -1;
-			}
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2, position.y + h / 2, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
 		}
 	}
 }

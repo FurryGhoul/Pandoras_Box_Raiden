@@ -14,6 +14,7 @@
 #include "ModuleEnemies.h"
 #include "ModulePowerUps.h"
 #include "ModuleFonts.h"
+#include "ModuleShadows.h"
 #include "ModuleStageClear1.h"
 
 #include <stdio.h>
@@ -44,11 +45,13 @@ update_status ModuleMap1::Update()
 	if (setup)
 	{
 		App->particles->Enable();
+		App->shadows->Enable();
 	    App->player->Enable();
 		if (!App->player2->deadplayer)
 		{ 
 		App->player2->Enable();
 		}
+
 		// First street
 		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -900);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -1200);
@@ -106,6 +109,7 @@ update_status ModuleMap1::Update()
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LONG_MEGATANK, 240 * 3, -3900);
 
+
 		App->collision->Enable();
 		App->render->camera.y = 0;
 		App->enemies->Enable();
@@ -130,18 +134,29 @@ update_status ModuleMap1::Update()
 
     if (!(ymap >= 0))
 	{ 
-	ymap += yscrollspeed;
-	yroad += (yscrollspeed * 1.5);
-	App->render->camera.y -= 1;
+		ymap += yscrollspeed;
+		yroad += (yscrollspeed * 1.5);
+		App->render->camera.y -= 1;
+
+		if (yroad >= -4500)
+		{
+			road1 = true;
+		}
+
+		if (road1 && !roadmoved)
+		{
+			yroad -= 3000;
+			roadmoved = true;
+		}
 	}
 
 	if ((App->input->keyboard[SDL_SCANCODE_BACKSPACE] && !App->input->gpad) || (App->input->gamepad[12] && App->input->gpad))
 	{
-		won = true;
+		//won = true;
 
 		//faster scrolling (comment "won = true;" first)
-		//ymap += yscrollspeed * 50;
-		//yroad += ((yscrollspeed * 1.5) * 50);
+		ymap += yscrollspeed * 50;
+		yroad += ((yscrollspeed * 1.5) * 50);
 	}
 
 	if ( ymap >= 0 || won)
@@ -152,10 +167,12 @@ update_status ModuleMap1::Update()
 		App->enemies->EraseEnemies();
 		App->powerups->ErasePowerUps();
 		App->particles->EraseParticles();
+		App->shadows->EraseShadows();
 		App->collision->Erase_Non_Player_Colliders();
 		App->player->powerup_level = 0;
 		App->player2->powerup_level = 0;
 		App->particles->Disable();		
+		App->shadows->Disable();
 		App->player->Playergod->SetPos(10000, 10000);
 		App->player2->Playergod->SetPos(10000, 10000);
 		App->player->Player->SetPos(10000, 10000);

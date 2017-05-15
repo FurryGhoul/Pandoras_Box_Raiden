@@ -13,6 +13,7 @@
 #include "ModuleFadeToBlack.h"
 #include "ModuleEnemies.h"
 #include "ModuleFonts.h"
+#include "ModuleShadows.h"
 #include "ModulePowerUps.h"
 
 #include <stdio.h>
@@ -751,6 +752,13 @@ update_status ModulePlayer::Update()
 	}
 
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
+
+	if (shadowregulator % 2 == 0)
+	{
+		App->shadows->AddShadow(App->shadows->Player, position.x, position.y, 38 * 3, 26 * 3);
+	}
+
+	shadowregulator++;
 
 	if (Player != nullptr && godmode == false)
 	{

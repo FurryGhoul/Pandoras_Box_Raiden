@@ -36,6 +36,7 @@ update_status ModuleMap2::Update()
 	if (!(App->particles->IsEnabled() && App->player->IsEnabled() &&  App->collision->IsEnabled()))
 	{
 		App->particles->Enable();
+		App->shadows->Enable();
 		App->player->Enable();
 		App->player2->Enable();
 

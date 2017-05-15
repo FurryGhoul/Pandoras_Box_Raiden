@@ -11,6 +11,7 @@
 #include "ModuleParticles.h"
 #include "ModulePlayer.h"
 #include "ModulePlayer2.h"
+#include "ModuleShadows.h"
 
 ModuleStageClear1::ModuleStageClear1() : Module()
 {
@@ -34,6 +35,7 @@ update_status ModuleStageClear1::Update()
 	if (App->particles->IsEnabled() && App->player->IsEnabled()&& App->collision->IsEnabled())
 	{
 		App->particles->Disable();
+		App->shadows->Disable();
 		App->player->Disable();
 		App->player2->Disable();
 		App->collision->Disable();
