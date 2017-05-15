@@ -49,10 +49,10 @@ update_status ModuleMap1::Update()
 		{ 
 		App->player2->Enable();
 		}
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER,50 , -800);
+		/*App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER,50 , -800);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 50, -800);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 352 * 3- 50, -800);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 352 * 3 - 50, -800);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 352 * 3 - 50, -800);*/
 		
 		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 200, -100);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 300, -200);
@@ -61,14 +61,14 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 200, -230);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 200, -320);
 
-		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 200, -320);
+		/*App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 200, -320);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 200, -340);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 200, -400);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 200, -500);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 200, -600);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 200, -700);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 200, -650);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::MEDIUM_SHOOTER, 200, -500);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::MEDIUM_SHOOTER, 200, -500);*/
 
 		//App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 200, -320);
 		//App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 200, -340);
@@ -81,11 +81,11 @@ update_status ModuleMap1::Update()
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 200, -320);
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 200, -320);
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 200, -320);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 200, -100);
+		//App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 200, -100);
 
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LONG_MEGATANK, 500, -100);
+		//App->enemies->AddEnemy(0, ENEMY_TYPES::LONG_MEGATANK, 500, -100);
 
-		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP, 200, -100);
+		//App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP, 200, -100);
 
 
 		App->collision->Enable();
