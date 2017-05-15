@@ -1,0 +1,57 @@
+#ifndef __MODULESHADOWS_H__
+#define __MODULESHADOWS_H__
+
+#include "Module.h"
+#include "Animation.h"
+#include "Globals.h"
+#include "p2Point.h"
+#include "ModulePlayer.h"
+#include "ModulePlayer2.h"
+
+#define MAX_ACTIVE_SHADOWS 10000
+struct SDL_Texture;
+struct Collider;
+enum COLLIDER_TYPE;
+
+struct Shadow
+{
+	Animation anim;
+	fPoint position;
+	fPoint distance;
+	iPoint size;
+	Uint32 born = 0;
+
+	Shadow();
+	Shadow(const Shadow& p);
+	~Shadow();
+	bool Update();
+	void SetPos(float x, float y)
+	{
+		position.x = (x + distance.x);
+		position.y = (y + distance.y);
+	}
+};
+
+class ModuleShadows : public Module
+{
+public:
+	ModuleShadows();
+	~ModuleShadows();
+
+	bool Init();
+	update_status Update();
+	bool CleanUp();
+	void MoveShadowsRight(bool);
+	void AddShadow(const Shadow& shadow, float x, float y, float distancex, float distancey);
+	void EraseShadows();
+private:
+
+	int regulator = 0;
+	SDL_Texture* graphics = nullptr;
+	Shadow* active[MAX_ACTIVE_SHADOWS];
+
+public:
+
+};
+
+#endif // __MODULESHADOWS_H__

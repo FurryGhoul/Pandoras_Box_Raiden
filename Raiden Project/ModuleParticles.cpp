@@ -382,6 +382,7 @@ bool ModuleParticles::CleanUp()
 {
 	LOG("Unloading particles");
 	App->textures->Unload(graphics);
+	App->textures->Unload(graphics1);
 
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 	{
