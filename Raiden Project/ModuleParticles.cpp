@@ -398,17 +398,13 @@ bool ModuleParticles::CleanUp()
 // Update: draw background
 update_status ModuleParticles::Update()
 {
-	int nu_part = 0;
+	
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 	{
 		Particle* p = active[i];
 
 		if (p == nullptr)
 			continue;
-		else
-		{
-			nu_part++;
-		}
 
 		if (p->Update() == false)
 		{
@@ -424,6 +420,7 @@ update_status ModuleParticles::Update()
 
 			delete p;
 			active[i] = nullptr;
+			continue;
 		}
 		else if (SDL_GetTicks() >= p->born)
 		{
@@ -512,7 +509,7 @@ update_status ModuleParticles::Update()
 		}
 	}
 
-	//LOG("%i", nu_part);
+	
 	return UPDATE_CONTINUE;
 }
 

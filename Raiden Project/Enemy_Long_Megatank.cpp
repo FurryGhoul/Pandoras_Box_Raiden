@@ -109,9 +109,11 @@ void Enemy_Long_Megatank::MoveShoot()
 	h = 53 * 3;
 	collider->SetSize(w, h);
 
-	position.x += left_right_mod;
 
-	position = original_pos + movement.GetCurrentPosition();
+
+	position = original_pos + movement.GetCurrentPosition();	
+	
+	position.x += left_right_mod;
 
 
 	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f)

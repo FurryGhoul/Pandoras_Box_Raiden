@@ -57,6 +57,7 @@ update_status ModuleWelcomeScreen::Update()
 		App->fade->FadeToBlack(this, App->map_1, 1.0f);
 		App->collision->Erase_Non_Player_Colliders();
 		App->input->gpad = false;
+		App->map_1->won = false;
 	}
 
 	if (App->input->gamepad[6])
@@ -70,6 +71,7 @@ update_status ModuleWelcomeScreen::Update()
 		App->fade->FadeToBlack(this, App->map_1, 1.0f);
 		App->collision->Erase_Non_Player_Colliders();
 		App->input->gpad = true;
+		App->map_1->won = false;
 	}
 
 	if (App->input->keyboard[SDL_SCANCODE_2])
@@ -81,6 +83,7 @@ update_status ModuleWelcomeScreen::Update()
 		App->map_1->setup = true;
 		App->fade->FadeToBlack(this, App->map_1, 1.0f);
 		App->collision->Erase_Non_Player_Colliders();
+		App->map_1->won = false;
 	}
 	return UPDATE_CONTINUE;
 }
