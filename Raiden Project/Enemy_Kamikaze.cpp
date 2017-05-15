@@ -60,6 +60,7 @@ void Enemy_Kamikaze::MoveShoot()
 	if (getvector)
 	{
 		position = original_pos + movement.GetCurrentPosition();
+		position.x += left_right_mod;
 	}
 
 	if (allowtime)
