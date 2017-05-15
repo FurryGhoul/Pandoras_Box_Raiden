@@ -142,6 +142,18 @@ bool ModuleParticles::Init()
 	enemyshot.speed.y = 10;
 	enemyshot.size.x = 18;
 	enemyshot.size.y = 18;
+
+	//Long megatank shot
+	longmegatank_laser.spritesheet = 1;
+	longmegatank_laser.anim.PushBack({ 474, 37, 12, 10 });
+	longmegatank_laser.anim.PushBack({ 491, 37, 12, 10 });
+	longmegatank_laser.anim.PushBack({ 508, 37, 12, 10 });
+	longmegatank_laser.anim.loop = true;
+	longmegatank_laser.anim.speed = 0.5f;
+	longmegatank_laser.life = 2000;
+	longmegatank_laser.speed.y = 10;
+	longmegatank_laser.size.x = 36;
+	longmegatank_laser.size.y = 30;
 	
 	//Explosion (has to be redone)
 	explosion.spritesheet = 1;
