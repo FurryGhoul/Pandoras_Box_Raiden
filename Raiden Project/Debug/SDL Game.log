@@ -1,9 +1,9 @@
 ﻿  ModuleMap1.cpp
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\modulemap1.h(30): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\moduleparticles.h(67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(142): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(163): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(189): warning C4018: '>=': signed/unsigned mismatch
-c:\users\gaming\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(196): warning C4018: '>=': signed/unsigned mismatch
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
-  SDL Game.vcxproj -> C:\Users\Gaming\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\modulemap1.h(30): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\moduleparticles.h(67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(142): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(163): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(189): warning C4018: '>=': signed/unsigned mismatch
+c:\users\almac\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(196): warning C4018: '>=': signed/unsigned mismatch
+  SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

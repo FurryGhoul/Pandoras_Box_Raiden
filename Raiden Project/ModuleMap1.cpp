@@ -109,7 +109,7 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 600, -1700);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 450, -2830);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 700, -4200);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 500, -1920);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 500, -400);
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LONG_MEGATANK, 240 * 3, -3900);
 

@@ -11,6 +11,17 @@ private:
 	Animation left;
 	Animation right;
 
+	//Ship_Tank hit animations
+	Animation hitup;
+	Animation hitdown;
+	Animation hitleft;
+	Animation hitright;
+
+	Animation hitup1;
+	Animation hitdown1;
+	Animation hitleft1;
+	Animation hitright1;
+
 	//Water animations
 	Animation waterup1;
 	Animation waterup2;

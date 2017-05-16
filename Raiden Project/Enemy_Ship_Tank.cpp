@@ -17,11 +17,22 @@ Enemy_Ship_Tank::Enemy_Ship_Tank(int x, int y, int path) : Enemy(x, y)
 	spritesheet = 2;
 	animations = 3;
 
-	// Tank animations	
+	// Ship Tank animations	
 	up.PushBack({ 10, 359, 23, 30 });
 	down.PushBack({ 61, 360, 23, 30 });
 	left.PushBack({ 107, 364, 32, 21 });
 	right.PushBack({ 152, 364, 32, 21 });
+
+	// Ship Tank hit animations	
+	hitup.PushBack({ 10, 395, 23, 30 });
+	hitdown.PushBack({ 61, 395, 23, 30 });
+	hitleft.PushBack({ 107, 400, 32, 21 });
+	hitright.PushBack({ 151, 400, 32, 21 });
+
+	hitup1.PushBack({ 10, 395, 23, 30 });
+	hitdown1.PushBack({ 61, 360, 23, 30 });
+	hitleft1.PushBack({ 107, 434, 32, 21 });
+	hitright1.PushBack({ 151, 434, 32, 21 });
 
 	// Water animation
 	waterdown1.PushBack({ 208, 404, 33, 29 });
@@ -126,6 +137,16 @@ void Enemy_Ship_Tank::MoveShoot()
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f)
 	{
 		animation = &down;
+
+		if (ishit == true)
+		{
+			if (hp > 1)
+				animation = &hitdown;
+			else
+				animation = &hitdown1;
+
+			ishit = false;
+		}
 		
 		if (water == 0)
 		{
@@ -175,6 +196,16 @@ void Enemy_Ship_Tank::MoveShoot()
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == -3.0f)
 	{
 		animation = &up;
+
+		if (ishit == true)
+		{
+			if (hp > 1)
+				animation = &hitup;
+			else
+				animation = &hitup1;
+
+			ishit = false;
+		}
 
 		if (water == 0)
 		{
