@@ -20,8 +20,10 @@ public:
 public:
 	SDL_Rect ground;
 	SDL_Rect road;
+	SDL_Rect buildings;
 	SDL_Texture* Map1;
 	SDL_Texture* Road;
+	SDL_Texture* Buildings;
 	float xmap;
 	float ymap;
 	float yroad;
