@@ -112,16 +112,17 @@ void Enemy_Ship_Tank::MoveShoot()
 	position = original_pos + movement.GetCurrentPosition();
 	position.x += left_right_mod;
 
-	if (sqrtf((distance.y = App->player->position.y - 22 - position.y - 22 * 3)*(distance.y = App->player->position.y - 22 - position.y - 22 * 3) + (distance.x = App->player->position.x - position.x + 22)* (distance.x = App->player->position.x - position.x + 22))
-		< sqrtf((distance.y = App->player2->position.y - 22 - position.y - 22 * 3)*(distance.y = App->player2->position.y - 22 - position.y - 22 * 3) + (distance.x = App->player2->position.x - position.x + 22)* (distance.x = App->player2->position.x - position.x + 22)))
+	if (sqrtf((distance.y = App->player->position.y - position.y)*(distance.y = App->player->position.y - position.y) + (distance.x = App->player->position.x - position.x)* (distance.x = App->player->position.x - position.x))
+		< sqrtf((distance.y = App->player2->position.y - position.y)*(distance.y = App->player2->position.y - position.y) + (distance.x = App->player2->position.x - position.x)* (distance.x = App->player2->position.x - position.x)))
 	{
-		distance.y = App->player->position.y - 22 - position.y - 22 * 3;
-		distance.x = App->player->position.x - position.x + 22;
+		distance.y = App->player->position.y - position.y;
+		distance.x = App->player->position.x - position.x;
 	}
+
 	else
 	{
-		distance.y = App->player2->position.y - 22 - position.y - 22 * 3;
-		distance.x = App->player2->position.x - position.x + 22;
+		distance.y = App->player2->position.y - position.y;
+		distance.x = App->player2->position.x - position.x;
 	}
 
 
@@ -394,11 +395,11 @@ void Enemy_Ship_Tank::MoveShoot()
 
 			if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && position.y <= 760)
 			{
-				if (App->player->position.y - 22 < (position.y - 22 * 3))
+				if (App->player->position.y < (position.y))
 				{
 					distance.y *= -1;
 				}
-				if (App->player->position.x < (position.x + 22))
+				if (App->player->position.x < (position.x))
 				{
 					distance.x *= -1;
 				}

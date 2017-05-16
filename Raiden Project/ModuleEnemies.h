@@ -5,7 +5,7 @@
 #include "Module.h"
 
 
-#define MAX_ENEMIES 100
+#define MAX_ENEMIES 10000
 
 enum ENEMY_TYPES
 {
