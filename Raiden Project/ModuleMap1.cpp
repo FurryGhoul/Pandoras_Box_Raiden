@@ -32,9 +32,11 @@ bool ModuleMap1::Init()
 {
 	LOG("Loading background assets");
 	ground = { 0, 0, 352*3, 5362 * 3 };
+	buildings = { 0, 0, 352 * 3, 5362 * 3 };
 	road = { 0, 0, 352*3 , 5362 * 3 };
 	Map1 = App->textures->Load("Assets/Tilemap2.png");
     Road = App->textures->Load("Assets/Roads.png");
+	Buildings = App->textures->Load("Assets/Buildings.png");
 	
 	return true;
 }
@@ -134,6 +136,7 @@ update_status ModuleMap1::Update()
 	}
 
 	App->render->Blit(Map1, xmap, ymap, &ground);
+	App->render->Blit(Buildings, xmap, ymap, &buildings);
 	App->render->Blit(Road, xmap, yroad, &road);
 
     if (!(ymap >= 0))
@@ -156,11 +159,11 @@ update_status ModuleMap1::Update()
 
 	if ((App->input->keyboard[SDL_SCANCODE_BACKSPACE] && !App->input->gpad) || (App->input->gamepad[12] && App->input->gpad))
 	{
-		//won = true;
+		won = true;
 
 		//faster scrolling (comment "won = true;" first)
-		ymap += yscrollspeed * 50;
-		yroad += ((yscrollspeed * 1.5) * 50);
+		//ymap += yscrollspeed * 50;
+		//yroad += ((yscrollspeed * 1.5) * 50);
 	}
 
 	if ( ymap >= 0 || won)
