@@ -1,19 +1,2 @@
-﻿  Enemy_Ship_Tank.cpp
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\path.h(59): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\moduleparticles.h(67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_ship_tank.cpp(102): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_ship_tank.cpp(383): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_ship_tank.cpp(384): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\enemy_ship_tank.cpp(405): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Generating Code...
-  Compiling...
-  ModuleShadows.cpp
-c:\users\almac\documents\github\pandoras_box_raiden\raiden project\modulemap1.h(32): warning C4305: 'initializing': truncation from 'double' to 'float'
-  Generating Code...
-  LINK : C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe not found or not built by the last incremental link; performing full link
-ModuleMap2.obj : warning LNK4020: a type record in 'c:\users\almac\documents\github\pandoras_box_raiden\raiden project\debug\vc140.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-ModuleAudio_1.obj : warning LNK4020: a type record in 'c:\users\almac\documents\github\pandoras_box_raiden\raiden project\debug\vc140.pdb' is corrupted; some symbols and types may not be accessible from the debugger
-  SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
-  SDL Game.vcxproj -> C:\Users\almac\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)
+﻿  SDL Game.vcxproj -> C:\Users\ivandv\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\ivandv\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

@@ -124,7 +124,7 @@ Enemy_Long_Megatank::Enemy_Long_Megatank(int x, int y, int path) : Enemy(x, y)
 	collider = App->collision->AddCollider({ 0, 0, 24 * 3 - 5, 26 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
 	
 	original_pos.x = x;
-	original_pos.y = y;
+	original_pos.y = 0;
 }
 
 void Enemy_Long_Megatank::MoveShoot()
