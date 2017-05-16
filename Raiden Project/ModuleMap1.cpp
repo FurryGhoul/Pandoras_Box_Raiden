@@ -117,7 +117,7 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 700, -5600);
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP, 700, -8700);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP, 700, -8900);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP, 800, -8900);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 700, -9100);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 850, -9100);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 750, -9300);
