@@ -223,7 +223,7 @@ update_status ModulePlayer2::Update()
 			}
 		}
 
-		if ((App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_STATE::KEY_UP && !App->input->gpad2) || (App->input->joystickpos2[3] == KEY_STATE::KEY_UP && App->input->gpad2))
+		if ((App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_STATE::KEY_DOWN && !App->input->gpad2) || (App->input->joystickpos2[3] == KEY_STATE::KEY_DOWN && App->input->gpad2))
 		{
 			allowtime = true;
 			time = SDL_GetTicks();
@@ -234,7 +234,7 @@ update_status ModulePlayer2::Update()
 			}
 		}
 
-		if ((App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_STATE::KEY_UP && !App->input->gpad2) || (App->input->joystickpos2[4] == KEY_STATE::KEY_UP && App->input->gpad2))
+		if ((App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_STATE::KEY_DOWN && !App->input->gpad2) || (App->input->joystickpos2[4] == KEY_STATE::KEY_DOWN && App->input->gpad2))
 		{
 			allowtime = true;
 			time = SDL_GetTicks();
@@ -365,7 +365,7 @@ update_status ModulePlayer2::Update()
 			}
 		}
 
-		if ((App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_STATE::KEY_UP && !App->input->gpad2) || (App->input->joystickpos2[3] == KEY_STATE::KEY_UP && App->input->gpad2))
+		if ((App->input->keyboard[SDL_SCANCODE_LEFT] == KEY_STATE::KEY_DOWN && !App->input->gpad2) || (App->input->joystickpos2[3] == KEY_STATE::KEY_DOWN && App->input->gpad2))
 		{
 			allowtime = true;
 			time = SDL_GetTicks();
@@ -376,7 +376,7 @@ update_status ModulePlayer2::Update()
 			}
 		}
 
-		if ((App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_STATE::KEY_UP && !App->input->gpad2) || (App->input->joystickpos2[4] == KEY_STATE::KEY_UP && App->input->gpad2))
+		if ((App->input->keyboard[SDL_SCANCODE_RIGHT] == KEY_STATE::KEY_DOWN && !App->input->gpad2) || (App->input->joystickpos2[4] == KEY_STATE::KEY_DOWN && App->input->gpad2))
 		{
 			allowtime = true;
 			time = SDL_GetTicks();

@@ -158,7 +158,7 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -10000);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 750, -10000);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 250, -10000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 730, -1000);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 730, -10000);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 780, -10300);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 300, -10250);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 780, -10340);
@@ -206,7 +206,7 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -10000);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 750, -10000);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 250, -10000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 730, -1000);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 730, -10000);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 780, -10300);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 300, -10250);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 780, -10340);
@@ -254,7 +254,7 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 740, -10000);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 620, -10000);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 290, -10000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 330, -1000);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 330, -10000);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 230, -10300);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 320, -10250);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 760, -10340);

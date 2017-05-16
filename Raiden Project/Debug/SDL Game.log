@@ -1,69 +1,171 @@
-﻿  Tank.cpp
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\path.h(59): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
+﻿  ModulePlayer2.cpp
 c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleparticles.h(67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\tank.cpp(93): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\tank.cpp(600): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\tank.cpp(601): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\tank.cpp(621): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  ModuleMap1.cpp
 c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\modulemap1.h(32): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(148): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(174): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(200): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(207): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(211): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(218): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(222): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(318): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(344): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(350): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(354): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(360): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(364): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(438): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(444): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(750): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(753): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(285): warning C4474: 'sprintf_s' : too many arguments passed for format string
+  c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(285): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(427): warning C4474: 'sprintf_s' : too many arguments passed for format string
+  c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(427): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer2.cpp(815): warning C4018: '>=': signed/unsigned mismatch
+  ModulePlayer.cpp
 c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleparticles.h(67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(302): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(349): warning C4018: '>=': signed/unsigned mismatch
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\modulemap1.cpp(356): warning C4018: '>=': signed/unsigned mismatch
-  Enemy_Ship_Tank.cpp
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\path.h(59): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleparticles.h(67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_ship_tank.cpp(102): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_ship_tank.cpp(384): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_ship_tank.cpp(385): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_ship_tank.cpp(406): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Enemy_Ship.cpp
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\path.h(59): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleparticles.h(67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_ship.cpp(46): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_ship.cpp(77): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_ship.cpp(78): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_ship.cpp(183): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_ship.cpp(184): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_ship.cpp(199): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Enemy_Medium_Shooter.cpp
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\path.h(59): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleparticles.h(67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(39): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(66): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(96): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(97): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(178): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_medium_shooter.cpp(179): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Enemy_Light_Shooter.cpp
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\path.h(59): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleparticles.h(67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(66): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(270): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(271): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_light_shooter.cpp(288): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Enemy_Bonus_Ship.cpp
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\path.h(59): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\path.h(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\path.h(69): warning C4018: '>=': signed/unsigned mismatch
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleparticles.h(67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(67): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(71): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(73): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(173): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(174): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\enemy_bonus_ship.cpp(175): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\modulemap1.h(32): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(149): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(439): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(445): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(457): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(464): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(465): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(472): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(473): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(474): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(481): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(482): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(483): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(490): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(491): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(492): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(493): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(494): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(502): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(503): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(504): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(505): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(506): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(514): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(515): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(516): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(517): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(518): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(526): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(529): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(530): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(531): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(534): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(535): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(536): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(546): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(547): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(554): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(555): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(556): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(557): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(558): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(566): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(567): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(569): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(570): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(572): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(573): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(575): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(576): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(578): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(579): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(588): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(589): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(590): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(592): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(593): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(594): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(596): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(597): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(599): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(600): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(602): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(603): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(605): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(606): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(611): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(612): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(613): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(615): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(616): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(617): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(619): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(620): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(621): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(623): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(624): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(625): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(627): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(628): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(629): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(631): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(632): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(633): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(639): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(640): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(641): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(642): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(644): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(645): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(646): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(647): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(649): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(650): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(651): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(653): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(654): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(655): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(657): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(658): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(659): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(661): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(662): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(663): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(668): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(669): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(670): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(671): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(673): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(674): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(675): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(676): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(678): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(679): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(680): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(681): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(683): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(684): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(685): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(686): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(688): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(689): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(690): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(691): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(693): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(694): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(695): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(696): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(700): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(701): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(702): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(703): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(704): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(705): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(765): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(770): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(286): warning C4474: 'sprintf_s' : too many arguments passed for format string
+  c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(286): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(428): warning C4474: 'sprintf_s' : too many arguments passed for format string
+  c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(428): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+c:\users\genisbs\documents\github\pandoras_box_raiden\raiden project\moduleplayer.cpp(823): warning C4018: '>=': signed/unsigned mismatch
   Generating Code...
   SDL Game.vcxproj -> C:\Users\genisbs\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.exe
   SDL Game.vcxproj -> C:\Users\genisbs\Documents\GitHub\Pandoras_Box_Raiden\Raiden Project\Debug\SDL3 Handout.pdb (Full PDB)

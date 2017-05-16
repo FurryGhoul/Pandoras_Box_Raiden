@@ -282,7 +282,7 @@ update_status ModuleInput::Update()
 	if (!App->player->deadplayer)
 	{
 		//Player one side scroll
-		if ((keyboard[SDL_SCANCODE_A] && !gpad) || (joystickpos[3] && gpad))
+		if ((keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT && !gpad) || (joystickpos[3] == KEY_STATE::KEY_REPEAT && gpad))
 		{
 			if (App->player2->deadplayer)
 			{
@@ -300,7 +300,7 @@ update_status ModuleInput::Update()
 			}
 		}
 
-		if ((keyboard[SDL_SCANCODE_D] && !gpad) || joystickpos[4] && gpad)
+		if ((keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT && !gpad) || joystickpos[4] && gpad == KEY_STATE::KEY_REPEAT)
 		{
 			if (App->player2->deadplayer)
 			{
@@ -321,7 +321,7 @@ update_status ModuleInput::Update()
 	if (!App->player2->deadplayer)
 	{
 		//Player two side scroll
-		if ((keyboard[SDL_SCANCODE_LEFT] && !gpad2) || (joystickpos2[3] && gpad2))
+		if ((keyboard[SDL_SCANCODE_LEFT] == KEY_STATE::KEY_REPEAT && !gpad2) || (joystickpos2[3] == KEY_STATE::KEY_REPEAT && gpad2))
 		{
 			if (App->player->deadplayer)
 			{
@@ -338,7 +338,7 @@ update_status ModuleInput::Update()
 			}
 		}
 
-		if ((keyboard[SDL_SCANCODE_RIGHT] && !gpad2) || joystickpos2[4] && gpad2)
+		if ((keyboard[SDL_SCANCODE_RIGHT] == KEY_STATE::KEY_REPEAT && !gpad2) || joystickpos2[4] == KEY_STATE::KEY_REPEAT && gpad2)
 		{
 			if (App->player->deadplayer)
 			{
