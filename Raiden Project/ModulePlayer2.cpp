@@ -70,8 +70,8 @@ bool ModulePlayer2::Init()
 
 	graphics = App->textures->Load("Assets/Player2.png");
 	graphics2 = App->textures->Load("Assets/graphics2.png");
-	Player = App->collision->AddCollider({ 0, 0, player_w, player_h }, COLLIDER_PLAYER, this, 3); // Bullettype 3 differentiate the player colliders
-	Playergod = App->collision->AddCollider({ 0, 0, player_w, player_h }, COLLIDER_GOD, this, 3);
+	Player = App->collision->AddCollider({ 0, 0, player_w, player_h }, COLLIDER_PLAYER, this, 4); // Bullettype 4 differentiate the player colliders
+	Playergod = App->collision->AddCollider({ 0, 0, player_w, player_h }, COLLIDER_GOD, this, 4);
 	Player->SetPos(82938, 2323);
 	score = 0;
 	font_score = App->fonts->Load("Assets/Font.png", "> ?@ABCDEFGHIJKLMNOPQRSTUVWXYZ!¡?_^#$%&'()x+.-,;tpsczpc/0123456789:", 3);
