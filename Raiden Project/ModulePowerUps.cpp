@@ -16,7 +16,7 @@
 
 #define SPAWN_MARGIN 50
 #define MAX_POWERUP_LVL 8
-#define MAX_MISSILE_LEVEL 3
+#define MAX_MISSILE_LEVEL 4
 
 ModulePowerUps::ModulePowerUps()
 {
@@ -247,12 +247,12 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 				}
 				if (powerups[i]->missilep == true) //Collider Missile
 				{
-					if (App->player->missile_powerup_level < MAX_MISSILE_LEVEL)
+					if (App->player2->missile_powerup_level < MAX_MISSILE_LEVEL)
 					{
 						App->player2->missile_powerup_level++;
 					}
 
-					else if (App->player->missile_powerup_level >= MAX_MISSILE_LEVEL)
+					else if (App->player2->missile_powerup_level >= MAX_MISSILE_LEVEL)
 					{
 						App->player2->score += 5000;
 					}

@@ -727,6 +727,13 @@ update_status ModulePlayer::Update()
 			App->particles->AddParticle(App->particles->player_mid_missiles, position.x -5, position.y + 35, COLLIDER_PLAYER_SHOT, -1, 1, -18, 1, false, 2);
 			App->particles->AddParticle(App->particles->player_mid_missiles, position.x -15, position.y + 25, COLLIDER_PLAYER_SHOT, -1, 1, -15, 1, false, 2);
 		}
+		if (missile_powerup_level == 4)
+		{
+			App->particles->AddParticle(App->particles->heavy_missiles, position.x + 55, position.y + 25, COLLIDER_PLAYER_SHOT, -1, -1, -15, 1, false, 3);
+			App->particles->AddParticle(App->particles->heavy_missiles, position.x + 35, position.y + 35, COLLIDER_PLAYER_SHOT, -1, 1, -18, 1, false, 3);
+			App->particles->AddParticle(App->particles->heavy_missiles, position.x + 5, position.y + 35, COLLIDER_PLAYER_SHOT, -1, -1, -18, 1, false, 3);
+			App->particles->AddParticle(App->particles->heavy_missiles, position.x - 15, position.y + 25, COLLIDER_PLAYER_SHOT, -1, 1, -15, 1, false, 3);
+		}
 
 
 
@@ -853,6 +860,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		deadplayer = true;
 		allowhiscore = true;
 		powerup_level = 0;
+		missile_powerup_level = 0;
 		red = true;
 	}
 
@@ -870,6 +878,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		App->particles->EraseParticles();
 		App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
 		powerup_level = 0;
+		missile_powerup_level = 0;
 		red = true;
 	}
 }

@@ -55,6 +55,8 @@ update_status ModuleMap1::Update()
 		}
 		App->powerups->AddPowerUp(POWERUP_TYPES::MISSILEUP, 200, 200);
 		App->powerups->AddPowerUp(POWERUP_TYPES::MISSILEUP, 200, 200);
+		App->powerups->AddPowerUp(POWERUP_TYPES::MISSILEUP, 200, 200);
+		App->powerups->AddPowerUp(POWERUP_TYPES::MISSILEUP, 200, 200);
 		// First street
 		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -900);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -1200);

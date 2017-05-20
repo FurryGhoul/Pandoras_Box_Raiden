@@ -153,6 +153,22 @@ bool ModuleParticles::Init()
 	player_mid_missiles.size.x = 6 * 3;
 	player_mid_missiles.size.y = 20 * 3;
 
+	// Player missile heavy
+	heavy_missiles.spritesheet = 1;
+	heavy_missiles.anim.PushBack({ 575,34,13,16 });
+	heavy_missiles.anim.PushBack({ 592,34,13,16 });
+	heavy_missiles.anim.PushBack({ 609,34,13,16 });
+	heavy_missiles.anim.PushBack({ 626,34,13,16 });
+	heavy_missiles.anim.PushBack({ 643,34,13,16 });
+	heavy_missiles.anim.PushBack({ 660,34,13,16 });
+
+	heavy_missiles.life = 2100;
+	heavy_missiles.anim.loop = true;
+	heavy_missiles.anim.speed = 0.3f;
+	heavy_missiles.speed.y = -20;
+	heavy_missiles.size.x = 13 * 3;
+	heavy_missiles.size.y = 16 * 3;
+
 	//Enemy normal shot
 	enemyshot.spritesheet = 1;
 	enemyshot.anim.PushBack({ 22, 41, 6, 5});
