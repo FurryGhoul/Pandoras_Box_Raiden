@@ -16,7 +16,7 @@
 
 #define SPAWN_MARGIN 50
 #define MAX_POWERUP_LVL 8
-#define MAX_MISSILE_LEVEL 1
+#define MAX_MISSILE_LEVEL 2
 
 ModulePowerUps::ModulePowerUps()
 {

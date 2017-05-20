@@ -142,6 +142,17 @@ bool ModuleParticles::Init()
 	player_light_missile.size.x = 4 * 3;
 	player_light_missile.size.y = 11 * 3;
 
+	// Player missile mid
+	player_mid_missiles.spritesheet = 1;
+	player_mid_missiles.anim.PushBack({ 392,35,6,15 });
+	player_mid_missiles.anim.PushBack({ 375,35,6,15 });
+	player_mid_missiles.life = 2100;
+	player_mid_missiles.anim.loop = true;
+	player_mid_missiles.anim.speed = 1.0f;
+	player_mid_missiles.speed.y = -20;
+	player_mid_missiles.size.x = 6 * 3;
+	player_mid_missiles.size.y = 20 * 3;
+
 	//Enemy normal shot
 	enemyshot.spritesheet = 1;
 	enemyshot.anim.PushBack({ 22, 41, 6, 5});

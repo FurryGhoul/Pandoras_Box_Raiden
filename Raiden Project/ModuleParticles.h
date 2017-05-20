@@ -114,6 +114,7 @@ public:
 	Particle bonusmedium_explosion;
 	Particle longmegatank_laser;
 	Particle player_light_missile;
+	Particle player_mid_missiles;
 };
 
 #endif // __MODULEPARTICLES_H__
