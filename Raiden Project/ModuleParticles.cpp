@@ -704,10 +704,15 @@ bool Particle::Update()
 	}
 	else
 	{
-		if (SDL_GetTicks()- initial_time > 500)
+		if (SDL_GetTicks()- initial_time > 300)
 		{ 
 		position.x += speed.x;
 		position.y += speed.y;
+		}
+		else
+		{
+			position.x += speed.x*0.25;
+			position.y += speed.y*0.25;
 		}
 	}
 	return ret;

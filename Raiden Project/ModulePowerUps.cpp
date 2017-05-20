@@ -175,7 +175,7 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 
 					else if (App->player->powerup_level >= MAX_POWERUP_LVL)
 					{
-						App->player->score += 100;
+						App->player->score += 5000;
 					}
 				}
 				if (powerups[i]->bluep == true) // Collider BlueUp
@@ -188,7 +188,7 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 
 					else if (App->player->powerup_level >= MAX_POWERUP_LVL)
 					{
-						App->player->score += 100;
+						App->player->score += 5000;
 					}
 				}
 				if (powerups[i]->medal == true) //Collider Medal
@@ -198,12 +198,12 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 
 				if (powerups[i]->missilep == true) //Collider Missile
 				{
-					if (App->player->powerup_level < MAX_MISSILE_LEVEL)
+					if (App->player->missile_powerup_level < MAX_MISSILE_LEVEL)
 					{
-						App->player->missile_powerup_level++;
+     					App->player->missile_powerup_level++;
 					}
 
-					else if (App->player->powerup_level >= MAX_MISSILE_LEVEL)
+					else if (App->player->missile_powerup_level >= MAX_MISSILE_LEVEL)
 					{
 						App->player->score += 5000;
 					}
@@ -223,7 +223,7 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 
 					else if (App->player2->powerup_level >= MAX_POWERUP_LVL)
 					{
-						App->player2->score += 100;
+						App->player2->score += 5000;
 					}
 				}
 
@@ -237,7 +237,7 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 
 					else if (App->player2->powerup_level >= MAX_POWERUP_LVL)
 					{
-						App->player2->score += 100;
+						App->player2->score += 5000;
 					}
 				}
 
@@ -247,12 +247,12 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 				}
 				if (powerups[i]->missilep == true) //Collider Missile
 				{
-					if (App->player->powerup_level < MAX_MISSILE_LEVEL)
+					if (App->player->missile_powerup_level < MAX_MISSILE_LEVEL)
 					{
 						App->player2->missile_powerup_level++;
 					}
 
-					else if (App->player->powerup_level >= MAX_MISSILE_LEVEL)
+					else if (App->player->missile_powerup_level >= MAX_MISSILE_LEVEL)
 					{
 						App->player2->score += 5000;
 					}
