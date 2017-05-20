@@ -528,14 +528,15 @@ update_status ModuleParticles::Update()
 
 
 
-void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type, int bullettype, int speed_x, int speed_y, Uint32 delay, bool multipleshot, int damage, bool pactive, int position_respect_player)
+void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type, int bullettype, int speed_x, int speed_y, bool delay, bool multipleshot, int damage, bool pactive, int position_respect_player)
 {
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 	{
 		if (active[i] == nullptr)
 		{
 			Particle* p = new Particle(particle);
-			p->born = SDL_GetTicks() + delay;
+			p->born = SDL_GetTicks();
+			p->delay = delay;
 			p->position.x = x;
 			p->position.y = y;
 			p->spritesheet = particle.spritesheet;
@@ -662,6 +663,12 @@ bool Particle::Update()
 	else
 		if (anim.Finished())
 			ret = false;
+	//Partices won't move if delay is true;
+	if (time_got == false)
+	{ 
+	initial_time = SDL_GetTicks();
+	time_got = true;
+	}
 
 	if (active)
 	{ 
@@ -675,8 +682,20 @@ bool Particle::Update()
 	{
 		collider->SetPos(10000, 1000);
 	}
+
+	if (delay == false)
+	{ 
     position.x += speed.x;
 	position.y += speed.y;
+	}
+	else
+	{
+		if (SDL_GetTicks()- initial_time > 500)
+		{ 
+		position.x += speed.x;
+		position.y += speed.y;
+		}
+	}
 	return ret;
 }
 

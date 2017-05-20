@@ -26,6 +26,9 @@ struct Particle
 	iPoint size;
 	bool active = true; // if active is true, particles have collider, if it is false they don't
 	Uint32 bullettype = 0;
+	bool delay; //Bool to know if the particle has to have delay
+	bool time_got = false; //Bool to take initial time just once
+	int initial_time;
 	Uint32 born = 0;
 	Uint32 life = 0;
 	int spritesheet = 0; //What spritesheet does the shot belong to
@@ -82,7 +85,7 @@ public:
 	bool CleanUp();
 	void OnCollision(Collider* c1, Collider* c2);
 	void MoveParticlesRight(bool);
-	void AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type = COLLIDER_NONE, int bullettype = 0, int speed_x = 0, int speed_y = 0, Uint32 delay = 0, bool multipleshot = false, int damage = 0, bool pactive = true, int position_respect_player = 0);
+	void AddParticle(const Particle& particle, int x, int y, COLLIDER_TYPE collider_type = COLLIDER_NONE, int bullettype = 0, int speed_x = 0, int speed_y = 0, bool delay = 0, bool multipleshot = false, int damage = 0, bool pactive = true, int position_respect_player = 0);
 	void EraseParticles();
 private:
 
