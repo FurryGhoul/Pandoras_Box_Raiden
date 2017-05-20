@@ -93,7 +93,7 @@ Enemy_Long_Megatank::Enemy_Long_Megatank(int x, int y, int path) : Enemy(x, y)
 	stop.PushBack({ 336, 471, 81, 53 });
 
 
-	megatank = true;
+	longmegatank = true;
 	
 	movement.PushBack({-1.0f, 1.0f}, 250);
 	movement.PushBack({ 0.0f, 0.01f}, 70);
@@ -121,7 +121,7 @@ Enemy_Long_Megatank::Enemy_Long_Megatank(int x, int y, int path) : Enemy(x, y)
 	movement.PushBack({ 0.0f, 1.0f }, 100);
 	movement.PushBack({ 0.0f, 4.0f }, 1000);
 	
-	collider = App->collision->AddCollider({ 0, 0, 24 * 3 - 5, 26 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
+	collider = App->collision->AddCollider({ 0, 0, 48*3, 45*3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
 	
 	original_pos.x = x;
 	original_pos.y = 0;
@@ -131,7 +131,7 @@ void Enemy_Long_Megatank::MoveShoot()
 {
 	w = 81 * 3;
 	h = 53 * 3;
-	collider->SetSize(w, h);
+	
 
 	position = original_pos + movement.GetCurrentPosition();
 

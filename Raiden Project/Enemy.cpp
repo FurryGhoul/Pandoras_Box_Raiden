@@ -31,6 +31,9 @@ void Enemy::Draw(SDL_Texture* sprites)
 	if (collider != nullptr && mediumshooter == true)
 		collider->SetPos(position.x + 55, position.y + 55);
 
+	if (collider != nullptr && longmegatank == true)
+		collider->SetPos(position.x + 40, position.y);
+
 	if (animations >= 1)
 	{ 
 	    if (animation != nullptr)

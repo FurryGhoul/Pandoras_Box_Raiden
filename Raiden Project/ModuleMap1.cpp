@@ -54,7 +54,7 @@ update_status ModuleMap1::Update()
 		App->player2->Enable();
 		}
 
-		// First street
+		/*// First street
 		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -900);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -1200);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -1300);
@@ -266,11 +266,11 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 430, -10300);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 380, -10250);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 710, -10340);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 230, -10370);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 230, -10370);*/
 		
 		
 
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LONG_MEGATANK, 240 * 3, -3900);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LONG_MEGATANK, 240 * 3, -300);
 
 
 		App->collision->Enable();
