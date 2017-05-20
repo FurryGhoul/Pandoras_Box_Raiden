@@ -9,12 +9,14 @@
 #include "RedUp.h"
 #include "BlueUp.h"
 #include "Medals.h"
+#include "MissileUp.h"
 #include "ModulePlayer.h"
 #include "ModulePlayer2.h"
 #include "ModuleMap1.h"
 
 #define SPAWN_MARGIN 50
 #define MAX_POWERUP_LVL 8
+#define MAX_MISSILE_LEVEL 1
 
 ModulePowerUps::ModulePowerUps()
 {
@@ -148,6 +150,9 @@ void ModulePowerUps::SpawnPowerUp(const PowerUpInfo& info)
 		case POWERUP_TYPES::BLUEUP:
 			powerups[i] = new BlueUp(info.x, info.y);
 			break;
+		case POWERUP_TYPES::MISSILEUP:
+			powerups[i] = new MissileUp(info.x, info.y);
+			break;
 		}
 	}
 }
@@ -160,7 +165,7 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 		{
 			if (c2->bullettype == 3) //Collider player 1
 			{
-				if (c1->bullettype == 10) //Collider RedUp
+				if (powerups[i]->redp == true) //Collider RedUp
 				{
 					App->player->red = true;
 					if (App->player->powerup_level < MAX_POWERUP_LVL)
@@ -173,7 +178,7 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 						App->player->score += 100;
 					}
 				}
-				if (c1->bullettype == 15) // Collider BlueUp
+				if (powerups[i]->bluep == true) // Collider BlueUp
 				{
 					App->player->red = false;
 					if (App->player->powerup_level < MAX_POWERUP_LVL)
@@ -186,9 +191,22 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 						App->player->score += 100;
 					}
 				}
-				if (c1->bullettype == 12) //Collider Medal
+				if (powerups[i]->medal == true) //Collider Medal
 				{
 					App->player->score += 100;
+				}
+
+				if (powerups[i]->missilep == true) //Collider Missile
+				{
+					if (App->player->powerup_level < MAX_MISSILE_LEVEL)
+					{
+						App->player->missile_powerup_level++;
+					}
+
+					else if (App->player->powerup_level >= MAX_MISSILE_LEVEL)
+					{
+						App->player->score += 5000;
+					}
 				}
 			}
 
@@ -196,7 +214,7 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 			if (c2->bullettype == 4) //Collider player 2
 			{
 				App->player2->red = true;
-				if (c1->bullettype == 10) //Collider RedUp
+				if (powerups[i]->redp == true) //Collider RedUp
 				{
 					if (App->player2->powerup_level < MAX_POWERUP_LVL)
 					{
@@ -209,7 +227,7 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 					}
 				}
 
-				if (c1->bullettype == 15) // Collider BlueUp
+				if (powerups[i]->bluep == true) // Collider BlueUp
 				{
 					App->player2->red = false;
 					if (App->player2->powerup_level < MAX_POWERUP_LVL)
@@ -223,9 +241,21 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 					}
 				}
 
-				if (c1->bullettype == 12) //Collider Medal
+				if (powerups[i]->medal == true) //Collider Medal
 				{
 					App->player2->score += 100;
+				}
+				if (powerups[i]->missilep == true) //Collider Missile
+				{
+					if (App->player->powerup_level < MAX_MISSILE_LEVEL)
+					{
+						App->player2->missile_powerup_level++;
+					}
+
+					else if (App->player->powerup_level >= MAX_MISSILE_LEVEL)
+					{
+						App->player2->score += 5000;
+					}
 				}
 			}
 			powerups[i]->OnCollision(c2);
@@ -277,7 +307,7 @@ void ModulePowerUps::Switch()
 	PowerUpInfo info;
 	for (uint i = 0; i < MAX_POWERUPS; ++i)
 	{
-		if (powerups[i] != nullptr)
+		if (powerups[i] != nullptr && powerups[i]->missilep != true && powerups[i]->medal != true)
 		{
 			info.x = powerups[i]->position.x;
 			info.y = powerups[i]->position.y;
@@ -300,9 +330,6 @@ void ModulePowerUps::Switch()
 			{
 			case POWERUP_TYPES::REDUP:
 				powerups[i] = new RedUp(info.x, info.y, info.centerx, info.centery, info.angle, false);
-				break;
-			case POWERUP_TYPES::MEDAL:
-				powerups[i] = new Medals(info.x, info.y);
 				break;
 			case POWERUP_TYPES::BLUEUP:
 				powerups[i] = new BlueUp(info.x, info.y, info.centerx, info.centery, info.angle, false);

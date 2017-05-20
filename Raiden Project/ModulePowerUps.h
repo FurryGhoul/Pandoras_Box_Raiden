@@ -14,6 +14,7 @@ enum class POWERUP_TYPES
 	REDUP,
 	BLUEUP,
 	MEDAL,
+	MISSILEUP,
 };
 
 class PowerUp;

@@ -37,9 +37,6 @@
     <ClCompile Include="ModulePlayer2.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="ModulePowerUps.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
     <ClCompile Include="ModuleRender.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
@@ -112,6 +109,12 @@
     <ClCompile Include="ModuleShadows.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
+    <ClCompile Include="ModulePowerUps.cpp">
+      <Filter>PowerUps</Filter>
+    </ClCompile>
+    <ClCompile Include="MissileUp.cpp">
+      <Filter>PowerUps</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
@@ -149,9 +152,6 @@
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="ModulePlayer2.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="ModulePowerUps.h">
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="ModuleRender.h">
@@ -237,6 +237,12 @@
     </ClInclude>
     <ClInclude Include="ModuleShadows.h">
       <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="ModulePowerUps.h">
+      <Filter>PowerUps</Filter>
+    </ClInclude>
+    <ClInclude Include="MissileUp.h">
+      <Filter>PowerUps</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -709,6 +709,12 @@ update_status ModulePlayer::Update()
 			}
 		}
 
+		if (missile_powerup_level == 1)
+		{
+			App->particles->AddParticle(App->particles->player_light_missile, position.x + 45, position.y, COLLIDER_PLAYER_SHOT, -1, 2, -10, 1, false, 1);
+			App->particles->AddParticle(App->particles->player_light_missile, position.x , position.y, COLLIDER_PLAYER_SHOT, -1, -2, -10, 1, false, 1);
+		}
+
 	}
 	
 	if (bombs == 1)

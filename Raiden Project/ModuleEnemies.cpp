@@ -317,7 +317,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 
 				else if (enemies[i]->powerupbox)
 				{
-					App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, enemies[i]->position.x, enemies[i]->position.y);
+					App->powerups->AddPowerUp(POWERUP_TYPES::MISSILEUP, enemies[i]->position.x, enemies[i]->position.y);
 				}				
 
 				delete enemies[i];

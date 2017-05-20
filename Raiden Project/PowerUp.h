@@ -22,6 +22,8 @@ public:
 	float left_right_mod = 0;
 	bool bluep = false;
 	bool redp = false;
+	bool missilep = false;
+	bool medal = false;
 	fPoint center;
 	double angle;
 

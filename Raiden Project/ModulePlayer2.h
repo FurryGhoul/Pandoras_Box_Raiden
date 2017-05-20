@@ -13,6 +13,8 @@ public:
 	ModulePlayer2();
 	~ModulePlayer2();
 
+
+	int missile_powerup_level;
 	bool Init();
 	update_status Update();
 	bool CleanUp();

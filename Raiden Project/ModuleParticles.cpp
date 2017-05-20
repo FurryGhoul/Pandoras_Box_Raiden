@@ -131,6 +131,17 @@ bool ModuleParticles::Init()
 	final_laser.size.x = 54;
 	final_laser.size.y = 48;
 
+	//Player missile
+	player_light_missile.spritesheet = 1;
+	player_light_missile.anim.PushBack({ 277,39,4,11 });
+	player_light_missile.anim.PushBack({ 294,39,4,11 });
+	player_light_missile.life = 2100;
+	player_light_missile.anim.loop = true;
+	player_light_missile.anim.speed = 1.0f;
+	player_light_missile.speed.y = -20;
+	player_light_missile.size.x = 4 * 3;
+	player_light_missile.size.y = 11 * 3;
+
 	//Enemy normal shot
 	enemyshot.spritesheet = 1;
 	enemyshot.anim.PushBack({ 22, 41, 6, 5});
@@ -386,6 +397,9 @@ bool ModuleParticles::Init()
 	bonusmedium_explosion.anim.speed = 0.2f;
 	bonusmedium_explosion.size.x = 80 * 3;
 	bonusmedium_explosion.size.y = 71 * 3;
+
+	
+
 	return true;
 }
 

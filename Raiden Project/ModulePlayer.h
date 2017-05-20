@@ -14,8 +14,9 @@ public:
 	~ModulePlayer();
 
 
-	bool multiple_laser;
-	int howmuch_lasers;
+	
+	
+	int missile_powerup_level;
 	bool Init();
 	update_status Update();
 	bool CleanUp();

@@ -84,6 +84,7 @@
     <ClInclude Include="Enemy_Ship_Tank.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="MissileUp.h" />
     <ClInclude Include="Medals.h" />
     <ClInclude Include="ModuleEnemies.h" />
     <ClInclude Include="ModuleFonts.h" />
@@ -150,6 +151,7 @@
     <ClCompile Include="ModuleShadows.cpp" />
     <ClCompile Include="PowerUp.cpp" />
     <ClCompile Include="RedUp.cpp" />
+    <ClCompile Include="MissileUp.cpp" />
     <ClCompile Include="Tank.cpp" />
   </ItemGroup>
   <ItemGroup>
