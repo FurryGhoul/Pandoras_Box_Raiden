@@ -13,7 +13,9 @@ private:
 	Path movement;
 
 	int shoot_time = 0;
+	int time_controll = 0;
 	bool shooting = false;
+	bool shell = false;
 public:
 	Enemy_Long_Megatank(int x, int y, int path);
 

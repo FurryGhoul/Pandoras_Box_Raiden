@@ -137,16 +137,29 @@ void Enemy_Long_Megatank::MoveShoot()
 
 	position.x += left_right_mod;
 
+	if (sqrtf((distance.y = App->player->position.y - position.y)*(distance.y = App->player->position.y - position.y) + (distance.x = App->player->position.x - position.x)* (distance.x = App->player->position.x - position.x))
+		< sqrtf((distance.y = App->player2->position.y - position.y)*(distance.y = App->player2->position.y - position.y) + (distance.x = App->player2->position.x - position.x)* (distance.x = App->player2->position.x - position.x)))
+	{
+		distance.y = App->player->position.y - position.y;
+		distance.x = App->player->position.x - position.x;
+	}
 
+	else
+	{
+		distance.y = App->player2->position.y - position.y;
+		distance.x = App->player2->position.x - position.x;
+	}
 
 	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f)
 	{
 		animation = &shellstart;
+		shell = true;
 	}
 
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.01f)
 	{
 		animation = &transformation;
+		
 	}
 
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == -1.0f
@@ -154,54 +167,131 @@ void Enemy_Long_Megatank::MoveShoot()
 	{
 		animation = &finalform;
 		shooting = true;
+		shell = false;
 	}
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f)
 	{
 		animation = &stop;
 		shooting = true;
+		shell = false;
 	}
 
+	
+	distance.x = fabs(distance.x);
+	distance.y = fabs(distance.y);
+	// Shooting
+	if (shell == true)
+	{
+		time_controll++;
+		if (time_controll % 50 == 0)
+
+		{
+
+			distance.x *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+			distance.y *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+
+			if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && position.y <= 760)
+			{
+				if (App->player->position.y < (position.y))
+				{
+					distance.y *= -1;
+				}
+				if (App->player->position.x < (position.x))
+				{
+					distance.x *= -1;
+				}
+				App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2, position.y + h / 2, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			}
+		}
+	}
+	
 	if (shooting == true)
+
 	{
 		++shoot_time;
-		if (shoot_time % 140 == 0)
-		{
-			App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 30 * 3, position.y + 11 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
-		}
-		if (shoot_time % 145 == 0)
-		{
-			App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 38 * 3, position.y + 11 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
-		}
-		if (shoot_time % 150 == 0)
-		{
-			App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 44 * 3, position.y + 16 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
-		}
-		if (shoot_time % 155 == 0)
-		{
-			App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 44 * 3, position.y + 23 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
-		}
-		if (shoot_time % 160 == 0)
-		{
-			App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 38 * 3, position.y + 29 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
-		}
-		if (shoot_time % 165 == 0)
-		{
-			App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 30 * 3, position.y + 29 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
-		}
-		if (shoot_time % 170 == 0)
-		{
-			App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 24 * 3, position.y + 23 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
-		}
-		if (shoot_time % 175 == 0)
-		{
-			App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 24 * 3, position.y + 16 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
-		}
-		if (shoot_time == 200)
-		{
-			shoot_time = 100;
-			++shoot_time;
-		}
-		shooting = false;
+		distance.x *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+		distance.y *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
 
+		if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && position.y <= 760)
+		{
+			if (App->player->position.y < (position.y))
+			{
+				distance.y *= -1;
+			}
+			if (App->player->position.x < (position.x))
+			{
+				distance.x *= -1;
+			}
+			if (shoot_time % 140 == 0)//first wave
+			{
+				App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 30 * 3, position.y + 11 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			}
+			if (shoot_time % 143 == 0)
+			{
+				App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 38 * 3, position.y + 11 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			}
+			if (shoot_time % 146 == 0)
+			{
+				App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 44 * 3, position.y + 16 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			}
+			if (shoot_time % 149 == 0)
+			{
+				App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 44 * 3, position.y + 23 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			}
+			if (shoot_time % 152 == 0)
+			{
+				App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 38 * 3, position.y + 29 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			}
+			if (shoot_time % 155 == 0)
+			{
+				App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 30 * 3, position.y + 29 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			}
+			if (shoot_time % 158 == 0)
+			{
+				App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 24 * 3, position.y + 23 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			}
+			if (shoot_time % 161 == 0)//second wave
+			{
+				App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 24 * 3, position.y + 16 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			}
+			if (shoot_time % 165 == 0)
+			{
+				App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 30 * 3, position.y + 11 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			}
+			if (shoot_time % 168 == 0)
+			{
+				App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 38 * 3, position.y + 11 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			}
+			if (shoot_time % 171 == 0)
+			{
+				App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 44 * 3, position.y + 16 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			}
+			if (shoot_time % 174 == 0)
+			{
+				App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 44 * 3, position.y + 23 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			}
+			if (shoot_time % 177 == 0)
+			{
+				App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 38 * 3, position.y + 29 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			}
+			if (shoot_time % 180 == 0)
+			{
+				App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 30 * 3, position.y + 29 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			}
+			if (shoot_time % 183 == 0)
+			{
+				App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 24 * 3, position.y + 23 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			}
+			if (shoot_time % 186 == 0)
+			{
+				App->particles->AddParticle(App->particles->longmegatank_laser, position.x + 24 * 3, position.y + 16 * 3, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			}
+			if (shoot_time == 220)
+			{
+				shoot_time = 100;
+				++shoot_time;
+			}
+		}
+		shooting == false;
 	}
 }
