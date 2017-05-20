@@ -269,7 +269,10 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			{
 				App->particles->AddParticle(App->particles->hitspark, c2->rect.x, c2->rect.y, COLLIDER_NONE);
 			}
-
+			if (c2->bullettype == -1)
+			{
+				App->particles->AddParticle(App->particles->explosion, c2->rect.x, c2->rect.y, COLLIDER_NONE);
+			}
 
 			if (c2->bullettype == 3 || c2->bullettype == 4)
 			{

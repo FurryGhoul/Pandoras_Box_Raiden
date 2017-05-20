@@ -203,8 +203,8 @@ bool ModuleParticles::Init()
 	explosion.anim.PushBack({ 214, 332, 26, 24 });
 	explosion.anim.loop = false;
 	explosion.anim.speed = 0.3f;
-	explosion.size.x = 18 * 3;
-	explosion.size.y = 18 * 3;
+	explosion.size.x = 25 * 3;
+	explosion.size.y = 25 * 3;
 
 	//Hit spark
 	hitspark.spritesheet = 1;
@@ -628,7 +628,7 @@ void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
 			{
 				active[i]->AddPointsP2();
 			}
-
+			
  			delete active[i];
 			active[i] = nullptr;
      		break;
