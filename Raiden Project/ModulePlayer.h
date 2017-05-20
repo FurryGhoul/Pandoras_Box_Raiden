@@ -16,7 +16,10 @@ public:
 
 	
 	
-	int missile_powerup_level;
+	int missile_powerup_level = 0;
+	int missiles_shot = 0;
+	bool can_shoot = true;
+	int missiles_initial_time;
 	bool Init();
 	update_status Update();
 	bool CleanUp();

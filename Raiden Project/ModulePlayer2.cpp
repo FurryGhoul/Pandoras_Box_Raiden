@@ -707,7 +707,9 @@ update_status ModulePlayer2::Update()
 					score = 0;
 			}
 		}
-
+		//Missiles
+		if (can_shoot == true && missile_powerup_level != 0)
+		{ 
 		if (missile_powerup_level == 1)
 		{
 			App->particles->AddParticle(App->particles->player_light_missile, position.x + 35, position.y, COLLIDER_PLAYER_SHOT, -1, 2, -10, 1, false, 1);
@@ -732,12 +734,24 @@ update_status ModulePlayer2::Update()
 			App->particles->AddParticle(App->particles->heavy_missiles, position.x + 35, position.y + 35, COLLIDER_PLAYER_SHOT, -1, 1, -18, 1, false, 3);
 			App->particles->AddParticle(App->particles->heavy_missiles, position.x + 5, position.y + 35, COLLIDER_PLAYER_SHOT, -1, -1, -18, 1, false, 3);
 			App->particles->AddParticle(App->particles->heavy_missiles, position.x - 15, position.y + 25, COLLIDER_PLAYER_SHOT, -1, 1, -15, 1, false, 3);
+			
 		}
+		missiles_shot++;
+		}
+}
+//Missiles time control
+if (missiles_shot == 2 && can_shoot == true)
+{
+	can_shoot = false;
+	missiles_initial_time = SDL_GetTicks();
 
-	
 
-	}
-
+}
+if (SDL_GetTicks() - missiles_initial_time > 500 && can_shoot == false)
+{
+	can_shoot = true;
+	missiles_shot = 0;
+}
 	if (bombs == 1)
 	{
 		bomb_ammo = &bomb1;
