@@ -214,8 +214,8 @@ void Enemy_Medium_Shooter::MoveShoot()
 		}
 		if (shoot_time % 5 == 0)
 		{
-			App->particles->AddParticle(App->particles->enemyshot, position.x + 50, position.y + 110, COLLIDER_ENEMY_SHOT, 0, distance1.x, distance1.y);
 			App->particles->AddParticle(App->particles->enemyshot, position.x + 150, position.y + 110, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 50, position.y + 110, COLLIDER_ENEMY_SHOT, 0, distance1.x, distance1.y);
 
 			shots++;
 		}

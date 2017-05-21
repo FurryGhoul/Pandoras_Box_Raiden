@@ -13,6 +13,14 @@ public:
 	Animation open;
 	Animation nodoor;
 
+	Animation hitsemiopen;
+	Animation hitopen;
+	Animation hitnodoor;
+
+	Animation hitsemiopen1;
+	Animation hitopen1;
+	Animation hitnodoor1;
+
 	// Water waves
 	Animation waterdown1;
 	Animation waterdown2;
