@@ -46,7 +46,7 @@ void BlueUp::Move()
 	pos_mod.y = cos(angle) * radius;
 
 
-	angle += 0.01;
+	angle -= 0.01;
 
 
 	position.x = center.x + pos_mod.x;
