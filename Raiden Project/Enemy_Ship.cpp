@@ -30,6 +30,12 @@ Enemy_Ship::Enemy_Ship(int x, int y, int path) : Enemy(x, y)
 	open.PushBack({ 62, 5, 17, 33 });
 	nodoor.PushBack({ 110, 5, 17, 10 });
 
+	hitsemiopen.PushBack({ 75, 48, 17, 33 });
+	hitopen.PushBack({ 97, 48, 17, 33 });
+
+	hitsemiopen1.PushBack({ 75, 82, 17, 33 });
+	hitopen1.PushBack({ 97, 82, 17, 33 });
+
 	// Water
 	waterdown1.PushBack({ 85, 31, 18, 15 });
 	waterdown2.PushBack({ 109, 32, 20, 16 });
@@ -147,18 +153,48 @@ void Enemy_Ship::MoveShoot()
 		if (shotphase <= 7)
 		{
 			animation1 = &semiopen;
+
+			if (ishit == true)
+			{
+				if (hp < 7)
+					animation = &hitsemiopen;
+				else
+					animation = &hitsemiopen1;
+
+				ishit = false;
+			}
 			
 			shotphase++;
 		}
 		else if (shotphase <= 14)
 		{
 			animation1 = &open;
+
+			if (ishit == true)
+			{
+				if (hp < 7)
+					animation = &hitopen;
+				else
+					animation = &hitopen1;
+
+				ishit = false;
+			}
 			
 			shotphase++;
 		}
 		else if (shotphase > 14)
 		{
-			animation1 = &semiopen;			
+			animation1 = &semiopen;	
+
+			if (ishit == true)
+			{
+				if (hp < 7)
+					animation = &hitsemiopen;
+				else
+					animation = &hitsemiopen1;
+
+				ishit = false;
+			}
 
 			shotphase++;
 
