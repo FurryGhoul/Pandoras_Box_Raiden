@@ -303,6 +303,11 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				{
 					App->particles->AddParticle(App->particles->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
 				}
+				else if (enemies[i]->ship)
+				{
+					App->particles->AddParticle(App->particles->ship_explosion, enemies[i]->position.x - 70, enemies[i]->position.y, COLLIDER_NONE);
+					App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, enemies[i]->position.x - 70, enemies[i]->position.y);
+				}
 				else if (enemies[i]->bonusplane)
 				{
 					App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, enemies[i]->position.x, enemies[i]->position.y);
@@ -320,7 +325,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 
 				else if (enemies[i]->powerupbox)
 				{
-					App->powerups->AddPowerUp(POWERUP_TYPES::MISSILEUP, enemies[i]->position.x, enemies[i]->position.y);
+					App->powerups->AddPowerUp(POWERUP_TYPES::MISSILEUP, enemies[i]->position.x - 120, enemies[i]->position.y - 110);
 				}				
 
 				delete enemies[i];
