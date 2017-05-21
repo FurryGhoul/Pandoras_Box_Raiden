@@ -111,6 +111,7 @@ public:
 	Particle bombexplosion;
 	Particle bombexplosion2;
 	Particle tank_explosion;
+	Particle shiptank_explosion;
 	Particle bonusmedium_explosion;
 	Particle longmegatank_laser;
 	Particle player_light_missile;

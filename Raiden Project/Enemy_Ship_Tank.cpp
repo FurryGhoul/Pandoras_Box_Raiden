@@ -100,7 +100,7 @@ Enemy_Ship_Tank::Enemy_Ship_Tank(int x, int y, int path) : Enemy(x, y)
 	//movement.PushBack({ 0.0f, 0.0f }, 100);
 
 	original_pos.x = x;
-	original_pos.y = -50;
+	original_pos.y = -200;
 
 	//tank = true;
 	collider = App->collision->AddCollider({ 0, 0, 23 * 3 - 5, 30 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);

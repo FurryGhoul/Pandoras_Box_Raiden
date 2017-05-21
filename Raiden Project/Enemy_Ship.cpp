@@ -50,7 +50,7 @@ Enemy_Ship::Enemy_Ship(int x, int y, int path) : Enemy(x, y)
 	spritesheet = 7;
 	animations = 3;
 	original_pos.x = x;
-	original_pos.y = -200;	
+	original_pos.y = -200;
 }
 
 void Enemy_Ship::MoveShoot()
