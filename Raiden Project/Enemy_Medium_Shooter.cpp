@@ -95,12 +95,16 @@ void Enemy_Medium_Shooter::MoveShoot()
 	{
 		distance.y = App->player->position.y - position.y;
 		distance.x = App->player->position.x - position.x;
+		distance1.y = App->player->position.y - position.y;
+		distance1.x = App->player->position.x - position.x + 100;
 	}
 
 	else
 	{
 		distance.y = App->player2->position.y - position.y;
 		distance.x = App->player2->position.x - position.x;
+		distance1.y = App->player2->position.y - position.y;
+		distance1.x = App->player2->position.x - position.x + 100;
 	}
 	// Animation
 
@@ -109,7 +113,9 @@ void Enemy_Medium_Shooter::MoveShoot()
 	h = 54 * 3;
 
 	distance.x = fabs(distance.x);
-	distance.y = fabs(distance.y);	
+	distance.y = fabs(distance.y);
+	distance1.x = fabs(distance1.x);
+	distance1.y = fabs(distance1.y);
 
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 2.1f)
 	{
@@ -185,6 +191,8 @@ void Enemy_Medium_Shooter::MoveShoot()
 	// Shooting
 	distance.x *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
 	distance.y *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+	distance1.x *= (10 / sqrtf(distance1.x*distance1.x + distance1.y*distance1.y));
+	distance1.y *= (10 / sqrtf(distance1.x*distance1.x + distance1.y*distance1.y));
 	
 	if (shoot_time % 10 == 0 && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f && shooting == false)
 	{
@@ -197,14 +205,16 @@ void Enemy_Medium_Shooter::MoveShoot()
 		if (App->player->position.y < (position.y))
 		{
 			distance.y *= -1;
+			distance1.y *= -1;
 		}
 		if (App->player->position.x < (position.x))
 		{
 			distance.x *= -1;
+			distance1.x *= -1;
 		}
 		if (shoot_time % 5 == 0)
 		{
-			App->particles->AddParticle(App->particles->enemyshot, position.x + 50, position.y + 110, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 50, position.y + 110, COLLIDER_ENEMY_SHOT, 0, distance1.x, distance1.y);
 			App->particles->AddParticle(App->particles->enemyshot, position.x + 150, position.y + 110, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
 
 			shots++;
