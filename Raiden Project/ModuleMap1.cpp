@@ -118,6 +118,7 @@ update_status ModuleMap1::Update()
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 400, -5400);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 700, -5600);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 500, -400);
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP, 700, -8700);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP, 800, -8900);
@@ -338,6 +339,8 @@ update_status ModuleMap1::Update()
 		App->collision->Erase_Non_Player_Colliders();
 		App->player->powerup_level = 0;
 		App->player2->powerup_level = 0;
+		App->player->missile_powerup_level = 0;
+		App->player2->missile_powerup_level = 0;
 		App->particles->Disable();		
 		App->shadows->Disable();
 		App->player->Playergod->SetPos(10000, 10000);

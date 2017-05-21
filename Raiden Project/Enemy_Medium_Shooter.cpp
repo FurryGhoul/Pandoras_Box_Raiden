@@ -52,10 +52,12 @@ Enemy_Medium_Shooter::Enemy_Medium_Shooter(int x, int y, int path) : Enemy(x, y)
 	hitflycu1.PushBack({ 162, 190, 73, 54 });
 
 
-	movement.PushBack({ 0.0f, 3.0f }, 100);
-	movement.PushBack({ 0.0f, 2.0f }, 100);
-	movement.PushBack({ 0.0f, 3.0f }, 70);
-	movement.PushBack({ 0.0f, 4.0f }, 120);
+	movement.PushBack({ 0.0f, 2.1f }, 50);
+	movement.PushBack({ 0.0f, 2.0f }, 30);
+	movement.PushBack({ 0.0f, 2.1f }, 170);
+	movement.PushBack({ 0.0f, 2.0f }, 30);
+	movement.PushBack({ 0.0f, 2.1f }, 70);
+	movement.PushBack({ 0.0f, 4.0f }, 60);
 	movement.PushBack({ 0.0f, -5.0f }, 500);
 	movement.loop = false;
 
@@ -96,7 +98,7 @@ void Enemy_Medium_Shooter::MoveShoot()
 	distance.x = fabs(distance.x);
 	distance.y = fabs(distance.y);	
 
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 3.0f)
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 2.1f)
 	{
 		animation = &flyi;
 
@@ -157,7 +159,7 @@ void Enemy_Medium_Shooter::MoveShoot()
 	distance.x *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
 	distance.y *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
 	
-	if (shoot_time % 50 == 0 && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f && shooting == false)
+	if (shoot_time % 10 == 0 && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f && shooting == false)
 	{
 		shooting = true;
 	}
