@@ -30,6 +30,10 @@ private:
 	bool nw = false;
 	bool sw = false;
 	bool shooting = false;
+	bool burst = false;
+	bool burst2 = false;
+	bool singleburst = false;
+	bool singleburst2 = false;
 	int shoot_time = 0;
 	int shots = 0;
 

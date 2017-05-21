@@ -51,7 +51,7 @@ Enemy_Medium_Shooter::Enemy_Medium_Shooter(int x, int y, int path) : Enemy(x, y)
 	hitflycu.PushBack({ 164, 346, 73, 54 });
 	hitflycu1.PushBack({ 162, 190, 73, 54 });
 
-	if (path == 0)
+	if (path == 0) // If the ship spawns at the left of the screen, it wil charge to the right
 	{
 		movement.PushBack({ 0.0f, 2.1f }, 50);
 		movement.PushBack({ 0.0f, 2.0f }, 30);
@@ -62,7 +62,7 @@ Enemy_Medium_Shooter::Enemy_Medium_Shooter(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ 0.0f, -5.0f }, 500);
 		movement.loop = false;
 	}
-	if (path == 1)
+	if (path == 1) // If the ship spawns at the rigth of the screen, it wil charge to the left
 	{
 		movement.PushBack({ 0.0f, 2.1f }, 50);
 		movement.PushBack({ 0.0f, 2.0f }, 30);
@@ -204,8 +204,8 @@ void Enemy_Medium_Shooter::MoveShoot()
 		}
 		if (shoot_time % 5 == 0)
 		{
-			App->particles->AddParticle(App->particles->enemyshot, position.x + 60, position.y + 30, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
-			App->particles->AddParticle(App->particles->enemyshot, position.x + 150, position.y + 30, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 50, position.y + 110, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 150, position.y + 110, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
 
 			shots++;
 		}
@@ -215,5 +215,40 @@ void Enemy_Medium_Shooter::MoveShoot()
 			shooting = false;
 			shots = 0;
 		}
+	}
+
+	// Burst
+	if (shoot_time % 185 == 0 && movement.steps[movement.GetCurrentStep()].speed.y == -5.0f && singleburst == false)
+	{
+		burst = true;
+		singleburst = true;
+	}
+	if (shoot_time % 215 == 0 && movement.steps[movement.GetCurrentStep()].speed.y == -5.0f && singleburst2 == false)
+	{
+		burst2 = true;
+		singleburst2 = true;
+	}
+
+	if (burst == true)
+	{
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 80, COLLIDER_ENEMY_SHOT, 0, 0.5f, 7.0f);
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 80, COLLIDER_ENEMY_SHOT, 0, -0.5f, 7.0f);
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 65, COLLIDER_ENEMY_SHOT, 0, 1.0f, 7.0f);
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 65, COLLIDER_ENEMY_SHOT, 0, -1.0f, 7.0f);
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 50, COLLIDER_ENEMY_SHOT, 0, 2.0f, 7.0f);
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 50, COLLIDER_ENEMY_SHOT, 0, -2.0f, 7.0f);
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 30, COLLIDER_ENEMY_SHOT, 0, 3.0f, 7.0f);
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 30, COLLIDER_ENEMY_SHOT, 0, -3.0f, 7.0f);
+
+		burst = false;
+	}
+	if (burst2 == true)
+	{
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 80, COLLIDER_ENEMY_SHOT, 0, 1.0f, 7.0f);
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 80, COLLIDER_ENEMY_SHOT, 0, -1.0f, 7.0f);		
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 50, COLLIDER_ENEMY_SHOT, 0, 2.0f, 7.0f);
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 50, COLLIDER_ENEMY_SHOT, 0, -2.0f, 7.0f);
+		
+		burst2 = false;
 	}
 }
