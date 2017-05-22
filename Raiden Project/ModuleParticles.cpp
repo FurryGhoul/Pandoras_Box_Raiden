@@ -99,8 +99,6 @@ bool ModuleParticles::Init()
 	quad_shot_left2.speed.y = -15;
 	quad_shot_left2.size.x = 48;
 	quad_shot_left2.size.y = 27;
-
-
 	// Player laser particles
 	laser.spritesheet = 0;
 	laser.anim.PushBack({ 51, 89, 1, 16 });
@@ -169,6 +167,20 @@ bool ModuleParticles::Init()
 	heavy_missiles.size.x = 13 * 3;
 	heavy_missiles.size.y = 16 * 3;
 
+	//Player explosion
+	player_explosion.spritesheet = 1;
+	player_explosion.anim.PushBack({ 8,203,24,27 });
+	player_explosion.anim.PushBack({ 41,203,28,28 });
+	player_explosion.anim.PushBack({ 77,203,31,30 });
+	player_explosion.anim.PushBack({ 117,203,32,30 });
+	player_explosion.anim.PushBack({ 163,203,31,30 });
+	
+
+
+	player_explosion.anim.loop = false;
+	player_explosion.anim.speed = 0.15f;
+	player_explosion.size.x = 30 * 3;
+	player_explosion.size.y = 30 * 3; 
 	//Enemy normal shot
 	enemyshot.spritesheet = 1;
 	enemyshot.anim.PushBack({ 22, 41, 6, 5});

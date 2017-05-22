@@ -118,6 +118,7 @@ public:
 	Particle player_light_missile;
 	Particle player_mid_missiles;
 	Particle heavy_missiles;
+	Particle player_explosion;
 };
 
 #endif // __MODULEPARTICLES_H__
