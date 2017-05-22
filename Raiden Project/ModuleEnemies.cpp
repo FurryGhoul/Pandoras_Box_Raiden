@@ -243,6 +243,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			if (enemies[i]->bonusplane)
 			{
 				enemies[i]->ishit = true;
+				enemies[i]->ishit2 = true;
 			}
 			if (enemies[i]->mediumshooter)
 			{
