@@ -18,6 +18,7 @@
 #include "Enemy_Ship_Tank.h"
 #include "Enemy_Long_Megatank.h"
 #include "Enemy_Ship.h"
+#include "ModuleGroundExplosion.h"
 
 #define SPAWN_MARGIN 100
 
@@ -297,15 +298,15 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
                 }
 				else if (enemies[i]->tank)
 				{
-					App->particles->AddParticle(App->particles->tank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+					App->gexplosion->AddGroundExplosion(App->gexplosion->tank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
 				}
 				else if (enemies[i]->shiptank)
 				{
-					App->particles->AddParticle(App->particles->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+					App->gexplosion->AddGroundExplosion(App->gexplosion->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
 				}
 				else if (enemies[i]->ship)
 				{
-					App->particles->AddParticle(App->particles->ship_explosion, enemies[i]->position.x - 70, enemies[i]->position.y, COLLIDER_NONE);
+					App->gexplosion->AddGroundExplosion(App->gexplosion->ship_explosion, enemies[i]->position.x - 70, enemies[i]->position.y, COLLIDER_NONE);
 					App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, enemies[i]->position.x - 70, enemies[i]->position.y);
 				}
 				else if (enemies[i]->bonusplane)

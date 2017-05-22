@@ -10,6 +10,7 @@
 #include "ModuleEnemies.h"
 #include "ModuleParticles.h"
 #include "ModulePowerUps.h"
+#include "ModuleGroundExplosion.h"
 
 
 ModuleInput::ModuleInput() : Module()
@@ -296,7 +297,7 @@ update_status ModuleInput::Update()
 				App->enemies->MoveEnemiesRight(true);
 				App->particles->MoveParticlesRight(true);
 				App->powerups->MovePowerUpsRight(true);
-
+				App->gexplosion->MoveExplosionRight(true);
 			}
 		}
 
@@ -314,6 +315,7 @@ update_status ModuleInput::Update()
 				App->enemies->MoveEnemiesRight(false);
 				App->particles->MoveParticlesRight(false);
 				App->powerups->MovePowerUpsRight(false);
+				App->gexplosion->MoveExplosionRight(false);
 			}
 		}
 	}
@@ -335,6 +337,7 @@ update_status ModuleInput::Update()
 				App->enemies->MoveEnemiesRight(true);
 				App->particles->MoveParticlesRight(true);
 				App->powerups->MovePowerUpsRight(true);
+				App->gexplosion->MoveExplosionRight(true);
 			}
 		}
 
@@ -352,6 +355,7 @@ update_status ModuleInput::Update()
 				App->enemies->MoveEnemiesRight(false);
 				App->particles->MoveParticlesRight(false);
 				App->powerups->MovePowerUpsRight(false);
+				App->gexplosion->MoveExplosionRight(false);
 			}
 		}
 	}

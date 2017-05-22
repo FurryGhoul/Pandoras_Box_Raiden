@@ -115,6 +115,9 @@
     <ClCompile Include="MissileUp.cpp">
       <Filter>PowerUps</Filter>
     </ClCompile>
+    <ClCompile Include="ModuleGroundExplosion.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
@@ -243,6 +246,9 @@
     </ClInclude>
     <ClInclude Include="MissileUp.h">
       <Filter>PowerUps</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleGroundExplosion.h">
+      <Filter>Modules</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
