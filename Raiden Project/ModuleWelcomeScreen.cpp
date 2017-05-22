@@ -47,7 +47,26 @@ update_status ModuleWelcomeScreen::Update()
 {
 
 	App->render->Blit(Welcome, 0, 0, &ground, 224 * 3, 256*3 + 62 );
-
+	if (setdown)
+	{
+		App->WelcomeScreen->setdown = true;
+		App->enemies->Disable();
+		App->powerups->Disable();
+		App->collision->Disable();
+		App->particles->Disable();
+		App->player2->deadplayer = false;
+		App->player->deadplayer = false;
+		App->enemies->EraseEnemies();
+		App->powerups->ErasePowerUps();
+		App->particles->EraseParticles();
+		App->player->powerup_level = 0;
+		App->player->missile_powerup_level = 0;
+		App->player->red = true;
+		App->player2->powerup_level = 0;
+		App->player2->missile_powerup_level = 0;
+		App->player2->red = true;
+		setdown = false;
+	}
 	if (App->input->keyboard[SDL_SCANCODE_1])
 	{
 		App->player->score = 0;

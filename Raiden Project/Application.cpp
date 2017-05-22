@@ -41,7 +41,6 @@ Application::Application()
 	modules[15] = player = new ModulePlayer();
 	modules[16] = player2 = new ModulePlayer2();
 	modules[17] = collision = new ModuleCollision();
-	
 }	
 
 Application::~Application()
