@@ -148,20 +148,14 @@ void Enemy_Bonus_Ship::MoveShoot()
 		animation = &flydown;
 		animation1 = &propeller;
 		animation2 = &none;
-		if (ishit == true)
+		if (ishit2 == true)
 		{
 			animation2 = &hitdown;
 			hitdown.Reset();
-			ishit = false;
+			ishit2 = false;
 		}
 	}
 	
-	/*if ( ishit == true)
-	{
-		animation2 = &hitsides;
-		hitsides.Reset();
-		ishit = false;
-	}*/
 
 	if (shooting == false && movingsidetoside)
 	{

@@ -398,66 +398,8 @@ bool ModuleParticles::Init()
 	bombexplosion2.size.x = 168 * 3;
 	bombexplosion2.size.y = 154 * 3;
 
-	//Tank explosion
-	tank_explosion.spritesheet = 1;
-	tank_explosion.anim.PushBack({ 4,2, 29, 27 });
-	tank_explosion.anim.PushBack({ 35,2, 28, 26});
-	tank_explosion.anim.PushBack({ 65,2, 28, 27});
-	tank_explosion.anim.PushBack({ 92,1, 31, 28 });
-	tank_explosion.anim.PushBack({ 125,1, 31, 28 });
-	tank_explosion.anim.PushBack({ 160,1, 31, 28 });
-	tank_explosion.anim.PushBack({ 199,2, 31, 28 });
-	tank_explosion.anim.PushBack({ 234,2, 31, 28 });
-	tank_explosion.anim.PushBack({ 269,2, 31, 28 });
-	tank_explosion.anim.PushBack({ 304,4, 31, 28 });
-	tank_explosion.anim.PushBack({ 339,4, 31, 28 });
 
-	tank_explosion.speed.y = 1;
-	tank_explosion.anim.loop = false;
-	tank_explosion.anim.speed = 0.3f;
-	tank_explosion.life = 100000;
-	tank_explosion.size.x = 31 * 3;
-	tank_explosion.size.y = 28 * 3;
 
-	//Ship_Tank explosion
-	shiptank_explosion.spritesheet = 1;
-	shiptank_explosion.anim.PushBack({ 4, 2, 29, 27 });
-	shiptank_explosion.anim.PushBack({ 35, 2, 28, 26 });
-	shiptank_explosion.anim.PushBack({ 65, 2, 28, 27 });
-	shiptank_explosion.anim.PushBack({ 92, 1, 31, 28 });
-	shiptank_explosion.anim.PushBack({ 125, 1, 31, 28 });
-	shiptank_explosion.anim.PushBack({ 160, 1, 31, 28 });
-	shiptank_explosion.anim.PushBack({ 199, 2, 31, 28 });
-	shiptank_explosion.anim.PushBack({ 234, 2, 31, 28 });
-	shiptank_explosion.anim.PushBack({ 269, 2, 31, 28 });
-	shiptank_explosion.anim.PushBack({ 304, 4, 31, 28 });
-	shiptank_explosion.anim.PushBack({ 1, 1, 1, 1 });
-
-	shiptank_explosion.speed.y = 1;
-	shiptank_explosion.anim.loop = false;
-	shiptank_explosion.anim.speed = 0.3f;
-	shiptank_explosion.life = 100000;
-	shiptank_explosion.size.x = 31 * 3;
-	shiptank_explosion.size.y = 28 * 3;
-
-	//Ship explosion
-	ship_explosion.spritesheet = 1;
-	ship_explosion.anim.PushBack({ 1, 237, 75, 66 });
-	ship_explosion.anim.PushBack({ 67, 240, 75, 66 });
-	ship_explosion.anim.PushBack({ 140, 241, 75, 66 });
-	ship_explosion.anim.PushBack({ 218, 238, 75, 66 });
-	ship_explosion.anim.PushBack({ 291, 239, 75, 66 });
-	ship_explosion.anim.PushBack({ 368, 243, 75, 66 });
-	ship_explosion.anim.PushBack({ 443, 243, 75, 66 });
-	ship_explosion.anim.PushBack({ 524, 243, 75, 66 });
-	ship_explosion.anim.PushBack({ 1, 1, 1, 1 });
-
-	ship_explosion.speed.y = 1;
-	ship_explosion.anim.loop = false;
-	ship_explosion.anim.speed = 0.3f;
-	ship_explosion.life = 100000;
-	ship_explosion.size.x = 75 * 3;
-	ship_explosion.size.y = 66 * 3;
 
 	//Player explosion
 
