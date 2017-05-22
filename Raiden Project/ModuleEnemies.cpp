@@ -43,6 +43,7 @@ bool ModuleEnemies::Init()
 	sprites6 = App->textures->Load("assets/Kamikaze.png");
 	sprites7 = App->textures->Load("assets/LongMegatank.png");
 	sprites8 = App->textures->Load("assets/Ship.png");
+	sprites9 = App->textures->Load("assets/Light Shooter Kamikaze");
 	return true;
 }
 
@@ -75,11 +76,11 @@ update_status ModuleEnemies::Update()
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
 		if (enemies[i] != nullptr) 
 		{ 
-		   if (enemies[i]->spritesheet == 0)
+		   if (enemies[i]->spritesheet == 0) //Light Shooter
 		   {
 		       enemies[i]->Draw(sprites);
 		   }
-		   if (enemies[i]->spritesheet == 1)
+		   if (enemies[i]->spritesheet == 1) //Bonus Ship
 		   {
 			   enemies[i]->Draw(sprites2);
 		   }
@@ -95,7 +96,7 @@ update_status ModuleEnemies::Update()
 		   {
 			   enemies[i]->Draw(sprites5);
 		   }
-		   if (enemies[i]->spritesheet == 5) //Box_Medal & Box_PowerUp
+		   if (enemies[i]->spritesheet == 5) //Kamikaze
 		   {
 			   enemies[i]->Draw(sprites6);
 		   }
@@ -106,6 +107,10 @@ update_status ModuleEnemies::Update()
 		   if (enemies[i]->spritesheet == 7) //Ship
 		   {
 			   enemies[i]->Draw(sprites8);
+		   }
+		   if (enemies[i]->spritesheet == 8) //Light Shooter Kamikaze
+		   {
+			   enemies[i]->Draw(sprites9);
 		   }
         }
 	return UPDATE_CONTINUE;
