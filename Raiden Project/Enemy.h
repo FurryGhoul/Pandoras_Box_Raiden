@@ -50,6 +50,7 @@ public:
 	bool powerupbox = false;
 	bool lightshooter = false;
 	bool mediumshooter = false; // Bollean to detect if the enemy is a medium plane and adapt the hitbox
+	bool light_kamikaze = false;
 	bool ship = false; //Boolena to detect if the enemy is a ship
 	float left_right_mod = 0; // Integer to modify the position of the enemy
 	bool tank = false; //Boolean to detect if the enemy is  a tank

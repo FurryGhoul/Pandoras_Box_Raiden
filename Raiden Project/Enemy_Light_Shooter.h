@@ -20,7 +20,7 @@ private:
 	Animation flynw3;
 	fPoint original_pos;
 	Path movement;
-	Path movement1;
+
 	double param;
 	double angle;
 	bool ne = false;
