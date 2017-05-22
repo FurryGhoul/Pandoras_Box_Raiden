@@ -19,7 +19,7 @@
 #include "Enemy_Long_Megatank.h"
 #include "Enemy_Ship.h"
 #include "ModuleGroundExplosion.h"
-
+#include "Enemy_Light_Shooter_Kamikaze.h"
 #define SPAWN_MARGIN 100
 
 ModuleEnemies::ModuleEnemies()
@@ -44,7 +44,7 @@ bool ModuleEnemies::Init()
 	sprites6 = App->textures->Load("assets/Kamikaze.png");
 	sprites7 = App->textures->Load("assets/LongMegatank.png");
 	sprites8 = App->textures->Load("assets/Ship.png");
-	sprites9 = App->textures->Load("assets/Light Shooter Kamikaze");
+	sprites9 = App->textures->Load("assets/Light Shooter Kamikaze.png");
 	return true;
 }
 
@@ -215,6 +215,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::BOX_POWERUP:
 			enemies[i] = new Box_PowerUp(App->map_1->xmap + info.x, info.y, info._path);
+			break;
+		case ENEMY_TYPES::LIGHT_KAMIKAZE:
+			enemies[i] = new Light_Shooter_Kamikaze(App->map_1->xmap + info.x, info.y, info._path);
 			break;
 		}
 	}

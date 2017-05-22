@@ -19,6 +19,7 @@ private:
 	Animation flyne3;
 	Animation flysw3;
 	Animation flynw3;
+	Animation last_anim;
 	fPoint original_pos;
 	Path movement;
 	double param;
@@ -29,8 +30,15 @@ private:
 	bool sw = false;
 	bool shooting = false;
 	int shoot_time = 0;
+	int time;
+	bool time_got = false;
+	bool get_vector;
+	fPoint vector;
+	int follow_time;
+	bool follow_time_got;
+	bool close;
 public:
 	Light_Shooter_Kamikaze(int x, int y, int path);
-	~Light_Shooter_Kamikaze();
+	void MoveShoot();
 };
 

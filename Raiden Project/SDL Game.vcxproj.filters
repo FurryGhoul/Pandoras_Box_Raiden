@@ -106,9 +106,6 @@
     <ClCompile Include="ModuleFadeToBlack.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="ModuleEnemies.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
     <ClCompile Include="ModuleCollision.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
@@ -119,6 +116,9 @@
       <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="Tank.cpp">
+      <Filter>Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleEnemies.cpp">
       <Filter>Enemies</Filter>
     </ClCompile>
   </ItemGroup>
@@ -243,9 +243,6 @@
     <ClInclude Include="ModuleFadeToBlack.h">
       <Filter>Modules</Filter>
     </ClInclude>
-    <ClInclude Include="ModuleEnemies.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
     <ClInclude Include="ModuleCollision.h">
       <Filter>Modules</Filter>
     </ClInclude>
@@ -256,6 +253,9 @@
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="Tank.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleEnemies.h">
       <Filter>Enemies</Filter>
     </ClInclude>
   </ItemGroup>
