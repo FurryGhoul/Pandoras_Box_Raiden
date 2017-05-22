@@ -112,16 +112,13 @@
     <ClCompile Include="MissileUp.cpp">
       <Filter>PowerUps</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="ModuleEnemies.cpp">
       <Filter>Modules\Enemies</Filter>
     </ClCompile>
     <ClCompile Include="Enemy_Light_Shooter_Kamikaze.cpp">
       <Filter>Modules\Enemies</Filter>
-=======
     <ClCompile Include="ModuleGroundExplosion.cpp">
       <Filter>Modules</Filter>
->>>>>>> origin/master
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -249,16 +246,13 @@
     <ClInclude Include="MissileUp.h">
       <Filter>PowerUps</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="ModuleEnemies.h">
       <Filter>Modules\Enemies</Filter>
     </ClInclude>
     <ClInclude Include="Enemy_Light_Shooter_Kamikaze.h">
       <Filter>Modules\Enemies</Filter>
-=======
     <ClInclude Include="ModuleGroundExplosion.h">
       <Filter>Modules</Filter>
->>>>>>> origin/master
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
