@@ -18,6 +18,7 @@ public:
 	bool CleanUp();
 
 public:
+	bool setdown = false;
 	SDL_Rect ground;
 	SDL_Texture *Welcome;
 	int xmap = 0;

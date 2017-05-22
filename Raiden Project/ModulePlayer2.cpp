@@ -14,6 +14,7 @@
 #include "ModuleEnemies.h"
 #include "ModuleFonts.h"
 #include "ModulePowerUps.h"
+#include"ModuleWelcomeScreen.h"
 
 #include <stdio.h>
 
@@ -859,32 +860,20 @@ void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 			hiscore = score;
 		}
 
+		App->particles->AddParticle(App->particles->player_explosion, position.x, position.y, COLLIDER_NONE);
 		Disable();
 		position.x = 10000000;
 		position.y = 10000000;
 		Player->SetPos(10000000, 10000000);
 		deadplayer = true;
 		allowhiscore = true;
-		powerup_level = 0;
-		missile_powerup_level = 0;
-		red = true;
-	}
+     	}
 
 	if (Player != nullptr && Player == c1 && App->player->deadplayer && deadplayer && c2->type != COLLIDER_POWER_UP)
 	{
-
-		App->enemies->Disable();
-		App->powerups->Disable();
-		App->collision->Disable();
-		App->particles->Disable();
-		App->player->deadplayer = false;
-		deadplayer = false;
-		App->enemies->EraseEnemies();
-		App->powerups->ErasePowerUps();
-		App->particles->EraseParticles();
+ 
+		App->WelcomeScreen->setdown = true;
 		App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
-		powerup_level = 0;
-		missile_powerup_level = 0;
-		red = true;
+
 	}
 }
