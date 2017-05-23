@@ -16,6 +16,7 @@
 #include "ModuleFonts.h"
 #include "ModuleShadows.h"
 #include "ModuleStageClear1.h"
+#include "ModuleGroundExplosion.h"
 
 #include <stdio.h>
 
@@ -59,7 +60,7 @@ update_status ModuleMap1::Update()
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE,0, -300 );
 		App->enemies->AddEnemy(0, ENEMY_TYPES::MEGATANK, 500, -300);
 
-		/*
+		
 		// First street
 		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -900);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -1200);
@@ -273,7 +274,7 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 430, -10300);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 380, -10250);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 710, -10340);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 230, -10370);*/
+		App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 230, -10370);
 		
 		
 
@@ -337,6 +338,7 @@ update_status ModuleMap1::Update()
 		App->enemies->EraseEnemies();
 		App->powerups->ErasePowerUps();
 		App->particles->EraseParticles();
+		App->gexplosion->EraseParticles();
 		App->shadows->EraseShadows();
 		App->collision->Erase_Non_Player_Colliders();
 		App->player->powerup_level = 0;
