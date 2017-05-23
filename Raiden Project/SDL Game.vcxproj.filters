@@ -124,6 +124,9 @@
     <ClCompile Include="Enemy_Megatank.cpp">
       <Filter>Enemies</Filter>
     </ClCompile>
+    <ClCompile Include="Enemy_Boss_Kamikaze.cpp">
+      <Filter>Enemies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h">
@@ -262,6 +265,9 @@
       <Filter>Enemies</Filter>
     </ClInclude>
     <ClInclude Include="Enemy_Megatank.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy_Boss_Kamikaze.h">
       <Filter>Enemies</Filter>
     </ClInclude>
   </ItemGroup>

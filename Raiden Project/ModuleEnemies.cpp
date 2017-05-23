@@ -21,6 +21,7 @@
 #include "ModuleGroundExplosion.h"
 #include "Enemy_Light_Shooter_Kamikaze.h"
 #include "Enemy_Megatank.h"
+#include "Enemy_Boss_Kamikaze.h"
 #define SPAWN_MARGIN 100
 
 ModuleEnemies::ModuleEnemies()
@@ -197,6 +198,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::KAMIKAZE:
 			enemies[i] = new Enemy_Kamikaze(App->map_1->xmap + info.x, info.y, info._path);
+			break;
+		case ENEMY_TYPES::BOSSKAMIKAZE:
+			enemies[i] = new Enemy_Boss_Kamikaze(App->map_1->xmap + info.x, info.y, info._path);
 			break;
 		case ENEMY_TYPES::BONUS_SHIP:
 			enemies[i] = new Enemy_Bonus_Ship(App->map_1->xmap + info.x, info.y, info._path);

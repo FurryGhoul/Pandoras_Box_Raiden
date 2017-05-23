@@ -30,10 +30,10 @@ Enemy_Kamikaze::Enemy_Kamikaze(int x, int y, int path) : Enemy(x, y)
 	turn.PushBack({ 100, 98, 32, 32 });
 	turn.PushBack({ 133, 98, 32, 32 });
 
-	if (path == 0)
-	{
+	if (path == 0 || path == 1)
 		movement.PushBack({ 0.0f, 4.0f }, 200);
-	}
+	else if (path == 3) //No path for boss kamikazes
+		movement.PushBack({ 0.0f, 0.0f }, 0);
 
 	//Coming from right
 	turn1.PushBack({ 1, 138, 32, 32 });
@@ -47,7 +47,10 @@ Enemy_Kamikaze::Enemy_Kamikaze(int x, int y, int path) : Enemy(x, y)
 	animations = 1;
 	original_pos.x = x;
 	original_pos.y = -50;
-	animation = &turn;
+	if (path == 0)
+		animation = &turn;
+	else
+		animation = &turn1;
 }
 
 void Enemy_Kamikaze::MoveShoot()
