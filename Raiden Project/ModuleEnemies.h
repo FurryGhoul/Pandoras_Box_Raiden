@@ -18,6 +18,7 @@ enum ENEMY_TYPES
 	SHIP_TANK,
 	SHIP,
 	LONG_MEGATANK,
+	MEGATANK,
 	BOX_MEDAL,
 	BOX_POWERUP,
 	LIGHT_KAMIKAZE,
@@ -70,6 +71,7 @@ private:
 	SDL_Texture* sprites7;
 	SDL_Texture* sprites8;
 	SDL_Texture* sprites9;
+	SDL_Texture* sprites10;
 
 	
 };

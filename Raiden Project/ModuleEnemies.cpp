@@ -20,6 +20,7 @@
 #include "Enemy_Ship.h"
 #include "ModuleGroundExplosion.h"
 #include "Enemy_Light_Shooter_Kamikaze.h"
+#include "Enemy_Megatank.h"
 #define SPAWN_MARGIN 100
 
 ModuleEnemies::ModuleEnemies()
@@ -45,6 +46,7 @@ bool ModuleEnemies::Init()
 	sprites7 = App->textures->Load("assets/LongMegatank.png");
 	sprites8 = App->textures->Load("assets/Ship.png");
 	sprites9 = App->textures->Load("assets/Light Shooter Kamikaze.png");
+	sprites10 = App->textures->Load("assets/Megatank.png");
 	return true;
 }
 
@@ -112,6 +114,10 @@ update_status ModuleEnemies::Update()
 		   if (enemies[i]->spritesheet == 8) //Light Shooter Kamikaze
 		   {
 			   enemies[i]->Draw(sprites9);
+		   }
+		   if (enemies[i]->spritesheet == 9) //Megatank
+		   {
+			   enemies[i]->Draw(sprites10);
 		   }
         }
 	return UPDATE_CONTINUE;
@@ -209,6 +215,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::LONG_MEGATANK:
 			enemies[i] = new Enemy_Long_Megatank(App->map_1->xmap + info.x, info.y, info._path);
+			break;
+		case ENEMY_TYPES::MEGATANK:
+			enemies[i] = new Enemy_Megatank(App->map_1->xmap + info.x, info.y, info._path);
 			break;
 		case ENEMY_TYPES::BOX_MEDAL:
 			enemies[i] = new Box_Medal(App->map_1->xmap + info.x, info.y, info._path);

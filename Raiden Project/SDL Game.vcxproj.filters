@@ -121,6 +121,9 @@
     <ClCompile Include="ModuleEnemies.cpp">
       <Filter>Enemies</Filter>
     </ClCompile>
+    <ClCompile Include="Enemy_Megatank.cpp">
+      <Filter>Enemies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h">
@@ -256,6 +259,9 @@
       <Filter>Enemies</Filter>
     </ClInclude>
     <ClInclude Include="ModuleEnemies.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy_Megatank.h">
       <Filter>Enemies</Filter>
     </ClInclude>
   </ItemGroup>
