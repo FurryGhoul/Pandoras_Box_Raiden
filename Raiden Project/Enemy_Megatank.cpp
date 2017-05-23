@@ -11,7 +11,10 @@
 
 Enemy_Megatank::Enemy_Megatank(int x, int y, int path) : Enemy(x, y)
 {
-	spritesheet = 10;
+	hp = 30;
+	points = 1120;
+
+	spritesheet = 9;
 	animations = 1;
 	megatank = true;
 
@@ -19,16 +22,57 @@ Enemy_Megatank::Enemy_Megatank(int x, int y, int path) : Enemy(x, y)
 
 	spinning.PushBack({ 14,10,56,53 });
 	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
 	spinning.PushBack({ 71,10,56,53 });
 	spinning.PushBack({ 71,10,56,53 });
 	spinning.PushBack({ 128,10,56,53 });
 	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
 	spinning.PushBack({ 71,10,56,53 });
 	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	
 	spinning.loop = true;
-	spinning.speed = 0.5f;
+	spinning.speed = 1.0f;
 
-	movement.PushBack({ 0.0f, 4.0f }, 10000);
+	movement.PushBack({ 0.0f, 1.0f }, 10000);
 
 	collider = App->collision->AddCollider({ 0, 0, 48 * 3, 45 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
 
@@ -42,18 +86,20 @@ void Enemy_Megatank::MoveShoot()
 	w = 56 * 3;
 	h = 53 * 3;
 
+	collider->SetSize(w, h);
 
 	position = original_pos + movement.GetCurrentPosition();
 	position.x += left_right_mod;
 
 	++charge;
 
-	if (charge % 200 == 0)
+	/*if (charge % 200 == 0)
 	{
 		animation = &spinning;
-	}
-	else
-	{
-		animation = &idle;
-	}
+		spinning.Reset();
+	}*/
+	
+	animation = &spinning;
+
+	
 }
