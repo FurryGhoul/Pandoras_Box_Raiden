@@ -279,6 +279,11 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
  				enemies[i]->ishit = true;
 				enemies[i]->ishit2 = true;
 			}
+			if (enemies[i]->megatank)
+			{
+				enemies[i]->ishit = true;
+				enemies[i]->ishit2 = true;
+			}
 			
 
 			if (enemies[i]->hp < 0)

@@ -5,6 +5,7 @@ class Enemy_Megatank : public Enemy
 private:
 	Animation spinning;
 	Animation idle;
+	Animation hit;
 
 	fPoint original_pos;
 
