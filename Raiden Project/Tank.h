@@ -23,6 +23,7 @@ private:
 	Animation hitdowndiagonalright;
 	Animation hitupdiagonalright;
 	//Turret animations
+	Animation noturret;
 	Animation s;
 	Animation n;
 	Animation e;
@@ -62,6 +63,7 @@ private:
 	bool se = false;
 	bool nw = false;
 	bool sw = false;
+	bool turretalive = true;
 	int shooting = 0;
 	int time_controll = 0;
 	

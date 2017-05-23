@@ -41,6 +41,8 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	hitupdiagonalleft.PushBack({ 242, 95, 31, 29 });
 
 	//Turret animations
+	noturret.PushBack({ 1, 1, 1, 1 });
+
 	s.PushBack({ 3, 44, 38, 34 });
 	hits.PushBack({ 4, 135, 38, 34 });
 	
@@ -351,274 +353,282 @@ void Tank::MoveShoot()
 		position1.y = position.y + h / 2;
 	}
 	
-
-
-	//Animation of the turret
-	param = (fabs(distance.y) / (fabs(distance.x) + 0.1));
-	angle = atan(param) * 180 / PI;
-
-	// South-East position
-	if (distance.y > 0 && distance.x > 0)
+	if (hp < 2)
 	{
-		se = true;
-	}
-	else
-	{
-		se = false;
+		turretalive = false;
+		animation1 = &noturret;
 	}
 
-	// South-West position
-	if (distance.y > 0 && distance.x < 0)
+	if (turretalive == true)
 	{
-		sw = true;
-	}
-	else
-	{
-		sw = false;
-	}
 
-	// North-East position
-	if (distance.y < 0 && distance.x > 0)
-	{
-		ne = true;
-	}
-	else
-	{
-		ne = false;
-	}
+		//Animation of the turret
+		param = (fabs(distance.y) / (fabs(distance.x) + 0.1));
+		angle = atan(param) * 180 / PI;
 
-	// North-West position
-	if (distance.y < 0 && distance.x < 0)
-	{
-		nw = true;
-	}
-	else
-	{
-		nw = false;
-	}
+		// South-East position
+		if (distance.y > 0 && distance.x > 0)
+		{
+			se = true;
+		}
+		else
+		{
+			se = false;
+		}
 
-	// Applying animation
+		// South-West position
+		if (distance.y > 0 && distance.x < 0)
+		{
+			sw = true;
+		}
+		else
+		{
+			sw = false;
+		}
 
-	w1 = 38 * 3;
-	h1 = 34 * 3;
-	position1.x -= 19 * 3;
-	position1.y -= 17 * 3;
+		// North-East position
+		if (distance.y < 0 && distance.x > 0)
+		{
+			ne = true;
+		}
+		else
+		{
+			ne = false;
+		}
 
-	// South to East
-	if (se && angle >= 72 && angle <= 90) // Good
-	{
-		animation1 = &s;
- 		if (ishit2 == true)
+		// North-West position
+		if (distance.y < 0 && distance.x < 0)
 		{
- 			animation1 = &hits;
-			ishit2 = false;
+			nw = true;
 		}
-	}
-	if (se && angle >= 54 && angle <= 72) //Good
-	{
-		animation1 = &se1;
-		if (ishit2 == true)
+		else
 		{
-			animation1 = &hitse1;
-			ishit2 = false;
+			nw = false;
 		}
-	}
-	if (se && angle >= 36 && angle <= 54) // Good
-	{
-		animation1 = &se2;
-		if (ishit2 == true)
-		{
-			animation1 = &hitse2;
-			ishit2 = false;
-		}
-	}
-	
-	if (se && angle >= 18 && angle <= 36) //Good
-	{
-		animation1 = &se3;
-		if (ishit2 == true)
-		{
-			animation1 = &hitse3;
-			ishit2 = false;
-		}
-	}
-	
-	if (se && angle >= 0 && angle <= 18) // Good
-	{
-		animation1 = &e;
-		if (ishit2 == true)
-		{
-			animation1 = &hite;
-			ishit2 = false;
-		}
-	}
 
-	// East to North
-	if (ne && angle >= 0 && angle <= 18) //Good
-	{
-		animation1 = &e;
-		if (ishit2 == true)
-		{
-			animation1 = &hite;
-			ishit2 = false;
-		}
-	}
-	if (ne && angle >= 18 && angle <= 36) // Good
-	{
-		animation1 = &ne1;
-		if (ishit2 == true)
-		{
-			animation1 = &hitne1;
-			ishit2 = false;
-		}
-	}
-	if (ne && angle >= 36 && angle <= 54) //Good
-	{
-		animation1 = &ne2;
-		if (ishit2 == true)
-		{
-			animation1 = &hitne2;
-			ishit2 = false;
-		}
-	}
-	if (ne && angle >= 54 && angle <= 72) //Good
-	{
-		animation1 = &ne3;
-		if (ishit2 == true)
-		{
-			animation1 = &hitne3;
-			ishit2 = false;
-		}
-	}
-	if (ne && angle >= 72 && angle <= 90) //Good
-	{
-		animation1 = &n;
-		if (ishit2 == true)
-		{
-			animation1 = &hitn;
-			ishit2 = false;
-		}
-	}
+		// Applying animation
 
-	// North to West
-	if (nw && angle >= 72 && angle <= 90) //Good
-	{
-		animation1 = &n;
-		if (ishit2 == true)
-		{
-			animation1 = &hitn;
-			ishit2 = false;
-		}
-	}
-	if (nw && angle >= 54 && angle <= 72) // Good
-	{
-		animation1 = &nw1;
-		if (ishit2 == true)
-		{
-			animation1 = &hitnw1;
-			ishit2 = false;
-		}
-	}
-	if (nw && angle >= 36 && angle <= 54) //Good
-	{
-		animation1 = &nw2;
-		if (ishit2 == true)
-		{
-			animation1 = &hitnw2;
-			ishit2 = false;
-		}
-	}
-	if (nw && angle >= 18 && angle <= 36) //Good
-	{
-		animation1 = &nw3;
-		if (ishit2 == true)
-		{
-			animation1 = &hitnw3;
-			ishit2 = false;
-		}
-	}
-	if (nw && angle >= 0 && angle <= 18) // Good
-	{
-		animation1 = &w11;
-		if (ishit2 == true)
-		{
-			animation1 = &hitw11;
-			ishit2 = false;
-		}
-	}
+		w1 = 38 * 3;
+		h1 = 34 * 3;
+		position1.x -= 19 * 3;
+		position1.y -= 17 * 3;
 
-	// West to South
-	if (sw && angle >= 0 && angle <= 18) //Good
-	{
-		animation1 = &w11;
-		if (ishit2 == true)
+		// South to East
+		if (se && angle >= 72 && angle <= 90) // Good
 		{
-			animation1 = &hitw11;
-			ishit2 = false;
+			animation1 = &s;
+			if (ishit2 == true)
+			{
+				animation1 = &hits;
+				ishit2 = false;
+			}
 		}
-	}
-	if (sw && angle >= 18 && angle <= 36) // Good
-	{
-		animation1 = &sw1;
-		if (ishit2 == true)
+		if (se && angle >= 54 && angle <= 72) //Good
 		{
-			animation1 = &hitsw1;
-			ishit2 = false;
+			animation1 = &se1;
+			if (ishit2 == true)
+			{
+				animation1 = &hitse1;
+				ishit2 = false;
+			}
 		}
-	}
-	if (sw && angle >= 36 && angle <= 54) //Good
-	{
-		animation1 = &sw2;
-		if (ishit2 == true)
+		if (se && angle >= 36 && angle <= 54) // Good
 		{
-			animation1 = &hitsw2;
-			ishit2 = false;
+			animation1 = &se2;
+			if (ishit2 == true)
+			{
+				animation1 = &hitse2;
+				ishit2 = false;
+			}
 		}
-	}
-	
-	if (sw && angle >= 54 && angle <= 72) //Good
-	{
-		animation1 = &sw3;
-		if (ishit2 == true)
+
+		if (se && angle >= 18 && angle <= 36) //Good
 		{
-			animation1 = &hitsw3;
-			ishit2 = false;
+			animation1 = &se3;
+			if (ishit2 == true)
+			{
+				animation1 = &hitse3;
+				ishit2 = false;
+			}
 		}
-	}
-	if (sw && angle >= 72 && angle <= 90) //Good
-	{
-		animation1 = &s;
-		if (ishit2 == true)
+
+		if (se && angle >= 0 && angle <= 18) // Good
 		{
-			animation1 = &hits;
-			ishit2 = false;
+			animation1 = &e;
+			if (ishit2 == true)
+			{
+				animation1 = &hite;
+				ishit2 = false;
+			}
 		}
-	}
+
+		// East to North
+		if (ne && angle >= 0 && angle <= 18) //Good
+		{
+			animation1 = &e;
+			if (ishit2 == true)
+			{
+				animation1 = &hite;
+				ishit2 = false;
+			}
+		}
+		if (ne && angle >= 18 && angle <= 36) // Good
+		{
+			animation1 = &ne1;
+			if (ishit2 == true)
+			{
+				animation1 = &hitne1;
+				ishit2 = false;
+			}
+		}
+		if (ne && angle >= 36 && angle <= 54) //Good
+		{
+			animation1 = &ne2;
+			if (ishit2 == true)
+			{
+				animation1 = &hitne2;
+				ishit2 = false;
+			}
+		}
+		if (ne && angle >= 54 && angle <= 72) //Good
+		{
+			animation1 = &ne3;
+			if (ishit2 == true)
+			{
+				animation1 = &hitne3;
+				ishit2 = false;
+			}
+		}
+		if (ne && angle >= 72 && angle <= 90) //Good
+		{
+			animation1 = &n;
+			if (ishit2 == true)
+			{
+				animation1 = &hitn;
+				ishit2 = false;
+			}
+		}
+
+		// North to West
+		if (nw && angle >= 72 && angle <= 90) //Good
+		{
+			animation1 = &n;
+			if (ishit2 == true)
+			{
+				animation1 = &hitn;
+				ishit2 = false;
+			}
+		}
+		if (nw && angle >= 54 && angle <= 72) // Good
+		{
+			animation1 = &nw1;
+			if (ishit2 == true)
+			{
+				animation1 = &hitnw1;
+				ishit2 = false;
+			}
+		}
+		if (nw && angle >= 36 && angle <= 54) //Good
+		{
+			animation1 = &nw2;
+			if (ishit2 == true)
+			{
+				animation1 = &hitnw2;
+				ishit2 = false;
+			}
+		}
+		if (nw && angle >= 18 && angle <= 36) //Good
+		{
+			animation1 = &nw3;
+			if (ishit2 == true)
+			{
+				animation1 = &hitnw3;
+				ishit2 = false;
+			}
+		}
+		if (nw && angle >= 0 && angle <= 18) // Good
+		{
+			animation1 = &w11;
+			if (ishit2 == true)
+			{
+				animation1 = &hitw11;
+				ishit2 = false;
+			}
+		}
+
+		// West to South
+		if (sw && angle >= 0 && angle <= 18) //Good
+		{
+			animation1 = &w11;
+			if (ishit2 == true)
+			{
+				animation1 = &hitw11;
+				ishit2 = false;
+			}
+		}
+		if (sw && angle >= 18 && angle <= 36) // Good
+		{
+			animation1 = &sw1;
+			if (ishit2 == true)
+			{
+				animation1 = &hitsw1;
+				ishit2 = false;
+			}
+		}
+		if (sw && angle >= 36 && angle <= 54) //Good
+		{
+			animation1 = &sw2;
+			if (ishit2 == true)
+			{
+				animation1 = &hitsw2;
+				ishit2 = false;
+			}
+		}
+
+		if (sw && angle >= 54 && angle <= 72) //Good
+		{
+			animation1 = &sw3;
+			if (ishit2 == true)
+			{
+				animation1 = &hitsw3;
+				ishit2 = false;
+			}
+		}
+		if (sw && angle >= 72 && angle <= 90) //Good
+		{
+			animation1 = &s;
+			if (ishit2 == true)
+			{
+				animation1 = &hits;
+				ishit2 = false;
+			}
+		}
 
 
 
-	distance.x = fabs(distance.x);
-	distance.y = fabs(distance.y);
-	// Shooting
-	time_controll++;
-	if (time_controll % 100 == 0)
-		
-{ 
+		distance.x = fabs(distance.x);
+		distance.y = fabs(distance.y);
+		// Shooting
+		time_controll++;
+		if (time_controll % 100 == 0)
 
-	distance.x *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
-	distance.y *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+		{
 
-	if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && position.y <= 760)
-	{
-        if (App->player->position.y < (position.y))
-		{
-			distance.y *= -1;
+			distance.x *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+			distance.y *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+
+			if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 500 && position.y <= 760)
+			{
+				if (App->player->position.y < (position.y))
+				{
+					distance.y *= -1;
+				}
+				if (App->player->position.x < (position.x))
+				{
+					distance.x *= -1;
+				}
+				App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2, position.y + h / 2, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+			}
 		}
-		if (App->player->position.x < (position.x))
-		{
-			distance.x *= -1;
-		}
-		App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2, position.y + h / 2, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
 	}
-}
 }

@@ -58,6 +58,7 @@ update_status ModuleMap1::Update()
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::LONG_MEGATANK, 240 * 3, -300);
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE,0, -300 );
 		App->enemies->AddEnemy(0, ENEMY_TYPES::MEGATANK, 500, -300);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 400, -300);
 
 		/*
 		// First street
