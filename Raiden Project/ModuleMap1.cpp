@@ -308,7 +308,7 @@ update_status ModuleMap1::Update()
 		yroad += (yscrollspeed * 1.5);
 		App->render->camera.y -= 1;
 
-		if (yroad >= -4200)
+		if (yroad >= -4350)
 		{
 			road1 = true;
 		}
@@ -322,11 +322,11 @@ update_status ModuleMap1::Update()
 
 	if ((App->input->keyboard[SDL_SCANCODE_BACKSPACE] && !App->input->gpad) || (App->input->gamepad[12] && App->input->gpad))
 	{
-		won = true;
+		//won = true;
 
 		//faster scrolling (comment "won = true;" first)
-		//ymap += yscrollspeed * 50;
-		//yroad += ((yscrollspeed * 1.5) * 50);
+		ymap += yscrollspeed * 50;
+		yroad += ((yscrollspeed * 1.5) * 50);
 	}
 
 	if ( ymap >= 0 || won)
