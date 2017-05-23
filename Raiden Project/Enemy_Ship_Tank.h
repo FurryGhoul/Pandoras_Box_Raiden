@@ -78,7 +78,7 @@ private:
 	bool se = false;
 	bool nw = false;
 	bool sw = false;
-	bool turretalive = true;
+	bool turretalive = true; // Bool to see if the turret is still alive
 	int shooting = 0;
 	int time_controll = 0;
 	int water = 0;

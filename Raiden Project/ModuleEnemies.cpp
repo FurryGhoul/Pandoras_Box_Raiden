@@ -298,6 +298,20 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				enemies[i]->hp = 0;
 			}
 
+			if (enemies[i]->hp == 1)
+			{
+				if (enemies[i]->tank && enemies[i]->turretexploded == false)
+				{
+					App->gexplosion->AddGroundExplosion(App->gexplosion->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+					enemies[i]->turretexploded == true;
+				}
+				else if (enemies[i]->shiptank && enemies[i]->turretexploded == false)
+				{
+					App->gexplosion->AddGroundExplosion(App->gexplosion->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+					enemies[i]->turretexploded == true;
+				}
+			}
+
 			if (enemies[i]->hp <= 0)
 			{
 				if (c2->bullettype == 1)

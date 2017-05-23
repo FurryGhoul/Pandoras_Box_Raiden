@@ -93,7 +93,7 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 
 	
 	original_pos.x = x;
-	original_pos.y = -50;
+	original_pos.y = -100;
 
 	//Paths (there should be more than one path and an integer to select what path to use
 	/*Instructions for pathing the enemies:  
