@@ -21,7 +21,6 @@
 #include "ModuleGroundExplosion.h"
 #include "Enemy_Light_Shooter_Kamikaze.h"
 #include "Enemy_Megatank.h"
-#include "Enemy_Boss_Kamikaze.h"
 #define SPAWN_MARGIN 100
 
 ModuleEnemies::ModuleEnemies()
@@ -199,9 +198,6 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		case ENEMY_TYPES::KAMIKAZE:
 			enemies[i] = new Enemy_Kamikaze(App->map_1->xmap + info.x, info.y, info._path);
 			break;
-		case ENEMY_TYPES::BOSSKAMIKAZE:
-			enemies[i] = new Enemy_Boss_Kamikaze(App->map_1->xmap + info.x, info.y, info._path);
-			break;
 		case ENEMY_TYPES::BONUS_SHIP:
 			enemies[i] = new Enemy_Bonus_Ship(App->map_1->xmap + info.x, info.y, info._path);
 			break;
@@ -328,7 +324,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 					App->player2->score += enemies[i]->points;
 				}
 
-				if (enemies[i]->lightshooter)
+				if (enemies[i]->lightshooter || enemies[i]->kamikaze)
 				{ 
 				  App->particles->AddParticle(App->particles->explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
                 }

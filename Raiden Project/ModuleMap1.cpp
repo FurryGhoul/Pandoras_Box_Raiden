@@ -130,6 +130,11 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 850, -9100);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 750, -9300);
 
+		App->enemies->AddEnemy(2, ENEMY_TYPES::KAMIKAZE, 200, -100);
+		App->enemies->AddEnemy(2, ENEMY_TYPES::KAMIKAZE, 100, -200);
+		App->enemies->AddEnemy(2, ENEMY_TYPES::KAMIKAZE, 200, -300);
+		App->enemies->AddEnemy(2, ENEMY_TYPES::KAMIKAZE, 300, -400);
+
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -6000);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 750, -6000);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 250, -6000);

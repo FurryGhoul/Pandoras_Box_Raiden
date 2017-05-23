@@ -76,7 +76,6 @@
     <ClInclude Include="Box_PowerUp.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Enemy_Bonus_Ship.h" />
-    <ClInclude Include="Enemy_Boss_Kamikaze.h" />
     <ClInclude Include="Enemy_Kamikaze.h" />
     <ClInclude Include="Enemy_Light_Shooter.h" />
     <ClInclude Include="Enemy_Long_Megatank.h" />
@@ -124,7 +123,6 @@
     <ClCompile Include="BlueUp.cpp" />
     <ClCompile Include="Box_PowerUp.cpp" />
     <ClCompile Include="Enemy_Bonus_Ship.cpp" />
-    <ClCompile Include="Enemy_Boss_Kamikaze.cpp" />
     <ClCompile Include="Enemy_Kamikaze.cpp" />
     <ClCompile Include="Enemy_Light_Shooter.cpp" />
     <ClCompile Include="Enemy_Long_Megatank.cpp" />
