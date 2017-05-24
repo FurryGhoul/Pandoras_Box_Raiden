@@ -94,7 +94,7 @@ Enemy_Long_Megatank::Enemy_Long_Megatank(int x, int y, int path) : Enemy(x, y)
 	transformation4.loop = false;
 	transformation4.speed = 0.5f;
 
-	hittransformation2.PushBack({ 582,413,81,53 });
+	hittransformation4.PushBack({ 582,413,81,53 });
 
 	finalform.PushBack({ 336, 413, 81, 53 });
 	finalform.PushBack({ 336, 413, 81, 53 });
@@ -109,7 +109,7 @@ Enemy_Long_Megatank::Enemy_Long_Megatank(int x, int y, int path) : Enemy(x, y)
 	finalform.PushBack({ 336, 471, 81, 53 });
 	finalform.PushBack({ 336, 471, 81, 53 });
 
-	hittransformation2.PushBack({ 664,471,81,53 });
+	
 
 	stop.PushBack({ 336, 471, 81, 53 });
 
