@@ -61,6 +61,7 @@ public:
 	bool shiptank = false; //Boolena to detect if the enemy is a ship tank
 	bool megatank = false;
 	bool turretexploded = false; // Bool to know if a tank's turret has already exploded or not
+	bool greytank = false;
 
 public:
 	Enemy(int x, int y);

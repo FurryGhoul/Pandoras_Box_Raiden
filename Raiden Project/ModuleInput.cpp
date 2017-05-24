@@ -301,6 +301,7 @@ update_status ModuleInput::Update()
 			}
 		}
 
+
 		if ((keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT && !gpad) || (joystickpos[4]  == KEY_STATE::KEY_REPEAT && gpad))
 		{
 			if (App->player2->deadplayer)
