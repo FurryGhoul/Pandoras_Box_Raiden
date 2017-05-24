@@ -78,7 +78,7 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -1300);
 		// Light Kamikazes
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -1340);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 352 * 3, -1340);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -1340);
 		//Vertical tanks
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -1600);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -1700);
@@ -88,10 +88,10 @@ update_status ModuleMap1::Update()
 		//Third street
 		// Light kamikazes
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -2000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 352 * 3, -2000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 352 * 3, -2100);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -2000);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -2100);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -2200);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 352 * 3, -2300);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -2300);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -2400);
 	    // Horizontal tanks
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -2300);
@@ -106,7 +106,26 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 500, -2400);
 		App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 400, -2430);
 
+		// Pool
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -2700);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -2700);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -2740);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -2740);
 
+		//Building after pool
+		//Perfect trio
+		App->enemies->AddEnemy(2, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -3320);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -3350);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -3380);
+
+		App->enemies->AddEnemy(2, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -3420);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -3450);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -3480);
+
+		App->enemies->AddEnemy(2, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -3620);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -3650);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -3680);
+	
 
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 450, 500);

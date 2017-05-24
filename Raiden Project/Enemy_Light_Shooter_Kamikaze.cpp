@@ -52,7 +52,14 @@ Light_Shooter_Kamikaze::Light_Shooter_Kamikaze(int x, int y, int path, bool pcom
 	if (path == 0)
 	{
 	position.y = original_pos.y = 100;
-
+	}
+	if (path == 1)
+	{
+		position.y = original_pos.y = 150;
+	}
+	if (path == 2)
+	{
+		position.y = original_pos.y = 200;
 	}
 }
 
@@ -258,7 +265,7 @@ if (!close)
 	}
 }
    //Movement
-	if (SDL_GetTicks() - time < 1800)
+	if (SDL_GetTicks() - time < 1600)
 	{
 		if (come_right)
 		{ 

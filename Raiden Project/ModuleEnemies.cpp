@@ -235,7 +235,7 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			{
 				come_right = false;
 			}
-			enemies[i] = new Light_Shooter_Kamikaze(App->map_1->xmap + info.x, info.y, info._path, come_right);
+			enemies[i] = new Light_Shooter_Kamikaze(info.x, info.y, info._path, come_right);
 			break;
 		}
 	}
