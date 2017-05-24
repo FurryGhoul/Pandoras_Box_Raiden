@@ -20,7 +20,7 @@ Enemy_Megatank::Enemy_Megatank(int x, int y, int path) : Enemy(x, y)
 
 	idle.PushBack({ 71,10,56,53 });
 
-	hit.PushBack({ 185, 10, 56, 53 });
+	hit.PushBack({ 242, 10, 56, 53 });
 
 	spinning.PushBack({ 14,10,56,53 });
 	spinning.PushBack({ 14,10,56,53 });
@@ -70,9 +70,30 @@ Enemy_Megatank::Enemy_Megatank(int x, int y, int path) : Enemy(x, y)
 	spinning.PushBack({ 71,10,56,53 });
 	spinning.PushBack({ 71,10,56,53 });
 	spinning.PushBack({ 71,10,56,53 });
-	
+
 	spinning.loop = true;
 	spinning.speed = 1.0f;
+	//DECELERATION
+	decelaration.PushBack({ 14,10,56,53 });
+	decelaration.PushBack({ 14,10,56,53 });
+	decelaration.PushBack({ 14,10,56,53 });
+	decelaration.PushBack({ 14,10,56,53 });
+	decelaration.PushBack({ 71,10,56,53 });
+	decelaration.PushBack({ 71,10,56,53 });
+	decelaration.PushBack({ 71,10,56,53 });
+	decelaration.PushBack({ 71,10,56,53 });
+	decelaration.PushBack({ 128,10,56,53 });
+	decelaration.PushBack({ 128,10,56,53 });
+	decelaration.PushBack({ 128,10,56,53 });
+	decelaration.PushBack({ 128,10,56,53 });
+	decelaration.PushBack({ 71,10,56,53 });
+	decelaration.PushBack({ 71,10,56,53 });
+
+	
+	decelaration.loop = false;
+	decelaration.speed = 0.5f;
+	
+	
 
 	movement.PushBack({ 0.0f, 1.0f }, 10000);
 
@@ -95,13 +116,48 @@ void Enemy_Megatank::MoveShoot()
 
 	++charge;
 
-	/*if (charge % 200 == 0)
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f)
 	{
 		animation = &spinning;
-		spinning.Reset();
-	}*/
+		/*if (slow == false)
+		{
+			animation = &spinning;
+			if (spinning.Finished() == true)
+			{
+				spinning.Reset();
+				slow = true;
+			}
+		}
+
+		if (slow == true)
+		{
+			animation = &decelaration;
+			if (decelaration.Finished() == true)
+			{
+				animation = &spinning;
+				
+			}
+		}*/
+		
+		/*animation = &spinning;
+		if (spinning.Finished() == true)
+		{
+			animation = &decelaration;
+			spinning.Reset();
+			if (decelaration.Finished() == true)
+			{
+				animation = &spinning;
+				decelaration.Reset();
+				if (spinning.Finished() == true)
+				{
+					animation = &decelaration;
+				}
+			}
+		}*/
 	
-	animation = &spinning;
+
+	}
+	
 
 	if (ishit == true)
 	{
