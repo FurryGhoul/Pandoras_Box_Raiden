@@ -332,12 +332,12 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			{
 				if (enemies[i]->tank && enemies[i]->turretexploded == false)
 				{
-					App->gexplosion->AddGroundExplosion(App->gexplosion->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+					App->particles->AddParticle(App->particles->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
 					enemies[i]->turretexploded == true;
 				}
 				else if (enemies[i]->shiptank && enemies[i]->turretexploded == false)
 				{
-					App->gexplosion->AddGroundExplosion(App->gexplosion->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+					App->particles->AddParticle(App->particles->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
 					enemies[i]->turretexploded == true;
 				}
 			}
@@ -354,7 +354,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 					App->player2->score += enemies[i]->points;
 				}
 
-				if (enemies[i]->lightshooter || enemies[i]->kamikaze)
+				if (enemies[i]->lightshooter || enemies[i]->kamikaze || enemies[i]->light_kamikaze)
 				{ 
 				  App->particles->AddParticle(App->particles->explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
                 }

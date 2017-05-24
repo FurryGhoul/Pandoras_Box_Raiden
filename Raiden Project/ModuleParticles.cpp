@@ -399,6 +399,26 @@ bool ModuleParticles::Init()
 	bombexplosion2.size.y = 154 * 3;
 
 
+	//Ship_Tank explosion
+	shiptank_explosion.spritesheet = 1;
+	shiptank_explosion.anim.PushBack({ 4, 2, 29, 27 });
+	shiptank_explosion.anim.PushBack({ 35, 2, 28, 26 });
+	shiptank_explosion.anim.PushBack({ 65, 2, 28, 27 });
+	shiptank_explosion.anim.PushBack({ 92, 1, 31, 28 });
+	shiptank_explosion.anim.PushBack({ 125, 1, 31, 28 });
+	shiptank_explosion.anim.PushBack({ 160, 1, 31, 28 });
+	shiptank_explosion.anim.PushBack({ 199, 2, 31, 28 });
+	shiptank_explosion.anim.PushBack({ 234, 2, 31, 28 });
+	shiptank_explosion.anim.PushBack({ 269, 2, 31, 28 });
+	shiptank_explosion.anim.PushBack({ 304, 4, 31, 28 });
+	shiptank_explosion.anim.PushBack({ 1, 1, 1, 1 });
+
+	shiptank_explosion.speed.y = 1;
+	shiptank_explosion.anim.loop = false;
+	shiptank_explosion.anim.speed = 0.3f;
+	shiptank_explosion.life = 100000;
+	shiptank_explosion.size.x = 31 * 3;
+	shiptank_explosion.size.y = 28 * 3;
 
 
 	//Player explosion
