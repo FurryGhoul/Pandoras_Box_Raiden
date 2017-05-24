@@ -63,6 +63,14 @@ Enemy_Boss_Main::Enemy_Boss_Main(int x, int y, int path) : Enemy(x, y)
 	movement.PushBack({ 0.0f, 2.0f }, 60);
 	movement.loop = true;
 
+	//Kamikazes info
+	//Kamikaze 1
+	//Kamikaze 2
+	//kamikaze2.type = ENEMY_TYPES::KAMIKAZE;
+	//kamikaze2.x = (position.x - 0);
+	//kamikaze2.y = 1;
+	//kamikaze2._path = 2;
+
 	w = 96 * 3;
 	h = 53 * 3;
 	collider = App->collision->AddCollider({ 0, 0, w, h }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);

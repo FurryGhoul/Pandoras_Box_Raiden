@@ -56,7 +56,7 @@ Enemy_Kamikaze::Enemy_Kamikaze(int x, int y, int path) : Enemy(x, y)
 	turn1.PushBack({ 100, 138, 32, 32 });
 	turn1.PushBack({ 133, 138, 32, 32 });
 
-	if (path == 0 || path == 1)
+	if (path == 0 || path == 9)
 	{
 		collider = App->collision->AddCollider({ 0, 0, 24 * 3 - 5, 24 * 3 + 20 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 		movement.PushBack({ 0.0f, 4.0f }, 200);
@@ -78,7 +78,7 @@ Enemy_Kamikaze::Enemy_Kamikaze(int x, int y, int path) : Enemy(x, y)
 
 	if (path == 0)
 		animation = &turn;
-	else if (path == 1)
+	else if (path == 9)
 		animation = &turn1;
 	else if (path == 2)
 		animation = &deploying;
