@@ -301,10 +301,11 @@ if (!close)
 
 		
 		
-		if(sqrtf(distance.y* distance.y + distance.x*distance.x)> 150 && !close)
+		if(sqrtf(distance.y* distance.y + distance.x*distance.x)> 150 && !close || !once)
 		{ 
 		    vector.x = distance.x * (5 / sqrtf(distance.x*distance.x + distance.y*distance.y));
 	        vector.y = distance.y * (5 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+			once = true;
 		
 		}
 		else

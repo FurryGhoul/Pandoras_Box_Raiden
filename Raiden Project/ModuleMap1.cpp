@@ -129,6 +129,14 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(2, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -3620);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -3650);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -3680);
+
+		App->enemies->AddEnemy(2, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -3920);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -3950);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -3980);
+
+		App->enemies->AddEnemy(2, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -4020);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -4050);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -4080);
 	
 
 

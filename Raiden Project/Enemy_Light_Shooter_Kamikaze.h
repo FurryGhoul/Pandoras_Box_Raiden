@@ -36,6 +36,7 @@ private:
 	bool get_vector;
 	fPoint vector;
 	int follow_time;
+	bool once = false;
 	bool follow_time_got;
 	bool close;
 	bool come_right;
