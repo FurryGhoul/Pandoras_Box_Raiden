@@ -82,6 +82,22 @@ Light_Shooter_Kamikaze::Light_Shooter_Kamikaze(int x, int y, int path, bool pcom
 	{
 		position.y = original_pos.y = 450;
 	}
+	if (path == 8)
+	{
+		position.y = original_pos.y = 500;
+	}
+	if (path == 9)
+	{
+		position.y = original_pos.y = 550;
+	}
+	if (path == 10)
+	{
+		position.y = original_pos.y = 600;
+	}
+	if (path == 11)
+	{
+		position.y = original_pos.y = 650;
+	}
 }
 
 

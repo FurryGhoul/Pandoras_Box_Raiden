@@ -142,9 +142,8 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -4250);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -4280);
 	
-		//Light kamizaze orgy
+		//Light kamizaze orgy 1
 		//Left
-
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -4500);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -4530);
 		App->enemies->AddEnemy(2, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -4560);
@@ -162,6 +161,23 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(5, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -4650);
 		App->enemies->AddEnemy(6, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -4680);
 		App->enemies->AddEnemy(7, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -4710);
+
+		//Light kamikaze orgy 2
+		//Left
+		App->enemies->AddEnemy(8, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -4760);
+		App->enemies->AddEnemy(9, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -4790);
+		App->enemies->AddEnemy(10, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -4820);
+		App->enemies->AddEnemy(11, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -4850);
+		//Right
+		App->enemies->AddEnemy(8, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -4760);
+		App->enemies->AddEnemy(9, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -4790);
+		App->enemies->AddEnemy(10, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -4820);
+		App->enemies->AddEnemy(11, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -4850);
+
+		// Lat two kamikazes
+
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -5000);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -5000);
 
 
 
@@ -394,7 +410,7 @@ update_status ModuleMap1::Update()
 	if (App->input->keyboard[SDL_SCANCODE_Z])
 	{
 		ymap += yscrollspeed * 10;
-		yroad += (yscrollspeed * 1.5) * 10;
+		yroad += ((yscrollspeed* 10) * 1.5) ;
 		App->render->camera.y -= 1 * 10;
 	}
 
