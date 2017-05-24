@@ -90,6 +90,8 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 352 * 3, -2000);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 352 * 3, -2100);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -2200);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 352 * 3, -2300);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -2400);
 	    // Horizontal tanks
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -2300);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -1880);
