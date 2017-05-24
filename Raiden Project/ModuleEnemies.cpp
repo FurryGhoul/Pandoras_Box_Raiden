@@ -226,7 +226,16 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			enemies[i] = new Box_PowerUp(App->map_1->xmap + info.x, info.y, info._path);
 			break;
 		case ENEMY_TYPES::LIGHT_KAMIKAZE:
-			enemies[i] = new Light_Shooter_Kamikaze(App->map_1->xmap + info.x, info.y, info._path);
+			bool come_right;
+			if (info.x < 500)
+			{
+				come_right = true;
+			}
+			else
+			{
+				come_right = false;
+			}
+			enemies[i] = new Light_Shooter_Kamikaze(App->map_1->xmap + info.x, info.y, info._path, come_right);
 			break;
 		}
 	}

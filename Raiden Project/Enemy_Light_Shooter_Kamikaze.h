@@ -1,5 +1,6 @@
 #pragma once
 #include "Enemy.h"
+//	YOU SHOULD ONLY SPAWN KAMIKAZES IN X 0 OR X 352*3. Depending on the path you can decide the Y
 class Light_Shooter_Kamikaze : public Enemy
 {
 private:
@@ -37,8 +38,9 @@ private:
 	int follow_time;
 	bool follow_time_got;
 	bool close;
+	bool come_right;
 public:
-	Light_Shooter_Kamikaze(int x, int y, int path);
+	Light_Shooter_Kamikaze(int x, int y, int path, bool pcome_right);
 	void MoveShoot();
 };
 

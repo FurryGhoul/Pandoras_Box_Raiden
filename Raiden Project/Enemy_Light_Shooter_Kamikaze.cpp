@@ -10,7 +10,7 @@
 #define PI 3.14159265
 
 
-Light_Shooter_Kamikaze::Light_Shooter_Kamikaze(int x, int y, int path) : Enemy(x, y)
+Light_Shooter_Kamikaze::Light_Shooter_Kamikaze(int x, int y, int path, bool pcome_right) : Enemy(x, y)
 {
 	hp = 1;
 	points = 130;
@@ -43,6 +43,9 @@ Light_Shooter_Kamikaze::Light_Shooter_Kamikaze(int x, int y, int path) : Enemy(x
 	collider = App->collision->AddCollider({ 0, 0, 25 * 3 - 5, 25 * 3 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 	spritesheet = 8;
 	animations = 1;
+
+
+	come_right = pcome_right;
 	position.x =original_pos.x = x;
 
 	position.y= original_pos.y = 100;
@@ -257,8 +260,17 @@ if (!close)
    //Movement
 	if (SDL_GetTicks() - time < 1800)
 	{
+		if (come_right)
+		{ 
 		position.x += 3;
 		animation = &flye;
+		}
+		else
+		{
+		position.x -= 3;
+		animation = &flyw;
+		}
+		
 		w = 20 * 3;
 		h = 23 * 3;
 	
