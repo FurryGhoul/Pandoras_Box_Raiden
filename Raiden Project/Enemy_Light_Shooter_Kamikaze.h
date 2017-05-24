@@ -35,11 +35,19 @@ private:
 	bool time_got = false;
 	bool get_vector;
 	fPoint vector;
-	int follow_time;
-	bool once = false;
-	bool follow_time_got;
-	bool close;
-	bool come_right;
+
+	bool once = false; //vector has to be taken at least one
+	
+	bool close; //The enemy is close to the player
+	bool come_right; //the enemy goes to the right
+	bool anim_calculated = false; //just calculate animation once
+	int anim_chill = 0;
+	bool clock = false;
+	Animation* pclock[16]; //array of animations in clock order
+	bool spining = false;
+	int anim_difference = 0; // number of animations needed to get to animation
+	int anims_done = 0; //number of animations done
+	int anim_doing = 0; //animation being done
 public:
 	Light_Shooter_Kamikaze(int x, int y, int path, bool pcome_right);
 	void MoveShoot();
