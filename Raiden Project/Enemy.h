@@ -30,6 +30,7 @@ public:
 	fPoint distance1;
 	fPoint distance2;
 	int hp;
+	int damagebybomb;
 	bool getvector = true; //For kamikazes
 	bool deployed = false; //For boss kamikazes
 	Uint32 bombhittime; //time between allowed bomb hits

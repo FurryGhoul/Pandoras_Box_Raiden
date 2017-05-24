@@ -240,17 +240,16 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 		{
 			if (c2->bullettype == 27)
 			{
-				if (SDL_GetTicks() - time >= 250)
+				if (SDL_GetTicks() - time >= 50)
 					enemies[i]->bombimmunity = false;
 					
-				if (!enemies[i]->bombimmunity)
+				if (!enemies[i]->bombimmunity && enemies[i]->damagebybomb <= 22)
 				{
+					enemies[i]->damagebybomb += c2->damage;
 					enemies[i]->hp -= c2->damage;
 					enemies[i]->bombimmunity = true;
 					time = SDL_GetTicks();
 				}
-
-
 			}
 			else
 			{
