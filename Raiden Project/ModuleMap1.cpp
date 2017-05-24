@@ -57,11 +57,12 @@ update_status ModuleMap1::Update()
 	
 
 
-
-
+		//App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -200);
+		//App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 352 * 3, -200);
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE,0, -300 );
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::MEGATANK, 500, -300);
 		
+
 		// First street
 		//Horizontal tanks
 		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -900);
@@ -120,8 +121,8 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 700, -4200);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 500, -5400);
 
-		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 400, -5400);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 700, -5600);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 400, -4600);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::MEDIUM_SHOOTER, 800, -4600);
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP, 700, -8700);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP, 800, -8900);
