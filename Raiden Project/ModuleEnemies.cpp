@@ -22,6 +22,7 @@
 #include "Enemy_Light_Shooter_Kamikaze.h"
 #include "Enemy_Megatank.h"
 #include "Enemy_Grey_Tank.h"
+#include "Enemy_Boss_Main.h"
 #define SPAWN_MARGIN 100
 
 ModuleEnemies::ModuleEnemies()
@@ -48,6 +49,7 @@ bool ModuleEnemies::Init()
 	sprites8 = App->textures->Load("assets/Ship.png");
 	sprites9 = App->textures->Load("assets/Light Shooter Kamikaze.png");
 	sprites10 = App->textures->Load("assets/Megatank.png");
+	sprites11 = App->textures->Load("assets/Boss 2.png");
 	return true;
 }
 
@@ -81,45 +83,27 @@ update_status ModuleEnemies::Update()
 		if (enemies[i] != nullptr) 
 		{ 
 		   if (enemies[i]->spritesheet == 0) //Light Shooter
-		   {
 		       enemies[i]->Draw(sprites);
-		   }
-		   if (enemies[i]->spritesheet == 1) //Bonus Ship
-		   {
+		   else if (enemies[i]->spritesheet == 1) //Bonus Ship
 			   enemies[i]->Draw(sprites2);
-		   }
-		   if (enemies[i]->spritesheet == 2) //Tank & Ship_Tank
-		   {
+		   else if (enemies[i]->spritesheet == 2) //Tank & Ship_Tank
 			   enemies[i]->Draw(sprites3);
-		   }
-		   if (enemies[i]->spritesheet == 3) //Medium Shooter
-		   {
+		   else if (enemies[i]->spritesheet == 3) //Medium Shooter
 			   enemies[i]->Draw(sprites4);
-		   }
-		   if (enemies[i]->spritesheet == 4) //Box_Medal & Box_PowerUp
-		   {
+		   else if (enemies[i]->spritesheet == 4) //Box_Medal & Box_PowerUp
 			   enemies[i]->Draw(sprites5);
-		   }
-		   if (enemies[i]->spritesheet == 5) //Kamikaze
-		   {
+		   else if (enemies[i]->spritesheet == 5) //Kamikaze
 			   enemies[i]->Draw(sprites6);
-		   }
-		   if (enemies[i]->spritesheet == 6) //Long Megatank
-		   {
+		   else if (enemies[i]->spritesheet == 6) //Long Megatank
 			   enemies[i]->Draw(sprites7);
-		   }
-		   if (enemies[i]->spritesheet == 7) //Ship
-		   {
+		   else if (enemies[i]->spritesheet == 7) //Ship
 			   enemies[i]->Draw(sprites8);
-		   }
-		   if (enemies[i]->spritesheet == 8) //Light Shooter Kamikaze
-		   {
+		   else if (enemies[i]->spritesheet == 8) //Light Shooter Kamikaze
 			   enemies[i]->Draw(sprites9);
-		   }
-		   if (enemies[i]->spritesheet == 9) //Megatank
-		   {
+		   else if (enemies[i]->spritesheet == 9) //Megatank
 			   enemies[i]->Draw(sprites10);
-		   }
+		   else if (enemies[i]->spritesheet == 10) //Boss
+			   enemies[i]->Draw(sprites11);
         }
 	return UPDATE_CONTINUE;
 }
@@ -195,6 +179,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		{
 		case ENEMY_TYPES::LIGHT_SHOOTER:
 			enemies[i] = new Enemy_Light_Shooter(App->map_1->xmap + info.x, info.y, info._path);
+			break;
+		case ENEMY_TYPES::BOSS_MAIN:
+			enemies[i] = new Enemy_Boss_Main(App->map_1->xmap + info.x, info.y, info._path);
 			break;
 		case ENEMY_TYPES::KAMIKAZE:
 			enemies[i] = new Enemy_Kamikaze(App->map_1->xmap + info.x, info.y, info._path);

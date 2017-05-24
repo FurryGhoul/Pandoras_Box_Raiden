@@ -127,6 +127,9 @@
     <ClCompile Include="Enemy_Grey_Tank.cpp">
       <Filter>Enemies</Filter>
     </ClCompile>
+    <ClCompile Include="Enemy_Boss_Main.cpp">
+      <Filter>Enemies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h">
@@ -268,6 +271,9 @@
       <Filter>Enemies</Filter>
     </ClInclude>
     <ClInclude Include="Enemy_Grey_Tank.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy_Boss_Main.h">
       <Filter>Enemies</Filter>
     </ClInclude>
   </ItemGroup>

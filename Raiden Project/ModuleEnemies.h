@@ -12,6 +12,7 @@ enum ENEMY_TYPES
 	NO_TYPE,
     LIGHT_SHOOTER,
 	BONUS_SHIP,
+	BOSS_MAIN,
 	TANK,
 	GREY_TANK,
 	MEDIUM_SHOOTER,
@@ -73,6 +74,7 @@ private:
 	SDL_Texture* sprites8;
 	SDL_Texture* sprites9;
 	SDL_Texture* sprites10;
+	SDL_Texture* sprites11;
 
 	
 };

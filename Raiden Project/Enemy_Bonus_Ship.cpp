@@ -47,7 +47,7 @@ Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y, int path) : Enemy (x, y)
 	movement.PushBack({ 0.4f, 0.0f }, 700);
 	movement.PushBack({ -0.4f, 0.0f }, 700);
 	movement.PushBack({ 0.4f, 0.0f }, 700);
-	movement.PushBack({ 0.0f, 3.0f }, 600);
+	movement.PushBack({ 0.0f, 1.5f }, 600);
 	
 	hitsides.PushBack({ 262, 221, 59, 54 });
 	hitsides.PushBack({ 262, 221, 59, 54 });
