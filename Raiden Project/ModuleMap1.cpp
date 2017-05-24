@@ -56,30 +56,42 @@ update_status ModuleMap1::Update()
 		}
 	
 
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -200);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 352 * 3, -200);
+
 
 
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE,0, -300 );
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::MEGATANK, 500, -300);
 		
-		/*// First street
+		// First street
+		//Horizontal tanks
 		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -900);
+		//Vertical tanks
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -1200);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -1300);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -1400);
+
+
 		//Second street
-		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -1260);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -1340);
+		//Horizontal tanks
+		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -1220);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -1300);
+		// Light Kamikazes
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -1340);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 352 * 3, -1340);
+		//Vertical tanks
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -1600);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -1700);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -1800);
+
+
 		//Third street
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -2000);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -2100);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -2300);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 352 * 3, -1340);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -2300);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -1920);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -1980);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -1880);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -1940);
 		//Forth street
 		App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 600, -2370);
 		App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 500, -2400);
@@ -93,28 +105,6 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 0, -780);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 300, -1000);
 
-
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 200, -1500);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 780, -1500);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 250, -1830);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 730, -1830);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 780, -2000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 200, -2070);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 780, -2140);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 200, -2210);
-
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 730, -2700);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 250, -2720);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 680, -2740);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 200, -2760);
-
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 780, -2900);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 660, -3000);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 720, -3050);
-		App->enemies->AddEnemy(2, ENEMY_TYPES::LIGHT_SHOOTER, 780, -3100);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_SHOOTER, 320, -3200);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_SHOOTER, 260, -3250);
-		App->enemies->AddEnemy(2, ENEMY_TYPES::LIGHT_SHOOTER, 200, -3300);
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 300, -300);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 600, -1700);
@@ -281,7 +271,7 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 430, -10300);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 380, -10250);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 710, -10340);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 230, -10370);*/
+		App->enemies->AddEnemy(1, ENEMY_TYPES::KAMIKAZE, 230, -10370);
 		
 		
 

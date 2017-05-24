@@ -345,7 +345,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 					App->player2->score += enemies[i]->points;
 				}
 
-				if (enemies[i]->lightshooter || enemies[i]->kamikaze)
+				if (enemies[i]->lightshooter || enemies[i]->kamikaze || enemies[i]->light_kamikaze)
 				{ 
 				  App->particles->AddParticle(App->particles->explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
                 }
