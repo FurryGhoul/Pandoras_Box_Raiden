@@ -85,13 +85,19 @@ update_status ModuleMap1::Update()
 
 
 		//Third street
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -2000);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -2100);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -2300);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 352 * 3, -1340);
+		// Light kamikazes
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -2000);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 352 * 3, -2000);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 352 * 3, -2100);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -2200);
+	    // Horizontal tanks
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -2300);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -1880);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -1940);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -1940);		
+		//Vertical tanks
+		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -2000);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -2100);
+
 		//Forth street
 		App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 600, -2370);
 		App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 500, -2400);
@@ -304,7 +310,7 @@ update_status ModuleMap1::Update()
 	{ 
 		ymap += yscrollspeed;
 		yroad += (yscrollspeed * 1.5);
-		App->render->camera.y -= 1;
+		App->render->camera.y -= yscrollspeed;
 
 		if (yroad >= -4350)
 		{
@@ -325,6 +331,12 @@ update_status ModuleMap1::Update()
 		//faster scrolling (comment "won = true;" first)
 		//ymap += yscrollspeed * 50;
 		//yroad += ((yscrollspeed * 1.5) * 50);
+	}
+	if (App->input->keyboard[SDL_SCANCODE_Z])
+	{
+		ymap += yscrollspeed * 10;
+		yroad += (yscrollspeed * 1.5) * 10;
+		App->render->camera.y -= 1 * 10;
 	}
 
 	if ( ymap >= 0 || won)
