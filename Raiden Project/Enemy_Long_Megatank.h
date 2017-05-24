@@ -5,9 +5,18 @@ class Enemy_Long_Megatank : public Enemy
 private:
 	Animation shellstart;
 	Animation transformation;
+	Animation transformation2;
+	Animation transformation3;
+	Animation transformation4;
 	Animation finalform;
 	Animation stop;
 
+	Animation hitshell;
+	Animation hittransformation;
+	Animation hittransformation2;
+	Animation hittransformation3;
+	Animation hittransformation4;
+	Animation hitfinalform;
 	fPoint original_pos;
 
 	Path movement;
@@ -16,6 +25,9 @@ private:
 	int time_controll = 0;
 	bool shooting = false;
 	bool shell = false;
+	bool step1 = false;
+	bool step2 = false;
+	bool step3 = false;
 public:
 	Enemy_Long_Megatank(int x, int y, int path);
 

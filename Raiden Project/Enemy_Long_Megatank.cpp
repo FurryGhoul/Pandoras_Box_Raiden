@@ -43,6 +43,8 @@ Enemy_Long_Megatank::Enemy_Long_Megatank(int x, int y, int path) : Enemy(x, y)
 	shellstart.loop = true;
 	shellstart.speed = 0.9f;
 
+	hitshell.PushBack({ 664, 7, 81, 53 });
+
 	transformation.PushBack({ 90, 123, 81, 53 });
 	transformation.PushBack({ 90, 123, 81, 53 });
 	transformation.PushBack({ 172, 123, 81, 53 });
@@ -53,30 +55,47 @@ Enemy_Long_Megatank::Enemy_Long_Megatank(int x, int y, int path) : Enemy(x, y)
 	transformation.PushBack({ 172, 181, 81, 53 });
 	transformation.PushBack({ 336, 181, 81, 53 });
 	transformation.PushBack({ 336, 181, 81, 53 });
-	transformation.PushBack({ 8, 239, 81, 53 });
-	transformation.PushBack({ 8, 239, 81, 53 });
-	transformation.PushBack({ 8, 239, 81, 53 });
-	transformation.PushBack({ 90, 297, 81, 53 });
-	transformation.PushBack({ 90, 297, 81, 53 });
-	transformation.PushBack({ 172, 297, 81, 53 });
-	transformation.PushBack({ 172, 297, 81, 53 });
-	transformation.PushBack({ 254, 297, 81, 53 });
-	transformation.PushBack({ 254, 355, 81, 53 });
-	transformation.PushBack({ 172, 355, 81, 53 });
-	transformation.PushBack({ 172, 355, 81, 53 });
-	transformation.PushBack({ 336, 355, 81, 53 });
-	transformation.PushBack({ 336, 355, 81, 53 });
-	transformation.PushBack({ 8, 413, 81, 53 });
-	transformation.PushBack({ 8, 413, 81, 53 });
-	transformation.PushBack({ 90, 413, 81, 53 });
-	transformation.PushBack({ 90, 413, 81, 53 });
-	transformation.PushBack({ 172, 413, 81, 53 });
-	transformation.PushBack({ 172, 413, 81, 53 });
-	transformation.PushBack({ 254, 413, 81, 53 });
-	transformation.PushBack({ 254, 413, 81, 53 });
 	transformation.loop = false;
 	transformation.speed = 0.5f;
 
+	hittransformation.PushBack({ 664,181,81,53 });
+	
+	transformation2.PushBack({ 8, 239, 81, 53 });
+	transformation2.PushBack({ 8, 239, 81, 53 });
+	transformation2.PushBack({ 8, 239, 81, 53 });
+	transformation2.PushBack({ 90, 297, 81, 53 });
+	transformation2.PushBack({ 90, 297, 81, 53 });
+	transformation2.PushBack({ 172, 297, 81, 53 });
+	transformation2.PushBack({ 172, 297, 81, 53 });
+	transformation2.PushBack({ 254, 297, 81, 53 });
+	transformation2.loop = false;
+	transformation2.speed = 0.5f;
+
+	hittransformation2.PushBack({ 664,297,81,53 });
+
+	transformation3.PushBack({ 254, 355, 81, 53 });
+	transformation3.PushBack({ 172, 355, 81, 53 });
+	transformation3.PushBack({ 172, 355, 81, 53 });
+	transformation3.PushBack({ 336, 355, 81, 53 });
+	transformation3.PushBack({ 336, 355, 81, 53 });
+	transformation3.loop = false;
+	transformation3.speed = 0.5f;
+
+	hittransformation3.PushBack({ 664,355,81,53 });
+
+	transformation4.PushBack({ 8, 413, 81, 53 });
+	transformation4.PushBack({ 8, 413, 81, 53 });
+	transformation4.PushBack({ 90, 413, 81, 53 });
+	transformation4.PushBack({ 90, 413, 81, 53 });
+	transformation4.PushBack({ 172, 413, 81, 53 });
+	transformation4.PushBack({ 172, 413, 81, 53 });
+	transformation4.PushBack({ 254, 413, 81, 53 });
+	transformation4.PushBack({ 254, 413, 81, 53 });
+	transformation4.loop = false;
+	transformation4.speed = 0.5f;
+
+	hittransformation2.PushBack({ 582,413,81,53 });
+
 	finalform.PushBack({ 336, 413, 81, 53 });
 	finalform.PushBack({ 336, 413, 81, 53 });
 	finalform.PushBack({ 8, 471, 81, 53 });
@@ -90,13 +109,17 @@ Enemy_Long_Megatank::Enemy_Long_Megatank(int x, int y, int path) : Enemy(x, y)
 	finalform.PushBack({ 336, 471, 81, 53 });
 	finalform.PushBack({ 336, 471, 81, 53 });
 
+	hittransformation2.PushBack({ 664,471,81,53 });
+
 	stop.PushBack({ 336, 471, 81, 53 });
+
+	hitfinalform.PushBack({ 746, 471, 81, 53 });
 
 
 	longmegatank = true;
 	
 	movement.PushBack({-1.0f, 1.0f}, 250);
-	movement.PushBack({ 0.0f, 0.01f}, 70);
+	movement.PushBack({ 0.0f, 0.0f}, 70);
 	movement.PushBack({ 0.0f, -1.0f}, 50);
 	movement.PushBack({ 0.0f, 1.0f }, 75);
 	movement.PushBack({ 0.0f, -1.0f }, 50);
@@ -154,13 +177,69 @@ void Enemy_Long_Megatank::MoveShoot()
 	{
 		animation = &shellstart;
 		shell = true;
+		if (ishit == true)
+		{
+			animation = &hitshell;
+			ishit = false;
+		}
 	}
 
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.01f)
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f)
 	{
 		animation = &transformation;
-		
+		if (ishit == true)
+		{
+			animation = &hittransformation;
+			ishit = false;
+		}
+		if (transformation.Finished())
+		{
+			step1 = true;
+		}
+		if (step1 == true)
+		{
+			animation = &transformation2;
+			if (ishit2 == true)
+			{
+				animation = &hittransformation2;
+				ishit2 = false;
+			}
+			if (transformation2.Finished())
+			{
+				step1 = false;
+				step2 = true;
+			}
+		}
+		if (step2 == true)
+		{
+			animation = &transformation3;
+			if (ishit3 == true)
+			{
+				animation = &hittransformation3;
+				ishit3 = false;
+			}
+			if (transformation3.Finished())
+			{
+				step2 = false;
+				step3 = true;
+			}
+		}
+		if (step3 == true)
+		{
+			animation = &transformation4;
+			if (ishit4 == true)
+			{
+				animation = &hittransformation4;
+				ishit4 = false;
+			}
+			if (transformation4.Finished())
+			{
+				step3 = false;
+			}
+		}
 	}
+	
+	
 
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == -1.0f
 		|| movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 4.0f)
@@ -168,12 +247,22 @@ void Enemy_Long_Megatank::MoveShoot()
 		animation = &finalform;
 		shooting = true;
 		shell = false;
+		if (ishit == true)
+		{
+			animation = &hitfinalform;
+			ishit = false;
+		}
 	}
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f)
 	{
 		animation = &stop;
 		shooting = true;
 		shell = false;
+		if (ishit == true)
+		{
+			animation = &hitfinalform;
+			ishit = false;
+		}	
 	}
 
 	

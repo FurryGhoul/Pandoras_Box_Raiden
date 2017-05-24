@@ -24,6 +24,8 @@ public:
 	fPoint position3;
 	bool ishit;
 	bool ishit2;
+	bool ishit3;
+	bool ishit4;
 	fPoint distance;
 	fPoint distance1;
 	fPoint distance2;
