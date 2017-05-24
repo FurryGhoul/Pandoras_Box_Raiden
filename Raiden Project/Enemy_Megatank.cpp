@@ -71,6 +71,103 @@ Enemy_Megatank::Enemy_Megatank(int x, int y, int path) : Enemy(x, y)
 	spinning.PushBack({ 71,10,56,53 });
 	spinning.PushBack({ 71,10,56,53 });
 
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+
 	spinning.loop = true;
 	spinning.speed = 1.0f;
 	//DECELERATION
@@ -88,6 +185,31 @@ Enemy_Megatank::Enemy_Megatank(int x, int y, int path) : Enemy(x, y)
 	decelaration.PushBack({ 128,10,56,53 });
 	decelaration.PushBack({ 71,10,56,53 });
 	decelaration.PushBack({ 71,10,56,53 });
+	decelaration.PushBack({ 71,10,56,53 });
+	decelaration.PushBack({ 71,10,56,53 });
+	decelaration.PushBack({ 71,10,56,53 });
+	decelaration.PushBack({ 71,10,56,53 });
+	decelaration.PushBack({ 71,10,56,53 });
+	decelaration.PushBack({ 71,10,56,53 });
+	decelaration.PushBack({ 71,10,56,53 });
+	decelaration.PushBack({ 71,10,56,53 });
+	decelaration.PushBack({ 14,10,56,53 });
+	decelaration.PushBack({ 14,10,56,53 });
+	decelaration.PushBack({ 14,10,56,53 });
+	decelaration.PushBack({ 14,10,56,53 });
+	decelaration.PushBack({ 71,10,56,53 });
+	decelaration.PushBack({ 71,10,56,53 });
+	decelaration.PushBack({ 71,10,56,53 });
+	decelaration.PushBack({ 71,10,56,53 });
+	decelaration.PushBack({ 128,10,56,53 });
+	decelaration.PushBack({ 128,10,56,53 });
+	decelaration.PushBack({ 128,10,56,53 });
+	decelaration.PushBack({ 128,10,56,53 });
+	decelaration.PushBack({ 71,10,56,53 });
+	decelaration.PushBack({ 71,10,56,53 });
+	decelaration.PushBack({ 71,10,56,53 });
+	decelaration.PushBack({ 71,10,56,53 });
+
 
 	
 	decelaration.loop = false;
@@ -101,6 +223,7 @@ Enemy_Megatank::Enemy_Megatank(int x, int y, int path) : Enemy(x, y)
 
 	original_pos.x = x;
 	original_pos.y = 50;
+	animation = &decelaration;
 }
 
 
@@ -116,53 +239,58 @@ void Enemy_Megatank::MoveShoot()
 
 	++charge;
 
+
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f)
 	{
-		animation = &spinning;
-		/*if (slow == false)
-		{
-			animation = &spinning;
-			if (spinning.Finished() == true)
-			{
-				spinning.Reset();
-				slow = true;
-			}
-		}
-
-		if (slow == true)
-		{
-			animation = &decelaration;
-			if (decelaration.Finished() == true)
-			{
-				animation = &spinning;
-				
-			}
-		}*/
-		
-		/*animation = &spinning;
-		if (spinning.Finished() == true)
+		if (spinning.Finished())
 		{
 			animation = &decelaration;
 			spinning.Reset();
-			if (decelaration.Finished() == true)
-			{
-				animation = &spinning;
-				decelaration.Reset();
-				if (spinning.Finished() == true)
-				{
-					animation = &decelaration;
-				}
-			}
-		}*/
-	
+			spin = false;
+		}
 
+		else if (decelaration.Finished())
+		{
+			animation = &spinning;
+			decelaration.Reset();
+			spin = true;
+		}
 	}
-	
 
 	if (ishit == true)
 	{
 		animation = &hit;
 		ishit = false;
+	}
+	
+	if (spin == true)
+	{
+		charge++;
+		if (charge % 110 == 0)
+		{
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 69, position.y + 45, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y - 4);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 69, position.y + 45, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+		}
+		if (charge % 115 == 0)
+		{
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 69, position.y + 45, COLLIDER_ENEMY_SHOT, 0, distance.x - 4, distance.y - 4);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 69, position.y + 45, COLLIDER_ENEMY_SHOT, 0, distance.x + 4, distance.y);
+		}
+		if (charge % 120 == 0)
+		{
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 69, position.y + 45, COLLIDER_ENEMY_SHOT, 0, distance.x + 4, distance.y - 4);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 69, position.y + 45, COLLIDER_ENEMY_SHOT, 0, distance.x - 4, distance.y);
+		}
+		if (charge % 125 == 0)
+		{
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 69, position.y + 45, COLLIDER_ENEMY_SHOT, 0, distance.x + 6, distance.y + 1);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 69, position.y + 45, COLLIDER_ENEMY_SHOT, 0, distance.x - 6, distance.y + 1);
+		}
+		if (charge == 130)
+		{
+			charge = 100;
+			charge++;
+		}
 	}
 	
 }
