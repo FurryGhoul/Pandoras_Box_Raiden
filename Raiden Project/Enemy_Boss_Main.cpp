@@ -103,13 +103,18 @@ Enemy_Boss_Main::Enemy_Boss_Main(int x, int y, int path) : Enemy(x, y)
 	//Parts info
 	leftwing.type = ENEMY_TYPES::BOSS_LEFT_WING;
 	leftwing._path = 0;
-	leftwing.x = (position.x + 243);
-	leftwing.y = (position.y + 306);
+	leftwing.x = position.x - 32 * 3;
+	leftwing.y = position.y + 32 * 3;
 
 	rightwing.type = ENEMY_TYPES::BOSS_RIGHT_WING;
 	rightwing._path = 0;
-	rightwing.x = (position.x + 624);
-	rightwing.y = (position.y + 306);
+	rightwing.x = position.x + 96 * 3;
+	rightwing.y = position.y + 32 * 3;
+
+	cannon.type = ENEMY_TYPES::BOSS_CANNON;
+	cannon._path = 0;
+	cannon.x = position.x + 32 * 3;
+	cannon.y = position.y + 34 * 3;
 
 	w = 96 * 3;
 	h = 53 * 3;
@@ -126,13 +131,18 @@ void Enemy_Boss_Main::MoveShoot()
 	position = original_pos + movement.GetCurrentPosition();
 	position.x += left_right_mod;
 
+	App->enemies->SetPos();
+
 	//Kamikaze parts
 	if (!parts)
 	{
 		App->enemies->SpawnEnemy(leftwing);
 		App->enemies->SpawnEnemy(rightwing);
+		App->enemies->SpawnEnemy(cannon);
 		parts = true;
 	}
+
+	App->enemies->SetPos();
 
 	//Kamikaze positions
 	kamikaze1.x = ((position.x - (12 * 3)) + 80 * 3 + 192);

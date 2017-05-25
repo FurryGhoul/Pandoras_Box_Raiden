@@ -15,7 +15,7 @@ Enemy_Boss_Right_Wing::Enemy_Boss_Right_Wing(int x, int y, int path) : Enemy(x, 
 	points = 730;
 	spritesheet = 10;
 	animations = 1;
-	bosswing = true;
+	bossrightwing = true;
 
 	//Animations
 	//Idle
@@ -30,58 +30,18 @@ Enemy_Boss_Right_Wing::Enemy_Boss_Right_Wing(int x, int y, int path) : Enemy(x, 
 	closing.loop = false;
 	closing.speed = 0.1f;
 
-	//Path
-	//Entering
-	movement.PushBack({ 0.0f, 2.0f }, 100);
-	//Movement
-	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
-	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 80);
-	movement.PushBack({ 2.0f, 0.0f }, 160); movement.PushBack({ -2.0f, 0.0f }, 80); movement.PushBack({ 0.0f, 2.0f }, 60);
-
-	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
-	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 80);
-	movement.PushBack({ 2.0f, 0.0f }, 160); movement.PushBack({ -2.0f, 0.0f }, 80); movement.PushBack({ 0.0f, 2.0f }, 60);
-
-	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
-	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 80);
-	movement.PushBack({ 2.0f, 0.0f }, 160); movement.PushBack({ -2.0f, 0.0f }, 80); movement.PushBack({ 0.0f, 2.0f }, 60);
-
-	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
-	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 80);
-	movement.PushBack({ 2.0f, 0.0f }, 160); movement.PushBack({ -2.0f, 0.0f }, 80); movement.PushBack({ 0.0f, 2.0f }, 60);
-
-	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
-	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 80);
-	movement.PushBack({ 2.0f, 0.0f }, 160); movement.PushBack({ -2.0f, 0.0f }, 80); movement.PushBack({ 0.0f, 2.0f }, 60);
-
-	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
-	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 80);
-	movement.PushBack({ 2.0f, 0.0f }, 160); movement.PushBack({ -2.0f, 0.0f }, 80); movement.PushBack({ 0.0f, 2.0f }, 60);
-
-	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
-	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 80);
-	movement.PushBack({ 2.0f, 0.0f }, 160); movement.PushBack({ -2.0f, 0.0f }, 80); movement.PushBack({ 0.0f, 2.0f }, 60);
-
-	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
-	//Flying away
-	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ 0.0f, 3.0f }, 10000);
-
 	w = 32 * 3;
 	h = 23 * 3;
 	collider = App->collision->AddCollider({ 0, 0, w, h }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 	original_pos.x = x;
 	original_pos.y = y;
-	time = SDL_GetTicks();
-	time1 = SDL_GetTicks();
 	animation = &idle;
+	time = SDL_GetTicks();
 }
 
 
 void Enemy_Boss_Right_Wing::MoveShoot()
 {
-	position = original_pos + movement.GetCurrentPosition();
-	position.x += left_right_mod;
-
 	if (closing.Finished())
 	{
 		animation = &idle;
@@ -115,10 +75,10 @@ void Enemy_Boss_Right_Wing::MoveShoot()
 		shoot = false;
 	}
 
-	if ((SDL_GetTicks() - time1) >= 1200)
+	if ((SDL_GetTicks() - time) >= 1200)
 	{
 		shoot = true;
 		animation = &shooting;
-		time1 = SDL_GetTicks();
+		time = SDL_GetTicks();
 	}
 }

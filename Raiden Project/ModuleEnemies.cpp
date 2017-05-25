@@ -25,6 +25,7 @@
 #include "Enemy_Boss_Main.h"
 #include "Enemy_Boss_Left_Wing.h"
 #include "Enemy_Boss_Right_Wing.h"
+#include "Enemy_Boss_Cannon.h"
 #define SPAWN_MARGIN 100
 
 ModuleEnemies::ModuleEnemies()
@@ -184,6 +185,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::BOSS_MAIN:
 			enemies[i] = new Enemy_Boss_Main(App->map_1->xmap + info.x, info.y, info._path);
+			break;
+		case ENEMY_TYPES::BOSS_CANNON:
+			enemies[i] = new Enemy_Boss_Cannon(App->map_1->xmap + info.x, info.y, info._path);
 			break;
 		case ENEMY_TYPES::BOSS_LEFT_WING:
 			enemies[i] = new Enemy_Boss_Left_Wing(App->map_1->xmap + info.x, info.y, info._path);
@@ -377,7 +381,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 					App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, enemies[i]->position.x, enemies[i]->position.y);
 					App->particles->AddParticle(App->particles->bonusmedium_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
 				}
-				else if (enemies[i]->bosswing || enemies[i]->bosscannon)
+				else if (enemies[i]->bossleftwing || enemies[i]->bossrightwing || enemies[i]->bosscannon)
 				{
 					App->particles->AddParticle(App->particles->bonusmedium_explosion, enemies[i]->position.x - 60, enemies[i]->position.y - 60, COLLIDER_NONE);
 				}
@@ -420,6 +424,38 @@ void ModuleEnemies::EraseEnemies()
 		{
 			delete enemies[i];
 			enemies[i] = nullptr;
+		}
+	}
+}
+
+void ModuleEnemies::SetPos()
+{
+	//Identify main part
+	for (uint i = 0; i < MAX_ENEMIES; ++i)
+	{
+		if (enemies[i] != nullptr && enemies[i]->bossmain)
+		{
+			bossmain = i;
+			break;
+		}
+	}
+	//Set positions
+	for (uint i = 0; i < MAX_ENEMIES; ++i)
+	{
+		if (enemies[i] != nullptr && enemies[i]->bossleftwing)
+		{
+			enemies[i]->position.x = enemies[bossmain]->position.x - 32 * 3;
+			enemies[i]->position.y = enemies[bossmain]->position.y + 32 * 3;
+		}
+		else if (enemies[i] != nullptr && enemies[i]->bossrightwing)
+		{
+			enemies[i]->position.x = enemies[bossmain]->position.x + 96 * 3;
+			enemies[i]->position.y = enemies[bossmain]->position.y + 32 * 3;
+		}
+		else if (enemies[i] != nullptr && enemies[i]->bosscannon)
+		{
+			enemies[i]->position.x = enemies[bossmain]->position.x + 32 * 3;
+			enemies[i]->position.y = enemies[bossmain]->position.y + 34 * 3;
 		}
 	}
 }

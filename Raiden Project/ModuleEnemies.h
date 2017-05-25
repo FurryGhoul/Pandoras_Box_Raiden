@@ -10,9 +10,10 @@
 enum ENEMY_TYPES
 {
 	NO_TYPE,
-    LIGHT_SHOOTER,
+	LIGHT_SHOOTER,
 	BONUS_SHIP,
 	BOSS_MAIN,
+	BOSS_CANNON,
 	BOSS_LEFT_WING,
 	BOSS_RIGHT_WING,
 	TANK,
@@ -45,6 +46,7 @@ public:
 	ModuleEnemies();
 	~ModuleEnemies();
 
+	int bossmain;
 	Uint32 time = 0;
 	bool Init();
 	update_status PreUpdate();
@@ -52,6 +54,7 @@ public:
 	update_status PostUpdate();
 	bool CleanUp();
 	void EraseEnemies();
+	void SetPos();
 	void OnCollision(Collider* c1, Collider* c2);
 	bool AddEnemy(int path, ENEMY_TYPES type, int x, int y);
 	void MoveEnemiesRight(bool); // The bool is used to know if the enemies should be moved to the right (true) or to the left (false)

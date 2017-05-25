@@ -21,10 +21,10 @@ private:
 	bool posreset = false;
 	bool posreset1 = false;
 	int kamikazewaves = 0;
-	bool parts = false;
 	bool kamikazeammo = true;
 	bool shootingkamikazes = false;
 	int delay = 0;
+	bool parts = false;
 
 	EnemyInfo kamikaze1;
 	EnemyInfo kamikaze2;
@@ -37,6 +37,7 @@ private:
 
 	EnemyInfo leftwing;
 	EnemyInfo rightwing;
+	EnemyInfo cannon;
 
 public:
 	Enemy_Boss_Main(int x, int y, int path);

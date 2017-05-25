@@ -31,30 +31,13 @@ Enemy_Boss_Cannon::Enemy_Boss_Cannon(int x, int y, int path) : Enemy(x, y)
 	shooting.loop = true;
 	shooting.speed = 0.1f;
 
-	//Path
-	//Fly away
-	flyaway.PushBack({ 0.0f, 3.0f }, 10000);
-	//Entering
-	entering.PushBack({ 0.0f, 2.0f }, 100);
-	//Movement
-	movement.PushBack({ 2.0f, 0.0f }, 80);
-	movement.PushBack({ -2.0f, 0.0f }, 160);
-	movement.PushBack({ 2.0f, 0.0f }, 80);
-	movement.PushBack({ 0.0f, 2.0f }, 30);
-	movement.PushBack({ 0.0f, -2.0f }, 80);
-	movement.PushBack({ -2.0f, 0.0f }, 80);
-	movement.PushBack({ 2.0f, 0.0f }, 160);
-	movement.PushBack({ -2.0f, 0.0f }, 80);
-	movement.PushBack({ 0.0f, 2.0f }, 60);
-	movement.loop = true;
-
 	w = 32 * 3;
-	h = 23 * 3;
+	h = 26 * 3;
 	collider = App->collision->AddCollider({ 0, 0, w, h }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 	original_pos.x = x;
 	original_pos.y = y;
+	animation = &idle;
 	time = SDL_GetTicks();
-	time1 = SDL_GetTicks();
 }
 
 
@@ -70,33 +53,6 @@ void Enemy_Boss_Cannon::MoveShoot()
 	{
 		distance.y = App->player2->position.y - position.y;
 		distance.x = App->player2->position.x - position.x;
-	}
-
-	if ((SDL_GetTicks() - time) < 2000)
-	{
-		animation = &idle;
-		position = original_pos + entering.GetCurrentPosition();
-		position.x += left_right_mod;
-	}
-	else if ((SDL_GetTicks() - time) < 100000)
-	{
-		if (!posreset)
-		{
-			original_pos = position;
-			posreset = true;
-		}
-		position = original_pos + movement.GetCurrentPosition();
-		position.x += left_right_mod;
-	}
-	else
-	{
-		if (!posreset1)
-		{
-			original_pos = position;
-			posreset1 = true;
-		}
-		position = original_pos + flyaway.GetCurrentPosition();
-		position.x += left_right_mod;
 	}
 
 	//Shooting
