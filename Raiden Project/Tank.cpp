@@ -125,7 +125,8 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 
 	if (path == 2)
 	{
-		movement.PushBack({ 2.0f, 1.5f }, 300);
+		movement.PushBack({ 2.0f, 1.5f }, 100);
+		movement.PushBack({ 2.0f, 1.0f }, 1000);
 	}
 
 	tank = true;
@@ -251,7 +252,7 @@ void Tank::MoveShoot()
 	}
 
    
-	//MAS PUTAS DIAGONALes
+	//MAS PUTAS DIAGONALES
    if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) //MAS PUTAS DIAGONALES 1
    {
 	   animation = &updiagonalright;

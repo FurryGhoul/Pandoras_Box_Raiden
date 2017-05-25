@@ -107,9 +107,12 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -2100);
 
 		//Forth street
-		App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 600, -2370);
-		App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 500, -2400);
-		App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 400, -2430);
+		App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 600, -2360);
+		App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 500, -2390);
+		App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 400, -2420);
+
+
+
 
 		// Pool
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -2700);
@@ -175,13 +178,15 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(10, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -4820);
 		App->enemies->AddEnemy(11, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -4850);
 
-		// Lat two kamikazes
-
+		// Last two kamikazes
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -5000);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -5000);
 
 		
 		
+
+
+
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 330, -3880);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 380, -4380);
 
