@@ -10,8 +10,10 @@ private:
 	fPoint original_pos;
 
 	Uint32 time;
-	bool shoot = false;
-
+	Uint32 time1;
+	bool shoot = true;
+	int shootx = 0;
+	int bullets = 0;
 public:
 	Enemy_Boss_Cannon(int x, int y, int path);
 	void MoveShoot();

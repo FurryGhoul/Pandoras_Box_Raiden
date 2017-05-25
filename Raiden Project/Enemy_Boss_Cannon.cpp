@@ -38,41 +38,40 @@ Enemy_Boss_Cannon::Enemy_Boss_Cannon(int x, int y, int path) : Enemy(x, y)
 	original_pos.y = y;
 	animation = &idle;
 	time = SDL_GetTicks();
+	time1 = SDL_GetTicks();
+	shootx = 40;
+	bullets = 14;
 }
 
 
 void Enemy_Boss_Cannon::MoveShoot()
 {
-	if (sqrtf((distance.y = App->player->position.y - position.y)*(distance.y = App->player->position.y - position.y) + (distance.x = App->player->position.x - position.x)* (distance.x = App->player->position.x - position.x))
-		< sqrtf((distance.y = App->player2->position.y - position.y)*(distance.y = App->player2->position.y - position.y) + (distance.x = App->player2->position.x - position.x)* (distance.x = App->player2->position.x - position.x)))
-	{
-		distance.y = App->player->position.y - position.y;
-		distance.x = App->player->position.x - position.x;
-	}
-	else
-	{
-		distance.y = App->player2->position.y - position.y;
-		distance.x = App->player2->position.x - position.x;
-	}
-
 	//Shooting
-	/*if (shoot && shooting.Finished())
+	if (bullets > 0 && shoot)
 	{
-		if (distance.x > 1)
-			distance.x = 2;
-		else
-			distance.x = -2;
+		App->particles->AddParticle(App->particles->enemyshot, position.x + shootx, position.y + 60, COLLIDER_ENEMY_SHOT, 0, 0, 10);
 
-		shooting.Reset();
+		if (shootx == 40)
+			shootx = 14;
+		else if (shootx == 14)
+			shootx = 66;
+		else if (shootx == 66)
+			shootx = 40;
 
-		App->particles->AddParticle(App->particles->enemyshot, position.x + 57, position.y + 50, COLLIDER_ENEMY_SHOT, 0, distance.x, 10);
 		shoot = false;
+
+		bullets--;
+
+		if (bullets < 1)
+			time1 = SDL_GetTicks();
 	}
 
-	if ((SDL_GetTicks() - time1) >= 1200)
+	if ((SDL_GetTicks() - time) >= 150)
 	{
 		shoot = true;
-		animation = &shooting;
-		time1 = SDL_GetTicks();
-	}*/
+		time = SDL_GetTicks();
+	}
+
+	if (bullets < 1 && (SDL_GetTicks() - time1) >= 5000)
+		bullets = 14;
 }
