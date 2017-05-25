@@ -205,14 +205,20 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 250, -7230);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 450, -7480);
 		// 3rd Wave
-		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 500, -8000);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::MEDIUM_SHOOTER, 500, -8000);
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP, 600, -7850);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP, 650, -8250);
 		
-		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 700, -9100);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 850, -9100);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 750, -9300);
+		// 1st Wave
+		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 750, -8950);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 875, -8950);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 812, -9025);
+		// 2nd Wave
+		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 800, -9200);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 925, -9200);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 744, -9275);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 856, -9275);
 
 		//App->enemies->AddEnemy(2, ENEMY_TYPES::KAMIKAZE, 200, -100);
 		//App->enemies->AddEnemy(2, ENEMY_TYPES::KAMIKAZE, 100, -200);
