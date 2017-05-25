@@ -9,7 +9,7 @@ Medals::Medals(int x, int y) : PowerUp(x, y)
 
 	idle1.PushBack({ 118, 1, 10, 16 });
 
-	movement.PushBack({ 0.0f, 2.0f }, 100);
+	movement.PushBack({ 0.0f, 1.0f }, 100);
 
 	medal = true;
 	collider = App->collision->AddCollider({ 3, 0, 11 * 3 - 5, 16 * 3 }, COLLIDER_TYPE::COLLIDER_POWER_UP, (Module*)App->powerups, 12);

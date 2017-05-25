@@ -180,12 +180,15 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -5000);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -5000);
 
+		
+		
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 330, -3880);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 380, -4380);
 
 
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 450, 500);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 700, -780);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 0, -780);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 300, -1000);
+
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 700, -7100);
+
 
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 300, -300);

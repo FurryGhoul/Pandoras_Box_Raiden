@@ -5,6 +5,7 @@ class Box_Medal : public Enemy
 {
 private:
 	Animation idle;
+	Animation invisible;
 
 	fPoint original_pos;
 	fPoint distance;
