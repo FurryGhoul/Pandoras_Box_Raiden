@@ -13,6 +13,7 @@ private:
 
 	fPoint original_pos;
 	Uint32 time;
+	Uint32 time2;
 	Path movement;
 	Path flyaway;
 	Path entering;
@@ -20,9 +21,9 @@ private:
 	bool posreset = false;
 	bool posreset1 = false;
 	int kamikazewaves = 0;
-	bool kamikazett = true;
-	bool shootingkamikazes = true;
-	int idk = 0;
+	bool kamikazeammo = true;
+	bool shootingkamikazes = false;
+	int delay = 0;
 
 	EnemyInfo kamikaze1;
 	EnemyInfo kamikaze2;

@@ -19,8 +19,8 @@ Enemy_Kamikaze::Enemy_Kamikaze(int x, int y, int path) : Enemy(x, y)
 
 	turn.speed = 0.7f;
 	turn1.speed = 0.7f;
-	deploying.speed = 0.08f;
-	deploying1.speed = 0.08f;
+	deploying.speed = 0.1f;
+	deploying1.speed = 0.1f;
 
 	// Anmiation pushback's
 
@@ -65,56 +65,56 @@ Enemy_Kamikaze::Enemy_Kamikaze(int x, int y, int path) : Enemy(x, y)
 	}
 	else if (path == 1)
 	{
-		movement.PushBack({ 3.0f, -1.5f }, 200);
+		movement.PushBack({ 3.0f, -1.5f }, 100);
 		w = 32 * 3;
 		h = 39 * 3;
 		bosskamikaze = true;
 	}
 	else if (path == 2)
 	{
-		movement.PushBack({ 2.0f, -2.0f }, 200);
+		movement.PushBack({ 2.0f, -2.0f }, 100);
 		w = 32 * 3;
 		h = 39 * 3;
 		bosskamikaze = true;
 	}
 	else if (path == 3)
 	{
-		movement.PushBack({ 2.5f, 1.0f }, 200);
+		movement.PushBack({ 2.5f, 1.0f }, 100);
 		w = 32 * 3;
 		h = 39 * 3;
 		bosskamikaze = true;
 	}
 	else if (path == 4)
 	{
-		movement.PushBack({ 1.5f, 1.5f }, 200);
+		movement.PushBack({ 1.5f, 1.5f }, 100);
 		w = 32 * 3;
 		h = 39 * 3;
 		bosskamikaze = true;
 	}
 	else if (path == 5)
 	{
-		movement.PushBack({ -3.0f, -1.5f }, 200);
+		movement.PushBack({ -3.0f, -1.5f }, 100);
 		w = 32 * 3;
 		h = 39 * 3;
 		bosskamikaze = true;
 	}
 	else if (path == 6)
 	{
-		movement.PushBack({ -2.0f, -2.0f }, 200);
+		movement.PushBack({ -2.0f, -2.0f }, 100);
 		w = 32 * 3;
 		h = 39 * 3;
 		bosskamikaze = true;
 	}
 	else if (path == 7)
 	{
-		movement.PushBack({ -2.5f, 1.0f }, 200);
+		movement.PushBack({ -2.5f, 1.0f }, 100);
 		w = 32 * 3;
 		h = 39 * 3;
 		bosskamikaze = true;
 	}
 	else if (path == 8)
 	{
-		movement.PushBack({ -1.5f, 1.5f }, 200);
+		movement.PushBack({ -1.5f, 1.5f }, 100);
 		w = 32 * 3;
 		h = 39 * 3;
 		bosskamikaze = true;
@@ -125,9 +125,15 @@ Enemy_Kamikaze::Enemy_Kamikaze(int x, int y, int path) : Enemy(x, y)
 	original_pos.x = x;
 	
 	if (bosskamikaze)
+	{
+		delay = 0;
 		original_pos.y = y;
+	}
 	else
+	{
+		delay = 500;
 		original_pos.y = -50;
+	}
 
 	if (path == 0)
 		animation = &turn;
@@ -176,7 +182,7 @@ void Enemy_Kamikaze::MoveShoot()
 			distance.x = App->player2->position.x - position.x;
 		}
 
-		if (SDL_GetTicks() - time > 500)
+		if (SDL_GetTicks() - time > delay)
 		{
 			if (getvector)
 			{
@@ -185,14 +191,13 @@ void Enemy_Kamikaze::MoveShoot()
 				getvector = false;
 			}
 
-
 			position.x += vector.x;
 			position.y += vector.y;
 		}
 	}
 	else
 	{
-		if ((SDL_GetTicks() - time2) < 1430)
+		if ((SDL_GetTicks() - time2) < 1150)
 		{
 			position = original_pos + movement.GetCurrentPosition();
 			position.x += left_right_mod;

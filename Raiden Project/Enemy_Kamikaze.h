@@ -16,6 +16,7 @@ private:
 	bool bosskamikaze = false;
 	Uint32 time;
 	Uint32 time2;
+	int delay = 0;
 	bool allowtime = true;
 	bool colliderrezise = false;
 

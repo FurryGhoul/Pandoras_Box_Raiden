@@ -110,16 +110,16 @@ void Enemy_Boss_Main::MoveShoot()
 	kamikaze8.x = ((position.x - (5 * 3)) + (16 * 3) + 192);
 	kamikaze8.y = ((position.y - (19 * 3)) + (28 * 3));
 
-	if (shootingkamikazes)
+	if (kamikazeammo)
 	{
 		if (kamikazewaves >= 21)
 		{
-			shootingkamikazes = false;
+			kamikazeammo = false;
 			animation = &idle;
 		}
 	}
 
-	if (shootingkamikazes && (SDL_GetTicks() - time) > 500 && kamikazett)
+	if (kamikazeammo && (SDL_GetTicks() - time) > 2500 && shootingkamikazes && (SDL_GetTicks() - time2) > delay)
 	{
 		App->enemies->SpawnEnemy(kamikaze1);
 		App->enemies->SpawnEnemy(kamikaze2);
@@ -129,14 +129,24 @@ void Enemy_Boss_Main::MoveShoot()
 		App->enemies->SpawnEnemy(kamikaze6);
 		App->enemies->SpawnEnemy(kamikaze7);
 		App->enemies->SpawnEnemy(kamikaze8);
-		kamikazett = false;
+		shootingkamikazes = false;
 		kamikazewaves++;
 	}
 
-	if (idk % 100 == 0)
-		kamikazett = true;
-
-	idk++;
+	if (!shootingkamikazes)
+	{
+		if (kamikazewaves % 2 == 0)
+		{
+			shootingkamikazes = true;
+			delay = 2000;
+		}
+		else
+		{
+			shootingkamikazes = true;
+			delay = 1000;
+		}
+		time2 = SDL_GetTicks();
+	}
 
 	if ((SDL_GetTicks() - time) < 2000)
 	{
