@@ -194,8 +194,18 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 700, -4200);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 500, -5400);
 
-		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 400, -4600);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::MEDIUM_SHOOTER, 800, -4600);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 120, -4600);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::MEDIUM_SHOOTER, 650, -4600);
+		// 2nd Wave
+		App->enemies->AddEnemy(1, ENEMY_TYPES::MEDIUM_SHOOTER, 550, -6400);
+		App->enemies->AddEnemy(2, ENEMY_TYPES::MEDIUM_SHOOTER, 400, -6600);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::MEDIUM_SHOOTER, 450, -6800);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 350, -6950);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 300, -7050);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 250, -7230);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 400, -7380);
+		// 3rd Wave
+		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 500, -8000);
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP, 700, -8700);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP, 800, -8900);

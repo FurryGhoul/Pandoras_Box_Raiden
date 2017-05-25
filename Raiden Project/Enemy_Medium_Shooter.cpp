@@ -73,6 +73,17 @@ Enemy_Medium_Shooter::Enemy_Medium_Shooter(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ 0.0f, -5.0f }, 500);
 		movement.loop = false;
 	}
+	if (path == 2) // If the ship spawns at the middle of the screen, it wil charge vertically
+	{
+		movement.PushBack({ 0.0f, 2.1f }, 50);
+		movement.PushBack({ 0.0f, 2.0f }, 30);
+		movement.PushBack({ 0.0f, 2.1f }, 170);
+		movement.PushBack({ 0.0f, 2.0f }, 30);
+		movement.PushBack({ 0.0f, 2.1f }, 70);
+		movement.PushBack({ 0.0f, 4.0f }, 100);
+		movement.PushBack({ 0.0f, -5.0f }, 500);
+		movement.loop = false;
+	}
 
 	mediumshooter = true;
 	collider = App->collision->AddCollider({ 0, 0, 73 * 3 - 110, 54 * 3 - 110 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
@@ -160,6 +171,20 @@ void Enemy_Medium_Shooter::MoveShoot()
 		}
 	}
 	if (movement.steps[movement.GetCurrentStep()].speed.x == -3.0f && movement.steps[movement.GetCurrentStep()].speed.y == 4.0f)
+	{
+		animation = &flycd;
+
+		if (ishit == true)
+		{
+			if (hp > 9)
+				animation = &hitflycd;
+			else
+				animation = &hitflycd1;
+
+			ishit = false;
+		}
+	}
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 4.0f)
 	{
 		animation = &flycd;
 
