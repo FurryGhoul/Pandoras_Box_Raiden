@@ -107,9 +107,13 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -2100);
 
 		//Forth street
-		App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 600, -2360);
-		App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 500, -2390);
-		App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 400, -2420);
+		App->enemies->AddEnemy(5, ENEMY_TYPES::TANK, 500, -2390);
+		App->enemies->AddEnemy(6, ENEMY_TYPES::TANK, 400, -2420);
+		App->enemies->AddEnemy(7, ENEMY_TYPES::TANK, 300, -2450);
+
+		App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 700, -2250);
+		App->enemies->AddEnemy(3, ENEMY_TYPES::TANK, 600, -2280);
+		App->enemies->AddEnemy(4, ENEMY_TYPES::TANK, 500, -2320);
 
 
 
