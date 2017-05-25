@@ -29,7 +29,7 @@ Enemy_Boss_Cannon::Enemy_Boss_Cannon(int x, int y, int path) : Enemy(x, y)
 	shooting.PushBack({ 403, 174, 32, 26 });
 	shooting.PushBack({ 436, 174, 32, 26 });
 	shooting.loop = true;
-	shooting.speed = 0.1f;
+	shooting.speed = 0.2f;
 
 	w = 32 * 3;
 	h = 26 * 3;
@@ -46,9 +46,15 @@ Enemy_Boss_Cannon::Enemy_Boss_Cannon(int x, int y, int path) : Enemy(x, y)
 
 void Enemy_Boss_Cannon::MoveShoot()
 {
+	if (!isshooting)
+		animation = &idle;
+	else
+		animation = &shooting;
 	//Shooting
 	if (bullets > 0 && shoot)
 	{
+		isshooting = true;
+
 		App->particles->AddParticle(App->particles->enemyshot, position.x + shootx, position.y + 60, COLLIDER_ENEMY_SHOT, 0, 0, 10);
 
 		if (shootx == 40)
@@ -63,7 +69,10 @@ void Enemy_Boss_Cannon::MoveShoot()
 		bullets--;
 
 		if (bullets < 1)
+		{
 			time1 = SDL_GetTicks();
+			isshooting = false;
+		}
 	}
 
 	if ((SDL_GetTicks() - time) >= 150)

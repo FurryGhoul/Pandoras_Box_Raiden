@@ -12,6 +12,7 @@ private:
 	Uint32 time;
 	Uint32 time1;
 	bool shoot = true;
+	bool isshooting = false;
 	int shootx = 0;
 	int bullets = 0;
 public:

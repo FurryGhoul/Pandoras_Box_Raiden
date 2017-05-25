@@ -48,39 +48,39 @@ Enemy_Boss_Main::Enemy_Boss_Main(int x, int y, int path) : Enemy(x, y)
 
 	//Path
 	//Entering
-	movement.PushBack({ 0.0f, 2.0f }, 100);
+	movement.PushBack({ 0.0f, 1.5f }, 100);
 	//Movement
-	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
-	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 80);
-	movement.PushBack({ 2.0f, 0.0f }, 160); movement.PushBack({ -2.0f, 0.0f }, 80); movement.PushBack({ 0.0f, 2.0f }, 60);
+	movement.PushBack({ 1.5f, 0.0f }, 80); movement.PushBack({ -1.5f, 0.0f }, 160); movement.PushBack({ 1.5f, 0.0f }, 80);
+	movement.PushBack({ 0.0f, 1.5f }, 30); movement.PushBack({ 0.0f, -1.5f }, 80); movement.PushBack({ -1.5f, 0.0f }, 80);
+	movement.PushBack({ 1.5f, 0.0f }, 160); movement.PushBack({ -1.5f, 0.0f }, 80); movement.PushBack({ 0.0f, 1.5f }, 60);
 
-	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
-	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 80);
-	movement.PushBack({ 2.0f, 0.0f }, 160); movement.PushBack({ -2.0f, 0.0f }, 80); movement.PushBack({ 0.0f, 2.0f }, 60);
+	movement.PushBack({ 1.5f, 0.0f }, 80); movement.PushBack({ -1.5f, 0.0f }, 160); movement.PushBack({ 1.5f, 0.0f }, 80);
+	movement.PushBack({ 0.0f, 1.5f }, 30); movement.PushBack({ 0.0f, -1.5f }, 80); movement.PushBack({ -1.5f, 0.0f }, 80);
+	movement.PushBack({ 1.5f, 0.0f }, 160); movement.PushBack({ -1.5f, 0.0f }, 80); movement.PushBack({ 0.0f, 1.5f }, 60);
 
-	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
-	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 80);
-	movement.PushBack({ 2.0f, 0.0f }, 160); movement.PushBack({ -2.0f, 0.0f }, 80); movement.PushBack({ 0.0f, 2.0f }, 60);
+	movement.PushBack({ 1.5f, 0.0f }, 80); movement.PushBack({ -1.5f, 0.0f }, 160); movement.PushBack({ 1.5f, 0.0f }, 80);
+	movement.PushBack({ 0.0f, 1.5f }, 30); movement.PushBack({ 0.0f, -1.5f }, 80); movement.PushBack({ -1.5f, 0.0f }, 80);
+	movement.PushBack({ 1.5f, 0.0f }, 160); movement.PushBack({ -1.5f, 0.0f }, 80); movement.PushBack({ 0.0f, 1.5f }, 60);
 
-	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
-	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 80);
-	movement.PushBack({ 2.0f, 0.0f }, 160); movement.PushBack({ -2.0f, 0.0f }, 80); movement.PushBack({ 0.0f, 2.0f }, 60);
+	movement.PushBack({ 1.5f, 0.0f }, 80); movement.PushBack({ -1.5f, 0.0f }, 160); movement.PushBack({ 1.5f, 0.0f }, 80);
+	movement.PushBack({ 0.0f, 1.5f }, 30); movement.PushBack({ 0.0f, -1.5f }, 80); movement.PushBack({ -1.5f, 0.0f }, 80);
+	movement.PushBack({ 1.5f, 0.0f }, 160); movement.PushBack({ -1.5f, 0.0f }, 80); movement.PushBack({ 0.0f, 1.5f }, 60);
 
-	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
-	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 80);
-	movement.PushBack({ 2.0f, 0.0f }, 160); movement.PushBack({ -2.0f, 0.0f }, 80); movement.PushBack({ 0.0f, 2.0f }, 60);
+	movement.PushBack({ 1.5f, 0.0f }, 80); movement.PushBack({ -1.5f, 0.0f }, 160); movement.PushBack({ 1.5f, 0.0f }, 80);
+	movement.PushBack({ 0.0f, 1.5f }, 30); movement.PushBack({ 0.0f, -1.5f }, 80); movement.PushBack({ -1.5f, 0.0f }, 80);
+	movement.PushBack({ 1.5f, 0.0f }, 160); movement.PushBack({ -1.5f, 0.0f }, 80); movement.PushBack({ 0.0f, 1.5f }, 60);
 
-	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
-	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 80);
-	movement.PushBack({ 2.0f, 0.0f }, 160); movement.PushBack({ -2.0f, 0.0f }, 80); movement.PushBack({ 0.0f, 2.0f }, 60);
+	movement.PushBack({ 1.5f, 0.0f }, 80); movement.PushBack({ -1.5f, 0.0f }, 160); movement.PushBack({ 1.5f, 0.0f }, 80);
+	movement.PushBack({ 0.0f, 1.5f }, 30); movement.PushBack({ 0.0f, -1.5f }, 80); movement.PushBack({ -1.5f, 0.0f }, 80);
+	movement.PushBack({ 1.5f, 0.0f }, 160); movement.PushBack({ -1.5f, 0.0f }, 80); movement.PushBack({ 0.0f, 1.5f }, 60);
 
-	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
-	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 80);
-	movement.PushBack({ 2.0f, 0.0f }, 160); movement.PushBack({ -2.0f, 0.0f }, 80); movement.PushBack({ 0.0f, 2.0f }, 60);
+	movement.PushBack({ 1.5f, 0.0f }, 80); movement.PushBack({ -1.5f, 0.0f }, 160); movement.PushBack({ 1.5f, 0.0f }, 80);
+	movement.PushBack({ 0.0f, 1.5f }, 30); movement.PushBack({ 0.0f, -1.5f }, 80); movement.PushBack({ -1.5f, 0.0f }, 80);
+	movement.PushBack({ 1.5f, 0.0f }, 160); movement.PushBack({ -1.5f, 0.0f }, 80); movement.PushBack({ 0.0f, 1.5f }, 60);
 
-	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
+	movement.PushBack({ 1.5f, 0.0f }, 80); movement.PushBack({ -1.5f, 0.0f }, 160); movement.PushBack({ 1.5f, 0.0f }, 80);
 	//Flying away
-	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ 0.0f, 3.0f }, 10000);
+	movement.PushBack({ 0.0f, 1.5f }, 30); movement.PushBack({ 0.0f, -1.5f }, 80); movement.PushBack({ 0.0f, 3.0f }, 10000);
 
 	//Kamikazes info
 	kamikaze1.type = ENEMY_TYPES::KAMIKAZE;
