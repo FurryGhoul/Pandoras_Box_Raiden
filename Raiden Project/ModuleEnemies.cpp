@@ -398,7 +398,10 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				else if (enemies[i]->powerupbox)
 				{
 					App->powerups->AddPowerUp(POWERUP_TYPES::MISSILEUP, enemies[i]->position.x - 120, enemies[i]->position.y - 110);
-				}				
+				}		
+
+				if (enemies[i]->bossmain)
+					DestroyBossParts();
 
 				delete enemies[i];
 				enemies[i] = nullptr;
@@ -410,7 +413,6 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 
 void ModuleEnemies::EraseEnemies()
 {
-	
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
 	{
 		if (queue[i].type != ENEMY_TYPES::NO_TYPE)
@@ -456,6 +458,26 @@ void ModuleEnemies::SetPos()
 		{
 			enemies[i]->position.x = enemies[bossmain]->position.x + 32 * 3;
 			enemies[i]->position.y = enemies[bossmain]->position.y + 34 * 3;
+		}
+	}
+}
+
+void ModuleEnemies::DestroyBossParts()
+{
+	for (uint i = 0; i < MAX_ENEMIES; ++i)
+	{
+		if (queue[i].type == ENEMY_TYPES::BOSS_CANNON || queue[i].type == ENEMY_TYPES::BOSS_RIGHT_WING || queue[i].type == ENEMY_TYPES::BOSS_LEFT_WING)
+		{
+			queue[i].type = ENEMY_TYPES::NO_TYPE;
+		}
+	}
+	for (uint i = 0; i < MAX_ENEMIES; ++i)
+	{
+		if (enemies[i] != nullptr && (enemies[i]->bosscannon || enemies[i]->bossleftwing || enemies[i]->bossrightwing))
+		{
+			App->particles->AddParticle(App->particles->bonusmedium_explosion, enemies[i]->position.x - 60, enemies[i]->position.y - 60, COLLIDER_NONE);
+			delete enemies[i];
+			enemies[i] = nullptr;
 		}
 	}
 }

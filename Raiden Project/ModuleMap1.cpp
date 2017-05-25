@@ -60,7 +60,7 @@ update_status ModuleMap1::Update()
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -200);
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 352 * 3, -200);
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE,0, -300 );
-		//App->enemies->AddEnemy(0, ENEMY_TYPES::BOSS_MAIN, 230, -200);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BOSS_MAIN, 230, -200);
 
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::GREY_TANK, 500, -300);
 
