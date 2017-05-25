@@ -70,7 +70,6 @@ Enemy_Megatank::Enemy_Megatank(int x, int y, int path) : Enemy(x, y)
 	spinning.PushBack({ 71,10,56,53 });
 	spinning.PushBack({ 71,10,56,53 });
 	spinning.PushBack({ 71,10,56,53 });
-
 	spinning.PushBack({ 14,10,56,53 });
 	spinning.PushBack({ 14,10,56,53 });
 	spinning.PushBack({ 14,10,56,53 });

@@ -45,6 +45,33 @@ Enemy_Long_Megatank::Enemy_Long_Megatank(int x, int y, int path) : Enemy(x, y)
 
 	hitshell.PushBack({ 664, 7, 81, 53 });
 
+	dmgshell.PushBack({ 8, 7, 81, 53 });
+	dmgshell.PushBack({ 8, 7, 81, 53 });
+	dmgshell.PushBack({ 910, 7, 81, 53 });
+	dmgshell.PushBack({ 910, 7, 81, 53 });
+	dmgshell.PushBack({ 90, 65, 81, 53 });
+	dmgshell.PushBack({ 90, 65, 81, 53 });
+	dmgshell.PushBack({ 992, 65, 81, 53 });
+	dmgshell.PushBack({ 172, 65, 81, 53 });
+	dmgshell.PushBack({ 172, 7, 81, 53 });
+	dmgshell.PushBack({ 1074, 7, 81, 53 });
+	dmgshell.PushBack({ 254, 7, 81, 53 });
+	dmgshell.PushBack({ 254, 7, 81, 53 });
+	dmgshell.PushBack({ 1156, 65, 81, 53 });
+	dmgshell.PushBack({ 1156, 65, 81, 53 });
+	dmgshell.PushBack({ 172, 65, 81, 53 });
+	dmgshell.PushBack({ 172, 65, 81, 53 });
+	dmgshell.PushBack({ 1074, 7, 81, 53 });
+	dmgshell.PushBack({ 1074, 7, 81, 53 });
+	dmgshell.PushBack({ 336, 7, 81, 53 });
+	dmgshell.PushBack({ 336, 7, 81, 53 });
+	dmgshell.PushBack({ 1238, 65, 81, 53 });
+	dmgshell.PushBack({ 1238, 65, 81, 53 });
+	dmgshell.PushBack({ 8, 65, 81, 53 });
+	dmgshell.PushBack({ 910, 65, 81, 53 });
+	dmgshell.loop = true;
+	dmgshell.speed = 0.5f;
+
 	transformation.PushBack({ 90, 123, 81, 53 });
 	transformation.PushBack({ 90, 123, 81, 53 });
 	transformation.PushBack({ 172, 123, 81, 53 });
@@ -59,6 +86,19 @@ Enemy_Long_Megatank::Enemy_Long_Megatank(int x, int y, int path) : Enemy(x, y)
 	transformation.speed = 0.5f;
 
 	hittransformation.PushBack({ 664,181,81,53 });
+
+	dmgtransformation.PushBack({ 90, 123, 81, 53 });
+	dmgtransformation.PushBack({ 90, 123, 81, 53 });
+	dmgtransformation.PushBack({ 992, 123, 81, 53 });
+	dmgtransformation.PushBack({ 992, 123, 81, 53 });
+	dmgtransformation.PushBack({ 254, 123, 81, 53 });
+	dmgtransformation.PushBack({ 254, 181, 81, 53 });
+	dmgtransformation.PushBack({ 992, 181, 81, 53 });
+	dmgtransformation.PushBack({ 992, 181, 81, 53 });
+	dmgtransformation.PushBack({ 336, 181, 81, 53 });
+	dmgtransformation.PushBack({ 336, 181, 81, 53 });
+	dmgtransformation.loop = false;
+	dmgtransformation.speed = 0.5f;
 	
 	transformation2.PushBack({ 8, 239, 81, 53 });
 	transformation2.PushBack({ 8, 239, 81, 53 });
@@ -73,6 +113,17 @@ Enemy_Long_Megatank::Enemy_Long_Megatank(int x, int y, int path) : Enemy(x, y)
 
 	hittransformation2.PushBack({ 664,297,81,53 });
 
+	dmgtransformation2.PushBack({ 828, 239, 81, 53 });
+	dmgtransformation2.PushBack({ 8, 239, 81, 53 });
+	dmgtransformation2.PushBack({ 8, 239, 81, 53 });
+	dmgtransformation2.PushBack({ 910, 297, 81, 53 });
+	dmgtransformation2.PushBack({ 910, 297, 81, 53 });
+	dmgtransformation2.PushBack({ 172, 297, 81, 53 });
+	dmgtransformation2.PushBack({ 172, 297, 81, 53 });
+	dmgtransformation2.PushBack({ 1074, 297, 81, 53 });
+	dmgtransformation2.loop = false;
+	dmgtransformation2.speed = 0.5f;
+
 	transformation3.PushBack({ 254, 355, 81, 53 });
 	transformation3.PushBack({ 172, 355, 81, 53 });
 	transformation3.PushBack({ 172, 355, 81, 53 });
@@ -82,6 +133,14 @@ Enemy_Long_Megatank::Enemy_Long_Megatank(int x, int y, int path) : Enemy(x, y)
 	transformation3.speed = 0.5f;
 
 	hittransformation3.PushBack({ 664,355,81,53 });
+
+	dmgtransformation3.PushBack({ 1074, 355, 81, 53 });
+	dmgtransformation3.PushBack({ 172, 355, 81, 53 });
+	dmgtransformation3.PushBack({ 172, 355, 81, 53 });
+	dmgtransformation3.PushBack({ 1156, 355, 81, 53 });
+	dmgtransformation3.PushBack({ 1156, 355, 81, 53 });
+	dmgtransformation3.loop = false;
+	dmgtransformation3.speed = 0.5f;
 
 	transformation4.PushBack({ 8, 413, 81, 53 });
 	transformation4.PushBack({ 8, 413, 81, 53 });
@@ -96,6 +155,18 @@ Enemy_Long_Megatank::Enemy_Long_Megatank(int x, int y, int path) : Enemy(x, y)
 
 	hittransformation4.PushBack({ 582,413,81,53 });
 
+
+	dmgtransformation4.PushBack({ 8, 413, 81, 53 });
+	dmgtransformation4.PushBack({ 8, 413, 81, 53 });
+	dmgtransformation4.PushBack({ 910, 413, 81, 53 });
+	dmgtransformation4.PushBack({ 910, 413, 81, 53 });
+	dmgtransformation4.PushBack({ 172, 413, 81, 53 });
+	dmgtransformation4.PushBack({ 172, 413, 81, 53 });
+	dmgtransformation4.PushBack({ 1074, 413, 81, 53 });
+	dmgtransformation4.PushBack({ 1074, 413, 81, 53 });
+	dmgtransformation4.loop = false;
+	transformation4.speed = 0.5f;
+
 	finalform.PushBack({ 336, 413, 81, 53 });
 	finalform.PushBack({ 336, 413, 81, 53 });
 	finalform.PushBack({ 8, 471, 81, 53 });
@@ -109,9 +180,25 @@ Enemy_Long_Megatank::Enemy_Long_Megatank(int x, int y, int path) : Enemy(x, y)
 	finalform.PushBack({ 336, 471, 81, 53 });
 	finalform.PushBack({ 336, 471, 81, 53 });
 
-	
+	dmgfinalform.PushBack({ 336, 413, 81, 53 });
+	dmgfinalform.PushBack({ 336, 413, 81, 53 });
+	dmgfinalform.PushBack({ 828, 471, 81, 53 });
+	dmgfinalform.PushBack({ 828, 471, 81, 53 });
+	dmgfinalform.PushBack({ 90, 471, 81, 53 });
+	dmgfinalform.PushBack({ 90, 471, 81, 53 });
+	dmgfinalform.PushBack({ 992, 471, 81, 53 });
+	dmgfinalform.PushBack({ 992, 471, 81, 53 });
+	dmgfinalform.PushBack({ 254, 471, 81, 53 });
+	dmgfinalform.PushBack({ 254, 471, 81, 53 });
+	dmgfinalform.PushBack({ 1156, 471, 81, 53 });
+	dmgfinalform.PushBack({ 1156, 471, 81, 53 });
 
 	stop.PushBack({ 336, 471, 81, 53 });
+
+	dmgstop.PushBack({ 336, 471, 81, 53 });
+	dmgstop.PushBack({ 336, 471, 81, 53 });
+	dmgstop.PushBack({ 1156, 471, 81, 53 });
+	dmgstop.PushBack({ 1156, 471, 81, 53 });
 
 	hitfinalform.PushBack({ 746, 471, 81, 53 });
 
@@ -175,7 +262,17 @@ void Enemy_Long_Megatank::MoveShoot()
 
 	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f)
 	{
+		if (hp >= 30)
 		animation = &shellstart;
+		shell = true;
+		if (ishit == true)
+		{
+			animation = &hitshell;
+			ishit = false;
+		}
+
+		if (hp < 30)
+			animation = &dmgshell;
 		shell = true;
 		if (ishit == true)
 		{
@@ -186,55 +283,112 @@ void Enemy_Long_Megatank::MoveShoot()
 
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f)
 	{
-		animation = &transformation;
-		if (ishit == true)
+		if (hp >= 30)
 		{
-			animation = &hittransformation;
-			ishit = false;
+			animation = &transformation;
+			if (ishit == true)
+			{
+				animation = &hittransformation;
+				ishit = false;
+			}
+			if (transformation.Finished())
+			{
+				step1 = true;
+			}
+			if (step1 == true)
+			{
+				animation = &transformation2;
+				if (ishit2 == true)
+				{
+					animation = &hittransformation2;
+					ishit2 = false;
+				}
+				if (transformation2.Finished())
+				{
+					step1 = false;
+					step2 = true;
+				}
+			}
+			if (step2 == true)
+			{
+				animation = &transformation3;
+				if (ishit3 == true)
+				{
+					animation = &hittransformation3;
+					ishit3 = false;
+				}
+				if (transformation3.Finished())
+				{
+					step2 = false;
+					step3 = true;
+				}
+			}
+			if (step3 == true)
+			{
+				animation = &transformation4;
+				if (ishit4 == true)
+				{
+					animation = &hittransformation4;
+					ishit4 = false;
+				}
+				if (transformation4.Finished())
+				{
+					step3 = false;
+				}
+			}
 		}
-		if (transformation.Finished())
+		if (hp < 30)
 		{
-			step1 = true;
-		}
-		if (step1 == true)
-		{
-			animation = &transformation2;
-			if (ishit2 == true)
+			animation = &dmgtransformation;
+			if (ishit == true)
 			{
-				animation = &hittransformation2;
-				ishit2 = false;
+				animation = &hittransformation;
+				ishit = false;
 			}
-			if (transformation2.Finished())
+			if (dmgtransformation.Finished())
 			{
-				step1 = false;
-				step2 = true;
+				step1 = true;
 			}
-		}
-		if (step2 == true)
-		{
-			animation = &transformation3;
-			if (ishit3 == true)
+			if (step1 == true)
 			{
-				animation = &hittransformation3;
-				ishit3 = false;
+				animation = &dmgtransformation2;
+				if (ishit2 == true)
+				{
+					animation = &hittransformation2;
+					ishit2 = false;
+				}
+				if (dmgtransformation2.Finished())
+				{
+					step1 = false;
+					step2 = true;
+				}
 			}
-			if (transformation3.Finished())
+			if (step2 == true)
 			{
-				step2 = false;
-				step3 = true;
+				animation = &dmgtransformation3;
+				if (ishit3 == true)
+				{
+					animation = &hittransformation3;
+					ishit3 = false;
+				}
+				if (dmgtransformation3.Finished())
+				{
+					step2 = false;
+					step3 = true;
+				}
 			}
-		}
-		if (step3 == true)
-		{
-			animation = &transformation4;
-			if (ishit4 == true)
+			if (step3 == true)
 			{
-				animation = &hittransformation4;
-				ishit4 = false;
-			}
-			if (transformation4.Finished())
-			{
-				step3 = false;
+				animation = &dmgtransformation4;
+				if (ishit4 == true)
+				{
+					animation = &hittransformation4;
+					ishit4 = false;
+				}
+				if (dmgtransformation4.Finished())
+				{
+					step3 = false;
+				}
 			}
 		}
 	}
@@ -244,25 +398,54 @@ void Enemy_Long_Megatank::MoveShoot()
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == -1.0f
 		|| movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 4.0f)
 	{
-		animation = &finalform;
-		shooting = true;
-		shell = false;
-		if (ishit == true)
+		if (hp >= 30)
 		{
-			animation = &hitfinalform;
-			ishit = false;
+			animation = &finalform;
+			shooting = true;
+			shell = false;
+			if (ishit == true)
+			{
+				animation = &hitfinalform;
+				ishit = false;
+			}
+		}
+		if (hp < 30)
+		{
+			animation = &dmgfinalform;
+			shooting = true;
+			shell = false;
+			if (ishit == true)
+			{
+				animation = &hitfinalform;
+				ishit = false;
+			}
 		}
 	}
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f)
 	{
-		animation = &stop;
-		shooting = true;
-		shell = false;
-		if (ishit == true)
+		if (hp >= 30)
 		{
-			animation = &hitfinalform;
-			ishit = false;
-		}	
+			animation = &stop;
+			shooting = true;
+			shell = false;
+			if (ishit == true)
+			{
+				animation = &hitfinalform;
+				ishit = false;
+			}
+		}
+		if (hp < 30)
+		{
+			animation = &dmgstop;
+			shooting = true;
+			shell = false;
+			if (ishit == true)
+			{
+				animation = &hitfinalform;
+				ishit = false;
+			}
+		}
+
 	}
 
 	

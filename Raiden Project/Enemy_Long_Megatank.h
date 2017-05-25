@@ -17,6 +17,14 @@ private:
 	Animation hittransformation3;
 	Animation hittransformation4;
 	Animation hitfinalform;
+
+	Animation dmgshell;
+	Animation dmgtransformation;
+	Animation dmgtransformation2;
+	Animation dmgtransformation3;
+	Animation dmgtransformation4;
+	Animation dmgfinalform;
+	Animation dmgstop;
 	fPoint original_pos;
 
 	Path movement;
