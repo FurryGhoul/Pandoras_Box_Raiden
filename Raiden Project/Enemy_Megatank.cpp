@@ -223,7 +223,7 @@ Enemy_Megatank::Enemy_Megatank(int x, int y, int path) : Enemy(x, y)
 
 	original_pos.x = x;
 	original_pos.y = 50;
-	animation = &decelaration;
+	//animation = &decelaration;
 }
 
 
@@ -242,26 +242,41 @@ void Enemy_Megatank::MoveShoot()
 
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f)
 	{
-		if (spinning.Finished())
+		if (stop == false)
 		{
 			animation = &decelaration;
 			spinning.Reset();
 			spin = false;
+			if (decelaration.Finished())
+			{
+				stop = true;
+			}
+			if (ishit == true)
+			{
+				animation = &hit;
+				ishit = false;
+			}
+			
 		}
 
-		else if (decelaration.Finished())
+		else if (stop = true)
 		{
 			animation = &spinning;
 			decelaration.Reset();
 			spin = true;
+			if (spinning.Finished())
+			{
+				stop = false;
+			}
+			if (ishit == true)
+			{
+				animation = &hit;
+				ishit = false;
+			}	
 		}
 	}
 
-	if (ishit == true)
-	{
-		animation = &hit;
-		ishit = false;
-	}
+	
 	
 	if (spin == true)
 	{
@@ -291,6 +306,5 @@ void Enemy_Megatank::MoveShoot()
 			charge = 100;
 			charge++;
 		}
-	}
-	
+	}	
 }
