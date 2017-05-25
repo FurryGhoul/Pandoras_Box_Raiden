@@ -23,6 +23,8 @@
 #include "Enemy_Megatank.h"
 #include "Enemy_Grey_Tank.h"
 #include "Enemy_Boss_Main.h"
+#include "Enemy_Boss_Left_Wing.h"
+#include "Enemy_Boss_Right_Wing.h"
 #define SPAWN_MARGIN 100
 
 ModuleEnemies::ModuleEnemies()
@@ -182,6 +184,12 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::BOSS_MAIN:
 			enemies[i] = new Enemy_Boss_Main(App->map_1->xmap + info.x, info.y, info._path);
+			break;
+		case ENEMY_TYPES::BOSS_LEFT_WING:
+			enemies[i] = new Enemy_Boss_Left_Wing(App->map_1->xmap + info.x, info.y, info._path);
+			break;
+		case ENEMY_TYPES::BOSS_RIGHT_WING:
+			enemies[i] = new Enemy_Boss_Right_Wing(App->map_1->xmap + info.x, info.y, info._path);
 			break;
 		case ENEMY_TYPES::KAMIKAZE:
 			enemies[i] = new Enemy_Kamikaze(App->map_1->xmap + info.x, info.y, info._path);

@@ -130,6 +130,12 @@
     <ClCompile Include="Enemy_Boss_Main.cpp">
       <Filter>Enemies</Filter>
     </ClCompile>
+    <ClCompile Include="Enemy_Boss_Left_Wing.cpp">
+      <Filter>Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy_Boss_Right_Wing.cpp">
+      <Filter>Enemies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h">
@@ -274,6 +280,12 @@
       <Filter>Enemies</Filter>
     </ClInclude>
     <ClInclude Include="Enemy_Boss_Main.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy_Boss_Left_Wing.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy_Boss_Right_Wing.h">
       <Filter>Enemies</Filter>
     </ClInclude>
   </ItemGroup>

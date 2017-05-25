@@ -62,7 +62,8 @@ public:
 	bool shiptank = false; //Boolena to detect if the enemy is a ship tank
 	bool megatank = false;
 	bool bossmain = false;
-	bool bosspart = false;
+	bool bosswing = false;
+	bool bosscannon = false;
 	bool turretexploded = false; // Bool to know if a tank's turret has already exploded or not
 	bool greytank = false;
 

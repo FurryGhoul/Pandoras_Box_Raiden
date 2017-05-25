@@ -15,7 +15,7 @@ Enemy_Boss_Main::Enemy_Boss_Main(int x, int y, int path) : Enemy(x, y)
 	points = 29000;
 	spritesheet = 10;
 	animations = 1;
-	megatank = true;
+	bossmain = true;
 
 	//Animations
 	//Idle with kamikazes
@@ -81,6 +81,17 @@ Enemy_Boss_Main::Enemy_Boss_Main(int x, int y, int path) : Enemy(x, y)
 	kamikaze8.type = ENEMY_TYPES::KAMIKAZE;
 	kamikaze8._path = 8;
 
+	//Parts info
+	leftwing.type = ENEMY_TYPES::BOSS_LEFT_WING;
+	leftwing._path = 0;
+	leftwing.x = (position.x + 243);
+	leftwing.y = (position.y + 306);
+
+	rightwing.type = ENEMY_TYPES::BOSS_RIGHT_WING;
+	rightwing._path = 0;
+	rightwing.x = (position.x + 624);
+	rightwing.y = (position.y + 306);
+
 	w = 96 * 3;
 	h = 53 * 3;
 	collider = App->collision->AddCollider({ 0, 0, w, h }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
@@ -92,6 +103,14 @@ Enemy_Boss_Main::Enemy_Boss_Main(int x, int y, int path) : Enemy(x, y)
 
 void Enemy_Boss_Main::MoveShoot()
 {
+	//Kamikaze parts
+	if (!parts)
+	{
+		App->enemies->SpawnEnemy(leftwing);
+		App->enemies->SpawnEnemy(rightwing);
+		parts = true;
+	}
+
 	//Kamikaze positions
 	kamikaze1.x = ((position.x - (12 * 3)) + 80 * 3 + 192);
 	kamikaze1.y = ((position.y - (18 * 3)) + (16 * 3));
@@ -109,7 +128,7 @@ void Enemy_Boss_Main::MoveShoot()
 	kamikaze7.y = ((position.y - (19 * 3)) + (32 * 3));
 	kamikaze8.x = ((position.x - (5 * 3)) + (16 * 3) + 192);
 	kamikaze8.y = ((position.y - (19 * 3)) + (28 * 3));
-
+	
 	if (kamikazeammo)
 	{
 		if (kamikazewaves >= 21)
