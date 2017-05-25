@@ -53,11 +53,6 @@ public:
 	void OnCollision(Collider* c1, Collider* c2);
 	bool AddEnemy(int path, ENEMY_TYPES type, int x, int y);
 	void MoveEnemiesRight(bool); // The bool is used to know if the enemies should be moved to the right (true) or to the left (false)
-
-	
-
-private:
-
 	void SpawnEnemy(const EnemyInfo& info);
 
 private:

@@ -64,12 +64,22 @@ Enemy_Boss_Main::Enemy_Boss_Main(int x, int y, int path) : Enemy(x, y)
 	movement.loop = true;
 
 	//Kamikazes info
-	//Kamikaze 1
-	//Kamikaze 2
-	//kamikaze2.type = ENEMY_TYPES::KAMIKAZE;
-	//kamikaze2.x = (position.x - 0);
-	//kamikaze2.y = 1;
-	//kamikaze2._path = 2;
+	kamikaze1.type = ENEMY_TYPES::KAMIKAZE;
+	kamikaze1._path = 1;
+	kamikaze2.type = ENEMY_TYPES::KAMIKAZE;
+	kamikaze2._path = 2;
+	kamikaze3.type = ENEMY_TYPES::KAMIKAZE;
+	kamikaze3._path = 3;
+	kamikaze4.type = ENEMY_TYPES::KAMIKAZE;
+	kamikaze4._path = 4;
+	kamikaze5.type = ENEMY_TYPES::KAMIKAZE;
+	kamikaze5._path = 5;
+	kamikaze6.type = ENEMY_TYPES::KAMIKAZE;
+	kamikaze6._path = 6;
+	kamikaze7.type = ENEMY_TYPES::KAMIKAZE;
+	kamikaze7._path = 7;
+	kamikaze8.type = ENEMY_TYPES::KAMIKAZE;
+	kamikaze8._path = 8;
 
 	w = 96 * 3;
 	h = 53 * 3;
@@ -82,6 +92,52 @@ Enemy_Boss_Main::Enemy_Boss_Main(int x, int y, int path) : Enemy(x, y)
 
 void Enemy_Boss_Main::MoveShoot()
 {
+	//Kamikaze positions
+	kamikaze1.x = ((position.x - (12 * 3)) + 80 * 3 + 192);
+	kamikaze1.y = ((position.y - (18 * 3)) + (16 * 3));
+	kamikaze2.x = ((position.x - (12 * 3)) + 64 * 3 + 192);
+	kamikaze2.y = ((position.y - (18 * 3)) + (12 * 3));
+	kamikaze3.x = ((position.x - (12 * 3)) + 80 * 3 + 192);
+	kamikaze3.y = ((position.y - (18 * 3)) + (32 * 3));
+	kamikaze4.x = ((position.x - (12 * 3)) + 64 * 3 + 192);
+	kamikaze4.y = ((position.y - (18 * 3)) + (28 * 3));
+	kamikaze5.x = ((position.x - (5 * 3)) + 192);
+	kamikaze5.y = ((position.y - (19 * 3)) + (16 * 3));
+	kamikaze6.x = ((position.x - (5 * 3)) + (16 * 3) + 192);
+	kamikaze6.y = ((position.y - (19 * 3)) + (12 * 3));
+	kamikaze7.x = ((position.x - (5 * 3)) + 192);
+	kamikaze7.y = ((position.y - (19 * 3)) + (32 * 3));
+	kamikaze8.x = ((position.x - (5 * 3)) + (16 * 3) + 192);
+	kamikaze8.y = ((position.y - (19 * 3)) + (28 * 3));
+
+	if (shootingkamikazes)
+	{
+		if (kamikazewaves >= 21)
+		{
+			shootingkamikazes = false;
+			animation = &idle;
+		}
+	}
+
+	if (shootingkamikazes && (SDL_GetTicks() - time) > 500 && kamikazett)
+	{
+		App->enemies->SpawnEnemy(kamikaze1);
+		App->enemies->SpawnEnemy(kamikaze2);
+		App->enemies->SpawnEnemy(kamikaze3);
+		App->enemies->SpawnEnemy(kamikaze4);
+		App->enemies->SpawnEnemy(kamikaze5);
+		App->enemies->SpawnEnemy(kamikaze6);
+		App->enemies->SpawnEnemy(kamikaze7);
+		App->enemies->SpawnEnemy(kamikaze8);
+		kamikazett = false;
+		kamikazewaves++;
+	}
+
+	if (idk % 100 == 0)
+		kamikazett = true;
+
+	idk++;
+
 	if ((SDL_GetTicks() - time) < 2000)
 	{
 		animation = &idlewithkamikazes;

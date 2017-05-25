@@ -63,9 +63,58 @@ Enemy_Kamikaze::Enemy_Kamikaze(int x, int y, int path) : Enemy(x, y)
 		w = 32 * 3;
 		h = 32 * 3;
 	}
+	else if (path == 1)
+	{
+		movement.PushBack({ 3.0f, -1.5f }, 200);
+		w = 32 * 3;
+		h = 39 * 3;
+		bosskamikaze = true;
+	}
 	else if (path == 2)
 	{
-		movement.PushBack({ 3.0f, 2.0f }, 200);
+		movement.PushBack({ 2.0f, -2.0f }, 200);
+		w = 32 * 3;
+		h = 39 * 3;
+		bosskamikaze = true;
+	}
+	else if (path == 3)
+	{
+		movement.PushBack({ 2.5f, 1.0f }, 200);
+		w = 32 * 3;
+		h = 39 * 3;
+		bosskamikaze = true;
+	}
+	else if (path == 4)
+	{
+		movement.PushBack({ 1.5f, 1.5f }, 200);
+		w = 32 * 3;
+		h = 39 * 3;
+		bosskamikaze = true;
+	}
+	else if (path == 5)
+	{
+		movement.PushBack({ -3.0f, -1.5f }, 200);
+		w = 32 * 3;
+		h = 39 * 3;
+		bosskamikaze = true;
+	}
+	else if (path == 6)
+	{
+		movement.PushBack({ -2.0f, -2.0f }, 200);
+		w = 32 * 3;
+		h = 39 * 3;
+		bosskamikaze = true;
+	}
+	else if (path == 7)
+	{
+		movement.PushBack({ -2.5f, 1.0f }, 200);
+		w = 32 * 3;
+		h = 39 * 3;
+		bosskamikaze = true;
+	}
+	else if (path == 8)
+	{
+		movement.PushBack({ -1.5f, 1.5f }, 200);
 		w = 32 * 3;
 		h = 39 * 3;
 		bosskamikaze = true;
@@ -74,14 +123,20 @@ Enemy_Kamikaze::Enemy_Kamikaze(int x, int y, int path) : Enemy(x, y)
 	spritesheet = 5;
 	animations = 1;
 	original_pos.x = x;
-	original_pos.y = -50;
+	
+	if (bosskamikaze)
+		original_pos.y = y;
+	else
+		original_pos.y = -50;
 
 	if (path == 0)
 		animation = &turn;
 	else if (path == 9)
 		animation = &turn1;
-	else if (path == 2)
+	else if (path >= 1 && path <= 4)
 		animation = &deploying;
+	else if (path >= 5 && path <= 8)
+		animation = &deploying1;
 
 	time2 = SDL_GetTicks();
 }
