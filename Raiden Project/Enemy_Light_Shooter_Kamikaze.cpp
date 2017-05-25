@@ -62,7 +62,7 @@ Light_Shooter_Kamikaze::Light_Shooter_Kamikaze(int x, int y, int path, bool pcom
 	pclock[14] = &flyse2;
 	pclock[15] = &flyse1;
 
-
+	getvector = false;
 
 	come_right = pcome_right;
 	if (come_right)
