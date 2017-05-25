@@ -18,8 +18,12 @@ private:
 	Path flyaway;
 	Path entering;
 
+	int bullethellwaves = 0;
 	bool posreset = false;
 	bool posreset1 = false;
+	bool bullethell = false;
+	bool firstbullethellrow = false;
+	bool multipleshooting = false;
 	int kamikazewaves = 0;
 	bool kamikazeammo = true;
 	bool shootingkamikazes = false;
