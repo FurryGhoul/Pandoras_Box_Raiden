@@ -808,14 +808,13 @@ if (SDL_GetTicks() - missiles_initial_time > 500 && can_shoot == false)
 
 	if (Player != nullptr && godmode == false)
 	{
-		Player->SetPos(position.x, position.y);
-		Player->SetSize(player_w, player_h);
+		Player->SetPos(position.x+17, position.y+20);
+		Player->SetSize(player_w/2, player_h/2);
 	}
 	else if (Playergod != nullptr && godmode == true)
 	{
-		Playergod->SetPos(position.x, position.y);
-		Playergod->SetSize(player_w, player_h);
-
+		Playergod->SetPos(position.x+17, position.y+20);
+		Playergod->SetSize(player_w/2, player_h/2);
 	}
 
 	// Godmode

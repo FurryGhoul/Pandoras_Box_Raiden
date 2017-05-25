@@ -61,7 +61,7 @@ Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y, int path) : Enemy (x, y)
 
 	bonusplane = true;// Bollean to detect if the enemy is a bonus plane and adapt the hitbox
 
-	collider = App->collision->AddCollider({ 0, 0, 60, 60 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
+	collider = App->collision->AddCollider({ 0, 0, 60, 120 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 	spritesheet = 1;
 	animations = 3;
 	original_pos.x = x;

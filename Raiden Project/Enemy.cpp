@@ -26,7 +26,7 @@ void Enemy::Draw(SDL_Texture* sprites)
 		collider->SetPos(position.x, position.y);
 
 	if (collider != nullptr && bonusplane == true)
-		collider->SetPos(position.x + 56, position.y + 60);
+		collider->SetPos(position.x + 56, position.y);
 
 	if (collider != nullptr && mediumshooter == true)
 		collider->SetPos(position.x + 55, position.y + 55);
