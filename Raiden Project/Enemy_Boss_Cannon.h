@@ -1,12 +1,11 @@
 #include "Enemy.h"
 #include "ModuleEnemies.h"
 
-class Enemy_Boss_Left_Wing : public Enemy
+class Enemy_Boss_Cannon : public Enemy
 {
 private:
 	Animation idle;
 	Animation shooting;
-	Animation closing;
 
 	Uint32 time;
 	Uint32 time1;
@@ -20,6 +19,6 @@ private:
 	bool posreset1 = false;
 
 public:
-	Enemy_Boss_Left_Wing(int x, int y, int path);
+	Enemy_Boss_Cannon(int x, int y, int path);
 	void MoveShoot();
 };

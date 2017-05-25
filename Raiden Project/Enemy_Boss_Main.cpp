@@ -47,21 +47,40 @@ Enemy_Boss_Main::Enemy_Boss_Main(int x, int y, int path) : Enemy(x, y)
 	destroyed.loop = false;
 
 	//Path
-	//Fly away
-	flyaway.PushBack({ 0.0f, 3.0f }, 10000);
 	//Entering
-	entering.PushBack({ 0.0f, 2.0f }, 100);
+	movement.PushBack({ 0.0f, 2.0f }, 100);
 	//Movement
-	movement.PushBack({ 2.0f, 0.0f }, 80);
-	movement.PushBack({ -2.0f, 0.0f }, 160);
-	movement.PushBack({ 2.0f, 0.0f }, 80);
-	movement.PushBack({ 0.0f, 2.0f }, 30);
-	movement.PushBack({ 0.0f, -2.0f }, 80);
-	movement.PushBack({ -2.0f, 0.0f }, 80);
-	movement.PushBack({ 2.0f, 0.0f }, 160);
-	movement.PushBack({ -2.0f, 0.0f }, 80);
-	movement.PushBack({ 0.0f, 2.0f }, 60);
-	movement.loop = true;
+	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
+	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 80);
+	movement.PushBack({ 2.0f, 0.0f }, 160); movement.PushBack({ -2.0f, 0.0f }, 80); movement.PushBack({ 0.0f, 2.0f }, 60);
+
+	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
+	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 80);
+	movement.PushBack({ 2.0f, 0.0f }, 160); movement.PushBack({ -2.0f, 0.0f }, 80); movement.PushBack({ 0.0f, 2.0f }, 60);
+
+	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
+	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 80);
+	movement.PushBack({ 2.0f, 0.0f }, 160); movement.PushBack({ -2.0f, 0.0f }, 80); movement.PushBack({ 0.0f, 2.0f }, 60);
+
+	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
+	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 80);
+	movement.PushBack({ 2.0f, 0.0f }, 160); movement.PushBack({ -2.0f, 0.0f }, 80); movement.PushBack({ 0.0f, 2.0f }, 60);
+
+	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
+	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 80);
+	movement.PushBack({ 2.0f, 0.0f }, 160); movement.PushBack({ -2.0f, 0.0f }, 80); movement.PushBack({ 0.0f, 2.0f }, 60);
+
+	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
+	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 80);
+	movement.PushBack({ 2.0f, 0.0f }, 160); movement.PushBack({ -2.0f, 0.0f }, 80); movement.PushBack({ 0.0f, 2.0f }, 60);
+
+	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
+	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 80);
+	movement.PushBack({ 2.0f, 0.0f }, 160); movement.PushBack({ -2.0f, 0.0f }, 80); movement.PushBack({ 0.0f, 2.0f }, 60);
+
+	movement.PushBack({ 2.0f, 0.0f }, 80); movement.PushBack({ -2.0f, 0.0f }, 160); movement.PushBack({ 2.0f, 0.0f }, 80);
+	//Flying away
+	movement.PushBack({ 0.0f, 2.0f }, 30); movement.PushBack({ 0.0f, -2.0f }, 80); movement.PushBack({ 0.0f, 3.0f }, 10000);
 
 	//Kamikazes info
 	kamikaze1.type = ENEMY_TYPES::KAMIKAZE;
@@ -98,11 +117,15 @@ Enemy_Boss_Main::Enemy_Boss_Main(int x, int y, int path) : Enemy(x, y)
 	original_pos.x = (x + w/2);
 	original_pos.y = 10;
 	time = SDL_GetTicks();
+	animation = &idlewithkamikazes;
 }
 
 
 void Enemy_Boss_Main::MoveShoot()
 {
+	position = original_pos + movement.GetCurrentPosition();
+	position.x += left_right_mod;
+
 	//Kamikaze parts
 	if (!parts)
 	{
@@ -165,32 +188,5 @@ void Enemy_Boss_Main::MoveShoot()
 			delay = 1000;
 		}
 		time2 = SDL_GetTicks();
-	}
-
-	if ((SDL_GetTicks() - time) < 2000)
-	{
-		animation = &idlewithkamikazes;
-		position = original_pos + entering.GetCurrentPosition();
-		position.x += left_right_mod;
-	}
-	else if ((SDL_GetTicks() - time) < 100000)
-	{
-		if (!posreset)
-		{
-			original_pos = position;
-			posreset = true;
-		}
-		position = original_pos + movement.GetCurrentPosition();
-		position.x += left_right_mod;
-	}
-	else
-	{
-		if (!posreset1)
-		{
-			original_pos = position;
-			posreset1 = true;
-		}
-		position = original_pos + flyaway.GetCurrentPosition();
-		position.x += left_right_mod;
 	}
 }

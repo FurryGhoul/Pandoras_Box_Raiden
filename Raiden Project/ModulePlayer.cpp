@@ -440,12 +440,14 @@ update_status ModulePlayer::Update()
 		App->particles->AddParticle(App->particles->bomb, position.x + speed + 20, position.y, COLLIDER_NONE, 47);
 		bombs--;
 		bombtime = SDL_GetTicks();
+		bombshot = SDL_GetTicks();
 	}
 	else if ((App->input->gamepad[0] == KEY_STATE::KEY_DOWN && bombs >= 1 && SDL_GetTicks() - bombtime >= 2100) && App->input->gpad)
 	{
 		App->particles->AddParticle(App->particles->bomb, position.x + speed + 20, position.y, COLLIDER_NONE, 47);
 		bombs--;
 		bombtime = SDL_GetTicks();
+		bombshot = SDL_GetTicks();
 	}
 
 	if ((App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN && !App->input->gpad) || (App->input->gamepad[2] == KEY_STATE::KEY_DOWN && App->input->gpad))

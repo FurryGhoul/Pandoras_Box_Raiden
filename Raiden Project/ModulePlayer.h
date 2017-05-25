@@ -63,6 +63,7 @@ public:
 	fPoint position;
 	int bombs;
 	Uint32 bombtime;
+	Uint32 bombshot;
 	int bombammo_w;
 	int font_score = -1;
 	char score_text[20];

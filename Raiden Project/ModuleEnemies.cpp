@@ -250,7 +250,10 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			{
 				if (SDL_GetTicks() - time >= 50)
 					enemies[i]->bombimmunity = false;
-					
+
+				if (SDL_GetTicks() - App->player->bombshot >= 3500)
+					enemies[i]->damagebybomb = 0;
+
 				if (!enemies[i]->bombimmunity && enemies[i]->damagebybomb <= 22)
 				{
 					enemies[i]->damagebybomb += c2->damage;
@@ -373,6 +376,10 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				{
 					App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, enemies[i]->position.x, enemies[i]->position.y);
 					App->particles->AddParticle(App->particles->bonusmedium_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+				}
+				else if (enemies[i]->bosswing || enemies[i]->bosscannon)
+				{
+					App->particles->AddParticle(App->particles->bonusmedium_explosion, enemies[i]->position.x - 60, enemies[i]->position.y - 60, COLLIDER_NONE);
 				}
 				else if (enemies[i]->mediumshooter)
 				{

@@ -66,6 +66,7 @@ public:
 	int score = 0;
 	int bombs;
 	Uint32 bombtime;
+	Uint32 bombshot;
 	// Animation
 	bool ideling = false;
 	bool allowtime = true;
