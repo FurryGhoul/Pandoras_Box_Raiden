@@ -122,21 +122,21 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ 2.0f, 1.0f }, 300);
 		movement.PushBack({ 0.0f, 1.0f }, 1000);
 	}
-	//east-stop delayed 1
+	//1
 	if (path == 8)
 	{
 		original_pos.y = 350;
 		movement.PushBack({ 2.0f, 1.0f }, 280);
 		movement.PushBack({ 0.0f, 1.0f }, 1000);
 	}
-	//east-stop delayed 2
+	//2
 	if (path == 9)
 	{
 		original_pos.y = 300;
 		movement.PushBack({ 2.0f, 1.0f }, 350);
 		movement.PushBack({ 0.0f, 1.0f }, 1000);
 	}
-	//east-stop delayed 3
+	//3
 	if (path == 10)
 	{
 		original_pos.y = 400;
@@ -144,6 +144,7 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ 0.0f, 1.0f }, 1000);
 	}
 	//east-north-south
+	//1
 	if (path == 18)
 	{
 		original_pos.y = 300;
@@ -156,6 +157,7 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ 0.0f, 1.0f }, 1000);
 
 	}
+
 
 	//east-south
 	//1
@@ -189,7 +191,7 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ 0.0f, 4.0f }, 1000);
 
 	}
-	//South-east - south
+	//South-east 2 - south
 	//1
 	if (path == 14)
 	{
@@ -212,6 +214,7 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ 0.5f, 2.0f }, 10);
 		movement.PushBack({ 0.0f, 4.0f }, 1000);
 	}
+	//4
 	if (path == 17)
 	{
 		original_pos.y = 300;
@@ -219,8 +222,22 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ 0.5f, 2.0f }, 10);
 		movement.PushBack({ 0.0f, 4.0f }, 1000);
 	}
-
-
+	
+	//south-west 2- south 
+	if (path == 19)
+	{
+		original_pos.y = 0;
+		movement.PushBack({ -1.0f, 2.0f }, 330);
+		movement.PushBack({ -0.5f, 1.5f }, 10);
+		movement.PushBack({ 0.0f, 4.0f }, 1000);
+	}
+	if (path == 20)
+	{ 
+	original_pos.y = 100;
+	movement.PushBack({ -1.0f, 2.0f }, 330);
+	movement.PushBack({ -0.5f, 1.5f }, 10);
+	movement.PushBack({ 0.0f, 4.0f }, 1000);
+    }
 	//Vertical south
 	if (path == 1)
 	{
@@ -367,7 +384,7 @@ void Tank::MoveShoot()
 	
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f) //If tanks stop they get the last animation that was done
 	{
-		if (animation == &leftright)
+		if (animation == &leftright || animation == &hitleftright)
 		{ 
 		    animation = &leftright;
 		   if (ishit == true)
@@ -379,7 +396,7 @@ void Tank::MoveShoot()
 		   position1.x = position.x + w / 2;
 		   position1.y = position.y + h / 2;
 		}
-		if (animation == &downup)
+		if (animation == &downup || animation == &hitdownup)
 		{
 			animation = &downup;
 			if (ishit == true)
