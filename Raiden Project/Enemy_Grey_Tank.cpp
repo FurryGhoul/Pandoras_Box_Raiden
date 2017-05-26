@@ -104,13 +104,13 @@ Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
 	2.0, 1.5 = E
 	-0.5, 1.5 = SW3 // Not adapted to roads
 	0.5, 0.0 = SE1 // Not adapted to roads
-	-2.0, 0.5 = NW3 // Not adapted to roads
+	-2.0, 1.0 = NW3 
 	2.0, 1.5 = SE3 // Not adapted to roads
-	-0.5, 0.0 = NW1 // Not adapted to roads
+	-0.5, 0.5 = NW1 
 	0.5, 2.0 =  SE1 // Not adapted to roads
-	1.0, 0.5 = NE2 // Not adapted to roads
+	1.0, 0.5 = NE2 
 	-1.0, 2.5 = SW2
-	-1.0, 0.0 = NW2 // Not adapted to roads
+	-1.0, 0.5 = NW2 
 	1.0, 2.0 = SE2 // Not adapted to roads
 	-2,0,1.5 = SW1 // Not adapted to roads
 	0.5,0.0 = NE3 // Not adapted to roads
@@ -377,6 +377,24 @@ Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ 2.0f, 1.5f }, 1);
 		movement.PushBack({ 0.0f, 1.5f }, 1000);
 	}
+	//Stop-east-north-east2
+	if (path == 30)
+	{
+		movement.PushBack({ 2.0f, 1.5f }, 1);
+		movement.PushBack({ 0.0f, 1.5f }, 100);
+		movement.PushBack({ 2.0f, 1.5f }, 120);
+		movement.PushBack({ 2.0f, 1.0f }, 10);
+		movement.PushBack({ 1.0f, 0.5f }, 1000);
+	}
+	//Stop-west-north-west 2
+	if (path == 31)
+	{
+		movement.PushBack({ 2.0f, 1.5f }, 1);
+		movement.PushBack({ 0.0f, 1.5f }, 100);
+		movement.PushBack({ -2.0f, 1.5f }, 120);
+		movement.PushBack({ -2.0f, 1.0f }, 10);
+		movement.PushBack({ -1.0f, 0.5f }, 1000);
+	}
 	greytank = true;
 	collider = App->collision->AddCollider({ 0, 0, 31 * 3 - 5, 29 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
 	animation = &updiagonalleft;
@@ -530,7 +548,7 @@ void Enemy_Grey_Tank::MoveShoot()
 
 
 
-	if (movement.steps[movement.GetCurrentStep()].speed.x == -2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.5f) //NW3
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f) //NW3
 	{
 		animation = &updiagonalright;
 		if (ishit == true)
@@ -555,7 +573,7 @@ void Enemy_Grey_Tank::MoveShoot()
 	}*/
 
 
-	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) //NW1
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 0.5f) //NW1
 	{
 		animation = &downdiagonalright;
 		if (ishit == true)
@@ -607,7 +625,7 @@ void Enemy_Grey_Tank::MoveShoot()
 
 
 
-	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) // NW2
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.5f) // NW2
 	{
 		animation = &neutraldiagonalright;
 		if (ishit == true)

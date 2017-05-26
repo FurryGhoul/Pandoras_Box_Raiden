@@ -260,6 +260,11 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(22, ENEMY_TYPES::GREY_TANK, 850, -6020);
 		App->enemies->AddEnemy(22, ENEMY_TYPES::GREY_TANK, 950, -6020);
 
+		//stop-east- north east 2
+		App->enemies->AddEnemy(31, ENEMY_TYPES::GREY_TANK, 420, -6070);
+		//stop-west-north west 2
+		App->enemies->AddEnemy(30, ENEMY_TYPES::GREY_TANK, 620, -6070);
+
 
 		//stop- North east 2- east- west
 		App->enemies->AddEnemy(25, ENEMY_TYPES::GREY_TANK, 325, -5200);
