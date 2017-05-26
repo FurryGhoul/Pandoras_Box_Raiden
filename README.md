@@ -47,3 +47,5 @@ Shoot: Space
 *Player2*
 Move: Arrows
 Shoot: P
+
+# Download the latest version of the Raiden here(https://github.com/FurryGhoul/Pandoras_Box_Raiden/releases)!
