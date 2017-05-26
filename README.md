@@ -40,11 +40,11 @@ Show hitboxes: F1 (shows the hitboxes of the players, enemies, powerups and bull
 Godmode: G (makes both players invincible, useful to see the whole map without having to kill the enemies)
 Exit-> ESCAPE (close the game)
 
-*Player1*
+**Player1**
 Move: WASD
 Shoot: Space
 
-*Player2*
+**Player2**
 Move: Arrows
 Shoot: P
 
