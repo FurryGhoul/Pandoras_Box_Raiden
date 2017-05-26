@@ -99,10 +99,13 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -2300);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -2400);
 	    // Horizontal tanks
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -2300);
+
 		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -1880);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -1940);		
-		//Vertical tanks
+		App->enemies->AddEnemy(18, ENEMY_TYPES::TANK, 0, -2300);
+
+		//Vertical tanks		
+		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -2300);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -2000);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -2100);
 
@@ -121,9 +124,6 @@ update_status ModuleMap1::Update()
 
 
 		// Pool	
-
-		
-		
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -2700);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -2700);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -2740);
@@ -176,6 +176,8 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -3150);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -3250);
 		//Vuelta
+        App->enemies->AddEnemy(13, ENEMY_TYPES::TANK, 357*3, -3700);
+        App->enemies->AddEnemy(11, ENEMY_TYPES::TANK, -50, -3700);
 
 		//Vertical left tanks
 		//Direct
@@ -183,7 +185,16 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 270, -3550);
 		//Vuelta
 		App->enemies->AddEnemy(12, ENEMY_TYPES::TANK, -50, -3600);
-		App->enemies->AddEnemy(11, ENEMY_TYPES::TANK, -50, -3700);
+		
+		
+		//SE2 Tanks
+		App->enemies->AddEnemy(14, ENEMY_TYPES::TANK, 200, -3770);
+		App->enemies->AddEnemy(15, ENEMY_TYPES::TANK, 0, -3940);
+		App->enemies->AddEnemy(16, ENEMY_TYPES::TANK, 0, -4200);
+		App->enemies->AddEnemy(17, ENEMY_TYPES::TANK, 0, -4350);
+		//SW2 Tanks
+		App->enemies->AddEnemy(19, ENEMY_TYPES::TANK, 357 * 3, -4300);
+		App->enemies->AddEnemy(20, ENEMY_TYPES::TANK, 357 * 3, -4400);
 
 		//Light kamizaze orgy 1
 		//Left
@@ -221,10 +232,41 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -5000);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -5000);
 
-		
-		
+		//Roads1
+		//Stoped
+		App->enemies->AddEnemy(21, ENEMY_TYPES::GREY_TANK, 150, -4950);
+		App->enemies->AddEnemy(21, ENEMY_TYPES::GREY_TANK, 250, -5400);
+
+		App->enemies->AddEnemy(27, ENEMY_TYPES::GREY_TANK, 150, -5600);
+		App->enemies->AddEnemy(27, ENEMY_TYPES::GREY_TANK, 300, -5650);
+		App->enemies->AddEnemy(27, ENEMY_TYPES::GREY_TANK, 700, -5650);
+		App->enemies->AddEnemy(27, ENEMY_TYPES::GREY_TANK, 520, -6070);
+		//Horizontal to stop-right
+		App->enemies->AddEnemy(23, ENEMY_TYPES::GREY_TANK, 0, -5050);
+		App->enemies->AddEnemy(23, ENEMY_TYPES::GREY_TANK, 500, -5050);
+		App->enemies->AddEnemy(23, ENEMY_TYPES::GREY_TANK, 650, -5050);
+		App->enemies->AddEnemy(23, ENEMY_TYPES::GREY_TANK, 800, -5050);
+
+		//Horizontal to right-stop
+		App->enemies->AddEnemy(29, ENEMY_TYPES::GREY_TANK, 200, -6020);
+		App->enemies->AddEnemy(29, ENEMY_TYPES::GREY_TANK, 100, -6020);
+
+		//Horizontal to left-stop
+		App->enemies->AddEnemy(24, ENEMY_TYPES::GREY_TANK, 250, -5150);
+		App->enemies->AddEnemy(24, ENEMY_TYPES::GREY_TANK, 400, -5150);
+		App->enemies->AddEnemy(24, ENEMY_TYPES::GREY_TANK, 550, -5150);
+		App->enemies->AddEnemy(24, ENEMY_TYPES::GREY_TANK, 357 * 3, -5150);
+		//Horizontal to stop-left
+		App->enemies->AddEnemy(22, ENEMY_TYPES::GREY_TANK, 850, -6020);
+		App->enemies->AddEnemy(22, ENEMY_TYPES::GREY_TANK, 950, -6020);
 
 
+		//stop- North east 2- east- west
+		App->enemies->AddEnemy(25, ENEMY_TYPES::GREY_TANK, 325, -5200);
+		App->enemies->AddEnemy(26, ENEMY_TYPES::GREY_TANK, 450, -5200);
+		//South-west 2
+		App->enemies->AddEnemy(28, ENEMY_TYPES::GREY_TANK, 900, -5600);
+		 
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 330, -3880);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 380, -4380);

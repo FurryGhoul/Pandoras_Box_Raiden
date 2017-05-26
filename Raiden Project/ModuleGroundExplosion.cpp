@@ -170,7 +170,7 @@ update_status ModuleGroundExplosion::Update()
 
 
 
-void ModuleGroundExplosion::AddGroundExplosion(const GroundExplosion& particle, int x, int y, COLLIDER_TYPE collider_type, int bullettype, int speed_x, int speed_y, bool delay, bool multipleshot, int damage, bool pactive, int position_respect_player)
+void ModuleGroundExplosion::AddGroundExplosion(const GroundExplosion& particle, int x, int y, COLLIDER_TYPE collider_type, int bullettype, int speed_x, float speed_y, bool delay, bool multipleshot, int damage, bool pactive, int position_respect_player)
 {
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 	{
