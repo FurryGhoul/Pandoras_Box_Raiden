@@ -48,4 +48,4 @@ Shoot: Space
 Move: Arrows
 Shoot: P
 
-# Download the latest version of the Raiden here(https://github.com/FurryGhoul/Pandoras_Box_Raiden/releases)!
+# Download the latest version of the Raiden [here](https://github.com/FurryGhoul/Pandoras_Box_Raiden/releases)!
