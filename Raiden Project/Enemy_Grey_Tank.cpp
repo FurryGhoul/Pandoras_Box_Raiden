@@ -108,13 +108,13 @@ Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
 	2.0, 1.5 = SE3 // Not adapted to roads
 	-0.5, 0.0 = NW1 // Not adapted to roads
 	0.5, 2.0 =  SE1 // Not adapted to roads
-	1.0, 0.0 = NE2 // Not adapted to roads
+	1.0, 0.5 = NE2 // Not adapted to roads
 	-1.0, 2.5 = SW2
 	-1.0, 0.0 = NW2 // Not adapted to roads
 	1.0, 2.0 = SE2 // Not adapted to roads
 	-2,0,1.5 = SW1 // Not adapted to roads
 	0.5,0.0 = NE3 // Not adapted to roads
-	2.0, 0.5 = NE1 // Not adapted to roads
+	2.0, 1.0 = NE1 
 	0.0, 1.5 = STOP
 	*/
 
@@ -144,6 +144,23 @@ Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
 		original_pos.y = 400;
 		movement.PushBack({ 2.0f, 1.0f }, 120);
 		movement.PushBack({ 0.0f, 1.5f }, 1000);
+	}
+	//Stop-east
+	//1
+	if (path == 23)
+	{
+		original_pos.y = -100;
+		movement.PushBack({ 2.0f, 1.5f }, 1);
+		movement.PushBack({ 0.0f, 1.5f }, 100);
+		movement.PushBack({ 2.0f, 1.5f }, 1000);
+	}
+	//Stop-west
+	if (path == 24)
+	{
+		original_pos.y = -100;
+		movement.PushBack({ -2.0f, 1.5f }, 1);
+		movement.PushBack({ 0.0f, 1.5f }, 100);
+		movement.PushBack({ -2.0f, 1.5f }, 1000);
 	}
 	// West-stop
 	if (path == 22)
@@ -311,7 +328,31 @@ Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ 0.0f, 1.5f }, 1000);
 
 	}
-
+	//stop- North east 2- east- west
+	//1
+	if (path == 25)
+	{
+		original_pos.y = -100;
+		movement.PushBack({ 1.0f, 0.5f }, 1);
+		movement.PushBack({ 0.0f, 1.5f }, 100);
+		movement.PushBack({ 1.0f, 0.5f }, 250); 
+		movement.PushBack({ 2.0f, 1.0f }, 10);
+		movement.PushBack({ 2.0f, 1.5f }, 100);
+		movement.PushBack({ -2.0f, 1.5f }, 100);
+		movement.PushBack({ 0.0f, 1.5f }, 1000);
+	}
+	//2
+	if (path == 26)
+	{
+		original_pos.y = -100;
+		movement.PushBack({ 1.0f, 0.5f }, 1);
+		movement.PushBack({ 0.0f, 1.5f }, 100);
+		movement.PushBack({ 1.0f, 0.5f }, 350); 
+		movement.PushBack({ 2.0f, 1.0f }, 10);
+		movement.PushBack({ 2.0f, 1.5f }, 100);
+		movement.PushBack({ -2.0f, 1.5f }, 100);
+		movement.PushBack({ 0.0f, 1.5f }, 1000);
+	}
 	greytank = true;
 	collider = App->collision->AddCollider({ 0, 0, 31 * 3 - 5, 29 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
 	animation = &updiagonalleft;
@@ -476,7 +517,7 @@ void Enemy_Grey_Tank::MoveShoot()
 		position1.x = position.x + w / 2;
 		position1.y = position.y + h / 2;
 	}
-
+	/*
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.5f) //SE3
 	{
 		animation = &updiagonalright;
@@ -487,7 +528,7 @@ void Enemy_Grey_Tank::MoveShoot()
 		}
 		position1.x = position.x + w / 2;
 		position1.y = position.y + h / 2;
-	}
+	}*/
 
 
 	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) //NW1
@@ -516,7 +557,7 @@ void Enemy_Grey_Tank::MoveShoot()
 	}
 
 
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) //NE2
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.5f) //NE2
 	{
 		animation = &neutraldiagonalleft;
 		if (ishit == true)
@@ -564,6 +605,7 @@ void Enemy_Grey_Tank::MoveShoot()
 		position1.x = position.x + w / 2;
 		position1.y = position.y + h / 2;
 	}
+	/*
 	if (movement.steps[movement.GetCurrentStep()].speed.x == -2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.5f) //SW1
 	{
 		animation = &downdiagonalleft; //CHANGE
@@ -575,7 +617,8 @@ void Enemy_Grey_Tank::MoveShoot()
 		position1.x = position.x + w / 2;
 		position1.y = position.y + h / 2;
 	}
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.5f) //NE1
+	*/
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f) //NE1
 	{
 		animation = &downdiagonalleft; //CHANGE
 		if (ishit == true)

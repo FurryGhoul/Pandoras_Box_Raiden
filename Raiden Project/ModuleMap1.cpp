@@ -233,8 +233,24 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -5000);
 
 		//Roads1
+		//Stoped
 		App->enemies->AddEnemy(21, ENEMY_TYPES::GREY_TANK, 150, -4950);
-		
+		App->enemies->AddEnemy(21, ENEMY_TYPES::GREY_TANK, 250, -5400);
+		//Horizontal to right
+		App->enemies->AddEnemy(23, ENEMY_TYPES::GREY_TANK, 0, -5050);
+		App->enemies->AddEnemy(23, ENEMY_TYPES::GREY_TANK, 500, -5050);
+		App->enemies->AddEnemy(23, ENEMY_TYPES::GREY_TANK, 650, -5050);
+		App->enemies->AddEnemy(23, ENEMY_TYPES::GREY_TANK, 800, -5050);
+
+		//Horizontal to left
+		App->enemies->AddEnemy(24, ENEMY_TYPES::GREY_TANK, 250, -5150);
+		App->enemies->AddEnemy(24, ENEMY_TYPES::GREY_TANK, 400, -5150);
+		App->enemies->AddEnemy(24, ENEMY_TYPES::GREY_TANK, 550, -5150);
+		App->enemies->AddEnemy(24, ENEMY_TYPES::GREY_TANK, 357 * 3, -5150);
+
+		//stop- North east 2- east- west
+		App->enemies->AddEnemy(25, ENEMY_TYPES::GREY_TANK, 325, -5200);
+		App->enemies->AddEnemy(26, ENEMY_TYPES::GREY_TANK, 450, -5200);
 
 
 

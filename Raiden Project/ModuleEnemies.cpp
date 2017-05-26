@@ -341,6 +341,11 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 					App->particles->AddParticle(App->particles->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
 					enemies[i]->turretexploded == true;
 				}
+				else if (enemies[i]->greytank && enemies[i]->turretexploded == false)
+				{
+					App->particles->AddParticle(App->particles->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+					enemies[i]->turretexploded == true;
+				}
 			}
 
 			if (enemies[i]->hp <= 0)
