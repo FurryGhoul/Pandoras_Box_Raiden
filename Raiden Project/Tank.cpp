@@ -119,6 +119,28 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ 2.0f, 1.0f }, 300);
 		movement.PushBack({ 0.0f, 1.0f }, 1000);
 	}
+	//east-stop delayed 1
+	if (path == 8)
+	{
+		original_pos.y = 350;
+		movement.PushBack({ 2.0f, 1.0f }, 250);
+		movement.PushBack({ 0.0f, 1.0f }, 1000);
+	}
+	//east-stop delayed 2
+	if (path == 9)
+	{
+		original_pos.y = 300;
+		movement.PushBack({ 2.0f, 1.0f }, 300);
+		movement.PushBack({ 0.0f, 1.0f }, 1000);
+	}
+	//east-stop delayed 3
+
+	if (path == 10)
+	{
+		original_pos.y = 400;
+		movement.PushBack({ 2.0f, 1.0f }, 100);
+		movement.PushBack({ 0.0f, 1.0f }, 1000);
+	}
 
 	//Vertical south
 	if (path == 1)
@@ -131,7 +153,6 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	if (path == 2)
 	{
 		movement.PushBack({ 0.0f, 1.0f }, 100);
-	
 		movement.PushBack({ 2.0f, 1.0f }, 1000);
 	}
 	//2
