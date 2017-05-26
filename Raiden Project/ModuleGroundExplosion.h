@@ -22,7 +22,7 @@ struct GroundExplosion
 	Animation anim;
 	uint fx = 0;
 	fPoint position;
-	iPoint speed;
+	fPoint speed;
 	iPoint size;
 	bool active = true; // if active is true, particles have collider, if it is false they don't
 	Uint32 bullettype = 0;
@@ -85,7 +85,7 @@ public:
 	bool CleanUp();
 	void OnCollision(Collider* c1, Collider* c2);
 	void MoveExplosionRight(bool);
-	void AddGroundExplosion(const GroundExplosion& particle, int x, int y, COLLIDER_TYPE collider_type = COLLIDER_NONE, int bullettype = 0, int speed_x = 0, int speed_y = 0, bool delay = 0, bool multipleshot = false, int damage = 0, bool pactive = true, int position_respect_player = 0);
+	void AddGroundExplosion(const GroundExplosion& particle, int x, int y, COLLIDER_TYPE collider_type = COLLIDER_NONE, int bullettype = 0, int speed_x = 0, float speed_y = 0, bool delay = 0, bool multipleshot = false, int damage = 0, bool pactive = true, int position_respect_player = 0);
 	void EraseParticles();
 private:
 

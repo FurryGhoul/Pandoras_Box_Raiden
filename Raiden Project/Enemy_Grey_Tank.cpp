@@ -16,80 +16,81 @@ Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
 	spritesheet = 2;
 	animations = 2;
 	// Tank animations
-	downup.PushBack({ 3, 4, 31, 29 });
+	downup.PushBack({ 3, 186, 31, 29 }); // done
 	hitdownup.PushBack({ 4, 95, 31, 29 });
 
-	downdiagonalright.PushBack({ 37, 4, 31, 29 });
+	downdiagonalright.PushBack({ 37,	186, 31, 29 }); // done
 	hitdowndiagonalright.PushBack({ 38, 95,31,29 });
 
-	neutraldiagonalright.PushBack({ 71, 4,31, 29 });
+	neutraldiagonalright.PushBack({ 71, 186,31, 29 }); //in proces
 	hitneutraldiagonalright.PushBack({ 72, 95, 31, 29 });
 
-	updiagonalright.PushBack({ 105, 4, 31, 29 });
+	updiagonalright.PushBack({ 105, 186, 31, 29 }); // Not in usage 
 	hitupdiagonalright.PushBack({ 106, 95, 31, 29 });
 
-	leftright.PushBack({ 139 , 4, 31, 29 });
+	leftright.PushBack({ 139 , 186, 31, 29 }); // done
 	hitleftright.PushBack({ 140 , 95, 31, 29 });
 
-	downdiagonalleft.PushBack({ 173, 4, 31, 29 });
+	downdiagonalleft.PushBack({ 173, 186, 31, 29 }); // done
 	hitdowndiagonalleft.PushBack({ 174, 95, 31, 29 });
 
-	neutraldiagonalleft.PushBack({ 207, 4, 31, 29 });
+	neutraldiagonalleft.PushBack({ 207, 186, 31, 29 }); // done
 	hitneutraldiagonalleft.PushBack({ 208, 95, 31, 29 });
 
-	updiagonalleft.PushBack({ 241, 4, 31, 29 });
+	updiagonalleft.PushBack({ 241, 186, 31, 29 }); // Not in usage
 	hitupdiagonalleft.PushBack({ 242, 95, 31, 29 });
 
 	//Turret animations
 	noturret.PushBack({ 1, 1, 1, 1 });
 
-	s.PushBack({ 3, 44, 38, 34 });
+	s.PushBack({ 3, 226, 38, 34 });
 	hits.PushBack({ 4, 135, 38, 34 });
 
-	se1.PushBack({ 44, 44, 38, 34 });
+	se1.PushBack({ 44, 226, 38, 34 });
 	hitse1.PushBack({ 45, 135, 38, 34 });
 
-	se2.PushBack({ 85, 44, 38, 34 });
+	se2.PushBack({ 85, 226, 38, 34 });
 	hitse2.PushBack({ 86, 135, 38, 34 });
 
-	se3.PushBack({ 126, 44, 38, 34 });
+	se3.PushBack({ 126, 226, 38, 34 });
 	hitse3.PushBack({ 127, 135, 38, 34 });
 
-	e.PushBack({ 167, 44, 38, 34 });
+	e.PushBack({ 167, 226, 38, 34 });
 	hite.PushBack({ 168, 135, 38, 34 });
 
-	ne1.PushBack({ 208, 44, 38, 34 });
+	ne1.PushBack({ 208, 226, 38, 34 });
 	hitne1.PushBack({ 209, 135, 38, 34 });
 
-	ne2.PushBack({ 249, 44, 38, 34 });
+	ne2.PushBack({ 249, 226, 38, 34 });
 	hitne2.PushBack({ 250, 135, 38, 34 });
 
-	ne3.PushBack({ 290, 44, 38, 34 });
+	ne3.PushBack({ 290, 226, 38, 34 });
 	hitne3.PushBack({ 291, 135, 38, 34 });
 
-	n.PushBack({ 331, 44, 38, 34 });
+	n.PushBack({ 331, 226, 38, 34 });
 	hitn.PushBack({ 332, 135, 38, 34 });
 
-	nw1.PushBack({ 372, 44, 38, 34 });
+	nw1.PushBack({ 372, 226, 38, 34 });
 	hitnw1.PushBack({ 373, 135, 38, 34 });
 
-	nw2.PushBack({ 413, 44, 38, 34 });
+	nw2.PushBack({ 413, 226, 38, 34 });
 	hitnw2.PushBack({ 414, 135, 38, 34 });
 
-	nw3.PushBack({ 454, 44, 38, 34 });
+	nw3.PushBack({ 454, 226, 38, 34 });
 	hitnw3.PushBack({ 455, 135, 38, 34 });
 
-	w11.PushBack({ 495, 44, 38, 34 });
+	w11.PushBack({ 495, 226, 38, 34 });
 	hitw11.PushBack({ 496, 135, 38, 34 });
 
-	sw1.PushBack({ 536, 44, 38, 34 });
+	sw1.PushBack({ 536, 226, 38, 34 });
 	hitsw1.PushBack({ 537, 135, 38, 34 });
 
-	sw2.PushBack({ 577, 44, 38, 34 });
+	sw2.PushBack({ 577, 226, 38, 34 });
 	hitsw2.PushBack({ 578, 135, 38, 34 });
 
-	sw3.PushBack({ 618, 44, 38, 34 });
+	sw3.PushBack({ 618, 226, 38, 34 });
 	hitsw3.PushBack({ 619, 135, 38, 34 });
+
 
 
 	original_pos.x = x;
@@ -97,53 +98,61 @@ Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
 
 	//Paths (there should be more than one path and an integer to select what path to use
 	/*Instructions for pathing the enemies:
-	0.0, 4.0 = S
-	0.0, -1.0 = N
-	-2.0, 1.0 = W
-	2.0, 1.0 = E
-	-0.5, 1.5 = SW3
-	0.5, 0.0 = SE1
-	-2.0, 0.5 = NW3
-	2.0, 1.5 = SE3
-	-0.5, 0.0 = NW1
-	0.5, 2.0 =  SE1
-	1.0, 0.0 = NE2
-	-1.0, 2.0 = SW2
-	-1.0, 0.0 = NW2
-	1.0, 2.0 = SE2
-	-2,0,1.5 = SW1
-	0.5,0.0 = NE3
-	2.0, 0.5 = NE1
+	0.0, 4.0 = S // Not adapted to roads
+	0.0, -1.0 = N // Not adapted to roads
+	-2.0, 1.5 = W 
+	2.0, 1.5 = E
+	-0.5, 1.5 = SW3 // Not adapted to roads
+	0.5, 0.0 = SE1 // Not adapted to roads
+	-2.0, 0.5 = NW3 // Not adapted to roads
+	2.0, 1.5 = SE3 // Not adapted to roads
+	-0.5, 0.0 = NW1 // Not adapted to roads
+	0.5, 2.0 =  SE1 // Not adapted to roads
+	1.0, 0.0 = NE2 // Not adapted to roads
+	-1.0, 2.5 = SW2
+	-1.0, 0.0 = NW2 // Not adapted to roads
+	1.0, 2.0 = SE2 // Not adapted to roads
+	-2,0,1.5 = SW1 // Not adapted to roads
+	0.5,0.0 = NE3 // Not adapted to roads
+	2.0, 0.5 = NE1 // Not adapted to roads
+	0.0, 1.5 = STOP
 	*/
 
 	//east-stop
 	if (path == 0)
 	{
 		movement.PushBack({ 2.0f, 1.0f }, 300);
-		movement.PushBack({ 0.0f, 1.0f }, 1000);
+		movement.PushBack({ 0.0f, 1.5f }, 1000);
 	}
 	//1
 	if (path == 8)
 	{
 		original_pos.y = 350;
 		movement.PushBack({ 2.0f, 1.0f }, 280);
-		movement.PushBack({ 0.0f, 1.0f }, 1000);
+		movement.PushBack({ 0.0f, 1.5f }, 1000);
 	}
 	//2
 	if (path == 9)
 	{
 		original_pos.y = 300;
 		movement.PushBack({ 2.0f, 1.0f }, 350);
-		movement.PushBack({ 0.0f, 1.0f }, 1000);
+		movement.PushBack({ 0.0f, 1.5f }, 1000);
 	}
 	//3
 	if (path == 10)
 	{
 		original_pos.y = 400;
 		movement.PushBack({ 2.0f, 1.0f }, 120);
-		movement.PushBack({ 0.0f, 1.0f }, 1000);
+		movement.PushBack({ 0.0f, 1.5f }, 1000);
 	}
-	//east-north-south
+	// West-stop
+	if (path == 22)
+	{
+		original_pos.y = 100;
+		movement.PushBack({ -2.0f, 1.5f }, 120);
+		movement.PushBack({ 0.0f, 1.5f }, 1000);
+	}
+	//east-north-south-stop
 	//1
 	if (path == 18)
 	{
@@ -294,8 +303,16 @@ Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ -2.0f,0.5f }, 10);
 		movement.PushBack({ -2.0f, 1.0f }, 1000);
 	}
+	//South west 2 stop
+	if (path == 21)
+	{
+		original_pos.y = -100;
+		movement.PushBack({ -1.0f, 2.5f }, 1);
+		movement.PushBack({ 0.0f, 1.5f }, 1000);
 
-	tank = true;
+	}
+
+	greytank = true;
 	collider = App->collision->AddCollider({ 0, 0, 31 * 3 - 5, 29 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
 	animation = &updiagonalleft;
 }
@@ -353,7 +370,7 @@ void Enemy_Grey_Tank::MoveShoot()
 		position1.y = position.y + h / 2 - 5;
 	}
 
-	if (movement.steps[movement.GetCurrentStep()].speed.x == -2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f) //West
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.5f) //West
 	{
 		animation = &leftright;
 		if (ishit == true)
@@ -367,7 +384,7 @@ void Enemy_Grey_Tank::MoveShoot()
 	}
 
 
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f) //East
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.5f) //East
 	{
 		animation = &leftright;
 		if (ishit == true)
@@ -382,7 +399,7 @@ void Enemy_Grey_Tank::MoveShoot()
 
 
 
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f) //If tanks stop they get the last animation that was done
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.5f) //If tanks stop they get the last animation that was done
 	{
 		if (animation == &leftright || animation == &hitleftright)
 		{
@@ -406,6 +423,17 @@ void Enemy_Grey_Tank::MoveShoot()
 			}
 			position1.x = position.x + w / 2;
 			position1.y = position.y + h / 2 - 5;
+		}
+		if (animation == &neutraldiagonalleft || animation == &hitneutraldiagonalleft)
+		{
+			animation = &neutraldiagonalleft;
+			if (ishit == true)
+			{
+				animation = &hitneutraldiagonalleft;
+				ishit = false;
+			}
+			position1.x = position.x + w / 2;
+			position1.y = position.y + h / 2;
 		}
 	}
 
@@ -499,7 +527,7 @@ void Enemy_Grey_Tank::MoveShoot()
 		position1.x = position.x + w / 2;
 		position1.y = position.y + h / 2;
 	}
-	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f) //SW2
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 2.5f) //SW2
 	{
 		animation = &neutraldiagonalleft;
 		if (ishit == true)

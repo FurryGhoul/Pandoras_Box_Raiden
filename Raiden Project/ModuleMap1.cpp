@@ -232,8 +232,8 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -5000);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -5000);
 
-		//Roads
-
+		//Roads1
+		App->enemies->AddEnemy(21, ENEMY_TYPES::GREY_TANK, 150, -4950);
 		
 
 
