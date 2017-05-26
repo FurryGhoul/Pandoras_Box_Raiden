@@ -29,3 +29,21 @@ The plot of the game takes place in 2090 when planet Earth is attacked by the al
 4. Albert Mas
  - Github: https://github.com/albermas
  - QA
+
+Despite the different responabilities, each member of the team has worked on the code of the game.
+
+# Game Controls
+Start game: 1 for playing solo and 2 for cooperative
+Return to the start screen from winning stage: Space
+Fast Win: Backspace (pressing Backspace on the map 1 screen will take you to the map 1 cleared screen)
+Show hitboxes: F1 (shows the hitboxes of the players, enemies, powerups and bullets)
+Godmode: G (makes both players invincible, useful to see the whole map without having to kill the enemies)
+Exit-> ESCAPE (close the game)
+
+*Player1*
+Move: WASD
+Shoot: Space
+
+*Player2*
+Move: Arrows
+Shoot: P
