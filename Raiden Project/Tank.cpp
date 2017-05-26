@@ -231,12 +231,14 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	//1
 	if (path == 2)
 	{
+		movement.PushBack({ 2.0f, 1.0f }, 1);
 		movement.PushBack({ 0.0f, 1.0f }, 100);
 		movement.PushBack({ 2.0f, 1.0f }, 1000);
 	}
 	//2
 	if (path == 3)
 	{
+		movement.PushBack({ 2.0f, 1.0f }, 1);
 		movement.PushBack({ 0.0f, 1.0f }, 100);
 		movement.PushBack({ 2.0f, 1.5f }, 20);
 		movement.PushBack({ 2.0f, 1.0f }, 1000);
@@ -244,6 +246,7 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	//3
 	if (path == 4)
 	{
+		movement.PushBack({ 2.0f, 1.0f }, 1);
 		movement.PushBack({ 0.0f, 1.0f },100);
 		movement.PushBack({ 2.0f, 1.5f }, 90);
 		movement.PushBack({ 2.0f, 1.0f }, 1000);
@@ -253,6 +256,7 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	//1
 	if (path == 5)
 	{
+		movement.PushBack({ 2.0f, 1.0f }, 1);
 		movement.PushBack({ 0.0f, 1.0f }, 150);
 		movement.PushBack({ -2.0f, 0.5f }, 85);
 		movement.PushBack({ -2.0f, 1.0f }, 1000);
@@ -260,6 +264,7 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	//2
 	if (path == 6)
 	{
+		movement.PushBack({ 2.0f, 1.0f }, 1);
 		movement.PushBack({ 0.0f, 1.0f }, 100);
 		movement.PushBack({ -2.0f, 0.5f }, 35);
 		movement.PushBack({ -2.0f, 1.0f }, 1000);
@@ -267,6 +272,7 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	//3
 	if (path == 7)
 	{
+		movement.PushBack({ 2.0f, 1.0f }, 1);
 		movement.PushBack({ 0.0f, 1.0f }, 50);
 		movement.PushBack({ -2.0f,0.5f }, 10);
 		movement.PushBack({ -2.0f, 1.0f }, 1000);
