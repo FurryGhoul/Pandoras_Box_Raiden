@@ -174,7 +174,6 @@ void Enemy_Bonus_Ship::MoveShoot()
 	h3 = 57 * 3;
 
 	++shoot_time;
-	++charge_time;
 
 	if (position.x < 410 || position.x > 410)
 	{
