@@ -16,6 +16,7 @@
 #include "ModulePlayer2.h"
 #include "ModulePowerUps.h"
 #include "ModuleShadows.h"
+#include "ModuleGroundExplosion.h"
 
 ModuleWelcomeScreen::ModuleWelcomeScreen() : Module()
 {
@@ -54,11 +55,13 @@ update_status ModuleWelcomeScreen::Update()
 		App->powerups->Disable();
 		App->collision->Disable();
 		App->particles->Disable();
+		App->gexplosion->Disable();
 		App->player2->deadplayer = false;
 		App->player->deadplayer = false;
 		App->enemies->EraseEnemies();
 		App->powerups->ErasePowerUps();
 		App->particles->EraseParticles();
+		App->gexplosion->EraseParticles();
 		App->player->powerup_level = 0;
 		App->player->missile_powerup_level = 0;
 		App->player->red = true;
