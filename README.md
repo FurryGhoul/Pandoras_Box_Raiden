@@ -12,22 +12,22 @@ The plot of the game takes place in 2090 when planet Earth is attacked by the al
 ## TEAM MEMBERS
 
 1. Ivan Drofiak
- - Github: https://github.com/FurryGhoul
+ - Github: [https://github.com/FurryGhoul](https://github.com/FurryGhoul)
  - Management
 
 
 2. Genís Bayó
- - Github: https://github.com/retsnom9
+ - Github: [https://github.com/retsnom9](https://github.com/retsnom9)
  - Art/Design 
 
 
 3. Lucas García
- - Github: https://github.com/Skyway666
+ - Github: [https://github.com/Skyway666](https://github.com/Skyway666)
  - Code 
 
 
 4. Albert Mas
- - Github: https://github.com/albermas
+ - Github: [https://github.com/albermas](https://github.com/albermas)
  - QA
 
 Despite the different responabilities, each member of the team has worked on the code of the game.
