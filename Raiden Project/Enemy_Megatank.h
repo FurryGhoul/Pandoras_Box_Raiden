@@ -8,6 +8,9 @@ private:
 	Animation idle;
 	Animation hit;
 
+	Animation dmgspinning;
+	Animation dmgdecelaration;
+
 	fPoint original_pos;
 
 	Path movement;
