@@ -165,8 +165,15 @@ Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
 	// West-stop
 	if (path == 22)
 	{
-		original_pos.y = 100;
+		original_pos.y = -100;
 		movement.PushBack({ -2.0f, 1.5f }, 120);
+		movement.PushBack({ 0.0f, 1.5f }, 1000);
+	}
+	//East-stop
+	if (path == 29)
+	{
+		original_pos.y = -100;
+		movement.PushBack({ 2.0f, 1.5f }, 120);
 		movement.PushBack({ 0.0f, 1.5f }, 1000);
 	}
 	//east-north-south-stop
@@ -321,6 +328,7 @@ Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ -2.0f, 1.0f }, 1000);
 	}
 	//South west 2 stop
+	//1
 	if (path == 21)
 	{
 		original_pos.y = -100;
@@ -328,6 +336,15 @@ Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ 0.0f, 1.5f }, 1000);
 
 	}
+	//South west 2 -stop
+	//1
+	if (path == 28)
+	{
+		original_pos.y = -100;
+		movement.PushBack({ -1.0f, 2.5f }, 250);
+		movement.PushBack({ 0.0f, 1.5f }, 1000);
+	}
+
 	//stop- North east 2- east- west
 	//1
 	if (path == 25)
@@ -351,6 +368,13 @@ Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ 2.0f, 1.0f }, 10);
 		movement.PushBack({ 2.0f, 1.5f }, 100);
 		movement.PushBack({ -2.0f, 1.5f }, 100);
+		movement.PushBack({ 0.0f, 1.5f }, 1000);
+	}
+
+	//West/East stop
+	if (path == 27)
+	{
+		movement.PushBack({ 2.0f, 1.5f }, 1);
 		movement.PushBack({ 0.0f, 1.5f }, 1000);
 	}
 	greytank = true;

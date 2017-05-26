@@ -236,23 +236,37 @@ update_status ModuleMap1::Update()
 		//Stoped
 		App->enemies->AddEnemy(21, ENEMY_TYPES::GREY_TANK, 150, -4950);
 		App->enemies->AddEnemy(21, ENEMY_TYPES::GREY_TANK, 250, -5400);
-		//Horizontal to right
+
+		App->enemies->AddEnemy(27, ENEMY_TYPES::GREY_TANK, 150, -5600);
+		App->enemies->AddEnemy(27, ENEMY_TYPES::GREY_TANK, 300, -5650);
+		App->enemies->AddEnemy(27, ENEMY_TYPES::GREY_TANK, 700, -5650);
+		App->enemies->AddEnemy(27, ENEMY_TYPES::GREY_TANK, 520, -6070);
+		//Horizontal to stop-right
 		App->enemies->AddEnemy(23, ENEMY_TYPES::GREY_TANK, 0, -5050);
 		App->enemies->AddEnemy(23, ENEMY_TYPES::GREY_TANK, 500, -5050);
 		App->enemies->AddEnemy(23, ENEMY_TYPES::GREY_TANK, 650, -5050);
 		App->enemies->AddEnemy(23, ENEMY_TYPES::GREY_TANK, 800, -5050);
 
-		//Horizontal to left
+		//Horizontal to right-stop
+		App->enemies->AddEnemy(29, ENEMY_TYPES::GREY_TANK, 200, -6020);
+		App->enemies->AddEnemy(29, ENEMY_TYPES::GREY_TANK, 100, -6020);
+
+		//Horizontal to left-stop
 		App->enemies->AddEnemy(24, ENEMY_TYPES::GREY_TANK, 250, -5150);
 		App->enemies->AddEnemy(24, ENEMY_TYPES::GREY_TANK, 400, -5150);
 		App->enemies->AddEnemy(24, ENEMY_TYPES::GREY_TANK, 550, -5150);
 		App->enemies->AddEnemy(24, ENEMY_TYPES::GREY_TANK, 357 * 3, -5150);
+		//Horizontal to stop-left
+		App->enemies->AddEnemy(22, ENEMY_TYPES::GREY_TANK, 850, -6020);
+		App->enemies->AddEnemy(22, ENEMY_TYPES::GREY_TANK, 950, -6020);
+
 
 		//stop- North east 2- east- west
 		App->enemies->AddEnemy(25, ENEMY_TYPES::GREY_TANK, 325, -5200);
 		App->enemies->AddEnemy(26, ENEMY_TYPES::GREY_TANK, 450, -5200);
-
-
+		//South-west 2
+		App->enemies->AddEnemy(28, ENEMY_TYPES::GREY_TANK, 900, -5600);
+		 
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 330, -3880);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 380, -4380);
