@@ -398,11 +398,13 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				else if (enemies[i]->medalbox)
 				{
 					App->powerups->AddPowerUp(POWERUP_TYPES::MEDAL, enemies[i]->position.x, enemies[i]->position.y);
+					App->gexplosion->AddGroundExplosion(App->gexplosion->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
 				}
 
 				else if (enemies[i]->powerupbox)
 				{
 					App->powerups->AddPowerUp(POWERUP_TYPES::MISSILEUP, enemies[i]->position.x - 120, enemies[i]->position.y - 110);
+					App->gexplosion->AddGroundExplosion(App->gexplosion->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
 				}		
 
 				if (enemies[i]->bossmain)
