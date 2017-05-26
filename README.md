@@ -9,7 +9,7 @@ Raiden is a scrolling shooter arcade game developed and published by Seibu Kaihe
 
 The plot of the game takes place in 2090 when planet Earth is attacked by the alien race Cranassians and in order to defeat them the Wolrd Alliance Military builds a new aircraft based on an alien one to fight back, the Raiden Supersonic Attack Fighter.  
 
-# TEAM MEMBERS
+## TEAM MEMBERS
 
 1. Ivan Drofiak
  - Github: https://github.com/FurryGhoul
@@ -32,7 +32,7 @@ The plot of the game takes place in 2090 when planet Earth is attacked by the al
 
 Despite the different responabilities, each member of the team has worked on the code of the game.
 
-# Game Controls
+## Game Controls
 Start game: 1 for playing solo and 2 for cooperative
 Return to the start screen from winning stage: Space
 Fast Win: Backspace (pressing Backspace on the map 1 screen will take you to the map 1 cleared screen)
