@@ -166,9 +166,108 @@ Enemy_Megatank::Enemy_Megatank(int x, int y, int path) : Enemy(x, y)
 	spinning.PushBack({ 71,10,56,53 });
 	spinning.PushBack({ 71,10,56,53 });
 	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 14,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 128,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	spinning.PushBack({ 71,10,56,53 });
+	
+
+
 
 	spinning.loop = true;
-	spinning.speed = 1.0f;
+	spinning.speed = 0.9f;
 
 	//DMG SPINNING
 	dmgspinning.PushBack({ 356,10,56,53 });
@@ -323,9 +422,112 @@ Enemy_Megatank::Enemy_Megatank(int x, int y, int path) : Enemy(x, y)
 	dmgspinning.PushBack({ 413,10,56,53 });
 	dmgspinning.PushBack({ 71,10,56,53 });
 	dmgspinning.PushBack({ 71,10,56,53 });
+	dmgspinning.PushBack({ 356,10,56,53 });
+	dmgspinning.PushBack({ 356,10,56,53 });
+	dmgspinning.PushBack({ 14,10,56,53 });
+	dmgspinning.PushBack({ 14,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+	dmgspinning.PushBack({ 470,10,56,53 });
+	dmgspinning.PushBack({ 470,10,56,53 });
+	dmgspinning.PushBack({ 128,10,56,53 });
+	dmgspinning.PushBack({ 128,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+
+	dmgspinning.PushBack({ 356,10,56,53 });
+	dmgspinning.PushBack({ 356,10,56,53 });
+	dmgspinning.PushBack({ 14,10,56,53 });
+	dmgspinning.PushBack({ 14,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+	dmgspinning.PushBack({ 470,10,56,53 });
+	dmgspinning.PushBack({ 470,10,56,53 });
+	dmgspinning.PushBack({ 128,10,56,53 });
+	dmgspinning.PushBack({ 128,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+
+	dmgspinning.PushBack({ 356,10,56,53 });
+	dmgspinning.PushBack({ 356,10,56,53 });
+	dmgspinning.PushBack({ 14,10,56,53 });
+	dmgspinning.PushBack({ 14,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+	dmgspinning.PushBack({ 470,10,56,53 });
+	dmgspinning.PushBack({ 470,10,56,53 });
+	dmgspinning.PushBack({ 128,10,56,53 });
+	dmgspinning.PushBack({ 128,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+
+	dmgspinning.PushBack({ 356,10,56,53 });
+	dmgspinning.PushBack({ 356,10,56,53 });
+	dmgspinning.PushBack({ 14,10,56,53 });
+	dmgspinning.PushBack({ 14,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+	dmgspinning.PushBack({ 470,10,56,53 });
+	dmgspinning.PushBack({ 470,10,56,53 });
+	dmgspinning.PushBack({ 128,10,56,53 });
+	dmgspinning.PushBack({ 128,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+
+	dmgspinning.PushBack({ 356,10,56,53 });
+	dmgspinning.PushBack({ 356,10,56,53 });
+	dmgspinning.PushBack({ 14,10,56,53 });
+	dmgspinning.PushBack({ 14,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+	dmgspinning.PushBack({ 470,10,56,53 });
+	dmgspinning.PushBack({ 470,10,56,53 });
+	dmgspinning.PushBack({ 128,10,56,53 });
+	dmgspinning.PushBack({ 128,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+
+	dmgspinning.PushBack({ 356,10,56,53 });
+	dmgspinning.PushBack({ 356,10,56,53 });
+	dmgspinning.PushBack({ 14,10,56,53 });
+	dmgspinning.PushBack({ 14,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+	dmgspinning.PushBack({ 470,10,56,53 });
+	dmgspinning.PushBack({ 470,10,56,53 });
+	dmgspinning.PushBack({ 128,10,56,53 });
+	dmgspinning.PushBack({ 128,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 413,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+	dmgspinning.PushBack({ 71,10,56,53 });
+
+
 
 	dmgspinning.loop = true;
-	dmgspinning.speed = 1.0f;
+	dmgspinning.speed = 0.9f;
 
 
 	//DECELERATION
@@ -511,7 +713,6 @@ void Enemy_Megatank::MoveShoot()
 	}
 
 	
-	
 	if (spin == true)
 	{
 		charge++;
@@ -535,10 +736,10 @@ void Enemy_Megatank::MoveShoot()
 			App->particles->AddParticle(App->particles->enemyshot, position.x + 69, position.y + 45, COLLIDER_ENEMY_SHOT, 0, distance.x + 6, distance.y + 1);
 			App->particles->AddParticle(App->particles->enemyshot, position.x + 69, position.y + 45, COLLIDER_ENEMY_SHOT, 0, distance.x - 6, distance.y + 1);
 		}
-		if (charge == 130)
+		if (charge == 126)
 		{
-			charge = 100;
-			charge++;
+			charge = 109;
+			//charge++;
 		}
 	}	
 }
