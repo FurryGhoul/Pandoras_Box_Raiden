@@ -49,3 +49,5 @@ Move: Arrows
 Shoot: P
 
 # Download the latest version of the Raiden [here](https://github.com/FurryGhoul/Pandoras_Box_Raiden/releases)!
+# Chech our Github repository [here](https://github.com/FurryGhoul/Pandoras_Box_Raiden)!
+# See more information in our [Raiden Wiki](https://github.com/FurryGhoul/Pandoras_Box_Raiden/wiki)!
