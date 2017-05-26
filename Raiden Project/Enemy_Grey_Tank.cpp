@@ -16,79 +16,79 @@ Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
 	spritesheet = 2;
 	animations = 2;
 	// Tank animations
-	downup.PushBack({ 3, 186, 31, 29 }); // done
+	downup.PushBack({ 3, 4, 31, 29 });
 	hitdownup.PushBack({ 4, 95, 31, 29 });
 
-	downdiagonalright.PushBack({ 37,	186, 31, 29 }); // done
+	downdiagonalright.PushBack({ 37, 4, 31, 29 });
 	hitdowndiagonalright.PushBack({ 38, 95,31,29 });
 
-	neutraldiagonalright.PushBack({ 71, 186,31, 29 }); //in proces
+	neutraldiagonalright.PushBack({ 71, 4,31, 29 });
 	hitneutraldiagonalright.PushBack({ 72, 95, 31, 29 });
 
-	updiagonalright.PushBack({ 105, 186, 31, 29 }); // Not in usage 
+	updiagonalright.PushBack({ 105, 4, 31, 29 });
 	hitupdiagonalright.PushBack({ 106, 95, 31, 29 });
 
-	leftright.PushBack({ 139 , 186, 31, 29 }); // done
+	leftright.PushBack({ 139 , 4, 31, 29 });
 	hitleftright.PushBack({ 140 , 95, 31, 29 });
 
-	downdiagonalleft.PushBack({ 173, 186, 31, 29 }); // done
+	downdiagonalleft.PushBack({ 173, 4, 31, 29 });
 	hitdowndiagonalleft.PushBack({ 174, 95, 31, 29 });
 
-	neutraldiagonalleft.PushBack({ 207, 186, 31, 29 }); // done
+	neutraldiagonalleft.PushBack({ 207, 4, 31, 29 });
 	hitneutraldiagonalleft.PushBack({ 208, 95, 31, 29 });
 
-	updiagonalleft.PushBack({ 241, 186, 31, 29 }); // Not in usage
+	updiagonalleft.PushBack({ 241, 4, 31, 29 });
 	hitupdiagonalleft.PushBack({ 242, 95, 31, 29 });
 
 	//Turret animations
 	noturret.PushBack({ 1, 1, 1, 1 });
 
-	s.PushBack({ 3, 226, 38, 34 });
+	s.PushBack({ 3, 44, 38, 34 });
 	hits.PushBack({ 4, 135, 38, 34 });
 
-	se1.PushBack({ 44, 226, 38, 34 });
+	se1.PushBack({ 44, 44, 38, 34 });
 	hitse1.PushBack({ 45, 135, 38, 34 });
 
-	se2.PushBack({ 85, 226, 38, 34 });
+	se2.PushBack({ 85, 44, 38, 34 });
 	hitse2.PushBack({ 86, 135, 38, 34 });
 
-	se3.PushBack({ 126, 226, 38, 34 });
+	se3.PushBack({ 126, 44, 38, 34 });
 	hitse3.PushBack({ 127, 135, 38, 34 });
 
-	e.PushBack({ 167, 226, 38, 34 });
+	e.PushBack({ 167, 44, 38, 34 });
 	hite.PushBack({ 168, 135, 38, 34 });
 
-	ne1.PushBack({ 208, 226, 38, 34 });
+	ne1.PushBack({ 208, 44, 38, 34 });
 	hitne1.PushBack({ 209, 135, 38, 34 });
 
-	ne2.PushBack({ 249, 226, 38, 34 });
+	ne2.PushBack({ 249, 44, 38, 34 });
 	hitne2.PushBack({ 250, 135, 38, 34 });
 
-	ne3.PushBack({ 290, 226, 38, 34 });
+	ne3.PushBack({ 290, 44, 38, 34 });
 	hitne3.PushBack({ 291, 135, 38, 34 });
 
-	n.PushBack({ 331, 226, 38, 34 });
+	n.PushBack({ 331, 44, 38, 34 });
 	hitn.PushBack({ 332, 135, 38, 34 });
 
-	nw1.PushBack({ 372, 226, 38, 34 });
+	nw1.PushBack({ 372, 44, 38, 34 });
 	hitnw1.PushBack({ 373, 135, 38, 34 });
 
-	nw2.PushBack({ 413, 226, 38, 34 });
+	nw2.PushBack({ 413, 44, 38, 34 });
 	hitnw2.PushBack({ 414, 135, 38, 34 });
 
-	nw3.PushBack({ 454, 226, 38, 34 });
+	nw3.PushBack({ 454, 44, 38, 34 });
 	hitnw3.PushBack({ 455, 135, 38, 34 });
 
-	w11.PushBack({ 495, 226, 38, 34 });
+	w11.PushBack({ 495, 44, 38, 34 });
 	hitw11.PushBack({ 496, 135, 38, 34 });
 
-	sw1.PushBack({ 536, 226, 38, 34 });
+	sw1.PushBack({ 536, 44, 38, 34 });
 	hitsw1.PushBack({ 537, 135, 38, 34 });
 
-	sw2.PushBack({ 577, 226, 38, 34 });
+	sw2.PushBack({ 577, 44, 38, 34 });
 	hitsw2.PushBack({ 578, 135, 38, 34 });
 
-	sw3.PushBack({ 618, 226, 38, 34 });
+	sw3.PushBack({ 618, 44, 38, 34 });
 	hitsw3.PushBack({ 619, 135, 38, 34 });
 
 
@@ -97,38 +97,205 @@ Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
 
 	//Paths (there should be more than one path and an integer to select what path to use
 	/*Instructions for pathing the enemies:
-	0.0, 4.0 = down
-	0.0, 0.0 = up
-	-0.5, 1.0 = left
-	2.0, 1.0 = right
-	-0.5, 1.5 = down diagonal left
-	0.5, 0.0 = up diagonal right
-	-0.5,0.0 = MAS PUTAS DIAGONALES 1
-	0.5, 1.0 = MAS PUTAS DIAGONALES 2
-	-0.5, 0.0 = up diagonal left
-	0.5, 2.0 =  down diagonal right
-	1.0, 0.0 = Neutral diagonal up right
-	-1.0, 2.0 =Neutral diagonal down left
-	-1.0, 0.0 = Neutral diagonal up left
-	1.0, 2.0 = Neutral diagonal down right
+	0.0, 4.0 = S
+	0.0, -1.0 = N
+	-2.0, 1.0 = W
+	2.0, 1.0 = E
+	-0.5, 1.5 = SW3
+	0.5, 0.0 = SE1
+	-2.0, 0.5 = NW3
+	2.0, 1.5 = SE3
+	-0.5, 0.0 = NW1
+	0.5, 2.0 =  SE1
+	1.0, 0.0 = NE2
+	-1.0, 2.0 = SW2
+	-1.0, 0.0 = NW2
+	1.0, 2.0 = SE2
+	-2,0,1.5 = SW1
+	0.5,0.0 = NE3
+	2.0, 0.5 = NE1
 	*/
+
+	//east-stop
 	if (path == 0)
 	{
 		movement.PushBack({ 2.0f, 1.0f }, 300);
 		movement.PushBack({ 0.0f, 1.0f }, 1000);
 	}
+	//1
+	if (path == 8)
+	{
+		original_pos.y = 350;
+		movement.PushBack({ 2.0f, 1.0f }, 280);
+		movement.PushBack({ 0.0f, 1.0f }, 1000);
+	}
+	//2
+	if (path == 9)
+	{
+		original_pos.y = 300;
+		movement.PushBack({ 2.0f, 1.0f }, 350);
+		movement.PushBack({ 0.0f, 1.0f }, 1000);
+	}
+	//3
+	if (path == 10)
+	{
+		original_pos.y = 400;
+		movement.PushBack({ 2.0f, 1.0f }, 120);
+		movement.PushBack({ 0.0f, 1.0f }, 1000);
+	}
+	//east-north-south
+	//1
+	if (path == 18)
+	{
+		original_pos.y = 300;
+		movement.PushBack({ 2.0f, 1.0f }, 120);
+		movement.PushBack({ 2.0f, 0.5f }, 10);
+		movement.PushBack({ 1.0f, 0.0f }, 10);
+		movement.PushBack({ 0.5f, 0.0f }, 10);
+		movement.PushBack({ 0.0f, -1.0f }, 150);
+		movement.PushBack({ 0.0f, 4.0f }, 100);
+		movement.PushBack({ 0.0f, 1.0f }, 1000);
 
+	}
+
+
+	//east-south
+	//1
+	if (path == 11)
+	{
+		original_pos.y = 200;
+		movement.PushBack({ 2.0f, 1.0f }, 140);
+		movement.PushBack({ 2.0f, 1.5f }, 10);
+		movement.PushBack({ 1.0f, 2.0f }, 10);
+		movement.PushBack({ 0.5f, 2.0f }, 10);
+		movement.PushBack({ 0.0f, 4.0f }, 1000);
+	}
+	//2
+	if (path == 12)
+	{
+		original_pos.y = 100;
+		movement.PushBack({ 2.0f, 1.0f }, 350);
+		movement.PushBack({ 2.0f, 1.5f }, 10);
+		movement.PushBack({ 1.0f, 2.0f }, 10);
+		movement.PushBack({ 0.5f, 2.0f }, 10);
+		movement.PushBack({ 0.0f, 4.0f }, 1000);
+	}
+	// west-south
+	if (path == 13)
+	{
+		original_pos.y = 200;
+		movement.PushBack({ -2.0f, 1.0f }, 140);
+		movement.PushBack({ -2.0f, 1.5f }, 10);
+		movement.PushBack({ -1.0f, 2.0f }, 10);
+		movement.PushBack({ -0.5f, 1.5f }, 10);
+		movement.PushBack({ 0.0f, 4.0f }, 1000);
+
+	}
+	//South-east 2 - south
+	//1
+	if (path == 14)
+	{
+		movement.PushBack({ 1.0f, 2.0f }, 80);
+		movement.PushBack({ 0.5f, 2.0f }, 10);
+		movement.PushBack({ 0.0f, 4.0f }, 1000);
+	}
+	//2
+	if (path == 15)
+	{
+		movement.PushBack({ 1.0f, 2.0f }, 280);
+		movement.PushBack({ 0.5f, 2.0f }, 10);
+		movement.PushBack({ 0.0f, 4.0f }, 1000);
+	}
+	//3
+	if (path == 16)
+	{
+		original_pos.y = 150;
+		movement.PushBack({ 1.0f, 2.0f }, 280);
+		movement.PushBack({ 0.5f, 2.0f }, 10);
+		movement.PushBack({ 0.0f, 4.0f }, 1000);
+	}
+	//4
+	if (path == 17)
+	{
+		original_pos.y = 300;
+		movement.PushBack({ 1.0f, 2.0f }, 280);
+		movement.PushBack({ 0.5f, 2.0f }, 10);
+		movement.PushBack({ 0.0f, 4.0f }, 1000);
+	}
+
+	//south-west 2- south 
+	if (path == 19)
+	{
+		original_pos.y = 0;
+		movement.PushBack({ -1.0f, 2.0f }, 330);
+		movement.PushBack({ -0.5f, 1.5f }, 10);
+		movement.PushBack({ 0.0f, 4.0f }, 1000);
+	}
+	if (path == 20)
+	{
+		original_pos.y = 100;
+		movement.PushBack({ -1.0f, 2.0f }, 330);
+		movement.PushBack({ -0.5f, 1.5f }, 10);
+		movement.PushBack({ 0.0f, 4.0f }, 1000);
+	}
+	//Vertical south
 	if (path == 1)
 	{
 		movement.PushBack({ 0.0f, 4.0f }, 300);
 	}
 
+	//South east 3 - east
+	//1
 	if (path == 2)
 	{
-		movement.PushBack({ 2.0f, 1.5f }, 300);
+		movement.PushBack({ 2.0f, 1.0f }, 1);
+		movement.PushBack({ 0.0f, 1.0f }, 100);
+		movement.PushBack({ 2.0f, 1.0f }, 1000);
+	}
+	//2
+	if (path == 3)
+	{
+		movement.PushBack({ 2.0f, 1.0f }, 1);
+		movement.PushBack({ 0.0f, 1.0f }, 100);
+		movement.PushBack({ 2.0f, 1.5f }, 20);
+		movement.PushBack({ 2.0f, 1.0f }, 1000);
+	}
+	//3
+	if (path == 4)
+	{
+		movement.PushBack({ 2.0f, 1.0f }, 1);
+		movement.PushBack({ 0.0f, 1.0f }, 100);
+		movement.PushBack({ 2.0f, 1.5f }, 90);
+		movement.PushBack({ 2.0f, 1.0f }, 1000);
 	}
 
-	greytank = true;
+	//North-west 1- west
+	//1
+	if (path == 5)
+	{
+		movement.PushBack({ 2.0f, 1.0f }, 1);
+		movement.PushBack({ 0.0f, 1.0f }, 150);
+		movement.PushBack({ -2.0f, 0.5f }, 85);
+		movement.PushBack({ -2.0f, 1.0f }, 1000);
+	}
+	//2
+	if (path == 6)
+	{
+		movement.PushBack({ 2.0f, 1.0f }, 1);
+		movement.PushBack({ 0.0f, 1.0f }, 100);
+		movement.PushBack({ -2.0f, 0.5f }, 35);
+		movement.PushBack({ -2.0f, 1.0f }, 1000);
+	}
+	//3
+	if (path == 7)
+	{
+		movement.PushBack({ 2.0f, 1.0f }, 1);
+		movement.PushBack({ 0.0f, 1.0f }, 50);
+		movement.PushBack({ -2.0f,0.5f }, 10);
+		movement.PushBack({ -2.0f, 1.0f }, 1000);
+	}
+
+	tank = true;
 	collider = App->collision->AddCollider({ 0, 0, 31 * 3 - 5, 29 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
 	animation = &updiagonalleft;
 }
@@ -161,8 +328,8 @@ void Enemy_Grey_Tank::MoveShoot()
 	h = 29 * 3;
 
 
-	// Down and up
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) //Up
+
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == -1.0f) //North
 	{
 		animation = &downup;
 		if (ishit == true)
@@ -174,7 +341,7 @@ void Enemy_Grey_Tank::MoveShoot()
 		position1.y = position.y + h / 2 - 5;
 	}
 
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 4.0f)// Down
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 4.0f)//South
 	{
 		animation = &downup;
 		if (ishit == true)
@@ -185,8 +352,8 @@ void Enemy_Grey_Tank::MoveShoot()
 		position1.x = position.x + w / 2;
 		position1.y = position.y + h / 2 - 5;
 	}
-	// Left and right
-	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f) //Left
+
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f) //West
 	{
 		animation = &leftright;
 		if (ishit == true)
@@ -200,7 +367,7 @@ void Enemy_Grey_Tank::MoveShoot()
 	}
 
 
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f) //Right
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f) //East
 	{
 		animation = &leftright;
 		if (ishit == true)
@@ -212,38 +379,56 @@ void Enemy_Grey_Tank::MoveShoot()
 		position1.x = position.x + w / 2;
 		position1.y = position.y + h / 2;
 	}
-	//ALERTA CHAPUZA: PARA QUE LOS TANQUES SE PAREN HABRÁ QUE HACER BOOLS PARA QUE ENTREN EN EL IF DE SU ANIMACIÓN SI ESTÁN PARADOS Y LA ULTIMA ANIMACIÓN QUE SE HA HECHO ES ESA. ESTO ES PROVISIONAL Y PACHANGUERO.
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f) //Right
+
+
+
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f) //If tanks stop they get the last animation that was done
 	{
-		animation = &leftright;
-		if (ishit == true)
+		if (animation == &leftright || animation == &hitleftright)
 		{
-			animation = &hitleftright;
-			ishit = false;
+			animation = &leftright;
+			if (ishit == true)
+			{
+				animation = &hitleftright;
+				ishit = false;
+			}
+			h = 35 * 3;
+			position1.x = position.x + w / 2;
+			position1.y = position.y + h / 2;
 		}
-		h = 35 * 3;
-		position1.x = position.x + w / 2;
-		position1.y = position.y + h / 2;
+		if (animation == &downup || animation == &hitdownup)
+		{
+			animation = &downup;
+			if (ishit == true)
+			{
+				animation = &hitdownup;
+				ishit = false;
+			}
+			position1.x = position.x + w / 2;
+			position1.y = position.y + h / 2 - 5;
+		}
 	}
-	// Down diagonal left and up diagonal right
-	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 1.5f) // Down diagonal left
+
+
+
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 1.5f) // SW3
 	{
-		animation = &downdiagonalleft;
+		animation = &updiagonalleft;
 		if (ishit == true)
 		{
-			animation = &hitdowndiagonalleft;
+			animation = &hitupdiagonalleft;
 			ishit = false;
 		}
 		position1.x = position.x + w / 2;
 		position1.y = position.y + h / 2;
 	}
 
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) //Up diagonal right
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) //NE3
 	{
-		animation = &downdiagonalleft;
+		animation = &updiagonalleft;
 		if (ishit == true)
 		{
-			animation = &hitdowndiagonalleft;
+			animation = &hitupdiagonalleft;
 			ishit = false;
 		}
 		position1.x = position.x + w / 2;
@@ -251,25 +436,25 @@ void Enemy_Grey_Tank::MoveShoot()
 	}
 
 
-	//MAS PUTAS DIAGONALes
-	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) //MAS PUTAS DIAGONALES 1
+
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.5f) //NW3
 	{
 		animation = &updiagonalright;
 		if (ishit == true)
 		{
-			animation = &hitdowndiagonalleft;
+			animation = &hitupdiagonalright;
 			ishit = false;
 		}
 		position1.x = position.x + w / 2;
 		position1.y = position.y + h / 2;
 	}
 
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.5f) //MAS PUTAS DIAGONALES 2
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.5f) //SE3
 	{
 		animation = &updiagonalright;
 		if (ishit == true)
 		{
-			animation = &hitdowndiagonalleft;
+			animation = &hitupdiagonalright;
 			ishit = false;
 		}
 		position1.x = position.x + w / 2;
@@ -277,8 +462,7 @@ void Enemy_Grey_Tank::MoveShoot()
 	}
 
 
-	//Down diagonal right and up diagonal left
-	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) //up diagonal left
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) //NW1
 	{
 		animation = &downdiagonalright;
 		if (ishit == true)
@@ -291,7 +475,7 @@ void Enemy_Grey_Tank::MoveShoot()
 	}
 
 
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f) //Down diagonal right
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f) //SE1
 	{
 		animation = &downdiagonalright;
 		if (ishit == true)
@@ -303,8 +487,8 @@ void Enemy_Grey_Tank::MoveShoot()
 		position1.y = position.y + h / 2;
 	}
 
-	// Neutral diagonal up right and neutral diagonal down left
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) //neutral diagonal up right
+
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) //NE2
 	{
 		animation = &neutraldiagonalleft;
 		if (ishit == true)
@@ -315,7 +499,7 @@ void Enemy_Grey_Tank::MoveShoot()
 		position1.x = position.x + w / 2;
 		position1.y = position.y + h / 2;
 	}
-	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f) //neutral diagonal down left
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f) //SW2
 	{
 		animation = &neutraldiagonalleft;
 		if (ishit == true)
@@ -329,8 +513,8 @@ void Enemy_Grey_Tank::MoveShoot()
 
 
 
-	// Neutral diagonal down left and neutral diagonal up right
-	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) // Neutral diagonal down left
+
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) // NW2
 	{
 		animation = &neutraldiagonalright;
 		if (ishit == true)
@@ -341,12 +525,34 @@ void Enemy_Grey_Tank::MoveShoot()
 		position1.x = position.x + w / 2;
 		position1.y = position.y + h / 2;
 	}
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f) //neutral diagonal up right
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f) //SE2
 	{
 		animation = &neutraldiagonalright;
 		if (ishit == true)
 		{
 			animation = &hitneutraldiagonalright;
+			ishit = false;
+		}
+		position1.x = position.x + w / 2;
+		position1.y = position.y + h / 2;
+	}
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.5f) //SW1
+	{
+		animation = &downdiagonalleft; //CHANGE
+		if (ishit == true)
+		{
+			animation = &hitdowndiagonalleft;
+			ishit = false;
+		}
+		position1.x = position.x + w / 2;
+		position1.y = position.y + h / 2;
+	}
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.5f) //NE1
+	{
+		animation = &downdiagonalleft; //CHANGE
+		if (ishit == true)
+		{
+			animation = &hitdowndiagonalleft;
 			ishit = false;
 		}
 		position1.x = position.x + w / 2;
