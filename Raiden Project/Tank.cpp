@@ -104,7 +104,7 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	-0.5, 1.5 = SW3
 	0.5, 0.0 = SE1
 	-2.0, 0.5 = NW3
-	2.0, 1.0 = SE3
+	2.0, 1.5 = SE3
 	-0.5, 0.0 = NW1
 	0.5, 2.0 =  SE1
 	1.0, 0.0 = NE2
@@ -123,24 +123,47 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	if (path == 8)
 	{
 		original_pos.y = 350;
-		movement.PushBack({ 2.0f, 1.0f }, 250);
+		movement.PushBack({ 2.0f, 1.0f }, 280);
 		movement.PushBack({ 0.0f, 1.0f }, 1000);
 	}
 	//east-stop delayed 2
 	if (path == 9)
 	{
 		original_pos.y = 300;
-		movement.PushBack({ 2.0f, 1.0f }, 300);
+		movement.PushBack({ 2.0f, 1.0f }, 350);
 		movement.PushBack({ 0.0f, 1.0f }, 1000);
 	}
 	//east-stop delayed 3
-
 	if (path == 10)
 	{
 		original_pos.y = 400;
-		movement.PushBack({ 2.0f, 1.0f }, 100);
+		movement.PushBack({ 2.0f, 1.0f }, 120);
 		movement.PushBack({ 0.0f, 1.0f }, 1000);
 	}
+
+	//east-south
+	if (path == 11)
+	{
+		original_pos.y = 200;
+		movement.PushBack({ 2.0f, 1.0f }, 140);
+		movement.PushBack({ 2.0f, 1.5f }, 10);
+		movement.PushBack({ 1.0f, 2.0f }, 10);
+		movement.PushBack({ 0.5f, 2.0f }, 10);
+		movement.PushBack({ 0.0f, 4.0f }, 1000);
+	}
+	//east south 1
+	if (path == 12)
+	{
+		original_pos.y = 100;
+		movement.PushBack({ 2.0f, 1.0f }, 350);
+		movement.PushBack({ 2.0f, 1.5f }, 10);
+		movement.PushBack({ 1.0f, 2.0f }, 10);
+		movement.PushBack({ 0.5f, 2.0f }, 10);
+		movement.PushBack({ 0.0f, 4.0f }, 1000);
+	}
+	// west-south
+
+
 
 	//Vertical south
 	if (path == 1)

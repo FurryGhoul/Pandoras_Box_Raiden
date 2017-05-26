@@ -137,7 +137,7 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 270, -2800);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 270, -2900);
 		//Horizontal delayed tanks
-        App->enemies->AddEnemy(8, ENEMY_TYPES::TANK, 0, -2850);
+        App->enemies->AddEnemy(8, ENEMY_TYPES::TANK, -50, -2850);
 
 
 		//Building after pool
@@ -168,16 +168,23 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -4280);
 
 	    //Horizontal tanks
-		App->enemies->AddEnemy(9, ENEMY_TYPES::TANK, 0, -3150);
-		App->enemies->AddEnemy(10, ENEMY_TYPES::TANK, 0, -3250);
+		App->enemies->AddEnemy(9, ENEMY_TYPES::TANK, -50, -3150);
+		App->enemies->AddEnemy(10, ENEMY_TYPES::TANK, -50, -3250);
 
 		//Vertical right tanks
-		
+		//Direct
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -3150);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -3250);
+		//Vuelta
+
 		//Vertical left tanks
+		//Direct
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 270, -3450);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 270, -3550);
+		//Vuelta
+		App->enemies->AddEnemy(12, ENEMY_TYPES::TANK, -50, -3600);
+		App->enemies->AddEnemy(11, ENEMY_TYPES::TANK, -50, -3700);
+
 		//Light kamizaze orgy 1
 		//Left
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -4500);
