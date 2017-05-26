@@ -35,10 +35,15 @@ Despite the different responabilities, each member of the team has worked on the
 
 ## Game Controls
 Start game: 1 for playing solo and 2 for cooperative
+
 Return to the start screen from winning stage: Space
+
 Fast Win: Backspace (pressing Backspace on the map 1 screen will take you to the map 1 cleared screen)
+
 Show hitboxes: F1 (shows the hitboxes of the players, enemies, powerups and bullets)
+
 Godmode: G (makes both players invincible, useful to see the whole map without having to kill the enemies)
+
 Exit-> ESCAPE (close the game)
 
 **Player1**
