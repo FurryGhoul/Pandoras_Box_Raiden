@@ -272,14 +272,33 @@ update_status ModuleMap1::Update()
 		//South-west 2
 		App->enemies->AddEnemy(28, ENEMY_TYPES::GREY_TANK, 900, -5600);
 		 
+		
+
+		// Invisible medalboxes
+		App->enemies->AddEnemy(1, ENEMY_TYPES::BOX_MEDAL, 520, -2080);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::BOX_MEDAL, 630, -2080);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::BOX_MEDAL, 520, -2180);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::BOX_MEDAL, 630, -2180);
+		// Invisible medalboxes 2
+		App->enemies->AddEnemy(1, ENEMY_TYPES::BOX_MEDAL, 390, -2880);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::BOX_MEDAL, 580, -2880);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::BOX_MEDAL, 390, -3000);
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 330, -3880);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 380, -4380);
-
-
-
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 700, -7100);
-
+		// Coastline medalboxes
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 820, -7080);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 720, -7180);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 620, -7280);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 520, -7380);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 420, -7480);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 360, -7630);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 360, -7780);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 360, -7930);
+		// Upper coastline boxes
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 650, -9400);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 750, -9400);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 850, -9400);
 
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 300, -300);

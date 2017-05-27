@@ -25,7 +25,7 @@ Box_Medal::Box_Medal(int x, int y, int path) : Enemy(x, y)
 	animations = 1;
 
 	original_pos.x = x;
-	original_pos.y = -50;
+	original_pos.y = -100;
 
 	if (path == 0)
 		animation = &idle;
