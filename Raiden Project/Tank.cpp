@@ -359,7 +359,34 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ -2.0f,0.5f }, 10);
 		movement.PushBack({ -2.0f, 1.0f }, 1000);
 	}
+	//east - north - west
+	if (path == 30)
+	{
+		original_pos.y = 300;
+		movement.PushBack({ 2.0f, 1.0f }, 150);
+		movement.PushBack({  2.0f, 0.5f }, 10);
+		movement.PushBack({ 1.0f, 0.0f }, 10);
+		movement.PushBack({ 0.5f, 0.0f }, 10);
+		movement.PushBack({ 0.0f, -1.0f }, 300);
+		movement.PushBack({ -0.5f, 0.0f }, 10);
+		movement.PushBack({-1.0f, 0.0f }, 10);
+		movement.PushBack({ -2.0f, 0.5f }, 10);
+		movement.PushBack({ -2.0f, 1.0f }, 1000);
+	}
+	//east- north east 2- stop
+	if (path == 31)
+	{
+		original_pos.y = 400;
+		movement.PushBack({ 2.0f, 1.0f }, 150);
+		movement.PushBack({ 2.0f, 0.5f }, 10);
+		movement.PushBack({ 1.0f, 0.0f }, 10);
+		movement.PushBack({ 0.5f, 0.0f }, 10);
+		movement.PushBack({ 0.0f, -1.0f }, 250);
+		movement.PushBack({ 0.5f, 0.0f }, 10);
+		movement.PushBack({ 1.0f, 0.0f }, 10);
+		movement.PushBack({ 0.0f, 1.0f }, 1000);
 
+	}
 	tank = true;
 	collider = App->collision->AddCollider({ 0, 0, 31 * 3 - 5, 29 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
 	animation = &updiagonalleft;

@@ -312,6 +312,10 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 250, -8525);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 250, -8550);
 
+		//east - north - west
+		App->enemies->AddEnemy(30, ENEMY_TYPES::TANK, -50, -9400);
+		//east- north east 2- stop
+		App->enemies->AddEnemy(31, ENEMY_TYPES::TANK, -50, -9500);
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 330, -3880);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 380, -4380);
@@ -544,6 +548,8 @@ update_status ModuleMap1::Update()
 		ymap += yscrollspeed;
 		yroad += (yscrollspeed * 1.5);
 		App->render->camera.y -= yscrollspeed;
+
+		LOG("%i", App->render->camera.y);
 
 		if (yroad >= -4350)
 		{
