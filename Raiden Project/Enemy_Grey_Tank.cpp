@@ -111,7 +111,7 @@ Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
 	1.0, 0.5 = NE2 
 	-1.0, 2.5 = SW2
 	-1.0, 0.5 = NW2 
-	1.0, 2.0 = SE2 // Not adapted to roads
+	1.0, 2.5 = SE2 
 	-2,0,1.5 = SW1 // Not adapted to roads
 	0.5,0.0 = NE3 // Not adapted to roads
 	2.0, 1.0 = NE1 
@@ -377,7 +377,7 @@ Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ 2.0f, 1.5f }, 1);
 		movement.PushBack({ 0.0f, 1.5f }, 1000);
 	}
-	//Stop-east-north-east2
+	//Stop-east-north-east2 - stop
 	if (path == 30)
 	{
 		movement.PushBack({ 2.0f, 1.5f }, 1);
@@ -387,7 +387,7 @@ Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ 1.0f, 0.5f }, 100);
 		movement.PushBack({ 0.0f, 1.5f }, 1000);
 	}
-	//Stop-west-north-west 2
+	//Stop-west-north-west 2 -stop
 	if (path == 31)
 	{
 		movement.PushBack({ 2.0f, 1.5f }, 1);
@@ -397,6 +397,61 @@ Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ -1.0f, 0.5f }, 100);
 		movement.PushBack({ 0.0f, 1.5f }, 1000);
 	}
+	//South east 2 - stop
+	
+	if (path == 32)
+	{
+		movement.PushBack({ 1.0f, 2.5f }, 1);
+		movement.PushBack({ 0.0f, 1.5f }, 1000);
+	}
+	//South east 2
+	//1
+	if (path == 33)
+	{
+		original_pos.y = -100;
+		movement.PushBack({ 1.0f, 2.5f }, 1000);
+	}
+	//2
+	if (path == 34)
+	{
+		original_pos.y = 0;
+		movement.PushBack({ 1.0f, 2.5f }, 1000);
+	}
+	//3
+	if (path == 35)
+	{
+		original_pos.y = 100;
+		movement.PushBack({ 1.0f, 2.5f }, 1000);
+	}
+	//4 
+	if (path == 41)
+	{
+		original_pos.y = -100;
+		movement.PushBack({ 1.0f, 2.5f }, 1000);
+	}
+
+
+
+	//North west 2
+
+	if (path == 36)
+	{
+		original_pos.y = 0;
+		movement.PushBack({ -1.0f, 0.5f }, 1000);
+	}
+
+	if (path == 37)
+	{
+		original_pos.y = 225;
+		movement.PushBack({ -1.0f, 0.5f }, 1000);
+	}
+
+	if (path == 38)
+	{
+		original_pos.y = 450;
+		movement.PushBack({ -1.0f, 0.5f }, 1000);
+	}
+
 	greytank = true;
 	collider = App->collision->AddCollider({ 0, 0, 31 * 3 - 5, 29 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
 	animation = &updiagonalleft;
@@ -660,7 +715,7 @@ void Enemy_Grey_Tank::MoveShoot()
 		position1.x = position.x + w / 2;
 		position1.y = position.y + h / 2;
 	}
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f) //SE2
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 1.0f && movement.steps[movement.GetCurrentStep()].speed.y == 2.5f) //SE2
 	{
 		animation = &neutraldiagonalright;
 		if (ishit == true)

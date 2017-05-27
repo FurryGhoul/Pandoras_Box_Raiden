@@ -326,6 +326,29 @@ update_status ModuleMap1::Update()
 		//South - sw2
 		App->enemies->AddEnemy(33, ENEMY_TYPES::TANK, 700, -10500);
 
+
+		//Second roads
+		//Stoped
+		App->enemies->AddEnemy(32, ENEMY_TYPES::GREY_TANK, 300, -10800);
+		App->enemies->AddEnemy(32, ENEMY_TYPES::GREY_TANK, 200, -10900);
+		//Moving se
+		App->enemies->AddEnemy(33, ENEMY_TYPES::GREY_TANK, -50, -11150);
+		App->enemies->AddEnemy(34, ENEMY_TYPES::GREY_TANK, -50, -11250);
+		App->enemies->AddEnemy(35, ENEMY_TYPES::GREY_TANK, -50, -11350);
+
+
+		App->enemies->AddEnemy(41, ENEMY_TYPES::GREY_TANK, 400, -11650);
+		App->enemies->AddEnemy(41, ENEMY_TYPES::GREY_TANK, 200, -11750);
+		App->enemies->AddEnemy(41, ENEMY_TYPES::GREY_TANK, 0, -11850);
+
+
+		//moving nw
+		App->enemies->AddEnemy(36, ENEMY_TYPES::GREY_TANK, 357 * 3, -11050);
+		App->enemies->AddEnemy(37, ENEMY_TYPES::GREY_TANK, 357 * 3, -11200);
+		App->enemies->AddEnemy(38, ENEMY_TYPES::GREY_TANK, 357 * 3, -11350);
+
+
+
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 330, -3880);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 380, -4380);
 		// Coastline medalboxes
