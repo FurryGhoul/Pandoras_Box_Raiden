@@ -224,6 +224,7 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	}
 	
 	//south-west 2- south 
+	//1
 	if (path == 19)
 	{
 		original_pos.y = 0;
@@ -231,6 +232,7 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ -0.5f, 1.5f }, 10);
 		movement.PushBack({ 0.0f, 4.0f }, 1000);
 	}
+	//2
 	if (path == 20)
 	{ 
 	original_pos.y = 100;
@@ -238,6 +240,37 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	movement.PushBack({ -0.5f, 1.5f }, 10);
 	movement.PushBack({ 0.0f, 4.0f }, 1000);
     }
+	//South-east 2- east
+	//1
+	if (path == 21)
+	{
+		movement.PushBack({ 1.0f, 2.0f }, 80);
+		movement.PushBack({ 2.0f, 1.5f }, 10);
+		movement.PushBack({ 2.0f, 1.0f }, 1000);
+	}
+	//2
+	if (path == 22)
+	{
+		movement.PushBack({ 1.0f, 2.0f }, 140);
+		movement.PushBack({ 2.0f, 1.5f }, 10);
+		movement.PushBack({ 2.0f, 1.0f }, 1000);
+	}
+	//3
+	if (path == 23)
+	{
+		movement.PushBack({ 1.0f, 2.0f }, 200);
+		movement.PushBack({ 2.0f, 1.5f }, 10);
+		movement.PushBack({ 2.0f, 1.0f }, 1000);
+	}
+	//4
+	if (path == 24)
+	{
+		movement.PushBack({ 1.0f, 2.0f }, 260);
+		movement.PushBack({ 2.0f, 1.5f }, 10);
+		movement.PushBack({ 2.0f, 1.0f }, 1000);
+	}
+
+
 	//Vertical south
 	if (path == 1)
 	{
@@ -385,16 +418,16 @@ void Tank::MoveShoot()
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f) //If tanks stop they get the last animation that was done
 	{
 		if (animation == &leftright || animation == &hitleftright)
-		{ 
-		    animation = &leftright;
-		   if (ishit == true)
-		   {
-			animation = &hitleftright;
-			ishit = false;
-		   }
-		   h = 35 * 3;
-		   position1.x = position.x + w / 2;
-		   position1.y = position.y + h / 2;
+		{
+			animation = &leftright;
+			if (ishit == true)
+			{
+				animation = &hitleftright;
+				ishit = false;
+			}
+			h = 35 * 3;
+			position1.x = position.x + w / 2;
+			position1.y = position.y + h / 2;
 		}
 		if (animation == &downup || animation == &hitdownup)
 		{
@@ -406,6 +439,39 @@ void Tank::MoveShoot()
 			}
 			position1.x = position.x + w / 2;
 			position1.y = position.y + h / 2 - 5;
+		}
+		if (animation == &neutraldiagonalleft || animation == &hitneutraldiagonalleft)
+		{
+			animation = &neutraldiagonalleft;
+			if (ishit == true)
+			{
+				animation = &hitneutraldiagonalleft;
+				ishit = false;
+			}
+			position1.x = position.x + w / 2;
+			position1.y = position.y + h / 2;
+		}
+		if (animation == &neutraldiagonalright || animation == &hitneutraldiagonalright)
+		{
+			animation = &neutraldiagonalright;
+			if (ishit == true)
+			{
+				animation = &hitneutraldiagonalright;
+				ishit = false;
+			}
+			position1.x = position.x + w / 2;
+			position1.y = position.y + h / 2;
+		}
+		if (animation == &neutraldiagonalright || animation == &hitneutraldiagonalright)
+		{
+			animation = &neutraldiagonalright;
+			if (ishit == true)
+			{
+				animation = &hitneutraldiagonalright;
+				ishit = false;
+			}
+			position1.x = position.x + w / 2;
+			position1.y = position.y + h / 2;
 		}
 	}
 

@@ -384,7 +384,8 @@ Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ 0.0f, 1.5f }, 100);
 		movement.PushBack({ 2.0f, 1.5f }, 120);
 		movement.PushBack({ 2.0f, 1.0f }, 10);
-		movement.PushBack({ 1.0f, 0.5f }, 1000);
+		movement.PushBack({ 1.0f, 0.5f }, 100);
+		movement.PushBack({ 0.0f, 1.5f }, 1000);
 	}
 	//Stop-west-north-west 2
 	if (path == 31)
@@ -393,7 +394,8 @@ Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ 0.0f, 1.5f }, 100);
 		movement.PushBack({ -2.0f, 1.5f }, 120);
 		movement.PushBack({ -2.0f, 1.0f }, 10);
-		movement.PushBack({ -1.0f, 0.5f }, 1000);
+		movement.PushBack({ -1.0f, 0.5f }, 100);
+		movement.PushBack({ 0.0f, 1.5f }, 1000);
 	}
 	greytank = true;
 	collider = App->collision->AddCollider({ 0, 0, 31 * 3 - 5, 29 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
@@ -517,6 +519,28 @@ void Enemy_Grey_Tank::MoveShoot()
 			}
 			position1.x = position.x + w / 2;
 			position1.y = position.y + h / 2;
+		}
+		if (animation == &neutraldiagonalright || animation == &hitneutraldiagonalright)
+		{
+			animation = &neutraldiagonalright;
+			if (ishit == true)
+			{
+				animation = &hitneutraldiagonalright;
+				ishit = false;
+			}
+			position1.x = position.x + w / 2;
+			position1.y = position.y + h / 2;
+		}
+		if(animation == &neutraldiagonalright || animation == &hitneutraldiagonalright)
+		{ 
+		animation = &neutraldiagonalright;
+		if (ishit == true)
+		{
+			animation = &hitneutraldiagonalright;
+			ishit = false;
+		}
+		position1.x = position.x + w / 2;
+		position1.y = position.y + h / 2;
 		}
 	}
 

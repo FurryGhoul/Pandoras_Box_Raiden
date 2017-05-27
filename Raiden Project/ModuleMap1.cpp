@@ -284,6 +284,14 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(1, ENEMY_TYPES::BOX_MEDAL, 580, -2880);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::BOX_MEDAL, 390, -3000);
 
+		//City after roads
+		App->enemies->AddEnemy(21, ENEMY_TYPES::TANK, 600, -7040);
+		App->enemies->AddEnemy(22, ENEMY_TYPES::TANK, 550, -7090);
+		App->enemies->AddEnemy(23, ENEMY_TYPES::TANK, 500, -7140);
+		App->enemies->AddEnemy(24, ENEMY_TYPES::TANK, 450, -7190);
+
+
+
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 330, -3880);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 380, -4380);
 		// Coastline medalboxes
