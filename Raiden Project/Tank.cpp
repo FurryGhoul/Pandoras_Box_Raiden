@@ -269,9 +269,41 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ 2.0f, 1.5f }, 10);
 		movement.PushBack({ 2.0f, 1.0f }, 1000);
 	}
+	//South east 2
+	if (path == 25)
+	{
+		original_pos.y = -100;
+		movement.PushBack({ 1.0f, 2.0f }, 1000);
+	}
+	if (path == 26)
+	{
+		original_pos.y = 100;
+		movement.PushBack({ 1.0f, 2.0f }, 1000);
+	}
+	if (path == 27)
+	{
+		original_pos.y = 300;
+		movement.PushBack({ 1.0f, 2.0f }, 1000);
+	}
+
+	//south- South east 2
+	//1
+	if (path == 28)
+	{
+		movement.PushBack({ 0.0f, 4.0f }, 160);
+		movement.PushBack({ 0.5f, 2.0f }, 10);
+		movement.PushBack({ 1.0f, 2.0f }, 1000);
+	}
+	//2
+	if (path == 29)
+	{
+		movement.PushBack({ 0.0f, 4.0f }, 210);
+		movement.PushBack({ 0.5f, 2.0f }, 10);
+		movement.PushBack({ 1.0f, 2.0f }, 1000);
+	}
 
 
-	//Vertical south
+	// south
 	if (path == 1)
 	{
 		movement.PushBack({ 0.0f, 4.0f }, 300);

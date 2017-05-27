@@ -285,11 +285,32 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(1, ENEMY_TYPES::BOX_MEDAL, 390, -3000);
 
 		//City after roads
+
+		//South east 2- east
 		App->enemies->AddEnemy(21, ENEMY_TYPES::TANK, 600, -7040);
 		App->enemies->AddEnemy(22, ENEMY_TYPES::TANK, 550, -7090);
 		App->enemies->AddEnemy(23, ENEMY_TYPES::TANK, 500, -7140);
 		App->enemies->AddEnemy(24, ENEMY_TYPES::TANK, 450, -7190);
 
+
+		//South east 2
+		App->enemies->AddEnemy(25, ENEMY_TYPES::TANK, -50, -7770);
+		App->enemies->AddEnemy(26, ENEMY_TYPES::TANK, -50, -7970);
+		App->enemies->AddEnemy(27, ENEMY_TYPES::TANK, -50, -8170);
+
+		//south- South east 2
+		App->enemies->AddEnemy(28, ENEMY_TYPES::TANK, 250, -7970);
+		App->enemies->AddEnemy(29, ENEMY_TYPES::TANK, 250, -8130);
+
+		//south
+		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 250, -8300);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 250, -8325);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 250, -8350);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 250, -8375);
+
+		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 250, -8500);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 250, -8525);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 250, -8550);
 
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 330, -3880);
