@@ -699,7 +699,7 @@ update_status ModulePlayer::Update()
 				App->particles->AddParticle(App->particles->laser2, position.x, position.y + 48 * 5, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, -10);
 				App->particles->AddParticle(App->particles->laser2, position.x , position.y + 48 * 5, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 67);
 			}
-			if (powerup_level == 8)
+			if (powerup_level >= 8)
 			{
  				App->particles->AddParticle(App->particles->final_laser, position.x + 5, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 4);
 				App->particles->AddParticle(App->particles->final_laser, position.x, position.y + 48, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 4, false,5);

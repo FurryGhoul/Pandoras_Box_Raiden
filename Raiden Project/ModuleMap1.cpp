@@ -317,6 +317,15 @@ update_status ModuleMap1::Update()
 		//east- north east 2- stop
 		App->enemies->AddEnemy(31, ENEMY_TYPES::TANK, -50, -9500);
 
+		//West/east stop
+		App->enemies->AddEnemy(32, ENEMY_TYPES::TANK, 25, -10000);
+		App->enemies->AddEnemy(32, ENEMY_TYPES::TANK, 25, -10100);
+		App->enemies->AddEnemy(32, ENEMY_TYPES::TANK, 25, -10200);
+		App->enemies->AddEnemy(32, ENEMY_TYPES::TANK, 450, -10200);
+
+		//South - sw2
+		App->enemies->AddEnemy(33, ENEMY_TYPES::TANK, 700, -10500);
+
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 330, -3880);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 380, -4380);
 		// Coastline medalboxes
