@@ -258,11 +258,11 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 	{
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1)
 		{
-			if (enemies[i]->tank || enemies[i]->greytank)
-				enemies[i]->hp = 0;
-
 			if (c2->bullettype == 27)
 			{
+				if (enemies[i]->tank || enemies[i]->greytank)
+					enemies[i]->hp = 0;
+
 				if (SDL_GetTicks() - time >= 50)
 					enemies[i]->bombimmunity = false;
 
