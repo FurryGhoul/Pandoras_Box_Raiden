@@ -27,6 +27,7 @@ enum ENEMY_TYPES
 	BOX_MEDAL,
 	BOX_POWERUP,
 	LIGHT_KAMIKAZE,
+	MINE,
 };
 
 class Enemy;
@@ -76,6 +77,7 @@ private:
 	SDL_Texture* sprites9;
 	SDL_Texture* sprites10;
 	SDL_Texture* sprites11;
+	SDL_Texture* sprites12;
 
 	
 };

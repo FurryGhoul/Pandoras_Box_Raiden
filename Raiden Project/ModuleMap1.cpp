@@ -548,7 +548,7 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 710, -10340);
 		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 230, -10370);
 		
-		
+		App->enemies->AddEnemy(0, ENEMY_TYPES::MINE, 400, -200);
 
 
 
@@ -581,7 +581,7 @@ update_status ModuleMap1::Update()
 		yroad += (yscrollspeed * 1.5);
 		App->render->camera.y -= yscrollspeed;
 
-		LOG("%i", App->render->camera.y);
+
 
 		if (yroad >= -4350)
 		{

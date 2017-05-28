@@ -86,6 +86,7 @@
     <ClInclude Include="Enemy_Long_Megatank.h" />
     <ClInclude Include="Enemy_Medium_Shooter.h" />
     <ClInclude Include="Enemy_Megatank.h" />
+    <ClInclude Include="Enemy_Mine.h" />
     <ClInclude Include="Enemy_Ship.h" />
     <ClInclude Include="Enemy_Ship_Tank.h" />
     <ClInclude Include="Globals.h" />
@@ -138,6 +139,7 @@
     <ClCompile Include="Enemy_Long_Megatank.cpp" />
     <ClCompile Include="Enemy_Medium_Shooter.cpp" />
     <ClCompile Include="Enemy_Megatank.cpp" />
+    <ClCompile Include="Enemy_Mine.cpp" />
     <ClCompile Include="Enemy_Ship.cpp" />
     <ClCompile Include="Enemy_Ship_Tank.cpp" />
     <ClCompile Include="Globals.cpp" />

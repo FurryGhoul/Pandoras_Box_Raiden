@@ -26,6 +26,7 @@
 #include "Enemy_Boss_Left_Wing.h"
 #include "Enemy_Boss_Right_Wing.h"
 #include "Enemy_Boss_Cannon.h"
+#include "Enemy_Mine.h"
 #define SPAWN_MARGIN 100
 
 ModuleEnemies::ModuleEnemies()
@@ -53,6 +54,7 @@ bool ModuleEnemies::Init()
 	sprites9 = App->textures->Load("assets/Light Shooter Kamikaze.png");
 	sprites10 = App->textures->Load("assets/Megatank.png");
 	sprites11 = App->textures->Load("assets/Boss 2.png");
+	sprites12 = App->textures->Load("assets/Mine.png");
 	return true;
 }
 
@@ -85,28 +87,30 @@ update_status ModuleEnemies::Update()
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
 		if (enemies[i] != nullptr) 
 		{ 
-		   if (enemies[i]->spritesheet == 0) //Light Shooter
-		       enemies[i]->Draw(sprites);
-		   else if (enemies[i]->spritesheet == 1) //Bonus Ship
-			   enemies[i]->Draw(sprites2);
-		   else if (enemies[i]->spritesheet == 2) //Tank & Ship_Tank
-			   enemies[i]->Draw(sprites3);
-		   else if (enemies[i]->spritesheet == 3) //Medium Shooter
-			   enemies[i]->Draw(sprites4);
-		   else if (enemies[i]->spritesheet == 4) //Box_Medal & Box_PowerUp
-			   enemies[i]->Draw(sprites5);
-		   else if (enemies[i]->spritesheet == 5) //Kamikaze
-			   enemies[i]->Draw(sprites6);
-		   else if (enemies[i]->spritesheet == 6) //Long Megatank
-			   enemies[i]->Draw(sprites7);
-		   else if (enemies[i]->spritesheet == 7) //Ship
-			   enemies[i]->Draw(sprites8);
-		   else if (enemies[i]->spritesheet == 8) //Light Shooter Kamikaze
-			   enemies[i]->Draw(sprites9);
-		   else if (enemies[i]->spritesheet == 9) //Megatank
-			   enemies[i]->Draw(sprites10);
-		   else if (enemies[i]->spritesheet == 10) //Boss
-			   enemies[i]->Draw(sprites11);
+			if (enemies[i]->spritesheet == 0) //Light Shooter
+				enemies[i]->Draw(sprites);
+			else if (enemies[i]->spritesheet == 1) //Bonus Ship
+				enemies[i]->Draw(sprites2);
+			else if (enemies[i]->spritesheet == 2) //Tank & Ship_Tank
+				enemies[i]->Draw(sprites3);
+			else if (enemies[i]->spritesheet == 3) //Medium Shooter
+				enemies[i]->Draw(sprites4);
+			else if (enemies[i]->spritesheet == 4) //Box_Medal & Box_PowerUp
+				enemies[i]->Draw(sprites5);
+			else if (enemies[i]->spritesheet == 5) //Kamikaze
+				enemies[i]->Draw(sprites6);
+			else if (enemies[i]->spritesheet == 6) //Long Megatank
+				enemies[i]->Draw(sprites7);
+			else if (enemies[i]->spritesheet == 7) //Ship
+				enemies[i]->Draw(sprites8);
+			else if (enemies[i]->spritesheet == 8) //Light Shooter Kamikaze
+				enemies[i]->Draw(sprites9);
+			else if (enemies[i]->spritesheet == 9) //Megatank
+				enemies[i]->Draw(sprites10);
+			else if (enemies[i]->spritesheet == 10) //Boss
+				enemies[i]->Draw(sprites11);
+			else if (enemies[i]->spritesheet == 11) //Mine
+				enemies[i]->Draw(sprites12);
         }
 	return UPDATE_CONTINUE;
 }
@@ -240,6 +244,10 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			}
 			enemies[i] = new Light_Shooter_Kamikaze(info.x, info.y, info._path, come_right);
 			break;
+		case ENEMY_TYPES::MINE:
+			enemies[i] = new Enemy_Mine(info.x, info.y, info._path);
+			break;
+
 		}
 	}
 }
@@ -309,6 +317,10 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				enemies[i]->ishit2 = true;
 				enemies[i]->ishit3 = true;
 				enemies[i]->ishit4 = true;
+			}
+			if (enemies[i]->mine)
+			{
+				enemies[i]->ishit = true;
 			}
 			
 
@@ -406,6 +418,11 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 					App->powerups->AddPowerUp(POWERUP_TYPES::MISSILEUP, enemies[i]->position.x - 120, enemies[i]->position.y - 110);
 					App->gexplosion->AddGroundExplosion(App->gexplosion->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
 				}		
+				else if (enemies[i]->mine)
+				{
+					App->gexplosion->AddGroundExplosion(App->gexplosion->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+					App->particles->AddParticle(App->particles->enemyshot, enemies[i]->position.x+ enemies[i]->w*3/2, enemies[i]->position.y + enemies[i]->h * 3/2, COLLIDER_NONE, 0, );
+				}
 
 				if (enemies[i]->bossmain)
 					DestroyBossParts();

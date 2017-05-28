@@ -139,6 +139,9 @@
     <ClCompile Include="Enemy_Boss_Cannon.cpp">
       <Filter>Enemies</Filter>
     </ClCompile>
+    <ClCompile Include="Enemy_Mine.cpp">
+      <Filter>Enemies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h">
@@ -292,6 +295,9 @@
       <Filter>Enemies</Filter>
     </ClInclude>
     <ClInclude Include="Enemy_Boss_Cannon.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy_Mine.h">
       <Filter>Enemies</Filter>
     </ClInclude>
   </ItemGroup>
