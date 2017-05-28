@@ -60,13 +60,11 @@ update_status ModuleMap1::Update()
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -200);
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 352 * 3, -200);
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE,0, -300 );
-		//App->enemies->AddEnemy(0, ENEMY_TYPES::BOSS_MAIN, 230, -200);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BOSS_MAIN, 230, -12600);
 
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::GREY_TANK, 500, -300);
 
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::MEGATANK, 500, -300);
-
-		
 
 		// First street
 		//Horizontal tanks
@@ -575,7 +573,7 @@ update_status ModuleMap1::Update()
 	App->render->Blit(Buildings, xmap, ymap, &buildings);
 	App->render->Blit(Road, xmap, yroad, &road);
 
-    if (!(ymap >= 0))
+    if (!(ymap >= -170 * 3))
 	{ 
 		ymap += yscrollspeed;
 		yroad += (yscrollspeed * 1.5);
@@ -610,7 +608,7 @@ update_status ModuleMap1::Update()
 		App->render->camera.y -= 1 * 10;
 	}
 
-	if ( ymap >= 0 || won)
+	if (won)
 	{
 		App->player->Disable();
 		App->player2->Disable();

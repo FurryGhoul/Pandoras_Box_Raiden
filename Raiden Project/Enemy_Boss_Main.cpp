@@ -6,6 +6,7 @@
 #include "ModuleParticles.h"
 #include <Math.h>
 #include "ModuleEnemies.h"
+#include "ModuleMap1.h"
 
 Enemy_Boss_Main::Enemy_Boss_Main(int x, int y, int path) : Enemy(x, y)
 {
@@ -134,6 +135,9 @@ Enemy_Boss_Main::Enemy_Boss_Main(int x, int y, int path) : Enemy(x, y)
 
 void Enemy_Boss_Main::MoveShoot()
 {
+	if (position.y >= 850)
+		App->map_1->won = true;
+
 	position = original_pos + movement.GetCurrentPosition();
 	position.x += left_right_mod;
 

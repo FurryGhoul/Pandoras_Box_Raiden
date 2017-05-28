@@ -258,6 +258,9 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 	{
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1)
 		{
+			if (enemies[i]->tank || enemies[i]->greytank)
+				enemies[i]->hp = 0;
+
 			if (c2->bullettype == 27)
 			{
 				if (SDL_GetTicks() - time >= 50)
@@ -453,7 +456,10 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 
 
 				if (enemies[i]->bossmain)
+				{
 					DestroyBossParts();
+					App->map_1->won = true;
+				}
 
 				delete enemies[i];
 				enemies[i] = nullptr;
