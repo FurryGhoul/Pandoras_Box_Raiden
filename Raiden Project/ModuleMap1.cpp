@@ -64,7 +64,7 @@ update_status ModuleMap1::Update()
 
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::GREY_TANK, 500, -300);
 
-		//App->enemies->AddEnemy(0, ENEMY_TYPES::MEGATANK, 500, -300);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::MEGATANK, 500, -3900);
 
 		// First street
 		//Horizontal tanks
@@ -601,12 +601,14 @@ update_status ModuleMap1::Update()
 		//ymap += yscrollspeed * 50;
 		//yroad += ((yscrollspeed * 1.5) * 50);
 	}
+/*
 	if (App->input->keyboard[SDL_SCANCODE_Z])
 	{
 		ymap += yscrollspeed * 10;
 		yroad += ((yscrollspeed* 10) * 1.5) ;
 		App->render->camera.y -= 1 * 10;
 	}
+*/
 
 	if (won)
 	{
