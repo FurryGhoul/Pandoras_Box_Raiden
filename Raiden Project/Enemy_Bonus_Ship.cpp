@@ -225,11 +225,11 @@ void Enemy_Bonus_Ship::MoveShoot()
 	{
 		animation = &stop;
 		animation1 = &none;
-		if (ishit == true)
+		if (ishit2 == true)
 		{
 			animation = &hitsides;
 			hitsides.Reset();
-			ishit = false;
+			ishit2 = false;
 		}
 	}
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.5f)
