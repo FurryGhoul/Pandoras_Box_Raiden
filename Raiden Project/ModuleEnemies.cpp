@@ -421,8 +421,36 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				else if (enemies[i]->mine)
 				{
 					App->gexplosion->AddGroundExplosion(App->gexplosion->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
-					App->particles->AddParticle(App->particles->enemyshot, enemies[i]->position.x+ enemies[i]->w*3/2, enemies[i]->position.y + enemies[i]->h * 3/2, COLLIDER_NONE, 0, );
-				}
+					App->particles->AddParticle(App->particles->enemyshot, enemies[i]->position.x+ enemies[i]->w*3/2, enemies[i]->position.y + enemies[i]->h * 3/2, COLLIDER_NONE, 0,10,0 );
+
+
+					App->particles->AddParticle(App->particles->enemyshot, enemies[i]->position.x + enemies[i]->w * 3 / 2, enemies[i]->position.y + enemies[i]->h * 3 / 2, COLLIDER_NONE, 0, 8, -5);
+					App->particles->AddParticle(App->particles->enemyshot, enemies[i]->position.x + enemies[i]->w * 3 / 2, enemies[i]->position.y + enemies[i]->h * 3 / 2, COLLIDER_NONE, 0, 5, -8);
+
+
+					App->particles->AddParticle(App->particles->enemyshot, enemies[i]->position.x + enemies[i]->w * 3 / 2, enemies[i]->position.y + enemies[i]->h * 3 / 2, COLLIDER_NONE, 0,  0,10);
+
+
+					App->particles->AddParticle(App->particles->enemyshot, enemies[i]->position.x + enemies[i]->w * 3 / 2, enemies[i]->position.y + enemies[i]->h * 3 / 2, COLLIDER_NONE, 0, -8, 5);
+					App->particles->AddParticle(App->particles->enemyshot, enemies[i]->position.x + enemies[i]->w * 3 / 2, enemies[i]->position.y + enemies[i]->h * 3 / 2, COLLIDER_NONE, 0, -5, 8);
+
+
+					App->particles->AddParticle(App->particles->enemyshot, enemies[i]->position.x + enemies[i]->w * 3 / 2, enemies[i]->position.y + enemies[i]->h * 3 / 2, COLLIDER_NONE, 0, -10, 0);
+
+
+					App->particles->AddParticle(App->particles->enemyshot, enemies[i]->position.x + enemies[i]->w * 3 / 2, enemies[i]->position.y + enemies[i]->h * 3 / 2, COLLIDER_NONE, 0, 8, 5);		
+			     	App->particles->AddParticle(App->particles->enemyshot, enemies[i]->position.x + enemies[i]->w * 3 / 2, enemies[i]->position.y + enemies[i]->h * 3 / 2, COLLIDER_NONE, 0, 5, 8);
+
+
+				    App->particles->AddParticle(App->particles->enemyshot, enemies[i]->position.x + enemies[i]->w * 3 / 2, enemies[i]->position.y + enemies[i]->h * 3 / 2, COLLIDER_NONE, 0,-10 ,0 );
+
+
+					App->particles->AddParticle(App->particles->enemyshot, enemies[i]->position.x + enemies[i]->w * 3 / 2, enemies[i]->position.y + enemies[i]->h * 3 / 2, COLLIDER_NONE, 0, -8, -5);
+					App->particles->AddParticle(App->particles->enemyshot, enemies[i]->position.x + enemies[i]->w * 3 / 2, enemies[i]->position.y + enemies[i]->h * 3 / 2, COLLIDER_NONE, 0, -5, -8);
+	        	}
+
+
+
 
 				if (enemies[i]->bossmain)
 					DestroyBossParts();

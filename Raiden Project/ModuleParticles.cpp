@@ -189,7 +189,7 @@ bool ModuleParticles::Init()
 	enemyshot.anim.loop = true;
 	enemyshot.anim.speed = 0.3f;
 	enemyshot.life = 2100;
-	enemyshot.speed.y = 10;
+	enemyshot.speed.y = 0;
 	enemyshot.size.x = 18;
 	enemyshot.size.y = 18;
 
