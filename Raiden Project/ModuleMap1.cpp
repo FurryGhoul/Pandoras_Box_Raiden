@@ -64,7 +64,7 @@ update_status ModuleMap1::Update()
 
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::GREY_TANK, 500, -300);
 
-		//App->enemies->AddEnemy(0, ENEMY_TYPES::MEGATANK, 500, -300);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::MEGATANK, 500, -3900);
 
 		
 
