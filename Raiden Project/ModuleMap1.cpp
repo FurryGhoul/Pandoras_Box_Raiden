@@ -352,7 +352,7 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 330, -3880);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 380, -4380);
 		// Coastline medalboxes
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 820, -7080);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 820, -7080); // This should be a medal box
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 720, -7180);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 620, -7280);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 520, -7380);
