@@ -48,6 +48,7 @@ update_status ModuleMap1::Update()
 	if (setup)
 	{
 		App->particles->Enable();
+		App->gexplosion->Enable();
 		App->shadows->Enable();
 	    App->player->Enable();
 		if (!App->player2->deadplayer)
@@ -618,6 +619,7 @@ update_status ModuleMap1::Update()
 		App->enemies->EraseEnemies();
 		App->powerups->ErasePowerUps();
 		App->particles->EraseParticles();
+
 		App->gexplosion->EraseParticles();
 		App->shadows->EraseShadows();
 		App->collision->Erase_Non_Player_Colliders();
@@ -625,6 +627,7 @@ update_status ModuleMap1::Update()
 		App->player2->powerup_level = 0;
 		App->player->missile_powerup_level = 0;
 		App->player2->missile_powerup_level = 0;
+		App->gexplosion->Disable();
 		App->particles->Disable();		
 		App->shadows->Disable();
 		App->player->Playergod->SetPos(10000, 10000);
