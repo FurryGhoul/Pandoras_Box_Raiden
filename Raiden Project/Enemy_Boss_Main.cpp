@@ -331,94 +331,114 @@ void Enemy_Boss_Main::MoveShoot()
 		if (shootingwaves == 0) //first
 		{
 			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 9, 3);
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -9, 3);
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 9, 3);
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -9, 3);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -9, 3, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 9, 3, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -9, 3, false, true);
 
 			shootingwaves++;
 			time4 = SDL_GetTicks();
 		}
 		if (SDL_GetTicks() - time4 >= 200 && shootingwaves == 1)
 		{
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 8, 5);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -8, 5, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 8, 5, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -8, 5, false, true);
 
 			shootingwaves++;
 		}
 		if (SDL_GetTicks() - time4 >= 400 && shootingwaves == 2)
 		{
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 9, 4);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -9, 4, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 9, 4, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -9, 4, false, true);
 
 			shootingwaves++;
 		}
 		if (SDL_GetTicks() - time4 >= 600 && shootingwaves == 3)
 		{
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 6, 8);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -6, 8, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 6, 8, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -6, 8, false, true);
 
 			shootingwaves++;
 		}
 		if (SDL_GetTicks() - time4 >= 800 && shootingwaves == 4)
 		{
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 5, 9);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -5, 9, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 5, 9, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -5, 9, false, true);
 
 			shootingwaves++;
 		}
 		if (SDL_GetTicks() - time4 >= 1000 && shootingwaves == 5)
 		{
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 4, 9);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -4, 9, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 4, 9, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -4, 9, false, true);
 
 			shootingwaves++;
 		}
 		if (SDL_GetTicks() - time4 >= 1200 && shootingwaves == 6)
 		{
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 7, 7);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -7, 7, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 7, 7, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -7, 7, false, true);
 
 			shootingwaves++;
 		}
 		if (SDL_GetTicks() - time4 >= 1400 && shootingwaves == 7)
 		{
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -3, 9);
 
 			shootingwaves++;
 		}
 		if (SDL_GetTicks() - time4 >= 1600 && shootingwaves == 8)
 		{
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 3, 9);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -3, 9, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -3, 9, false, true);
 
 			shootingwaves++;
 		}
 		if (SDL_GetTicks() - time4 >= 1800 && shootingwaves == 9)
 		{
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 4, 9);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -4, 9, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 4, 9, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -4, 9, false, true);
 
 			shootingwaves++;
 		}
 		if (SDL_GetTicks() - time4 >= 2000 && shootingwaves == 10)
 		{
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 3, 9);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -3, 9, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 3, 9, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -3, 9, false, true);
 
 			shootingwaves++;
 		}
 		if (SDL_GetTicks() - time4 >= 2200 && shootingwaves == 11)
 		{
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 9, 3);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -9, 3, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 9, 3, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -9, 3, false, true);
 
 			shootingwaves++;
 		}
 		if (SDL_GetTicks() - time4 >= 2400 && shootingwaves == 12) //last
 		{
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
-			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 60, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 0, 10);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 10, 3);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 - 80, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -10, 3, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, 10, 3, false, true);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + w / 2 + 100, position.y + h - 30, COLLIDER_ENEMY_SHOT, 0, -10, 3, false, true);
 			
 			animation = &idle;
 			_shooting = false;
