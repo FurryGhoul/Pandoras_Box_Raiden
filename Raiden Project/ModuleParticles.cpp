@@ -397,6 +397,7 @@ bool ModuleParticles::Init()
 	bombexplosion2.anim.speed = 0.4f;
 	bombexplosion2.size.x = 168 * 3;
 	bombexplosion2.size.y = 154 * 3;
+	bombexplosion2.life = 1000;
 
 
 	//Ship_Tank explosion
@@ -483,7 +484,7 @@ update_status ModuleParticles::Update()
 
 			else if (p->bullettype == 37)
 			{
-				AddParticle(bombexplosion2, p->position.x, p->position.y, COLLIDER_BOMB, 27, 0, 0, 0, false, 1);
+				AddParticle(bombexplosion2, p->position.x, p->position.y, COLLIDER_BOMB, 27, 0, 0, false, false, 3);
 			}
 
 			delete p;

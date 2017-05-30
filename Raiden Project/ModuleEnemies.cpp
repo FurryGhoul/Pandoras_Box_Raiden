@@ -260,10 +260,10 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				if (enemies[i]->tank || enemies[i]->greytank)
 					enemies[i]->hp = 0;
 
-				if (SDL_GetTicks() - time >= 50)
+				if (SDL_GetTicks() - time >= 100)
 					enemies[i]->bombimmunity = false;
 
-				if (SDL_GetTicks() - App->player->bombshot >= 3500)
+				if (SDL_GetTicks() - App->player->bombshot >= 2750)
 					enemies[i]->damagebybomb = 0;
 
 				if (!enemies[i]->bombimmunity && enemies[i]->damagebybomb <= 22)
