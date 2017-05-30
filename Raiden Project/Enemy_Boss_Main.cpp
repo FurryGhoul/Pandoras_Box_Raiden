@@ -175,7 +175,7 @@ void Enemy_Boss_Main::MoveShoot()
 	
 	if (kamikazeammo)
 	{
-		if (kamikazewaves >= 1)
+		if (kamikazewaves >= 21)
 		{
 			kamikazeammo = false;
 			animation = &idle;
