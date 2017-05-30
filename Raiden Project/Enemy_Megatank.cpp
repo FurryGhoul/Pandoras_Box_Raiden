@@ -617,7 +617,7 @@ Enemy_Megatank::Enemy_Megatank(int x, int y, int path) : Enemy(x, y)
 
 	movement.PushBack({ 0.0f, 1.0f }, 10000);
 
-	collider = App->collision->AddCollider({ 0, 0, 48 * 3, 45 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
+	collider = App->collision->AddCollider({ 0, 0, 48 * 3, 45 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->genemies);
 
 	original_pos.x = x;
 	original_pos.y = 50;
