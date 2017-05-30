@@ -17,6 +17,7 @@
 #include "ModuleShadows.h"
 #include "ModuleStageClear1.h"
 #include "ModuleGroundExplosion.h"
+#include "ModuleGroundEnemies.h"
 
 #include <stdio.h>
 
@@ -65,7 +66,7 @@ update_status ModuleMap1::Update()
 
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::GREY_TANK, 500, -300);
 
-		App->enemies->AddEnemy(0, ENEMY_TYPES::MEGATANK, 500, -3900);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::MEGATANK, 500, -300);
 
 		// First street
 		//Horizontal tanks

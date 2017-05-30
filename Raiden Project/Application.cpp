@@ -19,6 +19,7 @@
 #include "ModuleFonts.h"
 #include "ModuleShadows.h"
 #include "ModuleGroundExplosion.h"
+#include "ModuleGroundEnemies.h"
 
 Application::Application()
 {	
@@ -35,13 +36,14 @@ Application::Application()
 	modules[9] = fade = new ModuleFadeToBlack();	
 	modules[10] = shadows = new ModuleShadows();
 	modules[11] = gexplosion = new ModuleGroundExplosion();
-	modules[12] = enemies = new ModuleEnemies();
-	modules[13] = particles = new ModuleParticles();
-	modules[14] = powerups = new ModulePowerUps();
-	modules[15] = player = new ModulePlayer();
-	modules[16] = player2 = new ModulePlayer2();
-	modules[17] = collision = new ModuleCollision();
-	modules[18] = fade = new ModuleFadeToBlack();
+	modules[12] = genemies = new ModuleGroundEnemies();
+	modules[13] = enemies = new ModuleEnemies();
+	modules[14] = particles = new ModuleParticles();
+	modules[15] = powerups = new ModulePowerUps();
+	modules[16] = player = new ModulePlayer();
+	modules[17] = player2 = new ModulePlayer2();
+	modules[18] = collision = new ModuleCollision();
+	modules[19] = fade = new ModuleFadeToBlack();
 }	
 
 Application::~Application()

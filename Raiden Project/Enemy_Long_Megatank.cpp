@@ -10,7 +10,7 @@
 
 Enemy_Long_Megatank::Enemy_Long_Megatank(int x, int y, int path) : Enemy(x, y)
 {
-	spritesheet = 6;
+	gspritesheet = 6;
 	animations = 1;
 
 	hp = 120;
