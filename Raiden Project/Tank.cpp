@@ -404,7 +404,7 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ 0.0f, 1.0f }, 1000);
 	}
 	tank = true;
-	collider = App->collision->AddCollider({ 0, 0, 31 * 3 - 5, 29 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
+	collider = App->collision->AddCollider({ 0, 0, 31 * 3 - 5, 29 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->genemies);
 	animation = &updiagonalleft;
 }
 

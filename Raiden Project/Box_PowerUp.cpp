@@ -5,7 +5,7 @@
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
 #include <Math.h>
-#include "ModuleEnemies.h"
+#include "ModuleGroundEnemies.h"
 
 Box_PowerUp::Box_PowerUp(int x, int y, int path) : Enemy(x, y)
 {
@@ -18,7 +18,7 @@ Box_PowerUp::Box_PowerUp(int x, int y, int path) : Enemy(x, y)
 
 	movement.PushBack({ 0.0f, 1.0f }, 100);
 
-	collider = App->collision->AddCollider({ 0, 0, 27 * 3 - 5, 24 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
+	collider = App->collision->AddCollider({ 0, 0, 27 * 3 - 5, 24 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->genemies);
 
 	spritesheet = 4;
 	animations = 1;

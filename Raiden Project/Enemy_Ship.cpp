@@ -5,7 +5,7 @@
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
 #include <Math.h>
-#include "ModuleEnemies.h"
+#include "ModuleGroundEnemies.h"
 
 #define PI 3.14159265
 
@@ -45,7 +45,7 @@ Enemy_Ship::Enemy_Ship(int x, int y, int path) : Enemy(x, y)
 	movement.PushBack({ 0.0f, 1.0f }, 1300);
 	movement.loop = false;
 
-	collider = App->collision->AddCollider({ 0, 0, 30 * 3 , 48 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
+	collider = App->collision->AddCollider({ 0, 0, 30 * 3 , 48 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->genemies);
 
 	spritesheet = 7;
 	animations = 3;

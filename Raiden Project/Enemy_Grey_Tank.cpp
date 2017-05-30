@@ -5,7 +5,7 @@
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
 #include <Math.h>
-#include "ModuleEnemies.h"
+#include "ModuleGroundEnemies.h"
 #define PI 3.14159265
 
 Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
@@ -453,7 +453,7 @@ Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
 	}
 
 	greytank = true;
-	collider = App->collision->AddCollider({ 0, 0, 31 * 3 - 5, 29 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
+	collider = App->collision->AddCollider({ 0, 0, 31 * 3 - 5, 29 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->genemies);
 	animation = &updiagonalleft;
 }
 

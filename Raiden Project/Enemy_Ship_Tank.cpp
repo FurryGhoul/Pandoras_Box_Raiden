@@ -103,7 +103,7 @@ Enemy_Ship_Tank::Enemy_Ship_Tank(int x, int y, int path) : Enemy(x, y)
 	original_pos.y = -200;
 
 	//tank = true;
-	collider = App->collision->AddCollider({ 0, 0, 23 * 3 - 5, 30 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->enemies);
+	collider = App->collision->AddCollider({ 0, 0, 23 * 3 - 5, 30 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->genemies);
 	animation = &up;
 }
 

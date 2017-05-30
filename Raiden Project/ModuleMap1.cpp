@@ -66,28 +66,28 @@ update_status ModuleMap1::Update()
 
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::GREY_TANK, 500, -300);
 
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::MEGATANK, 500, -300);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::MEGATANK, 500, -3900);
 
 		// First street
 		//Horizontal tanks
-		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -900);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TANK, 0, -900);
 		//Vertical tanks
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -1200);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -1300);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -1400);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -1200);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -1300);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -1400);
 
 
 		//Second street
 		//Horizontal tanks
-		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -1220);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -1300);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TANK, 0, -1220);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TANK, 0, -1300);
 		// Light Kamikazes
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -1340);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -1340);
 		//Vertical tanks
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -1600);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -1700);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -1800);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -1600);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -1700);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -1800);
 
 
 		//Third street
@@ -100,24 +100,24 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -2400);
 	    // Horizontal tanks
 
-		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -1880);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::TANK, 0, -1940);		
-		App->enemies->AddEnemy(18, ENEMY_TYPES::TANK, 0, -2300);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TANK, 0, -1880);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TANK, 0, -1940);
+		App->genemies->AddGroundEnemy(18, GENEMY_TYPES::TANK, 0, -2300);
 
 		//Vertical tanks		
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -2300);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -2000);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -2100);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -2300);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -2000);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -2100);
 
 		//Forth street
 		//Strange thing
-		App->enemies->AddEnemy(5, ENEMY_TYPES::TANK, 500, -2390);
-		App->enemies->AddEnemy(6, ENEMY_TYPES::TANK, 400, -2420);
-		App->enemies->AddEnemy(7, ENEMY_TYPES::TANK, 300, -2450);
+		App->genemies->AddGroundEnemy(5, GENEMY_TYPES::TANK, 500, -2390);
+		App->genemies->AddGroundEnemy(6, GENEMY_TYPES::TANK, 400, -2420);
+		App->genemies->AddGroundEnemy(7, GENEMY_TYPES::TANK, 300, -2450);
 
-		App->enemies->AddEnemy(2, ENEMY_TYPES::TANK, 700, -2270);
-		App->enemies->AddEnemy(3, ENEMY_TYPES::TANK, 600, -2290);
-		App->enemies->AddEnemy(4, ENEMY_TYPES::TANK, 500, -2310);
+		App->genemies->AddGroundEnemy(2, GENEMY_TYPES::TANK, 700, -2270);
+		App->genemies->AddGroundEnemy(3, GENEMY_TYPES::TANK, 600, -2290);
+		App->genemies->AddGroundEnemy(4, GENEMY_TYPES::TANK, 500, -2310);
 
 
 	
@@ -130,14 +130,14 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -2740);
 
 		//Vertical tanks left
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -2800);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -2850);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -2900);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -2800);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -2850);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -2900);
 		//Vertical tanks right
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 270, -2800);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 270, -2900);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 270, -2800);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 270, -2900);
 		//Horizontal delayed tanks
-        App->enemies->AddEnemy(8, ENEMY_TYPES::TANK, -50, -2850);
+		App->genemies->AddGroundEnemy(8, GENEMY_TYPES::TANK, -50, -2850);
 
 
 		//Building after pool
@@ -168,33 +168,33 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -4280);
 
 	    //Horizontal tanks
-		App->enemies->AddEnemy(9, ENEMY_TYPES::TANK, -50, -3150);
-		App->enemies->AddEnemy(10, ENEMY_TYPES::TANK, -50, -3250);
+		App->genemies->AddGroundEnemy(9, GENEMY_TYPES::TANK, -50, -3150);
+		App->genemies->AddGroundEnemy(10, GENEMY_TYPES::TANK, -50, -3250);
 
 		//Vertical right tanks
 		//Direct
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -3150);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 750, -3250);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -3150);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -3250);
 		//Vuelta
-        App->enemies->AddEnemy(13, ENEMY_TYPES::TANK, 357*3, -3700);
-        App->enemies->AddEnemy(11, ENEMY_TYPES::TANK, -50, -3700);
+		App->genemies->AddGroundEnemy(13, GENEMY_TYPES::TANK, 357*3, -3700);
+		App->genemies->AddGroundEnemy(11, GENEMY_TYPES::TANK, -50, -3700);
 
 		//Vertical left tanks
 		//Direct
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 270, -3450);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 270, -3550);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 270, -3450);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 270, -3550);
 		//Vuelta
-		App->enemies->AddEnemy(12, ENEMY_TYPES::TANK, -50, -3600);
+		App->genemies->AddGroundEnemy(12, GENEMY_TYPES::TANK, -50, -3600);
 		
 		
 		//SE2 Tanks
-		App->enemies->AddEnemy(14, ENEMY_TYPES::TANK, 200, -3770);
-		App->enemies->AddEnemy(15, ENEMY_TYPES::TANK, 0, -3940);
-		App->enemies->AddEnemy(16, ENEMY_TYPES::TANK, 0, -4200);
-		App->enemies->AddEnemy(17, ENEMY_TYPES::TANK, 0, -4350);
+		App->genemies->AddGroundEnemy(14, GENEMY_TYPES::TANK, 200, -3770);
+		App->genemies->AddGroundEnemy(15, GENEMY_TYPES::TANK, 0, -3940);
+		App->genemies->AddGroundEnemy(16, GENEMY_TYPES::TANK, 0, -4200);
+		App->genemies->AddGroundEnemy(17, GENEMY_TYPES::TANK, 0, -4350);
 		//SW2 Tanks
-		App->enemies->AddEnemy(19, ENEMY_TYPES::TANK, 357 * 3, -4300);
-		App->enemies->AddEnemy(20, ENEMY_TYPES::TANK, 357 * 3, -4400);
+		App->genemies->AddGroundEnemy(19, GENEMY_TYPES::TANK, 357 * 3, -4300);
+		App->genemies->AddGroundEnemy(20, GENEMY_TYPES::TANK, 357 * 3, -4400);
 
 		//Light kamizaze orgy 1
 		//Left
@@ -234,136 +234,136 @@ update_status ModuleMap1::Update()
 
 		//Roads1
 		//Stoped
-		App->enemies->AddEnemy(21, ENEMY_TYPES::GREY_TANK, 150, -4950);
-		App->enemies->AddEnemy(21, ENEMY_TYPES::GREY_TANK, 250, -5400);
+		App->genemies->AddGroundEnemy(21, GENEMY_TYPES::GREY_TANK, 150, -4950);
+		App->genemies->AddGroundEnemy(21, GENEMY_TYPES::GREY_TANK, 250, -5400);
 
-		App->enemies->AddEnemy(27, ENEMY_TYPES::GREY_TANK, 150, -5600);
-		App->enemies->AddEnemy(27, ENEMY_TYPES::GREY_TANK, 300, -5650);
-		App->enemies->AddEnemy(27, ENEMY_TYPES::GREY_TANK, 700, -5650);
-		App->enemies->AddEnemy(27, ENEMY_TYPES::GREY_TANK, 520, -6070);
+		App->genemies->AddGroundEnemy(27, GENEMY_TYPES::GREY_TANK, 150, -5600);
+		App->genemies->AddGroundEnemy(27, GENEMY_TYPES::GREY_TANK, 300, -5650);
+		App->genemies->AddGroundEnemy(27, GENEMY_TYPES::GREY_TANK, 700, -5650);
+		App->genemies->AddGroundEnemy(27, GENEMY_TYPES::GREY_TANK, 520, -6070);
 		//Horizontal to stop-right
-		App->enemies->AddEnemy(23, ENEMY_TYPES::GREY_TANK, 0, -5050);
-		App->enemies->AddEnemy(23, ENEMY_TYPES::GREY_TANK, 500, -5050);
-		App->enemies->AddEnemy(23, ENEMY_TYPES::GREY_TANK, 650, -5050);
-		App->enemies->AddEnemy(23, ENEMY_TYPES::GREY_TANK, 800, -5050);
+		App->genemies->AddGroundEnemy(23, GENEMY_TYPES::GREY_TANK, 0, -5050);
+		App->genemies->AddGroundEnemy(23, GENEMY_TYPES::GREY_TANK, 500, -5050);
+		App->genemies->AddGroundEnemy(23, GENEMY_TYPES::GREY_TANK, 650, -5050);
+		App->genemies->AddGroundEnemy(23, GENEMY_TYPES::GREY_TANK, 800, -5050);
 
 		//Horizontal to right-stop
-		App->enemies->AddEnemy(29, ENEMY_TYPES::GREY_TANK, 200, -6020);
-		App->enemies->AddEnemy(29, ENEMY_TYPES::GREY_TANK, 100, -6020);
+		App->genemies->AddGroundEnemy(29, GENEMY_TYPES::GREY_TANK, 200, -6020);
+		App->genemies->AddGroundEnemy(29, GENEMY_TYPES::GREY_TANK, 100, -6020);
 
 		//Horizontal to left-stop
-		App->enemies->AddEnemy(24, ENEMY_TYPES::GREY_TANK, 250, -5150);
-		App->enemies->AddEnemy(24, ENEMY_TYPES::GREY_TANK, 400, -5150);
-		App->enemies->AddEnemy(24, ENEMY_TYPES::GREY_TANK, 550, -5150);
-		App->enemies->AddEnemy(24, ENEMY_TYPES::GREY_TANK, 357 * 3, -5150);
+		App->genemies->AddGroundEnemy(24, GENEMY_TYPES::GREY_TANK, 250, -5150);
+		App->genemies->AddGroundEnemy(24, GENEMY_TYPES::GREY_TANK, 400, -5150);
+		App->genemies->AddGroundEnemy(24, GENEMY_TYPES::GREY_TANK, 550, -5150);
+		App->genemies->AddGroundEnemy(24, GENEMY_TYPES::GREY_TANK, 357 * 3, -5150);
 		//Horizontal to stop-left
-		App->enemies->AddEnemy(22, ENEMY_TYPES::GREY_TANK, 850, -6020);
-		App->enemies->AddEnemy(22, ENEMY_TYPES::GREY_TANK, 950, -6020);
+		App->genemies->AddGroundEnemy(22, GENEMY_TYPES::GREY_TANK, 850, -6020);
+		App->genemies->AddGroundEnemy(22, GENEMY_TYPES::GREY_TANK, 950, -6020);
 
 		//stop-east- north east 2
-		App->enemies->AddEnemy(31, ENEMY_TYPES::GREY_TANK, 420, -6070);
+		App->genemies->AddGroundEnemy(31, GENEMY_TYPES::GREY_TANK, 420, -6070);
 		//stop-west-north west 2
-		App->enemies->AddEnemy(30, ENEMY_TYPES::GREY_TANK, 620, -6070);
+		App->genemies->AddGroundEnemy(30, GENEMY_TYPES::GREY_TANK, 620, -6070);
 
 
 		//stop- North east 2- east- west
-		App->enemies->AddEnemy(25, ENEMY_TYPES::GREY_TANK, 325, -5200);
-		App->enemies->AddEnemy(26, ENEMY_TYPES::GREY_TANK, 450, -5200);
+		App->genemies->AddGroundEnemy(25, GENEMY_TYPES::GREY_TANK, 325, -5200);
+		App->genemies->AddGroundEnemy(26, GENEMY_TYPES::GREY_TANK, 450, -5200);
 		//South-west 2
-		App->enemies->AddEnemy(28, ENEMY_TYPES::GREY_TANK, 900, -5600);
+		App->genemies->AddGroundEnemy(28, GENEMY_TYPES::GREY_TANK, 900, -5600);
 		 
 		
 
 		// Invisible medalboxes
-		App->enemies->AddEnemy(1, ENEMY_TYPES::BOX_MEDAL, 520, -2080);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::BOX_MEDAL, 630, -2080);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::BOX_MEDAL, 520, -2180);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::BOX_MEDAL, 630, -2180);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::BOX_MEDAL, 520, -2080);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::BOX_MEDAL, 630, -2080);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::BOX_MEDAL, 520, -2180);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::BOX_MEDAL, 630, -2180);
 		// Invisible medalboxes 2
-		App->enemies->AddEnemy(1, ENEMY_TYPES::BOX_MEDAL, 390, -2880);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::BOX_MEDAL, 580, -2880);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::BOX_MEDAL, 390, -3000);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::BOX_MEDAL, 390, -2880);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::BOX_MEDAL, 580, -2880);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::BOX_MEDAL, 390, -3000);
 
 		//City after roads
 
 		//South east 2- east
-		App->enemies->AddEnemy(21, ENEMY_TYPES::TANK, 600, -7040);
-		App->enemies->AddEnemy(22, ENEMY_TYPES::TANK, 550, -7090);
-		App->enemies->AddEnemy(23, ENEMY_TYPES::TANK, 500, -7140);
-		App->enemies->AddEnemy(24, ENEMY_TYPES::TANK, 450, -7190);
+		App->genemies->AddGroundEnemy(21, GENEMY_TYPES::TANK, 600, -7040);
+		App->genemies->AddGroundEnemy(22, GENEMY_TYPES::TANK, 550, -7090);
+		App->genemies->AddGroundEnemy(23, GENEMY_TYPES::TANK, 500, -7140);
+		App->genemies->AddGroundEnemy(24, GENEMY_TYPES::TANK, 450, -7190);
 
 
 		//South east 2
-		App->enemies->AddEnemy(25, ENEMY_TYPES::TANK, -50, -7770);
-		App->enemies->AddEnemy(26, ENEMY_TYPES::TANK, -50, -7970);
-		App->enemies->AddEnemy(27, ENEMY_TYPES::TANK, -50, -8170);
+		App->genemies->AddGroundEnemy(25, GENEMY_TYPES::TANK, -50, -7770);
+		App->genemies->AddGroundEnemy(26, GENEMY_TYPES::TANK, -50, -7970);
+		App->genemies->AddGroundEnemy(27, GENEMY_TYPES::TANK, -50, -8170);
 
 		//south- South east 2
-		App->enemies->AddEnemy(28, ENEMY_TYPES::TANK, 250, -7970);
-		App->enemies->AddEnemy(29, ENEMY_TYPES::TANK, 250, -8130);
+		App->genemies->AddGroundEnemy(28, GENEMY_TYPES::TANK, 250, -7970);
+		App->genemies->AddGroundEnemy(29, GENEMY_TYPES::TANK, 250, -8130);
 
 		//south
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 250, -8300);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 250, -8325);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 250, -8350);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 250, -8375);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 250, -8300);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 250, -8325);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 250, -8350);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 250, -8375);
 
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 250, -8500);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 250, -8525);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::TANK, 250, -8550);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 250, -8500);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 250, -8525);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 250, -8550);
 
 		//east - north - west
-		App->enemies->AddEnemy(30, ENEMY_TYPES::TANK, -50, -9400);
+		App->genemies->AddGroundEnemy(30, GENEMY_TYPES::TANK, -50, -9400);
 		//east- north east 2- stop
-		App->enemies->AddEnemy(31, ENEMY_TYPES::TANK, -50, -9500);
+		App->genemies->AddGroundEnemy(31, GENEMY_TYPES::TANK, -50, -9500);
 
 		//West/east stop
-		App->enemies->AddEnemy(32, ENEMY_TYPES::TANK, 25, -10000);
-		App->enemies->AddEnemy(32, ENEMY_TYPES::TANK, 25, -10100);
-		App->enemies->AddEnemy(32, ENEMY_TYPES::TANK, 25, -10200);
-		App->enemies->AddEnemy(32, ENEMY_TYPES::TANK, 450, -10200);
+		App->genemies->AddGroundEnemy(32, GENEMY_TYPES::TANK, 25, -10000);
+		App->genemies->AddGroundEnemy(32, GENEMY_TYPES::TANK, 25, -10100);
+		App->genemies->AddGroundEnemy(32, GENEMY_TYPES::TANK, 25, -10200);
+		App->genemies->AddGroundEnemy(32, GENEMY_TYPES::TANK, 450, -10200);
 
 		//South - sw2
-		App->enemies->AddEnemy(33, ENEMY_TYPES::TANK, 700, -10500);
+		App->genemies->AddGroundEnemy(33, GENEMY_TYPES::TANK, 700, -10500);
 
 
 		//Second roads
 		//Stoped
-		App->enemies->AddEnemy(32, ENEMY_TYPES::GREY_TANK, 300, -10800);
-		App->enemies->AddEnemy(32, ENEMY_TYPES::GREY_TANK, 200, -10900);
+		App->genemies->AddGroundEnemy(32, GENEMY_TYPES::GREY_TANK, 300, -10800);
+		App->genemies->AddGroundEnemy(32, GENEMY_TYPES::GREY_TANK, 200, -10900);
 		//Moving se
-		App->enemies->AddEnemy(33, ENEMY_TYPES::GREY_TANK, -50, -11150);
-		App->enemies->AddEnemy(34, ENEMY_TYPES::GREY_TANK, -50, -11250);
-		App->enemies->AddEnemy(35, ENEMY_TYPES::GREY_TANK, -50, -11350);
+		App->genemies->AddGroundEnemy(33, GENEMY_TYPES::GREY_TANK, -50, -11150);
+		App->genemies->AddGroundEnemy(34, GENEMY_TYPES::GREY_TANK, -50, -11250);
+		App->genemies->AddGroundEnemy(35, GENEMY_TYPES::GREY_TANK, -50, -11350);
 
 
-		App->enemies->AddEnemy(41, ENEMY_TYPES::GREY_TANK, 400, -11650);
-		App->enemies->AddEnemy(41, ENEMY_TYPES::GREY_TANK, 200, -11750);
-		App->enemies->AddEnemy(41, ENEMY_TYPES::GREY_TANK, 0, -11850);
+		App->genemies->AddGroundEnemy(41, GENEMY_TYPES::GREY_TANK, 400, -11650);
+		App->genemies->AddGroundEnemy(41, GENEMY_TYPES::GREY_TANK, 200, -11750);
+		App->genemies->AddGroundEnemy(41, GENEMY_TYPES::GREY_TANK, 0, -11850);
 
 
 		//moving nw
-		App->enemies->AddEnemy(36, ENEMY_TYPES::GREY_TANK, 357 * 3, -11050);
-		App->enemies->AddEnemy(37, ENEMY_TYPES::GREY_TANK, 357 * 3, -11200);
-		App->enemies->AddEnemy(38, ENEMY_TYPES::GREY_TANK, 357 * 3, -11350);
+		App->genemies->AddGroundEnemy(36, GENEMY_TYPES::GREY_TANK, 357 * 3, -11050);
+		App->genemies->AddGroundEnemy(37, GENEMY_TYPES::GREY_TANK, 357 * 3, -11200);
+		App->genemies->AddGroundEnemy(38, GENEMY_TYPES::GREY_TANK, 357 * 3, -11350);
 
 
 
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 330, -3880);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 380, -4380);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_POWERUP, 330, -3880);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_POWERUP, 380, -4380);
 		// Coastline medalboxes
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 820, -7080); // This should be a medal box
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 720, -7180);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 620, -7280);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 520, -7380);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 420, -7480);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 360, -7630);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 360, -7780);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 360, -7930);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_POWERUP, 820, -7080); // This should be a medal box
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 720, -7180);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 620, -7280);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 520, -7380);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 420, -7480);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 360, -7630);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 360, -7780);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 360, -7930);
 		// Upper coastline boxes
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 650, -9400);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_POWERUP, 750, -9400);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BOX_MEDAL, 850, -9400);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 650, -9400);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_POWERUP, 750, -9400);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 850, -9400);
 
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 300, -300);
@@ -385,18 +385,20 @@ update_status ModuleMap1::Update()
 		// 3rd Wave
 		App->enemies->AddEnemy(1, ENEMY_TYPES::MEDIUM_SHOOTER, 500, -8000);
 
-		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP, 600, -7850);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP, 650, -8250);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::LONG_MEGATANK, 440, -8950);
+
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP, 600, -7850);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP, 650, -8250);
 		
 		// 1st Wave
-		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 750, -8950);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 875, -8950);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 812, -9025);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 750, -8950);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 875, -8950);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 812, -9025);
 		// 2nd Wave
-		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 800, -9200);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 925, -9200);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 744, -9275);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::SHIP_TANK, 856, -9275);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 800, -9200);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 925, -9200);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 744, -9275);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 856, -9275);
 
 		//App->enemies->AddEnemy(2, ENEMY_TYPES::KAMIKAZE, 200, -100);
 		//App->enemies->AddEnemy(2, ENEMY_TYPES::KAMIKAZE, 100, -200);

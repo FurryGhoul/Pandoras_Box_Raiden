@@ -202,33 +202,12 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		case ENEMY_TYPES::BONUS_SHIP:
 			enemies[i] = new Enemy_Bonus_Ship(App->map_1->xmap + info.x, info.y, info._path);
 			break;
-		case ENEMY_TYPES::TANK:
-			enemies[i] = new Tank(App->map_1->xmap + info.x, info.y, info._path);
-			break;
-		case ENEMY_TYPES::GREY_TANK:
-			enemies[i] = new Enemy_Grey_Tank(App->map_1->xmap + info.x, info.y, info._path);
-			break;
-		case ENEMY_TYPES::SHIP_TANK:
-			enemies[i] = new Enemy_Ship_Tank(App->map_1->xmap + info.x, info.y, info._path);
-			break;
-		case ENEMY_TYPES::SHIP:
-			enemies[i] = new Enemy_Ship(App->map_1->xmap + info.x, info.y, info._path);
-			break;
 		case ENEMY_TYPES::MEDIUM_SHOOTER:
 			enemies[i] = new Enemy_Medium_Shooter(App->map_1->xmap + info.x, info.y, info._path);
-			break;
-		case ENEMY_TYPES::LONG_MEGATANK:
-			enemies[i] = new Enemy_Long_Megatank(App->map_1->xmap + info.x, info.y, info._path);
 			break;
 	/*	case ENEMY_TYPES::MEGATANK:
 			enemies[i] = new Enemy_Megatank(App->map_1->xmap + info.x, info.y, info._path);
 			break;*/
-		case ENEMY_TYPES::BOX_MEDAL:
-			enemies[i] = new Box_Medal(App->map_1->xmap + info.x, info.y, info._path);
-			break;
-		case ENEMY_TYPES::BOX_POWERUP:
-			enemies[i] = new Box_PowerUp(App->map_1->xmap + info.x, info.y, info._path);
-			break;
 		case ENEMY_TYPES::LIGHT_KAMIKAZE:
 			bool come_right;
 			if (info.x < 500)

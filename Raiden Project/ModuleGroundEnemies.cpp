@@ -42,6 +42,10 @@ ModuleGroundEnemies::~ModuleGroundEnemies()
 bool ModuleGroundEnemies::Init()
 {
 	// Create a prototype for each enemy available so we can copy them around
+	sprites3 = App->textures->Load("assets/Tank1.png");
+	sprites5 = App->textures->Load("assets/Boxes.png");
+	sprites7 = App->textures->Load("assets/LongMegatank.png");
+	sprites8 = App->textures->Load("assets/Ship.png");
 	sprites10 = App->textures->Load("assets/Megatank.png");
 
 	return true;
@@ -78,6 +82,16 @@ update_status ModuleGroundEnemies::Update()
 		{
 			if (enemies[i]->spritesheet == 9) //Megatank
 				enemies[i]->Draw(sprites10);
+			else if (enemies[i]->spritesheet == 1) //Bonus Ship
+				enemies[i]->Draw(sprites2);
+			else if (enemies[i]->spritesheet == 2) //Tank & Ship_Tank
+				enemies[i]->Draw(sprites3);
+			else if (enemies[i]->spritesheet == 4) //Box_Medal & Box_PowerUp
+				enemies[i]->Draw(sprites5);
+			else if (enemies[i]->spritesheet == 6) //Long Megatank
+				enemies[i]->Draw(sprites7);
+			else if (enemies[i]->spritesheet == 7) //Ship
+				enemies[i]->Draw(sprites8);
 			
 		}
 	return UPDATE_CONTINUE;
@@ -152,66 +166,31 @@ void ModuleGroundEnemies::SpawnGroundEnemy(const GroundEnemyInfo& info)
 	{
 		switch (info.type)
 		{
-			/*case GENEMY_TYPES::LIGHT_SHOOTER:
-			enemies[i] = new Enemy_Light_Shooter(App->map_1->xmap + info.x, info.y, info._path);
-			break;
-			case GENEMY_TYPES::BOSS_MAIN:
-			enemies[i] = new Enemy_Boss_Main(App->map_1->xmap + info.x, info.y, info._path);
-			break;
-			case GENEMY_TYPES::BOSS_CANNON:
-			enemies[i] = new Enemy_Boss_Cannon(App->map_1->xmap + info.x, info.y, info._path);
-			break;
-			case GENEMY_TYPES::BOSS_LEFT_WING:
-			enemies[i] = new Enemy_Boss_Left_Wing(App->map_1->xmap + info.x, info.y, info._path);
-			break;
-			case GENEMY_TYPES::BOSS_RIGHT_WING:
-			enemies[i] = new Enemy_Boss_Right_Wing(App->map_1->xmap + info.x, info.y, info._path);
-			break;
-			case GENEMY_TYPES::KAMIKAZE:
-			enemies[i] = new Enemy_Kamikaze(App->map_1->xmap + info.x, info.y, info._path);
-			break;
-			case GENEMY_TYPES::BONUS_SHIP:
-			enemies[i] = new Enemy_Bonus_Ship(App->map_1->xmap + info.x, info.y, info._path);
-			break;
-			case GENEMY_TYPES::TANK:
+			
+		case GENEMY_TYPES::TANK:
 			enemies[i] = new Tank(App->map_1->xmap + info.x, info.y, info._path);
 			break;
-			case GENEMY_TYPES::GREY_TANK:
+		case GENEMY_TYPES::GREY_TANK:
 			enemies[i] = new Enemy_Grey_Tank(App->map_1->xmap + info.x, info.y, info._path);
 			break;
-			case GENEMY_TYPES::SHIP_TANK:
+		case GENEMY_TYPES::SHIP_TANK:
 			enemies[i] = new Enemy_Ship_Tank(App->map_1->xmap + info.x, info.y, info._path);
 			break;
-			case GENEMY_TYPES::SHIP:
+		case GENEMY_TYPES::SHIP:
 			enemies[i] = new Enemy_Ship(App->map_1->xmap + info.x, info.y, info._path);
 			break;
-			case GENEMY_TYPES::MEDIUM_SHOOTER:
-			enemies[i] = new Enemy_Medium_Shooter(App->map_1->xmap + info.x, info.y, info._path);
-			break;
-			case GENEMY_TYPES::LONG_MEGATANK:
+		case GENEMY_TYPES::LONG_MEGATANK:
 			enemies[i] = new Enemy_Long_Megatank(App->map_1->xmap + info.x, info.y, info._path);
-			break;*/
+			break;
 		case GENEMY_TYPES::MEGATANK:
 			enemies[i] = new Enemy_Megatank(App->map_1->xmap + info.x, info.y, info._path);
 			break;
-			/*case GENEMY_TYPES::BOX_MEDAL:
+		case GENEMY_TYPES::BOX_MEDAL:
 			enemies[i] = new Box_Medal(App->map_1->xmap + info.x, info.y, info._path);
 			break;
-			case GENEMY_TYPES::BOX_POWERUP:
+		case GENEMY_TYPES::BOX_POWERUP:
 			enemies[i] = new Box_PowerUp(App->map_1->xmap + info.x, info.y, info._path);
 			break;
-			case GENEMY_TYPES::LIGHT_KAMIKAZE:
-			bool come_right;
-			if (info.x < 500)
-			{
-			come_right = true;
-			}
-			else
-			{
-			come_right = false;
-			}
-			enemies[i] = new Light_Shooter_Kamikaze(info.x, info.y, info._path, come_right);
-			break;*/
 		}
 	}
 }
@@ -244,7 +223,7 @@ void ModuleGroundEnemies::OnCollision(Collider* c1, Collider* c2)
 			}
 
 			
-		/*	if (enemies[i]->ship)
+			if (enemies[i]->ship)
 			{
 				enemies[i]->ishit = true;
 			}
@@ -261,19 +240,19 @@ void ModuleGroundEnemies::OnCollision(Collider* c1, Collider* c2)
 			{
 				enemies[i]->ishit = true;
 				enemies[i]->ishit2 = true;
-			}*/
+			}
 			if (enemies[i]->megatank)
 			{
-				enemies[i]->ishit = true;
+  				enemies[i]->ishit = true;
 				enemies[i]->ishit2 = true;
 			}
-			/*if (enemies[i]->longmegatank)
+			if (enemies[i]->longmegatank)
 			{
 				enemies[i]->ishit = true;
 				enemies[i]->ishit2 = true;
 				enemies[i]->ishit3 = true;
 				enemies[i]->ishit4 = true;
-			}*/
+			}
 
 
 			if (enemies[i]->hp < 0)
@@ -293,7 +272,7 @@ void ModuleGroundEnemies::OnCollision(Collider* c1, Collider* c2)
 				enemies[i]->hp = 0;
 			}
 
-			/*if (enemies[i]->hp == 1)
+			if (enemies[i]->hp == 1)
 			{
 				if (enemies[i]->tank && enemies[i]->turretexploded == false)
 				{
@@ -305,7 +284,12 @@ void ModuleGroundEnemies::OnCollision(Collider* c1, Collider* c2)
 					App->particles->AddParticle(App->particles->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
 					enemies[i]->turretexploded == true;
 				}
-			}*/
+				else if (enemies[i]->greytank && enemies[i]->turretexploded == false)
+				{
+					App->particles->AddParticle(App->particles->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+					enemies[i]->turretexploded == true;
+				}
+			}
 
 			if (enemies[i]->hp <= 0)
 			{
@@ -319,17 +303,14 @@ void ModuleGroundEnemies::OnCollision(Collider* c1, Collider* c2)
 					App->player2->score += enemies[i]->points;
 				}
 
-				/*if (enemies[i]->lightshooter || enemies[i]->kamikaze || enemies[i]->light_kamikaze)
-				{
-					App->particles->AddParticle(App->particles->explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
-				}
-				else if (enemies[i]->tank)
+				
+				if (enemies[i]->tank)
 				{
 					App->gexplosion->AddGroundExplosion(App->gexplosion->tank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
 				}
 				else if (enemies[i]->greytank)
 				{
-					App->gexplosion->AddGroundExplosion(App->gexplosion->tank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+					App->gexplosion->AddGroundExplosion(App->gexplosion->tank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE, -1, 0, 1.5);
 				}
 				else if (enemies[i]->shiptank)
 				{
@@ -340,20 +321,7 @@ void ModuleGroundEnemies::OnCollision(Collider* c1, Collider* c2)
 					App->gexplosion->AddGroundExplosion(App->gexplosion->ship_explosion, enemies[i]->position.x - 70, enemies[i]->position.y, COLLIDER_NONE);
 					App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, enemies[i]->position.x - 70, enemies[i]->position.y);
 				}
-				else if (enemies[i]->bonusplane)
-				{
-					App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, enemies[i]->position.x, enemies[i]->position.y);
-					App->particles->AddParticle(App->particles->bonusmedium_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
-				}
-				else if (enemies[i]->bossleftwing || enemies[i]->bossrightwing || enemies[i]->bosscannon)
-				{
-					App->particles->AddParticle(App->particles->bonusmedium_explosion, enemies[i]->position.x - 60, enemies[i]->position.y - 60, COLLIDER_NONE);
-				}
-				else if (enemies[i]->mediumshooter)
-				{
-					App->particles->AddParticle(App->particles->bonusmedium_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
-				}
-
+				
 				else if (enemies[i]->medalbox)
 				{
 					App->powerups->AddPowerUp(POWERUP_TYPES::MEDAL, enemies[i]->position.x, enemies[i]->position.y);
@@ -363,9 +331,6 @@ void ModuleGroundEnemies::OnCollision(Collider* c1, Collider* c2)
 				{
 					App->powerups->AddPowerUp(POWERUP_TYPES::MISSILEUP, enemies[i]->position.x - 120, enemies[i]->position.y - 110);
 				}
-
-				if (enemies[i]->bossmain)
-					DestroyBossParts();*/
 
 				delete enemies[i];
 				enemies[i] = nullptr;
@@ -394,57 +359,6 @@ void ModuleGroundEnemies::EraseGroundEnemies()
 	}
 }
 
-/*void ModuleGroundEnemies::SetPos()
-{
-	//Identify main part
-	for (uint i = 0; i < MAX_ENEMIES; ++i)
-	{
-		if (enemies[i] != nullptr && enemies[i]->bossmain)
-		{
-			bossmain = i;
-			break;
-		}
-	}
-	//Set positions
-	for (uint i = 0; i < MAX_ENEMIES; ++i)
-	{
-		if (enemies[i] != nullptr && enemies[i]->bossleftwing)
-		{
-			enemies[i]->position.x = enemies[bossmain]->position.x - 32 * 3;
-			enemies[i]->position.y = enemies[bossmain]->position.y + 32 * 3;
-		}
-		else if (enemies[i] != nullptr && enemies[i]->bossrightwing)
-		{
-			enemies[i]->position.x = enemies[bossmain]->position.x + 96 * 3;
-			enemies[i]->position.y = enemies[bossmain]->position.y + 32 * 3;
-		}
-		else if (enemies[i] != nullptr && enemies[i]->bosscannon)
-		{
-			enemies[i]->position.x = enemies[bossmain]->position.x + 32 * 3;
-			enemies[i]->position.y = enemies[bossmain]->position.y + 34 * 3;
-		}
-	}
-}*/
-
-/*void ModuleGroundEnemies::DestroyBossParts()
-{
-for (uint i = 0; i < MAX_ENEMIES; ++i)
-{
-if (queue[i].type == GENEMY_TYPES::BOSS_CANNON || queue[i].type == GENEMY_TYPES::BOSS_RIGHT_WING || queue[i].type == GENEMY_TYPES::BOSS_LEFT_WING)
-{
-queue[i].type = GENEMY_TYPES::NO_TYPE;
-}
-}
-for (uint i = 0; i < MAX_ENEMIES; ++i)
-{
-if (enemies[i] != nullptr && (enemies[i]->bosscannon || enemies[i]->bossleftwing || enemies[i]->bossrightwing))
-{
-App->particles->AddParticle(App->particles->bonusmedium_explosion, enemies[i]->position.x - 60, enemies[i]->position.y - 60, COLLIDER_NONE);
-delete enemies[i];
-enemies[i] = nullptr;
-}
-}
-}*/
 
 void ModuleGroundEnemies::MoveGroundEnemiesRight(bool right)
 {
