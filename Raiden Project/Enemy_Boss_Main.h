@@ -14,14 +14,19 @@ private:
 	fPoint original_pos;
 	Uint32 time;
 	Uint32 time2;
+	Uint32 time3;
+	Uint32 time4;
 	Path movement;
 	Path flyaway;
 	Path entering;
 
 	int bullethellwaves = 0;
+	int shootingwaves = 0;
 	bool posreset = false;
 	bool posreset1 = false;
 	bool bullethell = false;
+	bool _shooting = false;
+	bool allowshooting = false;
 	bool firstbullethellrow = false;
 	bool multipleshooting = false;
 	int kamikazewaves = 0;

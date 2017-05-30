@@ -37,7 +37,6 @@ public:
 	ModuleGroundEnemies();
 	~ModuleGroundEnemies();
 
-	Uint32 gtime = 0;
 	bool Init();
 	update_status PreUpdate();
 	update_status Update();

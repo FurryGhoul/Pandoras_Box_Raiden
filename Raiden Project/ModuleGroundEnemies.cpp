@@ -203,18 +203,17 @@ void ModuleGroundEnemies::OnCollision(Collider* c1, Collider* c2)
 		{
 			if (c2->bullettype == 27)
 			{
-				if (SDL_GetTicks() - gtime >= 50)
+				if (enemies[i]->tank || enemies[i]->greytank)
+					enemies[i]->hp = 0;
+
+				if (SDL_GetTicks() - enemies[i]->btime >= 120)
 					enemies[i]->bombimmunity = false;
 
-				if (SDL_GetTicks() - App->player->bombshot >= 3500)
-					enemies[i]->damagebybomb = 0;
-
-				if (!enemies[i]->bombimmunity && enemies[i]->damagebybomb <= 22)
+				if (!enemies[i]->bombimmunity)
 				{
-					enemies[i]->damagebybomb += c2->damage;
 					enemies[i]->hp -= c2->damage;
 					enemies[i]->bombimmunity = true;
-					gtime = SDL_GetTicks();
+					enemies[i]->btime = SDL_GetTicks();
 				}
 			}
 			else
