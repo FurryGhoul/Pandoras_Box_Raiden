@@ -557,6 +557,7 @@ update_status ModuleMap1::Update()
 		App->collision->Enable();
 		App->render->camera.y = 0;
 		App->enemies->Enable();
+		App->genemies->Enable();
 		App->powerups->Enable();
 		if (!App->player2->deadplayer)
 		{ 

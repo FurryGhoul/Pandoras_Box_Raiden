@@ -267,22 +267,22 @@ void Enemy_Medium_Shooter::MoveShoot()
 	if (burst == true)
 	{
 		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 80, COLLIDER_ENEMY_SHOT, 0, 0.5f, 7.0f);
-		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 80, COLLIDER_ENEMY_SHOT, 0, -0.5f, 7.0f);
-		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 65, COLLIDER_ENEMY_SHOT, 0, 1.0f, 7.0f);
-		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 65, COLLIDER_ENEMY_SHOT, 0, -1.0f, 7.0f);
-		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 50, COLLIDER_ENEMY_SHOT, 0, 2.0f, 7.0f);
-		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 50, COLLIDER_ENEMY_SHOT, 0, -2.0f, 7.0f);
-		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 30, COLLIDER_ENEMY_SHOT, 0, 3.0f, 7.0f);
-		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 30, COLLIDER_ENEMY_SHOT, 0, -3.0f, 7.0f);
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 80, COLLIDER_ENEMY_SHOT, 0, -0.5f, 7.0f, false, true);
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 65, COLLIDER_ENEMY_SHOT, 0, 1.0f, 7.0f, false, true);
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 65, COLLIDER_ENEMY_SHOT, 0, -1.0f, 7.0f, false, true);
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 50, COLLIDER_ENEMY_SHOT, 0, 2.0f, 7.0f, false, true);
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 50, COLLIDER_ENEMY_SHOT, 0, -2.0f, 7.0f, false, true);
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 30, COLLIDER_ENEMY_SHOT, 0, 3.0f, 7.0f, false, true);
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 30, COLLIDER_ENEMY_SHOT, 0, -3.0f, 7.0f, false, true);
 
 		burst = false;
 	}
 	if (burst2 == true)
 	{
 		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 80, COLLIDER_ENEMY_SHOT, 0, 1.0f, 7.0f);
-		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 80, COLLIDER_ENEMY_SHOT, 0, -1.0f, 7.0f);		
-		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 50, COLLIDER_ENEMY_SHOT, 0, 2.0f, 7.0f);
-		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 50, COLLIDER_ENEMY_SHOT, 0, -2.0f, 7.0f);
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 80, COLLIDER_ENEMY_SHOT, 0, -1.0f, 7.0f, false, true);
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 50, COLLIDER_ENEMY_SHOT, 0, 2.0f, 7.0f, false, true);
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 105, position.y + 50, COLLIDER_ENEMY_SHOT, 0, -2.0f, 7.0f, false, true);
 		
 		burst2 = false;
 	}
