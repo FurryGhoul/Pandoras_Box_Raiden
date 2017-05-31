@@ -68,7 +68,6 @@ update_status ModuleMap1::Update()
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::GREY_TANK, 500, -300);
 
 		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::MEGATANK, 500, -3900);
-
 		// First street
 		//Horizontal tanks
 		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TANK, 0, -900);
@@ -621,6 +620,7 @@ update_status ModuleMap1::Update()
 		App->player2->Disable();
 		App->fade->FadeToBlack(this, App->StageClear1, 1.0f);
 		App->enemies->EraseEnemies();
+		App->genemies->EraseGroundEnemies();
 		App->powerups->ErasePowerUps();
 		App->particles->EraseParticles();
 

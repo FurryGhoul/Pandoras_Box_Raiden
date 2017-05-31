@@ -435,7 +435,7 @@ update_status ModulePlayer::Update()
 		App->fonts->BlitText(20, 195, 0, scoret);
 	}
 
-	if ((App->input->keyboard[SDL_SCANCODE_B] == KEY_STATE::KEY_DOWN && bombs >= 1 && SDL_GetTicks() - bombtime >= 2100) && !App->input->gpad)
+	if ((App->input->keyboard[SDL_SCANCODE_LSHIFT] == KEY_STATE::KEY_DOWN && bombs >= 1 && SDL_GetTicks() - bombtime >= 2100) && !App->input->gpad)
 	{
 		App->particles->AddParticle(App->particles->bomb, position.x + speed + 20, position.y, COLLIDER_NONE, 47);
 		bombs--;
