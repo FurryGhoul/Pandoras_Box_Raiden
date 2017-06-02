@@ -18,6 +18,7 @@ enum GENEMY_TYPES
 	MEGATANK,
 	TANK,
 	GREY_TANK,
+	TRAIN,
 };
 
 class Enemy;
@@ -63,6 +64,8 @@ private:
 	SDL_Texture* sprites9;
 	SDL_Texture* sprites10;
 	SDL_Texture* sprites11;
+	SDL_Texture* sprites12;
+	SDL_Texture* sprites13;
 
 
 };

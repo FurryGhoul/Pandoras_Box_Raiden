@@ -26,6 +26,7 @@
 #include "Enemy_Boss_Left_Wing.h"
 #include "Enemy_Boss_Right_Wing.h"
 #include "Enemy_Boss_Cannon.h"
+#include "Enemy_Train_Locomotive.h"
 #define SPAWN_MARGIN 100
 
 ModuleGroundEnemies::ModuleGroundEnemies()
@@ -47,6 +48,7 @@ bool ModuleGroundEnemies::Init()
 	sprites7 = App->textures->Load("assets/LongMegatank.png");
 	sprites8 = App->textures->Load("assets/Ship.png");
 	sprites10 = App->textures->Load("assets/Megatank.png");
+	sprites13 = App->textures->Load("assets/Train.png");
 
 	return true;
 }
@@ -92,6 +94,8 @@ update_status ModuleGroundEnemies::Update()
 				enemies[i]->Draw(sprites7);
 			else if (enemies[i]->spritesheet == 7) //Ship
 				enemies[i]->Draw(sprites8);
+			else if (enemies[i]->spritesheet == 8) //Train
+				enemies[i]->Draw(sprites13);
 			
 		}
 	return UPDATE_CONTINUE;
@@ -191,6 +195,9 @@ void ModuleGroundEnemies::SpawnGroundEnemy(const GroundEnemyInfo& info)
 		case GENEMY_TYPES::BOX_POWERUP:
 			enemies[i] = new Box_PowerUp(App->map_1->xmap + info.x, info.y, info._path);
 			break;
+		case GENEMY_TYPES::TRAIN:
+			enemies[i] = new Enemy_Train_Locomotive(App->map_1->xmap + info.x, info.y, info._path);
+			break;
 		}
 	}
 }
@@ -221,7 +228,10 @@ void ModuleGroundEnemies::OnCollision(Collider* c1, Collider* c2)
 				enemies[i]->hp -= c2->damage;
 			}
 
-			
+			if (enemies[i]->train)
+			{
+				enemies[i]->ishit = true;
+			}
 			if (enemies[i]->ship)
 			{
 				enemies[i]->ishit = true;
@@ -319,6 +329,10 @@ void ModuleGroundEnemies::OnCollision(Collider* c1, Collider* c2)
 				{
 					App->gexplosion->AddGroundExplosion(App->gexplosion->ship_explosion, enemies[i]->position.x - 70, enemies[i]->position.y, COLLIDER_NONE);
 					App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, enemies[i]->position.x - 70, enemies[i]->position.y);
+				}
+				else if (enemies[i]->train)
+				{
+					App->gexplosion->AddGroundExplosion(App->gexplosion->ship_explosion, enemies[i]->position.x - 70, enemies[i]->position.y -70, COLLIDER_NONE);
 				}
 				
 				else if (enemies[i]->medalbox)

@@ -5,32 +5,48 @@
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
 #include <Math.h>
-#include "ModuleEnemies.h"
+#include "ModuleGroundEnemies.h"
 
 #define PI 3.14159265
 
 Enemy_Train_Locomotive::Enemy_Train_Locomotive(int x, int y, int path) : Enemy(x, y)
 {
-	hp = 17;
-	points = 980;
+	hp = 8;
+	points = 480;
 
 	// Anmiation pushback's
 
 	// Idle
-	flyi.PushBack({ 329, 47, 73, 54 });
-	flyi.PushBack({ 407, 47, 73, 54 });
-	flyi.speed = 0.2f;
+	horizontal.PushBack({ 2, 15, 48, 24 });
+	diagonal.PushBack({ 136, 3, 38, 37 });
+	// Hit
+	hithorizontal.PushBack({ 2, 55, 48, 24 });
+	hitdiagonal.PushBack({ 136, 42, 38, 37 });
+	
+	// Paths
+	if (path == 0)
+	{
+		movement.PushBack({ -1.5f, 1.0f }, 1000);
+		movement.loop = false;
 
-	movement.PushBack({ 3.0f, 4.0f }, 100);
-	movement.PushBack({ 0.0f, -5.0f }, 500);
-	movement.loop = false;
+		collider = App->collision->AddCollider({ 0, 0, 48 * 3, 24 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->genemies);
+		original_pos.y = -200;
+	}
+	if (path == 1)
+	{
+		movement.PushBack({ -1.0f, -1.0f }, 1000);
+		movement.loop = false;
 
-	//train = true;
-	collider = App->collision->AddCollider({ 0, 0, 73 * 3 - 110, 54 * 3 - 110 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->genemies);
-	spritesheet = 3;
+		collider = App->collision->AddCollider({ 0, 0, 38 * 3, 37 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->genemies);
+		original_pos.y =  820;
+	}
+		
+
+	train = true;
+	
+	spritesheet = 8;
 	animations = 1;
 	original_pos.x = x;
-	original_pos.y = -200;
 }
 
 
@@ -59,17 +75,37 @@ void Enemy_Train_Locomotive::MoveShoot()
 
 	// Animation
 
-	animation = &flyi;
-	w = 73 * 3;
-	h = 54 * 3;
+	animation = &horizontal;
+	w = 48 * 3;
+	h = 24 * 3;
 
 	distance.x = fabs(distance.x);
 	distance.y = fabs(distance.y);
-	distance1.x = fabs(distance1.x);
-	distance1.y = fabs(distance1.y);
-
-	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f)
+	
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.5f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f)
 	{
-		animation = &flyi;
+		animation = &horizontal;
+
+		if (ishit == true)
+		{
+			animation = &hithorizontal;
+			ishit = false;
+		}
+
+		w = 48 * 3;
+		h = 24 * 3;
+	}
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.0f && movement.steps[movement.GetCurrentStep()].speed.y == -1.0f)
+	{
+		animation = &diagonal;
+
+		if (ishit == true)
+		{
+			animation = &hitdiagonal;
+			ishit = false;
+		}
+
+		w = 38 * 3;
+		h = 37 * 3;
 	}
 }

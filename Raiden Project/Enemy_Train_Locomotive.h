@@ -5,8 +5,10 @@ class Enemy_Train_Locomotive : public Enemy
 {
 private:
 	// Normal animation
-	Animation flyi;
-	Animation flys;
+	Animation horizontal;
+	Animation diagonal;
+	Animation hithorizontal;
+	Animation hitdiagonal;
 
 	fPoint original_pos;
 	Path movement;

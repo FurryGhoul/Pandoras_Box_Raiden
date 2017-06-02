@@ -153,7 +153,7 @@ update_status ModuleMap1::Update()
 		App->player2->godmode = false;
 
 		setup = false;
-
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN, 850, -200);
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOSS_MAIN, 230, -12600);
 		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::MEGATANK, 500, -3900);
