@@ -49,6 +49,7 @@ update_status ModuleWelcomeScreen::Update()
 {
 
 	App->render->Blit(Welcome, 0, 0, &ground, 224 * 3, 256*3 + 62 );
+
 	if (setdown)
 	{
 		App->WelcomeScreen->setdown = true;
@@ -72,52 +73,52 @@ update_status ModuleWelcomeScreen::Update()
 		App->player2->missile_powerup_level = 0;
 		App->player2->red = true;
 		setdown = false;
+		App->player->score = 0;
+		App->player2->score = 0;
+		App->map_1->setup = true;
+		App->map_1->won = false;
+		App->map_1->road1 = false;
+		App->map_1->roadmoved = false;	
+		App->collision->Erase_Non_Player_Colliders();
+		App->map_1->checkpoint = 0;
 	}
 	if (App->input->keyboard[SDL_SCANCODE_1])
 	{
-		App->player->score = 0;
-		App->player2->score = 0;
+		
 		App->player2->deadplayer = true;
 		App->player2->godmode = false;
+		App->player->lifes = 3;
 		App->player->bombs = 3;
-		App->map_1->setup = true;
 		App->fade->FadeToBlack(this, App->map_1, 1.0f);
-		App->collision->Erase_Non_Player_Colliders();
 		App->input->gpad = false;
-		App->map_1->won = false;
-		App->map_1->road1 = false;
-		App->map_1->roadmoved = false;
+		App->map_1->one_player = true;
+		
 	}
 
 	if (App->input->gamepad[6])
 	{
-		App->player->score = 0;
-		App->player2->score = 0;
 		App->player2->deadplayer = true;
+		App->player->lifes = 3;
 		App->player2->godmode = false;
 		App->player->bombs = 3;
-		App->map_1->setup = true;
 		App->fade->FadeToBlack(this, App->map_1, 1.0f);
-		App->collision->Erase_Non_Player_Colliders();
 		App->input->gpad = true;
-		App->map_1->won = false;
-		App->map_1->road1 = false;
-		App->map_1->roadmoved = false;
+		App->map_1->one_player = true;
 	}
 
 	if (App->input->keyboard[SDL_SCANCODE_2])
 	{
-		App->player->score = 0;
-		App->player2->score = 0;
 		App->player->bombs = 3;
 		App->player2->bombs = 3;
-		App->map_1->setup = true;
+		App->player->lifes = 3;
+		//App->player2->lifes = 3; player 2 has no lifes yet
+		App->player2->godmode = false;
+		App->player->godmode = false;
 		App->fade->FadeToBlack(this, App->map_1, 1.0f);
-		App->collision->Erase_Non_Player_Colliders();
-		App->map_1->won = false;
-		App->map_1->road1 = false;
-		App->map_1->roadmoved = false;
+		App->input->gpad = false;
+		App->map_1->one_player = false;
 	}
+
 	return UPDATE_CONTINUE;
 }
 

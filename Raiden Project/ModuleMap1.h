@@ -35,6 +35,9 @@ public:
 	bool roadmoved = false;
 	bool won = false;
 	int checkpoint = 0;
+	bool one_player = true;
+	bool setdown = false;
+
 };
 
 #endif //__MODULEMAP1__

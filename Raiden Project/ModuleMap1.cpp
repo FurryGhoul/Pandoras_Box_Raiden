@@ -50,6 +50,43 @@ update_status ModuleMap1::Update()
 	//Checkpoint 2-> Camera = -4107
 	//Checkpoint 3-> Camera = -7707
 	//Checkpoint 4-> Camera = -9635
+	
+	if (setdown)
+	{
+		App->WelcomeScreen->setdown = true;
+		App->enemies->Disable();
+		App->powerups->Disable();
+		App->collision->Disable();
+		App->particles->Disable();
+		App->gexplosion->Disable();
+		App->genemies->Disable();
+		App->player2->deadplayer = false;
+		App->player->deadplayer = false;
+		App->enemies->EraseEnemies();
+		App->powerups->ErasePowerUps();
+		App->particles->EraseParticles();
+		App->genemies->EraseGroundEnemies();
+		App->gexplosion->EraseParticles();
+		App->player->powerup_level = 0;
+		App->player->missile_powerup_level = 0;
+		App->player->red = true;
+		App->player2->powerup_level = 0;
+		App->player2->missile_powerup_level = 0;
+		App->player2->red = true;
+		setdown = false;
+		if (one_player)
+		{
+			App->player2->deadplayer = true;
+			App->player2->godmode = false;
+			App->player->bombs = 3;
+		}
+		else
+		{
+			App->player->bombs = 3;
+			App->player2->bombs = 3;
+		}
+	}
+
 	if (setup)
 	{
 		//Setting the map depending on the checkpoint
@@ -66,6 +103,27 @@ update_status ModuleMap1::Update()
 			App->map_1->ymap = -12732;
 			App->map_1->yroad = (App->map_1->ymap - 2300);
 			App->render->camera.y = -2268;
+		}
+		if (checkpoint == 2)
+		{
+			App->map_1->xmap = -192;
+			App->map_1->ymap = -10893;
+			App->map_1->yroad = (App->map_1->ymap - 2300);
+			App->render->camera.y = -4107;
+		}
+		if (checkpoint == 3)
+		{
+			App->map_1->xmap = -192;
+			App->map_1->ymap = -7293;
+			App->map_1->yroad = (App->map_1->ymap - 2300);
+			App->render->camera.y = -7707;
+		}
+		if (checkpoint == 4)
+		{
+			App->map_1->xmap = -192;
+			App->map_1->ymap = -5365;
+			App->map_1->yroad = (App->map_1->ymap - 2300);
+			App->render->camera.y = -9635;
 		}
 		App->particles->Enable();
 		App->gexplosion->Enable();
@@ -430,33 +488,31 @@ update_status ModuleMap1::Update()
 		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 925, -9200);
 		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 744, -9275);
 		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 856, -9275);
-	}
-	/*
-	if (App->WelcomeScreen->setdown)
+	}	
+	//Checkpoint storage
+	if (App->render->camera.y > -2268)
 	{
-		App->WelcomeScreen->setdown = true;
-		App->enemies->Disable();
-		App->powerups->Disable();
-		App->collision->Disable();
-		App->particles->Disable();
-		App->gexplosion->Disable();
-		App->genemies->Disable();
-		App->player2->deadplayer = false;
-		App->player->deadplayer = false;
-		App->enemies->EraseEnemies();
-		App->powerups->ErasePowerUps();
-		App->particles->EraseParticles();
-		App->genemies->EraseGroundEnemies();
-		App->gexplosion->EraseParticles();
-		App->player->powerup_level = 0;
-		App->player->missile_powerup_level = 0;
-		App->player->red = true;
-		App->player2->powerup_level = 0;
-		App->player2->missile_powerup_level = 0;
-		App->player2->red = true;
-		App->WelcomeScreen->setdown = false;
+		checkpoint = 0;
 	}
-*/
+	else if (App->render->camera.y > -4107)
+	{
+		checkpoint = 1;
+	}
+	else if (App->render->camera.y > -7707)
+	{
+		checkpoint = 2;
+	}
+	else if (App->render->camera.y > -9635)
+	{
+		checkpoint = 3;
+	}
+	else if (App->render->camera.y < -9635)
+	{
+		checkpoint = 4;
+	}
+
+
+
 	
 
 

@@ -874,12 +874,24 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		Player->SetPos(10000000, 10000000);
 		deadplayer = true;
 		allowhiscore = true;
+		lifes--;
 	}
 
 	if (Player != nullptr && Player == c1 && App->player2->deadplayer && deadplayer && c2->type != COLLIDER_POWER_UP)
 	{
-		App->WelcomeScreen->setdown = true;
+		
+		if (lifes == 0)
+		{ 
 		App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
+		App->WelcomeScreen->setdown = true;
+		}
+		else
+		{	
+			App->map_1->setup = true;
+			App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->map_1);
+			App->map_1->setdown = true;
+		}
+		
 	
 	}
 }

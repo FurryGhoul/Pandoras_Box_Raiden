@@ -15,7 +15,7 @@ public:
 
 
 	
-	int lifes = 2;
+	int lifes = 3;
 	int missile_powerup_level = 0;
 	int missiles_shot = 0;
 	bool can_shoot = true;
