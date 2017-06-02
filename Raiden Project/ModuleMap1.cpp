@@ -48,6 +48,9 @@ update_status ModuleMap1::Update()
 
 	if (setup)
 	{
+		App->map_1->xmap = -192;
+		App->map_1->ymap = -15000;
+		App->map_1->yroad = (App->map_1->ymap - 2300);
 		App->particles->Enable();
 		App->gexplosion->Enable();
 		App->shadows->Enable();
@@ -56,17 +59,29 @@ update_status ModuleMap1::Update()
 		{ 
 		App->player2->Enable();
 		}
-	
+		App->collision->Enable();
+
+		App->render->camera.y = 0;
+
+		App->enemies->Enable();
+		App->genemies->Enable();
+		App->powerups->Enable();
+		if (!App->player2->deadplayer)
+		{ 
+		App->player->InitialPos();
+		}
+		else
+		{
+			App->player->MidPos();
+		}
+		App->player2->InitialPos();
+		App->player->godmode = false;
+		App->player2->godmode = false;
+
+		setup = false;
 
 
-		//App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -200);
-		//App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 352 * 3, -200);
-		//App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE,0, -300 );
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOSS_MAIN, 230, -12600);
-		//App->enemies->AddEnemy(0, ENEMY_TYPES::BOSS_MAIN, 230, -300);
-
-		//App->enemies->AddEnemy(0, ENEMY_TYPES::GREY_TANK, 500, -300);
-
 		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::MEGATANK, 500, -3900);
 		// First street
 		//Horizontal tanks
@@ -549,30 +564,42 @@ update_status ModuleMap1::Update()
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 380, -10250);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 710, -10340);
 		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 230, -10370);
-		
 		App->enemies->AddEnemy(0, ENEMY_TYPES::MINE, 400, -200);
 
 
 
-		App->collision->Enable();
-		App->render->camera.y = 0;
-		App->enemies->Enable();
-		App->genemies->Enable();
-		App->powerups->Enable();
-		if (!App->player2->deadplayer)
-		{ 
-		App->player->InitialPos();
-		}
-		else
-		{
-			App->player->MidPos();
-		}
-		App->player2->InitialPos();
-		App->player->godmode = false;
-		App->player2->godmode = false;
-
-		setup = false;
+	
 	}
+	/*
+	if (App->WelcomeScreen->setdown)
+	{
+		App->WelcomeScreen->setdown = true;
+		App->enemies->Disable();
+		App->powerups->Disable();
+		App->collision->Disable();
+		App->particles->Disable();
+		App->gexplosion->Disable();
+		App->genemies->Disable();
+		App->player2->deadplayer = false;
+		App->player->deadplayer = false;
+		App->enemies->EraseEnemies();
+		App->powerups->ErasePowerUps();
+		App->particles->EraseParticles();
+		App->genemies->EraseGroundEnemies();
+		App->gexplosion->EraseParticles();
+		App->player->powerup_level = 0;
+		App->player->missile_powerup_level = 0;
+		App->player->red = true;
+		App->player2->powerup_level = 0;
+		App->player2->missile_powerup_level = 0;
+		App->player2->red = true;
+		App->WelcomeScreen->setdown = false;
+	}
+*/
+
+
+
+
 
 	App->render->Blit(Map1, xmap, ymap, &ground);
 	App->render->Blit(Buildings, xmap, ymap, &buildings);

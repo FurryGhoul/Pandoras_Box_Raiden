@@ -43,11 +43,6 @@ update_status ModuleFadeToBlack::Update()
 			module_off1->Disable();
 			module_on1->Enable();
 			// ---
-			
-			App->map_1->xmap = -192;
-			App->map_1->ymap = -15000;
-			App->map_1->yroad = (App->map_1->ymap - 2300);
-			// ---
 			total_time += total_time;
 			start_time = SDL_GetTicks();
 			current_step = fade_step::fade_from_black;

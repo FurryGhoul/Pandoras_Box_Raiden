@@ -34,6 +34,7 @@ public:
 	bool road1 = false;
 	bool roadmoved = false;
 	bool won = false;
+	int checkpoint = 0;
 };
 
 #endif //__MODULEMAP1__
