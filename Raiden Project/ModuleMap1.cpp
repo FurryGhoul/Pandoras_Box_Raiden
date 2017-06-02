@@ -45,12 +45,28 @@ bool ModuleMap1::Init()
 
 update_status ModuleMap1::Update()
 {
-
+    //Chechpoint 0-> Camera = 0
+	//Checkpoint 1-> Camera = -2268
+	//Checkpoint 2-> Camera = -4107
+	//Checkpoint 3-> Camera = -7707
+	//Checkpoint 4-> Camera = -9635
 	if (setup)
 	{
-		App->map_1->xmap = -192;
-		App->map_1->ymap = -15000;
-		App->map_1->yroad = (App->map_1->ymap - 2300);
+		//Setting the map depending on the checkpoint
+		if (checkpoint == 0)
+		{ 
+		    App->map_1->xmap = -192;
+	     	App->map_1->ymap = -15000;
+		    App->map_1->yroad = (App->map_1->ymap - 2300);
+			App->render->camera.y = 0;
+		}
+		if (checkpoint == 1)
+		{
+			App->map_1->xmap = -192;
+			App->map_1->ymap = -12732;
+			App->map_1->yroad = (App->map_1->ymap - 2300);
+			App->render->camera.y = -2268;
+		}
 		App->particles->Enable();
 		App->gexplosion->Enable();
 		App->shadows->Enable();
@@ -61,7 +77,7 @@ update_status ModuleMap1::Update()
 		}
 		App->collision->Enable();
 
-		App->render->camera.y = 0;
+
 
 		App->enemies->Enable();
 		App->genemies->Enable();
@@ -414,161 +430,6 @@ update_status ModuleMap1::Update()
 		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 925, -9200);
 		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 744, -9275);
 		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 856, -9275);
-
-		//App->enemies->AddEnemy(2, ENEMY_TYPES::KAMIKAZE, 200, -100);
-		//App->enemies->AddEnemy(2, ENEMY_TYPES::KAMIKAZE, 100, -200);
-		//App->enemies->AddEnemy(2, ENEMY_TYPES::KAMIKAZE, 200, -300);
-		//App->enemies->AddEnemy(2, ENEMY_TYPES::KAMIKAZE, 300, -400);
-
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -6000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 750, -6000);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 250, -6000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 730, -6300);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 780, -6300);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 300, -6250);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 780, -6340);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 200, -6370);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -7000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 750, -7000);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 250, -7000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 730, -7300);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 780, -7300);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 300, -7250);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 780, -7340);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 200, -7370);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -8000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 750, -8000);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 250, -8000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 730, -8300);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 780, -8300);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 300, -8250);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 780, -8340);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 200, -8370);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -9000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 750, -9000);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 250, -9000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 730, -9300);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 780, -9300);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 300, -9250);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 780, -9340);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 200, -9370);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -10000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 750, -10000);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 250, -10000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 730, -10000);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 780, -10300);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 300, -10250);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 780, -10340);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 200, -10370);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -10000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 750, -10000);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 250, -10000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 730, -10300);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 780, -10300);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 300, -10250);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 780, -10340);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 200, -10370);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -6000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 750, -6000);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 250, -6000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 730, -6300);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 780, -6300);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 300, -6250);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 780, -6340);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 200, -6370);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -7000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 750, -7000);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 250, -7000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 730, -7300);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 780, -7300);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 300, -7250);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 780, -7340);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 200, -7370);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -8000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 750, -8000);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 250, -8000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 730, -8300);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 780, -8300);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 300, -8250);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 780, -8340);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 200, -8370);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -9000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 750, -9000);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 250, -9000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 730, -9300);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 780, -9300);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 300, -9250);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 780, -9340);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 200, -9370);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -10000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 750, -10000);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 250, -10000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 730, -10000);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 780, -10300);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 300, -10250);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 780, -10340);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 200, -10370);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 200, -10000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 750, -10000);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 250, -10000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 730, -10300);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 780, -10300);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 300, -10250);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 780, -10340);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 200, -10370);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 220, -6000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 730, -6000);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 220, -6000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 760, -6300);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 510, -6300);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 390, -6250);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 750, -6340);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 240, -6370);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 240, -7000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 620, -7000);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 220, -7000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 710, -7300);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 700, -7300);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 380, -7250);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 720, -7340);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 260, -7370);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 210, -8000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 720, -8000);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 280, -8000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 720, -8300);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 520, -8300);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 460, -8250);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 420, -8340);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 760, -8370);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 360, -9000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 500, -9000);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 350, -9000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 610, -9300);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 660, -9300);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 650, -9250);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 830, -9340);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 580, -9370);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 740, -10000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 620, -10000);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 290, -10000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 330, -10000);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 230, -10300);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 320, -10250);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 760, -10340);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 220, -10370);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 260, -10000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 710, -10000);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 250, -10000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 620, -10300);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 430, -10300);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 380, -10250);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 710, -10340);
-		App->enemies->AddEnemy(9, ENEMY_TYPES::KAMIKAZE, 230, -10370);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::MINE, 400, -200);
-
-
-
-	
 	}
 	/*
 	if (App->WelcomeScreen->setdown)
@@ -596,9 +457,7 @@ update_status ModuleMap1::Update()
 		App->WelcomeScreen->setdown = false;
 	}
 */
-
-
-
+	
 
 
 	App->render->Blit(Map1, xmap, ymap, &ground);
@@ -610,6 +469,7 @@ update_status ModuleMap1::Update()
 		ymap += yscrollspeed;
 		yroad += (yscrollspeed * 1.5);
 		App->render->camera.y -= yscrollspeed;
+
 
 
 
