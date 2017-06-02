@@ -443,9 +443,9 @@ update_status ModuleMap1::Update()
 		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 744, -9275);
 		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 856, -9275);	
 		//east - north - west
-		App->genemies->AddGroundEnemy(30, GENEMY_TYPES::TANK, -50, -9400);
+		App->genemies->AddGroundEnemy(30, GENEMY_TYPES::TANK, -50, -9600);
 		//east- north east 2- stop
-		App->genemies->AddGroundEnemy(31, GENEMY_TYPES::TANK, -50, -9500);
+		App->genemies->AddGroundEnemy(31, GENEMY_TYPES::TANK, -50, -9700);
       }
 		if (checkpoint <= 4)
 		{ 
@@ -504,10 +504,6 @@ update_status ModuleMap1::Update()
 	{
 		checkpoint = 4;
 	}
-
-
-
-	
 
 
 	App->render->Blit(Map1, xmap, ymap, &ground);

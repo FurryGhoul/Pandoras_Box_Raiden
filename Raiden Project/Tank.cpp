@@ -362,12 +362,12 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	//east - north - west
 	if (path == 30)
 	{
-		original_pos.y = 300;
+		original_pos.y = 500;
 		movement.PushBack({ 2.0f, 1.0f }, 150);
 		movement.PushBack({  2.0f, 0.5f }, 10);
 		movement.PushBack({ 1.0f, 0.0f }, 10);
 		movement.PushBack({ 0.5f, 0.0f }, 10);
-		movement.PushBack({ 0.0f, -1.0f }, 300);
+		movement.PushBack({ 0.0f, 0.0f }, 600);
 		movement.PushBack({ -0.5f, 0.0f }, 10);
 		movement.PushBack({-1.0f, 0.0f }, 10);
 		movement.PushBack({ -2.0f, 0.5f }, 10);
@@ -376,12 +376,12 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	//east- north east 2- stop
 	if (path == 31)
 	{
-		original_pos.y = 400;
+		original_pos.y = 600;
 		movement.PushBack({ 2.0f, 1.0f }, 150);
 		movement.PushBack({ 2.0f, 0.5f }, 10);
 		movement.PushBack({ 1.0f, 0.0f }, 10);
 		movement.PushBack({ 0.5f, 0.0f }, 10);
-		movement.PushBack({ 0.0f, -1.0f }, 250);
+		movement.PushBack({ 0.0f, 0.0f }, 500);
 		movement.PushBack({ 0.5f, 0.0f }, 10);
 		movement.PushBack({ 1.0f, 0.0f }, 10);
 		movement.PushBack({ 0.0f, 1.0f }, 1000);
@@ -448,6 +448,18 @@ void Tank::MoveShoot()
 	    position1.x = position.x + w / 2;
 	    position1.y = position.y + h / 2 - 5;
 	}
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) //North
+	{
+		animation = &downup;
+		if (ishit == true)
+		{
+			animation = &hitdownup;
+			ishit = false;
+		}
+		position1.x = position.x + w / 2;
+		position1.y = position.y + h / 2 - 5;
+	}
+
 	
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 4.0f)//South
 	{
