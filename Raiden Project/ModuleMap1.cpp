@@ -51,6 +51,7 @@ update_status ModuleMap1::Update()
 	//Checkpoint 3-> Camera = -7707
 	//Checkpoint 4-> Camera = -9635
 	
+
 	if (setdown)
 	{
 		App->WelcomeScreen->setdown = true;
@@ -89,49 +90,14 @@ update_status ModuleMap1::Update()
 
 	if (setup)
 	{
-		//Setting the map depending on the checkpoint
-		if (checkpoint == 0)
-		{ 
-		    App->map_1->xmap = -192;
-	     	App->map_1->ymap = -15000;
-		    App->map_1->yroad = (App->map_1->ymap - 2300);
-			App->render->camera.y = 0;
-		}
-		if (checkpoint == 1)
-		{
-			App->map_1->xmap = -192;
-			App->map_1->ymap = -12732;
-			App->map_1->yroad = (App->map_1->ymap - 2300);
-			App->render->camera.y = -2268;
-		}
-		if (checkpoint == 2)
-		{
-			App->map_1->xmap = -192;
-			App->map_1->ymap = -10893;
-			App->map_1->yroad = (App->map_1->ymap - 2300);
-			App->render->camera.y = -4107;
-		}
-		if (checkpoint == 3)
-		{
-			App->map_1->xmap = -192;
-			App->map_1->ymap = -7293;
-			App->map_1->yroad = (App->map_1->ymap - 2300);
-			App->render->camera.y = -7707;
-		}
-		if (checkpoint == 4)
-		{
-			App->map_1->xmap = -192;
-			App->map_1->ymap = -5365;
-			App->map_1->yroad = (App->map_1->ymap - 2300);
-			App->render->camera.y = -9635;
-		}
+		
 		App->particles->Enable();
 		App->gexplosion->Enable();
 		App->shadows->Enable();
-	    App->player->Enable();
+		App->player->Enable();
 		if (!App->player2->deadplayer)
-		{ 
-		App->player2->Enable();
+		{
+			App->player2->Enable();
 		}
 		App->collision->Enable();
 
@@ -141,8 +107,8 @@ update_status ModuleMap1::Update()
 		App->genemies->Enable();
 		App->powerups->Enable();
 		if (!App->player2->deadplayer)
-		{ 
-		App->player->InitialPos();
+		{
+			App->player->InitialPos();
 		}
 		else
 		{
@@ -155,48 +121,69 @@ update_status ModuleMap1::Update()
 		setup = false;
 		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN, 850, -200);
 
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BOSS_MAIN, 230, -12600);
+		if (checkpoint <= 0) //CHECKPOINT 0	
+		{
+			// First street
+			//Horizontal tanks
+			App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TANK, 0, -900);
+			//Vertical tanks
+			App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -1200);
+			App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -1300);
+			App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -1400);
+
+
+			//Second street
+			//Horizontal tanks
+			App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TANK, 0, -1220);
+			App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TANK, 0, -1300);
+			// Light Kamikazes
+			App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -1340);
+			App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -1340);
+			//Vertical tanks
+			App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -1600);
+			App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -1700);
+			App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -1800);
+
+
+			//Third street
+			// Light kamikazes
+			App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -2000);
+			App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -2000);
+			App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -2100);
+			App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -2200);
+
+			App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -2000);
+			App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -2100);
+			App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TANK, 0, -1880);
+			App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TANK, 0, -1940);
+		// Invisible medalboxes
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::BOX_MEDAL, 520, -2080);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::BOX_MEDAL, 630, -2080);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::BOX_MEDAL, 520, -2180);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::BOX_MEDAL, 630, -2180);	
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 300, -300);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 600, -1700);
+
+		App->genemies->AddGroundEnemy(2, GENEMY_TYPES::TANK, 700, -2270);
+		App->genemies->AddGroundEnemy(3, GENEMY_TYPES::TANK, 600, -2290);
+		App->genemies->AddGroundEnemy(4, GENEMY_TYPES::TANK, 500, -2310);
+
+		}
+
+		if (checkpoint <= 1)//CHECKPOINT 1	
+		{
+				
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 450, -2830);
 		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::MEGATANK, 500, -3900);
-		// First street
-		//Horizontal tanks
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TANK, 0, -900);
-		//Vertical tanks
-		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -1200);
-		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -1300);
-		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -1400);
-
-
-		//Second street
-		//Horizontal tanks
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TANK, 0, -1220);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TANK, 0, -1300);
-		// Light Kamikazes
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -1340);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -1340);
-		//Vertical tanks
-		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -1600);
-		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -1700);
-		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -1800);
-
-
-		//Third street
-		// Light kamikazes
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -2000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -2000);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -2100);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 0, -2200);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -2300);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -2400);
-	    // Horizontal tanks
+		// Horizontal tanks
 
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TANK, 0, -1880);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TANK, 0, -1940);
 		App->genemies->AddGroundEnemy(18, GENEMY_TYPES::TANK, 0, -2300);
 
 		//Vertical tanks		
 		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -2300);
-		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -2000);
-		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -2100);
+
 
 		//Forth street
 		//Strange thing
@@ -204,12 +191,9 @@ update_status ModuleMap1::Update()
 		App->genemies->AddGroundEnemy(6, GENEMY_TYPES::TANK, 400, -2420);
 		App->genemies->AddGroundEnemy(7, GENEMY_TYPES::TANK, 300, -2450);
 
-		App->genemies->AddGroundEnemy(2, GENEMY_TYPES::TANK, 700, -2270);
-		App->genemies->AddGroundEnemy(3, GENEMY_TYPES::TANK, 600, -2290);
-		App->genemies->AddGroundEnemy(4, GENEMY_TYPES::TANK, 500, -2310);
 
 
-	
+
 
 
 		// Pool	
@@ -250,13 +234,8 @@ update_status ModuleMap1::Update()
 
 		App->enemies->AddEnemy(2, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -4020);
 		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -4050);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -4080);
-
-		App->enemies->AddEnemy(2, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -4220);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -4250);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -4280);
-
-	    //Horizontal tanks
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -4080); 
+		//Horizontal tanks
 		App->genemies->AddGroundEnemy(9, GENEMY_TYPES::TANK, -50, -3150);
 		App->genemies->AddGroundEnemy(10, GENEMY_TYPES::TANK, -50, -3250);
 
@@ -279,12 +258,41 @@ update_status ModuleMap1::Update()
 		//SE2 Tanks
 		App->genemies->AddGroundEnemy(14, GENEMY_TYPES::TANK, 200, -3770);
 		App->genemies->AddGroundEnemy(15, GENEMY_TYPES::TANK, 0, -3940);
+		
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::BOX_MEDAL, 390, -2880);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::BOX_MEDAL, 580, -2880);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::BOX_MEDAL, 390, -3000);
+
+
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_POWERUP, 330, -3880);
+
+
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 450, -2830);
+
+
+
+	}
+
+		if (checkpoint <= 2) //Checkpoint 2
+		{ 	
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 700, -4200);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_POWERUP, 380, -4380);
+		App->enemies->AddEnemy(2, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -4220);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -4250);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -4280);
+
 		App->genemies->AddGroundEnemy(16, GENEMY_TYPES::TANK, 0, -4200);
 		App->genemies->AddGroundEnemy(17, GENEMY_TYPES::TANK, 0, -4350);
 		//SW2 Tanks
 		App->genemies->AddGroundEnemy(19, GENEMY_TYPES::TANK, 357 * 3, -4300);
 		App->genemies->AddGroundEnemy(20, GENEMY_TYPES::TANK, 357 * 3, -4400);
 
+
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 700, -4200);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 500, -5400);
+
+		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 120, -4600);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::MEDIUM_SHOOTER, 650, -4600);
 		//Light kamizaze orgy 1
 		//Left
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -4500);
@@ -363,15 +371,8 @@ update_status ModuleMap1::Update()
 		 
 		
 
-		// Invisible medalboxes
-		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::BOX_MEDAL, 520, -2080);
-		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::BOX_MEDAL, 630, -2080);
-		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::BOX_MEDAL, 520, -2180);
-		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::BOX_MEDAL, 630, -2180);
 		// Invisible medalboxes 2
-		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::BOX_MEDAL, 390, -2880);
-		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::BOX_MEDAL, 580, -2880);
-		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::BOX_MEDAL, 390, -3000);
+	
 
 		//City after roads
 
@@ -380,7 +381,24 @@ update_status ModuleMap1::Update()
 		App->genemies->AddGroundEnemy(22, GENEMY_TYPES::TANK, 550, -7090);
 		App->genemies->AddGroundEnemy(23, GENEMY_TYPES::TANK, 500, -7140);
 		App->genemies->AddGroundEnemy(24, GENEMY_TYPES::TANK, 450, -7190);
-
+		// Coastline medalboxes
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_POWERUP, 820, -7080); // This should be a medal box
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 720, -7180);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 620, -7280);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 520, -7380);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 420, -7480);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 360, -7630);
+		// 2nd Wave
+		App->enemies->AddEnemy(1, ENEMY_TYPES::MEDIUM_SHOOTER, 550, -6400);
+		App->enemies->AddEnemy(2, ENEMY_TYPES::MEDIUM_SHOOTER, 400, -6600);
+		App->enemies->AddEnemy(1, ENEMY_TYPES::MEDIUM_SHOOTER, 500, -6800);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 350, -6950);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 300, -7050);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 250, -7230);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 450, -7480);
+		}
+		if (checkpoint <= 3) //checkpoint 3
+		{ 
 
 		//South east 2
 		App->genemies->AddGroundEnemy(25, GENEMY_TYPES::TANK, -50, -7770);
@@ -400,7 +418,33 @@ update_status ModuleMap1::Update()
 		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 250, -8500);
 		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 250, -8525);
 		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 250, -8550);
+		// 3rd Wave
+		App->enemies->AddEnemy(1, ENEMY_TYPES::MEDIUM_SHOOTER, 500, -8000);
 
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::LONG_MEGATANK, 440, -8950);
+
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP, 600, -7850);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP, 650, -8250);
+		
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 360, -7780);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 360, -7930);
+		// Upper coastline boxes
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 650, -9400);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_POWERUP, 750, -9400);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 850, -9400);
+		
+		// 1st Wave
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 750, -8950);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 875, -8950);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 812, -9025);
+		// 2nd Wave
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 800, -9200);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 925, -9200);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 744, -9275);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 856, -9275);	
+      }
+		if (checkpoint <= 4)
+		{ 
 		//east - north - west
 		App->genemies->AddGroundEnemy(30, GENEMY_TYPES::TANK, -50, -9400);
 		//east- north east 2- stop
@@ -435,59 +479,8 @@ update_status ModuleMap1::Update()
 		App->genemies->AddGroundEnemy(36, GENEMY_TYPES::GREY_TANK, 357 * 3, -11050);
 		App->genemies->AddGroundEnemy(37, GENEMY_TYPES::GREY_TANK, 357 * 3, -11200);
 		App->genemies->AddGroundEnemy(38, GENEMY_TYPES::GREY_TANK, 357 * 3, -11350);
-
-
-
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_POWERUP, 330, -3880);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_POWERUP, 380, -4380);
-		// Coastline medalboxes
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_POWERUP, 820, -7080); // This should be a medal box
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 720, -7180);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 620, -7280);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 520, -7380);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 420, -7480);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 360, -7630);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 360, -7780);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 360, -7930);
-		// Upper coastline boxes
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 650, -9400);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_POWERUP, 750, -9400);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_MEDAL, 850, -9400);
-
-
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 300, -300);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 600, -1700);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 450, -2830);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 700, -4200);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 500, -5400);
-
-		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 120, -4600);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::MEDIUM_SHOOTER, 650, -4600);
-		// 2nd Wave
-		App->enemies->AddEnemy(1, ENEMY_TYPES::MEDIUM_SHOOTER, 550, -6400);
-		App->enemies->AddEnemy(2, ENEMY_TYPES::MEDIUM_SHOOTER, 400, -6600);
-		App->enemies->AddEnemy(1, ENEMY_TYPES::MEDIUM_SHOOTER, 500, -6800);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 350, -6950);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 300, -7050);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 250, -7230);
-		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 450, -7480);
-		// 3rd Wave
-		App->enemies->AddEnemy(1, ENEMY_TYPES::MEDIUM_SHOOTER, 500, -8000);
-
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::LONG_MEGATANK, 440, -8950);
-
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP, 600, -7850);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP, 650, -8250);
-		
-		// 1st Wave
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 750, -8950);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 875, -8950);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 812, -9025);
-		// 2nd Wave
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 800, -9200);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 925, -9200);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 744, -9275);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 856, -9275);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::BOSS_MAIN, 230, -12600);
+		}
 	}	
 	//Checkpoint storage
 	if (App->render->camera.y > -2268)
@@ -557,7 +550,18 @@ update_status ModuleMap1::Update()
 		App->render->camera.y -= 1 * 10;
 	}
 */
-
+	//Reset to chechpoint
+	if (reset_collision && !initial_dead_time_got)
+	{
+		initial_dead_time = SDL_GetTicks();
+		initial_dead_time_got = true;
+	}
+	if (SDL_GetTicks() - initial_dead_time > 1000 && reset_collision)
+	{
+		App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->map_1);
+		reset_collision = false;
+		initial_dead_time_got = false;
+	}
 	if (won)
 	{
 		App->player->Disable();

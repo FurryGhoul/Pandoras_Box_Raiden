@@ -883,13 +883,11 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		if (lifes == 0)
 		{ 
 		App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
-		App->WelcomeScreen->setdown = true;
+
 		}
 		else
 		{	
-			App->map_1->setup = true;
-			App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->map_1);
-			App->map_1->setdown = true;
+			App->map_1->reset_collision = true;
 		}
 		
 	

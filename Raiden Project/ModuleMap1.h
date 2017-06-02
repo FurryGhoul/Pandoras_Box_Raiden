@@ -37,6 +37,9 @@ public:
 	int checkpoint = 0;
 	bool one_player = true;
 	bool setdown = false;
+	bool reset_collision = false;
+	int initial_dead_time = 0;
+	bool initial_dead_time_got = false;
 
 };
 

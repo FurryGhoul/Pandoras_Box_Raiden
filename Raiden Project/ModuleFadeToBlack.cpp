@@ -6,6 +6,8 @@
 #include "ModuleMap1.h"
 #include "SDL/include/SDL_render.h"
 #include "SDL/include/SDL_timer.h"
+#include "ModulePlayer.h"
+#include "ModuleWelcomeScreen.h"
 
 
 ModuleFadeToBlack::ModuleFadeToBlack()
@@ -42,6 +44,53 @@ update_status ModuleFadeToBlack::Update()
 			// TODO 2: enable / disable the modules received when FadeToBlacks() gets called
 			module_off1->Disable();
 			module_on1->Enable();
+			// ---
+			//Setting the map depending on the checkpoint
+			if (App->map_1->checkpoint == 0)
+			{
+				App->map_1->xmap = -192;
+				App->map_1->ymap = -15000;
+				App->map_1->yroad = (App->map_1->ymap - 2300);
+				App->render->camera.y = 0;
+			}
+			if (App->map_1->checkpoint == 1)
+			{
+				App->map_1->xmap = -192;
+				App->map_1->ymap = -12732;
+				App->map_1->yroad = -13898;
+				App->render->camera.y = -2268;
+			}
+			if (App->map_1->checkpoint == 2)
+			{
+				App->map_1->xmap = -192;
+				App->map_1->ymap = -10893;
+				App->map_1->yroad = -11139;
+				App->render->camera.y = -4107;
+			}
+			if (App->map_1->checkpoint == 3)
+			{
+				App->map_1->xmap = -192;
+				App->map_1->ymap = -7293;
+				App->map_1->yroad = -5739;
+				App->render->camera.y = -7707;
+			}
+			if (App->map_1->checkpoint == 4)
+			{
+				App->map_1->xmap = -192;
+				App->map_1->ymap = -5846;
+				App->map_1->yroad = (App->map_1->ymap - 2300);
+				App->render->camera.y = -9635;
+			}
+			//Just functional for player one at the moment
+			if (App->player->lifes == 0)
+			{
+				App->WelcomeScreen->setdown = true;
+			}
+			else
+			{
+				App->map_1->setup = true;
+				App->map_1->setdown = true;
+			}
 			// ---
 			total_time += total_time;
 			start_time = SDL_GetTicks();
