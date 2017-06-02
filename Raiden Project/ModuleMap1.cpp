@@ -442,13 +442,14 @@ update_status ModuleMap1::Update()
 		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 925, -9200);
 		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 744, -9275);
 		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP_TANK, 856, -9275);	
-      }
-		if (checkpoint <= 4)
-		{ 
 		//east - north - west
 		App->genemies->AddGroundEnemy(30, GENEMY_TYPES::TANK, -50, -9400);
 		//east- north east 2- stop
 		App->genemies->AddGroundEnemy(31, GENEMY_TYPES::TANK, -50, -9500);
+      }
+		if (checkpoint <= 4)
+		{ 
+
 
 		//West/east stop
 		App->genemies->AddGroundEnemy(32, GENEMY_TYPES::TANK, 25, -10000);
@@ -522,7 +523,7 @@ update_status ModuleMap1::Update()
 
 
 
-		if (yroad >= -4350)
+		if (yroad >= -4350 && checkpoint != 4)
 		{
 			road1 = true;
 		}
@@ -542,14 +543,14 @@ update_status ModuleMap1::Update()
 		//ymap += yscrollspeed * 50;
 		//yroad += ((yscrollspeed * 1.5) * 50);
 	}
-/*
+
 	if (App->input->keyboard[SDL_SCANCODE_Z])
 	{
 		ymap += yscrollspeed * 10;
 		yroad += ((yscrollspeed* 10) * 1.5) ;
 		App->render->camera.y -= 1 * 10;
 	}
-*/
+
 	//Reset to chechpoint
 	if (reset_collision && !initial_dead_time_got)
 	{

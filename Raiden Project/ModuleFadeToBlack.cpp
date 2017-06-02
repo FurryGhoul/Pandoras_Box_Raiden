@@ -77,9 +77,10 @@ update_status ModuleFadeToBlack::Update()
 			if (App->map_1->checkpoint == 4)
 			{
 				App->map_1->xmap = -192;
-				App->map_1->ymap = -5846;
-				App->map_1->yroad = (App->map_1->ymap - 2300);
+				App->map_1->ymap = -5365;
+				App->map_1->yroad = -5846;
 				App->render->camera.y = -9635;
+
 			}
 			//Just functional for player one at the moment
 			if (App->player->lifes == 0)
