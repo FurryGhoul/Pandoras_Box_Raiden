@@ -11,6 +11,9 @@ private:
 	Animation charge;
 	Animation hitsides;
 	Animation hitdown;
+	Animation dmgdown;
+	Animation dmgsides;
+	Animation dmgcharge;
 	fPoint original_pos;
 	fPoint original_pos1;
 	fPoint original_pos2;

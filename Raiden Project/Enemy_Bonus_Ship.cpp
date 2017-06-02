@@ -16,6 +16,11 @@ Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y, int path) : Enemy (x, y)
 
 	flydown.PushBack({ 5, 20, 58, 57 });
 
+	dmgdown.PushBack({ 5, 20, 58, 57 });
+	dmgdown.PushBack({ 5, 135, 58, 57 });
+	dmgdown.loop = true;
+	dmgdown.speed = 0.8f;
+
 	stop.PushBack({ 64, 20, 59, 54 });
 	stop.PushBack({ 241, 20, 59, 54 });
 	stop.speed = 0.5f;
@@ -70,10 +75,60 @@ Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y, int path) : Enemy (x, y)
 	flysides.PushBack({ 123, 20, 59, 54 });
 	flysides.PushBack({ 182, 20, 59, 54 });
 
-
-	
 	flysides.speed = 0.5f;
 	flysides.loop = true;
+
+	dmgsides.PushBack({ 123, 135, 59, 54 });
+	dmgsides.PushBack({ 182, 135, 59, 54 });
+	dmgsides.PushBack({ 123, 20, 59, 54 });
+	dmgsides.PushBack({ 182, 20, 59, 54 });
+	dmgsides.PushBack({ 123, 135, 59, 54 });
+	dmgsides.PushBack({ 182, 135, 59, 54 });
+	dmgsides.PushBack({ 123, 20, 59, 54 });
+	dmgsides.PushBack({ 182, 20, 59, 54 });
+	dmgsides.PushBack({ 123, 135, 59, 54 });
+	dmgsides.PushBack({ 182, 135, 59, 54 });
+	dmgsides.PushBack({ 123, 20, 59, 54 });
+	dmgsides.PushBack({ 182, 20, 59, 54 });
+	dmgsides.PushBack({ 123, 135, 59, 54 });
+	dmgsides.PushBack({ 182, 135, 59, 54 });
+	dmgsides.PushBack({ 123, 20, 59, 54 });
+	dmgsides.PushBack({ 182, 20, 59, 54 });
+	dmgsides.PushBack({ 123, 135, 59, 54 });
+	dmgsides.PushBack({ 182, 135, 59, 54 });
+	dmgsides.PushBack({ 123, 20, 59, 54 });
+	dmgsides.PushBack({ 182, 20, 59, 54 });
+	dmgsides.PushBack({ 123, 135, 59, 54 });
+	dmgsides.PushBack({ 182, 135, 59, 54 });
+	dmgsides.PushBack({ 123, 20, 59, 54 });
+	dmgsides.PushBack({ 182, 20, 59, 54 });
+	dmgsides.PushBack({ 123, 135, 59, 54 });
+	dmgsides.PushBack({ 182, 135, 59, 54 });
+	dmgsides.PushBack({ 123, 20, 59, 54 });
+	dmgsides.PushBack({ 182, 20, 59, 54 });
+	dmgsides.PushBack({ 123, 135, 59, 54 });
+	dmgsides.PushBack({ 182, 135, 59, 54 });
+	dmgsides.PushBack({ 123, 20, 59, 54 });
+	dmgsides.PushBack({ 182, 20, 59, 54 });
+	dmgsides.PushBack({ 123, 135, 59, 54 });
+	dmgsides.PushBack({ 182, 135, 59, 54 });
+	dmgsides.PushBack({ 123, 20, 59, 54 });
+	dmgsides.PushBack({ 182, 20, 59, 54 });
+	dmgsides.PushBack({ 123, 135, 59, 54 });
+	dmgsides.PushBack({ 182, 135, 59, 54 });
+	dmgsides.PushBack({ 123, 20, 59, 54 });
+	dmgsides.PushBack({ 182, 20, 59, 54 });
+	dmgsides.PushBack({ 123, 135, 59, 54 });
+	dmgsides.PushBack({ 182, 135, 59, 54 });
+	dmgsides.PushBack({ 123, 20, 59, 54 });
+	dmgsides.PushBack({ 182, 20, 59, 54 });
+	dmgsides.PushBack({ 123, 135, 59, 54 });
+	dmgsides.PushBack({ 182, 135, 59, 54 });
+	dmgsides.PushBack({ 123, 20, 59, 54 });
+	dmgsides.PushBack({ 182, 20, 59, 54 });
+
+	dmgsides.speed = 0.5f;
+	dmgsides.loop = true;
 
 	none.PushBack({ 500, 500, 32, 14 });
 
@@ -104,6 +159,29 @@ Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y, int path) : Enemy (x, y)
 	charge.PushBack({ 536, 20, 59, 54 });
 	charge.speed = 0.5f;
 	charge.loop = false;
+
+	dmgcharge.PushBack({ 477, 135, 59, 54 });
+	dmgcharge.PushBack({ 536, 135, 59, 54 });
+	dmgcharge.PushBack({ 477, 20, 59, 54 });
+	dmgcharge.PushBack({ 536, 20, 59, 54 });
+	dmgcharge.PushBack({ 595, 135, 59, 54 });
+	dmgcharge.PushBack({ 654, 135, 59, 54 });
+	dmgcharge.PushBack({ 595, 20, 59, 54 });
+	dmgcharge.PushBack({ 654, 20, 59, 54 });
+	dmgcharge.PushBack({ 713, 135, 59, 54 });
+	dmgcharge.PushBack({ 772, 135, 59, 54 });
+	dmgcharge.PushBack({ 713, 20, 59, 54 });
+	dmgcharge.PushBack({ 772, 20, 59, 54 });
+	dmgcharge.PushBack({ 595, 135, 59, 54 });
+	dmgcharge.PushBack({ 654, 135, 59, 54 });
+	dmgcharge.PushBack({ 595, 20, 59, 54 });
+	dmgcharge.PushBack({ 654, 20, 59, 54 });
+	dmgcharge.PushBack({ 477, 135, 59, 54 });
+	dmgcharge.PushBack({ 536, 135, 59, 54 });
+	dmgcharge.PushBack({ 477, 20, 59, 54 });
+	dmgcharge.PushBack({ 536, 20, 59, 54 });
+	dmgcharge.speed = 0.5f;
+	dmgcharge.loop = false;
 
 	movingsidetoside = true;
 	movement.PushBack({ 0.0f, 0.5f }, 800);
@@ -177,70 +255,127 @@ void Enemy_Bonus_Ship::MoveShoot()
 
 	if (position.x < 410 || position.x > 410)
 	{
-		/*animation = &flysides;
-		animation1 = &none;
-		if (ishit == true)
+		if (hp >= 10)
 		{
-			animation = &hitsides;
-			hitsides.Reset();
-			ishit = false;
-		}
-		side = true;*/
-		if (change == false)
-		{
-			animation = &flysides;
-			animation1 = &none;
-			charge.Reset();
-			if (flysides.Finished())
+			if (change == false)
 			{
-				change = true;
+				animation = &flysides;
+				animation1 = &none;
+				charge.Reset();
+				if (flysides.Finished())
+				{
+					change = true;
+				}
+				if (ishit == true)
+				{
+					animation = &hitsides;
+					hitsides.Reset();
+					ishit = false;
+				}
 			}
-			if (ishit == true)
+			if (change == true)
 			{
-				animation = &hitsides;
-				hitsides.Reset();
-				ishit = false;
-			}
-		}
-		if (change == true)
-		{
-			animation = &charge;
-			animation1 = &none;
-			flysides.Reset();
-			side = true;
-			if (charge.Finished())
-			{
-				change = false;
-			}
-			if (ishit == true)
-			{
-				animation = &hitsides;
-				hitsides.Reset();
-				ishit = false;
+				animation = &charge;
+				animation1 = &none;
+				flysides.Reset();
+				side = true;
+				if (charge.Finished())
+				{
+					change = false;
+				}
+				if (ishit == true)
+				{
+					animation = &hitsides;
+					hitsides.Reset();
+					ishit = false;
+				}
 			}
 		}
-	
+		if (hp < 10)
+		{
+			if (change == false)
+			{
+				animation = &dmgsides;
+				animation1 = &none;
+				dmgcharge.Reset();
+				if (dmgsides.Finished())
+				{
+					change = true;
+				}
+				if (ishit == true)
+				{
+					animation = &hitsides;
+					hitsides.Reset();
+					ishit = false;
+				}
+			}
+			if (change == true)
+			{
+				animation = &dmgcharge;
+				animation1 = &none;
+				dmgsides.Reset();
+				side = true;
+				if (dmgcharge.Finished())
+				{
+					change = false;
+				}
+				if (ishit == true)
+				{
+					animation = &hitsides;
+					hitsides.Reset();
+					ishit = false;
+				}
+			}
+		}
 	}
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f && side == false)
 	{
-		animation = &stop;
-		animation1 = &none;
-		if (ishit2 == true)
+		if (hp >= 10)
 		{
-			animation = &hitsides;
-			hitsides.Reset();
-			ishit2 = false;
+			animation = &stop;
+			animation1 = &none;
+			if (ishit2 == true)
+			{
+				animation = &hitsides;
+				hitsides.Reset();
+				ishit2 = false;
+			}
+		}
+		if (hp < 10)
+		{
+			animation = &dmgsides;
+			animation1 = &none;
+			if (ishit2 == true)
+			{
+				animation = &hitsides;
+				hitsides.Reset();
+				ishit2 = false;
+			}
 		}
 	}
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.5f)
 	{
-		animation = &flydown;
-		animation1 = &propeller;
-		if (ishit2 == true)
+		if (hp >= 10)
 		{
-			animation = &hitdown;
-			hitdown.Reset();
-			ishit2 = false;
+			animation = &flydown;
+			animation1 = &propeller;
+			if (ishit2 == true)
+			{
+				animation = &hitdown;
+				hitdown.Reset();
+				ishit2 = false;
+			}
+		}
+		if (hp < 10)
+		{
+			animation = &dmgdown;
+			animation1 = &propeller;
+			if (ishit2 == true)
+			{
+				animation = &hitdown;
+				hitdown.Reset();
+				ishit2 = false;
+			}
 		}
 	}
 	
