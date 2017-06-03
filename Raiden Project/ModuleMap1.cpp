@@ -99,9 +99,6 @@ update_status ModuleMap1::Update()
 			App->player2->Enable();
 		}
 		App->collision->Enable();
-
-
-
 		App->enemies->Enable();
 		App->genemies->Enable();
 		App->powerups->Enable();

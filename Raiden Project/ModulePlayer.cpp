@@ -888,13 +888,17 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			hiscore = score;
 		}
         App->particles->AddParticle(App->particles->player_explosion, position.x, position.y, COLLIDER_NONE);
-		Disable();
+  		Disable();
 		position.x = 10000000;
 		position.y = 10000000;
 		Player->SetPos(10000000, 10000000);
 		deadplayer = true;
 		allowhiscore = true;
 		lives--;
+		if (lives < 0)
+		{
+			lives = 0;
+		}
 	}
 
 	if (Player != nullptr && Player == c1 && App->player2->deadplayer && deadplayer && c2->type != COLLIDER_POWER_UP)
