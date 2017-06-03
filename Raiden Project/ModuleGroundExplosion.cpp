@@ -96,6 +96,23 @@ bool ModuleGroundExplosion::Init()
 	ship_explosion.size.x = 75 * 3;
 	ship_explosion.size.y = 66 * 3;
 	return true;
+
+	//megatanks explosions
+	/*megatank_explosion.anim.PushBack({ 1, 237, 77, 68 });
+	megatank_explosion.anim.PushBack({ 67, 240, 77, 68 });
+	megatank_explosion.anim.PushBack({ 140, 241, 77, 68 });
+	megatank_explosion.anim.PushBack({ 218, 238, 77, 68 });
+	megatank_explosion.anim.PushBack({ 291, 239, 77, 68 });
+	megatank_explosion.anim.PushBack({ 368, 243, 77, 68 });
+	megatank_explosion.anim.PushBack({ 443, 243, 77, 68 });
+	megatank_explosion.anim.PushBack({ 524, 243, 77, 68 });
+	megatank_explosion.anim.PushBack({ 1, 1, 1, 1 });
+	megatank_explosion.speed.y = 1;
+	megatank_explosion.anim.loop = false;
+	megatank_explosion.anim.speed = 0.3f;
+	megatank_explosion.life = 100000;
+	megatank_explosion.size.x = 77 * 3;
+	megatank_explosion.size.y = 68 * 3;*/
 }
 
 // Unload assets
@@ -194,7 +211,6 @@ void ModuleGroundExplosion::AddGroundExplosion(const GroundExplosion& particle, 
 				p->speed.y = speed_y;
 			}
 			p->size = particle.size;
-
 			if (collider_type != COLLIDER_NONE)
 			{
 				p->collider = App->collision->AddCollider({ 10000, 10000, p->size.x, p->size.y }, collider_type, this, bullettype, damage);

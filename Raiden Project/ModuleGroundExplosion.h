@@ -98,6 +98,7 @@ public:
 	GroundExplosion tank_explosion;
 	GroundExplosion shiptank_explosion;
 	GroundExplosion ship_explosion;
+	//GroundExplosion megatank_explosion;
 
 };
 #endif // _MODULEGROUNDEXPLOSION_

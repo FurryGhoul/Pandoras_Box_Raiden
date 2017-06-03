@@ -35,6 +35,7 @@ public:
 	bool allowbombtime = true; //allows timer
 	bool bombimmunity = false;
 	Uint32 btime = 0;
+	Uint32 btime2 = 0;
 	int hitbybomb = 0;
 	uint points;
 	int h;

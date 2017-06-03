@@ -87,9 +87,9 @@ update_status ModuleWelcomeScreen::Update()
 		
 		App->player2->deadplayer = true;
 		App->player2->godmode = false;
-		App->player->lifes = 3;
+		App->player->lives = 3;
 		App->player->bombs = 3;
-		App->fade->FadeToBlack(this, App->map_1, 1.0f);
+		App->fade->FadeToBlack(this, App->map_1);
 		App->input->gpad = false;
 		App->map_1->one_player = true;
 		
@@ -98,10 +98,10 @@ update_status ModuleWelcomeScreen::Update()
 	if (App->input->gamepad[6])
 	{
 		App->player2->deadplayer = true;
-		App->player->lifes = 3;
+		App->player->lives = 3;
 		App->player2->godmode = false;
 		App->player->bombs = 3;
-		App->fade->FadeToBlack(this, App->map_1, 1.0f);
+		App->fade->FadeToBlack(this, App->map_1);
 		App->input->gpad = true;
 		App->map_1->one_player = true;
 	}
@@ -110,11 +110,11 @@ update_status ModuleWelcomeScreen::Update()
 	{
 		App->player->bombs = 3;
 		App->player2->bombs = 3;
-		App->player->lifes = 3;
+		App->player->lives = 3;
 		//App->player2->lifes = 3; player 2 has no lifes yet
 		App->player2->godmode = false;
 		App->player->godmode = false;
-		App->fade->FadeToBlack(this, App->map_1, 1.0f);
+		App->fade->FadeToBlack(this, App->map_1);
 		App->input->gpad = false;
 		App->map_1->one_player = false;
 	}

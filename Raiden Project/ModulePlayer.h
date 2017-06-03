@@ -15,7 +15,7 @@ public:
 
 
 	
-	int lifes = 3;
+	int lives = 3;
 	int missile_powerup_level = 0;
 	int missiles_shot = 0;
 	bool can_shoot = true;
@@ -41,6 +41,7 @@ public:
 	SDL_Texture* graphics2 = nullptr;
 	Animation* current_animation = nullptr;
 	Animation* bomb_ammo = nullptr;
+	Animation* livecounter = nullptr;
 
 	//animations with the small propeller.
 	Animation idle;
@@ -60,10 +61,13 @@ public:
 	Animation bomb4;
 	Animation bomb5;
 	Animation bomb6;
+	Animation life;
+	Animation life2;
 	fPoint position;
 	int bombs;
 	Uint32 bombtime;
 	int bombammo_w;
+	int lives_w;
 	int font_score = -1;
 	char score_text[20];
 	char scoret[20];

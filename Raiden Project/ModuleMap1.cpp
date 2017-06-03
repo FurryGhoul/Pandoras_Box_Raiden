@@ -120,6 +120,7 @@ update_status ModuleMap1::Update()
 
 		setup = false;
 		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN, 850, -200);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::LONG_MEGATANK, 500, -300);
 
 		if (checkpoint <= 0) //CHECKPOINT 0	
 		{
@@ -563,7 +564,7 @@ update_status ModuleMap1::Update()
 	{
 		App->player->Disable();
 		App->player2->Disable();
-		App->fade->FadeToBlack(this, App->StageClear1, 1.0f);
+		App->fade->FadeToBlack(this, App->StageClear1);
 		App->enemies->EraseEnemies();
 		App->genemies->EraseGroundEnemies();
 		App->powerups->ErasePowerUps();
