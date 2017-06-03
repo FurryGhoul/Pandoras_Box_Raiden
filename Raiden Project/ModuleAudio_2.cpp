@@ -2,6 +2,7 @@
 #include "Application.h"
 #include "ModuleAudio_2.h"
 #include "ModuleMap1.h"
+#include "ModuleRender.h"
 ModuleAudio2::ModuleAudio2() : Module()
 {
 
@@ -24,24 +25,36 @@ bool ModuleAudio2::Init()
 	{
 		LOG("An error has ocurred while opening the audio has ocurred: %s", SDL_GetError())
 	}
-	ModuleAudio2::Load("Assets/song_2.ogg");
+	ModuleAudio2::Load("Assets/Sound effects/song_2.ogg");
 
 	if (Mix_PlayMusic(music2, -1) == -1)
 	{
 		LOG("An error has ocurred while reproducing the audio %s", SDL_GetError())
 	}
 
-	fx_shoot = Mix_LoadWAV("Assets/red_shot1.wav");
+     if (Mix_PlayMusic(music2, -1) == -1)
+	{
+		LOG("An error has ocurred while reproducing the audio %s", SDL_GetError())
+	}
+	fx_shoot = Mix_LoadWAV("Assets/Sound effects/red_shot1.wav");
+	fx_blue_shoot = Mix_LoadWAV("Assets/Sound effects/blue_shot.wav");
+	fx_light_explosion = Mix_LoadWAV("Assets/Sound effects/Light explosion.wav");
+	fx_heavy_explosion = Mix_LoadWAV("Assets/Sound effects/Heavy air explosion.wav");
+	fx_light_ground_explosion = Mix_LoadWAV("Assets/Sound effects/Light ground explosion.wav");
+	fx_heavy_ground_explosion = Mix_LoadWAV("Assets/Sound effects/Heavy ground explosion.wav");
+	fx_bomb_explosion = Mix_LoadWAV("Assets/Sound effects/Bomb's explosion.wav");
+	fx_bomb_drop = Mix_LoadWAV("Assets/Sound effects/Bomb drop.wav");
+	fx_medal = Mix_LoadWAV("Assets/Sound effects/Medal.wav");
 	return true;
 }
 update_status ModuleAudio2::Update()
 {
-	if (App->map_1->IsEnabled() && playing == false)
+	if (App->render->camera.y > -12000 && playing == false && App->map_1->IsEnabled())
 	{
- 		Init();
+		Init();
 		playing = true;
 	}
-	if (!(App->map_1->IsEnabled()) && playing == true)
+	if (App->render->camera.y < -12000 && playing == true || !App->map_1->IsEnabled())
 	{
 		playing = false;
 		Close();

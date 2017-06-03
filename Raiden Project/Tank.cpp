@@ -16,36 +16,84 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	spritesheet = 2;
 	animations = 2;
 	// Tank animations
-	downup.PushBack({ 3, 4, 31, 29 }); 
+	downup.PushBack({ 3, 4, 31, 29 });
+	downup.PushBack({ 275, 4, 31, 29 });
+	downup.PushBack({ 547, 4, 31, 29 });
+	downup.speed = 0.5f;
+	downup.loop = true;
 	hitdownup.PushBack({ 4, 95, 31, 29 });
 
-	downdiagonalright.PushBack({ 37, 4, 31, 29 }); 
+	downdiagonalright.PushBack({ 37, 4, 31, 29 });
+	downdiagonalright.PushBack({ 309, 4, 31, 29 });
+	downdiagonalright.PushBack({ 581, 4, 31, 29 });
+	downdiagonalright.speed = 0.5f;
+	downdiagonalright.loop = true;
 	hitdowndiagonalright.PushBack({ 38, 95,31,29 });
 
-	neutraldiagonalright.PushBack({ 71, 4,31, 29 }); 
+	neutraldiagonalright.PushBack({ 71, 4, 31, 29 });
+	neutraldiagonalright.PushBack({ 343, 4, 31, 29 });
+	neutraldiagonalright.PushBack({ 615, 4, 31, 29 });
+	neutraldiagonalright.speed = 0.5f;
+	neutraldiagonalright.loop = true;
 	hitneutraldiagonalright.PushBack({ 72, 95, 31, 29 });
 
 	updiagonalright.PushBack({ 105, 4, 31, 29 });
+	updiagonalright.PushBack({ 377, 4, 31, 29 });
+	updiagonalright.PushBack({ 649, 4, 31, 29 });
+	updiagonalright.speed = 0.5f;
+	updiagonalright.loop = true;
 	hitupdiagonalright.PushBack({ 106, 95, 31, 29 });
 
-	leftright.PushBack({ 139 , 4, 31, 29 }); 
+	leftright.PushBack({ 139, 4, 31, 29 });
+	leftright.PushBack({ 411, 4, 31, 29 });
+	leftright.PushBack({ 683, 4, 31, 29 });
+	leftright.speed = 0.5f;
+	leftright.loop = true;
 	hitleftright.PushBack({ 140 , 95, 31, 29 });
 
-	downdiagonalleft.PushBack({ 173, 4, 31, 29 }); 
+	downdiagonalleft.PushBack({ 173, 4, 31, 29 });
+	downdiagonalleft.PushBack({ 445, 4, 31, 29 });
+	downdiagonalleft.PushBack({ 717, 4, 31, 29 });
+	downdiagonalleft.speed = 0.5f;
+	downdiagonalleft.loop = true;
 	hitdowndiagonalleft.PushBack({ 174, 95, 31, 29 });
 
-	neutraldiagonalleft.PushBack({ 207, 4, 31, 29 }); 
+	neutraldiagonalleft.PushBack({ 207, 4, 31, 29 });
+	neutraldiagonalleft.PushBack({ 479, 4, 31, 29 });
+	neutraldiagonalleft.PushBack({ 751, 4, 31, 29 });
+	neutraldiagonalleft.speed = 0.5f;
+	neutraldiagonalleft.loop = true;
 	hitneutraldiagonalleft.PushBack({ 208, 95, 31, 29 });
 
-	updiagonalleft.PushBack({ 241, 4, 31, 29 }); 
+	updiagonalleft.PushBack({ 241, 4, 31, 29 });
+	updiagonalleft.PushBack({ 513, 4, 31, 29 });
+	updiagonalleft.PushBack({ 785, 4, 31, 29 });
+	updiagonalleft.speed = 0.5f;
+	updiagonalleft.loop = true;
 	hitupdiagonalleft.PushBack({ 242, 95, 31, 29 });
+
+	_downup.PushBack({ 3, 4, 31, 29 });
+
+	_downdiagonalright.PushBack({ 37, 4, 31, 29 });
+
+	_neutraldiagonalright.PushBack({ 71, 4,31, 29 });
+
+	_updiagonalright.PushBack({ 105, 4, 31, 29 });
+
+	_leftright.PushBack({ 139 , 4, 31, 29 });
+
+	_downdiagonalleft.PushBack({ 173, 4, 31, 29 });
+
+	_neutraldiagonalleft.PushBack({ 207, 4, 31, 29 });
+
+	_updiagonalleft.PushBack({ 241, 4, 31, 29 });
 
 	//Turret animations
 	noturret.PushBack({ 1, 1, 1, 1 });
 
 	s.PushBack({ 3, 44, 38, 34 });
 	hits.PushBack({ 4, 135, 38, 34 });
-	
+
 	se1.PushBack({ 44, 44, 38, 34 });
 	hitse1.PushBack({ 45, 135, 38, 34 });
 
@@ -67,7 +115,7 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	ne3.PushBack({ 290, 44, 38, 34 });
 	hitne3.PushBack({ 291, 135, 38, 34 });
 
-    n.PushBack({ 331, 44, 38, 34 });
+	n.PushBack({ 331, 44, 38, 34 });
 	hitn.PushBack({ 332, 135, 38, 34 });
 
 	nw1.PushBack({ 372, 44, 38, 34 });
@@ -91,12 +139,12 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	sw3.PushBack({ 618, 44, 38, 34 });
 	hitsw3.PushBack({ 619, 135, 38, 34 });
 
-	
+
 	original_pos.x = x;
 	original_pos.y = -100;
 
 	//Paths (there should be more than one path and an integer to select what path to use
-	/*Instructions for pathing the enemies:  
+	/*Instructions for pathing the enemies:
 	0.0, 4.0 = S
 	0.0, -1.0 = N
 	-2.0, 1.0 = W
@@ -108,8 +156,8 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	-0.5, 0.0 = NW1
 	0.5, 2.0 =  SE1
 	1.0, 0.0 = NE2
-	-1.0, 2.0 = SW2  
-	-1.0, 0.0 = NW2 
+	-1.0, 2.0 = SW2
+	-1.0, 0.0 = NW2
 	1.0, 2.0 = SE2
 	-2,0,1.5 = SW1
 	0.5,0.0 = NE3
@@ -222,7 +270,7 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 		movement.PushBack({ 0.5f, 2.0f }, 10);
 		movement.PushBack({ 0.0f, 4.0f }, 1000);
 	}
-	
+
 	//south-west 2- south 
 	//1
 	if (path == 19)
@@ -234,12 +282,12 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	}
 	//2
 	if (path == 20)
-	{ 
-	original_pos.y = 100;
-	movement.PushBack({ -1.0f, 2.0f }, 330);
-	movement.PushBack({ -0.5f, 1.5f }, 10);
-	movement.PushBack({ 0.0f, 4.0f }, 1000);
-    }
+	{
+		original_pos.y = 100;
+		movement.PushBack({ -1.0f, 2.0f }, 330);
+		movement.PushBack({ -0.5f, 1.5f }, 10);
+		movement.PushBack({ 0.0f, 4.0f }, 1000);
+	}
 	//South-east 2- east
 	//1
 	if (path == 21)
@@ -329,7 +377,7 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	if (path == 4)
 	{
 		movement.PushBack({ 2.0f, 1.0f }, 1);
-		movement.PushBack({ 0.0f, 1.0f },100);
+		movement.PushBack({ 0.0f, 1.0f }, 100);
 		movement.PushBack({ 2.0f, 1.5f }, 90);
 		movement.PushBack({ 2.0f, 1.0f }, 1000);
 	}
@@ -364,12 +412,12 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 	{
 		original_pos.y = 500;
 		movement.PushBack({ 2.0f, 1.0f }, 150);
-		movement.PushBack({  2.0f, 0.5f }, 10);
+		movement.PushBack({ 2.0f, 0.5f }, 10);
 		movement.PushBack({ 1.0f, 0.0f }, 10);
 		movement.PushBack({ 0.5f, 0.0f }, 10);
 		movement.PushBack({ 0.0f, 0.0f }, 600);
 		movement.PushBack({ -0.5f, 0.0f }, 10);
-		movement.PushBack({-1.0f, 0.0f }, 10);
+		movement.PushBack({ -1.0f, 0.0f }, 10);
 		movement.PushBack({ -2.0f, 0.5f }, 10);
 		movement.PushBack({ -2.0f, 1.0f }, 1000);
 	}
@@ -410,11 +458,11 @@ Tank::Tank(int x, int y, int path) : Enemy(x, y)
 
 
 void Tank::MoveShoot()
-{	
+{
 	// Calculation between tank and player and movement of the tank
-	
+
 	position = original_pos + movement.GetCurrentPosition();
-	
+
 	position.x += left_right_mod;
 
 	if (sqrtf((distance.y = App->player->position.y - position.y)*(distance.y = App->player->position.y - position.y) + (distance.x = App->player->position.x - position.x)* (distance.x = App->player->position.x - position.x))
@@ -430,8 +478,8 @@ void Tank::MoveShoot()
 		distance.x = App->player2->position.x - position.x;
 	}
 
-// Animation of the tank	
-	
+	// Animation of the tank	
+
 	w = 31 * 3;
 	h = 29 * 3;
 
@@ -439,14 +487,14 @@ void Tank::MoveShoot()
 
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == -1.0f) //North
 	{
-		animation = &downup;
+		animation = &_downup;
 		if (ishit == true)
 		{
 			animation = &hitdownup;
 			ishit = false;
 		}
-	    position1.x = position.x + w / 2;
-	    position1.y = position.y + h / 2 - 5;
+		position1.x = position.x + w / 2;
+		position1.y = position.y + h / 2 - 5;
 	}
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) //North
 	{
@@ -460,7 +508,7 @@ void Tank::MoveShoot()
 		position1.y = position.y + h / 2 - 5;
 	}
 
-	
+
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 4.0f)//South
 	{
 		animation = &downup;
@@ -473,17 +521,17 @@ void Tank::MoveShoot()
 		position1.y = position.y + h / 2 - 5;
 	}
 
-     if (movement.steps[movement.GetCurrentStep()].speed.x == -2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f) //West
-	{ 
-	  animation = &leftright;
-	  if (ishit == true)
-	  {
-		  animation = &hitleftright;
-		  ishit = false;
-	  }
-	  h = 35 * 3;
-	 position1.x = position.x + w / 2;
-	 position1.y = position.y + h / 2;
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f) //West
+	{
+		animation = &leftright;
+		if (ishit == true)
+		{
+			animation = &hitleftright;
+			ishit = false;
+		}
+		h = 35 * 3;
+		position1.x = position.x + w / 2;
+		position1.y = position.y + h / 2;
 	}
 
 
@@ -501,12 +549,12 @@ void Tank::MoveShoot()
 	}
 
 
-	
+
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f) //If tanks stop they get the last animation that was done
 	{
-		if (animation == &leftright || animation == &hitleftright)
+		if (animation == &leftright || animation == &hitleftright || animation == &_leftright)
 		{
-			animation = &leftright;
+			animation = &_leftright;
 			if (ishit == true)
 			{
 				animation = &hitleftright;
@@ -516,9 +564,9 @@ void Tank::MoveShoot()
 			position1.x = position.x + w / 2;
 			position1.y = position.y + h / 2;
 		}
-		if (animation == &downup || animation == &hitdownup)
+		if (animation == &downup || animation == &hitdownup || animation == &_downup)
 		{
-			animation = &downup;
+			animation = &_downup;
 			if (ishit == true)
 			{
 				animation = &hitdownup;
@@ -527,9 +575,9 @@ void Tank::MoveShoot()
 			position1.x = position.x + w / 2;
 			position1.y = position.y + h / 2 - 5;
 		}
-		if (animation == &neutraldiagonalleft || animation == &hitneutraldiagonalleft)
+		if (animation == &neutraldiagonalleft || animation == &hitneutraldiagonalleft || animation == &_neutraldiagonalleft)
 		{
-			animation = &neutraldiagonalleft;
+			animation = &_neutraldiagonalleft;
 			if (ishit == true)
 			{
 				animation = &hitneutraldiagonalleft;
@@ -538,9 +586,9 @@ void Tank::MoveShoot()
 			position1.x = position.x + w / 2;
 			position1.y = position.y + h / 2;
 		}
-		if (animation == &neutraldiagonalright || animation == &hitneutraldiagonalright)
+		if (animation == &neutraldiagonalright || animation == &hitneutraldiagonalright || animation == &_neutraldiagonalright)
 		{
-			animation = &neutraldiagonalright;
+			animation = &_neutraldiagonalright;
 			if (ishit == true)
 			{
 				animation = &hitneutraldiagonalright;
@@ -549,9 +597,9 @@ void Tank::MoveShoot()
 			position1.x = position.x + w / 2;
 			position1.y = position.y + h / 2;
 		}
-		if (animation == &neutraldiagonalright || animation == &hitneutraldiagonalright)
+		if (animation == &neutraldiagonalright || animation == &hitneutraldiagonalright || animation == &_neutraldiagonalright)
 		{
-			animation = &neutraldiagonalright;
+			animation = &_neutraldiagonalright;
 			if (ishit == true)
 			{
 				animation = &hitneutraldiagonalright;
@@ -565,18 +613,6 @@ void Tank::MoveShoot()
 
 
 	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 1.5f) // SW3
-	{ 
-	animation = &updiagonalleft;
-	if (ishit == true)
-	{
-		animation = &hitupdiagonalleft;
-		ishit = false;
-	}
-	position1.x = position.x + w / 2;
-	position1.y = position.y + h / 2;
-	}
-
-   if (movement.steps[movement.GetCurrentStep()].speed.x == 0.5f && movement.steps[movement.GetCurrentStep()].speed.y ==  0.0f) //NE3
 	{
 		animation = &updiagonalleft;
 		if (ishit == true)
@@ -588,31 +624,43 @@ void Tank::MoveShoot()
 		position1.y = position.y + h / 2;
 	}
 
-   
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) //NE3
+	{
+		animation = &updiagonalleft;
+		if (ishit == true)
+		{
+			animation = &hitupdiagonalleft;
+			ishit = false;
+		}
+		position1.x = position.x + w / 2;
+		position1.y = position.y + h / 2;
+	}
 
-   if (movement.steps[movement.GetCurrentStep()].speed.x == -2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.5f) //NW3
-   {
-	   animation = &updiagonalright;
-	   if (ishit == true)
-	   {
-		   animation = &hitupdiagonalright;
-		   ishit = false;
-	   }
-	   position1.x = position.x + w / 2;
-	   position1.y = position.y + h / 2;
-   }
 
-   if (movement.steps[movement.GetCurrentStep()].speed.x == 2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.5f) //SE3
-   {
-	   animation = &updiagonalright;
-	   if (ishit == true)
-	   {
-		   animation = &hitupdiagonalright;
-		   ishit = false;
-	   }
-	   position1.x = position.x + w / 2;
-	   position1.y = position.y + h / 2;
-   }
+
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.5f) //NW3
+	{
+		animation = &updiagonalright;
+		if (ishit == true)
+		{
+			animation = &hitupdiagonalright;
+			ishit = false;
+		}
+		position1.x = position.x + w / 2;
+		position1.y = position.y + h / 2;
+	}
+
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.5f) //SE3
+	{
+		animation = &updiagonalright;
+		if (ishit == true)
+		{
+			animation = &hitupdiagonalright;
+			ishit = false;
+		}
+		position1.x = position.x + w / 2;
+		position1.y = position.y + h / 2;
+	}
 
 
 	if (movement.steps[movement.GetCurrentStep()].speed.x == -0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 0.0f) //NW1
@@ -626,8 +674,8 @@ void Tank::MoveShoot()
 		position1.x = position.x + w / 2;
 		position1.y = position.y + h / 2;
 	}
-	
-	
+
+
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.5f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f) //SE1
 	{
 		animation = &downdiagonalright;
@@ -700,7 +748,7 @@ void Tank::MoveShoot()
 		position1.x = position.x + w / 2;
 		position1.y = position.y + h / 2;
 	}
-	if (movement.steps[movement.GetCurrentStep()].speed.x ==  2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.5f) //NE1
+	if (movement.steps[movement.GetCurrentStep()].speed.x == 2.0f && movement.steps[movement.GetCurrentStep()].speed.y == 0.5f) //NE1
 	{
 		animation = &downdiagonalleft; //CHANGE
 		if (ishit == true)
@@ -711,7 +759,7 @@ void Tank::MoveShoot()
 		position1.x = position.x + w / 2;
 		position1.y = position.y + h / 2;
 	}
-	
+
 	if (hp < 2)
 	{
 		turretalive = false;

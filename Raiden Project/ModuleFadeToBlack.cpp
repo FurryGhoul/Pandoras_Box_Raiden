@@ -137,7 +137,7 @@ update_status ModuleFadeToBlack::Update()
 
 	//Blit
 	if (!plates.Finished())
-		App->render->Blit(graphics, 0, 0, &(plates.GetCurrentFrame()), 224 * 3, 256 * 3);
+		App->render->Blit(graphics, 0, 0, &(plates.GetCurrentFrame()), 224 * 3, 256 * 3.3);
 
 	return UPDATE_CONTINUE;
 }

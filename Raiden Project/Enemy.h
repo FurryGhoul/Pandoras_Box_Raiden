@@ -22,6 +22,7 @@ public:
 	fPoint position1;
 	fPoint position2;
 	fPoint position3;
+	Uint32 hittime = 0;
 	bool ishit;
 	bool ishit2;
 	bool ishit3;
@@ -71,6 +72,7 @@ public:
 	bool mine = false;
 	bool trainlocomotive = false;
 	bool traincoach = false;
+	int modifier = 0;
 
 public:
 	Enemy(int x, int y);

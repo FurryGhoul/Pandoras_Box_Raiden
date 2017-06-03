@@ -211,11 +211,6 @@ void ModuleGroundExplosion::AddGroundExplosion(const GroundExplosion& particle, 
 				p->speed.y = speed_y;
 			}
 			p->size = particle.size;
-			if (!multipleshot && bullettype != 47 && bullettype != 37 && bullettype != 27 && bullettype != 48 && bullettype != 38 && bullettype != 28)
-			{
-				Mix_PlayChannel(-1, App->audio_2->fx_shoot, 0);
-			}
-
 			if (collider_type != COLLIDER_NONE)
 			{
 				p->collider = App->collision->AddCollider({ 10000, 10000, p->size.x, p->size.y }, collider_type, this, bullettype, damage);

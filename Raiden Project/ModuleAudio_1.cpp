@@ -1,8 +1,9 @@
-/*#include "Globals.h"
+#include "Globals.h"
 #include "Application.h"
 #include "ModuleAudio_1.h"
 #include "ModuleAudio_2.h"
-#include "ModuleMap2.h"
+#include "ModuleMap1.h"
+#include "ModuleRender.h"
 ModuleAudio1::ModuleAudio1() : Module()
 {
 
@@ -25,24 +26,24 @@ bool ModuleAudio1::Init()
 	{
 		LOG("An error has ocurred while opening the audio has ocurred: %s", SDL_GetError())
 	}
-	ModuleAudio1::Load("Assets/song.ogg");
+	ModuleAudio1::Load("Assets/Sound effects/Boss song.ogg");
 
-	if (Mix_PlayMusic(music, -1) == -1)
+    if (Mix_PlayMusic(music, -1) == -1)
 	{
 		LOG("An error has ocurred while reproducing the audio %s", SDL_GetError())
-	}
+    }
 	
-	fx_shoot = Mix_LoadWAV("Assets/red_shot1.wav");
 	return true;
 }
 update_status ModuleAudio1::Update()
 {
-	if (App->map_2->IsEnabled() && playing == false)
+	
+	if (App->render->camera.y < -12000 && playing == false )
 	{
- 		Init();
+		Init();
 		playing = true;
 	}
-	if (!(App->map_2->IsEnabled()) && playing == true)
+	if (App->render->camera.y > -12000 && playing == true || !App->map_1->IsEnabled() )
 	{
 		playing = false;
 		Close();
@@ -71,4 +72,4 @@ bool ModuleAudio1::Close()
 {
 	Mix_CloseAudio();
 	return true;
-}*/
+}

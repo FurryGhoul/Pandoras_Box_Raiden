@@ -119,14 +119,17 @@ update_status ModuleMap1::Update()
 		App->player2->godmode = false;
 
 		setup = false;
+
 		//App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TRAIN_LOCOMOTIVE, 850, -200);
 		//App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN_COACH, 850, -200);
-		//App->enemies->AddEnemy(0, ENEMY_TYPES::BOSS_MAIN, 330, -300);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::LONG_MEGATANK, 500, -300);
+
+		//App->genemies->AddGroundEnemy(0, GENEMY_TYPES::LONG_MEGATANK, 500, -300);
+
 
 		if (checkpoint <= 0) //CHECKPOINT 0	
 		{
 			// First street
+		
 			//Horizontal tanks
 			App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TANK, 0, -900);
 			//Vertical tanks
@@ -177,7 +180,7 @@ update_status ModuleMap1::Update()
 		{
 				
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 450, -2830);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::MEGATANK, 500, -3900);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::MEGATANK, 500, -3700);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -2300);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -2400);
 		// Horizontal tanks
@@ -291,7 +294,6 @@ update_status ModuleMap1::Update()
 		App->genemies->AddGroundEnemy(20, GENEMY_TYPES::TANK, 357 * 3, -4400);
 
 
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 700, -4200);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 500, -5400);
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 120, -4600);
@@ -424,7 +426,7 @@ update_status ModuleMap1::Update()
 		// 3rd Wave
 		App->enemies->AddEnemy(1, ENEMY_TYPES::MEDIUM_SHOOTER, 500, -8000);
 
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::LONG_MEGATANK, 440, -8950);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::LONG_MEGATANK, 440, -8750);
 
 		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP, 600, -7850);
 		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP, 650, -8250);
@@ -519,7 +521,7 @@ update_status ModuleMap1::Update()
 		yroad += (yscrollspeed * 1.5);
 		App->render->camera.y -= yscrollspeed;
 
-
+		LOG("%i", App->render->camera.y);
 
 
 		if (yroad >= -4350 && checkpoint != 4)

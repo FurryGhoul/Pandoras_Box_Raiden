@@ -34,6 +34,8 @@ private:
 	bool shootingkamikazes = false;
 	int delay = 0;
 	bool parts = false;
+	bool orange = false;
+	Uint32 orangetime = 0;
 
 	EnemyInfo kamikaze1;
 	EnemyInfo kamikaze2;

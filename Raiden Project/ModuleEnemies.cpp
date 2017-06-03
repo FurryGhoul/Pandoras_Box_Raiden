@@ -27,6 +27,7 @@
 #include "Enemy_Boss_Right_Wing.h"
 #include "Enemy_Boss_Cannon.h"
 #include "Enemy_Mine.h"
+#include "ModuleAudio_2.h"
 #define SPAWN_MARGIN 100
 
 ModuleEnemies::ModuleEnemies()
@@ -268,44 +269,46 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				enemies[i]->ishit = true;
 				enemies[i]->ishit2 = true;
 			}
-			if (enemies[i]->mediumshooter)
+			else if (enemies[i]->mediumshooter)
 			{
 				enemies[i]->ishit = true;
 			}
-			if (enemies[i]->ship)
+			else if (enemies[i]->ship)
 			{
 				enemies[i]->ishit = true;
 			}
-			if (enemies[i]->shiptank)
+			else if (enemies[i]->shiptank)
 			{
 				enemies[i]->ishit = true;
 			}
-			if (enemies[i]->tank)
-			{
- 				enemies[i]->ishit = true;
-				enemies[i]->ishit2 = true;
-			}
-			if (enemies[i]->greytank)
+			else if (enemies[i]->tank)
 			{
 				enemies[i]->ishit = true;
 				enemies[i]->ishit2 = true;
 			}
-			if (enemies[i]->megatank)
+			else if (enemies[i]->greytank)
 			{
 				enemies[i]->ishit = true;
 				enemies[i]->ishit2 = true;
 			}
-			if (enemies[i]->longmegatank)
+			else if (enemies[i]->megatank)
+			{
+				enemies[i]->ishit = true;
+				enemies[i]->ishit2 = true;
+			}
+			else if (enemies[i]->longmegatank)
 			{
 				enemies[i]->ishit = true;
 				enemies[i]->ishit2 = true;
 				enemies[i]->ishit3 = true;
 				enemies[i]->ishit4 = true;
 			}
-			if (enemies[i]->mine)
+			else if (enemies[i]->mine)
 			{
 				enemies[i]->ishit = true;
 			}
+			else if (enemies[i]->bossmain || enemies[i]->bossleftwing || enemies[i]->bossrightwing || enemies[i]->bosscannon)
+				enemies[i]->ishit = true;
 			
 
 			if (enemies[i]->hp < 0)
@@ -359,6 +362,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				if (enemies[i]->lightshooter || enemies[i]->kamikaze || enemies[i]->light_kamikaze)
 				{ 
 				  App->particles->AddParticle(App->particles->explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+				  Mix_PlayChannel(-1, App->audio_2->fx_light_explosion, 0);
                 }
 				else if (enemies[i]->tank)
 				{
@@ -381,6 +385,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				{
 					App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, enemies[i]->position.x, enemies[i]->position.y);
 					App->particles->AddParticle(App->particles->bonusmedium_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+  					Mix_PlayChannel(-1, App->audio_2->fx_heavy_explosion, 0);
 				}
 				else if (enemies[i]->bossleftwing || enemies[i]->bossrightwing || enemies[i]->bosscannon)
 				{
@@ -389,6 +394,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				else if (enemies[i]->mediumshooter)
 				{
 					App->particles->AddParticle(App->particles->bonusmedium_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+ 					Mix_PlayChannel(-1, App->audio_2->fx_heavy_explosion, 0);
 				}
 				
 				else if (enemies[i]->medalbox)

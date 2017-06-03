@@ -79,8 +79,9 @@ bool ModuleRender::CleanUp()
 }
 
 // Blit to screen
-bool ModuleRender::Blit(SDL_Texture* texture, float x, float y, SDL_Rect* section, int w, int h)
+bool ModuleRender::Blit(SDL_Texture* texture, float x, float y, SDL_Rect* section, int w, int h, int modifier)
 {
+	section->y += modifier;
 	bool ret = true;
 	SDL_Rect rect;
 	rect.x = x;
@@ -110,6 +111,7 @@ bool ModuleRender::Blit(SDL_Texture* texture, float x, float y, SDL_Rect* sectio
 		ret = false;
 	}
 
+	section->y -= modifier;
 
 	return ret;
 }
