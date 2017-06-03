@@ -52,6 +52,7 @@ update_status ModuleWelcomeScreen::Update()
 
 	if (setdown)
 	{
+		App->player->UI = false;
 		App->WelcomeScreen->setdown = true;
 		App->enemies->Disable();
 		App->powerups->Disable();

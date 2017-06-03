@@ -290,11 +290,6 @@ update_status ModulePlayer::Update()
 		// Draw UI (score) --------------------------------------
 		sprintf_s(score_text, 20, "SCORE", score);
 		sprintf_s(scoret, 20, "%7d", score);
-
-		// TODO 3: Blit the text of the score in at the bottom of the screen
-
-		App->fonts->BlitText(20, 160, 0, score_text);
-		App->fonts->BlitText(20, 195, 0, scoret);
 	}
 
 	else
@@ -432,11 +427,6 @@ update_status ModulePlayer::Update()
 		// Draw UI (score) --------------------------------------
 		sprintf_s(score_text, 20, "SCORE", score);
 		sprintf_s(scoret, 20, "%7d", score);
-
-		// TODO 3: Blit the text of the score in at the bottom of the screen
-
-		App->fonts->BlitText(20, 160, 0, score_text);
-		App->fonts->BlitText(20, 195, 0, scoret);
 	}
 
 	if ((App->input->keyboard[SDL_SCANCODE_LSHIFT] == KEY_STATE::KEY_DOWN && bombs >= 1 && SDL_GetTicks() - bombtime >= 2100) && !App->input->gpad)
@@ -799,11 +789,6 @@ if (SDL_GetTicks() - missiles_initial_time > 500 && can_shoot == false)
 		bomb_ammo = nullptr;
 	}
 
-	if (bomb_ammo != nullptr)
-	{
-		App->render->Blit(graphics2, 5, 782, &(bomb_ammo->GetCurrentFrame()), bombammo_w, 14 * 3);
-	}
-
 	if (lives == 3)
 	{
 		livecounter = &life2;
@@ -817,11 +802,6 @@ if (SDL_GetTicks() - missiles_initial_time > 500 && can_shoot == false)
 	else if (lives == 1)
 	{
 		livecounter = nullptr;
-	}
-
-	if (livecounter != nullptr)
-	{
-		App->render->Blit(graphics2, 5, 48, &(livecounter->GetCurrentFrame()), lives_w, 8 * 3);
 	}
 
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
@@ -908,7 +888,6 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 
 	if (Player != nullptr && Player == c1 && App->player2->deadplayer && deadplayer && c2->type != COLLIDER_POWER_UP)
 	{
-		
 		if (lives == 0)
 		{ 
 		App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
@@ -918,7 +897,5 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		{	
 			App->map_1->reset_collision = true;
 		}
-		
-	
 	}
 }

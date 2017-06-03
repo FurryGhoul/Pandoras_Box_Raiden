@@ -286,11 +286,6 @@ update_status ModulePlayer2::Update()
 		// Draw UI (score) --------------------------------------
 		sprintf_s(score_text, 20, "SCORE", score);
 		sprintf_s(scoret, 20, "%7d", score);
-
-		// TODO 3: Blit the text of the score in at the bottom of the screen
-
-		App->fonts->BlitText(420, 160, 1, score_text);
-		App->fonts->BlitText(420, 195, 1, scoret);
 	}
 
 	else
@@ -428,11 +423,6 @@ update_status ModulePlayer2::Update()
 		// Draw UI (score) --------------------------------------
 		sprintf_s(score_text, 20, "SCORE", score);
 		sprintf_s(scoret, 20, "%7d", score);
-
-		// TODO 3: Blit the text of the score in at the bottom of the screen
-
-		App->fonts->BlitText(420, 160, 1, score_text);
-		App->fonts->BlitText(420, 195, 1, scoret);
 	}
 
 	if ((App->input->keyboard[SDL_SCANCODE_O] == KEY_STATE::KEY_DOWN && bombs >= 1 && SDL_GetTicks() - bombtime >= 2100) && !App->input->gpad2)
@@ -793,11 +783,6 @@ if (SDL_GetTicks() - missiles_initial_time > 500 && can_shoot == false)
 		bomb_ammo = nullptr;
 	}
 
-	if (bomb_ammo != nullptr)
-	{
-		App->render->Blit(graphics2, (619 - (48 * (bombs - 1))), 782, &(bomb_ammo->GetCurrentFrame()), bombammo_w, 14 * 3);
-	}
-
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
 
 	if (Player != nullptr && godmode == false)
@@ -876,7 +861,6 @@ void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 
 	if (Player != nullptr && Player == c1 && App->player->deadplayer && deadplayer && c2->type != COLLIDER_POWER_UP)
 	{
- 
 		App->WelcomeScreen->setdown = true;
 		App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
 

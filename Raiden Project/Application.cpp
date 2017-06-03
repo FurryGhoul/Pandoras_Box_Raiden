@@ -40,8 +40,8 @@ Application::Application()
 	modules[13] = enemies = new ModuleEnemies();
 	modules[14] = particles = new ModuleParticles();
 	modules[15] = powerups = new ModulePowerUps();
-	modules[16] = player = new ModulePlayer();
-	modules[17] = player2 = new ModulePlayer2();
+	modules[16] = player2 = new ModulePlayer2();
+	modules[17] = player = new ModulePlayer();
 	modules[18] = collision = new ModuleCollision();
 	modules[19] = fade = new ModuleFadeToBlack();
 	modules[20] = audio = new ModuleAudio1();

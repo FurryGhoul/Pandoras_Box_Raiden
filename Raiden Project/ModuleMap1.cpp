@@ -54,6 +54,7 @@ update_status ModuleMap1::Update()
 
 	if (setdown)
 	{
+		App->player->UI = false;
 		App->WelcomeScreen->setdown = true;
 		App->enemies->Disable();
 		App->powerups->Disable();
@@ -90,7 +91,7 @@ update_status ModuleMap1::Update()
 
 	if (setup)
 	{
-		
+		App->player->UI = true;
 		App->particles->Enable();
 		App->gexplosion->Enable();
 		App->shadows->Enable();
@@ -568,6 +569,7 @@ update_status ModuleMap1::Update()
 	}
 	if (won)
 	{
+		App->player->UI = false;
 		App->player->Disable();
 		App->player2->Disable();
 		App->fade->FadeToBlack(this, App->StageClear1);
@@ -612,29 +614,21 @@ update_status ModuleMap1::Update()
 
 	if (App->player2->allowhiscore == true)
 	{
-		sprintf_s(App->player2->highscore_text, 20, "  HI-SCORE");
+		sprintf_s(App->player2->highscore_text, 20, "HI-SCORE");
 		sprintf_s(App->player2->highscoret, 20, "   %7d", App->player2->hiscore);
-		sprintf_s(App->player2->lastscore_text, 20, "LAST SCORE");
+		sprintf_s(App->player2->lastscore_text, 20, "2UP");
 		sprintf_s(App->player2->lastscoret, 20, "   %7d", App->player2->lastscore);
 		App->player2->allowhiscore = false;
 	}
-	App->fonts->BlitText(420, 20, 1, App->player2->highscore_text);
-	App->fonts->BlitText(420, 55, 1, App->player2->highscoret);
-	App->fonts->BlitText(420, 90, 1, App->player2->lastscore_text);
-	App->fonts->BlitText(420, 125, 1, App->player2->lastscoret);
 
 	if (App->player->allowhiscore == true)
 	{
 		sprintf_s(App->player->highscore_text, 20, "HI-SCORE");
 		sprintf_s(App->player->highscoret, 20, "%7d", App->player->hiscore);
-		sprintf_s(App->player->lastscore_text, 20, "LAST SCORE");
+		sprintf_s(App->player->lastscore_text, 20, "1UP");
 		sprintf_s(App->player->lastscoret, 20, "%7d", App->player->lastscore);
 		App->player->allowhiscore = false;
 	}
-	App->fonts->BlitText(20, 20, 0, App->player->highscore_text);
-	App->fonts->BlitText(20, 55, 0, App->player->highscoret);
-	App->fonts->BlitText(20, 90, 0, App->player->lastscore_text);
-	App->fonts->BlitText(20, 125, 0, App->player->lastscoret);
 
 	return UPDATE_CONTINUE;
 }

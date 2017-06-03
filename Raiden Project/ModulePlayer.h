@@ -13,8 +13,6 @@ public:
 	ModulePlayer();
 	~ModulePlayer();
 
-
-	
 	int lives = 3;
 	int missile_powerup_level = 0;
 	int missiles_shot = 0;
@@ -85,6 +83,7 @@ public:
 	bool allowtimep = true;
 	bool moving = false;
 	bool propeller = true;
+	bool UI = true;
 	Uint32 time;
 	Uint32 timep; //time for propellers
 

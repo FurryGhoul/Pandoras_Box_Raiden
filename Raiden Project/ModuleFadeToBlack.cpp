@@ -7,8 +7,10 @@
 #include "SDL/include/SDL_render.h"
 #include "SDL/include/SDL_timer.h"
 #include "ModulePlayer.h"
+#include "ModulePlayer2.h"
+#include "ModuleFonts.h"
 #include "ModuleWelcomeScreen.h"
-
+#include <stdio.h>
 
 ModuleFadeToBlack::ModuleFadeToBlack()
 {
@@ -57,7 +59,37 @@ bool ModuleFadeToBlack::Init()
 update_status ModuleFadeToBlack::Update()
 {
 	if (current_step == fade_step::none)
+	{
+		if (App->player->UI)
+		{
+			App->fonts->BlitText(20, 160, 0, App->player->score_text);
+			App->fonts->BlitText(20, 195, 0, App->player->scoret);
+			App->fonts->BlitText(243, 0, 0, App->player->highscore_text);
+			App->fonts->BlitText(20, 55, 0, App->player->highscoret);
+			App->fonts->BlitText(102, 0, 0, App->player->lastscore_text);
+			App->fonts->BlitText(20, 125, 0, App->player->lastscoret);
+			App->fonts->BlitText(420, 160, 1, App->player2->score_text);
+			App->fonts->BlitText(420, 195, 1, App->player2->scoret);
+			App->fonts->BlitText(420, 20, 1, App->player2->highscore_text);
+			App->fonts->BlitText(420, 55, 1, App->player2->highscoret);
+			App->fonts->BlitText(315, 90, 1, App->player2->lastscore_text);
+			App->fonts->BlitText(420, 125, 1, App->player2->lastscoret);
+			if (App->player->bomb_ammo != nullptr)
+			{
+				App->render->Blit(App->player->graphics2, 5, 782, &(App->player->bomb_ammo->GetCurrentFrame()), App->player->bombammo_w, 14 * 3);
+			}
+			if (App->player2->bomb_ammo != nullptr)
+			{
+				App->render->Blit(App->player2->graphics2, 5, 782, &(App->player2->bomb_ammo->GetCurrentFrame()), App->player2->bombammo_w, 14 * 3);
+			}
+			if (App->player->livecounter != nullptr)
+			{
+				App->render->Blit(App->player->graphics2, 5, 48, &(App->player->livecounter->GetCurrentFrame()), App->player->lives_w, 8 * 3);
+			}
+		}
+
 		return UPDATE_CONTINUE;
+	}
 
 	Uint32 now = SDL_GetTicks() - start_time;
 	float normalized = MIN(1.0f, (float)now / (float)total_time);
