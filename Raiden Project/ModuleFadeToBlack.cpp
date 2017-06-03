@@ -110,7 +110,7 @@ update_status ModuleFadeToBlack::Update()
 
 			}
 			//Just functional for player one at the moment
-			if (App->player->lifes == 0)
+			if (App->player->lives == 0)
 			{
 				App->WelcomeScreen->setdown = true;
 			}

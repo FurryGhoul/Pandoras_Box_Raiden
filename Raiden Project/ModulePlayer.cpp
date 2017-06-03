@@ -60,6 +60,10 @@ ModulePlayer::ModulePlayer()
 	bomb4.PushBack({ 236, 132, 64, 14 });
 	bomb5.PushBack({ 236, 132, 80, 14 });
 	bomb6.PushBack({ 236, 132, 96, 14 });
+
+	//Lives
+	life.PushBack({ 333, 138, 8, 8 });
+	life2.PushBack({ 333, 138, 16, 8 });
 }
 
 ModulePlayer::~ModulePlayer()
@@ -795,6 +799,26 @@ if (SDL_GetTicks() - missiles_initial_time > 500 && can_shoot == false)
 		App->render->Blit(graphics2, 5, 782, &(bomb_ammo->GetCurrentFrame()), bombammo_w, 14 * 3);
 	}
 
+	if (lives == 3)
+	{
+		livecounter = &life2;
+		lives_w = 16 * 3;
+	}
+	else if (lives == 2)
+	{
+		livecounter = &life;
+		lives_w = 8 * 3;
+	}
+	else if (lives == 1)
+	{
+		livecounter = nullptr;
+	}
+
+	if (livecounter != nullptr)
+	{
+		App->render->Blit(graphics2, 5, 48, &(livecounter->GetCurrentFrame()), lives_w, 8 * 3);
+	}
+
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()), player_w, player_h);
 
 	if (shadowregulator % 2 == 0)
@@ -874,13 +898,13 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		Player->SetPos(10000000, 10000000);
 		deadplayer = true;
 		allowhiscore = true;
-		lifes--;
+		lives--;
 	}
 
 	if (Player != nullptr && Player == c1 && App->player2->deadplayer && deadplayer && c2->type != COLLIDER_POWER_UP)
 	{
 		
-		if (lifes == 0)
+		if (lives == 0)
 		{ 
 		App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
 
