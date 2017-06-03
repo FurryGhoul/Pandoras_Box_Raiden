@@ -449,7 +449,7 @@ update_status ModulePlayer2::Update()
 			if (powerup_level <= 0)
 			{
 				App->particles->AddParticle(App->particles->double_shot, position.x + 25, position.y, COLLIDER_PLAYER_SHOT, 2, 0, 0, 0, false, 1);
-				score -= 40;
+
 				if (score < 0)
 					score = 0;
 			}
@@ -457,7 +457,7 @@ update_status ModulePlayer2::Update()
 			{
 				App->particles->AddParticle(App->particles->double_shot, position.x + 10, position.y, COLLIDER_PLAYER_SHOT, 2, 0, 0, 0, false, 1);
 				App->particles->AddParticle(App->particles->double_shot, position.x + 35, position.y, COLLIDER_PLAYER_SHOT, 2, 0, 0, 0, true, 1);
-				score -= 40;
+
 				if (score < 0)
 					score = 0;
 			}
@@ -466,7 +466,7 @@ update_status ModulePlayer2::Update()
 				App->particles->AddParticle(App->particles->double_shot, position.x + 25, position.y, COLLIDER_PLAYER_SHOT, 2, 0, 0, 0, false, 1);
 				App->particles->AddParticle(App->particles->double_shot, position.x + 35, position.y, COLLIDER_PLAYER_SHOT, 2, 3, 0, 0, true, 1);
 				App->particles->AddParticle(App->particles->double_shot, position.x + 15, position.y, COLLIDER_PLAYER_SHOT, 2, -3, 0, 0, true, 1);
-				score -= 40;
+
 				if (score < 0)
 					score = 0;
 			}
@@ -475,7 +475,7 @@ update_status ModulePlayer2::Update()
 				App->particles->AddParticle(App->particles->triple_shot, position.x + 20, position.y, COLLIDER_PLAYER_SHOT, 2, 0, 0, 0, false, 2);
 				App->particles->AddParticle(App->particles->triple_shot, position.x + 30, position.y, COLLIDER_PLAYER_SHOT, 2, 3, 0, 0, true, 2);
 				App->particles->AddParticle(App->particles->triple_shot, position.x + 10, position.y, COLLIDER_PLAYER_SHOT, 2, -3, 0, 0, true, 2);
-				score -= 40;
+
 				if (score < 0)
 					score = 0;
 			}
@@ -487,7 +487,6 @@ update_status ModulePlayer2::Update()
 				App->particles->AddParticle(App->particles->double_shot, position.x + 15, position.y, COLLIDER_PLAYER_SHOT, 2, -3, 0, 0, true, 1);
 				App->particles->AddParticle(App->particles->double_shot, position.x, position.y, COLLIDER_PLAYER_SHOT, 2, -5, 0, 0, true, 1);
 
-				score -= 40;
 				if (score < 0)
 					score = 0;
 			}
@@ -499,7 +498,6 @@ update_status ModulePlayer2::Update()
 				App->particles->AddParticle(App->particles->triple_shot, position.x + 15, position.y, COLLIDER_PLAYER_SHOT, 2, -3, 0, 0, true, 2);
 				App->particles->AddParticle(App->particles->triple_shot, position.x + 10, position.y, COLLIDER_PLAYER_SHOT, 2, -6, 0, 0, true, 2);
 
-				score -= 40;
 				if (score < 0)
 					score = 0;
 			}
@@ -511,7 +509,6 @@ update_status ModulePlayer2::Update()
 				App->particles->AddParticle(App->particles->quad_shot, position.x + 15, position.y, COLLIDER_PLAYER_SHOT, 2, -3, 0, 0, true, 3);
 				App->particles->AddParticle(App->particles->quad_shot, position.x - 5, position.y, COLLIDER_PLAYER_SHOT, 2, -5, 0, 0, true, 3);
 
-				score -= 40;
 				if (score < 0)
 					score = 0;
 			}
@@ -528,7 +525,7 @@ update_status ModulePlayer2::Update()
 				App->particles->AddParticle(App->particles->quad_shot_left1, position.x, position.y, COLLIDER_PLAYER_SHOT, 2, -3, 0, 0, true, 3, false, -3);
 				App->particles->AddParticle(App->particles->quad_shot_left2, position.x, position.y + 20, COLLIDER_PLAYER_SHOT, 2, -5, 0, 0, true, 3, false, -3);
 				App->particles->AddParticle(App->particles->quad_shot_left2, position.x, position.y + 50, COLLIDER_PLAYER_SHOT, 2, -8, 0, 0, true, 3, false, -3);
-				score -= 40;
+
 				if (score < 0)
 					score = 0;
 			}
@@ -540,7 +537,7 @@ update_status ModulePlayer2::Update()
 			{
 				App->particles->AddParticle(App->particles->laser, position.x + 30, position.y, COLLIDER_PLAYER_SHOT, 2, 0, 0, 0, false, 1);
 				App->particles->AddParticle(App->particles->laser, position.x + 30, position.y + 48, COLLIDER_PLAYER_SHOT, 2, 0, 0, 0, true, 1, false);
-				score -= 40;
+
 				if (score < 0)
 					score = 0;
 			}
@@ -551,7 +548,7 @@ update_status ModulePlayer2::Update()
 				App->particles->AddParticle(App->particles->laser, position.x + 30, position.y + 48 * 2, COLLIDER_PLAYER_SHOT, 2, 0, 0, 0, true, 1, false);
 				App->particles->AddParticle(App->particles->laser, position.x + 30, position.y + 48 * 3, COLLIDER_PLAYER_SHOT, 2, 0, 0, 0, true, 1, false);
 				App->particles->AddParticle(App->particles->laser, position.x + 30, position.y + 48 * 4, COLLIDER_PLAYER_SHOT, 2, 0, 0, 0, true, 1, false);
-				score -= 40;
+
 				if (score < 0)
 					score = 0;
 			}
@@ -573,7 +570,7 @@ update_status ModulePlayer2::Update()
 				App->particles->AddParticle(App->particles->laser2, position.x, position.y + 48 * 4, COLLIDER_PLAYER_SHOT, 2, 0, 0, 0, true, 1, false, 12);
 				App->particles->AddParticle(App->particles->laser2, position.x, position.y + 48 * 4, COLLIDER_PLAYER_SHOT, 2, 0, 0, 0, true, 1, false, 45);
 
-				score -= 40;
+
 				if (score < 0)
 					score = 0;
 			}
@@ -698,7 +695,7 @@ update_status ModulePlayer2::Update()
 				App->particles->AddParticle(App->particles->final_laser, position.x, position.y + 48 * 3, COLLIDER_PLAYER_SHOT, 2, 0, 0, 0, true, 4, false, 5);
 				App->particles->AddParticle(App->particles->final_laser, position.x, position.y + 48 * 4, COLLIDER_PLAYER_SHOT, 2, 0, 0, 0, true, 4, false, 5);
 				App->particles->AddParticle(App->particles->final_laser, position.x, position.y + 48 * 5, COLLIDER_PLAYER_SHOT, 2, 0, 0, 0, true, 4, false, 5);
-				score -= 40;
+
 				if (score < 0)
 					score = 0;
 			}
