@@ -52,7 +52,6 @@ update_status ModuleWelcomeScreen::Update()
 
 	if (setdown)
 	{
-		App->WelcomeScreen->setdown = true;
 		App->enemies->Disable();
 		App->powerups->Disable();
 		App->collision->Disable();
@@ -72,7 +71,6 @@ update_status ModuleWelcomeScreen::Update()
 		App->player2->powerup_level = 0;
 		App->player2->missile_powerup_level = 0;
 		App->player2->red = true;
-		setdown = false;
 		App->player->score = 0;
 		App->player2->score = 0;
 		App->map_1->setup = true;
@@ -80,7 +78,8 @@ update_status ModuleWelcomeScreen::Update()
 		App->map_1->road1 = false;
 		App->map_1->roadmoved = false;	
 		App->collision->Erase_Non_Player_Colliders();
-		App->map_1->checkpoint = 0;
+		App->map_1->checkpoint = 0;	
+		setdown = false;
 	}
 	if (App->input->keyboard[SDL_SCANCODE_1])
 	{

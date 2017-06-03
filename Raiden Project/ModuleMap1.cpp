@@ -560,7 +560,13 @@ update_status ModuleMap1::Update()
 		reset_collision = false;
 		initial_dead_time_got = false;
 	}
-	if (won)
+	//Reset to StageCleared
+	if (won && !initial_time_win_got)
+	{
+		initial_time_win = SDL_GetTicks();
+		initial_time_win_got = true;
+	}
+	if (SDL_GetTicks() - initial_time_win > 5000 && won)
 	{
 		App->player->Disable();
 		App->player2->Disable();
@@ -569,7 +575,6 @@ update_status ModuleMap1::Update()
 		App->genemies->EraseGroundEnemies();
 		App->powerups->ErasePowerUps();
 		App->particles->EraseParticles();
-
 		App->gexplosion->EraseParticles();
 		App->shadows->EraseShadows();
 		App->collision->Erase_Non_Player_Colliders();
@@ -601,6 +606,7 @@ update_status ModuleMap1::Update()
 			App->player2->hiscore = App->player2->score;
 		}
 		App->player2->allowhiscore = true;
+		App->WelcomeScreen->setdown = true;
 	}
 
 

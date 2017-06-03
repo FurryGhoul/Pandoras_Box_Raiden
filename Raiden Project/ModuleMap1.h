@@ -40,6 +40,8 @@ public:
 	bool reset_collision = false;
 	int initial_dead_time = 0;
 	bool initial_dead_time_got = false;
+	int initial_time_win = 0;
+	bool initial_time_win_got = false;
 	
 
 };

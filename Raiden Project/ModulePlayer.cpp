@@ -903,7 +903,6 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		if (lives == 0)
 		{ 
 		App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
-
 		}
 		else
 		{	
