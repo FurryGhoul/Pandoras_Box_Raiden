@@ -450,9 +450,10 @@ update_status ModulePlayer2::Update()
 
 	if ((App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && !App->input->gpad2) || (App->input->gamepad2[2] == KEY_STATE::KEY_DOWN && App->input->gpad2))
 	{
-		Mix_PlayChannel(-1, App->audio_2->fx_shoot, 0);
+		
 		if (red == true)
 		{
+			Mix_PlayChannel(-1, App->audio_2->fx_shoot, 0);
 			if (powerup_level <= 0)
 			{
 				App->particles->AddParticle(App->particles->double_shot, position.x + 25, position.y, COLLIDER_PLAYER_SHOT, 2, 0, 0, 0, false, 1);
@@ -542,6 +543,7 @@ update_status ModulePlayer2::Update()
 		}
 		if (red == false)
 		{
+			Mix_PlayChannel(-1, App->audio_2->fx_blue_shoot, 0);
 			if (powerup_level <= 1)
 			{
 				App->particles->AddParticle(App->particles->laser, position.x + 30, position.y, COLLIDER_PLAYER_SHOT, 2, 0, 0, 0, false, 1);

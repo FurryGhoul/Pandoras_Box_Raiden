@@ -32,14 +32,14 @@ bool ModuleAudio2::Init()
 	}
 
 	fx_shoot = Mix_LoadWAV("Assets/Sound effects/red_shot1.wav");
-
+	fx_blue_shoot = Mix_LoadWAV("Assets/Sound effects/blue_shot.wav");
 	fx_light_explosion = Mix_LoadWAV("Assets/Sound effects/Light explosion.wav");
 	fx_heavy_explosion = Mix_LoadWAV("Assets/Sound effects/Heavy air explosion.wav");
 	fx_light_ground_explosion = Mix_LoadWAV("Assets/Sound effects/Light ground explosion.wav");
 	fx_heavy_ground_explosion = Mix_LoadWAV("Assets/Sound effects/Heavy ground explosion.wav");
 	fx_bomb_explosion = Mix_LoadWAV("Assets/Sound effects/Bomb's explosion.wav");
 	fx_bomb_drop = Mix_LoadWAV("Assets/Sound effects/Bomb drop.wav");
-	//fx_medal = Mix_LoadWAV("Assets/Sound effects/Bomb drop.wav"); still no medal sound
+	fx_medal = Mix_LoadWAV("Assets/Sound effects/Medal.wav");
 	return true;
 }
 update_status ModuleAudio2::Update()

@@ -13,6 +13,7 @@
 #include "ModulePlayer.h"
 #include "ModulePlayer2.h"
 #include "ModuleMap1.h"
+#include "ModuleAudio_2.h"
 
 #define SPAWN_MARGIN 50
 #define MAX_POWERUP_LVL 8
@@ -194,6 +195,7 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 				if (powerups[i]->medal == true) //Collider Medal
 				{
 					App->player->score += 100;
+					Mix_PlayChannel(-1, App->audio_2->fx_medal, 0);
 				}
 
 				if (powerups[i]->missilep == true) //Collider Missile
