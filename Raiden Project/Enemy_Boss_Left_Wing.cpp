@@ -81,4 +81,15 @@ void Enemy_Boss_Left_Wing::MoveShoot()
 		animation = &shooting;
 		time = SDL_GetTicks();
 	}
+
+	if (ishit && modifier == 0)
+	{
+		modifier = 301;
+		hittime = SDL_GetTicks();
+	}
+	if (ishit && SDL_GetTicks() - hittime >= 100)
+	{
+		modifier = 0;
+		ishit = false;
+	}
 }

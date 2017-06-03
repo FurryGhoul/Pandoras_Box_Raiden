@@ -269,44 +269,46 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				enemies[i]->ishit = true;
 				enemies[i]->ishit2 = true;
 			}
-			if (enemies[i]->mediumshooter)
+			else if (enemies[i]->mediumshooter)
 			{
 				enemies[i]->ishit = true;
 			}
-			if (enemies[i]->ship)
+			else if (enemies[i]->ship)
 			{
 				enemies[i]->ishit = true;
 			}
-			if (enemies[i]->shiptank)
+			else if (enemies[i]->shiptank)
 			{
 				enemies[i]->ishit = true;
 			}
-			if (enemies[i]->tank)
-			{
- 				enemies[i]->ishit = true;
-				enemies[i]->ishit2 = true;
-			}
-			if (enemies[i]->greytank)
+			else if (enemies[i]->tank)
 			{
 				enemies[i]->ishit = true;
 				enemies[i]->ishit2 = true;
 			}
-			if (enemies[i]->megatank)
+			else if (enemies[i]->greytank)
 			{
 				enemies[i]->ishit = true;
 				enemies[i]->ishit2 = true;
 			}
-			if (enemies[i]->longmegatank)
+			else if (enemies[i]->megatank)
+			{
+				enemies[i]->ishit = true;
+				enemies[i]->ishit2 = true;
+			}
+			else if (enemies[i]->longmegatank)
 			{
 				enemies[i]->ishit = true;
 				enemies[i]->ishit2 = true;
 				enemies[i]->ishit3 = true;
 				enemies[i]->ishit4 = true;
 			}
-			if (enemies[i]->mine)
+			else if (enemies[i]->mine)
 			{
 				enemies[i]->ishit = true;
 			}
+			else if (enemies[i]->bossmain || enemies[i]->bossleftwing || enemies[i]->bossrightwing || enemies[i]->bosscannon)
+				enemies[i]->ishit = true;
 			
 
 			if (enemies[i]->hp < 0)

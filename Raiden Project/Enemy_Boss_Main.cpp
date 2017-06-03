@@ -447,4 +447,29 @@ void Enemy_Boss_Main::MoveShoot()
 			shootingwaves = 0;
 		}
 	}
+
+	if (ishit && modifier != 301)
+	{
+		modifier = 301;
+		hittime = SDL_GetTicks();
+	}
+	if (ishit && SDL_GetTicks() - hittime >= 100)
+	{
+		modifier = 0;
+		ishit = false;
+	}
+
+	if (orange && modifier != 534 && SDL_GetTicks() - orangetime >= 200)
+	{
+		modifier = 534;
+		orangetime = SDL_GetTicks();
+	}
+	if (orange && SDL_GetTicks() - orangetime >= 200)
+	{
+		modifier = 0;
+		orangetime = SDL_GetTicks();
+	}
+
+	if (hp <= 125)
+		orange = true;
 }

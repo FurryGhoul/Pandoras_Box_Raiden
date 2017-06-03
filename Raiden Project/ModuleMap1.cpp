@@ -119,13 +119,14 @@ update_status ModuleMap1::Update()
 		App->player2->godmode = false;
 
 		setup = false;
-		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN, 850, -200);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::LONG_MEGATANK, 500, -300);
+		//App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN, 850, -200);
+		//App->genemies->AddGroundEnemy(0, GENEMY_TYPES::LONG_MEGATANK, 500, -300);
 
 		if (checkpoint <= 0) //CHECKPOINT 0	
 		{
 			// First street
-			//Horizontal tanks
+			App->enemies->AddEnemy(0, ENEMY_TYPES::BOSS_MAIN, 230, -300); }
+			/*//Horizontal tanks
 			App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TANK, 0, -900);
 			//Vertical tanks
 			App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -1200);
@@ -481,7 +482,7 @@ update_status ModuleMap1::Update()
 		App->genemies->AddGroundEnemy(37, GENEMY_TYPES::GREY_TANK, 357 * 3, -11200);
 		App->genemies->AddGroundEnemy(38, GENEMY_TYPES::GREY_TANK, 357 * 3, -11350);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOSS_MAIN, 230, -12600);
-		}
+		}*/
 	}	
 	//Checkpoint storage
 	if (App->render->camera.y > -2268)
