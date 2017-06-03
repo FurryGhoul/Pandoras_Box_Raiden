@@ -488,10 +488,12 @@ update_status ModuleParticles::Update()
 			else if (p->bullettype == 37)
 			{
 				AddParticle(bombexplosion2, p->position.x, p->position.y, COLLIDER_BOMB, 27, 0, 0, false, false, 3);
+				Mix_PlayChannel(-1, App->audio_2->fx_bomb_explosion, 0);
 			}
 			else if (p->bullettype == 38)
 			{
 				AddParticle(bombexplosion2, p->position.x, p->position.y, COLLIDER_BOMB, 28, 0, 0, false, false, 3);
+				Mix_PlayChannel(-1, App->audio_2->fx_bomb_explosion, 0);
 			}
 
 			delete p;
