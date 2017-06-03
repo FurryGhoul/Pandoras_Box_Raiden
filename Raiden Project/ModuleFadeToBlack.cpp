@@ -205,3 +205,7 @@ bool ModuleFadeToBlack::FadeToBlack(Module* module_off, Module* module_on)
 
 	return ret;
 }
+bool ModuleFadeToBlack::IsFading()
+{
+	return current_step != fade_step::none;
+}

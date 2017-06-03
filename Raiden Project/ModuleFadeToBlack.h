@@ -15,15 +15,18 @@ public:
 	bool Init();
 	update_status Update();
 	bool FadeToBlack(Module* module_off, Module* module_on);
+	bool IsFading();
+	
 
 private:
 
-	enum fade_step
+enum fade_step
 	{
 		none,
 		fade_to_black,
 		fade_from_black
-	} current_step = fade_step::none;
+	} 
+	current_step = fade_step::none;
 
 	SDL_Texture* graphics = nullptr;
 	Animation plates;

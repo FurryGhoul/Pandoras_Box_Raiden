@@ -856,7 +856,7 @@ void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 		allowhiscore = true;
      	}
 
-	if (Player != nullptr && Player == c1 && App->player->deadplayer && deadplayer && c2->type != COLLIDER_POWER_UP)
+	if (Player != nullptr && Player == c1 && App->player->deadplayer && deadplayer && c2->type != COLLIDER_POWER_UP && !App->fade->IsFading())
 	{
 		App->WelcomeScreen->setdown = true;
 		App->fade->FadeToBlack((Module*)App->map_1, (Module*)App->WelcomeScreen);
