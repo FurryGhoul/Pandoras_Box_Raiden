@@ -850,7 +850,7 @@ if (SDL_GetTicks() - missiles_initial_time > 500 && can_shoot == false)
 void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 {
 
-	if (Player != nullptr && Player == c1 && deadplayer == false && c2->type != COLLIDER_POWER_UP && IsEnabled())
+	if (Player != nullptr && Player == c1 && deadplayer == false && c2->type != COLLIDER_POWER_UP && !App->fade->IsFading())
 	{
 		if (c2->bullettype == 5)
 			score += 480;
@@ -862,7 +862,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			hiscore = score;
 		}
 		App->particles->AddParticle(App->particles->player_explosion, position.x, position.y, COLLIDER_NONE);
-   		Disable();
+		Disable();
 		position.x = 10000000;
 		position.y = 10000000;
 		Player->SetPos(10000000, 10000000);
