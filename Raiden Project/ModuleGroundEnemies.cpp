@@ -27,6 +27,7 @@
 #include "Enemy_Boss_Right_Wing.h"
 #include "Enemy_Boss_Cannon.h"
 #include "Enemy_Train_Locomotive.h"
+#include "Enemy_Train_Coach.h"
 #define SPAWN_MARGIN 100
 
 ModuleGroundEnemies::ModuleGroundEnemies()
@@ -195,8 +196,11 @@ void ModuleGroundEnemies::SpawnGroundEnemy(const GroundEnemyInfo& info)
 		case GENEMY_TYPES::BOX_POWERUP:
 			enemies[i] = new Box_PowerUp(App->map_1->xmap + info.x, info.y, info._path);
 			break;
-		case GENEMY_TYPES::TRAIN:
+		case GENEMY_TYPES::TRAIN_LOCOMOTIVE:
 			enemies[i] = new Enemy_Train_Locomotive(App->map_1->xmap + info.x, info.y, info._path);
+			break;
+		case GENEMY_TYPES::TRAIN_COACH:
+			enemies[i] = new Enemy_Train_Coach(App->map_1->xmap + info.x, info.y, info._path);
 			break;
 		}
 	}
@@ -237,7 +241,11 @@ void ModuleGroundEnemies::OnCollision(Collider* c1, Collider* c2)
 				enemies[i]->hp -= c2->damage;
 			}
 
-			if (enemies[i]->train)
+			if (enemies[i]->trainlocomotive)
+			{
+				enemies[i]->ishit = true;
+			}
+			if (enemies[i]->traincoach)
 			{
 				enemies[i]->ishit = true;
 			}
@@ -347,9 +355,13 @@ void ModuleGroundEnemies::OnCollision(Collider* c1, Collider* c2)
 					App->gexplosion->AddGroundExplosion(App->gexplosion->ship_explosion, enemies[i]->position.x - 70, enemies[i]->position.y, COLLIDER_NONE);
 					App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, enemies[i]->position.x - 70, enemies[i]->position.y);
 				}
-				else if (enemies[i]->train)
+				else if (enemies[i]->trainlocomotive)
 				{
 					App->gexplosion->AddGroundExplosion(App->gexplosion->ship_explosion, enemies[i]->position.x - 70, enemies[i]->position.y -70, COLLIDER_NONE);
+				}
+				else if (enemies[i]->traincoach)
+				{
+					App->gexplosion->AddGroundExplosion(App->gexplosion->ship_explosion, enemies[i]->position.x - 70, enemies[i]->position.y - 70, COLLIDER_NONE);
 				}
 				
 				else if (enemies[i]->medalbox)

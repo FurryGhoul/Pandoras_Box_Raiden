@@ -69,7 +69,8 @@ public:
 	bool turretexploded = false; // Bool to know if a tank's turret has already exploded or not
 	bool greytank = false;
 	bool mine = false;
-	bool train = false;
+	bool trainlocomotive = false;
+	bool traincoach = false;
 
 public:
 	Enemy(int x, int y);

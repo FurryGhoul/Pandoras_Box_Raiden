@@ -40,9 +40,14 @@ Enemy_Train_Locomotive::Enemy_Train_Locomotive(int x, int y, int path) : Enemy(x
 		collider = App->collision->AddCollider({ 0, 0, 38 * 3, 37 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->genemies);
 		original_pos.y =  820;
 	}
-		
 
-	train = true;
+	//Parts info
+	/*firstcoach.type = GENEMY_TYPES::TRAIN_COACH;
+	firstcoach._path = 0;
+	firstcoach.x = position.x + 48;
+	firstcoach.y = position.y;*/
+
+	trainlocomotive = true;
 	
 	spritesheet = 8;
 	animations = 1;
@@ -54,8 +59,7 @@ void Enemy_Train_Locomotive::MoveShoot()
 {
 	position = original_pos + movement.GetCurrentPosition();
 	position.x += left_right_mod;
-
-	++shoot_time;
+		
 
 	if (sqrtf((distance.y = App->player->position.y - position.y)*(distance.y = App->player->position.y - position.y) + (distance.x = App->player->position.x - position.x)* (distance.x = App->player->position.x - position.x))
 		< sqrtf((distance.y = App->player2->position.y - position.y)*(distance.y = App->player2->position.y - position.y) + (distance.x = App->player2->position.x - position.x)* (distance.x = App->player2->position.x - position.x)))
@@ -73,8 +77,16 @@ void Enemy_Train_Locomotive::MoveShoot()
 		distance1.x = App->player2->position.x - position.x + 100;
 	}
 
-	// Animation
+	//App->enemies->SetPos();
 
+	//Train parts
+	/*if (!parts)
+	{
+		App->genemies->SpawnGroundEnemy(firstcoach);
+		parts = true;
+	}*/
+
+	// Animation
 	animation = &horizontal;
 	w = 48 * 3;
 	h = 24 * 3;

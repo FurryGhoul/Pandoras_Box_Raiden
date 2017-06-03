@@ -119,7 +119,9 @@ update_status ModuleMap1::Update()
 		App->player2->godmode = false;
 
 		setup = false;
-		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN, 850, -200);
+		//App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TRAIN_LOCOMOTIVE, 850, -200);
+		//App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN_COACH, 850, -200);
+		//App->enemies->AddEnemy(0, ENEMY_TYPES::BOSS_MAIN, 330, -300);
 		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::LONG_MEGATANK, 500, -300);
 
 		if (checkpoint <= 0) //CHECKPOINT 0	

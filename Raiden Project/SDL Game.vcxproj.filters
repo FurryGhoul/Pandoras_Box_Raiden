@@ -148,6 +148,7 @@
     <ClCompile Include="Enemy_Train_Locomotive.cpp">
       <Filter>Enemies</Filter>
     </ClCompile>
+    <ClCompile Include="Enemy_Train_Coach.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h">
@@ -312,6 +313,7 @@
     <ClInclude Include="Enemy_Train_Locomotive.h">
       <Filter>Enemies</Filter>
     </ClInclude>
+    <ClInclude Include="Enemy_Train_Coach.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Enemies">
