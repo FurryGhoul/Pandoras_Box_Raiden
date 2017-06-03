@@ -27,6 +27,7 @@
 #include "Enemy_Boss_Right_Wing.h"
 #include "Enemy_Boss_Cannon.h"
 #include "Enemy_Train_Locomotive.h"
+#include "ModuleAudio_2.h"
 #define SPAWN_MARGIN 100
 
 ModuleGroundEnemies::ModuleGroundEnemies()
@@ -325,27 +326,33 @@ void ModuleGroundEnemies::OnCollision(Collider* c1, Collider* c2)
 				if (enemies[i]->tank)
 				{
 					App->gexplosion->AddGroundExplosion(App->gexplosion->tank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+					Mix_PlayChannel(-1, App->audio_2->fx_light_ground_explosion, 0);
 				}
 				else if (enemies[i]->greytank)
 				{
 					App->gexplosion->AddGroundExplosion(App->gexplosion->tank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE, -1, 0, 1.5);
+					Mix_PlayChannel(-1, App->audio_2->fx_light_ground_explosion, 0);
 				}
 				else if (enemies[i]->megatank)
 				{
 					App->gexplosion->AddGroundExplosion(App->gexplosion->ship_explosion, enemies[i]->position.x - 30, enemies[i]->position.y - 20, COLLIDER_NONE);
+					Mix_PlayChannel(-1, App->audio_2->fx_heavy_ground_explosion, 0);
 				}
 				else if (enemies[i]->longmegatank)
 				{
 					App->gexplosion->AddGroundExplosion(App->gexplosion->ship_explosion, enemies[i]->position.x - 50, enemies[i]->position.y - 20, COLLIDER_NONE);
+					Mix_PlayChannel(-1, App->audio_2->fx_heavy_ground_explosion, 0);
 				}
 				else if (enemies[i]->shiptank)
 				{
 					App->gexplosion->AddGroundExplosion(App->gexplosion->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+					Mix_PlayChannel(-1, App->audio_2->fx_light_ground_explosion, 0);
 				}
 				else if (enemies[i]->ship)
 				{
 					App->gexplosion->AddGroundExplosion(App->gexplosion->ship_explosion, enemies[i]->position.x - 70, enemies[i]->position.y, COLLIDER_NONE);
 					App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, enemies[i]->position.x - 70, enemies[i]->position.y);
+					Mix_PlayChannel(-1, App->audio_2->fx_heavy_ground_explosion, 0);
 				}
 				else if (enemies[i]->train)
 				{
@@ -356,12 +363,14 @@ void ModuleGroundEnemies::OnCollision(Collider* c1, Collider* c2)
 				{
 					App->powerups->AddPowerUp(POWERUP_TYPES::MEDAL, enemies[i]->position.x + 25, enemies[i]->position.y + 5);
 					App->gexplosion->AddGroundExplosion(App->gexplosion->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+					Mix_PlayChannel(-1, App->audio_2->fx_light_ground_explosion, 0);
 				}
 
 				else if (enemies[i]->powerupbox)
 				{
 					App->powerups->AddPowerUp(POWERUP_TYPES::MISSILEUP, enemies[i]->position.x - 120, enemies[i]->position.y - 110);
 					App->gexplosion->AddGroundExplosion(App->gexplosion->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+					Mix_PlayChannel(-1, App->audio_2->fx_light_ground_explosion, 0);
 				}
 
 				delete enemies[i];

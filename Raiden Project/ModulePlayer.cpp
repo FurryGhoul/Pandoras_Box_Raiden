@@ -16,7 +16,7 @@
 #include "ModuleFonts.h"
 #include "ModuleShadows.h"
 #include "ModulePowerUps.h"
-
+#include "ModuleAudio_2.h"
 #include <stdio.h>
 
 ModulePlayer::ModulePlayer()
@@ -444,19 +444,23 @@ update_status ModulePlayer::Update()
 		App->particles->AddParticle(App->particles->bomb, position.x + speed + 20, position.y, COLLIDER_NONE, 47);
 		bombs--;
 		bombtime = SDL_GetTicks();
+		Mix_PlayChannel(-1, App->audio_2->fx_bomb_drop, 0);
 	}
 	else if ((App->input->gamepad[0] == KEY_STATE::KEY_DOWN && bombs >= 1 && SDL_GetTicks() - bombtime >= 2100) && App->input->gpad)
 	{
 		App->particles->AddParticle(App->particles->bomb, position.x + speed + 20, position.y, COLLIDER_NONE, 47);
 		bombs--;
 		bombtime = SDL_GetTicks();
+		Mix_PlayChannel(-1, App->audio_2->fx_bomb_drop, 0);
 	}
 
 	if ((App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN && !App->input->gpad) || (App->input->gamepad[2] == KEY_STATE::KEY_DOWN && App->input->gpad))
 	{
+		
 		//Red powerup
 		if (red == true)
 		{
+			Mix_PlayChannel(-1, App->audio_2->fx_shoot, 0);
 			if (powerup_level <= 0)
 			{
 				App->particles->AddParticle(App->particles->double_shot, position.x+ 25, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1);
@@ -547,6 +551,7 @@ update_status ModulePlayer::Update()
 		//Blue powerup
 		if (red == false)
 		{
+			Mix_PlayChannel(-1, App->audio_2->fx_blue_shoot, 0);
 			if (powerup_level <= 1)
 			{
 				App->particles->AddParticle(App->particles->laser, position.x + 30, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1);

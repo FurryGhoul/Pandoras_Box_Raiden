@@ -22,7 +22,7 @@ public:
 	update_status PreUpdate();
 	bool CleanUp();
 
-	bool Blit(SDL_Texture* texture, float x, float y, SDL_Rect* section = nullptr, int w = 0, int h = 0);
+	bool Blit(SDL_Texture* texture, float x, float y, SDL_Rect* section = nullptr, int w = 0, int h = 0, int modifier = 0);
 	bool DrawQuad(const SDL_Rect& rect, Uint8 r, Uint8 g, Uint8 b, Uint8 a, bool use_camera = true);
 
 public:

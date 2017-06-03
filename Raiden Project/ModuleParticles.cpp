@@ -480,10 +480,12 @@ update_status ModuleParticles::Update()
 			if (p->bullettype == 47)
 			{
 				AddParticle(bombexplosion, p->position.x - ((168 * 3) / 2), p->position.y - ((154 * 3) / 2), COLLIDER_NONE, 37);
+				Mix_PlayChannel(-1, App->audio_2->fx_bomb_explosion, 0);
 			}
 			else if (p->bullettype == 48)
 			{
 				AddParticle(bombexplosion, p->position.x - ((168 * 3) / 2), p->position.y - ((154 * 3) / 2), COLLIDER_NONE, 38);
+				Mix_PlayChannel(-1, App->audio_2->fx_bomb_explosion, 0);
 			}
 			else if (p->bullettype == 37)
 			{
@@ -615,11 +617,6 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 				p->speed.y = speed_y;
 			}
 			p->size = particle.size;
-			if (!multipleshot && bullettype != 47 && bullettype != 37 && bullettype != 27 && bullettype != 48 && bullettype != 38 && bullettype != 28)
-			{
-				Mix_PlayChannel(-1, App->audio_2->fx_shoot, 0);
-			}
-
 			if (collider_type != COLLIDER_NONE)
 			{ 
 				p->collider = App->collision->AddCollider({ 10000, 10000, p->size.x, p->size.y}, collider_type, this, bullettype, damage);

@@ -83,4 +83,15 @@ void Enemy_Boss_Cannon::MoveShoot()
 
 	if (bullets < 1 && (SDL_GetTicks() - time1) >= 5000)
 		bullets = 14;
+
+	if (ishit && modifier == 0)
+	{
+		modifier = 301;
+		hittime = SDL_GetTicks();
+	}
+	if (ishit && SDL_GetTicks() - hittime >= 100)
+	{
+		modifier = 0;
+		ishit = false;
+	}
 }
