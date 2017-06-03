@@ -72,7 +72,7 @@ Enemy_Train_Coach::Enemy_Train_Coach(int x, int y, int path) : Enemy(x, y)
 		movement.loop = false;
 
 		collider = App->collision->AddCollider({ 0, 0, 32 * 3, 23 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->genemies);
-		original_pos.y = 200;
+		original_pos.y = 50;
 	}
 	if (path == 1)
 	{
@@ -363,7 +363,27 @@ void Enemy_Train_Coach::MoveShoot()
 		}
 		if (shotphase == 63) //Only in this phase the train shoots
 		{
-			shoot = true;
+			if (sqrtf(distance.x*distance.x + distance.y*distance.y) < 760)
+				shoot = true;
 		}
+	}
+
+	// Shoot
+	// Shooting
+	distance.x *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+	distance.y *= (10 / sqrtf(distance.x*distance.x + distance.y*distance.y));
+	if (shoot == true)
+	{
+		if (App->player->position.y < (position.y))
+		{
+			distance.y *= -1;
+		}
+		if (App->player->position.x < (position.x))
+		{
+			distance.x *= -1;
+		}
+		App->particles->AddParticle(App->particles->enemyshot, position.x + 40, position.y + 20, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y);
+
+		shoot = false;
 	}
 }
