@@ -374,7 +374,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				{
 					App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, enemies[i]->position.x, enemies[i]->position.y);
 					App->particles->AddParticle(App->particles->bonusmedium_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
- 					Mix_PlayChannel(-1, App->audio_2->fx_heavy_explosion, 0);
+  					Mix_PlayChannel(-1, App->audio_2->fx_heavy_explosion, 0);
 				}
 				else if (enemies[i]->bossleftwing || enemies[i]->bossrightwing || enemies[i]->bosscannon)
 				{
