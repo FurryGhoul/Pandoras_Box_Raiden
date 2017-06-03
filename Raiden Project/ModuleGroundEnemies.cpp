@@ -321,6 +321,14 @@ void ModuleGroundEnemies::OnCollision(Collider* c1, Collider* c2)
 				{
 					App->gexplosion->AddGroundExplosion(App->gexplosion->tank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE, -1, 0, 1.5);
 				}
+				else if (enemies[i]->megatank)
+				{
+					App->gexplosion->AddGroundExplosion(App->gexplosion->ship_explosion, enemies[i]->position.x - 30, enemies[i]->position.y - 20, COLLIDER_NONE);
+				}
+				else if (enemies[i]->longmegatank)
+				{
+					App->gexplosion->AddGroundExplosion(App->gexplosion->ship_explosion, enemies[i]->position.x - 50, enemies[i]->position.y - 20, COLLIDER_NONE);
+				}
 				else if (enemies[i]->shiptank)
 				{
 					App->gexplosion->AddGroundExplosion(App->gexplosion->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
