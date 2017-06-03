@@ -26,7 +26,7 @@ Enemy_Train_Locomotive::Enemy_Train_Locomotive(int x, int y, int path) : Enemy(x
 	// Paths
 	if (path == 0)
 	{
-		movement.PushBack({ -1.5f, 1.0f }, 1000);
+		movement.PushBack({ -2.3f, 1.5f }, 1000);
 		movement.loop = false;
 
 		collider = App->collision->AddCollider({ 0, 0, 48 * 3, 24 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->genemies);
@@ -34,11 +34,11 @@ Enemy_Train_Locomotive::Enemy_Train_Locomotive(int x, int y, int path) : Enemy(x
 	}
 	if (path == 1)
 	{
-		movement.PushBack({ -1.0f, -1.0f }, 1000);
+		movement.PushBack({ -1.5f, -0.1f }, 1000);
 		movement.loop = false;
 
 		collider = App->collision->AddCollider({ 0, 0, 38 * 3, 37 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->genemies);
-		original_pos.y =  820;
+		original_pos.y =  320;
 	}
 
 	//Parts info
@@ -94,7 +94,7 @@ void Enemy_Train_Locomotive::MoveShoot()
 	distance.x = fabs(distance.x);
 	distance.y = fabs(distance.y);
 	
-	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.5f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f)
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -2.3f && movement.steps[movement.GetCurrentStep()].speed.y == 1.5f)
 	{
 		animation = &horizontal;
 
@@ -107,7 +107,7 @@ void Enemy_Train_Locomotive::MoveShoot()
 		w = 48 * 3;
 		h = 24 * 3;
 	}
-	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.0f && movement.steps[movement.GetCurrentStep()].speed.y == -1.0f)
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.5f && movement.steps[movement.GetCurrentStep()].speed.y == -0.1f)
 	{
 		animation = &diagonal;
 

@@ -117,10 +117,15 @@ update_status ModuleMap1::Update()
 
 		setup = false;
 
-		//App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN_LOCOMOTIVE, 850, -200);
-		//App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TRAIN_COACH, 990, -200);
-		//App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN_COACH, 937, -200);
-		//App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN_COACH, 937, -263);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TRAIN_LOCOMOTIVE, 1050, -5844);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TRAIN_COACH, 1190, -5844);
+
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TRAIN_LOCOMOTIVE, 1050, -6012);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TRAIN_COACH, 1190, -6012);
+
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN_LOCOMOTIVE, 1050, -11100);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN_COACH, 1137, -11100);
+		App->genemies->AddGroundEnemy(2, GENEMY_TYPES::TRAIN_COACH, 1201, -11100);
 
 		//App->genemies->AddGroundEnemy(0, GENEMY_TYPES::LONG_MEGATANK, 500, -300);
 
