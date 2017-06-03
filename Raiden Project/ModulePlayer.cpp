@@ -288,7 +288,7 @@ update_status ModulePlayer::Update()
 			player_h = 28 * 3;
 		}
 		// Draw UI (score) --------------------------------------
-		sprintf_s(score_text, 20, "SCORE", score);
+		sprintf_s(score_text, 20, "1UP", score);
 		sprintf_s(scoret, 20, "%7d", score);
 	}
 
@@ -425,7 +425,7 @@ update_status ModulePlayer::Update()
 			player_h = 29 * 3;
 		}
 		// Draw UI (score) --------------------------------------
-		sprintf_s(score_text, 20, "SCORE", score);
+		sprintf_s(score_text, 20, "1UP", score);
 		sprintf_s(scoret, 20, "%7d", score);
 	}
 
@@ -865,6 +865,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		lastscore = score;
 		if (score >= hiscore)
 		{
+			lasthiscore = hiscore;
 			hiscore = score;
 		}
         App->particles->AddParticle(App->particles->player_explosion, position.x, position.y, COLLIDER_NONE);

@@ -594,7 +594,7 @@ update_status ModuleMap1::Update()
 		App->player->lastscore = App->player->score;
 		if (App->player->score >= App->player->hiscore)
 		{
-			App->player->hiscore = App->player->score;
+			App->player->hiscore = App->player->score + App->player2->score;
 		}
 		App->player->allowhiscore = true;
 
@@ -620,7 +620,7 @@ update_status ModuleMap1::Update()
 	{
 		sprintf_s(App->player->highscore_text, 20, "HI-SCORE");
 		sprintf_s(App->player->highscoret, 20, "%7d", App->player->hiscore);
-		sprintf_s(App->player->lastscore_text, 20, "1UP");
+		sprintf_s(App->player->lastscore_text, 20, "GODMODE");
 		sprintf_s(App->player->lastscoret, 20, "%7d", App->player->lastscore);
 		App->player->allowhiscore = false;
 	}

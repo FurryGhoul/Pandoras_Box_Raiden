@@ -75,6 +75,7 @@ public:
 	char highscoret[20];
 	uint hiscore = 0;
 	uint lastscore = 0;
+	uint lasthiscore = 0;
 	int shadowregulator = 0;
 	int score = 0;
 	// Animation

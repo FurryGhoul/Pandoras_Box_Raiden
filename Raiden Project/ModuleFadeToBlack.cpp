@@ -50,6 +50,7 @@ bool ModuleFadeToBlack::Init()
 	plates.PushBack({ 1, 1, 224, 256 });
 	plates.speed = 0.2f;
 	plates.loop = false;
+	sprintf_s(App->player->lastscore_text, 20, "GODMODE");
 
 	graphics = App->textures->Load("assets/FadingAnimation.png");
 	return true;
@@ -62,18 +63,28 @@ update_status ModuleFadeToBlack::Update()
 	{
 		if (App->player->UI)
 		{
-			App->fonts->BlitText(20, 160, 0, App->player->score_text);
-			App->fonts->BlitText(20, 195, 0, App->player->scoret);
-			App->fonts->BlitText(243, 0, 0, App->player->highscore_text);
-			App->fonts->BlitText(20, 55, 0, App->player->highscoret);
-			App->fonts->BlitText(102, 0, 0, App->player->lastscore_text);
-			App->fonts->BlitText(20, 125, 0, App->player->lastscoret);
-			App->fonts->BlitText(420, 160, 1, App->player2->score_text);
-			App->fonts->BlitText(420, 195, 1, App->player2->scoret);
-			App->fonts->BlitText(420, 20, 1, App->player2->highscore_text);
-			App->fonts->BlitText(420, 55, 1, App->player2->highscoret);
-			App->fonts->BlitText(315, 90, 1, App->player2->lastscore_text);
-			App->fonts->BlitText(420, 125, 1, App->player2->lastscoret);
+			counter++;
+			//App->fonts->BlitText(20, 160, 0, App->player->score_text);
+			App->fonts->BlitText(24, 24, 1, App->player->scoret); //score p1
+			App->fonts->BlitText(102, 0, 0, App->player->score_text); //1up
+			App->fonts->BlitText(490, 24, 1, App->player2->scoret); //score p2
+			App->fonts->BlitText(560, 0, 0, App->player2->score_text); //2up
+			App->fonts->BlitText(243, 0, 0, App->player->highscore_text); //Hiscore
+			App->fonts->BlitText(266, 24, 1, App->player->highscoret); //Hiscore value
+
+			if (App->player->godmode) //Godmode text
+			{
+				App->fonts->BlitText(249, 48, 1, App->player->lastscore_text);
+
+				if (counter % 1 == 0)
+					App->fonts->BlitText(249, 48, 0, App->player->lastscore_text);
+			}
+			//App->fonts->BlitText(20, 125, 0, App->player->lastscoret);
+			//App->fonts->BlitText(420, 195, 1, App->player2->scoret);
+			//App->fonts->BlitText(420, 20, 1, App->player2->highscore_text);
+			//App->fonts->BlitText(420, 55, 1, App->player2->highscoret);
+			//App->fonts->BlitText(315, 90, 1, App->player2->lastscore_text);
+			//App->fonts->BlitText(420, 125, 1, App->player2->lastscoret);
 			if (App->player->bomb_ammo != nullptr)
 			{
 				App->render->Blit(App->player->graphics2, 5, 782, &(App->player->bomb_ammo->GetCurrentFrame()), App->player->bombammo_w, 14 * 3);

@@ -284,7 +284,7 @@ update_status ModulePlayer2::Update()
 			player_h = 28 * 3;
 		}
 		// Draw UI (score) --------------------------------------
-		sprintf_s(score_text, 20, "SCORE", score);
+		sprintf_s(score_text, 20, "2UP", score);
 		sprintf_s(scoret, 20, "%7d", score);
 	}
 
@@ -421,7 +421,7 @@ update_status ModulePlayer2::Update()
 			player_h = 29 * 3;
 		}
 		// Draw UI (score) --------------------------------------
-		sprintf_s(score_text, 20, "SCORE", score);
+		sprintf_s(score_text, 20, "2UP", score);
 		sprintf_s(scoret, 20, "%7d", score);
 	}
 

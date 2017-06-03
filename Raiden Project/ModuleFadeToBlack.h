@@ -32,6 +32,7 @@ private:
 	Module* module_on1;
 	Module* module_off1;
 	SDL_Rect screen;
+	int counter = 0;
 };
 
 #endif //__MODULEFADETOBLACK_H__
