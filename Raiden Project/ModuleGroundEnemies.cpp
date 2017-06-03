@@ -27,6 +27,7 @@
 #include "Enemy_Boss_Right_Wing.h"
 #include "Enemy_Boss_Cannon.h"
 #include "Enemy_Train_Locomotive.h"
+#include "ModuleAudio_2.h"
 #define SPAWN_MARGIN 100
 
 ModuleGroundEnemies::ModuleGroundEnemies()
@@ -316,14 +317,17 @@ void ModuleGroundEnemies::OnCollision(Collider* c1, Collider* c2)
 				if (enemies[i]->tank)
 				{
 					App->gexplosion->AddGroundExplosion(App->gexplosion->tank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+					Mix_PlayChannel(-1, App->audio_2->fx_light_ground_explosion, 0);
 				}
 				else if (enemies[i]->greytank)
 				{
 					App->gexplosion->AddGroundExplosion(App->gexplosion->tank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE, -1, 0, 1.5);
+					Mix_PlayChannel(-1, App->audio_2->fx_light_ground_explosion, 0);
 				}
 				else if (enemies[i]->shiptank)
 				{
 					App->gexplosion->AddGroundExplosion(App->gexplosion->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+					Mix_PlayChannel(-1, App->audio_2->fx_light_ground_explosion, 0);
 				}
 				else if (enemies[i]->ship)
 				{

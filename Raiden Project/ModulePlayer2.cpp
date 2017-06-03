@@ -15,6 +15,7 @@
 #include "ModuleFonts.h"
 #include "ModulePowerUps.h"
 #include"ModuleWelcomeScreen.h"
+#include "ModuleAudio_2.h"
 
 #include <stdio.h>
 
@@ -449,7 +450,7 @@ update_status ModulePlayer2::Update()
 
 	if ((App->input->keyboard[SDL_SCANCODE_P] == KEY_STATE::KEY_DOWN && !App->input->gpad2) || (App->input->gamepad2[2] == KEY_STATE::KEY_DOWN && App->input->gpad2))
 	{
-
+		Mix_PlayChannel(-1, App->audio_2->fx_shoot, 0);
 		if (red == true)
 		{
 			if (powerup_level <= 0)

@@ -27,6 +27,7 @@
 #include "Enemy_Boss_Right_Wing.h"
 #include "Enemy_Boss_Cannon.h"
 #include "Enemy_Mine.h"
+#include "ModuleAudio_2.h"
 #define SPAWN_MARGIN 100
 
 ModuleEnemies::ModuleEnemies()
@@ -350,6 +351,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				if (enemies[i]->lightshooter || enemies[i]->kamikaze || enemies[i]->light_kamikaze)
 				{ 
 				  App->particles->AddParticle(App->particles->explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+				  Mix_PlayChannel(-1, App->audio_2->fx_light_explosion, 0);
                 }
 				else if (enemies[i]->tank)
 				{
@@ -372,6 +374,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				{
 					App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, enemies[i]->position.x, enemies[i]->position.y);
 					App->particles->AddParticle(App->particles->bonusmedium_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
+ 					Mix_PlayChannel(-1, App->audio_2->fx_heavy_explosion, 0);
 				}
 				else if (enemies[i]->bossleftwing || enemies[i]->bossrightwing || enemies[i]->bosscannon)
 				{

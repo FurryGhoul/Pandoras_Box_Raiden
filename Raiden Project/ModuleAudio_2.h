@@ -24,6 +24,14 @@ public:
 	Mix_Music* music2;
 	bool playing = false;
 	Mix_Chunk* fx_shoot;
+	Mix_Chunk* fx_light_explosion;
+	Mix_Chunk* fx_heavy_explosion;
+	Mix_Chunk* fx_light_ground_explosion;
+	Mix_Chunk* fx_heavy_ground_explosion;
+	Mix_Chunk* fx_bomb_explosion;
+	Mix_Chunk* fx_bomb_drop;
+	Mix_Chunk* fx_medal;
+
 
 };
 

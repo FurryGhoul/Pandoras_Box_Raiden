@@ -16,7 +16,7 @@
 #include "ModuleFonts.h"
 #include "ModuleShadows.h"
 #include "ModulePowerUps.h"
-
+#include "ModuleAudio_2.h"
 #include <stdio.h>
 
 ModulePlayer::ModulePlayer()
@@ -450,6 +450,7 @@ update_status ModulePlayer::Update()
 
 	if ((App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN && !App->input->gpad) || (App->input->gamepad[2] == KEY_STATE::KEY_DOWN && App->input->gpad))
 	{
+		Mix_PlayChannel(-1, App->audio_2->fx_shoot, 0);
 		//Red powerup
 		if (red == true)
 		{
