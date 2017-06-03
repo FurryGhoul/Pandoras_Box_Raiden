@@ -481,10 +481,17 @@ update_status ModuleParticles::Update()
 			{
 				AddParticle(bombexplosion, p->position.x - ((168 * 3) / 2), p->position.y - ((154 * 3) / 2), COLLIDER_NONE, 37);
 			}
-
+			else if (p->bullettype == 48)
+			{
+				AddParticle(bombexplosion, p->position.x - ((168 * 3) / 2), p->position.y - ((154 * 3) / 2), COLLIDER_NONE, 38);
+			}
 			else if (p->bullettype == 37)
 			{
 				AddParticle(bombexplosion2, p->position.x, p->position.y, COLLIDER_BOMB, 27, 0, 0, false, false, 3);
+			}
+			else if (p->bullettype == 38)
+			{
+				AddParticle(bombexplosion2, p->position.x, p->position.y, COLLIDER_BOMB, 28, 0, 0, false, false, 3);
 			}
 
 			delete p;
@@ -608,7 +615,7 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, COLLID
 				p->speed.y = speed_y;
 			}
 			p->size = particle.size;
-			if (!multipleshot && bullettype != 47 && bullettype != 37 && bullettype != 27)
+			if (!multipleshot && bullettype != 47 && bullettype != 37 && bullettype != 27 && bullettype != 48 && bullettype != 38 && bullettype != 28)
 			{
 				Mix_PlayChannel(-1, App->audio_2->fx_shoot, 0);
 			}
@@ -731,7 +738,7 @@ bool Particle::Update()
 	if (collider != nullptr)
 		collider->SetPos(position.x, position.y);
 
-	if (bullettype == 37 || bullettype == 27)
+	if (bullettype == 37 || bullettype == 27 || bullettype == 38 || bullettype == 28)
 		displace();
 	}
 	else
