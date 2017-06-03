@@ -888,7 +888,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			hiscore = score;
 		}
         App->particles->AddParticle(App->particles->player_explosion, position.x, position.y, COLLIDER_NONE);
-  		Disable();
+   		Disable();
 		position.x = 10000000;
 		position.y = 10000000;
 		Player->SetPos(10000000, 10000000);

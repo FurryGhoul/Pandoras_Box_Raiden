@@ -78,7 +78,6 @@ update_status ModuleMap1::Update()
 		{
 			App->player2->deadplayer = true;
 			App->player2->godmode = false;
-			App->player->bombs = 3;
 		}
 		else
 		{
