@@ -7,8 +7,10 @@
 #include "SDL/include/SDL_render.h"
 #include "SDL/include/SDL_timer.h"
 #include "ModulePlayer.h"
+#include "ModulePlayer2.h"
+#include "ModuleFonts.h"
 #include "ModuleWelcomeScreen.h"
-
+#include <stdio.h>
 
 ModuleFadeToBlack::ModuleFadeToBlack()
 {
@@ -48,6 +50,7 @@ bool ModuleFadeToBlack::Init()
 	plates.PushBack({ 1, 1, 224, 256 });
 	plates.speed = 0.2f;
 	plates.loop = false;
+	sprintf_s(App->player->lastscore_text, 20, "GODMODE");
 
 	graphics = App->textures->Load("assets/FadingAnimation.png");
 	return true;
@@ -57,7 +60,49 @@ bool ModuleFadeToBlack::Init()
 update_status ModuleFadeToBlack::Update()
 {
 	if (current_step == fade_step::none)
+	{
+		if (App->player->UI)
+		{
+			counter++;
+			//App->fonts->BlitText(20, 160, 0, App->player->score_text);
+			App->fonts->BlitText(24, 24, 1, App->player->scoret); //score p1
+			App->fonts->BlitText(102, 0, 0, App->player->score_text); //1up
+			App->fonts->BlitText(490, 24, 1, App->player2->scoret); //score p2
+			App->fonts->BlitText(560, 0, 0, App->player2->score_text); //2up
+			App->fonts->BlitText(243, 0, 0, App->player->highscore_text); //Hiscore
+			App->fonts->BlitText(266, 24, 1, App->player->highscoret); //Hiscore value
+
+			if (App->player->godmode) //Godmode text
+			{
+				if (counter % 10 == 0 && font == 1)
+					font = 0;
+				else if (counter % 10 == 0 && font == 0)
+					font = 1;
+			}
+
+			App->fonts->BlitText(249, 48, font, App->player->lastscore_text);
+			//App->fonts->BlitText(20, 125, 0, App->player->lastscoret);
+			//App->fonts->BlitText(420, 195, 1, App->player2->scoret);
+			//App->fonts->BlitText(420, 20, 1, App->player2->highscore_text);
+			//App->fonts->BlitText(420, 55, 1, App->player2->highscoret);
+			//App->fonts->BlitText(315, 90, 1, App->player2->lastscore_text);
+			//App->fonts->BlitText(420, 125, 1, App->player2->lastscoret);
+			if (App->player->bomb_ammo != nullptr)
+			{
+				App->render->Blit(App->player->graphics2, 5, 782, &(App->player->bomb_ammo->GetCurrentFrame()), App->player->bombammo_w, 14 * 3);
+			}
+			if (App->player2->bomb_ammo != nullptr)
+			{
+				App->render->Blit(App->player2->graphics2, 5, 782, &(App->player2->bomb_ammo->GetCurrentFrame()), App->player2->bombammo_w, 14 * 3);
+			}
+			if (App->player->livecounter != nullptr)
+			{
+				App->render->Blit(App->player->graphics2, 5, 48, &(App->player->livecounter->GetCurrentFrame()), App->player->lives_w, 8 * 3);
+			}
+		}
+
 		return UPDATE_CONTINUE;
+	}
 
 	Uint32 now = SDL_GetTicks() - start_time;
 	float normalized = MIN(1.0f, (float)now / (float)total_time);

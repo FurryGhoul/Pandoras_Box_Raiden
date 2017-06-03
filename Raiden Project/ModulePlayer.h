@@ -13,8 +13,6 @@ public:
 	ModulePlayer();
 	~ModulePlayer();
 
-
-	
 	int lives = 3;
 	int missile_powerup_level = 0;
 	int missiles_shot = 0;
@@ -77,6 +75,7 @@ public:
 	char highscoret[20];
 	uint hiscore = 0;
 	uint lastscore = 0;
+	uint lasthiscore = 0;
 	int shadowregulator = 0;
 	int score = 0;
 	// Animation
@@ -85,6 +84,7 @@ public:
 	bool allowtimep = true;
 	bool moving = false;
 	bool propeller = true;
+	bool UI = true;
 	Uint32 time;
 	Uint32 timep; //time for propellers
 
