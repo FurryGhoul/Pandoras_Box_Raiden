@@ -54,7 +54,6 @@ update_status ModuleMap1::Update()
 
 	if (setdown)
 	{
-		App->WelcomeScreen->setdown = true;
 		App->enemies->Disable();
 		App->powerups->Disable();
 		App->collision->Disable();
@@ -274,11 +273,6 @@ update_status ModuleMap1::Update()
 
 		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::BOX_POWERUP, 330, -3880);
 
-
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 450, -2830);
-
-
-
 	}
 
 		if (checkpoint <= 2) //Checkpoint 2
@@ -491,23 +485,23 @@ update_status ModuleMap1::Update()
 		}
 	}	
 	//Checkpoint storage
-	if (App->render->camera.y > -2268)
+	if (App->render->camera.y >= -2268)
 	{
 		checkpoint = 0;
 	}
-	else if (App->render->camera.y > -4107)
+	else if (App->render->camera.y >= -4107)
 	{
 		checkpoint = 1;
 	}
-	else if (App->render->camera.y > -7707)
+	else if (App->render->camera.y >= -7707)
 	{
 		checkpoint = 2;
 	}
-	else if (App->render->camera.y > -9635)
+	else if (App->render->camera.y >= -9635)
 	{
 		checkpoint = 3;
 	}
-	else if (App->render->camera.y < -9635)
+	else if (App->render->camera.y <= -9635)
 	{
 		checkpoint = 4;
 	}
