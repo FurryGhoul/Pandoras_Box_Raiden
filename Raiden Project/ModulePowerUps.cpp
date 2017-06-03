@@ -287,7 +287,14 @@ void ModulePowerUps::MovePowerUpsRight(bool right)
 		{
 			if (powerups[i] != nullptr)
 			{
-				powerups[i]->left_right_mod += App->map_1->xscrollspeed;
+				if (!powerups[i]->medal)
+				{ 
+				powerups[i]->position.x += App->map_1->xscrollspeed;
+				}
+				else
+				{
+					powerups[i]->left_right_mod += App->map_1->xscrollspeed;
+				}
 			}
 		}
 	}
@@ -298,7 +305,14 @@ void ModulePowerUps::MovePowerUpsRight(bool right)
 		{
 			if (powerups[i] != nullptr)
 			{
-				powerups[i]->left_right_mod -= App->map_1->xscrollspeed;
+				if (!powerups[i]->medal)
+				{
+					powerups[i]->position.x -= App->map_1->xscrollspeed;
+				}
+				else
+				{
+					powerups[i]->left_right_mod -= App->map_1->xscrollspeed;
+				}
 			}
 		}
 	}
