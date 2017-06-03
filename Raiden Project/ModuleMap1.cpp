@@ -517,7 +517,7 @@ update_status ModuleMap1::Update()
 		yroad += (yscrollspeed * 1.5);
 		App->render->camera.y -= yscrollspeed;
 
-
+		LOG("%i", App->render->camera.y);
 
 
 		if (yroad >= -4350 && checkpoint != 4)

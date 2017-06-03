@@ -460,7 +460,7 @@ update_status ModulePlayer::Update()
 		//Red powerup
 		if (red == true)
 		{
-			Mix_PlayChannel(-1, App->audio_2->fx_shoot, 0);
+ 			Mix_PlayChannel(-1, App->audio_2->fx_shoot, 0);
 			if (powerup_level <= 0)
 			{
 				App->particles->AddParticle(App->particles->double_shot, position.x+ 25, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1);

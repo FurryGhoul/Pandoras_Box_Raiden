@@ -2,6 +2,7 @@
 #include "Application.h"
 #include "ModuleAudio_2.h"
 #include "ModuleMap1.h"
+#include "ModuleRender.h"
 ModuleAudio2::ModuleAudio2() : Module()
 {
 
@@ -31,6 +32,10 @@ bool ModuleAudio2::Init()
 		LOG("An error has ocurred while reproducing the audio %s", SDL_GetError())
 	}
 
+     if (Mix_PlayMusic(music2, -1) == -1)
+	{
+		LOG("An error has ocurred while reproducing the audio %s", SDL_GetError())
+	}
 	fx_shoot = Mix_LoadWAV("Assets/Sound effects/red_shot1.wav");
 	fx_blue_shoot = Mix_LoadWAV("Assets/Sound effects/blue_shot.wav");
 	fx_light_explosion = Mix_LoadWAV("Assets/Sound effects/Light explosion.wav");
@@ -44,12 +49,12 @@ bool ModuleAudio2::Init()
 }
 update_status ModuleAudio2::Update()
 {
-	if (App->map_1->IsEnabled() && playing == false)
+	if (App->render->camera.y > -12000 && playing == false && App->map_1->IsEnabled())
 	{
- 		Init();
+		Init();
 		playing = true;
 	}
-	if (!(App->map_1->IsEnabled()) && playing == true)
+	if (App->render->camera.y < -12000 && playing == true || !App->map_1->IsEnabled())
 	{
 		playing = false;
 		Close();

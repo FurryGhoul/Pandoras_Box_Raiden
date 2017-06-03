@@ -44,6 +44,7 @@ Application::Application()
 	modules[17] = player2 = new ModulePlayer2();
 	modules[18] = collision = new ModuleCollision();
 	modules[19] = fade = new ModuleFadeToBlack();
+	modules[20] = audio = new ModuleAudio1();
 }	
 
 Application::~Application()
