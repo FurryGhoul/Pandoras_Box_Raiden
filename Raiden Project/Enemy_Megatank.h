@@ -15,7 +15,7 @@ private:
 
 	Path movement;
 
-	int charge = 109;
+	int charge = 100;
 	bool spin = false;
 	bool slow = false;
 	bool stop = false;

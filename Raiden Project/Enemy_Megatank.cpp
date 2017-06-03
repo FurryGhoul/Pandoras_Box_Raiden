@@ -246,22 +246,6 @@ Enemy_Megatank::Enemy_Megatank(int x, int y, int path) : Enemy(x, y)
 	spinning.PushBack({ 71,10,56,53 });
 	spinning.PushBack({ 71,10,56,53 });
 	spinning.PushBack({ 71,10,56,53 });
-	spinning.PushBack({ 14,10,56,53 });
-	spinning.PushBack({ 14,10,56,53 });
-	spinning.PushBack({ 14,10,56,53 });
-	spinning.PushBack({ 14,10,56,53 });
-	spinning.PushBack({ 71,10,56,53 });
-	spinning.PushBack({ 71,10,56,53 });
-	spinning.PushBack({ 71,10,56,53 });
-	spinning.PushBack({ 71,10,56,53 });
-	spinning.PushBack({ 128,10,56,53 });
-	spinning.PushBack({ 128,10,56,53 });
-	spinning.PushBack({ 128,10,56,53 });
-	spinning.PushBack({ 128,10,56,53 });
-	spinning.PushBack({ 71,10,56,53 });
-	spinning.PushBack({ 71,10,56,53 });
-	spinning.PushBack({ 71,10,56,53 });
-	spinning.PushBack({ 71,10,56,53 });
 	
 
 
@@ -507,25 +491,6 @@ Enemy_Megatank::Enemy_Megatank(int x, int y, int path) : Enemy(x, y)
 	dmgspinning.PushBack({ 71,10,56,53 });
 	dmgspinning.PushBack({ 71,10,56,53 });
 
-	dmgspinning.PushBack({ 356,10,56,53 });
-	dmgspinning.PushBack({ 356,10,56,53 });
-	dmgspinning.PushBack({ 14,10,56,53 });
-	dmgspinning.PushBack({ 14,10,56,53 });
-	dmgspinning.PushBack({ 413,10,56,53 });
-	dmgspinning.PushBack({ 413,10,56,53 });
-	dmgspinning.PushBack({ 71,10,56,53 });
-	dmgspinning.PushBack({ 71,10,56,53 });
-	dmgspinning.PushBack({ 470,10,56,53 });
-	dmgspinning.PushBack({ 470,10,56,53 });
-	dmgspinning.PushBack({ 128,10,56,53 });
-	dmgspinning.PushBack({ 128,10,56,53 });
-	dmgspinning.PushBack({ 413,10,56,53 });
-	dmgspinning.PushBack({ 413,10,56,53 });
-	dmgspinning.PushBack({ 71,10,56,53 });
-	dmgspinning.PushBack({ 71,10,56,53 });
-
-
-
 	dmgspinning.loop = true;
 	dmgspinning.speed = 0.9f;
 
@@ -659,7 +624,7 @@ void Enemy_Megatank::MoveShoot()
 
 			}
 
-			else if (stop = true)
+			else if (stop == true)
 			{
 				animation = &spinning;
 				decelaration.Reset();
@@ -694,7 +659,7 @@ void Enemy_Megatank::MoveShoot()
 
 			}
 
-			else if (stop = true)
+			else if (stop == true)
 			{
 				animation = &dmgspinning;
 				dmgdecelaration.Reset();
@@ -715,31 +680,30 @@ void Enemy_Megatank::MoveShoot()
 	
 	if (spin == true)
 	{
-		charge++;
 		if (charge % 110 == 0)
 		{
 			App->particles->AddParticle(App->particles->enemyshot, position.x + 69, position.y + 45, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y - 4);
-			App->particles->AddParticle(App->particles->enemyshot, position.x + 69, position.y + 81, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y + 4);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 69, position.y + 81, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y + 6);
 		}
 		if (charge % 115 == 0)
 		{
 			App->particles->AddParticle(App->particles->enemyshot, position.x + 81, position.y + 78, COLLIDER_ENEMY_SHOT, 0, distance.x - 4, distance.y - 4);
-			App->particles->AddParticle(App->particles->enemyshot, position.x + 60, position.y + 48, COLLIDER_ENEMY_SHOT, 0, distance.x + 4, distance.y);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 60, position.y + 48, COLLIDER_ENEMY_SHOT, 0, distance.x + 4, distance.y + 6);
 		}
 		if (charge % 120 == 0)
 		{
 			App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 48, COLLIDER_ENEMY_SHOT, 0, distance.x + 4, distance.y - 4);
-			App->particles->AddParticle(App->particles->enemyshot, position.x + 57, position.y + 78, COLLIDER_ENEMY_SHOT, 0, distance.x - 4, distance.y);
+			App->particles->AddParticle(App->particles->enemyshot, position.x + 57, position.y + 78, COLLIDER_ENEMY_SHOT, 0, distance.x - 4, distance.y + 6);
 		}
 		if (charge % 125 == 0)
 		{
 			App->particles->AddParticle(App->particles->enemyshot, position.x + 48, position.y + 63, COLLIDER_ENEMY_SHOT, 0, distance.x + 6, distance.y + 1);
 			App->particles->AddParticle(App->particles->enemyshot, position.x + 90, position.y + 63, COLLIDER_ENEMY_SHOT, 0, distance.x - 6, distance.y + 1);
 		}
-		if (charge == 126)
+		if (charge == 130)
 		{
-			charge = 109;
-			//charge++;
+			charge = 100;
+			charge++;
 		}
 	}	
 }
