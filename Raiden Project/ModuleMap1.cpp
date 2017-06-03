@@ -289,7 +289,6 @@ update_status ModuleMap1::Update()
 		App->genemies->AddGroundEnemy(20, GENEMY_TYPES::TANK, 357 * 3, -4400);
 
 
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 700, -4200);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 500, -5400);
 
 		App->enemies->AddEnemy(0, ENEMY_TYPES::MEDIUM_SHOOTER, 120, -4600);
