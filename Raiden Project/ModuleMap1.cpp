@@ -120,8 +120,10 @@ update_status ModuleMap1::Update()
 
 		setup = false;
 
-		//App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TRAIN_LOCOMOTIVE, 850, -200);
+		//App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN_LOCOMOTIVE, 850, -200);
 		//App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TRAIN_COACH, 990, -200);
+		//App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN_COACH, 937, -200);
+		//App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN_COACH, 937, -263);
 
 		//App->genemies->AddGroundEnemy(0, GENEMY_TYPES::LONG_MEGATANK, 500, -300);
 

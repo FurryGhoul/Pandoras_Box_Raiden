@@ -80,7 +80,7 @@ Enemy_Train_Coach::Enemy_Train_Coach(int x, int y, int path) : Enemy(x, y)
 		movement.loop = false;
 
 		collider = App->collision->AddCollider({ 0, 0, 30 * 3, 30 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->genemies);
-		original_pos.y = 820;
+		original_pos.y = 904;
 	}
 	
 	original_pos.x = x;
