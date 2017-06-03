@@ -480,20 +480,20 @@ update_status ModuleParticles::Update()
 			if (p->bullettype == 47)
 			{
 				AddParticle(bombexplosion, p->position.x - ((168 * 3) / 2), p->position.y - ((154 * 3) / 2), COLLIDER_NONE, 37);
+				Mix_PlayChannel(-1, App->audio_2->fx_bomb_explosion, 0);
 			}
 			else if (p->bullettype == 48)
 			{
 				AddParticle(bombexplosion, p->position.x - ((168 * 3) / 2), p->position.y - ((154 * 3) / 2), COLLIDER_NONE, 38);
+				Mix_PlayChannel(-1, App->audio_2->fx_bomb_explosion, 0);
 			}
 			else if (p->bullettype == 37)
 			{
 				AddParticle(bombexplosion2, p->position.x, p->position.y, COLLIDER_BOMB, 27, 0, 0, false, false, 3);
-				Mix_PlayChannel(-1, App->audio_2->fx_bomb_explosion, 0);
 			}
 			else if (p->bullettype == 38)
 			{
 				AddParticle(bombexplosion2, p->position.x, p->position.y, COLLIDER_BOMB, 28, 0, 0, false, false, 3);
-				Mix_PlayChannel(-1, App->audio_2->fx_bomb_explosion, 0);
 			}
 
 			delete p;
