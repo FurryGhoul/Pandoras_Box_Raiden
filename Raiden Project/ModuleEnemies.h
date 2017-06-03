@@ -40,6 +40,7 @@ public:
 	~ModuleEnemies();
 
 	int bossmain;
+	int counter = 0;
 	bool Init();
 	update_status PreUpdate();
 	update_status Update();

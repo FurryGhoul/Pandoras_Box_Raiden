@@ -121,7 +121,7 @@ update_status ModuleMap1::Update()
 		//App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TRAIN_COACH, 990, -200);
 		//App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN_COACH, 937, -200);
 		//App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN_COACH, 937, -263);
-
+		//App->enemies->AddEnemy(0, ENEMY_TYPES::BOSS_MAIN, 300, -300);
 		//App->genemies->AddGroundEnemy(0, GENEMY_TYPES::LONG_MEGATANK, 500, -300);
 
 

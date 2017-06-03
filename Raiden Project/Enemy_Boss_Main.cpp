@@ -89,6 +89,11 @@ Enemy_Boss_Main::Enemy_Boss_Main(int x, int y, int path) : Enemy(x, y)
 	//Flying away
 	movement.PushBack({ 0.0f, 1.5f }, 30); movement.PushBack({ 0.0f, -1.5f }, 80); movement.PushBack({ 0.0f, 3.0f }, 10000);
 
+	//After death
+	movement2.PushBack({ 0.0f, 0.0f }, 100);
+	movement2.PushBack({ 0.0f, 0.2f }, 1000);
+	
+
 	//Kamikazes info
 	kamikaze1.type = ENEMY_TYPES::KAMIKAZE;
 	kamikaze1._path = 1;
@@ -138,8 +143,16 @@ void Enemy_Boss_Main::MoveShoot()
 	if (position.y >= 850)
 		App->map_1->won = true;
 
-	position = original_pos + movement.GetCurrentPosition();
-	position.x += left_right_mod;
+	if (alive == true)
+	{
+ 		position = original_pos + movement.GetCurrentPosition();
+		position.x += left_right_mod;
+	}
+
+	else if (alive == false)
+	{
+		position += movement2.GetCurrentPosition();
+	}
 
 	App->enemies->SetPos();
 
@@ -184,7 +197,7 @@ void Enemy_Boss_Main::MoveShoot()
 		}
 	}
 
-	if (kamikazeammo && (SDL_GetTicks() - time) > 2500 && shootingkamikazes && (SDL_GetTicks() - time2) > delay)
+	if (kamikazeammo && (SDL_GetTicks() - time) > 2500 && shootingkamikazes && (SDL_GetTicks() - time2) > delay && alive == true)
 	{
 		App->enemies->SpawnEnemy(kamikaze1);
 		App->enemies->SpawnEnemy(kamikaze2);
@@ -472,4 +485,45 @@ void Enemy_Boss_Main::MoveShoot()
 
 	if (hp <= 125)
 		orange = true;
+
+	if (hp <= 0)
+	{
+		alive = false;
+  		animation = &destroyed;
+		counter++;
+		if (counter == 10)
+		{
+			App->particles->AddParticle(App->particles->bonusmedium_explosion, position.x - 50, position.y, COLLIDER_NONE);
+		}
+		if (counter == 20)
+		{
+			App->particles->AddParticle(App->particles->bonusmedium_explosion, position.x, position.y + 50, COLLIDER_NONE);
+		}
+		if (counter == 30)
+		{
+			App->particles->AddParticle(App->particles->bonusmedium_explosion, position.x + 100, position.y, COLLIDER_NONE);
+		}
+		if (counter == 40)
+		{
+			App->particles->AddParticle(App->particles->bonusmedium_explosion, position.x + 75, position.y - 75, COLLIDER_NONE);
+		}
+		if (counter == 50)
+		{
+			App->particles->AddParticle(App->particles->bonusmedium_explosion, position.x + 50, position.y - 20, COLLIDER_NONE);
+		}
+		if (counter == 60)
+		{
+			App->particles->AddParticle(App->particles->bonusmedium_explosion, position.x + 30, position.y - 60, COLLIDER_NONE);
+			App->particles->AddParticle(App->particles->bonusmedium_explosion, position.x + 60, position.y, COLLIDER_NONE);
+		}
+		if (counter == 70)
+		{
+			App->particles->AddParticle(App->particles->bonusmedium_explosion, position.x, position.y - 75, COLLIDER_NONE);
+		}
+		if (counter == 71)
+		{
+			counter = 0;
+		}
+	}
+
 }

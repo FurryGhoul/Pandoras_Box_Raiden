@@ -206,9 +206,6 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		case ENEMY_TYPES::MEDIUM_SHOOTER:
 			enemies[i] = new Enemy_Medium_Shooter(App->map_1->xmap + info.x, info.y, info._path);
 			break;
-	/*	case ENEMY_TYPES::MEGATANK:
-			enemies[i] = new Enemy_Megatank(App->map_1->xmap + info.x, info.y, info._path);
-			break;*/
 		case ENEMY_TYPES::LIGHT_KAMIKAZE:
 			bool come_right;
 			if (info.x < 500)
@@ -391,6 +388,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				{
 					App->particles->AddParticle(App->particles->bonusmedium_explosion, enemies[i]->position.x - 60, enemies[i]->position.y - 60, COLLIDER_NONE);
 				}
+				
 				else if (enemies[i]->mediumshooter)
 				{
 					App->particles->AddParticle(App->particles->bonusmedium_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
@@ -448,9 +446,12 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 					App->map_1->won = true;
 				}
 
-				delete enemies[i];
-				enemies[i] = nullptr;
-				break;
+				if (!(enemies[i]->bossmain))
+				{
+					delete enemies[i];
+					enemies[i] = nullptr;
+					break;
+				}
 			}
 		}
 	}

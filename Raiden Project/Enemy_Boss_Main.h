@@ -17,11 +17,13 @@ private:
 	Uint32 time3;
 	Uint32 time4;
 	Path movement;
+	Path movement2;
 	Path flyaway;
 	Path entering;
 
 	int bullethellwaves = 0;
 	int shootingwaves = 0;
+	int counter = 0;
 	bool posreset = false;
 	bool posreset1 = false;
 	bool bullethell = false;
@@ -35,6 +37,7 @@ private:
 	int delay = 0;
 	bool parts = false;
 	bool orange = false;
+	bool alive = true;
 	Uint32 orangetime = 0;
 
 	EnemyInfo kamikaze1;
