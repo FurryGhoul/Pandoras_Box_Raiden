@@ -30,7 +30,7 @@ Enemy_Train_Locomotive::Enemy_Train_Locomotive(int x, int y, int path) : Enemy(x
 		movement.loop = false;
 
 		collider = App->collision->AddCollider({ 0, 0, 48 * 3, 24 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->genemies);
-		original_pos.y = -200;
+		original_pos.y = 200;
 	}
 	if (path == 1)
 	{

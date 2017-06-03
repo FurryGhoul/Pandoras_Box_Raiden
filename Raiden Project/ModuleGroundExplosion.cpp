@@ -87,11 +87,15 @@ bool ModuleGroundExplosion::Init()
 	ship_explosion.anim.PushBack({ 368, 243, 75, 66 });
 	ship_explosion.anim.PushBack({ 443, 243, 75, 66 });
 	ship_explosion.anim.PushBack({ 524, 243, 75, 66 });
+	ship_explosion.anim.PushBack({ 201, 532, 75, 66 });
+	ship_explosion.anim.PushBack({ 291, 535, 75, 66 });
+	ship_explosion.anim.PushBack({ 387, 538, 75, 66 });
+	ship_explosion.anim.PushBack({ 481, 540, 75, 66 });
 	ship_explosion.anim.PushBack({ 1, 1, 1, 1 });
 
 	ship_explosion.speed.y = 1;
 	ship_explosion.anim.loop = false;
-	ship_explosion.anim.speed = 0.3f;
+	ship_explosion.anim.speed = 0.17f;
 	ship_explosion.life = 100000;
 	ship_explosion.size.x = 75 * 3;
 	ship_explosion.size.y = 66 * 3;
