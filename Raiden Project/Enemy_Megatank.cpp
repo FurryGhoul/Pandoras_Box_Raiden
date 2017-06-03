@@ -620,7 +620,7 @@ Enemy_Megatank::Enemy_Megatank(int x, int y, int path) : Enemy(x, y)
 	collider = App->collision->AddCollider({ 0, 0, 48 * 3, 45 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->genemies);
 
 	original_pos.x = x;
-	original_pos.y = -200;
+	original_pos.y = 50;
 	//animation = &decelaration;
 }
 

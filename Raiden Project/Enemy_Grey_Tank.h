@@ -13,15 +13,6 @@ private:
 	Animation downdiagonalright;
 	Animation updiagonalright;
 
-	Animation _downup;
-	Animation _leftright;
-	Animation _neutraldiagonalleft;
-	Animation _downdiagonalleft;
-	Animation _updiagonalleft;
-	Animation _neutraldiagonalright;
-	Animation _downdiagonalright;
-	Animation _updiagonalright;
-
 	Animation hitdownup;
 	Animation hitleftright;
 	Animation hitneutraldiagonalleft;

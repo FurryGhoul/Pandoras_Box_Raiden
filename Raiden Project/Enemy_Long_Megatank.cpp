@@ -219,14 +219,14 @@ Enemy_Long_Megatank::Enemy_Long_Megatank(int x, int y, int path) : Enemy(x, y)
 	movement.PushBack({ 0.0f, 1.0f }, 75);
 	movement.PushBack({ 0.0f, -1.0f }, 50);
 	movement.PushBack({ 0.0f, 1.0f }, 75);
-	movement.PushBack({ 0.0f, -1.0f }, 300);
+	movement.PushBack({ 0.0f, -1.0f }, 400);
 	movement.PushBack({ 0.0f, 1.0f }, 100);
 	movement.PushBack({ 0.0f, 4.0f }, 1000);
 	
 	collider = App->collision->AddCollider({ 0, 0, 48*3, 45*3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->genemies);
 	
 	original_pos.x = x;
-	original_pos.y = -200;
+	original_pos.y = 0;
 }
 
 void Enemy_Long_Megatank::MoveShoot()
