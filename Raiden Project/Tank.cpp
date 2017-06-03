@@ -487,7 +487,7 @@ void Tank::MoveShoot()
 
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == -1.0f) //North
 	{
-		animation = &_downup;
+		animation = &downup;
 		if (ishit == true)
 		{
 			animation = &hitdownup;

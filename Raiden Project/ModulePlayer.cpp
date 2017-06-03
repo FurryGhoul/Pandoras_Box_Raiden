@@ -546,9 +546,6 @@ update_status ModulePlayer::Update()
 			{
 				App->particles->AddParticle(App->particles->laser, position.x + 30, position.y, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, false, 1);
 				App->particles->AddParticle(App->particles->laser, position.x + 30, position.y + 48, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false);
-				score -= 40;
-				if (score < 0)
-					score = 0;
 			}
 			if (powerup_level == 2)
 			{
@@ -557,9 +554,7 @@ update_status ModulePlayer::Update()
 				App->particles->AddParticle(App->particles->laser, position.x + 30, position.y + 48 * 2, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false);
 				App->particles->AddParticle(App->particles->laser, position.x + 30, position.y + 48 * 3, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false);
 				App->particles->AddParticle(App->particles->laser, position.x + 30, position.y + 48 * 4, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false);
-				score -= 40;
-				if (score < 0)
-					score = 0;
+			
 			}
 			if (powerup_level == 3)
 			{
@@ -579,9 +574,7 @@ update_status ModulePlayer::Update()
 				App->particles->AddParticle(App->particles->laser2, position.x, position.y + 48 * 4, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 12);
 				App->particles->AddParticle(App->particles->laser2, position.x, position.y + 48 * 4, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 1, false, 45);
 
-				score -= 40;
-				if (score < 0)
-					score = 0;
+			
 			}
 			if (powerup_level == 4)
 			{
@@ -704,9 +697,7 @@ update_status ModulePlayer::Update()
 				App->particles->AddParticle(App->particles->final_laser, position.x, position.y + 48 * 3, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 4, false,5);
 				App->particles->AddParticle(App->particles->final_laser, position.x, position.y + 48 * 4, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 4, false,5);
 				App->particles->AddParticle(App->particles->final_laser, position.x, position.y + 48 * 5, COLLIDER_PLAYER_SHOT, 1, 0, 0, 0, true, 4, false,5);
-				score -= 40;
-				if (score < 0)
-					score = 0;
+		
 			}
 		}
 		//Missiles
