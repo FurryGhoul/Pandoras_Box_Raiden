@@ -176,7 +176,7 @@ update_status ModuleMap1::Update()
 		{
 				
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BONUS_SHIP, 450, -2830);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::MEGATANK, 500, -3900);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::MEGATANK, 500, -3700);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, 672, -2300);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -2400);
 		// Horizontal tanks
@@ -422,7 +422,7 @@ update_status ModuleMap1::Update()
 		// 3rd Wave
 		App->enemies->AddEnemy(1, ENEMY_TYPES::MEDIUM_SHOOTER, 500, -8000);
 
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::LONG_MEGATANK, 440, -8950);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::LONG_MEGATANK, 440, -8750);
 
 		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP, 600, -7850);
 		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::SHIP, 650, -8250);
