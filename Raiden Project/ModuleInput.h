@@ -47,6 +47,8 @@ public:
 	bool gpad = false;
 	bool gpad2_on = false;
 	bool gpad2 = false;
+	bool p1moving = false;
+	bool p2moving = false;
 };
 
 #endif // __ModuleInput_H__
