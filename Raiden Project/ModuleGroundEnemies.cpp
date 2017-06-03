@@ -321,15 +321,16 @@ void ModuleGroundEnemies::OnCollision(Collider* c1, Collider* c2)
 
 			if (enemies[i]->hp <= 0)
 			{
-				if (c2->bullettype == 1)
+				if (c2->bullettype == 1 || c2->bullettype == 27)
 				{
 					App->player->score += enemies[i]->points;
 				}
 
-				else if (c2->bullettype == 2)
+				else if (c2->bullettype == 2 || c2->bullettype == 28)
 				{
 					App->player2->score += enemies[i]->points;
 				}
+
 
 				
 				if (enemies[i]->tank)

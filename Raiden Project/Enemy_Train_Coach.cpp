@@ -68,7 +68,7 @@ Enemy_Train_Coach::Enemy_Train_Coach(int x, int y, int path) : Enemy(x, y)
 	// Paths
 	if (path == 0)
 	{
-		movement.PushBack({ -1.5f, 1.0f }, 1000);
+		movement.PushBack({ -2.3f, 1.5f }, 1000);
 		movement.loop = false;
 
 		collider = App->collision->AddCollider({ 0, 0, 32 * 3, 23 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->genemies);
@@ -76,11 +76,19 @@ Enemy_Train_Coach::Enemy_Train_Coach(int x, int y, int path) : Enemy(x, y)
 	}
 	if (path == 1)
 	{
-		movement.PushBack({ -1.0f, -1.0f }, 1000);
+		movement.PushBack({ -1.5f, -0.1f }, 1000);
 		movement.loop = false;
 
 		collider = App->collision->AddCollider({ 0, 0, 30 * 3, 30 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->genemies);
-		original_pos.y = 904;
+		original_pos.y = 404;
+	}
+	if (path == 2)
+	{
+		movement.PushBack({ -1.5f, -0.1f }, 1000);
+		movement.loop = false;
+
+		collider = App->collision->AddCollider({ 0, 0, 30 * 3, 30 * 3 }, COLLIDER_TYPE::COLLIDER_TANK, (Module*)App->genemies);
+		original_pos.y = 468;
 	}
 	
 	original_pos.x = x;
@@ -117,7 +125,7 @@ void Enemy_Train_Coach::MoveShoot()
 	distance.x = fabs(distance.x);
 	distance.y = fabs(distance.y);
 
-	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.5f && movement.steps[movement.GetCurrentStep()].speed.y == 1.0f)
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -2.3f && movement.steps[movement.GetCurrentStep()].speed.y == 1.5f)
 	{
 		animation = &horizontal;
 
@@ -130,7 +138,7 @@ void Enemy_Train_Coach::MoveShoot()
 		w = 32 * 3;
 		h = 23 * 3;
 	}
-	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.0f && movement.steps[movement.GetCurrentStep()].speed.y == -1.0f)
+	if (movement.steps[movement.GetCurrentStep()].speed.x == -1.5f && movement.steps[movement.GetCurrentStep()].speed.y == -0.1f)
 	{
 		animation = &diagonal;
 
@@ -152,7 +160,7 @@ void Enemy_Train_Coach::MoveShoot()
 	position1.y = position.y + 8;
 
 
-	if (movement.steps[movement.GetCurrentStep()].speed.y == 1.0f) // Horizontal path
+	if (movement.steps[movement.GetCurrentStep()].speed.y == 1.5f) // Horizontal path
 	{
 		if (shotphase <= 20) // Phase 0
 		{
@@ -258,7 +266,7 @@ void Enemy_Train_Coach::MoveShoot()
 		}
 	}
 
-	else if (movement.steps[movement.GetCurrentStep()].speed.y == -1.0f) // Diagonal path
+	else if (movement.steps[movement.GetCurrentStep()].speed.y == -0.1f) // Diagonal path
 	{
 		position1.x = position.x + 24;
 		position1.y = position.y + 22;
