@@ -17,9 +17,11 @@ Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y, int path) : Enemy (x, y)
 	flydown.PushBack({ 5, 20, 58, 57 });
 
 	dmgdown.PushBack({ 5, 20, 58, 57 });
+	dmgdown.PushBack({ 5, 20, 58, 57 });
+	dmgdown.PushBack({ 5, 135, 58, 57 });
 	dmgdown.PushBack({ 5, 135, 58, 57 });
 	dmgdown.loop = true;
-	dmgdown.speed = 0.8f;
+	dmgdown.speed = 0.5f;
 
 	stop.PushBack({ 64, 20, 59, 54 });
 	stop.PushBack({ 241, 20, 59, 54 });

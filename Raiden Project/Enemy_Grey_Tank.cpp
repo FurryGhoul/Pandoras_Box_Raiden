@@ -16,29 +16,78 @@ Enemy_Grey_Tank::Enemy_Grey_Tank(int x, int y, int path) : Enemy(x, y)
 	spritesheet = 2;
 	animations = 2;
 	// Tank animations
-	downup.PushBack({ 3, 186, 31, 29 }); // done
+	downup.PushBack({ 3, 186, 31, 29 });
+	downup.PushBack({ 275, 186, 31, 29 });
+	downup.PushBack({ 547, 186, 31, 29 });
+	downup.speed = 0.5f;
+	downup.loop = true;
 	hitdownup.PushBack({ 4, 95, 31, 29 });
 
-	downdiagonalright.PushBack({ 37,	186, 31, 29 }); // done
+	downdiagonalright.PushBack({ 37, 186, 31, 29 });
+	downdiagonalright.PushBack({ 309, 1864, 31, 29 });
+	downdiagonalright.PushBack({ 581, 186, 31, 29 });
+	downdiagonalright.speed = 0.5f;
+	downdiagonalright.loop = true;
 	hitdowndiagonalright.PushBack({ 38, 95,31,29 });
 
-	neutraldiagonalright.PushBack({ 71, 186,31, 29 }); //in proces
+	neutraldiagonalright.PushBack({ 71, 186, 31, 29 });
+	neutraldiagonalright.PushBack({ 343, 186, 31, 29 });
+	neutraldiagonalright.PushBack({ 615, 186, 31, 29 });
+	neutraldiagonalright.speed = 0.5f;
+	neutraldiagonalright.loop = true;
 	hitneutraldiagonalright.PushBack({ 72, 95, 31, 29 });
 
-	updiagonalright.PushBack({ 105, 186, 31, 29 }); // Not in usage 
+	updiagonalright.PushBack({ 105, 186, 31, 29 });
+	updiagonalright.PushBack({ 377, 186, 31, 29 });
+	updiagonalright.PushBack({ 649, 186, 31, 29 });
+	updiagonalright.speed = 0.5f;
+	updiagonalright.loop = true;
 	hitupdiagonalright.PushBack({ 106, 95, 31, 29 });
 
-	leftright.PushBack({ 139 , 186, 31, 29 }); // done
+	leftright.PushBack({ 139, 186, 31, 29 });
+	leftright.PushBack({ 411, 186, 31, 29 });
+	leftright.PushBack({ 683, 186, 31, 29 });
+	leftright.speed = 0.5f;
+	leftright.loop = true;
 	hitleftright.PushBack({ 140 , 95, 31, 29 });
 
-	downdiagonalleft.PushBack({ 173, 186, 31, 29 }); // done
+	downdiagonalleft.PushBack({ 173, 186, 31, 29 });
+	downdiagonalleft.PushBack({ 445, 186, 31, 29 });
+	downdiagonalleft.PushBack({ 717, 186, 31, 29 });
+	downdiagonalleft.speed = 0.5f;
+	downdiagonalleft.loop = true;
 	hitdowndiagonalleft.PushBack({ 174, 95, 31, 29 });
 
-	neutraldiagonalleft.PushBack({ 207, 186, 31, 29 }); // done
+	neutraldiagonalleft.PushBack({ 207, 186, 31, 29 });
+	neutraldiagonalleft.PushBack({ 479, 186, 31, 29 });
+	neutraldiagonalleft.PushBack({ 751, 186, 31, 29 });
+	neutraldiagonalleft.speed = 0.5f;
+	neutraldiagonalleft.loop = true;
 	hitneutraldiagonalleft.PushBack({ 208, 95, 31, 29 });
 
-	updiagonalleft.PushBack({ 241, 186, 31, 29 }); // Not in usage
+	updiagonalleft.PushBack({ 241, 186, 31, 29 });
+	updiagonalleft.PushBack({ 513, 186, 31, 29 });
+	updiagonalleft.PushBack({ 785, 186, 31, 29 });
+	updiagonalleft.speed = 0.5f;
+	updiagonalleft.loop = true;
 	hitupdiagonalleft.PushBack({ 242, 95, 31, 29 });
+
+
+	_downup.PushBack({ 3, 186, 31, 29 }); // done
+
+	_downdiagonalright.PushBack({ 37, 186, 31, 29 }); // done
+
+	_neutraldiagonalright.PushBack({ 71, 186,31, 29 }); //in proces
+
+	_updiagonalright.PushBack({ 105, 186, 31, 29 }); // Not in usage 
+
+	_leftright.PushBack({ 139 , 186, 31, 29 }); // done
+
+	_downdiagonalleft.PushBack({ 173, 186, 31, 29 }); // done
+
+	_neutraldiagonalleft.PushBack({ 207, 186, 31, 29 }); // done
+
+	_updiagonalleft.PushBack({ 241, 186, 31, 29 }); // Not in usage
 
 	//Turret animations
 	noturret.PushBack({ 1, 1, 1, 1 });
@@ -488,7 +537,7 @@ void Enemy_Grey_Tank::MoveShoot()
 
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == -1.0f) //North
 	{
-		animation = &downup;
+		animation = &_downup;
 		if (ishit == true)
 		{
 			animation = &hitdownup;
@@ -541,9 +590,9 @@ void Enemy_Grey_Tank::MoveShoot()
 
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 1.5f) //If tanks stop they get the last animation that was done
 	{
-		if (animation == &leftright || animation == &hitleftright)
+		if (animation == &leftright || animation == &hitleftright || animation == &_leftright)
 		{
-			animation = &leftright;
+			animation = &_leftright;
 			if (ishit == true)
 			{
 				animation = &hitleftright;
@@ -553,9 +602,9 @@ void Enemy_Grey_Tank::MoveShoot()
 			position1.x = position.x + w / 2;
 			position1.y = position.y + h / 2;
 		}
-		if (animation == &downup || animation == &hitdownup)
+		if (animation == &downup || animation == &hitdownup || animation == &_downup)
 		{
-			animation = &downup;
+			animation = &_downup;
 			if (ishit == true)
 			{
 				animation = &hitdownup;
@@ -564,9 +613,9 @@ void Enemy_Grey_Tank::MoveShoot()
 			position1.x = position.x + w / 2;
 			position1.y = position.y + h / 2 - 5;
 		}
-		if (animation == &neutraldiagonalleft || animation == &hitneutraldiagonalleft)
+		if (animation == &neutraldiagonalleft || animation == &hitneutraldiagonalleft || animation == &_neutraldiagonalleft)
 		{
-			animation = &neutraldiagonalleft;
+			animation = &_neutraldiagonalleft;
 			if (ishit == true)
 			{
 				animation = &hitneutraldiagonalleft;
@@ -575,9 +624,9 @@ void Enemy_Grey_Tank::MoveShoot()
 			position1.x = position.x + w / 2;
 			position1.y = position.y + h / 2;
 		}
-		if (animation == &neutraldiagonalright || animation == &hitneutraldiagonalright)
+		if (animation == &neutraldiagonalright || animation == &hitneutraldiagonalright || animation == &_neutraldiagonalright)
 		{
-			animation = &neutraldiagonalright;
+			animation = &_neutraldiagonalright;
 			if (ishit == true)
 			{
 				animation = &hitneutraldiagonalright;
@@ -586,9 +635,9 @@ void Enemy_Grey_Tank::MoveShoot()
 			position1.x = position.x + w / 2;
 			position1.y = position.y + h / 2;
 		}
-		if(animation == &neutraldiagonalright || animation == &hitneutraldiagonalright)
+		if(animation == &neutraldiagonalright || animation == &hitneutraldiagonalright || animation == &_neutraldiagonalright)
 		{ 
-		animation = &neutraldiagonalright;
+		animation = &_neutraldiagonalright;
 		if (ishit == true)
 		{
 			animation = &hitneutraldiagonalright;
