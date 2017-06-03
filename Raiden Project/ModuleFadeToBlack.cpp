@@ -74,11 +74,13 @@ update_status ModuleFadeToBlack::Update()
 
 			if (App->player->godmode) //Godmode text
 			{
-				App->fonts->BlitText(249, 48, 1, App->player->lastscore_text);
-
-				if (counter % 1 == 0)
-					App->fonts->BlitText(249, 48, 0, App->player->lastscore_text);
+				if (counter % 10 == 0 && font == 1)
+					font = 0;
+				else if (counter % 10 == 0 && font == 0)
+					font = 1;
 			}
+
+			App->fonts->BlitText(249, 48, font, App->player->lastscore_text);
 			//App->fonts->BlitText(20, 125, 0, App->player->lastscoret);
 			//App->fonts->BlitText(420, 195, 1, App->player2->scoret);
 			//App->fonts->BlitText(420, 20, 1, App->player2->highscore_text);
