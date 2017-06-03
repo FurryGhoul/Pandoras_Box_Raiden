@@ -564,7 +564,7 @@ update_status ModuleMap1::Update()
 	{
 		App->player->Disable();
 		App->player2->Disable();
-		App->fade->FadeToBlack(this, App->StageClear1, 1.0f);
+		App->fade->FadeToBlack(this, App->StageClear1);
 		App->enemies->EraseEnemies();
 		App->genemies->EraseGroundEnemies();
 		App->powerups->ErasePowerUps();

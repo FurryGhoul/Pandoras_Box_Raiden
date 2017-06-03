@@ -43,7 +43,7 @@ update_status ModuleStageClear1::Update()
 	App->render->Blit(StageClear1, 0, 0, &ground, 224 * 3, 256 * 3+ 62);
 	if ((App->input->keyboard[SDL_SCANCODE_SPACE] && !App->input->gpad) || (App->input->gamepad[6] && App->input->gpad))
 	{
-		App->fade->FadeToBlack(this, App->WelcomeScreen, 1.0f);
+		App->fade->FadeToBlack(this, App->WelcomeScreen);
 	}
 	return UPDATE_CONTINUE;
 }

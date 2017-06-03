@@ -46,7 +46,7 @@ update_status ModuleMap2::Update()
 	App->render->Blit(Map2, App->map_1->xmap, App->map_1->ymap-13457+7158, &ground);
 	if (App->input->keyboard[SDL_SCANCODE_BACKSPACE])
 	{
-		App->fade->FadeToBlack(this, App->StageClear1, 1.0f);
+		App->fade->FadeToBlack(this, App->StageClear1);
 		
 	}
 	return UPDATE_CONTINUE;	

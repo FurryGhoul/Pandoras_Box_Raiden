@@ -22,7 +22,34 @@ ModuleFadeToBlack::~ModuleFadeToBlack()
 bool ModuleFadeToBlack::Init()
 {
 	LOG("Preparing Fade Screen");
-	SDL_SetRenderDrawBlendMode(App->render->renderer, SDL_BLENDMODE_BLEND);
+	plates.PushBack({ 1, 1, 224, 256 });
+	plates.PushBack({ 226, 1, 224, 256 });
+	plates.PushBack({ 451, 1, 224, 256 });
+	plates.PushBack({ 676, 1, 224, 256 });
+	plates.PushBack({ 1, 258, 224, 256 });
+	plates.PushBack({ 226, 258, 224, 256 });
+	plates.PushBack({ 451, 258, 224, 256 });
+	plates.PushBack({ 676, 258, 224, 256 });
+	plates.PushBack({ 676, 258, 224, 256 });
+	plates.PushBack({ 676, 258, 224, 256 });
+	plates.PushBack({ 676, 258, 224, 256 });
+	plates.PushBack({ 676, 258, 224, 256 });
+	plates.PushBack({ 676, 258, 224, 256 });
+	plates.PushBack({ 676, 258, 224, 256 });
+	plates.PushBack({ 676, 258, 224, 256 });
+	plates.PushBack({ 676, 258, 224, 256 });
+	plates.PushBack({ 676, 258, 224, 256 });
+	plates.PushBack({ 676, 258, 224, 256 });
+	plates.PushBack({ 676, 258, 224, 256 });
+	plates.PushBack({ 1, 258, 224, 256 });
+	plates.PushBack({ 676, 1, 224, 256 });
+	plates.PushBack({ 451, 1, 224, 256 });
+	plates.PushBack({ 226, 1, 224, 256 });
+	plates.PushBack({ 1, 1, 224, 256 });
+	plates.speed = 0.2f;
+	plates.loop = false;
+
+	graphics = App->textures->Load("assets/FadingAnimation.png");
 	return true;
 }
 
@@ -108,15 +135,15 @@ update_status ModuleFadeToBlack::Update()
 	} break;
 	}
 
-	// Finally render the black square with alpha on the screen
-	SDL_SetRenderDrawColor(App->render->renderer, 0, 0, 0, (Uint8)(normalized* 255.0f));
-	SDL_RenderFillRect(App->render->renderer, &screen);
+	//Blit
+	if (!plates.Finished())
+		App->render->Blit(graphics, 0, 0, &(plates.GetCurrentFrame()), 224 * 3, 256 * 3);
 
 	return UPDATE_CONTINUE;
 }
 
 // Fade to black. At mid point deactivate one module, then activate the other
-bool ModuleFadeToBlack::FadeToBlack(Module* module_off, Module* module_on, float time)
+bool ModuleFadeToBlack::FadeToBlack(Module* module_off, Module* module_on)
 {
 	bool ret = false;
 
@@ -125,9 +152,10 @@ bool ModuleFadeToBlack::FadeToBlack(Module* module_off, Module* module_on, float
 
 		current_step = fade_step::fade_to_black;
 		start_time = SDL_GetTicks();
-		total_time = (Uint32)(time * 0.5f * 1000.0f);
+		total_time = 710;
 		module_off1 = module_off;
 		module_on1 = module_on;
+		plates.Reset();
 		ret = true;
 	}
 
