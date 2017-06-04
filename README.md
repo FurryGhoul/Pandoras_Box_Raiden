@@ -47,33 +47,33 @@ You can see a video of the original game [here](https://www.youtube.com/watch?v=
 Despite the different responsabilities, each member of the team has worked on the code and art of the game.
 
 ## Game Controls with Keyboard
-**Start game:** 1 for playing solo and 2 for cooperative
+_Start game:_ 1 for playing solo and 2 for cooperative
 
-**Return to the start screen from winning stage:** Space
+_Return to the start screen from winning stage:_ Space
 
-**Fast Win:** Backspace (pressing Backspace on the map 1 screen will take you to the map 1 cleared screen)
+_Fast Win:_ Backspace (pressing Backspace on the map 1 screen will take you to the map 1 cleared screen)
 
-**Show hitboxes:** F1 (shows the hitboxes of the players, enemies, powerups and bullets)
+_Show hitboxes:_ F1 (shows the hitboxes of the players, enemies, powerups and bullets)
 
-**Godmode:** G (makes both players invincible, useful to see the whole map without having to kill the enemies)
+_Godmode:_ G (makes both players invincible, useful to see the whole map without having to kill the enemies)
 
-**Exit:** ESCAPE (close the game)
+_Exit:_ ESCAPE (close the game)
 
-###Player1
+**Player1**
 
-**Move:** WASD
+_Move:_ WASD
 
-**Shoot:** Space
+_Shoot:_ Space
 
-**Drop bomb:** Left Shift
+_Drop bomb:_ Left Shift
 
-###Player2
+**Player2**
 
-**Move:** Arrows
+_Move:_ Arrows
 
-**Shoot:** P
+_Shoot:_ P
 
-**Drop bomb:** O
+_Drop bomb:_ O
 
 ## Game Controls with XBox Controller
 Start game: To play solo press Start button and to play coop, press 2 on the keyboard and then Start on both controllers
