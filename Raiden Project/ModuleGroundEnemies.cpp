@@ -384,7 +384,7 @@ void ModuleGroundEnemies::OnCollision(Collider* c1, Collider* c2)
 
 				else if (enemies[i]->powerupbox)
 				{
-					App->powerups->AddPowerUp(POWERUP_TYPES::MISSILEUP, enemies[i]->position.x - 120, enemies[i]->position.y - 110);
+					App->powerups->AddPowerUp(POWERUP_TYPES::MISSILEUP, enemies[i]->position.x, enemies[i]->position.y);
 					App->gexplosion->AddGroundExplosion(App->gexplosion->shiptank_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
 					Mix_PlayChannel(-1, App->audio_2->fx_light_ground_explosion, 0);
 				}

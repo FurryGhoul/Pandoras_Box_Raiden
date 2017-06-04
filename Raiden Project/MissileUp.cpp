@@ -26,19 +26,11 @@ MissileUp::MissileUp(int x, int y, double pcenterx, double pcentery, double pang
 	position.x = original_pos.x = x;
 	position.y = original_pos.y = y;
 	animation = &idle1;
-	if (first)
-	{
-		center.y = position.y + radius;
-		center.x = position.x;
-		angle = PI / 2;
-	}
-	else
-	{
-		center.y = pcentery;
-		center.x = pcenterx;
-		angle = pangle;
-	}
+
+	
+	angle = PI ;
 }
+
 
 
 void MissileUp::Move()
@@ -48,8 +40,8 @@ void MissileUp::Move()
 
 
 	angle -= 0.01;
+	radius += 0.2;
 
-
-	position.x = center.x + pos_mod.x;
+ 	position.x = center.x + pos_mod.x;
 	position.y = center.y + pos_mod.y;
 }

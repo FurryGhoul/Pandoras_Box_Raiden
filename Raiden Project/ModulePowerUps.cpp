@@ -78,18 +78,7 @@ update_status ModulePowerUps::Update()
 
 update_status ModulePowerUps::PostUpdate()
 {
-	for (uint i = 0; i < MAX_POWERUPS; ++i)
-	{
-		if (powerups[i] != nullptr)
-		{
-			if (powerups[i]->position.y * SCREEN_SIZE < (App->render->camera.y) - SPAWN_MARGIN)
-			{
-				LOG("DeSpawning powerup at %d", powerups[i]->position.y * SCREEN_SIZE);
-				delete powerups[i];
-				powerups[i] = nullptr;
-			}
-		}
-	}
+
 
 	return UPDATE_CONTINUE;
 }

@@ -124,19 +124,12 @@ update_status ModuleMap1::Update()
 		//App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN_COACH, 937, -263);
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::BOSS_MAIN, 300, -300);
 
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TRAIN_LOCOMOTIVE, 1050, -5844);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TRAIN_COACH, 1190, -5844);
 
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TRAIN_LOCOMOTIVE, 1050, -6012);
-		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TRAIN_COACH, 1190, -6012);
 
-		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN_LOCOMOTIVE, 1050, -11100);
-		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN_COACH, 1137, -11100);
-		App->genemies->AddGroundEnemy(2, GENEMY_TYPES::TRAIN_COACH, 1201, -11100);
+
 
 
 		//App->genemies->AddGroundEnemy(0, GENEMY_TYPES::LONG_MEGATANK, 500, -300);
-
 
 		if (checkpoint <= 0) //CHECKPOINT 0	
 		{
@@ -382,6 +375,11 @@ update_status ModuleMap1::Update()
 		App->genemies->AddGroundEnemy(28, GENEMY_TYPES::GREY_TANK, 900, -5600);
 		 
 		
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TRAIN_LOCOMOTIVE, 1050, -5844);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TRAIN_COACH, 1190, -5844);
+
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TRAIN_LOCOMOTIVE, 1050, -6012);
+		App->genemies->AddGroundEnemy(0, GENEMY_TYPES::TRAIN_COACH, 1190, -6012);
 
 		// Invisible medalboxes 2
 	
@@ -487,6 +485,9 @@ update_status ModuleMap1::Update()
 		App->genemies->AddGroundEnemy(41, GENEMY_TYPES::GREY_TANK, 200, -11750);
 		App->genemies->AddGroundEnemy(41, GENEMY_TYPES::GREY_TANK, 0, -11850);
 
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN_LOCOMOTIVE, 1050, -11100);
+		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN_COACH, 1137, -11100);
+		App->genemies->AddGroundEnemy(2, GENEMY_TYPES::TRAIN_COACH, 1201, -11100);
 
 		//moving nw
 		App->genemies->AddGroundEnemy(36, GENEMY_TYPES::GREY_TANK, 357 * 3, -11050);
