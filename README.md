@@ -76,23 +76,23 @@ _Shoot:_ P
 _Drop bomb:_ O
 
 ## Game Controls with XBox Controller
-Start game: To play solo press Start button and to play coop, press 2 on the keyboard and then Start on both controllers
+_Start game:_ To play solo press Start button and to play coop, press 2 on the keyboard and then Start on both controllers
 
-Return to the start screen from winning stage: Start
+_Return to the start screen from winning stage:_ Start
 
-Fast Win: Down arrow (pressing Backspace on the map 1 screen will take you to the map 1 cleared screen)
+_Fast Win:_ Down arrow (pressing Backspace on the map 1 screen will take you to the map 1 cleared screen)
 
-Show hitboxes: Left Joystick button (shows the hitboxes of the players, enemies, powerups and bullets)
+_Show hitboxes:_ Left Joystick button (shows the hitboxes of the players, enemies, powerups and bullets)
 
-Godmode: Select (makes both players invincible, useful to see the whole map without having to kill the enemies)
+_Godmode:_ Select (makes both players invincible, useful to see the whole map without having to kill the enemies)
 
-Exit: ESCAPE on the keyboard (close the game)
+_Exit:_ ESCAPE on the keyboard (close the game)
 
-Move: Left Joystick
+_Move:_ Left Joystick
 
-Shoot: X
+_Shoot:_ X
 
-Drop bomb: A
+_Drop bomb:_ A
 
 **You can switch between keyboard and controller mid-game by pressing 1/2 on the keyboard or Start on the controller!**
 
