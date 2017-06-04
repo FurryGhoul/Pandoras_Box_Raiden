@@ -45,6 +45,8 @@ bool ModuleAudio2::Init()
 	fx_bomb_explosion = Mix_LoadWAV("Assets/Sound effects/Bomb's explosion.wav");
 	fx_bomb_drop = Mix_LoadWAV("Assets/Sound effects/Bomb drop.wav");
 	fx_medal = Mix_LoadWAV("Assets/Sound effects/Medal.wav");
+	//fx_coin = Mix_LoadWAV("Assets/Sound effects/credit.wav");
+
 	return true;
 }
 update_status ModuleAudio2::Update()
@@ -59,6 +61,7 @@ update_status ModuleAudio2::Update()
 		playing = false;
 		Close();
 	}
+
 	return UPDATE_CONTINUE;
 }
 

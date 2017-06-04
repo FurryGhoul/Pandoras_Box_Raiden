@@ -370,7 +370,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				if (enemies[i]->lightshooter || enemies[i]->kamikaze || enemies[i]->light_kamikaze)
 				{ 
 				  App->particles->AddParticle(App->particles->explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
-				  Mix_PlayChannel(-1, App->audio_2->fx_light_explosion, 0);
+				  //Mix_PlayChannel(-1, App->audio_2->fx_light_explosion, 0);
                 }
 				else if (enemies[i]->tank)
 				{

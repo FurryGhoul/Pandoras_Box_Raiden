@@ -235,6 +235,7 @@ void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 				if (powerups[i]->medal == true) //Collider Medal
 				{
 					App->player2->score += 100;
+					Mix_PlayChannel(-1, App->audio_2->fx_medal, 0);
 				}
 				if (powerups[i]->missilep == true) //Collider Missile
 				{

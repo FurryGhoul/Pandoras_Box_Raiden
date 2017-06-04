@@ -103,6 +103,7 @@ update_status ModuleWelcomeScreen::Update()
 		App->fade->FadeToBlack(this, App->map_1);
 		App->input->gpad = false;
 		App->map_1->one_player = true;
+		//Mix_PlayChannel(-1, App->audio_2->fx_coin, 0);
 		
 	}
 
@@ -122,7 +123,6 @@ update_status ModuleWelcomeScreen::Update()
 		App->player->bombs = 3;
 		App->player2->bombs = 3;
 		App->player->lives = 3;
-		//App->player2->lifes = 3; player 2 has no lifes yet
 		App->player2->godmode = false;
 		App->player->godmode = false;
 		App->fade->FadeToBlack(this, App->map_1);
