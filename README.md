@@ -25,7 +25,9 @@ You can see a video of the original game [here](https://www.youtube.com/watch?v=
  - Github: [https://github.com/retsnom9](https://github.com/retsnom9)
  - Art/Design 
 
-<br><img src="https://github.com/FurryGhoul/prueba/blob/master/Photo%20Gen%C3%ADs.jpeg?raw=true" width = "300" height = "400" alt="Error loading img"><br>
+<br><img src="https://github.com/FurryGhoul/prueba/blob/master/Photo%20Gen%C3%ADs.jpeg?raw=true" width = "225" height = "300" alt="Error loading img"><br>
+
+
 
 
 3. Lucas García
@@ -33,6 +35,8 @@ You can see a video of the original game [here](https://www.youtube.com/watch?v=
  - Code 
 
 <br><img src="https://github.com/FurryGhoul/prueba/blob/master/Photo%20Lucas.jpeg?raw=true" width = "183" height = "324" alt="Error loading img"><br>
+
+
 
 
 4. Albert Mas
