@@ -862,6 +862,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			hiscore = score;
 		}
 		App->particles->AddParticle(App->particles->player_explosion, position.x, position.y, COLLIDER_NONE);
+		Mix_PlayChannel(-1, App->audio_2->fx_heavy_ground_explosion, 0);
 		Disable();
 		position.x = 10000000;
 		position.y = 10000000;

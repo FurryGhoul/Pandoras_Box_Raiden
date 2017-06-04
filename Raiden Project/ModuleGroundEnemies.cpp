@@ -367,10 +367,12 @@ void ModuleGroundEnemies::OnCollision(Collider* c1, Collider* c2)
 				else if (enemies[i]->trainlocomotive)
 				{
 					App->gexplosion->AddGroundExplosion(App->gexplosion->ship_explosion, enemies[i]->position.x - 70, enemies[i]->position.y -70, COLLIDER_NONE);
+					Mix_PlayChannel(-1, App->audio_2->fx_heavy_ground_explosion, 0);
 				}
 				else if (enemies[i]->traincoach)
 				{
 					App->gexplosion->AddGroundExplosion(App->gexplosion->ship_explosion, enemies[i]->position.x - 70, enemies[i]->position.y - 70, COLLIDER_NONE);
+					Mix_PlayChannel(-1, App->audio_2->fx_heavy_ground_explosion, 0);
 				}
 				
 				else if (enemies[i]->medalbox)
