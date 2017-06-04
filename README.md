@@ -75,7 +75,7 @@ Shoot: P
 
 Drop bomb: O
 
-# Game Controls with XBox Controller
+## Game Controls with XBox Controller
 Start game: To play solo press Start button and to play coop, press 2 on the keyboard and then Start on both controllers
 
 Return to the start screen from winning stage: Start
