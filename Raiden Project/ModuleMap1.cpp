@@ -76,6 +76,7 @@ update_status ModuleMap1::Update()
 		App->player2->missile_powerup_level = 0;
 		App->player2->red = true;
 		setdown = false;
+		App->player->bombs = 3;
 		if (one_player)
 		{
 			App->player2->deadplayer = true;
@@ -83,7 +84,6 @@ update_status ModuleMap1::Update()
 		}
 		else
 		{
-			App->player->bombs = 3;
 			App->player2->bombs = 3;
 		}
 	}
