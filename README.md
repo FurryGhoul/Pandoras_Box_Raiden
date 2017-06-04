@@ -14,6 +14,8 @@ You can see a video of the original game [here](https://www.youtube.com/watch?v=
 
 ## TEAM MEMBERS
 
+<br><img src="https://github.com/FurryGhoul/prueba/blob/master/Photo%20Group.jpeg?raw=true" width = "664" height = "374" alt="Error loading img"><br>
+
 1. Ivan Drofiak
  - Github: [https://github.com/FurryGhoul](https://github.com/FurryGhoul)
  - Management
@@ -23,10 +25,14 @@ You can see a video of the original game [here](https://www.youtube.com/watch?v=
  - Github: [https://github.com/retsnom9](https://github.com/retsnom9)
  - Art/Design 
 
+<br><img src="https://github.com/FurryGhoul/prueba/blob/master/Photo%20Gen%C3%ADs.jpeg?raw=true" width = "600" height = "800" alt="Error loading img"><br>
+
 
 3. Lucas García
  - Github: [https://github.com/Skyway666](https://github.com/Skyway666)
  - Code 
+
+<br><img src="https://github.com/FurryGhoul/prueba/blob/master/Photo%20Lucas.jpeg?raw=true" width = "648" height = "365" alt="Error loading img"><br>
 
 
 4. Albert Mas
