@@ -26,7 +26,7 @@ We have also created a video of our game! You can watch it below:
 
 1. Ivan Drofiak
 
-<br><img src="https://github.com/FurryGhoul/prueba/blob/master/Photo%20Ivan1.jpeg?raw=true" width = "170" height = "300" alt="Error loading img"><br>
+<br><img src="https://github.com/FurryGhoul/prueba/blob/master/Photo%20Ivan1.jpeg?raw=true" width = "184" height = "325" alt="Error loading img"><br>
 
  - Github: [https://github.com/FurryGhoul](https://github.com/FurryGhoul)
  - Management
@@ -42,7 +42,7 @@ We have also created a video of our game! You can watch it below:
 
 3. Lucas García
 
-<br><img src="https://github.com/FurryGhoul/prueba/blob/master/Photo%20Lucas.jpeg?raw=true" width = "183" height = "324" alt="Error loading img"><br>
+<br><img src="https://github.com/FurryGhoul/prueba/blob/master/Photo%20Lucas.jpeg?raw=true" width = "184" height = "325" alt="Error loading img"><br>
 
  - Github: [https://github.com/Skyway666](https://github.com/Skyway666)
  - Code 
