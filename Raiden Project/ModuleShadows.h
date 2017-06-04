@@ -58,6 +58,10 @@ public:
 	Shadow Playerleft1;
 	Shadow Playerright;
 	Shadow Playerright1;
+	Shadow bossmain;
+	Shadow bossleftwing;
+	Shadow bossrightwing;
+	Shadow bosscannon;
 };
 
 #endif // __MODULESHADOWS_H__

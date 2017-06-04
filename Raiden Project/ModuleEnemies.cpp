@@ -358,6 +358,15 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 					App->player2->score += enemies[i]->points;
 				}
 
+				if (enemies[i]->bossleftwing)
+					App->map_1->leftwingalive = false;
+
+				if (enemies[i]->bossrightwing)
+					App->map_1->rightwingalive = false;
+
+				if (enemies[i]->bosscannon)
+					App->map_1->cannonalive = false;
+
 				if (enemies[i]->lightshooter || enemies[i]->kamikaze || enemies[i]->light_kamikaze)
 				{ 
 				  App->particles->AddParticle(App->particles->explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);
@@ -528,6 +537,7 @@ void ModuleEnemies::DestroyBossParts()
 		}
 	}
 }
+
 
 void ModuleEnemies::MoveEnemiesRight(bool right)
 {

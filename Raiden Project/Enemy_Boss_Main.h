@@ -39,6 +39,7 @@ private:
 	bool orange = false;
 	bool alive = true;
 	Uint32 orangetime = 0;
+	int shadowregulator = 0;
 
 	EnemyInfo kamikaze1;
 	EnemyInfo kamikaze2;

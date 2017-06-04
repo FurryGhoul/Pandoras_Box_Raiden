@@ -7,6 +7,7 @@
 #include <Math.h>
 #include "ModuleEnemies.h"
 #include "ModuleMap1.h"
+#include "ModuleShadows.h"
 
 Enemy_Boss_Main::Enemy_Boss_Main(int x, int y, int path) : Enemy(x, y)
 {
@@ -145,6 +146,19 @@ void Enemy_Boss_Main::MoveShoot()
 {
 	if (position.y >= 850)
 		App->map_1->won = true;
+
+	if (shadowregulator % 2 == 0)
+	{
+		if (hp > 0)
+			App->shadows->AddShadow(App->shadows->bossmain, position.x, position.y, (139 - 30) * 3, 59 * 3);
+		if (App->map_1->leftwingalive)
+			App->shadows->AddShadow(App->shadows->bossleftwing, position.x, position.y, (125 - 30) * 3, 72 * 3);
+		if (App->map_1->rightwingalive)
+			App->shadows->AddShadow(App->shadows->bossrightwing, position.x, position.y, (182 - 30) * 3, 72 * 3);
+		if (App->map_1->cannonalive)
+			App->shadows->AddShadow(App->shadows->bosscannon, position.x, position.y, (154 - 30) * 3, 75 * 3);
+	}
+	shadowregulator++;
 
 	if (alive == true)
 	{
