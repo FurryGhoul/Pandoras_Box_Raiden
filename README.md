@@ -14,8 +14,8 @@ You can see a video of the original game [here](https://www.youtube.com/watch?v=
 
 We have also created a video of our game! You can watch it below:
 
- <div style="text-align: center; margin: auto"><object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="//www.youtube.com/v/fe4fyhzS3UM?color2=FBE9EC&amp;showsearch=0&amp;controls=0&amp;version=3&amp;fs=1">
-        <param name="movie" value="//www.youtube.com/v/fe4fyhzS3UM?color2=FBE9EC&amp;showsearch=0&amp;controls=0&amp;version=3&amp;fs=1" />
+<div style="text-align: center; margin: auto"><object type="application/x-shockwave-flash" style="width:450px; height:366px;" data="//www.youtube.com/v/fe4fyhzS3UM?color2=FBE9EC&amp;rel=0&amp;showsearch=0&amp;version=3&amp;fs=1">
+        <param name="movie" value="//www.youtube.com/v/fe4fyhzS3UM?color2=FBE9EC&amp;rel=0&amp;showsearch=0&amp;version=3&amp;fs=1" />
         <param name="allowFullScreen" value="true" />
         <param name="allowscriptaccess" value="always" />
         </object><div style="font-size: 0.8em"><a href="https://www.tools4noobs.com/online_tools/youtube_xhtml/">Get your own valid XHTML YouTube embed code</a></div></div>
