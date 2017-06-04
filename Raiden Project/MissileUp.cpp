@@ -28,6 +28,8 @@ MissileUp::MissileUp(int x, int y, double pcenterx, double pcentery, double pang
 	animation = &idle1;
 
 	
+    center.y = position.y + radius; 
+    center.x = position.x; 
 	angle = PI ;
 }
 
