@@ -10,7 +10,6 @@
 #include "ModulePlayer2.h"
 #include <time.h>
 #include <stdlib.h>
-#include "ModuleEnemies.h"
 
 #define MAX_ACTIVE_PARTICLES 10000
 struct SDL_Texture;
