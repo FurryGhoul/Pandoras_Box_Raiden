@@ -491,6 +491,9 @@ void Enemy_Boss_Main::MoveShoot()
 		alive = false;
   		animation = &destroyed;
 		counter++;
+		
+		points = 0;
+		
 		if (counter == 10)
 		{
 			App->particles->AddParticle(App->particles->bonusmedium_explosion, position.x - 50, position.y, COLLIDER_NONE);
@@ -522,7 +525,7 @@ void Enemy_Boss_Main::MoveShoot()
 		}
 		if (counter == 71)
 		{
-			counter = 0;
+			counter = 1;
 		}
 	}
 
