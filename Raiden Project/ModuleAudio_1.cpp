@@ -28,26 +28,26 @@ bool ModuleAudio1::Init()
 	}
 	ModuleAudio1::Load("Assets/Sound effects/Boss song.ogg");
 
-    if (Mix_PlayMusic(music, -1) == -1)
-	{
-		LOG("An error has ocurred while reproducing the audio %s", SDL_GetError())
-    }
 	
 	return true;
 }
 update_status ModuleAudio1::Update()
 {
 	
-	if (App->render->camera.y < -12000 && playing == false )
+	if (App->render->camera.y < -12000 && playing == false)
 	{
-		Init();
+		if (Mix_PlayMusic(music, -1) == -1)
+		{
+			LOG("An error has ocurred while reproducing the audio %s", SDL_GetError())
+		}
 		playing = true;
 	}
-	if (App->render->camera.y > -12000 && playing == true || !App->map_1->IsEnabled() )
+
+	if (App->render->camera.y > -12000 && playing == true)
 	{
 		playing = false;
-		Close();
 	}
+
 	return UPDATE_CONTINUE;
 }
 Mix_Music* const ModuleAudio1::Load(const char* path)

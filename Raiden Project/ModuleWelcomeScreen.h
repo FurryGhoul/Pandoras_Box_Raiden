@@ -27,6 +27,7 @@ public:
 	int counter = 0;
 	int font = 0;
 	char insert_coin[50];
+	int times_started = 1;
 };
 
 #endif //__MODULEWELCOMSCREEN__
