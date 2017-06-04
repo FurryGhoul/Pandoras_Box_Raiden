@@ -15,7 +15,11 @@ You can see a video of the original game [here](https://www.youtube.com/watch?v=
 We have also created a video of our game! You can watch it below:
 
 <div style="text-align: center; margin: auto"><object type="application/x-shockwave-flash" style="width:425px; height:344px;" data="//https://www.youtube.com/v/fe4fyhzS3UM?color2=FBE9EC&amp;border=1&amp;rel=0&amp;version=3&amp;fs=1">
-
+ <param name="movie" value="//https://www.youtube.com/v/fe4fyhzS3UM?color2=FBE9EC&amp;border=1&amp;rel=0&amp;version=3&amp;fs=1" />
+        <param name="allowFullScreen" value="true" />
+        <param name="allowscriptaccess" value="always" />
+        </object><div style="font-size: 0.8em"><a href="https://www.tools4noobs.com/online_tools/youtube_xhtml/"></a></div></div>
+        
 ## TEAM MEMBERS
 
 <br><img src="https://github.com/FurryGhoul/prueba/blob/master/Photo%20Group.jpeg?raw=true" width = "664" height = "374" alt="Error loading img"><br>
