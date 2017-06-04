@@ -42,7 +42,7 @@ public:
 	bool initial_dead_time_got = false;
 	int initial_time_win = 0;
 	bool initial_time_win_got = false;
-	
+	bool cheat_win = false;
 
 };
 

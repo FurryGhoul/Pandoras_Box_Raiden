@@ -546,7 +546,7 @@ update_status ModuleMap1::Update()
 
 	if ((App->input->keyboard[SDL_SCANCODE_BACKSPACE] && !App->input->gpad) || (App->input->gamepad[12] && App->input->gpad))
 	{
-		won = true;
+		cheat_win = true;
 
 		//faster scrolling (comment "won = true;" first)
 		//ymap += yscrollspeed * 50;
@@ -578,7 +578,7 @@ update_status ModuleMap1::Update()
 		initial_time_win = SDL_GetTicks();
 		initial_time_win_got = true;
 	}
-	if (SDL_GetTicks() - initial_time_win > 5000 && won)
+	if (SDL_GetTicks() - initial_time_win > 5000 && won || cheat_win)
 	{
 		App->player->UI = false;
 		App->player->Disable();
@@ -622,6 +622,7 @@ update_status ModuleMap1::Update()
 		App->WelcomeScreen->setdown = true;
 		initial_time_win_got = false;
 		won = false;
+		cheat_win = false;
 
 	}
 
