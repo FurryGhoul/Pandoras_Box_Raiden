@@ -12,6 +12,10 @@ The plot of the game takes place in 2090 when planet Earth is attacked by the al
 
 You can see a video of the original game [here](https://www.youtube.com/watch?v=1-5wjp4-RV8).
 
+We have also created a video of our game! You can watch it below:
+
+<div style="text-align: center; margin: auto"><object type="application/x-shockwave-flash" style="width:425px; height:344px;" data="//https://www.youtube.com/v/fe4fyhzS3UM?color2=FBE9EC&amp;border=1&amp;rel=0&amp;version=3&amp;fs=1">
+
 ## TEAM MEMBERS
 
 <br><img src="https://github.com/FurryGhoul/prueba/blob/master/Photo%20Group.jpeg?raw=true" width = "664" height = "374" alt="Error loading img"><br>
