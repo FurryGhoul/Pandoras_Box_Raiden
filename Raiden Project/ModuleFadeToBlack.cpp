@@ -81,7 +81,7 @@ update_status ModuleFadeToBlack::Update()
 				else if (counter % 10 == 0 && font == 0)
 					font = 1;
 
-				if (App->player->godmode) //Godmode text
+				if (App->player->godmode || App->player2->godmode) //Godmode text
 					App->fonts->BlitText(249, 48, font, App->player->lastscore_text);
 			//App->fonts->BlitText(20, 125, 0, App->player->lastscoret);
 			//App->fonts->BlitText(420, 195, 1, App->player2->scoret);

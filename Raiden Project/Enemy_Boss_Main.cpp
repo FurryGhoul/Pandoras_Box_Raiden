@@ -11,7 +11,7 @@
 
 Enemy_Boss_Main::Enemy_Boss_Main(int x, int y, int path) : Enemy(x, y)
 {
-	hp = 1000;
+	hp = 1300;
 	points = 29000;
 	spritesheet = 10;
 	animations = 1;
@@ -205,7 +205,7 @@ void Enemy_Boss_Main::MoveShoot()
 	
 	if (kamikazeammo)
 	{
-		if (kamikazewaves >= 21)
+		if (kamikazewaves >= 13)
 		{
 			kamikazeammo = false;
 			animation = &idle;

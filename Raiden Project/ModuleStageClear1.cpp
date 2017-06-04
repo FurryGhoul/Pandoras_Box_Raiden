@@ -54,7 +54,11 @@ update_status ModuleStageClear1::Update()
 	App->fonts->BlitText(50, 630, 1, text1);
 	App->fonts->BlitText(50, 660, 1, text2);
 	App->fonts->BlitText(50, 690, 1, text3);
-	App->fonts->BlitText(300, 690, 0, App->player->highscoret);
+
+	if (App->player->hiscore > App->player2->hiscore)
+		App->fonts->BlitText(300, 690, 0, App->player->highscoret);
+	else
+		App->fonts->BlitText(300, 690, 0, App->player2->highscoret);
 
 	if ((App->input->keyboard[SDL_SCANCODE_SPACE] && !App->input->gpad) || (App->input->gamepad[6] && App->input->gpad))
 	{

@@ -13,7 +13,7 @@ Enemy_Long_Megatank::Enemy_Long_Megatank(int x, int y, int path) : Enemy(x, y)
 	spritesheet = 6;
 	animations = 1;
 
-	hp = 120;
+	hp = 240;
 	points = 880;
 
 	shellstart.PushBack({ 8, 7, 81, 53 });

@@ -642,7 +642,7 @@ update_status ModuleMap1::Update()
 		App->player2->lastscore = App->player2->score;
 		if (App->player2->score >= App->player2->hiscore)
 		{
-			App->player2->hiscore = App->player2->score;
+			App->player2->hiscore = App->player->score + App->player2->score;
 		}
 		App->player2->allowhiscore = true;
 		App->WelcomeScreen->setdown = true;
