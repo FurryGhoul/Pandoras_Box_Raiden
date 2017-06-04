@@ -1,5 +1,4 @@
 <br><img src="https://github.com/FurryGhoul/prueba/blob/master/Raiden-serie-Logo.gif?raw=true" width = "342" height = "172" alt="Error loading img"><br>
-# Raiden
 ## by Pandora's Box
 
 
