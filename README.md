@@ -18,6 +18,7 @@ We have also created a video of our game! You can watch it below:
         <param name="movie" value="//www.youtube.com/v/fe4fyhzS3UM?color2=FBE9EC&amp;rel=0&amp;showsearch=0&amp;version=3&amp;fs=1" />
         <param name="allowFullScreen" value="true" />
         <param name="allowscriptaccess" value="always" />
+        </object></div>
 
 ## TEAM MEMBERS
 
