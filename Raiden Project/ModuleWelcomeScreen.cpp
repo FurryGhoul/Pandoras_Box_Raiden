@@ -103,7 +103,7 @@ update_status ModuleWelcomeScreen::Update()
 		App->fade->FadeToBlack(this, App->map_1);
 		App->input->gpad = false;
 		App->map_1->one_player = true;
-		
+		twoplayers = false;
 	}
 
 	if (App->input->gamepad[6])
@@ -115,6 +115,7 @@ update_status ModuleWelcomeScreen::Update()
 		App->fade->FadeToBlack(this, App->map_1);
 		App->input->gpad = true;
 		App->map_1->one_player = true;
+		twoplayers = false;
 	}
 
 	if (App->input->keyboard[SDL_SCANCODE_2])
@@ -129,6 +130,7 @@ update_status ModuleWelcomeScreen::Update()
 		App->input->gpad = false;
 		App->input->gpad2 = false;
 		App->map_1->one_player = false;
+		twoplayers = true;
 	}
 
 	if (App->input->gamepad[1])
@@ -143,6 +145,7 @@ update_status ModuleWelcomeScreen::Update()
 		App->input->gpad = true;
 		App->input->gpad2 = true;
 		App->map_1->one_player = false;
+		twoplayers = true;
 	}
 
 	return UPDATE_CONTINUE;

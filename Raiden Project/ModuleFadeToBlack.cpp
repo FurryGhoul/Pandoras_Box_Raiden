@@ -67,8 +67,11 @@ update_status ModuleFadeToBlack::Update()
 			//App->fonts->BlitText(20, 160, 0, App->player->score_text);
 			App->fonts->BlitText(24, 24, 1, App->player->scoret); //score p1
 			App->fonts->BlitText(102, 0, 0, App->player->score_text); //1up
-			App->fonts->BlitText(490, 24, 1, App->player2->scoret); //score p2
-			App->fonts->BlitText(560, 0, 0, App->player2->score_text); //2up
+			if (App->WelcomeScreen->twoplayers)
+			{
+				App->fonts->BlitText(490, 24, 1, App->player2->scoret); //score p2
+				App->fonts->BlitText(560, 0, 0, App->player2->score_text); //2up
+			}
 			App->fonts->BlitText(243, 0, 0, App->player->highscore_text); //Hiscore
 			App->fonts->BlitText(266, 24, 1, App->player->highscoret); //Hiscore value
 

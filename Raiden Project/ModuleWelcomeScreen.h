@@ -19,6 +19,7 @@ public:
 
 public:
 	bool setdown = false;
+	bool twoplayers = false;
 	SDL_Rect ground;
 	SDL_Texture *Welcome;
 	int xmap = 0;
