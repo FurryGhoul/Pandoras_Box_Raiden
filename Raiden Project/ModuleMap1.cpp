@@ -129,7 +129,7 @@ update_status ModuleMap1::Update()
 		App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TRAIN_COACH, 1137, -11100);
 		App->genemies->AddGroundEnemy(2, GENEMY_TYPES::TRAIN_COACH, 1201, -11100);*/
 
-		App->enemies->AddEnemy(0, ENEMY_TYPES::BOSS_MAIN, 350, -340);
+		//App->enemies->AddEnemy(0, ENEMY_TYPES::BOSS_MAIN, 350, -340);
 		//App->genemies->AddGroundEnemy(0, GENEMY_TYPES::LONG_MEGATANK, 500, -300);
 		if (App->player->lives < 3)
 		{

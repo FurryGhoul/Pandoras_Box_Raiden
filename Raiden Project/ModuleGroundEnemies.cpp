@@ -224,6 +224,7 @@ void ModuleGroundEnemies::OnCollision(Collider* c1, Collider* c2)
 					enemies[i]->hp -= c2->damage;
 					enemies[i]->bombimmunity = true;
 					enemies[i]->btime = SDL_GetTicks();
+					App->player->score += 20;
 				}
 			}
 			else if (c2->bullettype == 28)
@@ -236,6 +237,7 @@ void ModuleGroundEnemies::OnCollision(Collider* c1, Collider* c2)
 					enemies[i]->hp -= c2->damage;
 					enemies[i]->bombimmunity = true;
 					enemies[i]->btime2 = SDL_GetTicks();
+					App->player->score += 20;
 				}
 			}
 			else
