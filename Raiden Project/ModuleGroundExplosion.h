@@ -43,12 +43,12 @@ struct GroundExplosion
 
 	void AddPointsP1()
 	{
-		App->player->score += 60;
+		App->player->score += 20;
 	}
 
 	void AddPointsP2()
 	{
-		App->player2->score += 60;
+		App->player2->score += 20;
 	}
 
 	void displace() //Displaces the particle
