@@ -11,7 +11,7 @@
 
 Enemy_Megatank::Enemy_Megatank(int x, int y, int path) : Enemy(x, y)
 {
-	hp = 30;
+	hp = 60;
 	points = 1120;
 
 	spritesheet = 9;
