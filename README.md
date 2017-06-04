@@ -59,7 +59,7 @@ Despite the different responsabilities, each member of the team has worked on th
 
 **Exit:** ESCAPE (close the game)
 
-**Player1**
+###Player1
 
 **Move:** WASD
 
@@ -67,7 +67,7 @@ Despite the different responsabilities, each member of the team has worked on th
 
 **Drop bomb:** Left Shift
 
-**Player2**
+###Player2
 
 **Move:** Arrows
 
