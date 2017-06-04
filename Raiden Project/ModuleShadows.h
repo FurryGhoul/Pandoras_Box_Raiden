@@ -49,10 +49,15 @@ public:
 private:
 
 	SDL_Texture* graphics = nullptr;
-	Shadow* active[MAX_ACTIVE_SHADOWS];
+
 
 public:
+	Shadow* active[MAX_ACTIVE_SHADOWS];
 	Shadow Player;
+	Shadow Playerleft;
+	Shadow Playerleft1;
+	Shadow Playerright;
+	Shadow Playerright1;
 };
 
 #endif // __MODULESHADOWS_H__

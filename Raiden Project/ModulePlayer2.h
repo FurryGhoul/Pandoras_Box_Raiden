@@ -88,6 +88,9 @@ public:
 	int powerup_level = 0; // To know which level is the powerup at
 	bool red = true; //To know if the powerup is blue or red
 
+	int shadowregulator = 0;
+	int shadowdirection = 0;
+
 };
 
 #endif

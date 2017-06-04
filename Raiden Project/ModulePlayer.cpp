@@ -17,6 +17,7 @@
 #include "ModuleShadows.h"
 #include "ModulePowerUps.h"
 #include "ModuleAudio_2.h"
+
 #include <stdio.h>
 
 ModulePlayer::ModulePlayer()
@@ -167,12 +168,14 @@ update_status ModulePlayer::Update()
 			{
 				left.Reset();
 				current_animation = &left;
+				shadowdirection = 1;
 			}
 
 			if (current_animation != &left1 && SDL_GetTicks() >= (time + 300))
 			{
 				left1.Reset();
 				current_animation = &left1;
+				shadowdirection = 2;
 			}
 
 			if (App->map_1->IsEnabled()  && position.x >= 10)
@@ -193,12 +196,14 @@ update_status ModulePlayer::Update()
 			{
 				right.Reset();
 				current_animation = &right;
+				shadowdirection = 3;
 			}
 
 			if (current_animation != &right1 && SDL_GetTicks() >= (time + 300))
 			{
 				right1.Reset();
 				current_animation = &right1;
+				shadowdirection = 4;
 			}
 
 			if (App->map_1->IsEnabled() && position.x <= 594)
@@ -237,6 +242,7 @@ update_status ModulePlayer::Update()
 			{
 				left.Reset();
 				current_animation = &left;
+				shadowdirection = 1;
 			}
 		}
 
@@ -248,6 +254,7 @@ update_status ModulePlayer::Update()
 			{
 				right.Reset();
 				current_animation = &right;
+				shadowdirection = 3;
 			}
 		}
 
@@ -255,11 +262,13 @@ update_status ModulePlayer::Update()
 			&& ((App->input->keyboard[SDL_SCANCODE_W] && !App->input->gpad) || (App->input->joystickpos[1] && App->input->gpad)))
 		{
 			current_animation = &idle;
+			shadowdirection = 0;
 		}
 		if (((App->input->keyboard[SDL_SCANCODE_D] && !App->input->gpad) || (App->input->joystickpos[4] && App->input->gpad))
 			&& ((App->input->keyboard[SDL_SCANCODE_A] && !App->input->gpad) || (App->input->joystickpos[3] && App->input->gpad)))
 		{
 			current_animation = &idle;
+			shadowdirection = 0;
 		}
 
 		if (((App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_IDLE && !App->input->gpad) || (App->input->joystickpos[3] == KEY_STATE::KEY_IDLE && App->input->gpad))
@@ -268,6 +277,7 @@ update_status ModulePlayer::Update()
 			if (SDL_GetTicks() >= time + 100)
 			{
 				current_animation = &idle;
+				shadowdirection = 0;
 			}
 		}
 
@@ -306,12 +316,14 @@ update_status ModulePlayer::Update()
 			{
 				leftp.Reset();
 				current_animation = &leftp;
+				shadowdirection = 1;
 			}
 
 			if (current_animation != &left1p && SDL_GetTicks() >= (time + 300))
 			{
 				left1p.Reset();
 				current_animation = &left1p;
+				shadowdirection = 2;
 			}
 
 			if (App->map_1->IsEnabled() && position.x >= 10)
@@ -332,12 +344,14 @@ update_status ModulePlayer::Update()
 			{
 				rightp.Reset();
 				current_animation = &rightp;
+				shadowdirection = 3;
 			}
 
 			if (current_animation != &right1p && SDL_GetTicks() >= (time + 300))
 			{
 				right1p.Reset();
 				current_animation = &right1p;
+				shadowdirection = 4;
 			}
 
 			if (App->map_1->IsEnabled() && position.x <= 594)
@@ -374,6 +388,7 @@ update_status ModulePlayer::Update()
 			{
 				leftp.Reset();
 				current_animation = &leftp;
+				shadowdirection = 1;
 			}
 		}
 
@@ -385,6 +400,7 @@ update_status ModulePlayer::Update()
 			{
 				rightp.Reset();
 				current_animation = &rightp;
+				shadowdirection = 3;
 			}
 		}
 
@@ -392,11 +408,13 @@ update_status ModulePlayer::Update()
 			&& ((App->input->keyboard[SDL_SCANCODE_W] && !App->input->gpad) || (App->input->joystickpos[1] && App->input->gpad)))
 		{
 			current_animation = &idlep;
+			shadowdirection = 0;
 		}
 		if (((App->input->keyboard[SDL_SCANCODE_D] && !App->input->gpad) || (App->input->joystickpos[4] && App->input->gpad))
 			&& ((App->input->keyboard[SDL_SCANCODE_A] && !App->input->gpad) || (App->input->joystickpos[3] && App->input->gpad)))
 		{
 			current_animation = &idlep;
+			shadowdirection = 0;
 		}
 
 		if (((App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_IDLE && !App->input->gpad) || (App->input->joystickpos[3] == KEY_STATE::KEY_IDLE && App->input->gpad))
@@ -405,6 +423,7 @@ update_status ModulePlayer::Update()
 			if (SDL_GetTicks() >= time + 100)
 			{
 				current_animation = &idlep;
+				shadowdirection = 0;
 			}
 		}
 
@@ -792,7 +811,16 @@ if (SDL_GetTicks() - missiles_initial_time > 500 && can_shoot == false)
 
 	if (shadowregulator % 2 == 0)
 	{
-		App->shadows->AddShadow(App->shadows->Player, position.x, position.y, 38 * 3, 26 * 3);
+		if (shadowdirection == 0)
+			App->shadows->AddShadow(App->shadows->Player, position.x, position.y, 38 * 3, 26 * 3);
+		else if (shadowdirection == 1)
+			App->shadows->AddShadow(App->shadows->Playerleft, position.x, position.y, 38 * 3, 26 * 3);
+		else if (shadowdirection == 2)
+			App->shadows->AddShadow(App->shadows->Playerleft1, position.x, position.y, 38 * 3, 26 * 3);
+		else if (shadowdirection == 3)
+			App->shadows->AddShadow(App->shadows->Playerright, position.x, position.y, 38 * 3, 26 * 3);
+		else if (shadowdirection == 4)
+			App->shadows->AddShadow(App->shadows->Playerright1, position.x, position.y, 38 * 3, 26 * 3);
 	}
 
 	shadowregulator++;

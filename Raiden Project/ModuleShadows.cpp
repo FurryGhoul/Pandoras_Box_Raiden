@@ -33,6 +33,30 @@ bool ModuleShadows::Init()
 	Player.anim.speed = 1.0f;
 	Player.size.x = 12 * 3;
 	Player.size.y = 11 * 3;
+	//Player's left shadow
+	Playerleft.anim.PushBack({ 59, 65, 12, 11 });
+	Playerleft.anim.loop = true;
+	Playerleft.anim.speed = 1.0f;
+	Playerleft.size.x = 12 * 3;
+	Playerleft.size.y = 11 * 3;
+	//Player's left shadow 1
+	Playerleft1.anim.PushBack({ 47, 65, 12, 11 });
+	Playerleft1.anim.loop = true;
+	Playerleft1.anim.speed = 1.0f;
+	Playerleft1.size.x = 12 * 3;
+	Playerleft1.size.y = 11 * 3;
+	//Player's right shadow
+	Playerright.anim.PushBack({ 7, 65, 12, 11 });
+	Playerright.anim.loop = true;
+	Playerright.anim.speed = 1.0f;
+	Playerright.size.x = 12 * 3;
+	Playerright.size.y = 11 * 3;
+	//Player's right shadow 1
+	Playerright1.anim.PushBack({ 20, 65, 12, 11 });
+	Playerright1.anim.loop = true;
+	Playerright1.anim.speed = 1.0f;
+	Playerright1.size.x = 12 * 3;
+	Playerright1.size.y = 11 * 3;
 
 	return true;
 }

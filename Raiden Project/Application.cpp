@@ -34,9 +34,9 @@ Application::Application()
 	modules[7] = WelcomeScreen = new ModuleWelcomeScreen();
 	modules[8] = StageClear1 = new ModuleStageClear1();
 	modules[9] = fade = new ModuleFadeToBlack();	
-	modules[10] = shadows = new ModuleShadows();
-	modules[11] = gexplosion = new ModuleGroundExplosion();
-	modules[12] = genemies = new ModuleGroundEnemies();
+	modules[10] = gexplosion = new ModuleGroundExplosion();
+	modules[11] = genemies = new ModuleGroundEnemies();
+	modules[12] = shadows = new ModuleShadows();
 	modules[13] = enemies = new ModuleEnemies();
 	modules[14] = particles = new ModuleParticles();
 	modules[15] = powerups = new ModulePowerUps();
