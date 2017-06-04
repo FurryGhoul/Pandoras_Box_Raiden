@@ -68,6 +68,8 @@ _Show hitboxes:_ F1 (shows the hitboxes of the players, enemies, powerups and bu
 
 _Godmode:_ G (makes both players invincible, useful to see the whole map without having to kill the enemies)
 
+_Increase/Decrease the actual weapon's level:_ Q/E
+
 _Exit:_ ESCAPE (close the game)
 
 **Player1**
