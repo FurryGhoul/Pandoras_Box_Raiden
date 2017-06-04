@@ -55,7 +55,7 @@ We have also created a video of our game! You can watch it below:
  - Github: [https://github.com/albermas](https://github.com/albermas)
  - QA
 
-Despite the different responsabilities, each member of the team has worked on the code and art of the game.
+_Despite the different responsabilities, each member of the team has worked on the code and art of the game._
 
 ## Game Controls with Keyboard
 _Start game:_ 1 for playing solo and 2 for cooperative
