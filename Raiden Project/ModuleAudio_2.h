@@ -22,6 +22,7 @@ public:
 	bool Close();
 public:
 	Mix_Music* music2;
+	
 	bool playing = false;
 	Mix_Chunk* fx_shoot;
 	Mix_Chunk* fx_light_explosion;
@@ -32,7 +33,7 @@ public:
 	Mix_Chunk* fx_bomb_drop;
 	Mix_Chunk* fx_medal;
 	Mix_Chunk* fx_blue_shoot;
-	Mix_Chunk* fx_coin;
+	//Mix_Chunk* fx_coin;
 
 };
 
