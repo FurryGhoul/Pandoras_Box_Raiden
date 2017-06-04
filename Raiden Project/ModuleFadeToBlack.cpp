@@ -67,8 +67,11 @@ update_status ModuleFadeToBlack::Update()
 			//App->fonts->BlitText(20, 160, 0, App->player->score_text);
 			App->fonts->BlitText(24, 24, 1, App->player->scoret); //score p1
 			App->fonts->BlitText(102, 0, 0, App->player->score_text); //1up
-			App->fonts->BlitText(490, 24, 1, App->player2->scoret); //score p2
-			App->fonts->BlitText(560, 0, 0, App->player2->score_text); //2up
+			if (App->WelcomeScreen->twoplayers)
+			{
+				App->fonts->BlitText(490, 24, 1, App->player2->scoret); //score p2
+				App->fonts->BlitText(560, 0, 0, App->player2->score_text); //2up
+			}
 			App->fonts->BlitText(243, 0, 0, App->player->highscore_text); //Hiscore
 			App->fonts->BlitText(266, 24, 1, App->player->highscoret); //Hiscore value
 
@@ -86,11 +89,11 @@ update_status ModuleFadeToBlack::Update()
 			//App->fonts->BlitText(420, 55, 1, App->player2->highscoret);
 			//App->fonts->BlitText(315, 90, 1, App->player2->lastscore_text);
 			//App->fonts->BlitText(420, 125, 1, App->player2->lastscoret);
-			if (App->player->bomb_ammo != nullptr)
+			if (App->player->bomb_ammo != nullptr && App->player->IsEnabled())
 			{
 				App->render->Blit(App->player->graphics2, 5, 782, &(App->player->bomb_ammo->GetCurrentFrame()), App->player->bombammo_w, 14 * 3);
 			}
-			if (App->player2->bomb_ammo != nullptr)
+			if (App->player2->bomb_ammo != nullptr && App->player2->IsEnabled())
 			{
 				App->render->Blit(App->player2->graphics2, 666 - (App->player2->bombs * 3 * 16), 782, &(App->player2->bomb_ammo->GetCurrentFrame()), App->player2->bombammo_w, 14 * 3);
 			}
