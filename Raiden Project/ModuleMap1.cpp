@@ -619,6 +619,9 @@ update_status ModuleMap1::Update()
 		}
 		App->player2->allowhiscore = true;
 		App->WelcomeScreen->setdown = true;
+		initial_time_win_got = false;
+		won = false;
+
 	}
 
 
