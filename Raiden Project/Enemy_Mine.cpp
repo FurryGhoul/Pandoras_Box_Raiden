@@ -35,7 +35,7 @@ Enemy_Mine::Enemy_Mine(int x, int y, int path) : Enemy(x, y)
 
 	w = 24 * 3;
 	h = 34 * 3;
-	movement.PushBack({ -0.1f,1.0f }, 100);
+	movement.PushBack({ 0.0f,1.0f }, 100);
 	collider = App->collision->AddCollider({ 0, 0, w, h }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 	original_pos.x = x;
 	original_pos.y = -100;

@@ -508,6 +508,8 @@ update_status ModuleMap1::Update()
 		App->genemies->AddGroundEnemy(37, GENEMY_TYPES::GREY_TANK, 357 * 3, -11200);
 		App->genemies->AddGroundEnemy(38, GENEMY_TYPES::GREY_TANK, 357 * 3, -11350);
 		App->enemies->AddEnemy(0, ENEMY_TYPES::BOSS_MAIN, 230, -12600);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::MINE, 350, -13600);
+		App->enemies->AddEnemy(0, ENEMY_TYPES::MINE, 350, -14000);
 		}
 	}	
 	//Checkpoint storage
@@ -566,13 +568,13 @@ update_status ModuleMap1::Update()
 		//ymap += yscrollspeed * 50;
 		//yroad += ((yscrollspeed * 1.5) * 50);
 	}
-
+	/*
 	if (App->input->keyboard[SDL_SCANCODE_Z])
 	{
 		ymap += yscrollspeed * 10;
 		yroad += ((yscrollspeed* 10) * 1.5) ;
 		App->render->camera.y -= 1 * 10;
-	}
+	}*/
 
 	//Reset to chechpoint
 	if (reset_collision && !initial_dead_time_got)
