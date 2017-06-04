@@ -21,6 +21,7 @@ private:
 	Path flyaway;
 	Path entering;
 
+	int _x, _y = 0;
 	int bullethellwaves = 0;
 	int shootingwaves = 0;
 	int counter = 0;

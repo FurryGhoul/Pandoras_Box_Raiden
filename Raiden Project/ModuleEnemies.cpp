@@ -388,7 +388,6 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				{
 					App->particles->AddParticle(App->particles->bonusmedium_explosion, enemies[i]->position.x - 60, enemies[i]->position.y - 60, COLLIDER_NONE);
 				}
-				
 				else if (enemies[i]->mediumshooter)
 				{
 					App->particles->AddParticle(App->particles->bonusmedium_explosion, enemies[i]->position.x, enemies[i]->position.y, COLLIDER_NONE);

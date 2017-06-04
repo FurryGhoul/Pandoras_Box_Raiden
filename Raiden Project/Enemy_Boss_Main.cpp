@@ -130,7 +130,10 @@ Enemy_Boss_Main::Enemy_Boss_Main(int x, int y, int path) : Enemy(x, y)
 
 	w = 96 * 3;
 	h = 53 * 3;
+	
 	collider = App->collision->AddCollider({ 0, 0, w, h }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
+
+
 	original_pos.x = (x + w/2);
 	original_pos.y = 10;
 	time = SDL_GetTicks();
@@ -239,7 +242,7 @@ void Enemy_Boss_Main::MoveShoot()
 		animation = &opening;
 		closing.Reset();
 
-		if (opening.Finished())
+		if (opening.Finished() && alive == true)
 		{
 			if (bullethellwaves == 0)
 			{
@@ -337,7 +340,7 @@ void Enemy_Boss_Main::MoveShoot()
 	if (!kamikazeammo && !_shooting && SDL_GetTicks() - time3 >= 4000 && allowshooting)
 		_shooting = true;
 
-	if (_shooting)
+	if (_shooting && alive == true)
 	{
 		animation = &shooting;
 
@@ -494,8 +497,8 @@ void Enemy_Boss_Main::MoveShoot()
 		
 		points = 0;
 
-		collider = nullptr;
-		
+		collider->type = COLLIDER_NONE;
+	
 		if (counter == 10)
 		{
 			App->particles->AddParticle(App->particles->bonusmedium_explosion, position.x - 50, position.y, COLLIDER_NONE);
