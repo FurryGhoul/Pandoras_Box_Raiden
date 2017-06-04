@@ -69,6 +69,7 @@ update_status ModuleMap1::Update()
 		App->particles->EraseParticles();
 		App->genemies->EraseGroundEnemies();
 		App->gexplosion->EraseParticles();
+		powerup_kept = App->player->powerup_level;
 		App->player->powerup_level = 0;
 		App->player->missile_powerup_level = 0;
 		App->player->red = true;
@@ -130,7 +131,16 @@ update_status ModuleMap1::Update()
 
 		//App->enemies->AddEnemy(0, ENEMY_TYPES::BOSS_MAIN, 350, -340);
 		//App->genemies->AddGroundEnemy(0, GENEMY_TYPES::LONG_MEGATANK, 500, -300);
-
+		if (App->player->lives < 3)
+		{
+			for (int i = 0; i <= powerup_kept; i++)
+			{
+				App->powerups->AddPowerUp(POWERUP_TYPES::REDUP, 200 + i*60, 200); 
+			}
+				
+	
+			
+		}
 		if (checkpoint <= 0) //CHECKPOINT 0	
 		{
 			// First street

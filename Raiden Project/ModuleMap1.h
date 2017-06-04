@@ -43,6 +43,7 @@ public:
 	int initial_time_win = 0;
 	bool initial_time_win_got = false;
 	bool cheat_win = false;
+	int powerup_kept = 0;
 
 };
 

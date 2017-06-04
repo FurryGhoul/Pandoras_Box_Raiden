@@ -829,6 +829,15 @@ if (SDL_GetTicks() - missiles_initial_time > 500 && can_shoot == false)
 			red = false;
 		}
 	}
+	if (powerup_level >= 8)
+	{
+		powerup_level = 8;
+	}
+	if (powerup_level <= 0)
+	{
+		powerup_level = 0;
+	}
+
 
 	return UPDATE_CONTINUE;
 }
