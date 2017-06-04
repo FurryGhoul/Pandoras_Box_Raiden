@@ -22,24 +22,25 @@ You can see a video of the original game [here](https://www.youtube.com/watch?v=
 
 
 2. Genís Bayó
- - Github: [https://github.com/retsnom9](https://github.com/retsnom9)
- - Art/Design 
 
 <br><img src="https://github.com/FurryGhoul/prueba/blob/master/Photo%20Gen%C3%ADs.jpeg?raw=true" width = "225" height = "300" alt="Error loading img"><br>
 
-
+ - Github: [https://github.com/retsnom9](https://github.com/retsnom9)
+ - Art/Design 
 
 
 3. Lucas García
- - Github: [https://github.com/Skyway666](https://github.com/Skyway666)
- - Code 
 
 <br><img src="https://github.com/FurryGhoul/prueba/blob/master/Photo%20Lucas.jpeg?raw=true" width = "183" height = "324" alt="Error loading img"><br>
 
-
+ - Github: [https://github.com/Skyway666](https://github.com/Skyway666)
+ - Code 
 
 
 4. Albert Mas
+
+<br><img src="https://github.com/FurryGhoul/prueba/blob/master/Photo%20Albert.jpg?raw=true" width = "400" height = "300" alt="Error loading img"><br>
+
  - Github: [https://github.com/albermas](https://github.com/albermas)
  - QA
 
