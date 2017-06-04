@@ -26,7 +26,7 @@ We have also created a video of our game! You can watch it below:
 
 1. Ivan Drofiak
 
-<br><img src="https://github.com/FurryGhoul/prueba/blob/master/Photo%20Ivan%201.jpeg?raw=true" width = "170" height = "300" alt="Error loading img"><br>
+<br><img src="https://github.com/FurryGhoul/prueba/blob/master/Photo%20Ivan1.jpeg?raw=true" width = "170" height = "300" alt="Error loading img"><br>
 
  - Github: [https://github.com/FurryGhoul](https://github.com/FurryGhoul)
  - Management
