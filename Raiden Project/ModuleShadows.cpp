@@ -25,7 +25,7 @@ ModuleShadows::~ModuleShadows()
 bool ModuleShadows::Init()
 {
 	LOG("Loading shadows");
-	graphics = App->textures->Load("Assets/Player1.png");
+	graphics = App->textures->Load("Assets/Shadows.png");
 
 	//Player's shadow
 	Player.anim.PushBack({ 32, 65, 12, 11 });
