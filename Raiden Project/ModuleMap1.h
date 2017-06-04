@@ -44,6 +44,9 @@ public:
 	bool initial_time_win_got = false;
 	bool cheat_win = false;
 	int powerup_kept = 0;
+	bool leftwingalive = true;
+	bool rightwingalive = true;
+	bool cannonalive = true;
 
 };
 

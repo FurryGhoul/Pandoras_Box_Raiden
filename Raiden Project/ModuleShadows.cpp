@@ -87,6 +87,30 @@ bool ModuleShadows::Init()
 	MediumBack.anim.speed = 1.0f;
 	MediumBack.size.x = 41 * 3;
 	MediumBack.size.y = 30 * 3;
+	//Boss main shadow
+	bossmain.anim.PushBack({ 20, 33, 44, 22 });
+	bossmain.anim.loop = true;
+	bossmain.anim.speed = 1.0f;
+	bossmain.size.x = 44 * 3;
+	bossmain.size.y = 22 * 3;
+	//Boss left wing shadow
+	bossleftwing.anim.PushBack({ 4, 46, 15, 9 });
+	bossleftwing.anim.loop = true;
+	bossleftwing.anim.speed = 1.0f;
+	bossleftwing.size.x = 15 * 3;
+	bossleftwing.size.y = 9 * 3;
+	//Boss right wing shadow
+	bossrightwing.anim.PushBack({ 65, 46, 15, 9 });
+	bossrightwing.anim.loop = true;
+	bossrightwing.anim.speed = 1.0f;
+	bossrightwing.size.x = 15 * 3;
+	bossrightwing.size.y = 9 * 3;
+	//Boss cannon
+	bosscannon.anim.PushBack({ 83, 58, 14, 8 });
+	bosscannon.anim.loop = true;
+	bosscannon.anim.speed = 1.0f;
+	bosscannon.size.x = 14 * 3;
+	bosscannon.size.y = 8 * 3;
 	return true;
 }
 

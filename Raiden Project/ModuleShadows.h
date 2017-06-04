@@ -63,6 +63,11 @@ public:
 	Shadow Kamikazes;
 	Shadow MediumFront;
 	Shadow MediumBack;
+	Shadow bossmain;
+	Shadow bossleftwing;
+	Shadow bossrightwing;
+	Shadow bosscannon;
+
 };
 
 #endif // __MODULESHADOWS_H__
