@@ -111,7 +111,7 @@ update_status ModuleGroundEnemies::PostUpdate()
 	{
 		if (enemies[i] != nullptr)
 		{
-			if (enemies[i]->position.y * SCREEN_SIZE < -300 || enemies[i]->position.y * SCREEN_SIZE > 1000)
+			if (enemies[i]->position.y * SCREEN_SIZE < -300 || enemies[i]->position.y * SCREEN_SIZE > 1000 || enemies[i]->position.x * SCREEN_SIZE < -500 || enemies[i]->position.x * SCREEN_SIZE > 1300)
 			{
 				LOG("DeSpawning enemy at %d", enemies[i]->position.y * SCREEN_SIZE);
 				delete enemies[i];
