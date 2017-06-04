@@ -85,12 +85,13 @@ update_status ModuleWelcomeScreen::Update()
 		App->player2->red = true;
 		App->player->score = 0;
 		App->player2->score = 0;
-		App->map_1->setup = true;
+	
 		App->map_1->won = false;
 		App->map_1->road1 = false;
 		App->map_1->roadmoved = false;	
 		App->collision->Erase_Non_Player_Colliders();
 		App->map_1->checkpoint = 0;	
+		App->map_1->setup = true;
 		setdown = false;
 	}
 	if (App->input->keyboard[SDL_SCANCODE_1])
@@ -103,26 +104,29 @@ update_status ModuleWelcomeScreen::Update()
 		App->fade->FadeToBlack(this, App->map_1);
 		App->input->gpad = false;
 		App->map_1->one_player = true;
-		
+		if (times_started == 0)
+		{
+			Mix_PlayChannel(1, App->audio_2->fx_coin, 0);
+		}
 		if (times_started == 1)
 		{ 
-		  Mix_PlayChannel(-1, App->audio_2->fx_coin1,0);
+		  Mix_PlayChannel(1, App->audio_2->fx_coin1,0);
 		}
 		if (times_started == 2)
 		{
-			Mix_PlayChannel(-1, App->audio_2->fx_coin2, 0);
+			Mix_PlayChannel(1, App->audio_2->fx_coin2, 0);
 		}
 		if (times_started == 3)
 		{
-			Mix_PlayChannel(-1, App->audio_2->fx_coin3, 0);
+			Mix_PlayChannel(1, App->audio_2->fx_coin3, 0);
 		}
 		if (times_started == 4)
 		{
-			Mix_PlayChannel(-1, App->audio_2->fx_coin4, 0);
+			Mix_PlayChannel(1, App->audio_2->fx_coin4, 0);
 		}
 		if (times_started == 4)
 		{
-			times_started = 0;
+			times_started = -1;
 		}
 		twoplayers = false;
 
