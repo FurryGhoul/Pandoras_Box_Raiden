@@ -20,6 +20,8 @@ We have also created a video of our game! You can watch it below:
         <param name="allowscriptaccess" value="always" />
         </object></div>
 
+You can see the extended version of the video [here](https://www.youtube.com/watch?v=jC7w-PIZFFo&feature=youtu.be).
+
 ## TEAM MEMBERS
 
 <br><img src="https://github.com/FurryGhoul/prueba/blob/master/Photo%20Group.jpeg?raw=true" width = "664" height = "374" alt="Error loading img"><br>
