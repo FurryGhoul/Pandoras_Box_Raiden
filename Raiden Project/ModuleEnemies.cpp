@@ -320,7 +320,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				App->particles->AddParticle(App->particles->explosion, c2->rect.x, c2->rect.y, COLLIDER_NONE);
 			}
 
-			if (c2->bullettype == 3 || c2->bullettype == 4)
+			if ((!enemies[i]->bossmain && !enemies[i]->bossleftwing && !enemies[i]->bossrightwing && !enemies[i]->bosscannon) && (c2->bullettype == 3 || c2->bullettype == 4))
 			{
 				enemies[i]->hp = 0;
 			}
