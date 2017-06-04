@@ -11,7 +11,7 @@
 
 Enemy_Boss_Left_Wing::Enemy_Boss_Left_Wing(int x, int y, int path) : Enemy(x, y)
 {
-	hp = 30;
+	hp = 100;
 	points = 730;
 	spritesheet = 10;
 	animations = 1;

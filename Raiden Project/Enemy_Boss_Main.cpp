@@ -10,7 +10,7 @@
 
 Enemy_Boss_Main::Enemy_Boss_Main(int x, int y, int path) : Enemy(x, y)
 {
-	hp = 420;
+	hp = 1000;
 	points = 29000;
 	spritesheet = 10;
 	animations = 1;

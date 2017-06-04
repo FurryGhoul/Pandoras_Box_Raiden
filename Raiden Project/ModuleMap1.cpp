@@ -155,7 +155,6 @@ update_status ModuleMap1::Update()
 			App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -1700);
 			App->genemies->AddGroundEnemy(1, GENEMY_TYPES::TANK, 750, -1800);
 
-
 			//Third street
 			// Light kamikazes
 			App->enemies->AddEnemy(0, ENEMY_TYPES::LIGHT_KAMIKAZE, -50, -2000);
@@ -472,6 +471,21 @@ update_status ModuleMap1::Update()
 
 
 		//Second roads
+		//Kamikazes
+		for (int i = 0; i < 6; ++i)
+		{
+			App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 300, -11230 - i * 120);
+			App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 390, -11250 - i * 120);
+			App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 480, -11270 - i * 120);
+			App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 570, -11290 - i * 120);
+			App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 660, -11310 - i * 120);
+			App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 750, -11320 - i * 120);
+			App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 230, -11330 - i * 120);
+			App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 440, -11350 - i * 120);
+			App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 700, -11370 - i * 120);
+			App->enemies->AddEnemy(0, ENEMY_TYPES::KAMIKAZE, 520, -11390 - i * 120);
+		}
+
 		//Stoped
 		App->genemies->AddGroundEnemy(32, GENEMY_TYPES::GREY_TANK, 300, -10800);
 		App->genemies->AddGroundEnemy(32, GENEMY_TYPES::GREY_TANK, 200, -10900);

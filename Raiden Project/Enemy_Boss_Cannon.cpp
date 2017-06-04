@@ -11,7 +11,7 @@
 
 Enemy_Boss_Cannon::Enemy_Boss_Cannon(int x, int y, int path) : Enemy(x, y)
 {
-	hp = 30;
+	hp = 100;
 	points = 1100;
 	spritesheet = 10;
 	animations = 1;

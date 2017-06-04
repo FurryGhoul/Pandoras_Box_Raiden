@@ -18,6 +18,8 @@
 #include "ModuleShadows.h"
 #include "ModuleGroundExplosion.h"
 #include "ModuleGroundEnemies.h"
+#include "ModuleFonts.h"
+#include <stdio.h>
 
 ModuleWelcomeScreen::ModuleWelcomeScreen() : Module()
 {
@@ -40,6 +42,7 @@ bool ModuleWelcomeScreen::Init()
 	App->player->Disable();
 	App->player2->Disable();
 
+	sprintf_s(insert_coin, 50, "INSERT COIN");
 	ground = { 0, 0 ,224 * 3 ,256 * 3};
 	Welcome = App->textures->Load("Assets/WelcomeScreen.png");
 	return true;
@@ -47,8 +50,15 @@ bool ModuleWelcomeScreen::Init()
 
 update_status ModuleWelcomeScreen::Update()
 {
-
+	counter++;
 	App->render->Blit(Welcome, 0, 0, &ground, 224 * 3, 256*3 + 62 );
+
+	if (counter % 20 == 0 && font == 1)
+		font = 0;
+	else if (counter % 20 == 0 && font == 0)
+		font = 1;
+
+		App->fonts->BlitText(220, 760, font, insert_coin);
 
 	if (setdown)
 	{

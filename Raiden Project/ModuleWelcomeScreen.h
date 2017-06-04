@@ -23,6 +23,9 @@ public:
 	SDL_Texture *Welcome;
 	int xmap = 0;
 	int ymap = 0;
+	int counter = 0;
+	int font = 0;
+	char insert_coin[50];
 };
 
 #endif //__MODULEWELCOMSCREEN__
