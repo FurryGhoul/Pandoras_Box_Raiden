@@ -56,7 +56,7 @@ Enemy_Boss_Main::Enemy_Boss_Main(int x, int y, int path) : Enemy(x, y)
 
 	//Path
 	//Entering
-	movement.PushBack({ 0.0f, 1.5f }, 100);
+	movement.PushBack({ 0.0f, 1.5f }, 300);
 	//Movement
 	movement.PushBack({ 1.5f, 0.0f }, 80); movement.PushBack({ -1.5f, 0.0f }, 160); movement.PushBack({ 1.5f, 0.0f }, 80);
 	movement.PushBack({ 0.0f, 1.5f }, 30); movement.PushBack({ 0.0f, -1.5f }, 80); movement.PushBack({ -1.5f, 0.0f }, 80);
@@ -136,7 +136,7 @@ Enemy_Boss_Main::Enemy_Boss_Main(int x, int y, int path) : Enemy(x, y)
 
 
 	original_pos.x = (x + w/2);
-	original_pos.y = 10;
+	original_pos.y = -250;
 	time = SDL_GetTicks();
 	animation = &idlewithkamikazes;
 }
