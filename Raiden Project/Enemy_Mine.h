@@ -13,6 +13,8 @@ private:
 	Animation hit;
 	Path movement;
 	fPoint original_pos;
+	int shadowregulator = 0;
+	int shadowdirection = 0;
 
 };
 

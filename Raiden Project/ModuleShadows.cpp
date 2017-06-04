@@ -57,7 +57,36 @@ bool ModuleShadows::Init()
 	Playerright1.anim.speed = 1.0f;
 	Playerright1.size.x = 12 * 3;
 	Playerright1.size.y = 11 * 3;
-
+	//Bonus ship´s shadow
+	Bonusship.anim.PushBack({ 0, 0, 28, 27 });
+	Bonusship.anim.loop = true;
+	Bonusship.anim.speed = 1.0f;
+	Bonusship.size.x = 28 * 3;
+	Bonusship.size.y = 27 * 3;
+	//Mine's shadow
+	Mine.anim.PushBack({ 30, 0, 11, 19 });
+	Mine.anim.loop = true;
+	Mine.anim.speed = 1.0f;
+	Mine.size.x = 11 * 3;
+	Mine.size.y = 19 * 3;
+	//Kamikaze's shadow
+	Kamikazes.anim.PushBack({ 44, 1, 17, 14 });
+	Kamikazes.anim.loop = true;
+	Kamikazes.anim.speed = 1.0f;
+	Kamikazes.size.x = 17 * 3;
+	Kamikazes.size.y = 14 * 3;
+	//Mediumshooter front shadow
+	MediumFront.anim.PushBack({ 66, 0, 41, 30 });
+	MediumFront.anim.loop = true;
+	MediumFront.anim.speed = 1.0f;
+	MediumFront.size.x = 41 * 3;
+	MediumFront.size.y = 30 * 3;
+	//Mediumshooter back shadow
+	MediumBack.anim.PushBack({ 111, 0, 41, 30 });
+	MediumBack.anim.loop = true;
+	MediumBack.anim.speed = 1.0f;
+	MediumBack.size.x = 41 * 3;
+	MediumBack.size.y = 30 * 3;
 	return true;
 }
 

@@ -19,6 +19,8 @@ private:
 	fPoint original_pos2;
 	fPoint original_pos3;
 	Path movement;
+	int shadowregulator = 0;
+	int shadowdirection = 0;
 	double param;
 	double angle;
 	bool side = false;

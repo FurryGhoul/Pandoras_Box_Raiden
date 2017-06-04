@@ -6,7 +6,7 @@
 #include "Enemy.h"
 #include <Math.h>
 #include "ModuleEnemies.h"
-
+#include "ModuleShadows.h"
 
 
 Enemy_Bonus_Ship::Enemy_Bonus_Ship(int x, int y, int path) : Enemy (x, y)
@@ -381,6 +381,12 @@ void Enemy_Bonus_Ship::MoveShoot()
 		}
 	}
 	
+	if (shadowregulator % 2 == 0)
+	{
+		if (shadowdirection == 0)
+			App->shadows->AddShadow(App->shadows->Bonusship, position.x, position.y, 50 * 3, 35 * 3);
+	}
+	shadowregulator++;
 
 	if (shooting == false && movingsidetoside)
 	{

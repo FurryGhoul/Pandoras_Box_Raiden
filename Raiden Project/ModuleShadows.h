@@ -58,6 +58,11 @@ public:
 	Shadow Playerleft1;
 	Shadow Playerright;
 	Shadow Playerright1;
+	Shadow Bonusship;
+	Shadow Mine;
+	Shadow Kamikazes;
+	Shadow MediumFront;
+	Shadow MediumBack;
 };
 
 #endif // __MODULESHADOWS_H__

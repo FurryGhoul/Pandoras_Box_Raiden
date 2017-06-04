@@ -6,6 +6,7 @@
 #include "ModuleParticles.h"
 #include <Math.h>
 #include "ModuleEnemies.h"
+#include "ModuleShadows.h"
 
 #define PI 3.14159265
 
@@ -131,6 +132,12 @@ void Enemy_Medium_Shooter::MoveShoot()
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 2.1f)
 	{
 		animation = &flyi;
+		if (shadowregulator % 2 == 0)
+		{
+			if (shadowdirection == 0)
+				App->shadows->AddShadow(App->shadows->MediumFront, position.x, position.y, 50 * 3, 40 * 3);
+		}
+		shadowregulator++;
 
 		if (ishit == true)
 		{
@@ -145,7 +152,12 @@ void Enemy_Medium_Shooter::MoveShoot()
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 2.0f)
 	{
 		animation = &flys;
-		
+		if (shadowregulator % 2 == 0)
+		{
+			if (shadowdirection == 0)
+				App->shadows->AddShadow(App->shadows->MediumFront, position.x, position.y, 50 * 3, 40 * 3);
+		}
+		shadowregulator++;
 		if (ishit == true)
 		{
 			if (hp > 9)
@@ -159,7 +171,12 @@ void Enemy_Medium_Shooter::MoveShoot()
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 3.0f && movement.steps[movement.GetCurrentStep()].speed.y == 4.0f)
 	{
 		animation = &flycd;
-
+		if (shadowregulator % 2 == 0)
+		{
+			if (shadowdirection == 0)
+				App->shadows->AddShadow(App->shadows->MediumFront, position.x, position.y, 50 * 3, 40 * 3);
+		}
+		shadowregulator++;
 		if (ishit == true)
 		{
 			if (hp > 9)
@@ -173,7 +190,12 @@ void Enemy_Medium_Shooter::MoveShoot()
 	if (movement.steps[movement.GetCurrentStep()].speed.x == -3.0f && movement.steps[movement.GetCurrentStep()].speed.y == 4.0f)
 	{
 		animation = &flycd;
-
+		if (shadowregulator % 2 == 0)
+		{
+			if (shadowdirection == 0)
+				App->shadows->AddShadow(App->shadows->MediumFront, position.x, position.y, 50 * 3, 40 * 3);
+		}
+		shadowregulator++;
 		if (ishit == true)
 		{
 			if (hp > 9)
@@ -187,7 +209,12 @@ void Enemy_Medium_Shooter::MoveShoot()
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == 4.0f)
 	{
 		animation = &flycd;
-
+		if (shadowregulator % 2 == 0)
+		{
+			if (shadowdirection == 0)
+				App->shadows->AddShadow(App->shadows->MediumFront, position.x, position.y, 50 * 3, 40 * 3);
+		}
+		shadowregulator++;
 		if (ishit == true)
 		{
 			if (hp > 9)
@@ -201,7 +228,12 @@ void Enemy_Medium_Shooter::MoveShoot()
 	if (movement.steps[movement.GetCurrentStep()].speed.x == 0.0f && movement.steps[movement.GetCurrentStep()].speed.y == -5.0f)
 	{
 		animation = &flycu;
-
+		if (shadowregulator % 2 == 0)
+		{
+			if (shadowdirection == 0)
+				App->shadows->AddShadow(App->shadows->MediumBack, position.x, position.y, 50 * 3, 40 * 3);
+		}
+		shadowregulator++;
 		if (ishit == true)
 		{
 			if (hp > 9)

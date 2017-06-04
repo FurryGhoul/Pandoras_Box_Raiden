@@ -19,6 +19,8 @@ private:
 	int delay = 0;
 	bool allowtime = true;
 	bool colliderrezise = false;
+	int shadowregulator = 0;
+	int shadowdirection = 0;
 
 public:
 

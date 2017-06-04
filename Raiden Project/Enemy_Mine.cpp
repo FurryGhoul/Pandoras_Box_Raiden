@@ -5,6 +5,7 @@
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
 #include "ModuleEnemies.h"
+#include "ModuleShadows.h"
 
 
 Enemy_Mine::Enemy_Mine(int x, int y, int path) : Enemy(x, y)
@@ -35,7 +36,7 @@ Enemy_Mine::Enemy_Mine(int x, int y, int path) : Enemy(x, y)
 
 	w = 24 * 3;
 	h = 34 * 3;
-	movement.PushBack({ 0.0f,1.0f }, 100);
+	movement.PushBack({ 0.0f,1.2f }, 100);
 	collider = App->collision->AddCollider({ 0, 0, w, h }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 	original_pos.x = x;
 	original_pos.y = -100;
@@ -59,5 +60,11 @@ void Enemy_Mine::MoveShoot()
 		ishit = false;
 	}
 	
+	if (shadowregulator % 2 == 0)
+	{
+		if (shadowdirection == 0)
+			App->shadows->AddShadow(App->shadows->Mine, position.x, position.y, 30 * 3, 22 * 3);
+	}
+	shadowregulator++;
 
 }

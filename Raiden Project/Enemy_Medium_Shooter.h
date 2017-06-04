@@ -36,6 +36,8 @@ private:
 	bool singleburst2 = false;
 	int shoot_time = 0;
 	int shots = 0;
+	int shadowregulator = 0;
+	int shadowdirection = 0;
 
 public:
 	Enemy_Medium_Shooter(int x, int y, int path);

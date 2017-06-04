@@ -6,6 +6,7 @@
 #include "ModuleParticles.h"
 #include <Math.h>
 #include "ModuleEnemies.h"
+#include "ModuleShadows.h"
 
 #define PI 3.14159265
 
@@ -149,8 +150,14 @@ Enemy_Kamikaze::Enemy_Kamikaze(int x, int y, int path) : Enemy(x, y)
 
 void Enemy_Kamikaze::MoveShoot()
 {
+	shadowregulator++;
 	if (!bosskamikaze)
 	{
+		if (shadowregulator % 2 == 0)
+		{
+			if (shadowdirection == 0)
+				App->shadows->AddShadow(App->shadows->Kamikazes, position.x, position.y, 40 * 3, 40 * 3);
+		}
 		if (!colliderrezise)
 		{
 			collider->SetSize(w, h);
@@ -208,9 +215,13 @@ void Enemy_Kamikaze::MoveShoot()
 			deployed = true;
 
 			if (animation == &deploying)
+			{
 				animation = &turn;
+			}
 			else
+			{
 				animation = &turn1;
+			}
 
 			h = 32 * 3;
 			position.y += (7 * 3);
