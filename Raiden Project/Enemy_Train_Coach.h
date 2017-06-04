@@ -50,15 +50,9 @@ private:
 
 	fPoint original_pos;
 	Path movement;
-
-	double param;
-	double angle;
-	bool ne = false;
-	bool se = false;
-	bool nw = false;
-	bool sw = false;
-	bool shooting = false;
-	bool shoot = false; // Makes the ship shoot
+		
+	double angle;	
+	bool shoot = false; // Makes the turret shoot
 	int shoot_time = 0;
 	int shotphase = 0; // Phase of the shooting animation
 

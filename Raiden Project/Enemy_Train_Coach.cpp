@@ -253,7 +253,7 @@ void Enemy_Train_Coach::MoveShoot()
 				animation = &hithorizontalturret8;
 				ishit = false;
 			}
-			shotphase++;			
+			shotphase++;
 		}
 		
 		if (shotphase == 95)

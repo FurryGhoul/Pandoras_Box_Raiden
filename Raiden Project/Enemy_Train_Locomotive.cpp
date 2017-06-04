@@ -59,23 +59,7 @@ void Enemy_Train_Locomotive::MoveShoot()
 {
 	position = original_pos + movement.GetCurrentPosition();
 	position.x += left_right_mod;
-		
-
-	if (sqrtf((distance.y = App->player->position.y - position.y)*(distance.y = App->player->position.y - position.y) + (distance.x = App->player->position.x - position.x)* (distance.x = App->player->position.x - position.x))
-		< sqrtf((distance.y = App->player2->position.y - position.y)*(distance.y = App->player2->position.y - position.y) + (distance.x = App->player2->position.x - position.x)* (distance.x = App->player2->position.x - position.x)))
-	{
-		distance.y = App->player->position.y - position.y;
-		distance.x = App->player->position.x - position.x;
-		distance1.y = App->player->position.y - position.y;
-		distance1.x = App->player->position.x - position.x + 100;
-	}
-	else
-	{
-		distance.y = App->player2->position.y - position.y;
-		distance.x = App->player2->position.x - position.x;
-		distance1.y = App->player2->position.y - position.y;
-		distance1.x = App->player2->position.x - position.x + 100;
-	}
+	
 
 	//App->enemies->SetPos();
 
