@@ -685,24 +685,24 @@ void Enemy_Megatank::MoveShoot()
 			App->particles->AddParticle(App->particles->enemyshot, position.x + 69, position.y + 45, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y - 4);
 			App->particles->AddParticle(App->particles->enemyshot, position.x + 69, position.y + 81, COLLIDER_ENEMY_SHOT, 0, distance.x, distance.y + 6);
 		}
-		if (charge % 115 == 0)
+		if (charge % 112 == 0)
 		{
 			App->particles->AddParticle(App->particles->enemyshot, position.x + 81, position.y + 78, COLLIDER_ENEMY_SHOT, 0, distance.x - 4, distance.y - 4);
 			App->particles->AddParticle(App->particles->enemyshot, position.x + 60, position.y + 48, COLLIDER_ENEMY_SHOT, 0, distance.x + 4, distance.y + 6);
 		}
-		if (charge % 120 == 0)
+		if (charge % 114 == 0)
 		{
 			App->particles->AddParticle(App->particles->enemyshot, position.x + 78, position.y + 48, COLLIDER_ENEMY_SHOT, 0, distance.x + 4, distance.y - 4);
 			App->particles->AddParticle(App->particles->enemyshot, position.x + 57, position.y + 78, COLLIDER_ENEMY_SHOT, 0, distance.x - 4, distance.y + 6);
 		}
-		if (charge % 125 == 0)
+		if (charge % 116 == 0)
 		{
 			App->particles->AddParticle(App->particles->enemyshot, position.x + 48, position.y + 63, COLLIDER_ENEMY_SHOT, 0, distance.x + 6, distance.y + 1);
 			App->particles->AddParticle(App->particles->enemyshot, position.x + 90, position.y + 63, COLLIDER_ENEMY_SHOT, 0, distance.x - 6, distance.y + 1);
 		}
-		if (charge == 130)
+		if (charge == 117)
 		{
-			charge = 100;
+			charge = 109;
 			charge++;
 		}
 	}	

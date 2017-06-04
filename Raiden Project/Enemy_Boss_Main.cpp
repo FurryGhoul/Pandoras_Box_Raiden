@@ -91,7 +91,7 @@ Enemy_Boss_Main::Enemy_Boss_Main(int x, int y, int path) : Enemy(x, y)
 
 	//After death
 	movement2.PushBack({ 0.0f, 0.0f }, 100);
-	movement2.PushBack({ 0.0f, 0.2f }, 1000);
+	movement2.PushBack({ 0.0f, 0.1f }, 1000);
 	
 
 	//Kamikazes info
