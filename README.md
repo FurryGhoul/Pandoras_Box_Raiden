@@ -109,6 +109,6 @@ _Drop bomb:_ A
 
 **You can switch between keyboard and controller mid-game by pressing 1/2 on the keyboard or Start on the controller!**
 
-## Download the latest version of the Raiden [here](https://github.com/FurryGhoul/Pandoras_Box_Raiden/releases)!
+## Download the latest version of the Raiden [here](https://github.com/FurryGhoul/Pandoras_Box_Raiden/releases/tag/v1.0)!
 ## Chech our Github repository [here](https://github.com/FurryGhoul/Pandoras_Box_Raiden)!
 ## See more information in our [Raiden Wiki](https://github.com/FurryGhoul/Pandoras_Box_Raiden/wiki)!
