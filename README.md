@@ -47,33 +47,33 @@ You can see a video of the original game [here](https://www.youtube.com/watch?v=
 Despite the different responsabilities, each member of the team has worked on the code and art of the game.
 
 ## Game Controls with Keyboard
-Start game: 1 for playing solo and 2 for cooperative
+**Start game:** 1 for playing solo and 2 for cooperative
 
-Return to the start screen from winning stage: Space
+**Return to the start screen from winning stage:** Space
 
-Fast Win: Backspace (pressing Backspace on the map 1 screen will take you to the map 1 cleared screen)
+**Fast Win:** Backspace (pressing Backspace on the map 1 screen will take you to the map 1 cleared screen)
 
-Show hitboxes: F1 (shows the hitboxes of the players, enemies, powerups and bullets)
+**Show hitboxes:** F1 (shows the hitboxes of the players, enemies, powerups and bullets)
 
-Godmode: G (makes both players invincible, useful to see the whole map without having to kill the enemies)
+**Godmode:** G (makes both players invincible, useful to see the whole map without having to kill the enemies)
 
-Exit-> ESCAPE (close the game)
+**Exit:** ESCAPE (close the game)
 
 **Player1**
 
-Move: WASD
+**Move:** WASD
 
-Shoot: Space
+**Shoot:** Space
 
-Drop bomb: Left Shift
+**Drop bomb:** Left Shift
 
 **Player2**
 
-Move: Arrows
+**Move:** Arrows
 
-Shoot: P
+**Shoot:** P
 
-Drop bomb: O
+**Drop bomb:** O
 
 ## Game Controls with XBox Controller
 Start game: To play solo press Start button and to play coop, press 2 on the keyboard and then Start on both controllers
@@ -86,7 +86,7 @@ Show hitboxes: Left Joystick button (shows the hitboxes of the players, enemies,
 
 Godmode: Select (makes both players invincible, useful to see the whole map without having to kill the enemies)
 
-Exit-> ESCAPE on the keyboard (close the game)
+Exit: ESCAPE on the keyboard (close the game)
 
 Move: Left Joystick
 
