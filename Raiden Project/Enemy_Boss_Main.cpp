@@ -493,6 +493,8 @@ void Enemy_Boss_Main::MoveShoot()
 		counter++;
 		
 		points = 0;
+
+		collider = nullptr;
 		
 		if (counter == 10)
 		{
