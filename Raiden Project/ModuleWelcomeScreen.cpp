@@ -104,10 +104,11 @@ update_status ModuleWelcomeScreen::Update()
 		App->fade->FadeToBlack(this, App->map_1);
 		App->input->gpad = false;
 		App->map_1->one_player = true;
-		if (times_started == 0)
-		{
+		//if (times_started == 0)
+		//{
 			Mix_PlayChannel(1, App->audio_2->fx_coin, 0);
-		}
+		//}
+			/*
 		if (times_started == 1)
 		{ 
 		  Mix_PlayChannel(1, App->audio_2->fx_coin1,0);
@@ -127,7 +128,7 @@ update_status ModuleWelcomeScreen::Update()
 		if (times_started == 4)
 		{
 			times_started = -1;
-		}
+		}*/
 		twoplayers = false;
 
 	}

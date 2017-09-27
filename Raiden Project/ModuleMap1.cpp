@@ -91,7 +91,7 @@ update_status ModuleMap1::Update()
 
 	if (setup)
 	{
-		App->WelcomeScreen->times_started++;
+		//App->WelcomeScreen->times_started++;
 		App->player->UI = true;
 		App->particles->Enable();
 		App->gexplosion->Enable();
